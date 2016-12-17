@@ -772,7 +772,7 @@ main {
     display: none;
 }
 
-/* Переключалка типа сортировки у каждой полки (в шапке) */
+/* Переключалка типа сортировки книг автора */
 label.sort-link {
     font-family: Tahoma;
     font-size: 12px;

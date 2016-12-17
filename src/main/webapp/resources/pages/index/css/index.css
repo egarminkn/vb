@@ -1292,11 +1292,12 @@ div.links {
 
 div.links > nav.left-menu,
 div.links > nav.left-menu > ul.top-level,
-div.links > nav.left-menu > ul.top-level > ol.top-level-link,
+div.links > nav.left-menu > ul.top-level > li.top-level-link,
 div.links > nav.left-menu > ul.top-level > ul.bottom-level,
-div.links > nav.left-menu > ul.top-level > ul.bottom-level > ol.bottom-level-link {
+div.links > nav.left-menu > ul.top-level > ul.bottom-level > li.bottom-level-link {
     margin: 0;
-    padding: 0;    
+    padding: 0;
+    list-style: none;
 }
 
 div.links > nav.left-menu {
@@ -1304,11 +1305,11 @@ div.links > nav.left-menu {
     width: 92.5%;
 }
 
-div.links > nav.left-menu > ul.top-level > ol.top-level-link {
+div.links > nav.left-menu > ul.top-level > li.top-level-link {
     margin-bottom: 7.5px;
 }
 
-div.links > nav.left-menu > ul.top-level > ul.bottom-level > ol.bottom-level-link {
+div.links > nav.left-menu > ul.top-level > ul.bottom-level > li.bottom-level-link {
     margin-bottom: 5px;
 }
 
@@ -1321,14 +1322,14 @@ div.links > nav.left-menu {
     left: 10px;
 }
 
-ol.top-level-link > a {
+li.top-level-link > a {
     font-family: Tahoma;
     font-size: 17px;
     color: black;
     letter-spacing: 0.3px;
 }
 
-ol.bottom-level-link > a {
+li.bottom-level-link > a {
     font-family: Tahoma;
     font-size: 12px;
     color: #5f7495;
