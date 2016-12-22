@@ -640,12 +640,6 @@ main .book .columns .column-3 .ratings .list .item {
     align-items: flex-start;
 }
 
-main .book .columns .column-3 .ratings .likes {
-    display: flex;
-    flex-direction: row;
-    justify-content: flex-start;
-}
-
 main .book-reviews {
     display: flex;
     flex-direction: column;
