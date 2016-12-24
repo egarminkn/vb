@@ -1438,6 +1438,7 @@ select {
     font-size: 12px;
     box-sizing: border-box;
     height: 25px;
+    padding-right: 30px;
     
     appearance: none; /* Не знаю для кого */
     -moz-appearance: none; /* Для Firefox */
