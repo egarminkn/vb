@@ -1203,6 +1203,7 @@ main .book-reviews .send-review textarea {
     height: 100px;
     padding: 10px 20px;
     border-radius: 5px;
+    resize: none;
 }
 
 main .book-reviews .send-review .send {
