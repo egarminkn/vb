@@ -571,7 +571,7 @@ main .column-2 .header .nav {
 }
 
 /*
- * Форма создания книги 
+ * Форма создания книги
  */
 main .column-2 .book {
     display: flex;
@@ -945,6 +945,19 @@ fieldset .shadow-under {
     background: url('../svg/cloud-upload.svg') no-repeat;
     background-size: 130px 65px;
     background-position: 32% 25px;
+    position: relative;
+}
+
+.upload .content input[type="file"][name="file"] {
+    display: block;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    cursor: pointer;
+//border: 1px solid red;
 }
 
 .upload .content .title {
