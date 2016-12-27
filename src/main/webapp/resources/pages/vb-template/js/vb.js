@@ -59,27 +59,5 @@ function init() {
     divAsk = document.querySelector("div.ask");
     divCart = document.querySelector("div.cart");
     // <<<
-    
-    checkBodySize(null);
 }
-// <<<
-
-/*
- *  При изменении размера окна
- */
-function checkBodySize(event) {
-    /*
-     *  При малых размерах окна убираем значки вопроса и корзинки в верхней части хедера
-     */
-    if (body.clientWidth < 1.5 * bodyMinWidth) {
-        divAsk.classList.add('hidden');
-        divCart.classList.add('hidden');
-    } else {
-        divAsk.classList.remove('hidden');
-        divCart.classList.remove('hidden');
-    }
-    // <<<    
-}
-
-window.onresize = checkBodySize; // действие по событию изменения размера окна
 // <<<

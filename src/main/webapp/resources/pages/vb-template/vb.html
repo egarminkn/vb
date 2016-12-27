@@ -4,29 +4,32 @@
 		<title>Verybook</title>
 		<meta charset="UTF-8" />
         <link href="css/vb.css" type="text/css" rel="stylesheet" />
-        <script src="js/jquery-2.2.3.min.js"></script>
-        <script src="js/vb.js"></script>
 	</head>
 	<body onload="init()">
         <header>
             <div class="header header1">
                 <a href="#" class="logo">
-                    <span class="logo-word logo-line logo-line1">\</span>
-                    <span class="logo-word logo-line logo-line2">\</span>
+                    <span class="logo-word logo-line logo-line1"></span>
+                    <span class="logo-word logo-line logo-line2"></span>
                     <span class="logo-word logo-v">V</span>
                     <span class="logo-word logo-erybook">erybook</span>
                 </a>
                 <div class="search">
-                    <label class="search">
-                        <input type="text" name="search" autocomplete />
-                    </label>
-                    <button class="search" />
+                    <input type="text" name="search" autocomplete>
+                    <button class="search-btn"></button>
                 </div>
                 <div class="ask">
-                    <a href="#">Задать вопрос</a>
+                    <a href="#">
+                        <span class="text">Задать вопрос</span>
+                        <span class="figure"></span>
+                    </a>
                 </div>
                 <div class="cart">
-                    <a href="#">Корзина</a>
+                    <a href="#">
+                        <span class="figure"></span>
+                        <span class="text">Корзина</span>
+                        <span class="count">222</span>
+                    </a>
                 </div>
             </div>
             <nav class="header header2">
@@ -46,41 +49,53 @@
                     </div>
                 </div>
                 <div class="entrance "> <!-- для залогиненого пользователя нужно добавить класс nick -->
-                    <a href="#">Войти</a> <!-- для залогиненого пользователя нужно поменять Войти на Логин -->
+                    <a href="#"> 
+                        <span class="figure-1"></span>
+                        <span class="text">
+                            <!-- для залогиненого пользователя нужно поменять Войти на Логин -->
+                            Войти
+                        </span>
+                        <span class="figure-2"></span>
+                    </a> 
                 </div>
             </nav>
         </header>
 		
-		<div class="slogan">
-			Читай <a href="#" class="new-books-free">новые книги бесплатно</a> и решай их судьбу или <a href="#" class="publish-own">публикуй</a> собственные
-		</div>
-		
 		<main>
-            <div class="left-column">
-                
+            <div class="slogan">
+                Читай <a href="#" class="new-books-free">новые книги бесплатно</a> и решай их судьбу или <a href="#" class="publish-own">публикуй</a> собственные
             </div>
-            <div class="right-column">
+            
+            <div class="columns">
+                <div class="column-1">
                 
-            </div>
+                </div>
+                <div class="column-2">
+
+                </div>
+                <div class="column-3">
+
+                </div>
+            </div>            
         </main>
         
-        <div class="books-on-shelf">
-            <img src="img/bottom-book-1.jpg" />
-            <img src="img/bottom-book-2.jpg" />
-            <img src="img/bottom-book-3.jpg" />
-            <img src="img/bottom-book-4.jpg" />
-            <img src="img/bottom-book-5.jpg" />
-            <img src="img/bottom-book-6.jpg" />
-            <img src="img/bottom-book-7.jpg" />
-            <img src="img/bottom-book-8.jpg" />
-            <img src="img/bottom-book-9.jpg" />
-        </div>
-        
 		<footer>
+            <div class="books-on-shelf">
+                <img src="img/bottom-book-1.jpg">
+                <img src="img/bottom-book-2.jpg">
+                <img src="img/bottom-book-3.jpg">
+                <img src="img/bottom-book-4.jpg">
+                <img src="img/bottom-book-5.jpg">
+                <img src="img/bottom-book-6.jpg">
+                <img src="img/bottom-book-7.jpg">
+                <img src="img/bottom-book-8.jpg">
+                <img src="img/bottom-book-9.jpg">
+            </div>
+            
             <div class="footer-shelf">
-                <div class="footer-shelf shelf-part shelf-left-part"></div>
-                <div class="footer-shelf shelf-part shelf-right-part"></div>
-                <div class="footer-shelf shelf-part shelf-bottom-part"></div>
+                <div class="shelf-left-part"></div>
+                <div class="shelf-right-part"></div>
+                <div class="shelf-bottom-part"></div>
             </div>
             
             <div class="under-footer-shelf">
@@ -180,4 +195,8 @@
             </div>            
 		</footer>
 	</body>
+    
+    <script type="text/javascript" src="js/jquery-2.2.3.min.js"></script>
+    <script type="text/javascript" src="js/vb.js"></script>
+    
 </html>
