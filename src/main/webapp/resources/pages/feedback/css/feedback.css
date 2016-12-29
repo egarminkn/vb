@@ -685,6 +685,16 @@ label[for="email"] {
     //border: 1px solid black;
 }
 
+/* Строка: Использовано 0 символов из 4000 возможных */
+.textarea-size-info {
+    font-family: Tahoma;
+    font-size: 12px;
+    color: #666;
+    display: inline-block;
+    vertical-align: middle;
+    margin-left: 100px;
+}
+
 /* Капча */
 .g-recaptcha {
     margin: auto;
