@@ -655,6 +655,19 @@ label[for="email"] {
     //border: 1px solid black;
 }
 
+/* Тема вопроса */
+label[for="topic"] {
+    margin-right: 35px;
+}
+
+.topic .skew-outer {
+    width: 250px;
+}
+
+.topic .skew-outer .skew-inner {
+    //border: 1px solid black;
+}
+
 /* Текст вопроса */
 .content {
     box-sizing: border-box;
