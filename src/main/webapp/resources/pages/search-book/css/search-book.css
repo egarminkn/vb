@@ -1367,24 +1367,23 @@ div.sort-links {
     color: #667493;
 }
 
-
-
-
-
-
-
-
-
-
-
-/* FIXME убрать эти тестовые рамки */
-/*
-.search-results:nth-of-type(3) .column,
-.search-results:nth-of-type(4) .column,
-.search-results:nth-of-type(5) .column {
-    border: 1px solid black;
+/***
+ ***  Общее
+ ***/
+/**
+ ** Кнопка Показать еще
+ **/
+.show-more {
+    font-family: 'Myriad Pro Regular';
+    font-size: 20px;
+    color: #707d9a;
+    text-decoration: none;
+    border: 1px dashed #5f7495;
+    margin: auto;
+    padding: 20px 70px;
+    border-radius: 5px;
+    margin-top: 25px;
 }
-*/
 
 /* ---------------------------------------------------------------------------------------------------- */
 
