@@ -338,7 +338,7 @@ header::after {
 /*
  *  Нутро наклоняю в противоположную сторону, чтобы текст при наборе был ровным
  */
-.search input[type="text"] {
+.search input[type="search"] {
     box-sizing: border-box;
     width: 84%;
     height: 100%;
