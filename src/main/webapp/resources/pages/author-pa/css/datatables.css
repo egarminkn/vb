@@ -85,6 +85,10 @@
     border: 1px solid #c3c3c3;
 }
 
+.paginate_button.current {
+    background-color: #d3be4a;
+}
+
 .paginate_button.first {
     background: url('../svg/double-angle-arrow.svg') no-repeat;
     background-size: 50%;
