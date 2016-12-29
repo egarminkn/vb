@@ -1,0 +1,124 @@
+/***
+ *** Общее
+ ***/
+.dataTables_wrapper.no-footer {
+    position: relative;
+    margin-top: 20px;
+    //border: 1px solid black;
+}
+
+.dataTables_length,
+.dataTables_filter,
+.dataTables_info,
+.dataTables_paginate {
+    font-family: Tahoma;
+    font-size: 14px;
+    line-height: 28px;
+    display: inline-block;
+    vertical-align: middle;
+    box-sizing: border-box;
+    height: 30px;
+    //border: 1px solid black;
+}
+
+/**
+ ** Строка статуса
+ **/
+.dataTables_info {
+    margin-left: 10px;
+}
+
+/**
+ ** Количество строк на страницу
+ **/
+.dataTables_length {
+    margin-left: 10px;
+}
+
+/**
+ ** Фильтр
+ **/
+.dataTables_filter {
+    position: absolute;
+    top: 0;
+    right: 10px;
+}
+
+/**
+ ** Корректировка элементов фильтрации и выбора количества строк на одной странице таблицы
+ **/
+.dataTables_filter .skew-outer {
+    display: inline-block;
+    vertical-align: middle;
+    margin-left: 10px;
+    margin-right: 5px;
+}
+
+.dataTables_length .skew-outer {
+    display: inline-block;
+    vertical-align: middle;
+    margin-left: 5px;
+    margin-right: 5px;
+}
+
+/**
+ ** Пагинатор
+ **/
+.dataTables_paginate {
+    position: absolute;
+    bottom: 0;
+    right: 10px;
+}
+
+.paginate_button {
+    font-family: Tahoma;
+    font-size: 16px;
+    display: inline-block;
+    vertical-align: middle;
+    border-radius: 5px;
+    box-sizing: border-box;
+    height: 30px;
+    width: auto;
+    min-width: 30px;
+    text-align: center;
+    cursor: pointer;
+    border: 1px solid #c3c3c3;
+}
+
+.paginate_button.first {
+    background: url('../svg/double-angle-arrow.svg') no-repeat;
+    background-size: 50%;
+    background-position: center center;
+    width: 30px;
+    transform: rotate(180deg);
+}
+
+.paginate_button.previous {
+    background: url('../svg/single-angle-arrow.svg') no-repeat;
+    background-size: 50%;
+    background-position: center center;
+    width: 30px;
+    transform: rotate(180deg);
+}
+
+.paginate_button.next {
+    background: url('../svg/single-angle-arrow.svg') no-repeat;
+    background-size: 50%;
+    background-position: center center;
+    width: 30px;
+}
+
+.paginate_button.last {
+    background: url('../svg/double-angle-arrow.svg') no-repeat;
+    background-size: 50%;
+    background-position: center center;
+    width: 30px;
+}
+
+/**
+ ** Стилизация таблицы в отсутствие данных
+ **/
+td.dataTables_empty {
+    padding-top: 20px !important;
+    padding-bottom: 20px;
+}
