@@ -4784,6 +4784,8 @@
 	 *  @param {object} settings dataTables settings object
 	 *  @returns {node} Display length feature node
 	 *  @memberof DataTable#oApi
+	 *
+	 *  egarmin - корректировка элемента, определяющего количество строк на одной странице таблицы dataTables
 	 */
 	function _fnFeatureHtmlLength ( settings )
 	{
@@ -4798,7 +4800,7 @@
 		var select = $('<select/>', {
 			'name':          tableId+'_length',
 			'aria-controls': tableId,
-			'class':         classes.sLengthSelect
+			'class':         classes.skewInner
 		} );
 	
 		for ( var i=0, ien=lengths.length ; i<ien ; i++ ) {
@@ -4811,7 +4813,18 @@
 		}
 	
 		div.children().append(
-			settings.oLanguage.sLengthMenu.replace( '_MENU_', select[0].outerHTML )
+			settings.oLanguage.sLengthMenu.replace( '_MENU_',
+				 $('<div/>', {
+				 	class: 'select ' + classes.skewOuter
+				 })
+				 .append(
+                 	select
+					//select[0]  // перейти от jQuery-объекта к DOM-объекту
+					//.outerHTML // и получить его строковое представление
+				 )
+				 .get(0)    // перейти от jQuery-объекта к DOM-объекту
+				 .outerHTML // и получить его строковое представление
+			)
 		);
 	
 		// Can't use `select` variable as user might provide their own and the
