@@ -6,7 +6,7 @@
  * @summary     DataTables
  * @description Paginate, search and order HTML tables
  * @version     1.10.13
- * @file        jquery.dataTables.js
+ * @file        dataTables.js
  * @author      SpryMedia Ltd
  * @contact     www.datatables.net
  * @copyright   Copyright 2008-2016 SpryMedia Ltd.
@@ -4148,6 +4148,8 @@
 	 *  @returns {node} Filter control element
 	 *  @param {object} oSettings dataTables settings object
 	 *  @memberof DataTable#oApi
+	 *
+	 *  egarmin - пришлось переделать создание элемента фильтрации таблицы
 	 */
 	function _fnFeatureHtmlFilter ( settings )
 	{
@@ -4156,18 +4158,20 @@
 		var language = settings.oLanguage;
 		var previousSearch = settings.oPreviousSearch;
 		var features = settings.aanFeatures;
-		var input = '<input type="search" class="'+classes.sFilterInput+'"/>';
-	
-		var str = language.sSearch;
-		str = str.match(/_INPUT_/) ?
-			str.replace('_INPUT_', input) :
-			str+input;
+		var input = '<input type="search" class="'+classes.skewInner+'"/>';
 	
 		var filter = $('<div/>', {
 				'id': ! features.f ? tableId+'_filter' : null,
 				'class': classes.sFilter
 			} )
-			.append( $('<label/>' ).append( str ) );
+			.append($('<label/>')
+				.append(language.sSearch)
+				.append($('<div/>', {
+							class: classes.skewOuter
+						})
+						.append(input)
+				)
+			);
 	
 		var searchFn = function() {
 			/* Update all other filter input elements for the new display */
