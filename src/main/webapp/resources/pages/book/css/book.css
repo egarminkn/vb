@@ -627,19 +627,6 @@ main .book .columns .column-3 .formats .list {
     justify-content: flex-start;
 }
 
-main .book .columns .column-3 .ratings .list {
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-}
-
-main .book .columns .column-3 .ratings .list .item {
-    display: flex;
-    flex-direction: row;
-    justify-content: flex-start;
-    align-items: flex-start;
-}
-
 main .book-reviews {
     display: flex;
     flex-direction: column;
@@ -861,17 +848,6 @@ main .book .columns .column-1 .authors .author .about .fullname a {
 /*
  * 2-ая колонка (с текстовым описанием)
  */
-/* FIXME убрать */
-/*
-main .book .columns .column-2,
-main .book .columns .column-2 .summary-1,
-main .book .columns .column-2 .description,
-main .book .columns .column-2 .summary-2,
-main .book .columns .column-2 .authors {
-    border: 1px solid black;
-}
-*/
-
 main .book .columns .column-2 {
     width: 41%;
 }
@@ -1019,17 +995,6 @@ main .book .columns .column-2 .summary-2 .tags .tag {
 /*
  * 3-я колонка (с кнопкой покупки и лайками)
  */
-/* FIXME убрать */
-/*
-main .book .columns .column-3,
-main .book .columns .column-3 .summary-1,
-main .book .columns .column-3 .formats,
-main .book .columns .column-3 .ratings,
-main .book .columns .column-3 .likes {
-    border: 1px solid black;
-}
-*/
-
 /* блок с кнопкой покупки книги */
 main .book .columns .column-3 .buy {
     font-family: Tahoma;
@@ -1083,43 +1048,12 @@ main .book .columns .column-3 .formats .list .format {
     margin-left: 15px;
 }
 
-/* блок Рейтинга книги */
-main .book .columns .column-3 .ratings {
-    font-family: Tahoma;
-    font-size: 12px;
-    background: url('../svg/bar_chart.svg') no-repeat;
-    background-size: 15px 15px;
-    padding-left: 20px;
+/*
+ * Стилизация списка рейтинга книги
+ */
+.ratings {
     margin-top: 35px;
-}
-
-main .book .columns .column-3 .ratings .list {
-    list-style: none;
-    margin: 0;
-    padding: 0;
-}
-
-main .book .columns .column-3 .ratings .list .item {
-    font-family: Tahoma;
-    font-size: 12px;
-    margin-top: 15px;
-}
-
-main .book .columns .column-3 .ratings .list .item a {
-    color: #657392;
-    white-space: nowrap;
-    //border: 1px solid black;
-}
-
-main .book .columns .column-3 .ratings .list .item a span {
-    display: inline-block;
-    width: 30px;
-    text-decoration: underline;
-    //border: 1px solid black;
-}
-
-main .book .columns .column-3 .ratings .list .item .rating-title {
-    //border: 1px solid black;
+    margin-left: 5px;
 }
 
 /*
@@ -1607,6 +1541,93 @@ main .book-reviews .show-more {
 /* валюта */
 .shelf .book-title-slider-out .book-title-slider-in > a .price > span.currency {
     font-size: 11px;
+}
+
+/***
+ ***  Общее
+ ***/
+/**
+ ** Блок Списка рейтинга
+ **/
+.ratings {
+    font-family: Tahoma;
+    font-size: 12px;
+    background: url('../svg/bar_chart.svg') no-repeat;
+    background-size: 15px 15px;
+    padding-left: 20px;
+    //border: 1px solid black;
+}
+
+/*
+ * Флексирование Списка рейтинга
+ */
+.ratings .list {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+
+.ratings .list .item {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    //border: 1px solid black;
+}
+
+.ratings .list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.ratings .list .item {
+    font-family: Tahoma;
+    font-size: 12px;
+    margin-top: 15px;
+}
+
+/*
+ * Стрелочка, показывающая динамику роста (вверх или вниз по рейтингу)
+ */
+.ratings .list .item .dynamic-up {
+    width: 4px;
+    height: 12px;
+    //border: 1px solid black;
+}
+
+.ratings .list .item .dynamic-up img {
+    width: 4px;
+    height: 12px;
+    //border: 1px solid black;
+}
+
+.ratings .list .item .dynamic-up.invert {
+    transform: scaleY(-1);
+}
+
+/*
+ * Порядковый номер в рейтинге (этот номер является ссылкой)
+ */
+.ratings .list .item a {
+    color: #657392;
+    white-space: nowrap;
+    margin-left: 5px;
+    //border: 1px solid black;
+}
+
+.ratings .list .item a span {
+    display: inline-block;
+    width: 30px;
+    text-decoration: underline;
+    //border: 1px solid black;
+}
+
+/*
+ * Название рейтинга
+ */
+.ratings .list .item .rating-title {
+    //border: 1px solid black;
 }
 
 /* ---------------------------------------------------------------------------------------------------- */
