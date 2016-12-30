@@ -486,63 +486,83 @@ div.slogan > a.new-books-free {
     z-index: 1;
 }
 
+/**
+ **  Блок цитат вместо главного баннера
+ **/
+.quotes-slider {
+    margin: auto;
+    margin-top: 15px;
+    box-sizing: content-box;
+    width: 95%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    //border: 1px solid black;
+}
+
 /*
- *  Блок цитат вместо главного баннера
+ * Кнопки слайдинга цитат
  */
-/* Рамки слева и справа от цитаты */
-div.border {
+.arrow-btn {
+    box-sizing: border-box;
+    height: 210px;
+    max-width: 50px;
+    min-width: 50px;
+    position: relative;
+    //border: 1px solid black;
+}
+
+.arrow-btn .corner {
+    box-sizing: border-box;
     height: 105px;
-    width: 5px;
+    width: 120px;
     border: 2px solid #d3be4a;
     border-bottom: none;
-    border-top: none;
-    position: absolute;
-    top: 90px;
-}
-
-div.border.border-left {
-    left: 40px;
     border-right: none;
+    position: absolute;
+    top: 50px;
 }
 
-div.border.border-right {
-    right: 40px;
-    border-left: none;
+.arrow-btn.left-arrow-btn .corner {
+    left: -15px;
+    transform: rotate(-60deg) skewX(-31deg);
 }
 
-div.border.border-bottom {
-    top: 177px;
+.arrow-btn.right-arrow-btn .corner {
+    right: -15px;
+    transform: rotate(120deg) skewX(-31deg);
 }
 
-div.border.border-left.border-top {
-    transform: rotate(31deg);
+/*
+ * Цитата вверху страницы и ее переключение
+ */
+.quotes {
+    //border: 1px solid red;
 }
 
-div.border.border-left.border-bottom {
-    transform: rotate(-31deg);
-}
-
-div.border.border-right.border-top {
-    transform: rotate(-31deg);
-}
-
-div.border.border-right.border-bottom {
-    transform: rotate(31deg);
-}
-
-/* Сама цитата */
-p.quotes {
+.quotes .quote {
     font-family: Tahoma;
     font-size: 29px;
     letter-spacing: 0.5px;
-    line-height: 44px;
     word-spacing: 0.3px;
+    line-height: 44px;
+    padding: 0 15px;
+    margin: 0;
     box-sizing: border-box;
-    width: 100%;    
-    position: absolute;
-    top: 85px;
-    padding: 0 95px;
+    height: 0;
+    overflow: hidden;
+    opacity: 0;
+    transition: opacity 0.8s ease;
+    transition-delay: 0.1s;
     //border: 1px solid black;
+}
+
+#slider-button-1:checked ~ .quotes-slider .quotes .quote-1,
+#slider-button-2:checked ~ .quotes-slider .quotes .quote-2,
+#slider-button-3:checked ~ .quotes-slider .quotes .quote-3 {
+    height: 100%;
+    opacity: 1;
 }
 
 /*
@@ -552,13 +572,13 @@ input[type="radio"][name="slide"] {
     display: none;
 }
 
-div.slider-buttons {
-    margin-left: 45%;
-    margin-top: 255px;
+.slider-buttons {
+    margin-top: 5px;
+    text-align: center;
     //border: 1px solid black;
 }
 
-label.slider-button {
+.slider-buttons .slider-button {
     display: inline-block;
     width: 11px;
     height: 11px;
@@ -568,9 +588,9 @@ label.slider-button {
     cursor: pointer;
 }
 
-#slider-button-1:checked ~ div.slider-buttons > label[for="slider-button-1"],
-#slider-button-2:checked ~ div.slider-buttons > label[for="slider-button-2"],
-#slider-button-3:checked ~ div.slider-buttons > label[for="slider-button-3"] {
+#slider-button-1:checked ~ .slider-buttons > label[for="slider-button-1"],
+#slider-button-2:checked ~ .slider-buttons > label[for="slider-button-2"],
+#slider-button-3:checked ~ .slider-buttons > label[for="slider-button-3"] {
     background-color: #8a8a8a;
 }
 
@@ -581,17 +601,17 @@ input[type="radio"][name="help-slide"] {
     display: none;
 }
 
-div.help-slide-marks {
+.help-slide-marks {
     margin-left: 1.2%;
     margin-right: 1.2%;
-    margin-top: 45px;
+    margin-top: 50px;
     margin-bottom: -5px;
     width: 97.6%;
     box-sizing: border-box;
     //border: 1px solid black;
 }
 
-label.help-slide-mark {
+.help-slide-marks .help-slide-mark {
     display: inline-block;
     height: 155px;
     width: 33.33%;
@@ -605,11 +625,11 @@ label.help-slide-mark {
     position: relative;
 }
 
-label.help-slide-mark > img {
+.help-slide-marks .help-slide-mark > img {
     position: absolute;
 }
 
-label.help-slide-mark > p {
+.help-slide-marks .help-slide-mark > p {
     font-family: Tahoma;
     font-size: 21px;
     letter-spacing: 0.3px;
@@ -619,40 +639,40 @@ label.help-slide-mark > p {
     text-decoration: underline;
 }
 
-div.help-slide-marks > label[for="help-slide-1"] {
+.help-slide-marks > label[for="help-slide-1"] {
     z-index: 3;    
 }
 
-div.help-slide-marks > label[for="help-slide-2"] {
+.help-slide-marks > label[for="help-slide-2"] {
     z-index: 2;
     margin-left: -4px;
 }
 
-div.help-slide-marks > label[for="help-slide-3"] {
+.help-slide-marks > label[for="help-slide-3"] {
     z-index: 1;
     margin-left: -4px;
 }
 
-div.help-slide-marks > label[for="help-slide-2"] > img {
+.help-slide-marks > label[for="help-slide-2"] > img {
     top: 42px;
     left: 30px;
     //border: 1px solid black;
 }
 
-div.help-slide-marks > label[for="help-slide-3"] > img {
+.help-slide-marks > label[for="help-slide-3"] > img {
     top: 37px;
     left: 0;
     //border: 1px solid black;
 }
 
-div.help-slide-marks > label[for="help-slide-1"] > p {
+.help-slide-marks > label[for="help-slide-1"] > p {
     //right: 70px;
     right: 16.81%;
     top: 15px;
     width: 170px;
 }
 
-div.help-slide-marks > label[for="help-slide-2"] > p {
+.help-slide-marks > label[for="help-slide-2"] > p {
     //right: 18px;
     right: 4.32%;
     top: 15px;
@@ -660,7 +680,7 @@ div.help-slide-marks > label[for="help-slide-2"] > p {
     //border: 1px solid black;
 }
 
-div.help-slide-marks > label[for="help-slide-3"] > p {
+.help-slide-marks > label[for="help-slide-3"] > p {
     right: 6%;
     top: 15px;
     width: 210px;
@@ -712,11 +732,18 @@ div.help-slide-marks > label[for="help-slide-3"] > p {
     border-bottom: 1px solid #b7b7b7;
 }
 
+/* переключение контента вкладок */
+#help-slide-1:checked ~ .help-slide-1,
+#help-slide-2:checked ~ .help-slide-2,
+#help-slide-3:checked ~ .help-slide-3 {
+    display: block;
+}
+
 /*
  *  Содержимое помощи
  */
 div.help-slide-content {
-    //width: 1249.28px;
+    display: none;
     width: 97.6%;
     box-sizing: border-box;
     margin-left: 1.2%;
@@ -840,6 +867,43 @@ div.help-slide-content > div.row.row-2 > p.verybook-help-you {
     letter-spacing: 0.5px;
     margin-top: 0;
     //border: 1px solid black;
+}
+
+/*
+ * Кнопка Хочу создать книгу
+ */
+.btn-wrapper {
+    margin-top: 20px;
+    text-align: center;
+    //border: 1px solid black;
+}
+
+.btn-wrapper .btn {
+    display: inline-block;
+    vertical-align: middle;
+    font-family: Tahoma;
+    font-size: 24px;
+    color: black;
+    text-decoration: none;
+    line-height: 40px;
+    border-style: none;
+    border-top-left-radius: 10px 5px;
+    border-top-right-radius: 10px 5px;
+    border-bottom-left-radius: 10px 5px;
+    border-bottom-right-radius: 10px 5px;
+    padding: 5px 10px;
+    background-image: linear-gradient(to top, #dbdbdb, #f0f0f0);
+    cursor: pointer;
+    box-sizing: border-box;
+    height: 50px;
+    position: relative;
+    top: 0;
+    left: 0;
+}
+
+.btn-wrapper .btn:active {
+    top: 1px;
+    left: 1px;
 }
 
 /*

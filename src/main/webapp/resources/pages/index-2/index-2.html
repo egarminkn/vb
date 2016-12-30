@@ -4,8 +4,6 @@
 		<title>Verybook</title>
 		<meta charset="UTF-8" />
         <link href="css/index-2.css" type="text/css" rel="stylesheet" />
-        <script src="js/jquery-2.2.3.min.js"></script>
-        <script src="js/index-2.js"></script>
 	</head>
 	<body onload="init()">
         <header>
@@ -53,24 +51,40 @@
             <div class="slogan">
                 Читай <a href="#" class="new-books-free">новые книги бесплатно</a>, решай их судьбу или <a href="#" class="publish-own">публикуй<div class="arrow-down"></div></a> собственные
             </div>
-            
-            <div class="border border-left border-top"></div>
-            <div class="border border-left border-bottom"></div>
-            <p class="quotes">
-                Harry Potter has never even heard of Hogwarts when the letters  start dropping on the doormat at number four, Privet  Drive. Addressed in green ink on yellowish parchment with a purple seal, they are swiftly confiscated by his grisly aunt
-            </p>
-            <div class="border border-right border-top"></div>
-            <div class="border border-right border-bottom"></div>
 
+            <!-- START (Слайдер цитат вверху страницы) -->
             <input type="radio" name="slide" id="slider-button-1" checked/>
             <input type="radio" name="slide" id="slider-button-2" />
             <input type="radio" name="slide" id="slider-button-3" />
+            <div class="quotes-slider">
+                <a class="arrow-btn left-arrow-btn" href="#">
+                    <div class="corner"></div>
+                </a>
+
+                <div class="quotes">
+                    <p class="quote quote-1">
+                        Harry Potter 1 has never even heard of Hogwarts when the letters  start dropping on the doormat at number four, Privet  Drive. Addressed in green ink on yellowish parchment with a purple seal, they are swiftly confiscated by his grisly
+                    </p>
+                    <p class="quote quote-2">
+                        Harry Potter 2 Plastics are inexpensive, lightweight and durable materials, which can readily be moulded into a variety of products that find use in a wide range of applications. As a consequence, the production of plastics has increased
+                    </p>
+                    <p class="quote quote-3">
+                        Harry Potter 3 Recycling is one of the most important actions currently available to reduce these impacts and represents one of the most dynamic areas in the plastics industry today. Recycling provides opportunities to reduce oil usage
+                    </p>
+                </div>
+
+                <a class="arrow-btn right-arrow-btn" href="#">
+                    <div class="corner"></div>
+                </a>
+            </div>
             <div class="slider-buttons">
                 <label class="slider-button" for="slider-button-1"></label>
                 <label class="slider-button" for="slider-button-2"></label>
                 <label class="slider-button" for="slider-button-3"></label>
             </div>
-            
+            <!-- END (Слайдер цитат вверху страницы) -->
+
+            <!-- START (Слайды помощи) -->
             <input type="radio" name="help-slide" id="help-slide-1" checked/>
             <input type="radio" name="help-slide" id="help-slide-2" />
             <input type="radio" name="help-slide" id="help-slide-3" />
@@ -93,7 +107,7 @@
                     </p>
                 </label>
             </div>
-            <div class="help-slide-content">
+            <div class="help-slide-content help-slide-1">
                 <div class="row row-1">
                     <a href="#">
                         Как отформатировать книгу
@@ -190,7 +204,7 @@
                 <div class="row row-2">
                     <a href="#" class="verybook-help-you">
                         <p class="verybook-help-you">
-                            Verybook поможет
+                            Verybook поможет 1
                         </p>
                         <img src="img/question-mark.png" class="verybook-help-you" />
                     </a>
@@ -198,6 +212,225 @@
                         Ever even heard of Hogwarts when the letters start dropping on the doormat
                     </p>
                 </div>
+            </div>
+            <div class="help-slide-content help-slide-2">
+                <div class="row row-1">
+                    <a href="#">
+                        Как отформатировать книгу
+                    </a>
+                    <a href="#">
+                        Сколько стоит моя книга?
+                    </a>
+                    <a href="#">
+                        На какой бумаге печатать книгу и обложку?
+                    </a>
+                    <a href="#">
+                        Переплет и количество страниц
+                    </a>
+                    <a href="#">
+                        Твердый переплет
+                    </a>
+                    <a href="#">
+                        Как определить цену?
+                    </a>
+                </div>
+
+                <div class="row row-1">
+                    <a href="#">
+                        Заголовки
+                    </a>
+                    <a href="#">
+                        Досуг и творчество
+                    </a>
+                    <a href="#">
+                        Книги для родителей
+                    </a>
+                    <a href="#">
+                        Познавательная литература
+                    </a>
+                    <a href="#">
+                        Художественная литература
+                    </a>
+                </div>
+
+                <div class="row row-1">
+                    <a href="#">
+                        Форматирование электронных книг
+                    </a>
+                    <a href="#">
+                        Досуг и творчество
+                    </a>
+                    <a href="#">
+                        Книги для родителей
+                    </a>
+                    <a href="#">
+                        Познавательная литература
+                    </a>
+                    <a href="#">
+                        Художественная литература
+                    </a>
+                </div>
+
+                <div class="row row-2">
+                    <a href="#">
+                        Процесс публикации
+                    </a>
+                    <a href="#">
+                        Досуг и творчество
+                    </a>
+                    <a href="#">
+                        Книги для родителей
+                    </a>
+                    <a href="#">
+                        Познавательная литература
+                    </a>
+                    <a href="#">
+                        Художественная литература
+                    </a>
+                </div>
+
+                <div class="row row-2">
+                    <a href="#">
+                        Текст, страницы, шрифт
+                    </a>
+                    <a href="#">
+                        Дошкольникам
+                    </a>
+                    <a href="#">
+                        Школьникам и абитуриентам
+                    </a>
+                    <a href="#">
+                        Студентам и аспирантам
+                    </a>
+                    <a href="#">
+                        Педагогам
+                    </a>
+                </div>
+
+                <div class="row row-2">
+                    <a href="#" class="verybook-help-you">
+                        <p class="verybook-help-you">
+                            Verybook поможет 2
+                        </p>
+                        <img src="img/question-mark.png" class="verybook-help-you" />
+                    </a>
+                    <p class="verybook-help-you">
+                        Ever even heard of Hogwarts when the letters start dropping on the doormat
+                    </p>
+                </div>
+            </div>
+            <div class="help-slide-content help-slide-3">
+                <div class="row row-1">
+                    <a href="#">
+                        Как отформатировать книгу
+                    </a>
+                    <a href="#">
+                        Сколько стоит моя книга?
+                    </a>
+                    <a href="#">
+                        На какой бумаге печатать книгу и обложку?
+                    </a>
+                    <a href="#">
+                        Переплет и количество страниц
+                    </a>
+                    <a href="#">
+                        Твердый переплет
+                    </a>
+                    <a href="#">
+                        Как определить цену?
+                    </a>
+                </div>
+
+                <div class="row row-1">
+                    <a href="#">
+                        Заголовки
+                    </a>
+                    <a href="#">
+                        Досуг и творчество
+                    </a>
+                    <a href="#">
+                        Книги для родителей
+                    </a>
+                    <a href="#">
+                        Познавательная литература
+                    </a>
+                    <a href="#">
+                        Художественная литература
+                    </a>
+                </div>
+
+                <div class="row row-1">
+                    <a href="#">
+                        Форматирование электронных книг
+                    </a>
+                    <a href="#">
+                        Досуг и творчество
+                    </a>
+                    <a href="#">
+                        Книги для родителей
+                    </a>
+                    <a href="#">
+                        Познавательная литература
+                    </a>
+                    <a href="#">
+                        Художественная литература
+                    </a>
+                </div>
+
+                <div class="row row-2">
+                    <a href="#">
+                        Процесс публикации
+                    </a>
+                    <a href="#">
+                        Досуг и творчество
+                    </a>
+                    <a href="#">
+                        Книги для родителей
+                    </a>
+                    <a href="#">
+                        Познавательная литература
+                    </a>
+                    <a href="#">
+                        Художественная литература
+                    </a>
+                </div>
+
+                <div class="row row-2">
+                    <a href="#">
+                        Текст, страницы, шрифт
+                    </a>
+                    <a href="#">
+                        Дошкольникам
+                    </a>
+                    <a href="#">
+                        Школьникам и абитуриентам
+                    </a>
+                    <a href="#">
+                        Студентам и аспирантам
+                    </a>
+                    <a href="#">
+                        Педагогам
+                    </a>
+                </div>
+
+                <div class="row row-2">
+                    <a href="#" class="verybook-help-you">
+                        <p class="verybook-help-you">
+                            Verybook поможет 3
+                        </p>
+                        <img src="img/question-mark.png" class="verybook-help-you" />
+                    </a>
+                    <p class="verybook-help-you">
+                        Ever even heard of Hogwarts when the letters start dropping on the doormat
+                    </p>
+                </div>
+            </div>
+            <!-- END (Слайды помощи) -->
+
+            <div class="btn-wrapper">
+                <a class="btn" href="#">
+                    Хочу создать книгу
+                </a>
             </div>
             
             <div class="books-on-shelf">
@@ -316,4 +549,8 @@
             </div>            
 		</footer>
 	</body>
+
+    <script src="js/jquery-2.2.3.min.js"></script>
+    <script src="js/index-2.js"></script>
+
 </html>
