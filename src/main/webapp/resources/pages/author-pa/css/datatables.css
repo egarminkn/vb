@@ -123,6 +123,7 @@
  ** Стилизация таблицы в отсутствие данных
  **/
 td.dataTables_empty {
+    text-align: center !important;
     padding-top: 20px !important;
     padding-bottom: 20px;
 }

@@ -751,30 +751,18 @@ main .books table tbody tr:last-child td:last-child {
 }
 
 /* выравнивание данных в ячейках таблицы с книгами автора */
-main .books table thead tr th:first-child {
+main .books table thead tr th {
+    text-align: left;
+}
+main .books table thead tr th.cover {
     text-align: center;
 }
 
-main .books table thead tr th:nth-child(2),
-main .books table thead tr th:nth-child(3),
-main .books table thead tr th:nth-child(4),
-main .books table thead tr th:nth-child(5),
-main .books table thead tr th:nth-child(6),
-main .books table thead tr th:nth-child(7) {
+main .books table tbody tr td {
     text-align: left;
 }
-
-main .books table tbody tr td:first-child {
+main .books table tbody tr td.cover {
     text-align: center;
-}
-
-main .books table tbody tr td:nth-child(2),
-main .books table tbody tr td:nth-child(3),
-main .books table tbody tr td:nth-child(4),
-main .books table tbody tr td:nth-child(5),
-main .books table tbody tr td:nth-child(6),
-main .books table tbody tr td:nth-child(7) {
-    text-align: left;
 }
 
 main .books table thead tr th.status {
