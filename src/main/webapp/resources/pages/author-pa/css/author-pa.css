@@ -1675,6 +1675,7 @@ select {
     background: url('../svg/bar_chart.svg') no-repeat;
     background-size: 15px 15px;
     padding-left: 20px;
+    //border: 1px solid black;
 }
 
 /*
@@ -1690,7 +1691,7 @@ select {
     display: flex;
     flex-direction: row;
     justify-content: flex-start;
-    align-items: flex-end;
+    align-items: center;
     //border: 1px solid black;
 }
 
