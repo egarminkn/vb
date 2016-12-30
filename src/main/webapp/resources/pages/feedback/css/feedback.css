@@ -856,6 +856,7 @@ li.bottom-level-link a {
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
+    width: 55px;
 }
 
 .spec > .main > .spec-book .cover {

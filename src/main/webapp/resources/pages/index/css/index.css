@@ -1126,157 +1126,6 @@ div.book-title-slider-in > a > div.price > span.currency {
 }
 
 /*
- *  Баннер специальных предложений
- */
-div.spec {
-    width: 199px;
-    position: relative;
-    top: 31px;
-    left: -6px;
-}
-
-/* Шапка баннера специальных предложений */
-div.spec > div.header {
-    font-family: Verdana;
-    font-size: 15px;
-    letter-spacing: 0.8px;
-    line-height: 19px;
-    font-style: italic;
-    padding-left: 17px;
-    padding-top: 15px;
-    color: #d3be4a;
-    height: 53px;    
-    border: 1px dashed #888;
-    border-top-left-radius: 5px;
-    border-top-right-radius: 5px;
-    background-color: #f5f5f5;
-}
-
-div.spec > div.header > div.arrow-down {
-    width: 15px;
-    height: 15px;
-    border-right: 2px solid #dae1ee;
-    border-bottom: 2px solid #dae1ee;
-    transform: rotate(41deg) skewX(-10deg);
-    position: relative;
-    top: -31px;
-    left: 137px;
-}
-
-/* Тело баннера специальных предложений */
-div.spec > div.main {
-    height: 395px;
-    border-bottom-left-radius: 5px;
-    border-bottom-right-radius: 5px;
-    border: 1px dashed #888;
-    border-top: none;
-    padding-left: 20px;
-    padding-top: 35px;
-}
-
-/* Книжка на баннере специальных предложений */
-div.spec > div.main > .spec-book {
-    display: block;
-    position: relative;
-    left: -5px;
-    top: -2px;
-    margin-bottom: 47px;
-}
-
-/* Обложка книжки на баннере специальных предложений */
-div.spec > div.main > .spec-book > div.cover {
-    width: 55px;
-    height: 72px;
-    overflow: hidden;
-    float: left;
-}
-
-div.spec > div.main > .spec-book > div.cover > img {
-    width: 45px;
-    box-shadow: 0 0 3px 2px #888;
-    position: relative;
-    left: 5px;
-}
-
-/* Рейтинг-звездочка у книжки на баннере специальных предложений */
-div.spec > div.main > .spec-book > div.rating::before {
-    content: '';
-    display: block;
-    position: absolute;
-    left: -17px;
-    background-image: url(../svg/rating-star.svg);
-    background-repeat: no-repeat;
-    background-size: 130%;
-    width: 50px;
-    height: 50px;    
-}
-
-div.spec > div.main > .spec-book > div.rating {
-    font-family: Tahoma;
-    font-size: 10px;
-    color: #0acd1c;
-    letter-spacing: 0.3px;
-    position: relative;
-    top: 1px;
-    left: 19px;
-}
-
-/* Описание книжки на баннере специальных предложений */
-div.spec > div.main > .spec-book > div.content {
-    position: relative;
-    left: 15px;
-    top: -3px;
-    padding-right: 10px;
-    height: 75px;
-    //border: 1px solid black;
-}
-
-/* Заголовок книжки на баннере специальных предложений */
-div.spec > div.main > .spec-book > div.content > div.title {
-    font-family: Tahoma;
-    font-size: 11px;
-    color: #d3be4a;
-    letter-spacing: 0.3px;
-    text-decoration: underline;
-    line-height: 16px;
-    margin-bottom: 4px;
-}
-
-/* Имя автора книжки на баннере специальных предложений */
-div.spec > div.main > .spec-book > div.content > div.author-name {
-    font-family: Tahoma;
-    font-size: 10px;
-    color: #6e6e6e;
-    text-decoration: underline;
-    letter-spacing: 0.3px;
-    margin-bottom: 9px;
-}
-
-/* Цена книжки на баннере специальных предложений */
-div.spec > div.main > .spec-book div.cost {
-    display: inline-block;
-    font-family: Tahoma;
-    font-size: 11.5px;
-    color: white;
-    height: 18px;
-    transform: skewX(15deg);
-    background-image: linear-gradient(#f9a47c 10%, #e9773e 60%);
-    margin-left: 4px;
-    position: absolute;
-    bottom: 0;
-}
-
-div.spec > div.main > .spec-book div.cost > span {
-    display: inline-block;
-    transform: skewX(-15deg);
-    box-sizing: border-box;
-    padding: 2px 13px;
-    padding-bottom: 15px;
-    position: relative;
-    left: 2px;
-}
-
-/*
  *  Левое меню
  */
 div.links {
@@ -1334,6 +1183,13 @@ li.bottom-level-link > a {
     font-size: 12px;
     color: #5f7495;
     letter-spacing: 0.3px;
+}
+
+/*
+ * Стилизация блока спец.предложений
+ */
+.spec {
+    margin-top: 50px;
 }
 
 /*
@@ -1562,6 +1418,192 @@ div.seo > div.body > p {
     line-height: 27px;
     margin-bottom: 40px;
 }
+
+/***
+ *** Общее
+ ***/
+/**
+ **  Баннер специальных предложений
+ **/
+.spec {
+    width: 199px;
+}
+
+/* Шапка баннера специальных предложений */
+.spec > .header {
+    font-family: Verdana;
+    font-size: 15px;
+    letter-spacing: 0.8px;
+    line-height: 19px;
+    font-style: italic;
+    padding-left: 17px;
+    padding-top: 15px;
+    color: #d3be4a;
+    height: 53px;
+    border: 1px dashed #888;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    background-color: #f5f5f5;
+}
+
+.spec > .header > .arrow-down {
+    width: 15px;
+    height: 15px;
+    border-right: 2px solid #dae1ee;
+    border-bottom: 2px solid #dae1ee;
+    transform: rotate(41deg) skewX(-10deg);
+    position: relative;
+    top: -31px;
+    left: 137px;
+}
+
+/* Тело баннера специальных предложений */
+.spec > .main {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    box-sizing: border-box;
+    width: 100%;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+    border: 1px dashed #888;
+    border-top: none;
+    padding: 30px 10px;
+}
+
+.spec > .main .show-all {
+    font-family: Tahoma;
+    font-size: 12px;
+    color: #667493;
+    text-align: center;
+}
+
+/* Книжка на баннере специальных предложений */
+.spec > .main > .spec-book {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    margin-bottom: 30px;
+    text-decoration: none;
+}
+
+.spec > .main > .spec-book .cover-rating {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    width: 55px;
+}
+
+.spec > .main > .spec-book .cover {
+    width: 45px;
+    box-shadow: 2px 0 3px -2px #888,
+                -2px 0 3px -2px #888;
+    position: relative;
+    left: 5px;
+}
+
+/* Рейтинг-звездочка у книжки на баннере специальных предложений */
+.spec > .main > .spec-book .rating::before {
+    content: '';
+    display: inline-block;
+    vertical-align: middle;
+    background-image: url(../svg/rating-star.svg);
+    background-repeat: no-repeat;
+    background-size: 15px;
+    width: 15px;
+    height: 15px;
+}
+
+.spec > .main > .spec-book .rating {
+    display: inline-block;
+    vertical-align: middle;
+    font-family: Tahoma;
+    font-size: 12px;
+    color: #0acd1c;
+    letter-spacing: 0.3px;
+    position: relative;
+    top: 2px;
+    left: 10px;
+    //border: 1px solid black;
+}
+
+/* Описание книжки на баннере специальных предложений */
+.spec > .main > .spec-book > .content {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    position: relative;
+    left: 15px;
+    top: -3px;
+    padding-right: 10px;
+    height: 88px;
+    //border: 1px solid black;
+}
+
+/* Заголовок книжки на баннере специальных предложений */
+.spec > .main > .spec-book > .content > .title {
+    font-family: Tahoma;
+    font-size: 11px;
+    color: #d3be4a;
+    letter-spacing: 0.3px;
+    text-decoration: underline;
+    line-height: 16px;
+    margin-bottom: 4px;
+}
+
+/* Имя автора книжки на баннере специальных предложений */
+.spec > .main > .spec-book > .content > .author-name {
+    font-family: Tahoma;
+    font-size: 10px;
+    color: #6e6e6e;
+    text-decoration: underline;
+    letter-spacing: 0.3px;
+    margin-bottom: 9px;
+}
+
+/* Цена книжки на баннере специальных предложений */
+.spec > .main > .spec-book .price {
+    display: inline-block;
+    font-family: Tahoma;
+    font-size: 11.5px;
+    color: white;
+    height: 18px;
+    transform: skewX(15deg);
+    background-image: linear-gradient(#f9a47c 10%, #e9773e 60%);
+    margin-left: 4px;
+    position: absolute;
+    bottom: 0;
+}
+
+.spec > .main > .spec-book .price > span {
+    display: inline-block;
+    transform: skewX(-15deg);
+    box-sizing: border-box;
+    padding: 2px 13px;
+    padding-bottom: 15px;
+    position: relative;
+    left: 2px;
+}
+
+.spec > .main > .spec-book .price > span.value {
+    padding-right: 0;
+}
+
+.spec > .main > .spec-book .price > span.currency {
+    padding-left: 0;
+}
+
+/*
+ * Обложка электронной книги на баннере специальных предложений
+ */
+.spec > .main > .spec-book .cover {
+    width: 55px;
+    height: 88px;
+    overflow: hidden;
+    float: left;
+}
+
+/* --------------------------------------------------------------------------------------------------------- */
 
 /*
  *  Футер
