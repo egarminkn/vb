@@ -2081,6 +2081,81 @@ select {
     //border: 1px solid black;
 }
 
+/***
+ *** Модальные окна
+ ***/
+.modal {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: rgba(0, 0, 0, 0.8);
+    z-index: 100;
+    opacity: 0;
+    transition: opacity 400ms ease-in;
+    pointer-events: none;
+}
+
+.modal:target {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.modal > div {
+    font-family: Tahoma;
+    position: relative;
+    margin: 10% auto;
+    padding: 20px;
+    box-sizing: border-box;
+    border-radius: 5px;
+    width: 400px;
+    background-image: linear-gradient(white, #999);
+}
+
+/* Кнопка закрытия модального окна */
+.modal .close {
+    display: block;
+    position: absolute;
+    right: -10px;
+    top: -10px;
+    box-sizing: border-box;
+    height: 25px;
+    width: 25px;
+    border-radius: 50%;
+    text-decoration: none;
+    background: #888;
+    transform: rotate(45deg);
+}
+
+.modal .close::before {
+    content: '';
+    display: block;
+    position: absolute;
+    top: 6px;
+    left: 11px;
+    box-sizing: border-box;
+    width: 3px;
+    height: 13px;
+    background: white;
+}
+
+.modal .close::after {
+    content: '';
+    display: block;
+    position: absolute;
+    top: 11px;
+    left: 6px;
+    box-sizing: border-box;
+    width: 13px;
+    height: 3px;
+    background: white;
+}
+
+.modal .close:hover {
+    background: #657392;
+}
+
 /* ---------------------------------------------------------------------------------------------------- */
 
 /*
