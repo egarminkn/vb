@@ -229,19 +229,29 @@
             </div>
             
             <div class="books">
+                <input type="radio" name="write-read" id="write" checked>
+                <input type="radio" name="write-read" id="read">
                 <div class="header">
-                    <div class="title">
-                        Мои книги
-                    </div>
-                    <a class="create-book" href="#">
-                        <span class="plus"></span>
-                        <span class="text">
-                            Создать новую книгу
-                        </span>
-                    </a>
+                    <label for="write">
+                        <div class="title">
+                            Мои книги
+                        </div>
+                        <a class="create-book" href="#">
+                            <span class="plus"></span>
+                            <span class="text">
+                                Создать новую книгу
+                            </span>
+                        </a>
+                    </label>
+                    <label for="read">
+                        <div class="title">
+                            Купленные книги
+                        </div>
+                    </label>
                 </div>
-                <div class="table-with-shadow">
-                    <table class="table">
+
+                <div class="table-with-shadow write">
+                    <table class="table write">
                         <thead class="thead">
                             <tr class="tr">
                                 <th class="th cover">
@@ -268,7 +278,7 @@
                                     <span class="like"></span> / <span class="dislike"></span>
                                 </th>
                                 <th class="th price">
-                                    <span>Цена</span>
+                                    <span>Текущая цена</span>
                                 </th>
                                 <th class="th profit">
                                     <span>Прибыль</span>
@@ -954,6 +964,433 @@
                     <div class="shadow-under">
                     </div>
                 </div>
+
+                <div class="table-with-shadow read">
+                    <table class="table read">
+                        <thead class="thead">
+                            <tr class="tr">
+                                <th class="th product">
+                                    Книга
+                                </th>
+                                <th class="th date">
+                                    Дата публикации
+                                </th>
+                                <th class="th price">
+                                    <span>Цена покупки</span>
+                                </th>
+                                <th class="th download">
+                                    <span>Скачать</span>
+                                </th>
+                            </tr>
+                        </thead>
+                        <tbody class="tbody">
+                            <tr class="tr">
+                                <td class="td product">
+                                    <div class="book">
+                                        <div class="cover">
+                                            <a class="to-book" href="#">
+                                                <img src="img/book1.jpg" width="100" height="160">
+                                            </a>
+                                        </div>
+                                        <div class="title-author">
+                                            <a class="to-book" href="#">
+                                                Полет над гнездом кукушки
+                                            </a>
+                                            <a class="to-author" href="#">
+                                                Александр Иванов
+                                            </a>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td class="td date">
+                                    <span>
+                                        12 сентября 2015 года
+                                    </span>
+                                </td>
+                                <td class="td price">
+                                    <span class="number">5140</span>
+                                    <span class="currency">
+                                        <img src="svg/ruble-currency-sign.svg" width="511" height="511">
+                                    </span>
+                                </td>
+                                <td class="td download">
+                                    <span>Форматы:</span>
+                                    <ul class="formats">
+                                        <li class="format">
+                                            <button>epub</button>
+                                        </li>
+                                        <li class="format">
+                                            <button>pdf</button>
+                                        </li>
+                                    </ul>
+                                </td>
+                            </tr>
+                            <tr class="tr">
+                                <td class="td product">
+                                    <div class="book">
+                                        <div class="cover">
+                                            <a class="to-book" href="#">
+                                                <img src="img/book2.jpg" width="100" height="160">
+                                            </a>
+                                        </div>
+                                        <div class="title-author">
+                                            <a class="to-book" href="#">
+                                                Как отравили Сталина
+                                            </a>
+                                            <a class="to-author" href="#">
+                                                Александр Константинопольский
+                                            </a>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td class="td date">
+                                    <span>
+                                        26 июня 2015 года
+                                    </span>
+                                </td>
+                                <td class="td price">
+                                    <span class="number">651</span>
+                                    <span class="currency">
+                                        <img src="svg/ruble-currency-sign.svg" width="511" height="511">
+                                    </span>
+                                </td>
+                                <td class="td download">
+                                    <span>Форматы:</span>
+                                    <ul class="formats">
+                                        <li class="format">
+                                            <button>pdf</button>
+                                        </li>
+                                        <li class="format">
+                                            <button>fb2</button>
+                                        </li>
+                                    </ul>
+                                </td>
+                            </tr>
+                            <tr class="tr">
+                                <td class="td product">
+                                    <div class="book">
+                                        <div class="cover">
+                                            <a class="to-book" href="#">
+                                                <img src="img/book3.jpg" width="100" height="160">
+                                            </a>
+                                        </div>
+                                        <div class="title-author">
+                                            <a class="to-book" href="#">
+                                                Полет над гнездом кукушки
+                                            </a>
+                                            <a class="to-author" href="#">
+                                                Александр Иванов
+                                            </a>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td class="td date">
+                                    <span>
+                                        16 ноября 2014 года
+                                    </span>
+                                </td>
+                                <td class="td price">
+                                    <span class="number">501</span>
+                                    <span class="currency">
+                                        <img src="svg/ruble-currency-sign.svg" width="511" height="511">
+                                    </span>
+                                </td>
+                                <td class="td download">
+                                    <span>Форматы:</span>
+                                    <ul class="formats">
+                                        <li class="format">
+                                            <button>epub</button>
+                                        </li>
+                                    </ul>
+                                </td>
+                            </tr>
+                            <tr class="tr">
+                                <td class="td product">
+                                    <div class="book">
+                                        <div class="cover">
+                                            <a class="to-book" href="#">
+                                                <img src="img/book4.jpg" width="100" height="160">
+                                            </a>
+                                        </div>
+                                        <div class="title-author">
+                                            <a class="to-book" href="#">
+                                                С широко открытыми глазами
+                                            </a>
+                                            <a class="to-author" href="#">
+                                                Александр Иванов
+                                            </a>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td class="td date">
+                                    <span>
+                                        6 сентября 2013 года
+                                    </span>
+                                </td>
+                                <td class="td price">
+                                    <span class="number">5551</span>
+                                    <span class="currency">
+                                        <img src="svg/ruble-currency-sign.svg" width="511" height="511">
+                                    </span>
+                                </td>
+                                <td class="td download">
+                                    <span>Форматы:</span>
+                                    <ul class="formats">
+                                        <li class="format">
+                                            <button>epub</button>
+                                        </li>
+                                        <li class="format">
+                                            <button>pdf</button>
+                                        </li>
+                                    </ul>
+                                </td>
+                            </tr>
+                            <tr class="tr">
+                                <td class="td product">
+                                    <div class="book">
+                                        <div class="cover">
+                                            <a class="to-book" href="#">
+                                                <img src="img/book5.jpg" width="100" height="160">
+                                            </a>
+                                        </div>
+                                        <div class="title-author">
+                                            <a class="to-book" href="#">
+                                                Полет над гнездом кукушки
+                                            </a>
+                                            <a class="to-author" href="#">
+                                                Владимир Рудольфович
+                                            </a>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td class="td date">
+                                    <span>
+                                        11 марта 2015 года
+                                    </span>
+                                </td>
+                                <td class="td price">
+                                    <span class="number">5</span>
+                                    <span class="currency">
+                                        <img src="svg/ruble-currency-sign.svg" width="511" height="511">
+                                    </span>
+                                </td>
+                                <td class="td download">
+                                    <span>Форматы:</span>
+                                    <ul class="formats">
+                                        <li class="format">
+                                            <button>fb2</button>
+                                        </li>
+                                    </ul>
+                                </td>
+                            </tr>
+                            <tr class="tr">
+                                <td class="td product">
+                                    <div class="book">
+                                        <div class="cover">
+                                            <a class="to-book" href="#">
+                                                <img src="img/book1.jpg" width="100" height="160">
+                                            </a>
+                                        </div>
+                                        <div class="title-author">
+                                            <a class="to-book" href="#">
+                                                Как отравили Сталина
+                                            </a>
+                                            <a class="to-author" href="#">
+                                                Александр Константинопольский
+                                            </a>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td class="td date">
+                                    <span>
+                                        7 октября 2016 года
+                                    </span>
+                                </td>
+                                <td class="td price">
+                                    <span class="number">501</span>
+                                    <span class="currency">
+                                        <img src="svg/ruble-currency-sign.svg" width="511" height="511">
+                                    </span>
+                                </td>
+                                <td class="td download">
+                                    <span>Форматы:</span>
+                                    <ul class="formats">
+                                        <li class="format">
+                                            <button>pdf</button>
+                                        </li>
+                                        <li class="format">
+                                            <button>fb2</button>
+                                        </li>
+                                    </ul>
+                                </td>
+                            </tr>
+                            <tr class="tr">
+                                <td class="td product">
+                                    <div class="book">
+                                        <div class="cover">
+                                            <a class="to-book" href="#">
+                                                <img src="img/book2.jpg" width="100" height="160">
+                                            </a>
+                                        </div>
+                                        <div class="title-author">
+                                            <a class="to-book" href="#">
+                                                Далеко за горизонтом
+                                            </a>
+                                            <a class="to-author" href="#">
+                                                Владимир Рудольфович
+                                            </a>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td class="td date">
+                                    <span>
+                                        1 января 2010 года
+                                    </span>
+                                </td>
+                                <td class="td price">
+                                    <span class="number">515</span>
+                                    <span class="currency">
+                                        <img src="svg/ruble-currency-sign.svg" width="511" height="511">
+                                    </span>
+                                </td>
+                                <td class="td download">
+                                    <span>Форматы:</span>
+                                    <ul class="formats">
+                                        <li class="format">
+                                            <button>epub</button>
+                                        </li>
+                                        <li class="format">
+                                            <button>pdf</button>
+                                        </li>
+                                    </ul>
+                                </td>
+                            </tr>
+                            <tr class="tr">
+                                <td class="td product">
+                                    <div class="book">
+                                        <div class="cover">
+                                            <a class="to-book" href="#">
+                                                <img src="img/book3.jpg" width="100" height="160">
+                                            </a>
+                                        </div>
+                                        <div class="title-author">
+                                            <a class="to-book" href="#">
+                                                С широко открытыми глазами
+                                            </a>
+                                            <a class="to-author" href="#">
+                                                Александр Иванов
+                                            </a>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td class="td date">
+                                    <span>
+                                        14 февраля 2012 года
+                                    </span>
+                                </td>
+                                <td class="td price">
+                                    <span class="number">151</span>
+                                    <span class="currency">
+                                        <img src="svg/ruble-currency-sign.svg" width="511" height="511">
+                                    </span>
+                                </td>
+                                <td class="td download">
+                                    <span>Форматы:</span>
+                                    <ul class="formats">
+                                        <li class="format">
+                                            <button>epub</button>
+                                        </li>
+                                    </ul>
+                                </td>
+                            </tr>
+                            <tr class="tr">
+                                <td class="td product">
+                                    <div class="book">
+                                        <div class="cover">
+                                            <a class="to-book" href="#">
+                                                <img src="img/book4.jpg" width="100" height="160">
+                                            </a>
+                                        </div>
+                                        <div class="title-author">
+                                            <a class="to-book" href="#">
+                                                Полет над гнездом кукушки
+                                            </a>
+                                            <a class="to-author" href="#">
+                                                Александр Константинопольский
+                                            </a>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td class="td date">
+                                    <span>
+                                        6 мая 2009 года
+                                    </span>
+                                </td>
+                                <td class="td price">
+                                    <span class="number">2251</span>
+                                    <span class="currency">
+                                        <img src="svg/ruble-currency-sign.svg" width="511" height="511">
+                                    </span>
+                                </td>
+                                <td class="td download">
+                                    <span>Форматы:</span>
+                                    <ul class="formats">
+                                        <li class="format">
+                                            <button>epub</button>
+                                        </li>
+                                        <li class="format">
+                                            <button>fb2</button>
+                                        </li>
+                                    </ul>
+                                </td>
+                            </tr>
+                            <tr class="tr">
+                                <td class="td product">
+                                    <div class="book">
+                                        <div class="cover">
+                                            <a class="to-book" href="#">
+                                                <img src="img/book5.jpg" width="100" height="160">
+                                            </a>
+                                        </div>
+                                        <div class="title-author">
+                                            <a class="to-book" href="#">
+                                                Летящие в облаках
+                                            </a>
+                                            <a class="to-author" href="#">
+                                                Владимир Рудольфович
+                                            </a>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td class="td date">
+                                    <span>
+                                        26 сентября 2015 года
+                                    </span>
+                                </td>
+                                <td class="td price">
+                                    <span class="number">511</span>
+                                    <span class="currency">
+                                        <img src="svg/ruble-currency-sign.svg" width="511" height="511">
+                                    </span>
+                                </td>
+                                <td class="td download">
+                                    <span>Форматы:</span>
+                                    <ul class="formats">
+                                        <li class="format">
+                                            <button>epub</button>
+                                        </li>
+                                        <li class="format">
+                                            <button>fb2</button>
+                                        </li>
+                                    </ul>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                    <div class="shadow-under">
+                    </div>
+                </div>
             </div>
         </main>
         
@@ -1094,7 +1531,7 @@
                 },
                 lengthMenu: [ 5, 10, 15 ],
                 drawCallback: function () {
-                    var paginateButtons = $('.dataTables_wrapper').find('.paginate_button');
+                    var paginateButtons = $(this).nextAll('.dataTables_paginate').find('.paginate_button');
                     if (paginateButtons.size() > 5) {
                         paginateButtons.show();
                     } else {

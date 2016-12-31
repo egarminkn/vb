@@ -698,9 +698,34 @@ main .books {
 main .books .header {
     display: flex;
     flex-direction: row;
-    justify-content: flex-start;
+    justify-content: space-between;
+    align-items: flex-end;
+    //border: 1px solid black;
+}
+
+main .books .header label {
+    display: flex;
+    flex-direction: row;
     align-items: center;
+    width: 50%;
+    cursor: pointer;
+    //border: 1px solid black;
+}
+
+main .books .header label[for="write"] {
+    justify-content: flex-start;
+}
+
+main .books .header label[for="write"] .title {
     margin-left: 10px;
+}
+
+main .books .header label[for="read"] {
+    justify-content: flex-end;
+}
+
+main .books .header label[for="read"] .title {
+    margin-right: 10px;
 }
 
 main .books table {
@@ -712,7 +737,7 @@ main .books table {
     border-spacing: 0;
 }
 
-/* стилизация закруглений и штриховки таблицы с книгами автора */
+/* стилизация закруглений и штриховки таблицы с книгами */
 main .books table thead tr th,
 main .books table tbody tr td {
     font-family: Tahoma;
@@ -750,27 +775,42 @@ main .books table tbody tr:last-child td:last-child {
     border-bottom-right-radius: 5px;
 }
 
-/* выравнивание данных в ячейках таблицы с книгами автора */
+/* выравнивание данных в ячейках таблицы с книгами */
 main .books table thead tr th {
     text-align: left;
 }
-main .books table thead tr th.cover {
+main .books table.write thead tr th.cover {
+    text-align: center;
+}
+main .books table.read thead tr th.product {
     text-align: center;
 }
 
 main .books table tbody tr td {
     text-align: left;
 }
-main .books table tbody tr td.cover {
+main .books table.write tbody tr td.cover {
+    text-align: center;
+}
+main .books table.read tbody tr td.product {
     text-align: center;
 }
 
-main .books table thead tr th.status {
+main .books table.write thead tr th.status {
     padding-left: 15px;
 }
 
-main .books table tbody tr td.profit {
-    padding-left: 30px;
+main .books table tbody tr td.price .number {
+    margin-left: 10%;
+}
+
+main .books table.write tbody tr td.profit .number {
+    margin-left: 20%;
+}
+
+main .books table.read tbody tr td {
+    padding-top: 20px;
+    padding-bottom: 20px;
 }
 
 /*
@@ -1236,23 +1276,76 @@ main .books .header .title {
 }
 
 /*
+ * Вкладки переключения между написанными и купленными книгами
+ */
+main .books input[type="radio"] {
+    display: none;
+}
+
+main .books .header label {
+    border: 1px dashed #b7b7b7;
+    border-bottom-style: none;
+    border-radius: 5px;
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+    width: 49%;
+}
+
+main .books .table-with-shadow {
+    display: none;
+}
+
+/* не выбрана */
+#write:not(:checked) ~ .header label[for="write"] {
+    border-top-right-radius: 0;
+    border-right-style: none;
+}
+
+#read:not(:checked) ~ .header label[for="read"] {
+    border-top-left-radius: 0;
+    border-left-style: none;
+}
+
+/* выбрана */
+#write:checked ~ .header label[for="write"] {
+    padding-left: 1%;
+}
+
+#read:checked ~ .header label[for="read"] {
+    padding-right: 1%;
+}
+
+#write:checked ~ .header label[for="write"],
+#read:checked ~ .header label[for="read"] {
+    height: 40px;
+    width: 51%;
+    border-style: solid;
+    border-bottom-style: none;
+}
+
+#write:checked ~ .table-with-shadow.write,
+#read:checked ~ .table-with-shadow.read {
+    display: block;
+}
+
+/*
  * Ссылка создания новой книги
  */
-main .books .header .create-book {
+main .books .header label[for="write"] .create-book {
     text-decoration: none;
     font-family: Tahoma;
     font-size: 12px;
     margin-left: 50px;
 }
 
-main .books .header .create-book .text {
+main .books .header label[for="write"] .create-book .text {
     display: inline-block;
     vertical-align: middle;
     text-decoration: underline;
     color: #d3be4a;
 }
 
-main .books .header .create-book .plus {
+main .books .header label[for="write"] .create-book .plus {
     display: inline-block;
     vertical-align: middle;
     position: relative;
@@ -1264,7 +1357,7 @@ main .books .header .create-book .plus {
     border-radius: 50%;
 }
 
-main .books .header .create-book .plus::before {
+main .books .header label[for="write"] .create-book .plus::before {
     content: '';
     display: block;
     position: absolute;
@@ -1276,7 +1369,7 @@ main .books .header .create-book .plus::before {
     background: #bababa;
 }
 
-main .books .header .create-book .plus::after {
+main .books .header label[for="write"] .create-book .plus::after {
     content: '';
     display: block;
     position: absolute;
@@ -1289,7 +1382,7 @@ main .books .header .create-book .plus::after {
 }
 
 /*
- * Таблица с книгами автора
+ * Таблицы с книгами
  */
 /*
  * Строка Заголовка
@@ -1302,16 +1395,16 @@ main .books table thead tr th {
 }
 
 /* колонка Количества скачиваний */
-main .books table thead tr th.download .th-2 {
+main .books table.write thead tr th.download .th-2 {
     font-size: 11px;
 }
 
-main .books table thead tr th.download .th-2 .paid {
+main .books table.write thead tr th.download .th-2 .paid {
     color: #1f9b02;
 }
 
 /* колонка Лайков */
-main .books table thead tr th.likes span {
+main .books table.write thead tr th.likes span {
     display: inline-block;
     vertical-align: bottom;
     width: 17px;
@@ -1320,11 +1413,11 @@ main .books table thead tr th.likes span {
     background-size: 100%;
 }
 
-main .books table thead tr th.likes span.like {
+main .books table.write thead tr th.likes span.like {
     margin-right: 7px;
 }
 
-main .books table thead tr th.likes span.dislike {
+main .books table.write thead tr th.likes span.dislike {
     transform: scale(-1);
     margin-left: 7px;
     position: relative;
@@ -1332,7 +1425,7 @@ main .books table thead tr th.likes span.dislike {
 }
 
 /* колонка Прибыль */
-main .books table thead tr th.profit::before {
+main .books table.write thead tr th.profit::before {
     content: '';
     display: inline-block;
     vertical-align: middle;
@@ -1342,7 +1435,7 @@ main .books table thead tr th.profit::before {
     background-size: 100%;
 }
 
-main .books table thead tr th.profit span {
+main .books table.write thead tr th.profit span {
     display: inline-block;
     vertical-align: middle;
     margin-left: 5px;
@@ -1351,30 +1444,106 @@ main .books table thead tr th.profit span {
 /*
  * Строки с данными
  */
+/*
+ * Таблица Купленные книги
+ */
+/*
+ * Книги
+ */
+main .books table.read tbody tr td.product .book {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    max-width: 200px;
+    margin: auto;
+    //border: 1px solid black;
+}
+
 /* обложка */
-main .books table tbody tr td.cover {
+main .books table.read tbody tr td.product .book img {
+    width: 50px;
+    height: 80px;
+}
+
+/* название и автор */
+main .books table.read tbody tr td.product .book .title-author {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    margin-left: 5px;
+}
+
+main .books table.read tbody tr td.product .book .title-author a {
+    color: #667393;
+    text-align: left;
+    //border: 1px solid black;
+}
+
+main .books table.read tbody tr td.product .book .title-author a.to-book {
+    font-weight: bold;
+}
+
+main .books table.read tbody tr td.product .book .title-author a.to-author {
+    font-size: 11px;
+    margin-top: 5px;
+}
+
+/*
+ * Колонка Скачать
+ */
+main .books table.read tbody tr td.download ul.formats {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+main .books table.read tbody tr td.download ul.formats li.format {
+    margin-top: 5px;
+    //border: 1px solid black;
+}
+
+main .books table.read tbody tr td.download ul.formats li.format button {
+    margin-left: 10%;
+    border: 1px solid #afb9ca;
+    border-radius: 5px;
+    padding: 5px;
+    cursor: pointer;
+    outline: none;
+    background-image: linear-gradient(to top, #afb9ca, white);
+}
+
+main .books table.read tbody tr td.download ul.formats li.format button:active {
+    box-shadow: inset 0 0 15px 0 #afb9ca;
+}
+
+/*
+ * Таблица Мои книги
+ */
+/* обложка */
+main .books table.write tbody tr td.cover {
     height: 110px;
     vertical-align: middle;
 }
 
-main .books table tbody tr td.cover img {
+main .books table.write tbody tr td.cover img {
     width: 50px;
     height: 80px;
 }
 
 /* не обложка */
-main .books table tbody tr td:not(.cover) {
+main .books table.write tbody tr td:not(.cover) {
     vertical-align: top;
     padding-top: 40px;
 }
 
 /* Название книги */
-main .books table tbody tr td.title {
+main .books table.write tbody tr td.title {
     max-width: 110px;
     white-space: nowrap;
 }
 
-main .books table tbody tr td.title .book {
+main .books table.write tbody tr td.title .book {
     display: inline-block;
     font-family: Tahoma;
     font-size: 14px;
@@ -1384,7 +1553,7 @@ main .books table tbody tr td.title .book {
     //border: 1px solid black;
 }
 
-main .books table tbody tr td.title .edit {
+main .books table.write tbody tr td.title .edit {
     display: inline-block;
     vertical-align: top;
     position: relative;
@@ -1395,14 +1564,14 @@ main .books table tbody tr td.title .edit {
 /*
  * Статус книги
  */
-main .books table tbody tr td.status .current-status {
+main .books table.write tbody tr td.status .current-status {
     font-family: Tahoma;
     font-size: 13px;
     white-space: nowrap;
     //border: 1px solid black;
 }
 
-main .books table tbody tr td.status .current-status::before {
+main .books table.write tbody tr td.status .current-status::before {
     content: '';
     display: inline-block;
     vertical-align: middle;
@@ -1413,7 +1582,7 @@ main .books table tbody tr td.status .current-status::before {
     background: black;
 }
 
-main .books table tbody tr td.status .current-status .text {
+main .books table.write tbody tr td.status .current-status .text {
     display: inline-block;
     vertical-align: middle;
     margin-left: 5px;
@@ -1422,42 +1591,42 @@ main .books table tbody tr td.status .current-status .text {
 }
 
 /* стилизация статуса книги */
-main .books table tbody tr td.status .current-status.published::before {
+main .books table.write tbody tr td.status .current-status.published::before {
     background: #1f9b02;
 }
-main .books table tbody tr td.status .current-status.published .text {
+main .books table.write tbody tr td.status .current-status.published .text {
     color: #1f9b02;
 }
 
-main .books table tbody tr td.status .current-status.rejected::before {
+main .books table.write tbody tr td.status .current-status.rejected::before {
     background: #b60000;
 }
-main .books table tbody tr td.status .current-status.rejected .text {
+main .books table.write tbody tr td.status .current-status.rejected .text {
     color: #b60000;
 }
 
-main .books table tbody tr td.status .current-status.on-moderation::before {
+main .books table.write tbody tr td.status .current-status.on-moderation::before {
     background: #ccbd54;
 }
-main .books table tbody tr td.status .current-status.on-moderation .text {
+main .books table.write tbody tr td.status .current-status.on-moderation .text {
     color: #ccbd54;
 }
 
-main .books table tbody tr td.status .current-status.not-published::before {
+main .books table.write tbody tr td.status .current-status.not-published::before {
     background: #3c3c3c;
 }
-main .books table tbody tr td.status .current-status.not-published .text {
+main .books table.write tbody tr td.status .current-status.not-published .text {
     color: #3c3c3c;
 }
 
 /*
  * Список действий
  */
-main .books table tbody tr td.status {
+main .books table.write tbody tr td.status {
     max-width: 90px;
 }
 
-main .books table tbody tr td.status .actions {
+main .books table.write tbody tr td.status .actions {
     list-style: none;
     padding: 0;
     margin: 0;
@@ -1465,27 +1634,27 @@ main .books table tbody tr td.status .actions {
     //width: 100%;
 }
 
-main .books table tbody tr td.status .actions .action {
+main .books table.write tbody tr td.status .actions .action {
     margin-top: 5px;
     position: relative;
     max-width: 110px;
     //border: 1px solid black;
 }
 
-main .books table tbody tr td.status .actions .action a {
+main .books table.write tbody tr td.status .actions .action a {
     font-family: Tahoma;
     font-size: 11px;
 }
 
 /* стилизация списка действий */
-main .books table tbody tr td.status .actions .action.publish a {
+main .books table.write tbody tr td.status .actions .action.publish a {
     color: #667393;
 }
 
-main .books table tbody tr td.status .actions .action.withdraw a {
+main .books table.write tbody tr td.status .actions .action.withdraw a {
     color: #b60000;
 }
-main .books table tbody tr td.status .actions .action.withdraw::before {
+main .books table.write tbody tr td.status .actions .action.withdraw::before {
     content: '';
     display: block;
     position: absolute;
@@ -1497,7 +1666,7 @@ main .books table tbody tr td.status .actions .action.withdraw::before {
     background: #b60000;
     transform: rotate(45deg);
 }
-main .books table tbody tr td.status .actions .action.withdraw::after {
+main .books table.write tbody tr td.status .actions .action.withdraw::after {
     content: '';
     display: block;
     position: absolute;
@@ -1511,7 +1680,7 @@ main .books table tbody tr td.status .actions .action.withdraw::after {
 }
 
 /* добавление знака вопроса (ссылки) для статуса Отклонено */
-main .books table tbody tr td.status .current-status.rejected a.rejected {
+main .books table.write tbody tr td.status .current-status.rejected a.rejected {
     display: inline-block;
     vertical-align: middle;
     width: 12px;
@@ -1523,31 +1692,31 @@ main .books table tbody tr td.status .current-status.rejected a.rejected {
 /*
  * Колонка - Скачали
  */
-main .books table tbody tr td.download {
+main .books table.write tbody tr td.download {
     font-family: Tahoma;
     font-size: 13px;
 }
 
-main .books table tbody tr td.download .paid {
+main .books table.write tbody tr td.download .paid {
     color: #1f9b02;
 }
 
 /*
  * Колонка - Лайки / дизлайки
  */
-main .books table tbody tr td.likes {
+main .books table.write tbody tr td.likes {
     font-family: Tahoma;
     font-size: 13px;
 }
 
-main .books table tbody tr td.likes .dislike {
+main .books table.write tbody tr td.likes .dislike {
     color: #cb2d27;
 }
 
 /*
  * Колонка - Прибыль
  */
-main .books table tbody tr td.profit {
+main .books table.write tbody tr td.profit {
     font-family: Tahoma;
     font-size: 13px;
 }
@@ -1573,7 +1742,7 @@ main .books table tbody tr td.profit {
     //border: 1px solid black;
 }
 
-.table-with-shadow table .actions .action {
+.table-with-shadow table.write .actions .action {
     z-index: 1;
 }
 
