@@ -284,13 +284,18 @@
                                                                id="card-expired" 
                                                                maxlength="9" 
                                                                name="card-expired" 
-                                                               pattern="\d*" 
-                                                               x-autocompletetype="cc-exp" 
+                                                               x-autocompletetype="cc-exp"
                                                                required 
                                                                placeholder="MM/YY">
                                                     </div>
                                                 </div>
                                             </div>
+                                            <button type="submit" style="display: none;">
+                                                <!--
+                                                    Перед тем как сабмитить форму по событию клик кнопки будет идти проверка
+                                                    required полей и прочая валидация по паттернам, если таковая имеется
+                                                -->
+                                            </button>
                                         </form>
                                     </div>
                                 </div>
@@ -749,7 +754,9 @@
                 }
                 
                 if ($('#card').prop('checked')) {
-                    $('.card-info').find('form').trigger('submit');
+                    // Перед тем как сабмитить форму по событию клик кнопки будет идти проверка
+                    // required полей и прочая валидация по паттернам, если таковая имеется
+                    $('.card-info').find('form').find('[type="submit"]').trigger('click');
                 } else {
                     console.log("Пока не знаю, что делать для PayPal");
                 }
