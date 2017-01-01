@@ -1401,9 +1401,9 @@
                     <div class="receive-money">
                         <h2>Укажите, пожалуйста, реквизиты платежа</h2>
 
-                        <input type="radio" name="payment-mode" id="yandex-money-wallet" checked >
-                        <input type="radio" name="payment-mode" id="yandex-money-card" >
-                        <input type="radio" name="payment-mode" id="webmoney" >
+                        <input type="radio" name="payment-mode" id="yandex-money-wallet" checked value="yandex-money-wallet-mode">
+                        <input type="radio" name="payment-mode" id="yandex-money-card" value="yandex-money-card-mode">
+                        <input type="radio" name="payment-mode" id="webmoney" value="webmoney-mode">
                         <div class="payment-modes">
                             <div class="payment-mode yandex-money-wallet-mode">
                                 <label class="figure" for="yandex-money-wallet"></label>
@@ -1429,6 +1429,12 @@
                                                 </div>
                                             </div>
                                         </div>
+                                        <button type="submit" style="display: none;">
+                                            <!--
+                                                Перед тем как сабмитить форму по событию клик кнопки будет идти проверка
+                                                required полей и прочая валидация по паттернам, если таковая имеется
+                                            -->
+                                        </button>
                                     </form>
                                 </div>
                             </div>
@@ -1513,13 +1519,18 @@
                                                            id="card-expired"
                                                            maxlength="9"
                                                            name="card-expired"
-                                                           pattern="\d*"
                                                            x-autocompletetype="cc-exp"
                                                            required
                                                            placeholder="MM/YY">
                                                 </div>
                                             </div>
                                         </div>
+                                        <button type="submit" style="display: none;">
+                                            <!--
+                                                Перед тем как сабмитить форму по событию клик кнопки будет идти проверка
+                                                required полей и прочая валидация по паттернам, если таковая имеется
+                                            -->
+                                        </button>
                                     </form>
                                 </div>
                             </div>
@@ -1548,6 +1559,12 @@
                                                 </div>
                                             </div>
                                         </div>
+                                        <button type="submit" style="display: none;">
+                                            <!--
+                                                Перед тем как сабмитить форму по событию клик кнопки будет идти проверка
+                                                required полей и прочая валидация по паттернам, если таковая имеется
+                                            -->
+                                        </button>
                                     </form>
                                 </div>
                             </div>
@@ -1560,7 +1577,7 @@
                         </div>
 
                         <div class="buttons">
-                            <button class="btn" type="submit">
+                            <button class="btn" type="submit" id="submit">
                                 Получить деньги
                             </button>
                             <a class="btn" href="#close">
@@ -1720,4 +1737,31 @@
         });
     </script>
 
+    <script type="text/javascript" src="js/creditly.js"></script>
+    <script type="text/javascript">
+        $(function() {
+            var creditly = Creditly.initialize(
+                '#card-expired',
+                '#card-num',
+                '#card-cvc',
+                '#card-type');
+
+            $('#submit').click(function(event) {
+                event.preventDefault();
+
+                var checked = $('input[type="radio"][name="payment-mode"]:checked').val();
+                if (checked === 'yandex-money-card-mode') {
+                    var errors = creditly.validate();
+                    if (errors) {
+                        console.log(output);
+                        return;
+                    }
+                }
+
+                // Перед тем как сабмитить форму по событию клик кнопки будет идти проверка
+                // required полей и прочая валидация по паттернам, если таковая имеется
+                $('div.' + checked).find('form').find('[type="submit"]').trigger('click');
+            });
+        });
+    </script>
 </html>

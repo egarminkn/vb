@@ -2136,7 +2136,7 @@ select {
     box-sizing: border-box;
     border-radius: 5px;
     width: 550px;
-    background-color: white;
+    background-image: linear-gradient(#fefdfa, #f7f5e5);
 }
 
 /**
@@ -2296,7 +2296,7 @@ input[type="radio"][name="payment-mode"]#webmoney:checked ~ .payment-modes .webm
     width: 100%;
 }
 
-.payment-modes .payment-mode .info form .row:last-child {
+.payment-modes .payment-mode .info form .row:last-of-type {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -2327,6 +2327,7 @@ input[type="radio"][name="payment-mode"]#webmoney:checked ~ .payment-modes .webm
     display: block;
     margin-top: 5px;
     margin-bottom: 5px;
+    background-color: white;
 }
 
 /* стилизация банковских реквизитов */
