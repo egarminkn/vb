@@ -925,6 +925,11 @@ main .author .about .columns .column-1 .row-2 .rating-3-stars {
     margin: auto;
 }
 
+/* уровень заполненности звезд желтым фоном */
+main .author .about .columns .column-1 .row-2 .rating-3-stars .rating-stars::before {
+    width: 67.5px;
+}
+
 /*
  * Стилизация списка рейтингов, в которые попал автор
  */
@@ -1690,6 +1695,13 @@ main .books table.write tbody tr td.status .current-status.rejected a.rejected {
 }
 
 /*
+ * Уровень заполненности звезд оранжевым фоном (у каждой книги должен быть свой)
+ */
+main .books table.write tbody tr td.rating .rating-5-stars .rating-stars::before {
+    width: 67.5px;
+}
+
+/*
  * Колонка - Скачали
  */
 main .books table.write tbody tr td.download {
@@ -1749,9 +1761,22 @@ main .books table.write tbody tr td.profit {
 /***
  ***  Общее
  ***/
-/*
- * Наклонные элементы ввода
- */
+/**
+ ** Разъяснение (знак вопроса)
+ **/
+.explanation {
+    display: inline-block;
+    vertical-align: middle;
+    width: 14px;
+    height: 14px;
+    background: url('../svg/question-mark-blue.svg') no-repeat;
+    background-size: 100%;
+    cursor: pointer;
+}
+
+/**
+ ** Наклонные элементы ввода
+ **/
 .skew-outer {
     padding-left: 4px;
     padding-right: 4px;
@@ -1767,9 +1792,12 @@ main .books table.write tbody tr td.profit {
     font-size: 12px;
     box-sizing: border-box;
     height: 25px;
+    width: 100%;
 }
 
-/* детализация для select-ов */
+/*
+ * Детализация для select-ов
+ */
 select {
     font-family: Tahoma;
     font-size: 12px;
@@ -1795,9 +1823,9 @@ select {
     padding-right: 3px;
 }
 
-/*
- * Тень под элементом
- */
+/**
+ ** Тень под элементом
+ **/
 .shadow-under {
     position: absolute;
     bottom: 0;
@@ -1835,9 +1863,9 @@ select {
     transform: rotate(-0.5deg);
 }
 
-/*
- * Блок Списка рейтинга
- */
+/**
+ ** Блок Списка рейтинга
+ **/
 .ratings {
     font-family: Tahoma;
     font-size: 12px;
@@ -1919,9 +1947,9 @@ select {
     //border: 1px solid black;
 }
 
-/*
- *  Рейтинг автора
- */
+/**
+ **  Рейтинг автора (звездочки)
+ **/
 .rating-3-stars {
     display: flex;
     flex-direction: row;
@@ -1956,11 +1984,6 @@ select {
     //border: 1px solid black;
 }
 
-/* уровень заполненности звезд желтым фоном */
-.rating-3-stars .rating-stars::before {
-    width: 67.5px;
-}
-
 /*
  *  Число рейтинга
  */
@@ -1974,9 +1997,9 @@ select {
     //border: 1px solid black;
 }
 
-/*
- * Значок-ссылка для редактирования
- */
+/**
+ ** Значок-ссылка для редактирования
+ **/
 .edit {
     display: inline-block;
     min-width: 13px;
@@ -1988,9 +2011,9 @@ select {
     //border: 1px solid black;
 }
 
-/*
- * Фото автора
- */
+/**
+ ** Фото автора
+ **/
 .photo {
     position: relative;
     border: 1px dashed #ccc; 
@@ -2010,8 +2033,10 @@ select {
     margin: 10px;
     //border: 1px solid black;
 }
-    
-/* круглая маска для обрезания фотки автора */
+
+/*
+ * Круглая маска для обрезания фотки автора
+ */
 .photo::before {
     content: '';
     display: block;
@@ -2051,7 +2076,7 @@ select {
     //border: 1px solid black;
 }
 
-/* сначала все закрашиваем желтым */
+/* сначала все закрашиваем оранжевым */
 .rating-5-stars .rating-stars::before {
     content: '';
     display: block;
@@ -2061,11 +2086,6 @@ select {
     position: absolute;
     z-index: -1;
     //border: 1px solid black;
-}
-
-/* уровень заполненности звезд желтым фоном */
-.rating-5-stars .rating-stars::before {
-    width: 67.5px;
 }
 
 /*
@@ -2084,6 +2104,9 @@ select {
 /***
  *** Модальные окна
  ***/
+/**
+ **  Общая часть модального окна
+ **/
 .modal {
     position: fixed;
     top: 0;
@@ -2102,18 +2125,23 @@ select {
     pointer-events: auto;
 }
 
-.modal > div {
+/**
+ **  Тело модального окна
+ **/
+.modal > .body {
     font-family: Tahoma;
     position: relative;
     margin: 10% auto;
     padding: 20px;
     box-sizing: border-box;
     border-radius: 5px;
-    width: 400px;
-    background-image: linear-gradient(white, #999);
+    width: 550px;
+    background-color: white;
 }
 
-/* Кнопка закрытия модального окна */
+/**
+ **  Кнопка закрытия модального окна
+ **/
 .modal .close {
     display: block;
     position: absolute;
@@ -2154,6 +2182,216 @@ select {
 
 .modal .close:hover {
     background: #657392;
+}
+
+/**
+ **  Тело модального окна (Выбор способа Получить деньги)
+ **/
+/*
+ * Общая часть - Выбор способа Получить деньги
+ */
+.receive-money {
+    font-family: Tahoma;
+    font-size: 14px;
+}
+
+/*
+ * Заголовок - Выбор способа Получить деньги
+ */
+.receive-money h2 {
+    font-family: Tahoma;
+    font-size: 24px;
+    font-weight: normal;
+    text-align: center;
+    margin: 0;
+}
+
+/*
+ * Непосредственно - Выбор способа Получить деньги (radio-кнопки)
+ */
+.receive-money input[type="radio"][name="payment-mode"] {
+    display: none;
+}
+
+.receive-money .payment-modes {
+    margin-top: 20px;
+    margin-left: 20%;
+}
+
+.receive-money .payment-modes .payment-mode {
+    margin-top: 5px;
+}
+
+.receive-money .payment-modes .payment-mode .text {
+    cursor: pointer;
+}
+
+.receive-money .payment-modes .payment-mode .figure {
+    display: inline-block;
+    vertical-align: middle;
+    box-sizing: content-box;
+    width: 10px;
+    height: 10px;
+    border: 3px solid #ccc;
+    border-radius: 50%;
+    position: relative;
+    cursor: pointer;
+}
+
+input[type="radio"][name="payment-mode"]#yandex-money-wallet:checked ~ .payment-modes .yandex-money-wallet-mode .figure::before,
+input[type="radio"][name="payment-mode"]#yandex-money-card:checked ~ .payment-modes .yandex-money-card-mode .figure::before,
+input[type="radio"][name="payment-mode"]#webmoney:checked ~ .payment-modes .webmoney-mode .figure::before {
+    content: '';
+    display: block;
+    position: absolute;
+    top: 2px;
+    left: 2px;
+    box-sizing: border-box;
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background-color: #667393;
+}
+
+/*
+ * Раздвижение блока с выбранным способом оплаты
+ */
+input[type="radio"][name="payment-mode"]#yandex-money-card:checked ~ .payment-modes .yandex-money-card-mode .info {
+    height: 160px;
+}
+
+input[type="radio"][name="payment-mode"]#yandex-money-wallet:checked ~ .payment-modes .yandex-money-wallet-mode .info,
+input[type="radio"][name="payment-mode"]#webmoney:checked ~ .payment-modes .webmoney-mode .info {
+    height: 50px;
+}
+
+/*
+ *  Поля ввода реквизитов
+ */
+.payment-modes .payment-mode .info {
+    font-size: 12px;
+    width: 300px;
+    margin-top: 5px;
+    margin-left: 10%;
+    padding-left: 5px;
+    padding-right: 5px;
+    overflow: hidden;
+    height: 0px;
+    transition-property: height;
+    transition-duration: 0.8s;
+    transition-timing-function: ease-in-out;
+    //border: 1px solid black;
+}
+
+.payment-modes .payment-mode .info form {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    width: 100%;
+    height: 100%;
+    //border: 1px solid black;
+}
+
+.payment-modes .payment-mode .info form .row {
+    width: 100%;
+}
+
+.payment-modes .payment-mode .info form .row:last-child {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.payment-modes .payment-mode .info form .row > .cell {
+    width: 100%;
+    //border: 1px solid black;
+}
+
+.payment-modes .payment-mode .info form .row > .cell:not(:first-child) {
+    margin-left: 5px;
+}
+
+.payment-modes .payment-mode .info form .row > .cell label {
+    display: inline-block;
+    vertical-align: middle;
+    width: 100%;
+    //border: 1px solid black;
+}
+
+.payment-modes .payment-mode .info form .row > .cell label .text {
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.payment-modes .payment-mode .info form .row > .cell .skew-outer {
+    display: block;
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
+/* стилизация банковских реквизитов */
+.payment-modes .payment-mode.yandex-money-card-mode .info form .row > .cell #card-holder {
+    text-transform: uppercase;
+}
+
+.payment-modes .payment-mode.yandex-money-card-mode .info form .row > .cell #card-type {
+    display: inline-block;
+    vertical-align: middle;
+    float: right;
+    margin-right: 10px;
+    color: #ccc;
+    //border: 1px solid black;
+}
+
+/*
+ *  Общая сумма получаемых денег
+ */
+.receive-money .cost {
+    display: inline-block;
+    padding: 5px;
+    border: 1px dashed #c5c5c5;
+    border-radius: 5px;
+    margin: auto;
+    margin-top: 10px;
+    margin-left: calc(20% + 15px);
+}
+
+/*
+ *  Кнопки: Получить деньги и Отменить
+ */
+.receive-money .buttons {
+    margin-top: 10px;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+}
+
+.receive-money .buttons .btn {
+    display: inline-block;
+    font-family: Tahoma;
+    font-size: 13px;
+    color: black;
+    text-decoration: none;
+    border-style: none;
+    border-top-left-radius: 10px 5px;
+    border-top-right-radius: 10px 5px;
+    border-bottom-left-radius: 10px 5px;
+    border-bottom-right-radius: 10px 5px;
+    padding: 5px 10px;
+    background-image: linear-gradient(to top, #dbdbdb, #f0f0f0);
+    cursor: pointer;
+    position: relative;
+    top: 0;
+    left: 0;
+}
+
+.receive-money .buttons .btn:not(:first-child) {
+    margin-left: 5px;
+}
+
+.receive-money .buttons .btn:active {
+    top: 1px;
+    left: 1px;
 }
 
 /* ---------------------------------------------------------------------------------------------------- */

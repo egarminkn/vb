@@ -1435,6 +1435,7 @@ fieldset .shadow-under {
     font-size: 12px;
     box-sizing: border-box;
     height: 25px;
+    width: 100%;
 }
 
 /* детализация для select-ов */

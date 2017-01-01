@@ -1395,11 +1395,179 @@
 
             <!-- Модальные окна -->
             <div class="modal" id="get-money">
-                <div>
+                <div class="body">
                     <a href="#close" title="Закрыть" class="close"></a>
-                    <h2>Modal Box</h2>
-                    <p>This is a sample modal box that can be created using the powers of CSS3.</p>
-                    <p>You could do a lot of things here like have a pop-up ad that shows when your website loads, or create a login/register form for users.</p>
+
+                    <div class="receive-money">
+                        <h2>Укажите, пожалуйста, реквизиты платежа</h2>
+
+                        <input type="radio" name="payment-mode" id="yandex-money-wallet" checked >
+                        <input type="radio" name="payment-mode" id="yandex-money-card" >
+                        <input type="radio" name="payment-mode" id="webmoney" >
+                        <div class="payment-modes">
+                            <div class="payment-mode yandex-money-wallet-mode">
+                                <label class="figure" for="yandex-money-wallet"></label>
+                                <label class="text" for="yandex-money-wallet">
+                                    Яндекс.Деньги Кошелек
+                                </label>
+                                <div class="info yandex-money-wallet-info">
+                                    <form method="post" action="#">
+                                        <input type="hidden" name="payment-mode" value="yandex-money-wallet">
+                                        <div class="row">
+                                            <div class="cell yandex-money-wallet-id">
+                                                <label for="yandex-money-wallet-id">
+                                                    <span class="text">
+                                                        Номер кошелька
+                                                    </span>
+                                                </label>
+                                                <div class="skew-outer">
+                                                    <input class="skew-inner"
+                                                           type="text"
+                                                           id="yandex-money-wallet-id"
+                                                           name="yandex-money-wallet-id"
+                                                           required>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+
+                            <div class="payment-mode yandex-money-card-mode">
+                                <label class="figure" for="yandex-money-card"></label>
+                                <label class="text" for="yandex-money-card">
+                                    Яндекс.Деньги Банковская карта
+                                </label>
+                                <div class="info card-info">
+                                    <form method="post" action="#">
+                                        <input type="hidden" name="payment-mode" value="yandex-money-card">
+                                        <div class="row">
+                                            <div class="cell card-holder">
+                                                <label for="card-holder">
+                                                    <span class="text">
+                                                        Имя владельца карты
+                                                    </span>
+                                                    <span class="explanation"
+                                                          title="Имя владельца карты должно быть введено в латинской транскрипции именно так, как оно указано на Вашей карте"></span>
+                                                </label>
+                                                <div class="skew-outer">
+                                                    <input class="skew-inner"
+                                                           type="text"
+                                                           id="card-holder"
+                                                           maxlength="26"
+                                                           name="card-holder"
+                                                           autofocus
+                                                           required
+                                                           placeholder="как оно указано на Вашей карте">
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="cell card-num">
+                                                <label for="card-num">
+                                                    <span class="text">
+                                                        Номер карты
+                                                    </span>
+                                                    <span id="card-type"></span>
+                                                </label>
+                                                <div class="skew-outer">
+                                                    <input class="skew-inner"
+                                                           type="text"
+                                                           id="card-num"
+                                                           name="card-cvc"
+                                                           x-autocompletetype="cc-number"
+                                                           required
+                                                           placeholder="16 цифр указанных на лицевой стороне">
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="cell card-cvc">
+                                                <label for="card-cvc">
+                                                    <span class="text">
+                                                        CVV
+                                                    </span>
+                                                    <span class="explanation"
+                                                          title="Код CVV - это трехзначное число, узнать которое Вы можете посмотрев на обратную сторону банковской карты. Обычно CVV напечатано на полосе для подписи"></span>
+                                                </label>
+                                                <div class="skew-outer">
+                                                    <input class="skew-inner"
+                                                           type="tel"
+                                                           id="card-cvc"
+                                                           name="card-cvc"
+                                                           pattern="\d*"
+                                                           x-autocompletetype="cc-csc"
+                                                           required
+                                                           placeholder="xxx">
+                                                </div>
+                                            </div>
+                                            <div class="cell card-expired">
+                                                <label for="card-expired">
+                                                    <span class="text">
+                                                        Срок действия
+                                                    </span>
+                                                </label>
+                                                <div class="skew-outer">
+                                                    <input class="skew-inner"
+                                                           type="tel"
+                                                           id="card-expired"
+                                                           maxlength="9"
+                                                           name="card-expired"
+                                                           pattern="\d*"
+                                                           x-autocompletetype="cc-exp"
+                                                           required
+                                                           placeholder="MM/YY">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+
+                            <div class="payment-mode webmoney-mode">
+                                <label class="figure" for="webmoney"></label>
+                                <label class="text" for="webmoney">
+                                    WebMoney
+                                </label>
+                                <div class="info webmoney-info">
+                                    <form method="post" action="#">
+                                        <input type="hidden" name="payment-mode" value="webmoney">
+                                        <div class="row">
+                                            <div class="cell webmoney-wallet-id">
+                                                <label for="webmoney-wallet-id">
+                                                    <span class="text">
+                                                        Номер кошелька
+                                                    </span>
+                                                </label>
+                                                <div class="skew-outer">
+                                                    <input class="skew-inner"
+                                                           type="text"
+                                                           id="webmoney-wallet-id"
+                                                           name="webmoney-wallet-id"
+                                                           required>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="cost">
+                            Сумма:
+                            <span class="value">517</span>
+                            <span class="currency">руб.</span>
+                        </div>
+
+                        <div class="buttons">
+                            <button class="btn" type="submit">
+                                Получить деньги
+                            </button>
+                            <a class="btn" href="#close">
+                                Отменить
+                            </a>
+                        </div>
+                    </div>
                 </div>
             </div>
         </main>

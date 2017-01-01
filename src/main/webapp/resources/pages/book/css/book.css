@@ -886,7 +886,7 @@ main .book .columns .column-2 .summary-1 > div:not(:first-child){
     //border: 1px solid black;
 }
 
-/* сначала все закрашиваем желтым */
+/* сначала все закрашиваем оранжевым */
 .rating-5-stars .rating-stars::before {
     content: '';
     display: block;
@@ -898,7 +898,7 @@ main .book .columns .column-2 .summary-1 > div:not(:first-child){
     //border: 1px solid black;
 }
 
-/* уровень заполненности звезд желтым фоном */
+/* уровень заполненности звезд оранжевым фоном */
 .rating-5-stars .rating-stars::before {
     width: 67.5px;
 }
