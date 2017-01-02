@@ -19,6 +19,22 @@ var sliderButton4;
 /*
  *  Вспомогательные методы
  */
+function getCorrectEnding(number, ending1, ending2, ending3) {
+    number = number % 100;
+    if (number > 10 && number < 20) {
+        return ending3; // -ов
+    } else {
+        number = number % 10;
+        if (number === 1) {
+            return ending1; // -
+        } else if (number > 1 && number < 5) {
+            return ending2; // -a
+        } else {
+            return ending3; // -ов
+        }
+    }
+}
+
 function getRealSizeOfElement(element, property) {
     var propertyStr = window.getComputedStyle(element, null).getPropertyValue(property);
     property = propertyStr.substring(0, propertyStr.lastIndexOf("px")) * 1; // умножение на 1, чтобы получить число, а не строку

@@ -1661,7 +1661,6 @@ main .book-reviews .show-more {
     font-family: Tahoma;
     position: relative;
     margin: 0 auto;
-    margin-top: 10%;
     padding: 20px;
     box-sizing: border-box;
     border-radius: 5px;
@@ -1718,9 +1717,9 @@ main .book-reviews .show-more {
  **/
 .modal#table-of-contents > .body {
     width: 550px;
-    //min-height: 10%;
-    //max-height: 65%;
+    margin-top: 10%;
     height: 65%;
+    //height: 20%;
 }
 
 .table-of-contents {
@@ -1740,11 +1739,16 @@ main .book-reviews .show-more {
     font-weight: normal;
     margin: 0;
     margin-bottom: 20px;
+    //border: 1px solid green;
 }
 
 /*
  * Оглавление
  */
+input[type="radio"][name="chapter"] {
+    display: none;
+}
+
 ul.level.level-1 {
     overflow-y: auto;
     height: 100%;
@@ -1777,14 +1781,21 @@ ul.level > li > ul.level > li {
     flex-direction: row;
     justify-content: flex-start;
     align-items: flex-start;
+    font-family: Tahoma;
+    font-size: 16px;
     text-decoration: none;
     color: black;
+    border-radius: 5px;
+    cursor: pointer;
+    padding-bottom: 7px;
+    //background-color: #d3be4a;
+    //border: 1px solid black;
 }
 
 .text-dots-page::before {
     content: counters(cntr, ".") ". ";
     counter-increment: cntr;
-    //background-color: #fefdfa;
+    background-color: #d3be4a;
     background-image: linear-gradient(#fefdfa, #f7f5e5);
     position: relative;
     left: 0;
@@ -1799,7 +1810,7 @@ ul.level > li > ul.level > li {
 }
 
 .text-dots-page .chapter span {
-    //background-color: #fefdfa;
+    background-color: #d3be4a;
     background-image: linear-gradient(#fefdfa, #f7f5e5);
     bottom: -4px;
 }
@@ -1817,32 +1828,170 @@ ul.level > li > ul.level > li {
     padding-left: 5px;
 }
 
-/*
- * Тело модального окна - Полистать книгу
- */
+/**
+ ** Тело модального окна - Полистать книгу
+ **/
 .modal#browse-book > .body {
-    width: 1550px;
+    margin-top: 5%;
+    width: 90%;
+    height: 85%;
+    //height: 20%;
 }
 
+/*
+ * Общая разметка (флексирование)
+ */
+.browse-book {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+    height: 100%;
+}
 
+.browse-book .column {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+    //border: 1px solid black;
+}
 
+.browse-book .column-1 {
+    width: 40%;
+    margin-right: 20px;
+}
 
+.browse-book .column-2 {
+    align-items: center;
+    width: 60%;
+}
 
+.browse-book .column .row {
+    //border: 1px solid black;
+}
 
+.browse-book .column .row-2 {
+    height: 100%;
+}
 
+.browse-book .column .row-2.page-content {
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
 
+/*
+ * Заголовок - Колонка 1
+ */
+.browse-book h2 {
+    font-family: Tahoma;
+    font-size: 24px;
+    font-weight: normal;
+    margin: 0;
+    margin-bottom: 20px;
+}
 
+/*
+ * Оглавление - Колонка 1
+ */
+#chapter-1:checked ~ ul.level.level-1 label[for="chapter-1"].text-dots-page,
+#chapter-2:checked ~ ul.level.level-1 label[for="chapter-2"].text-dots-page,
+#chapter-3:checked ~ ul.level.level-1 label[for="chapter-3"].text-dots-page,
+#chapter-4:checked ~ ul.level.level-1 label[for="chapter-4"].text-dots-page,
+#chapter-5:checked ~ ul.level.level-1 label[for="chapter-5"].text-dots-page,
+#chapter-6:checked ~ ul.level.level-1 label[for="chapter-6"].text-dots-page,
+#chapter-7:checked ~ ul.level.level-1 label[for="chapter-7"].text-dots-page,
+#chapter-8:checked ~ ul.level.level-1 label[for="chapter-8"].text-dots-page,
+#chapter-9:checked ~ ul.level.level-1 label[for="chapter-9"].text-dots-page,
+#chapter-10:checked ~ ul.level.level-1 label[for="chapter-10"].text-dots-page {
+    background-color: #d3be4a;
+}
 
+#chapter-1:checked ~ ul.level.level-1 label[for="chapter-1"].text-dots-page .chapter span,
+#chapter-2:checked ~ ul.level.level-1 label[for="chapter-2"].text-dots-page .chapter span,
+#chapter-3:checked ~ ul.level.level-1 label[for="chapter-3"].text-dots-page .chapter span,
+#chapter-4:checked ~ ul.level.level-1 label[for="chapter-4"].text-dots-page .chapter span,
+#chapter-5:checked ~ ul.level.level-1 label[for="chapter-5"].text-dots-page .chapter span,
+#chapter-6:checked ~ ul.level.level-1 label[for="chapter-6"].text-dots-page .chapter span,
+#chapter-7:checked ~ ul.level.level-1 label[for="chapter-7"].text-dots-page .chapter span,
+#chapter-8:checked ~ ul.level.level-1 label[for="chapter-8"].text-dots-page .chapter span,
+#chapter-9:checked ~ ul.level.level-1 label[for="chapter-9"].text-dots-page .chapter span,
+#chapter-10:checked ~ ul.level.level-1 label[for="chapter-10"].text-dots-page .chapter span {
+    background-image: none;
+}
 
+#chapter-1:checked ~ ul.level.level-1 label[for="chapter-1"].text-dots-page::before,
+#chapter-2:checked ~ ul.level.level-1 label[for="chapter-2"].text-dots-page::before,
+#chapter-3:checked ~ ul.level.level-1 label[for="chapter-3"].text-dots-page::before,
+#chapter-4:checked ~ ul.level.level-1 label[for="chapter-4"].text-dots-page::before,
+#chapter-5:checked ~ ul.level.level-1 label[for="chapter-5"].text-dots-page::before,
+#chapter-6:checked ~ ul.level.level-1 label[for="chapter-6"].text-dots-page::before,
+#chapter-7:checked ~ ul.level.level-1 label[for="chapter-7"].text-dots-page::before,
+#chapter-8:checked ~ ul.level.level-1 label[for="chapter-8"].text-dots-page::before,
+#chapter-9:checked ~ ul.level.level-1 label[for="chapter-9"].text-dots-page::before,
+#chapter-10:checked ~ ul.level.level-1 label[for="chapter-10"].text-dots-page::before {
+    background-image: none;
+}
 
+/*
+ * Номер текущей страницы - Колонка 2
+ */
+.page-number {
+    font-family: Tahoma;
+    font-size: 16px;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    height: 30px;
+}
 
+.page-number .item:not(:first-child) {
+    margin-left: 10px;
+}
 
+.page-number .page-btn {
+    display: inline-block;
+    background: url('../svg/single-angle-arrow.svg') no-repeat;
+    background-size: 100%;
+    background-position: center center;
+    width: 25px;
+    height: 25px;
+    //border: 1px solid black;
+}
 
+.page-number .prev-page-btn {
+    transform: rotate(180deg);
+}
 
+.page-number input.item {
+    font-family: Tahoma;
+    font-size: 16px;
+    line-height: 30px;
+    box-sizing: border-box;
+    width: 60px;
+    height: 30px;
+}
 
+/*
+ * Статистика по просмотру бесплатных страниц - Колонка 2
+ */
+.status {
+    font-family: Tahoma;
+    font-size: 16px;
+    line-height: 30px;
+}
 
-
-
+/*
+ * Тело бесплатной страницы - Колонка 2
+ */
+.page-content {
+    background-color: white;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    width: 100%;
+    overflow-y: auto;
+}
 
 /* ---------------------------------------------------------------------------------------------------- */
 
