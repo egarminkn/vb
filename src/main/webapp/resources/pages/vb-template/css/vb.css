@@ -322,6 +322,20 @@ header::after {
     //border: 1px solid black;
 }
 
+/*
+ * Для того, чтобы подчеркнуть, что выбран пункт "Задать вопрос" или "Корзина",
+ * к соотвествующему div-у добавляется класс header-item-selected
+ */
+.header-item-selected {
+    border: 3px solid #e5d996;
+    border-radius: 5px;
+    background-color: #e5d996;
+}
+
+.header-item-selected a .text {
+    color: black;
+}
+
 /**
  ** Блок поиска
  **/
