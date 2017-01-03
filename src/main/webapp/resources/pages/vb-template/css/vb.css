@@ -33,8 +33,7 @@ body {
     width: 100%;
     max-width: 1280px;
     min-width: 700px;
-    margin-left: auto; /* auto сделает body по центру */
-    margin-right: auto; /* auto сделает body по центру */
+    margin: 25px auto; /* auto выровняет body по горизонтали по центру */
     box-sizing: border-box;
     //border: 1px solid red;
 }
@@ -47,7 +46,6 @@ header {
     flex-direction: column;
     justify-content: space-between;
     box-sizing: border-box;
-    margin-top: 24px;
     width: 100%;
     position: relative;
     background-color: white;
