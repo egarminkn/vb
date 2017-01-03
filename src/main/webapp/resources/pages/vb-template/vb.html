@@ -1,8 +1,45 @@
 <!DOCTYPE html>
-<html>
+<html lang="ru">
 	<head>
-		<title>Verybook</title>
-		<meta charset="UTF-8" />
+        <meta charset="UTF-8" />
+		<title>Verybook - стань автором уже сейчас</title>
+		<meta name="description" content="Простейший способ опубликовать книгу" />
+        <meta name="keywords" content="читать новые книги, бесплатно, решать судьбу книг, публиковать книги" />
+
+        <!--
+        <meta name="google" content="notranslate" />
+        <meta http-equiv="refresh" content="30" />
+        <meta http-equiv="refresh" content="30;URL='http://website.com'" />
+        <meta name="robots" content="noindex, nofollow" />
+        -->
+
+        <!-- PNG-иконки -->
+        <link href="img/favicon/favicon-16x16.png" type="image/png" rel="icon" sizes="16x16">
+        <link href="img/favicon/favicon-32x32.png" type="image/png" rel="icon" sizes="32x32">
+        <link href="img/favicon/favicon-48x48.png" type="image/png" rel="icon" sizes="48x48">
+        <link href="img/favicon/favicon-96x96.png" type="image/png" rel="icon" sizes="96x96">
+        <link href="img/favicon/favicon-128x128.png" type="image/png" rel="icon" sizes="128x128">
+        <link href="img/favicon/favicon-160x160.png" type="image/png" rel="icon" sizes="160x160">
+        <link href="img/favicon/favicon-196x196.png" type="image/png" rel="icon" sizes="196x196">
+        <link href="img/favicon/favicon-228x228.png" type="image/png" rel="icon" sizes="228x228">
+
+        <!-- Apple Touch-иконки -->
+        <link href="img/apple-touch-icon/apple-touch-icon-57x57.png" type="image/png" rel="apple-touch-icon" sizes="57x57">
+        <link href="img/apple-touch-icon/apple-touch-icon-60x60.png" type="image/png" rel="apple-touch-icon" sizes="60x60">
+        <link href="img/apple-touch-icon/apple-touch-icon-72x72.png" type="image/png" rel="apple-touch-icon" sizes="72x72">
+        <link href="img/apple-touch-icon/apple-touch-icon-76x76.png" type="image/png" rel="apple-touch-icon" sizes="76x76">
+        <link href="img/apple-touch-icon/apple-touch-icon-114x114.png" type="image/png" rel="apple-touch-icon" sizes="114x114">
+        <link href="img/apple-touch-icon/apple-touch-icon-120x120.png" type="image/png" rel="apple-touch-icon" sizes="120x120">
+        <link href="img/apple-touch-icon/apple-touch-icon-152x152.png" type="image/png" rel="apple-touch-icon" sizes="152x152">
+        <link href="img/apple-touch-icon/apple-touch-icon-180x180.png" type="image/png" rel="apple-touch-icon" sizes="180x180">
+
+        <!-- MS Tile-плитки (Windows 8 и IE 10) -->
+        <meta name="msapplication-TileColor" content="#d3be4a">
+        <meta name="msapplication-TileImage" content="img/mstile/mstile-144x144.png">
+
+        <!-- MS Tile-плитки (Windows 8.1 и IE 11) -->
+        <meta name="msapplication-config" content="xml/browserconfig.xml" />
+
         <link href="css/vb.css" type="text/css" rel="stylesheet" />
 	</head>
 	<body onload="init()">
@@ -64,10 +101,13 @@
         </header>
 		
 		<main>
-            <div class="slogan">
+            <div class="slogan ">
+                <!--
+                    Доп.класс help-page у slogan-а нужен для переключения стиля слогана между Главной страницей и страницей Помощи автору
+                -->
                 Читай
-                <a href="#" class="new-books-free"><h3>новые книги бесплатно</h3></a>
-                и решай их судьбу или
+                <a href="#" class="new-books-free"><h3>новые книги бесплатно</h3></a>,
+                решай их судьбу и
                 <a href="#" class="publish-own"><h3>публикуй</h3></a>
                 собственные
             </div>

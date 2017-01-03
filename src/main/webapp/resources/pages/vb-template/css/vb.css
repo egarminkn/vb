@@ -22,13 +22,6 @@
     src: local('Core Sans M W01 SC 65 Bold'), url('fonts/Core Sans M W01 SC 65 Bold.woff') format('woff');
 }
 
-@font-face {
-    font-family: 'EmojiSymbols-Regular';
-    font-style: normal;
-    font-weight: normal;
-    src: local('EmojiSymbols-Regular'), url('fonts/EmojiSymbols-Regular.woff') format('woff');
-}
-
 /***
  *** Туловище
  ***/
@@ -530,34 +523,69 @@ main {
 }
 
 /*
- * Ссылка Новые книги бесплатно в слогане
+ * Ссылка Новые книги бесплатно в слогане - Главная страница
  */
 .slogan > a.new-books-free {
     text-decoration: none;
     color: #d3be4a;
     margin-left: 6px;
     margin-right: 6px;
-    padding-left: 10px;
-    padding-right: 10px;
-    padding-top: 6px;
-    padding-bottom: 6px;
+    padding: 6px 10px;
     border: 1px dashed #d3be4a;
     border-radius: 5px;
-	position: relative;
-    z-index: 1;
 }
 
 /*
- * Ссылка Публикуй в слогане
+ * Ссылка Публикуй в слогане - Главная страница
  */
 .slogan > a.publish-own {
     text-decoration: none;
     color: #5f7495;
     border-bottom: 2px solid #5f7495;
-    margin-left: 1px;
-    margin-right: 1px;
-	position: relative;
-    z-index: 1;
+    margin: 0;
+}
+
+/*
+ * Ссылка Новые книги бесплатно в слогане - страница "Помощь автору"
+ */
+.slogan.help-page > a.new-books-free {
+    text-decoration: none;
+    color: #5f7495;
+    border-style: none;
+    border-bottom: 2px solid #5f7495;
+    margin: 0;
+    margin-right: 5px;
+    padding: 0;
+    border-radius: 0;
+}
+
+/*
+ * Ссылка Публикуй в слогане - страница "Помощь автору"
+ */
+.slogan.help-page > a.publish-own {
+    text-decoration: none;
+    color: #d3be4a;
+    margin-left: 6px;
+    margin-right: 6px;
+    padding: 6px 10px;
+    border: 1px dashed #d3be4a;
+    border-radius: 5px;
+    position: relative;
+}
+
+/* Стрелочка вниз (полуромбик) у слова Публикуй в слогане (окруженное пунктиром) */
+.slogan.help-page > a.publish-own::after {
+    content: '';
+    display: block;
+    width: 15px;
+    height: 15px;
+    background-color: white;
+    border-right: 1px dashed #d3be4a;
+    border-bottom: 1px dashed #d3be4a;
+    transform: rotate(45deg);
+    position: absolute;
+    top: 36px;
+    left: 45%;
 }
 
 /**
