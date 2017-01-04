@@ -2,6 +2,139 @@
  *** Общее
  ***/
 /**
+ ** Рейтинг автора
+ **/
+.rating-3-stars {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    //border: 1px solid black;
+}
+
+/*
+ * Звезды рейтинга автора
+ */
+/* SVG-маска из дырок для звездочек */
+.rating-3-stars .rating-stars {
+    width: 82px;
+    height: 21px;
+    background-image: url(../svg/vb/rating-3-stars.svg);
+    background-repeat: no-repeat;
+    background-size: 100%;
+    position: relative;
+    //border: 1px solid black;
+}
+
+/* сначала все закрашиваем желтым */
+.rating-3-stars .rating-stars::before {
+    content: '';
+    display: block;
+    width: 82px;
+    height: 21px;
+    background-color: yellow;
+    position: absolute;
+    z-index: -1;
+    //border: 1px solid black;
+}
+
+/*
+ *  Число рейтинга
+ */
+.rating-3-stars .rating-number {
+    font-family: Tahoma;
+    font-size: 14px;
+    color: black;
+    letter-spacing: 0.3px;
+    margin-left: 10px;
+    //border: 1px solid black;
+}
+
+/**
+ ** Блок Списка рейтинга
+ **/
+.ratings {
+    font-family: Tahoma;
+    font-size: 12px;
+    background: url('../svg/vb/bar_chart.svg') no-repeat;
+    background-size: 15px 15px;
+    padding-left: 20px;
+    //border: 1px solid black;
+}
+
+/*
+ * Флексирование Списка рейтинга
+ */
+.ratings .list {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+
+.ratings .list .item {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    //border: 1px solid black;
+}
+
+.ratings .list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.ratings .list .item {
+    font-family: Tahoma;
+    font-size: 12px;
+    margin-top: 15px;
+}
+
+/*
+ * Стрелочка, показывающая динамику роста (вверх или вниз по рейтингу)
+ */
+.ratings .list .item .dynamic-up {
+    width: 4px;
+    height: 12px;
+    //border: 1px solid black;
+}
+
+.ratings .list .item .dynamic-up img {
+    width: 4px;
+    height: 12px;
+    //border: 1px solid black;
+}
+
+.ratings .list .item .dynamic-up.invert {
+    transform: scaleY(-1);
+}
+
+/*
+ * Порядковый номер в рейтинге (этот номер является ссылкой)
+ */
+.ratings .list .item a {
+    color: #657392;
+    white-space: nowrap;
+    margin-left: 5px;
+    //border: 1px solid black;
+}
+
+.ratings .list .item a span {
+    display: inline-block;
+    width: 30px;
+    text-decoration: underline;
+    //border: 1px solid black;
+}
+
+/*
+ * Название рейтинга
+ */
+.ratings .list .item .rating-title {
+    //border: 1px solid black;
+}
+
+/**
  **  Баннер специальных предложений
  **/
 .spec {

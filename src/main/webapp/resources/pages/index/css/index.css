@@ -1332,13 +1332,6 @@ div.shelf > div.authors-block > a div.rating {
     left: -1px;
 }
 
-div.shelf.author-shelf > div.authors-block > a div.rating-stars.author-rating-stars {
-    width: 63px;
-    height: 12px;
-    position: relative;
-    left: 1px;
-}
-
 /* маска для звездочек рейтинга автора */
 div.shelf > div.authors-block > a div.rating-stars::before {
     width: 65px;
