@@ -980,88 +980,51 @@ div.book-title-slider-in > a > div.book-author > div.book-count > span {
 /*
  *  Звезды рейтинга у книги на полке
  */
-div.rating {
-    display: inline-block;
-    width: 75px;
-    position: relative;
-    top: -3px;
+/* уровень заполненности звезд оранжевым фоном */
+.book-title-slider-in > a:nth-of-type(1) > .rating-5-stars > .rating-stars::before {
+    width: 67.5px;
 }
-
-div.rating-stars {
-    position: relative;
-    top: 11px;
-    left: -1px;
-    width: 75px;
-    height: 14px;
-    background-color: yellow;
+.book-title-slider-in > a:nth-of-type(2) > .rating-5-stars > .rating-stars::before {
+    width: 57px;
 }
-
-/* SVG-маска из пяти дырок для звездочек */
-div.rating-stars::before {
-    content: '';
-    display: block;
-    width: 75px;
-    height: 15px;
-    background-image: url(../svg/rating-stars.svg);
-    background-repeat: no-repeat;
-    background-size: 100%;
+.book-title-slider-in > a:nth-of-type(3) > .rating-5-stars > .rating-stars::before {
+    width: 61.5px;
 }
-
-div.rating-number {
-    font-family: Tahoma;
-    font-size: 12px;
-    color: #0acd1c;
-    position: relative;
-    top: 5px;
-    left: 6px;
-    letter-spacing: 0.3px;
+.book-title-slider-in > a:nth-of-type(4) > .rating-5-stars > .rating-stars::before {
+    width: 64.5px;
 }
-
-/* уровень заполненности звезд желтым фоном */
-div.book-title-slider-in > a:nth-of-type(1) > div.rating > div.rating-stars {
-    width: 67.5px; /* 4.5 * (75px / 5) */
+.book-title-slider-in > a:nth-of-type(5) > .rating-5-stars > .rating-stars::before {
+    width: 72px;
 }
-div.book-title-slider-in > a:nth-of-type(2) > div.rating > div.rating-stars {
-    width: 57px; /* 3.8 * (75px / 5) */
+.book-title-slider-in > a:nth-of-type(6) > .rating-5-stars > .rating-stars::before {
+    width: 72px;
 }
-div.book-title-slider-in > a:nth-of-type(3) > div.rating > div.rating-stars {
-    width: 61.5px; /* 4.1 * (75px / 5) */
+.book-title-slider-in > a:nth-of-type(7) > .rating-5-stars > .rating-stars::before {
+    width: 64.5px;
 }
-div.book-title-slider-in > a:nth-of-type(4) > div.rating > div.rating-stars {
-    width: 64.5px; /* 4.3 * (75px / 5) */
+.book-title-slider-in > a:nth-of-type(8) > .rating-5-stars > .rating-stars::before {
+    width: 61.5px;
 }
-div.book-title-slider-in > a:nth-of-type(5) > div.rating > div.rating-stars {
-    width: 72px; /* 4.8 * (75px / 5) */
+.book-title-slider-in > a:nth-of-type(9) > .rating-5-stars > .rating-stars::before {
+    width: 57px;
 }
-div.book-title-slider-in > a:nth-of-type(6) > div.rating > div.rating-stars {
-    width: 72px; /* 4.8 * (75px / 5) */
+.book-title-slider-in > a:nth-of-type(10) > .rating-5-stars > .rating-stars::before {
+    width: 67.5px;
 }
-div.book-title-slider-in > a:nth-of-type(7) > div.rating > div.rating-stars {
-    width: 64.5px; /* 4.3 * (75px / 5) */
+.book-title-slider-in > a:nth-of-type(11) > .rating-5-stars > .rating-stars::before {
+    width: 67.5px;
 }
-div.book-title-slider-in > a:nth-of-type(8) > div.rating > div.rating-stars {
-    width: 61.5px; /* 4.1 * (75px / 5) */
+.book-title-slider-in > a:nth-of-type(12) > .rating-5-stars > .rating-stars::before {
+    width: 57px;
 }
-div.book-title-slider-in > a:nth-of-type(9) > div.rating > div.rating-stars {
-    width: 57px; /* 3.8 * (75px / 5) */
+.book-title-slider-in > a:nth-of-type(13) > .rating-5-stars > .rating-stars::before {
+    width: 61.5px;
 }
-div.book-title-slider-in > a:nth-of-type(10) > div.rating > div.rating-stars {
-    width: 67.5px; /* 4.5 * (75px / 5) */
+.book-title-slider-in > a:nth-of-type(14) > .rating-5-stars > .rating-stars::before {
+    width: 64.5px;
 }
-div.book-title-slider-in > a:nth-of-type(11) > div.rating > div.rating-stars {
-    width: 67.5px; /* 4.5 * (75px / 5) */
-}
-div.book-title-slider-in > a:nth-of-type(12) > div.rating > div.rating-stars {
-    width: 57px; /* 3.8 * (75px / 5) */
-}
-div.book-title-slider-in > a:nth-of-type(13) > div.rating > div.rating-stars {
-    width: 61.5px; /* 4.1 * (75px / 5) */
-}
-div.book-title-slider-in > a:nth-of-type(14) > div.rating > div.rating-stars {
-    width: 64.5px; /* 4.3 * (75px / 5) */
-}
-div.book-title-slider-in > a:nth-of-type(15) > div.rating > div.rating-stars {
-    width: 72px; /* 4.8 * (75px / 5) */
+.book-title-slider-in > a:nth-of-type(15) > .rating-5-stars > .rating-stars::before {
+    width: 72px;
 }
 
 /*
@@ -1325,47 +1288,26 @@ div.shelf > div.authors-block > a > div.photo::before {
     position: absolute;
 }
 
-/* блок со звездочками рейтинга автора */
-div.shelf > div.authors-block > a div.rating {
-    position: relative;
-    top: 6px;
-    left: -1px;
+/*
+ * Закраска звездочек в рейтинге кокретного автора
+ */
+.authors-block > a:nth-of-type(1) > .rating-3-stars > .rating-stars::before {
+    width: 63px;
 }
-
-/* маска для звездочек рейтинга автора */
-div.shelf > div.authors-block > a div.rating-stars::before {
-    width: 65px;
-    position: relative;
-    left: -1px;
+.authors-block > a:nth-of-type(2) > .rating-3-stars > .rating-stars::before {
+    width: 63px;
 }
-
-/* закраска звездочек в рейтинге кокретного автора */
-div.authors-block > a:nth-of-type(1) > div.rating > div.rating-stars {
-    width: 63px; /* 5.0 * (63px / 5) */
+.authors-block > a:nth-of-type(3) > .rating-3-stars > .rating-stars::before {
+    width: 61.36px;
 }
-div.authors-block > a:nth-of-type(2) > div.rating > div.rating-stars {
-    width: 63px; /* 5.0 * (63px / 5) */
+.authors-block > a:nth-of-type(4) > .rating-3-stars > .rating-stars::before {
+    width: 61.87px;
 }
-div.authors-block > a:nth-of-type(3) > div.rating > div.rating-stars {
-    width: 61.36px; /* 4.87 * (63px / 5) */
+.authors-block > a:nth-of-type(5) > .rating-3-stars > .rating-stars::before {
+    width: 62.62px;
 }
-div.authors-block > a:nth-of-type(4) > div.rating > div.rating-stars {
-    width: 61.87px; /* 4.91 * (63px / 5) */
-}
-div.authors-block > a:nth-of-type(5) > div.rating > div.rating-stars {
-    width: 62.62px; /* 4.97 * (63px / 5) */
-}
-div.authors-block > a:nth-of-type(6) > div.rating > div.rating-stars {
-    width: 57.96px; /* 4.6 * (63px / 5) */
-}
-
-/* цифорка рейтинга автора */
-div.shelf > div.authors-block > a div.rating-number {
-    position: relative;
-    top: 16px;
-    left: -8px;
-    width: 20px;
-    //border: 1px solid black;
+.authors-block > a:nth-of-type(6) > .rating-3-stars > .rating-stars::before {
+    width: 57.96px;
 }
 
 /* количество лайков за данного автора */

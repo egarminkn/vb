@@ -803,60 +803,6 @@ main .book .columns .column-2 .summary-1 > div:not(:first-child){
 }
 
 /*
- *  Рейтинг книги
- */
-.rating-5-stars {
-    display: flex;
-    flex-direction: row;
-    justify-content: flex-start;
-    align-items: center;
-}
-
-/*
- * Звезды рейтинга книги
- */
-/* SVG-маска из дырок для звездочек */
-.rating-5-stars .rating-stars {
-    width: 82px;
-    height: 16px;
-    background-image: url('../svg/rating-5-stars.svg');
-    background-repeat: no-repeat;
-    background-size: 100%;
-    position: relative;
-    //border: 1px solid black;
-}
-
-/* сначала все закрашиваем оранжевым */
-.rating-5-stars .rating-stars::before {
-    content: '';
-    display: block;
-    width: 82px;
-    height: 15px;
-    background-color: #e8ba42;
-    position: absolute;
-    z-index: -1;
-    //border: 1px solid black;
-}
-
-/* уровень заполненности звезд оранжевым фоном */
-.rating-5-stars .rating-stars::before {
-    width: 67.5px;
-}
-
-/*
- *  Число рейтинга
- */
-.rating-5-stars .rating-number {
-    font-family: Tahoma;
-    font-size: 12px;
-    //color: #0acd1c;
-    color: black;
-    letter-spacing: 0.3px;
-    margin-left: 5px;
-    //border: 1px solid black;
-}
-
-/*
  *  Ссылка на отзывы о книге
  */
 main .book .columns .column-2 .summary-1 .reviews {
@@ -1439,10 +1385,15 @@ main .book-reviews .show-more {
     margin-top: 5px;
 }
 
-/* рейтинг со звездочками */
+/* рейтинг книги со звездочками */
 .shelf .book-title-slider-out .book-title-slider-in > a .rating-5-stars {
     height: 40px;
     margin-top: 5px;
+}
+
+/* уровень заполненности звезд рейтинга книги оранжевым фоном */
+.rating-5-stars .rating-stars::before {
+    width: 67.5px;
 }
 
 /* цена книги на книжной полке */

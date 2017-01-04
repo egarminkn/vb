@@ -798,47 +798,11 @@ div.sort-links {
     color: black;
 }
 
-/* 
- * Звездочки рейтинга книги автора
+/*
+ * Звездочки рейтинга книги
  */
-.book-rating div {
-    display: inline-block;
-    vertical-align: top;
-}
-
-.book-rating-stars {
-    width: 75px;
-    height: 13px;
-    background-color: yellow;
-    position: absolute;
-}
-
-/* маска для звездочек рейтинга автора */
-.book-rating-stars::before {
-    content: '';
-    position: relative;
-    left: -2px;
-    display: block;
-    width: 75px;
-    height: 25px;
-    background-image: url(../svg/rating-5-stars.svg);
-    background-repeat: no-repeat;
-    background-size: 100%;
-}
-
-/* закраска звездочек в рейтинге автора */
-.book-rating-stars {
+.book .rating-5-stars .rating-stars::before {
     width: 56px;
-}
-
-.book-rating-number {
-    font-family: Tahoma;
-    font-size: 12px;
-    color: #0acd1c;
-    width: 20px;
-    letter-spacing: 0.3px;
-    position: relative;
-    left: 75px;
 }
 
 /*
