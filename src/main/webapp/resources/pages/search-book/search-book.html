@@ -4,6 +4,7 @@
 		<title>Verybook</title>
 		<meta charset="UTF-8" />
         <link href="css/search-book.css" type="text/css" rel="stylesheet" />
+        <link href="css/vb-common.css" type="text/css" rel="stylesheet" />
 	</head>
 	<body onload="init()">
         <header>
@@ -365,8 +366,9 @@
                             <li class="bottom-level-link"><a href="#">Эзотерика</a></li>
                         </ul>   
                     </ul>
-                    
-                    <div class="item spec">
+
+                    <!-- START (Баннер "Специальные предложения" для электронных книг) -->
+                    <div class="item spec ebook">
                         <div class="header">
                             <div class="title">
                                 Специальные предложения
@@ -377,40 +379,50 @@
                         <div class="main">
                             <a href="#" class="spec-book spec-book-1">
                                 <div class="cover-rating">
-                                    <img class="cover" src="img/book1.jpg" width="100" height="160">
+                                    <img class="cover" src="img/book1.jpg" width="230" height="368">
                                     <div class="rating">3,8</div>
                                 </div>
                                 <div class="content">
                                     <div class="title">Энциклопедия Marvel Heroes</div>
                                     <div class="author-name">Дмитрий Глуховский</div>
-                                    <div class="cost"><span>599 р.</span></div>
-                                </div>                                
+                                    <div class="price">
+                                        <span class="value">599</span>
+                                        <span class="currency">р.</span>
+                                    </div>
+                                </div>
                             </a>
                             <a href="#" class="spec-book spec-book-2">
                                 <div class="cover-rating">
-                                    <img class="cover" src="img/book5.jpg" width="100" height="160">
+                                    <img class="cover" src="img/book5.jpg" width="230" height="368">
                                     <div class="rating">3,8</div>
                                 </div>
                                 <div class="content">
                                     <div class="title">Непобежденные</div>
                                     <div class="author-name">А.П. Константинов</div>
-                                    <div class="cost"><span>99 р.</span></div>
-                                </div>                                
+                                    <div class="price">
+                                        <span class="value">99</span>
+                                        <span class="currency">р.</span>
+                                    </div>
+                                </div>
                             </a>
                             <a href="#" class="spec-book spec-book-3">
                                 <div class="cover-rating">
-                                    <img class="cover" src="img/book4.jpg" width="100" height="160">
+                                    <img class="cover" src="img/book4.jpg" width="230" height="368">
                                     <div class="rating">3,8</div>
                                 </div>
                                 <div class="content">
                                     <div class="title">Энциклопедия Marvel Heroes</div>
                                     <div class="author-name">Дмитрий Глуховский</div>
-                                    <div class="cost"><span>99 р.</span></div>
-                                </div>                                
+                                    <div class="price">
+                                        <span class="value">99</span>
+                                        <span class="currency">р.</span>
+                                    </div>
+                                </div>
                             </a>
                             <a class="show-all" href="#">Показать все предложения</a>
                         </div>
                     </div>
+                    <!-- END (Баннер "Специальные предложения" для электронных книг) -->
                 </div>
                 <div class="shadow">
                 </div>
@@ -542,8 +554,9 @@
                 <div class="column right-column">
                     <div class="item shifter">
                     </div>
-                    
-                    <div class="item spec">
+
+                    <!-- START (Баннер "Специальные предложения" для аудиокниг) -->
+                    <div class="item spec audiobook">
                         <div class="header">
                             <div class="title">
                                 Специальные предложения
@@ -560,19 +573,25 @@
                                 <div class="content">
                                     <div class="title">Энциклопедия Marvel Heroes</div>
                                     <div class="author-name">Дмитрий Глуховский</div>
-                                    <div class="cost"><span>599 р.</span></div>
-                                </div>                                
+                                    <div class="price">
+                                        <span class="value">599</span>
+                                        <span class="currency">р.</span>
+                                    </div>
+                                </div>
                             </a>
                             <a href="#" class="spec-book spec-book-2">
                                 <div class="cover-rating">
-                                    <img class="cover"  src="img/audiobook1.jpg" width="137" height="137">
+                                    <img class="cover" src="img/audiobook1.jpg" width="137" height="137">
                                     <div class="rating">3,8</div>
                                 </div>
                                 <div class="content">
                                     <div class="title">Непобежденные</div>
                                     <div class="author-name">А.П. Константинов</div>
-                                    <div class="cost"><span>99 р.</span></div>
-                                </div>                                
+                                    <div class="price">
+                                        <span class="value">99</span>
+                                        <span class="currency">р.</span>
+                                    </div>
+                                </div>
                             </a>
                             <a href="#" class="spec-book spec-book-3">
                                 <div class="cover-rating">
@@ -582,12 +601,16 @@
                                 <div class="content">
                                     <div class="title">Энциклопедия Marvel Heroes</div>
                                     <div class="author-name">Дмитрий Глуховский</div>
-                                    <div class="cost"><span>99 р.</span></div>
-                                </div>                                
+                                    <div class="price">
+                                        <span class="value">99</span>
+                                        <span class="currency">р.</span>
+                                    </div>
+                                </div>
                             </a>
                             <a class="show-all" href="#">Показать все предложения</a>
                         </div>
                     </div>
+                    <!-- END (Баннер "Специальные предложения" для аудиокниг) -->
                 </div>
                 <div class="shadow">
                 </div>
@@ -856,10 +879,12 @@
             </div>            
 		</footer>
 	</body>
+
     <script type="text/javascript">
         var columnFilter = '.right-column';
     </script>
     <script type="text/javascript" src="js/jquery-2.2.3.min.js"></script>
     <script type="text/javascript" src="js/vb.js"></script>
     <script type="text/javascript" src="js/column-banner.js"></script>
+
 </html>

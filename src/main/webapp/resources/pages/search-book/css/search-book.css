@@ -710,169 +710,8 @@ div.sort-links {
 }
 
 /*
- *  Баннер специальных предложений
+ * Тень под блоками результатов поиска
  */
-.spec {
-    width: 199px;
-}
-
-/* Шапка баннера специальных предложений */
-.spec > .header {
-    font-family: Verdana;
-    font-size: 15px;
-    letter-spacing: 0.8px;
-    line-height: 19px;
-    font-style: italic;
-    padding-left: 17px;
-    padding-top: 15px;
-    color: #d3be4a;
-    height: 53px;    
-    border: 1px dashed #888;
-    border-top-left-radius: 5px;
-    border-top-right-radius: 5px;
-    background-color: #f5f5f5;
-}
-
-.spec > .header > .arrow-down {
-    width: 15px;
-    height: 15px;
-    border-right: 2px solid #dae1ee;
-    border-bottom: 2px solid #dae1ee;
-    transform: rotate(41deg) skewX(-10deg);
-    position: relative;
-    top: -31px;
-    left: 137px;
-}
-
-/* Тело баннера специальных предложений */
-.spec > .main {
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    box-sizing: border-box;
-    width: 100%;
-    border-bottom-left-radius: 5px;
-    border-bottom-right-radius: 5px;
-    border: 1px dashed #888;
-    border-top: none;
-    padding: 30px 10px;
-}
-
-.spec > .main .show-all {
-    font-family: Tahoma;
-    font-size: 12px;
-    color: #667493;
-    text-align: center;
-}
-
-/* Книжка на баннере специальных предложений */
-.spec > .main > .spec-book {
-    display: flex;
-    flex-direction: row;
-    justify-content: flex-start;
-    margin-bottom: 30px;
-    text-decoration: none;
-}
-
-.spec > .main > .spec-book .cover-rating {
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    width: 55px;
-}
-
-.spec > .main > .spec-book .cover {
-    width: 45px;
-    box-shadow: 2px 0 3px -2px #888,
-                -2px 0 3px -2px #888;
-    position: relative;
-    left: 5px;
-}
-
-/* Рейтинг-звездочка у книжки на баннере специальных предложений */
-.spec > .main > .spec-book .rating::before {
-    content: '';
-    display: inline-block;
-    vertical-align: middle;
-    background-image: url(../svg/rating-star.svg);
-    background-repeat: no-repeat;
-    background-size: 15px;
-    width: 15px;
-    height: 15px;
-}
-
-.spec > .main > .spec-book .rating {
-    display: inline-block;
-    vertical-align: middle;
-    font-family: Tahoma;
-    font-size: 12px;
-    color: #0acd1c;
-    letter-spacing: 0.3px;
-    position: relative;
-    top: 2px;
-    left: 10px;
-    //border: 1px solid black;
-}
-
-/* Описание книжки на баннере специальных предложений */
-.spec > .main > .spec-book > .content {
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    position: relative;
-    left: 15px;
-    top: -3px;
-    padding-right: 10px;
-    height: 88px;
-    //border: 1px solid black;
-}
-
-/* Заголовок книжки на баннере специальных предложений */
-.spec > .main > .spec-book > .content > .title {
-    font-family: Tahoma;
-    font-size: 11px;
-    color: #d3be4a;
-    letter-spacing: 0.3px;
-    text-decoration: underline;
-    line-height: 16px;
-    margin-bottom: 4px;
-}
-
-/* Имя автора книжки на баннере специальных предложений */
-.spec > .main > .spec-book > .content > .author-name {
-    font-family: Tahoma;
-    font-size: 10px;
-    color: #6e6e6e;
-    text-decoration: underline;
-    letter-spacing: 0.3px;
-    margin-bottom: 9px;
-}
-
-/* Цена книжки на баннере специальных предложений */
-.spec > .main > .spec-book .cost {
-    display: inline-block;
-    font-family: Tahoma;
-    font-size: 11.5px;
-    color: white;
-    height: 18px;
-    transform: skewX(15deg);
-    background-image: linear-gradient(#f9a47c 10%, #e9773e 60%);
-    margin-left: 4px;
-    position: absolute;
-    bottom: 0;
-}
-
-.spec > .main > .spec-book .cost > span {
-    display: inline-block;
-    transform: skewX(-15deg);
-    box-sizing: border-box;
-    padding: 2px 13px;
-    padding-bottom: 15px;
-    position: relative;
-    left: 2px;
-}
-
-/* Тень под блоками результатов поиска */
 .shadow {
     height: 55px;
     width: 100%;
@@ -1180,16 +1019,6 @@ div.sort-links {
 }
 
 /*
- * Обложка электронной книги на баннере специальных предложений
- */
-.search-results.ebooks .right-column .spec > .main > .spec-book .cover {
-    width: 55px;
-    height: 88px;
-    overflow: hidden;
-    float: left;
-}
-
-/*
  *  Блок результатов поиска: Аудио-книги
  */
 /* 1-ый столбец описания аудио-книги */
@@ -1220,16 +1049,6 @@ div.sort-links {
     text-decoration: none;
     margin-top: 25px;
     margin-left: 5px;
-}
-
-/*
- * Обложка электронной книги на баннере специальных предложений
- */
-.search-results.audiobooks .right-column .spec > .main > .spec-book .cover {
-    overflow: hidden;
-    float: left;
-    width: 55px;
-    height: 55px;
 }
 
 /*

@@ -4,7 +4,7 @@
 		<title>Verybook</title>
 		<meta charset="UTF-8" />
         <link href="css/feedback.css" type="text/css" rel="stylesheet" />
-        <script src='https://www.google.com/recaptcha/api.js'></script>
+        <link href="css/vb-common.css" type="text/css" rel="stylesheet" />
 	</head>
 	<body onload="init()">
         <header>
@@ -265,7 +265,8 @@
                 </div>
                 
                 <div class="column-3">
-                    <div class="item spec">
+                    <!-- START (Баннер "Специальные предложения" для электронных книг) -->
+                    <div class="item spec ebook">
                         <div class="header">
                             <div class="title">
                                 Специальные предложения
@@ -276,7 +277,7 @@
                         <div class="main">
                             <a href="#" class="spec-book spec-book-1">
                                 <div class="cover-rating">
-                                    <img class="cover" src="img/book1.jpg" width="100" height="160">
+                                    <img class="cover" src="img/book1.jpg" width="230" height="368">
                                     <div class="rating">3,8</div>
                                 </div>
                                 <div class="content">
@@ -286,11 +287,11 @@
                                         <span class="value">599</span>
                                         <span class="currency">р.</span>
                                     </div>
-                                </div>                                
+                                </div>
                             </a>
                             <a href="#" class="spec-book spec-book-2">
                                 <div class="cover-rating">
-                                    <img class="cover" src="img/book5.jpg" width="100" height="160">
+                                    <img class="cover" src="img/book5.jpg" width="230" height="368">
                                     <div class="rating">3,8</div>
                                 </div>
                                 <div class="content">
@@ -300,11 +301,11 @@
                                         <span class="value">99</span>
                                         <span class="currency">р.</span>
                                     </div>
-                                </div>                                
+                                </div>
                             </a>
                             <a href="#" class="spec-book spec-book-3">
                                 <div class="cover-rating">
-                                    <img class="cover" src="img/book4.jpg" width="100" height="160">
+                                    <img class="cover" src="img/book4.jpg" width="230" height="368">
                                     <div class="rating">3,8</div>
                                 </div>
                                 <div class="content">
@@ -314,13 +315,15 @@
                                         <span class="value">99</span>
                                         <span class="currency">р.</span>
                                     </div>
-                                </div>                                
+                                </div>
                             </a>
                             <a class="show-all" href="#">Показать все предложения</a>
                         </div>
                     </div>
-                    
-                    <div class="item spec">
+                    <!-- END (Баннер "Специальные предложения" для электронных книг) -->
+
+                    <!-- START (Баннер "Специальные предложения" для аудиокниг) -->
+                    <div class="item spec audiobook">
                         <div class="header">
                             <div class="title">
                                 Специальные предложения
@@ -331,7 +334,7 @@
                         <div class="main">
                             <a href="#" class="spec-book spec-book-1">
                                 <div class="cover-rating">
-                                    <img class="cover" src="img/book1.jpg" width="100" height="160">
+                                    <img class="cover" src="img/audiobook1.jpg" width="137" height="137">
                                     <div class="rating">3,8</div>
                                 </div>
                                 <div class="content">
@@ -341,11 +344,11 @@
                                         <span class="value">599</span>
                                         <span class="currency">р.</span>
                                     </div>
-                                </div>                                
+                                </div>
                             </a>
                             <a href="#" class="spec-book spec-book-2">
                                 <div class="cover-rating">
-                                    <img class="cover" src="img/book5.jpg" width="100" height="160">
+                                    <img class="cover" src="img/audiobook1.jpg" width="137" height="137">
                                     <div class="rating">3,8</div>
                                 </div>
                                 <div class="content">
@@ -355,11 +358,11 @@
                                         <span class="value">99</span>
                                         <span class="currency">р.</span>
                                     </div>
-                                </div>                                
+                                </div>
                             </a>
                             <a href="#" class="spec-book spec-book-3">
                                 <div class="cover-rating">
-                                    <img class="cover" src="img/book4.jpg" width="100" height="160">
+                                    <img class="cover" src="img/audiobook1.jpg" width="137" height="137">
                                     <div class="rating">3,8</div>
                                 </div>
                                 <div class="content">
@@ -369,11 +372,12 @@
                                         <span class="value">99</span>
                                         <span class="currency">р.</span>
                                     </div>
-                                </div>                                
+                                </div>
                             </a>
                             <a class="show-all" href="#">Показать все предложения</a>
                         </div>
                     </div>
+                    <!-- END (Баннер "Специальные предложения" для аудиокниг) -->
                 </div>
             </div>            
         </main>
@@ -494,7 +498,8 @@
             </div>            
 		</footer>
 	</body>
-    
+
+    <script src='https://www.google.com/recaptcha/api.js'></script>
     <script type="text/javascript" src="js/jquery-2.2.3.min.js"></script>
     <script type="text/javascript" src="js/vb.js"></script>
     <script type="text/javascript" src="js/textarea.js"></script>

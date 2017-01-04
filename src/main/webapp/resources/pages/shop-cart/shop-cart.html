@@ -4,6 +4,7 @@
 		<title>Verybook</title>
 		<meta charset="UTF-8" />
         <link href="css/shop-cart.css" type="text/css" rel="stylesheet" />
+        <link href="css/vb-common.css" type="text/css" rel="stylesheet" />
 	</head>
 	<body onload="init()">
         <header>
@@ -559,7 +560,8 @@
                     </ul>   
                 </ul>
 
-                <div class="item spec">
+                <!-- START (Баннер "Специальные предложения" для электронных книг) -->
+                <div class="item spec ebook">
                     <div class="header">
                         <div class="title">
                             Специальные предложения
@@ -570,7 +572,7 @@
                     <div class="main">
                         <a href="#" class="spec-book spec-book-1">
                             <div class="cover-rating">
-                                <img class="cover" src="img/book1.jpg" width="100" height="160">
+                                <img class="cover" src="img/book1.jpg" width="230" height="368">
                                 <div class="rating">3,8</div>
                             </div>
                             <div class="content">
@@ -580,11 +582,11 @@
                                     <span class="value">599</span>
                                     <span class="currency">р.</span>
                                 </div>
-                            </div>                                
+                            </div>
                         </a>
                         <a href="#" class="spec-book spec-book-2">
                             <div class="cover-rating">
-                                <img class="cover" src="img/book5.jpg" width="100" height="160">
+                                <img class="cover" src="img/book5.jpg" width="230" height="368">
                                 <div class="rating">3,8</div>
                             </div>
                             <div class="content">
@@ -594,11 +596,11 @@
                                     <span class="value">99</span>
                                     <span class="currency">р.</span>
                                 </div>
-                            </div>                                
+                            </div>
                         </a>
                         <a href="#" class="spec-book spec-book-3">
                             <div class="cover-rating">
-                                <img class="cover" src="img/book4.jpg" width="100" height="160">
+                                <img class="cover" src="img/book4.jpg" width="230" height="368">
                                 <div class="rating">3,8</div>
                             </div>
                             <div class="content">
@@ -608,11 +610,12 @@
                                     <span class="value">99</span>
                                     <span class="currency">р.</span>
                                 </div>
-                            </div>                                
+                            </div>
                         </a>
                         <a class="show-all" href="#">Показать все предложения</a>
                     </div>
                 </div>
+                <!-- END (Баннер "Специальные предложения" для электронных книг) -->
             </div>
         </main>
         
@@ -732,6 +735,7 @@
             </div>            
 		</footer>
 	</body>
+
     <script type="text/javascript" src="js/jquery-2.2.3.min.js"></script>
     <script type="text/javascript" src="js/vb.js"></script>
     
@@ -763,4 +767,5 @@
             });
         });
     </script>
+
 </html>
