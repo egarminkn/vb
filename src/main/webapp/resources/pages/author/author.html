@@ -1,11 +1,10 @@
 <!DOCTYPE html>
 <html>
 	<head>
+        <meta charset="UTF-8" />
 		<title>Verybook</title>
-		<meta charset="UTF-8" />
         <link href="css/author.css" type="text/css" rel="stylesheet" />
-        <script src="js/jquery-2.2.3.min.js"></script>
-        <script src="js/vb.js"></script>
+        <link href="css/vb-common.css" type="text/css" rel="stylesheet" />
 	</head>
 	<body onload="init()">
         <header>
@@ -58,13 +57,15 @@
                     <div class="rating-stars"></div>
                     <div class="rating-number">2,3</div>
                 </div>
+
+                <!-- START (Рейтинг-список) -->
                 <div class="ratings">
                     Рейтинг автора
                     <ul class="list">
                         <li class="item">
                             <div class="dynamic-up ">
                                 <!-- У div.dynamic-up можно использовать доп.класс invert для того, чтобы стрелочку направить вниз -->
-                                <img src="svg/arrow_up.svg" width="71" height="213">
+                                <img src="svg/vb/arrow_up.svg" width="71" height="213">
                             </div>
                             <a class="link" href="#">
                                 №
@@ -80,7 +81,7 @@
                         <li class="item">
                             <div class="dynamic-up invert">
                                 <!-- У div.dynamic-up можно использовать доп.класс invert для того, чтобы стрелочку направить вниз -->
-                                <img src="svg/arrow_up.svg" width="71" height="213">
+                                <img src="svg/vb/arrow_up.svg" width="71" height="213">
                             </div>
                             <a class="link" href="#">
                                 №
@@ -96,7 +97,7 @@
                         <li class="item">
                             <div class="dynamic-up ">
                                 <!-- У div.dynamic-up можно использовать доп.класс invert для того, чтобы стрелочку направить вниз -->
-                                <img src="svg/arrow_up.svg" width="71" height="213">
+                                <img src="svg/vb/arrow_up.svg" width="71" height="213">
                             </div>
                             <a class="link" href="#">
                                 №
@@ -111,6 +112,8 @@
                         </li>
                     </ul>
                 </div>
+                <!-- END (Рейтинг-список) -->
+
                 <div class="likes">
                     <a class="like" href="#"><img src="svg/thumb-up.svg"><span>1022</span></a>
                     <a class="dislike" href="#"><img src="svg/thumb-up.svg"><span>51</span></a>
@@ -461,4 +464,8 @@
             </div>            
 		</footer>
 	</body>
+
+    <script type="text/javascript" src="js/jquery-2.2.3.min.js"></script>
+    <script type="text/javascript" src="js/vb.js"></script>
+
 </html>

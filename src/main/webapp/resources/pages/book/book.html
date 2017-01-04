@@ -1,9 +1,10 @@
 <!DOCTYPE html>
 <html>
 	<head>
+        <meta charset="UTF-8" />
 		<title>Verybook</title>
-		<meta charset="UTF-8" />
         <link href="css/book.css" type="text/css" rel="stylesheet" />
+        <link href="css/vb-common.css" type="text/css" rel="stylesheet" />
 	</head>
 	<body onload="init()">
         <header>
@@ -182,13 +183,15 @@
                                 </li>
                             </ul>
                         </div>
+
+                        <!-- START (Рейтинг-список) -->
                         <div class="ratings">
                             Рейтинг книги
                             <ul class="list">
                                 <li class="item">
                                     <div class="dynamic-up ">
                                         <!-- У div.dynamic-up можно использовать доп.класс invert для того, чтобы стрелочку направить вниз -->
-                                        <img src="svg/arrow_up.svg" width="71" height="213">
+                                        <img src="svg/vb/arrow_up.svg" width="71" height="213">
                                     </div>
                                     <a class="link" href="#">
                                         №
@@ -204,7 +207,7 @@
                                 <li class="item">
                                     <div class="dynamic-up invert">
                                         <!-- У div.dynamic-up можно использовать доп.класс invert для того, чтобы стрелочку направить вниз -->
-                                        <img src="svg/arrow_up.svg" width="71" height="213">
+                                        <img src="svg/vb/arrow_up.svg" width="71" height="213">
                                     </div>
                                     <a class="link" href="#">
                                         №
@@ -220,7 +223,7 @@
                                 <li class="item">
                                     <div class="dynamic-up ">
                                         <!-- У div.dynamic-up можно использовать доп.класс invert для того, чтобы стрелочку направить вниз -->
-                                        <img src="svg/arrow_up.svg" width="71" height="213">
+                                        <img src="svg/vb/arrow_up.svg" width="71" height="213">
                                     </div>
                                     <a class="link" href="#">
                                         №
@@ -235,6 +238,8 @@
                                 </li>
                             </ul>
                         </div>
+                        <!-- END (Рейтинг-список) -->
+
                         <div class="likes">
                             <a class="like" href="#">
                                 1022
@@ -1118,9 +1123,11 @@
             </div>            
 		</footer>
 	</body>
+
     <script type="text/javascript" src="js/jquery-2.2.3.min.js"></script>
     <script type="text/javascript" src="js/vb.js"></script>
     <script type="text/javascript" src="js/shelf.js"></script>
     <script type="text/javascript" src="js/textarea.js"></script>
     <script type="text/javascript" src="js/page-scroller.js"></script>
+
 </html>
