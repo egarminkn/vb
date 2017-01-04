@@ -877,40 +877,7 @@ div.sort-links {
     justify-content: flex-start;
 }
 
-.search-results .left-column .actions .buy {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    white-space: nowrap;
-}
-
-.search-results .left-column .actions .buy .item {
-    font-family: Tahoma;
-    font-size: 12px;
-    border: 1px solid #c4c4c4;
-    padding: 10px 15px;
-    box-sizing: border-box;
-    height: 34px;
-}
-
-.search-results .left-column .actions .buy .price {
-    border-top-left-radius: 5px;
-    border-bottom-left-radius: 5px;
-    border-right: none;
-}
-
-.search-results .left-column .actions .buy .cart-btn {
-    border-top-right-radius: 5px;
-    border-bottom-right-radius: 5px;
-    color: black;
-    text-decoration: none;
-}
-
-.search-results .left-column .actions .buy .cart-btn:hover {
-    background-color: #cc7937;
-}
-
-/* 
+/*
  * Звездочки рейтинга книги
  */
 .search-results .left-column .actions .reviews {
