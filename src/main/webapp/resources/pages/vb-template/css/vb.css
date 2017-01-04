@@ -614,6 +614,25 @@ main .columns {
  *** Общее
  ***/
 /**
+ ** Надпись-предупреждение
+ **/
+.warning {
+    font-family: Tahoma;
+    font-size: 14px;
+    color: #7f7f7f;
+    line-height: 20px;
+    margin: 25px auto;
+    background: url('../svg/vb/warning.svg') no-repeat;
+    background-size: 18px 16px;
+    background-position: left center;
+    padding-left: 25px;
+}
+
+.warning a {
+    color: #667393;
+}
+
+/**
  **  Рейтинг книги (5 звезд)
  **/
 .rating-5-stars {

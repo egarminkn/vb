@@ -19,13 +19,6 @@
     src: local('Core Sans M W01 SC 65 Bold'), url('fonts/Core Sans M W01 SC 65 Bold.woff') format('woff');
 }
 
-@font-face {
-    font-family: 'EmojiSymbols-Regular';
-    font-style: normal;
-    font-weight: normal;
-    src: local('EmojiSymbols-Regular'), url('fonts/EmojiSymbols-Regular.woff') format('woff');
-}
-
 body {
     display: flex;
     flex-direction: column;
@@ -724,25 +717,6 @@ label[for="topic"] {
 /***
  *** Общее
  ***/
-/**
- ** Предупреждения
- **/
-.warning {
-    font-family: Tahoma;
-    font-size: 14px;
-    color: #7f7f7f;
-    line-height: 20px;
-    margin: 25px auto;
-    background: url('../svg/warning.svg') no-repeat;
-    background-size: 18px 16px;
-    background-position: left center;
-    padding-left: 25px;
-}
-
-.warning a {
-    color: #667393;
-}
-
 /**
  **  Меню перехода на страницу пооиска книг
  **/
