@@ -695,14 +695,14 @@ main .left-column .rating-3-stars .rating-stars::before {
 .books .list {
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
+    justify-content: flex-start;
     flex-wrap: wrap;
     align-content: space-between;
-    margin-top: 30px;
 }
 
 .list .book {
-    width: 150px;
+    margin-top: 20px;
+    width: 179px;
 }
 
 .book .cover {
@@ -720,6 +720,7 @@ main .left-column .rating-3-stars .rating-stars::before {
     color: #667493;
     text-decoration: underline;
     margin-top: 5px;
+    width: 150px;
 }
 
 /* Дата публикации книги автора */

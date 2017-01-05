@@ -611,6 +611,27 @@ main .columns {
  *** Общее
  ***/
 /**
+ ** Кнопка "Показать еще"
+ **/
+.show-more {
+    margin-top: 25px;
+    text-align: center;
+    /*border: 1px solid black;*/
+}
+
+.show-more .btn {
+    display: inline-block;
+    font-family: 'Myriad Pro Regular';
+    font-size: 20px;
+    color: #707d9a;
+    text-decoration: none;
+    border: 1px dashed #5f7495;
+    margin: auto;
+    padding: 10px 35px;
+    border-radius: 5px;
+}
+
+/**
  ** Ценник под книгой
  **/
 .price-under-book {

@@ -1037,21 +1037,6 @@ main .book-reviews .review-list .review .content {
 }
 
 /*
- *  Кнопка Показать еще отзывы
- */
-main .book-reviews .show-more {
-    font-family: 'Myriad Pro Regular';
-    font-size: 20px;
-    color: #707d9a;
-    text-decoration: none;
-    border: 1px dashed #5f7495;
-    margin: auto;
-    padding: 20px 70px;
-    border-radius: 5px;
-    margin-top: 25px;
-}
-
-/*
  *  Блок Рекомендованные также
  */
 .shelf {
