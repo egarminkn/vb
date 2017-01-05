@@ -1323,44 +1323,6 @@ main .book-reviews .show-more {
     width: 67.5px;
 }
 
-/* цена книги на книжной полке */
-.shelf .book-title-slider-out .book-title-slider-in > a .price {
-    font-family: Tahoma;
-    letter-spacing: 0.3px;
-    color: #525252;
-    
-    display: inline-block;
-    border: 1px solid #c7ceda;
-    border-radius: 4px;
-    padding: 1px 6px;
-    padding-right: 5px;
-    height: 16px;
-    margin-top: 5px;
-}
-
-.shelf .book-title-slider-out .book-title-slider-in > a .price > span {
-    position: relative;
-    top: -4px;
-    left: -1px;
-}
-
-/* цена */
-.shelf .book-title-slider-out .book-title-slider-in > a .price > span.number {
-    font-size: 12px;
-    margin-right: 5px;
-}
-
-/* надпись Бесплатно */
-.shelf .book-title-slider-out .book-title-slider-in > a .price > span.number.free {
-    color: red;
-    margin-right: 0;
-}
-
-/* валюта */
-.shelf .book-title-slider-out .book-title-slider-in > a .price > span.currency {
-    font-size: 11px;
-}
-
 /***
  *** Модальные окна
  ***/

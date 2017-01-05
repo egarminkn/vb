@@ -736,44 +736,6 @@ main .left-column .rating-3-stars .rating-stars::before {
     width: 56px;
 }
 
-/*
- * Цена книги автора
- */
-.price {
-    font-family: Tahoma;
-    letter-spacing: 0.3px;
-    color: #525252;
-    display: inline-block;
-    border: 1px solid #c7ceda;
-    border-radius: 4px;
-    padding: 1px 6px;
-    padding-right: 5px;
-    height: 16px;
-}
-
-.price > span {
-    position: relative;
-    top: -4px;
-    left: -1px;
-}
-
-/* цена */
-.price > span.number {
-    font-size: 12px;
-    margin-right: 5px;
-}
-
-/* надпись Бесплатно */
-.price > span.number.free {
-    color: red;
-    margin-right: 0;
-}
-
-/* валюта */
-.price > span.currency {
-    font-size: 11px;
-}
-
 /* ----------------------------------------------------------------------------------------------------------------- */
 
 /*

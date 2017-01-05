@@ -611,6 +611,59 @@ main .columns {
  *** Общее
  ***/
 /**
+ ** Ценник под книгой
+ **/
+.price-under-book {
+    display: inline-block;
+    font-family: Tahoma;
+    font-size: 12px;
+    letter-spacing: 0.3px;
+    line-height: 14px;
+    color: #525252;
+    border: 1px solid #c7ceda;
+    border-radius: 4px;
+    padding: 1px 5px;
+    box-sizing: content-box;
+    height: 14px;
+}
+
+/*
+ * Цена
+ */
+.price-under-book > .value {
+    display: inline-block;
+    vertical-align: top;
+    box-sizing: border-box;
+    height: 14px;
+    margin-right: -2px;
+    /*border: 1px solid black;*/
+}
+
+/*
+ * Валюта
+ */
+.price-under-book > .currency {
+    display: inline-block;
+    vertical-align: top;
+    font-size: 11px;
+    line-height: 15px;
+    box-sizing: border-box;
+    height: 14px;
+    /*border: 1px solid black;*/
+}
+
+/*
+ * Надпись "Бесплатно"
+ */
+.price-under-book.free > .value {
+    color: red;
+}
+
+.price-under-book.free > .currency {
+    display: none;
+}
+
+/**
  ** Пальчики-лайкчики
  **/
 div.likes {
