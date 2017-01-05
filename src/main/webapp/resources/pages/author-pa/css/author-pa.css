@@ -1725,6 +1725,14 @@ main .books table.write tbody tr td.likes .dislike {
     color: #cb2d27;
 }
 
+main .books table.read tbody tr td.likes .like {
+    color: #1f9b02;
+}
+
+main .books table.read tbody tr td.likes .dislike {
+    color: #cb2d27;
+}
+
 /*
  * Колонка - Прибыль
  */

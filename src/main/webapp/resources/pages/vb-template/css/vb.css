@@ -611,6 +611,56 @@ main .columns {
  *** Общее
  ***/
 /**
+ ** Пальчики-лайкчики
+ **/
+div.likes {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    /*border: 1px solid black*/
+}
+
+div.likes a {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    font-family: Tahoma;
+    font-size: 12px;
+    color: black;
+    text-decoration: none;
+    /*border: 1px solid black;*/
+}
+
+div.likes .like::before {
+    content: '';
+    display: inline-block;
+    width: 15px;
+    height: 15px;
+    background: url('../svg/vb/thumb-up.svg') no-repeat;
+    background-size: 100%;
+    margin-right: 5px;
+    /*border: 1px solid black;*/
+}
+
+div.likes .dislike {
+    margin-left: 15px;
+}
+
+div.likes .dislike::before {
+    content: '';
+    display: inline-block;
+    width: 15px;
+    height: 15px;
+    background: url('../svg/vb/thumb-up.svg') no-repeat;
+    background-size: 100%;
+    transform: scale(-1);
+    margin-right: 5px;
+    /*border: 1px solid black;*/
+}
+
+/**
  ** Выбор типа сортировки
  **/
 /*

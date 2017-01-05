@@ -787,7 +787,7 @@ div.book-title-slider-in {
     transition: transform .8s ease;
 }
 
-div.book-title-slider-in > a {
+div.book-title-slider-in > .book-summary {
     text-decoration: none;
     display: inline-block;
     position: relative; /* Без этого ссылки изначально не кликабельны */
@@ -802,7 +802,7 @@ div.book-title-slider-in > a {
     //background-color: black;
 }
 
-div.book-title-slider-in > a::before {
+div.book-title-slider-in > .book-summary::before {
     content: '';
     display: block;
     position: absolute;
@@ -860,7 +860,7 @@ button.right-arrow {
  *  Описание книги под нарисованными полками
  */
 /* Заголовок книги */
-div.book-title-slider-in > a > div.book-title {
+div.book-title-slider-in > .book-summary > div.book-title {
     font-family: Tahoma;
     font-size: 13px;
     color: #5f7495;
@@ -874,18 +874,18 @@ div.book-title-slider-in > a > div.book-title {
 }
 
 /* Автор книги и общее количество его книг */
-div.book-title-slider-in > a > div.book-author {
+div.book-title-slider-in > .book-summary > div.book-author {
     position: relative;
     top: -4px;
 }
 
-div.book-title-slider-in > a > div.book-author > div {
+div.book-title-slider-in > .book-summary > div.book-author > div {
     display: inline-block;
     vertical-align: bottom;
 }
 
 /* Имя автора */
-div.book-title-slider-in > a > div.book-author > div.author-name {
+div.book-title-slider-in > .book-summary > div.book-author > div.author-name {
     font-family: Tahoma;
     font-size: 11px;
     color: black;
@@ -895,7 +895,7 @@ div.book-title-slider-in > a > div.book-author > div.author-name {
 }
 
 /* Общее количество книг автора */
-div.book-title-slider-in > a > div.book-author > div.book-count {
+div.book-title-slider-in > .book-summary > div.book-author > div.book-count {
     font-family: Tahoma;
     font-size: 10px;
     color: #888;
@@ -904,7 +904,7 @@ div.book-title-slider-in > a > div.book-author > div.book-count {
     z-index: -1;
 }
 
-div.book-title-slider-in > a > div.book-author > div.book-count > span {
+div.book-title-slider-in > .book-summary > div.book-author > div.book-count > span {
     text-decoration: underline;
 }
 
@@ -912,76 +912,54 @@ div.book-title-slider-in > a > div.book-author > div.book-count > span {
  *  Звезды рейтинга у книги на полке
  */
 /* уровень заполненности звезд оранжевым фоном */
-.book-title-slider-in > a:nth-of-type(1) > .rating-5-stars > .rating-stars::before {
+.book-title-slider-in > .book-summary:nth-of-type(1) > .rating-5-stars > .rating-stars::before {
     width: 67.5px;
 }
-.book-title-slider-in > a:nth-of-type(2) > .rating-5-stars > .rating-stars::before {
+.book-title-slider-in > .book-summary:nth-of-type(2) > .rating-5-stars > .rating-stars::before {
     width: 57px;
 }
-.book-title-slider-in > a:nth-of-type(3) > .rating-5-stars > .rating-stars::before {
+.book-title-slider-in > .book-summary:nth-of-type(3) > .rating-5-stars > .rating-stars::before {
     width: 61.5px;
 }
-.book-title-slider-in > a:nth-of-type(4) > .rating-5-stars > .rating-stars::before {
+.book-title-slider-in > .book-summary:nth-of-type(4) > .rating-5-stars > .rating-stars::before {
     width: 64.5px;
 }
-.book-title-slider-in > a:nth-of-type(5) > .rating-5-stars > .rating-stars::before {
+.book-title-slider-in > .book-summary:nth-of-type(5) > .rating-5-stars > .rating-stars::before {
     width: 72px;
 }
-.book-title-slider-in > a:nth-of-type(6) > .rating-5-stars > .rating-stars::before {
+.book-title-slider-in > .book-summary:nth-of-type(6) > .rating-5-stars > .rating-stars::before {
     width: 72px;
 }
-.book-title-slider-in > a:nth-of-type(7) > .rating-5-stars > .rating-stars::before {
+.book-title-slider-in > .book-summary:nth-of-type(7) > .rating-5-stars > .rating-stars::before {
     width: 64.5px;
 }
-.book-title-slider-in > a:nth-of-type(8) > .rating-5-stars > .rating-stars::before {
+.book-title-slider-in > .book-summary:nth-of-type(8) > .rating-5-stars > .rating-stars::before {
     width: 61.5px;
 }
-.book-title-slider-in > a:nth-of-type(9) > .rating-5-stars > .rating-stars::before {
+.book-title-slider-in > .book-summary:nth-of-type(9) > .rating-5-stars > .rating-stars::before {
     width: 57px;
 }
-.book-title-slider-in > a:nth-of-type(10) > .rating-5-stars > .rating-stars::before {
+.book-title-slider-in > .book-summary:nth-of-type(10) > .rating-5-stars > .rating-stars::before {
     width: 67.5px;
 }
-.book-title-slider-in > a:nth-of-type(11) > .rating-5-stars > .rating-stars::before {
+.book-title-slider-in > .book-summary:nth-of-type(11) > .rating-5-stars > .rating-stars::before {
     width: 67.5px;
 }
-.book-title-slider-in > a:nth-of-type(12) > .rating-5-stars > .rating-stars::before {
+.book-title-slider-in > .book-summary:nth-of-type(12) > .rating-5-stars > .rating-stars::before {
     width: 57px;
 }
-.book-title-slider-in > a:nth-of-type(13) > .rating-5-stars > .rating-stars::before {
+.book-title-slider-in > .book-summary:nth-of-type(13) > .rating-5-stars > .rating-stars::before {
     width: 61.5px;
 }
-.book-title-slider-in > a:nth-of-type(14) > .rating-5-stars > .rating-stars::before {
+.book-title-slider-in > .book-summary:nth-of-type(14) > .rating-5-stars > .rating-stars::before {
     width: 64.5px;
 }
-.book-title-slider-in > a:nth-of-type(15) > .rating-5-stars > .rating-stars::before {
+.book-title-slider-in > .book-summary:nth-of-type(15) > .rating-5-stars > .rating-stars::before {
     width: 72px;
-}
-
-/*
- *  Лайки под книгой на полке
- */
-div.likes {
-    font-family: Tahoma;
-    font-size: 10.4px;
-    color: #6690d6;
-    letter-spacing: 0.3px;    
-    position: relative;
-    top: 8px;
-    left: 4px;
-}
-
-div.likes::before {
-    content: '\1F44D'; /* символ большлго пальца поднятого к верху */
-    font-family: 'EmojiSymbols-Regular';
-    font-size: 16px;
-    color: #666;
-    position: relative;
-    left: -4px;
 }
 
 /* цена книги на книжной полке */
-div.book-title-slider-in > a > div.price {
+div.book-title-slider-in > .book-summary > div.price {
     font-family: Tahoma;
     letter-spacing: 0.3px;
     color: #525252;
@@ -996,26 +974,26 @@ div.book-title-slider-in > a > div.price {
     height: 16px;
 }
 
-div.book-title-slider-in > a > div.price > span {
+div.book-title-slider-in > .book-summary > div.price > span {
     position: relative;
     top: -4px;
     left: -1px;
 }
 
 /* цена */
-div.book-title-slider-in > a > div.price > span.number {
+div.book-title-slider-in > .book-summary > div.price > span.number {
     font-size: 12px;
     margin-right: 5px;
 }
 
 /* надпись Бесплатно */
-div.book-title-slider-in > a > div.price > span.number.free {
+div.book-title-slider-in > .book-summary > div.price > span.number.free {
     color: red;
     margin-right: 0;
 }
 
 /* валюта */
-div.book-title-slider-in > a > div.price > span.currency {
+div.book-title-slider-in > .book-summary > div.price > span.currency {
     font-size: 11px;
 }
 
@@ -1151,7 +1129,7 @@ div.shelf > div.authors-block {
 }
 
 /* Каждый автор - это ссылка */
-div.shelf > div.authors-block > a {
+div.shelf > div.authors-block > .author-summary {
     display: inline-block;
     vertical-align: middle;
     padding-top: 1px;
@@ -1169,7 +1147,7 @@ div.shelf > div.authors-block > a {
  *  Имя автора
  */
 /* внешний блок */
-div.shelf > div.authors-block > a > div.author-name {
+div.shelf > div.authors-block > .author-summary > div.author-name {
     margin-bottom: 10px;
     height: 35px;
     display: table-cell; /* Для выравнивания вложенного div-а по центру этого div-а (имеется в виду, по вертикали) */
@@ -1178,7 +1156,7 @@ div.shelf > div.authors-block > a > div.author-name {
 }
 
 /* внутренний блок */
-div.shelf > div.authors-block > a > div.author-name > div {
+div.shelf > div.authors-block > .author-summary > div.author-name > div {
     font-family: Tahoma;
     font-size: 11px;
     letter-spacing: 0.6px;
@@ -1188,7 +1166,7 @@ div.shelf > div.authors-block > a > div.author-name > div {
 }
 
 /* общее количество книг автора */
-div.shelf > div.authors-block > a > div.book-count {
+div.shelf > div.authors-block > .author-summary > div.book-count {
     font-family: Tahoma;
     font-size: 10px;
     letter-spacing: 0.3px;
@@ -1201,14 +1179,14 @@ div.shelf > div.authors-block > a > div.book-count {
 }
 
 /* фото автора */
-div.shelf > div.authors-block > a > div.photo {
+div.shelf > div.authors-block > .author-summary > div.photo {
     position: relative;
     left: 1px;
     top: 12px;
 }
     
 /* круглая маска для обрезания фотки автора */
-div.shelf > div.authors-block > a > div.photo::before {
+div.shelf > div.authors-block > .author-summary > div.photo::before {
     content: '';
     display: block;
     width: 80px;
@@ -1222,39 +1200,23 @@ div.shelf > div.authors-block > a > div.photo::before {
 /*
  * Закраска звездочек в рейтинге кокретного автора
  */
-.authors-block > a:nth-of-type(1) > .rating-3-stars > .rating-stars::before {
+.authors-block > .author-summary:nth-of-type(1) > .rating-3-stars > .rating-stars::before {
     width: 63px;
 }
-.authors-block > a:nth-of-type(2) > .rating-3-stars > .rating-stars::before {
+.authors-block > .author-summary:nth-of-type(2) > .rating-3-stars > .rating-stars::before {
     width: 63px;
 }
-.authors-block > a:nth-of-type(3) > .rating-3-stars > .rating-stars::before {
+.authors-block > .author-summary:nth-of-type(3) > .rating-3-stars > .rating-stars::before {
     width: 61.36px;
 }
-.authors-block > a:nth-of-type(4) > .rating-3-stars > .rating-stars::before {
+.authors-block > .author-summary:nth-of-type(4) > .rating-3-stars > .rating-stars::before {
     width: 61.87px;
 }
-.authors-block > a:nth-of-type(5) > .rating-3-stars > .rating-stars::before {
+.authors-block > .author-summary:nth-of-type(5) > .rating-3-stars > .rating-stars::before {
     width: 62.62px;
 }
-.authors-block > a:nth-of-type(6) > .rating-3-stars > .rating-stars::before {
+.authors-block > .author-summary:nth-of-type(6) > .rating-3-stars > .rating-stars::before {
     width: 57.96px;
-}
-
-/* количество лайков за данного автора */
-div.shelf > div.authors-block > a div.likes {
-    font-size: 9px;
-    letter-spacing: 0.2px;
-    position: relative;
-    top: 18px;
-    left: 7px;    
-}
-
-/* символ большого пальчика вверх */
-div.shelf > div.authors-block > a div.likes::before {
-    position: relative;
-    left: -3px;
-    top: 2px;
 }
 
 /*
