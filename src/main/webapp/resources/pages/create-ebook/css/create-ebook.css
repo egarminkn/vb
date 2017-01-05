@@ -720,6 +720,14 @@ fieldset {
  * Левая колонка
  */
 /*
+ * Баннер "Полезной информации"
+ */
+main .column-1 ul.useful-info {
+    margin-left: 30px;
+    margin-top: 7px;
+}
+
+/*
  * Блок-ссылка Как создать свою обложку
  */
 .own-cover {

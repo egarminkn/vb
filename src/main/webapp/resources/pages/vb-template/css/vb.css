@@ -611,6 +611,35 @@ main .columns {
  *** Общее
  ***/
 /**
+ ** Баннер "Похожие авторы"
+ **/
+.similar-authors {
+    font-family: 'Myriad Pro Regular';
+    font-size: 14px;
+    letter-spacing: 0.5px;
+    line-height: 20px;
+    word-spacing: -0.1px;
+}
+
+.similar-authors .title {
+    font-weight: bold;
+}
+
+.similar-authors ul.similar-authors-list {
+    margin-top: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.similar-authors li.similar-author {
+    margin: 2px 0;
+}
+
+.similar-authors li.similar-author > a {
+    color: #667493;
+}
+
+/**
  ** Баннер "Полезной информации"
  **/
 /*
@@ -626,8 +655,6 @@ ul.useful-info li.useful-item ul.links {
 
 ul.useful-info {
     max-width: 190px;
-    margin-left: 30px;
-    margin-top: 7px;
     /*border: 1px solid red;*/
 }
 

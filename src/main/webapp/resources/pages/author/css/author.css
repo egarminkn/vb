@@ -577,7 +577,7 @@ main .left-column .rating-3-stars .rating-stars::before {
 }
 
 /*
- * ПРОМО-блоки в левой колонке главной части страницы
+ * ПРОМО-блок в левой колонке главной части страницы
  */
 .promo {
     font-family: 'Myriad Pro Regular';
@@ -585,13 +585,6 @@ main .left-column .rating-3-stars .rating-stars::before {
     letter-spacing: 0.5px;
     line-height: 20px;
     word-spacing: -0.1px;
-}
-
-.promo-1 {
-    margin-top: 20px;
-}
-
-.promo-2 {
     margin-top: 20px;
 }
 
@@ -599,18 +592,11 @@ main .left-column .rating-3-stars .rating-stars::before {
     font-weight: bold;
 }
 
-.promo ul {
-    margin-top: 0;
-    padding: 0;
-    list-style: none;
-}
-
-.promo li {
-    margin: 2px 0;
-}
-
-.promo a {
-    color: #667493;
+/*
+ * Баннер "Похожие авторы"
+ */
+.left-column .similar-authors {
+    margin-top: 20px;
 }
 
 /*
