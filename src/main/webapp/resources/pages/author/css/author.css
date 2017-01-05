@@ -703,59 +703,11 @@ main .left-column .rating-3-stars .rating-stars::before {
 }
 
 /*
- * Блок выбора типа сортировки книг автора
+ * Выбор типа сортировки
  */
-.sort-by {
+.books .sort-by {
     margin-top: 10px;
-}
-
-.sort-by > div {
-    font-family: Tahoma;
-    font-size: 12px;
-    font-weight: bold;
-    color: black;
-    letter-spacing: 0.3px;
-    display: inline-block;
-    vertical-align: middle;
-}
-
-.sort-by > input[type="radio"] {
-    display: none;
-}
-
-/* Переключалка типа сортировки книг автора */
-label.sort-link {
-    font-family: Tahoma;
-    font-size: 12px;
-    font-weight: normal;
-    letter-spacing: 0.3px;
-    text-decoration: underline;
-    color: #5f7495;
-    margin-left: 5px;
-    padding-left: 6px;
-    padding-right: 6px;
-    padding-top: 1px;
-    padding-bottom: 2px;
-    margin-right: -5px;
-    cursor: pointer;
-    position: relative;
-    z-index: 1;
-    white-space: nowrap;
-}
-
-div.sort-links {
-    min-width: 200px;
-}
-
-#sort-link-1:checked ~ div.sort-links > label[for="sort-link-1"],
-#sort-link-2:checked ~ div.sort-links > label[for="sort-link-2"],
-#sort-link-3:checked ~ div.sort-links > label[for="sort-link-3"] {
-    color: black;
-    text-decoration: none;
-    border-radius: 5px;
-    background-color: #e5d996;
-    word-spacing: 1px;
-    letter-spacing: 0.4px;
+    /*border: 1px solid black;*/
 }
 
 /*

@@ -676,85 +676,16 @@ div.bookmark::after {
     transform: rotate(45deg);
 }
 
-/* Блок выбора сортировки полки */
-div.sort-by {
-    position: relative;
-    left: 0px;
-    bottom: -1px;
-    //width: 350px;
-    //height: 100px;
-    //border: 1px solid black;
+/*
+ * Выбор типа сортировки
+ */
+.shelves .title .sort-by {
+    margin-top: 14px;
+    /*border: 1px solid black;*/
 }
 
-div.sort-by > div {
-    font-family: Tahoma;
-    font-size: 11px;
-    color: black;
-    letter-spacing: 0.3px;
-    display: inline-block;
-    vertical-align: middle;
-}
-
-div.sort-by > input[type="radio"] {
-    display: none;
-}
-
-/* Переключалка типа сортировки у каждой полки (в шапке) */
-label.sort-link {
-    font-family: Tahoma;
-    font-size: 11px;
-    letter-spacing: 0.3px;
-    text-decoration: underline;
-    color: #5f7495;
-    margin-left: 5px;
-    padding-left: 6px;
-    padding-right: 6px;
-    padding-top: 1px;
-    padding-bottom: 2px;
-    margin-right: -5px;
-    cursor: pointer;
-    position: relative;
-    z-index: 1;
-    white-space: nowrap;
-    //border: 1px solid black;
-}
-
-div.sort-links {
-    min-width: 200px;
-    //border: 1px solid black;
-}
-
-#best-sellers-sort-link-1:checked ~ div.sort-links > label[for="best-sellers-sort-link-1"],
-#best-sellers-sort-link-2:checked ~ div.sort-links > label[for="best-sellers-sort-link-2"],
-#best-sellers-sort-link-3:checked ~ div.sort-links > label[for="best-sellers-sort-link-3"] {
-    color: black;
-    text-decoration: none;
-    border-radius: 5px;
-    background-color: #e5d996;
-    word-spacing: 1px;
-    letter-spacing: 0.4px;
-}
-
-#new-sort-link-1:checked ~ div.sort-links > label[for="new-sort-link-1"],
-#new-sort-link-2:checked ~ div.sort-links > label[for="new-sort-link-2"],
-#new-sort-link-3:checked ~ div.sort-links > label[for="new-sort-link-3"] {
-    color: black;
-    text-decoration: none;
-    border-radius: 5px;
-    background-color: #e5d996;
-    word-spacing: 1px;
-    letter-spacing: 0.4px;
-}
-
-#high-rating-sort-link-1:checked ~ div.sort-links > label[for="high-rating-sort-link-1"],
-#high-rating-sort-link-2:checked ~ div.sort-links > label[for="high-rating-sort-link-2"],
-#high-rating-sort-link-3:checked ~ div.sort-links > label[for="high-rating-sort-link-3"] {
-    color: black;
-    text-decoration: none;
-    border-radius: 5px;
-    background-color: #e5d996;
-    word-spacing: 1px;
-    letter-spacing: 0.4px;
+.shelves .title .sort-by > .title {
+    font-weight: normal;
 }
 
 /*
