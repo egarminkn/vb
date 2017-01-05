@@ -720,61 +720,6 @@ fieldset {
  * Левая колонка
  */
 /*
- * Меню - Полезная информация
- */
-/* общая настройка */
-ul.useful-info,
-ul.useful-info li.useful-item ul.links {
-    margin: 0;
-    padding: 0;
-    list-style: none;
-    //border: 1px solid red;
-}
-
-ul.useful-info {
-    max-width: 190px;
-    margin-left: 30px;
-    margin-top: 7px;
-    //border: 1px solid red;
-}
-
-ul.useful-info li.useful-item,
-ul.useful-info li.useful-item ul.links li.link {
-    //border: 1px solid green;
-}
-
-/* заголовки */
-ul.useful-info li.useful-item h2 {
-    font-family: Tahoma;
-    font-size: 16px;
-    color: #ccbd54;
-    font-weight: normal;
-    text-decoration: underline;
-    margin: 0;
-}
-
-ul.useful-info li.useful-item h3 {
-    font-family: Tahoma;
-    font-size: 16px;
-    color: black;
-    font-weight: normal;
-    text-decoration: underline;
-    margin: 0;
-    margin-top: 20px;
-}
-
-/* ссылки - пункты меню */
-ul.useful-info li.useful-item ul.links li.link {
-    margin-top: 5px;
-}
-
-ul.useful-info li.useful-item ul.links li.link a {
-    font-family: Tahoma;
-    font-size: 12px;
-    color: #657392;
-}
-
-/*
  * Блок-ссылка Как создать свою обложку
  */
 .own-cover {

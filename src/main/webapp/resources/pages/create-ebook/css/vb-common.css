@@ -2,6 +2,387 @@
  *** Общее
  ***/
 /**
+ ** Баннер "Полезной информации"
+ **/
+/*
+ * Общая настройка
+ */
+ul.useful-info,
+ul.useful-info li.useful-item ul.links {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    /*border: 1px solid red;*/
+}
+
+ul.useful-info {
+    max-width: 190px;
+    margin-left: 30px;
+    margin-top: 7px;
+    /*border: 1px solid red;*/
+}
+
+/*
+ * Заголовки
+ */
+ul.useful-info li.useful-item h2 {
+    font-family: Tahoma;
+    font-size: 16px;
+    color: #ccbd54;
+    font-weight: normal;
+    text-decoration: underline;
+    margin: 0;
+}
+
+ul.useful-info li.useful-item h3 {
+    font-family: Tahoma;
+    font-size: 16px;
+    color: black;
+    font-weight: normal;
+    text-decoration: underline;
+    margin: 0;
+    margin-top: 20px;
+}
+
+/*
+ * Ссылки - пункты меню
+ */
+ul.useful-info li.useful-item ul.links li.link {
+    margin-top: 5px;
+}
+
+ul.useful-info li.useful-item ul.links li.link a {
+    font-family: Tahoma;
+    font-size: 12px;
+    color: #657392;
+}
+
+/**
+ ** Кнопка "Показать еще"
+ **/
+.show-more {
+    margin-top: 25px;
+    text-align: center;
+    /*border: 1px solid black;*/
+}
+
+.show-more .btn {
+    display: inline-block;
+    font-family: 'Myriad Pro Regular';
+    font-size: 20px;
+    color: #707d9a;
+    text-decoration: none;
+    border: 1px dashed #5f7495;
+    margin: auto;
+    padding: 10px 35px;
+    border-radius: 5px;
+}
+
+/**
+ ** Ценник под книгой
+ **/
+.price-under-book {
+    display: inline-block;
+    font-family: Tahoma;
+    font-size: 12px;
+    letter-spacing: 0.3px;
+    line-height: 14px;
+    color: #525252;
+    border: 1px solid #c7ceda;
+    border-radius: 4px;
+    padding: 1px 5px;
+    box-sizing: content-box;
+    height: 14px;
+}
+
+/*
+ * Цена
+ */
+.price-under-book > .value {
+    display: inline-block;
+    vertical-align: top;
+    box-sizing: border-box;
+    height: 14px;
+    margin-right: -2px;
+    /*border: 1px solid black;*/
+}
+
+/*
+ * Валюта
+ */
+.price-under-book > .currency {
+    display: inline-block;
+    vertical-align: top;
+    font-size: 11px;
+    line-height: 15px;
+    box-sizing: border-box;
+    height: 14px;
+    /*border: 1px solid black;*/
+}
+
+/*
+ * Надпись "Бесплатно"
+ */
+.price-under-book.free > .value {
+    color: red;
+}
+
+.price-under-book.free > .currency {
+    display: none;
+}
+
+/**
+ ** Пальчики-лайкчики
+ **/
+div.likes {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    /*border: 1px solid black*/
+}
+
+div.likes a {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    font-family: Tahoma;
+    font-size: 12px;
+    color: black;
+    text-decoration: none;
+    /*border: 1px solid black;*/
+}
+
+div.likes .like::before {
+    content: '';
+    display: inline-block;
+    width: 15px;
+    height: 15px;
+    background: url('../svg/vb/thumb-up.svg') no-repeat;
+    background-size: 100%;
+    margin-right: 5px;
+    /*border: 1px solid black;*/
+}
+
+div.likes .dislike {
+    margin-left: 15px;
+}
+
+div.likes .dislike::before {
+    content: '';
+    display: inline-block;
+    width: 15px;
+    height: 15px;
+    background: url('../svg/vb/thumb-up.svg') no-repeat;
+    background-size: 100%;
+    transform: scale(-1);
+    margin-right: 5px;
+    /*border: 1px solid black;*/
+}
+
+/**
+ ** Выбор типа сортировки
+ **/
+/*
+ * Общие свойства
+ */
+.sort-by {
+    box-sizing: border-box;
+    height: 26px;
+    /*border: 1px solid black;*/
+}
+
+.sort-by input[type="radio"] {
+    display: none;
+}
+
+/*
+ * Заголовок "Сортировать:"
+ */
+.sort-by > .title {
+    display: inline-block;
+    vertical-align: middle;
+    box-sizing: border-box;
+    height: 24px;
+    font-family: Tahoma;
+    font-size: 12px;
+    font-weight: bold;
+    letter-spacing: 0.3px;
+    line-height: 18px;
+    color: black;
+    margin: 0;
+    /*border: 1px solid black;*/
+}
+
+/*
+ * Тип (параметр) сортировки
+ */
+.sort-by > .sort-links {
+    display: inline-block;
+    vertical-align: middle;
+    box-sizing: border-box;
+    height: 24px;
+    /*border: 1px solid black;*/
+}
+
+/* переключалки типа (параметра) сортировки */
+.sort-by > .sort-links > label.sort-link {
+    display: inline-block;
+    vertical-align: middle;
+    box-sizing: border-box;
+    height: 22px;
+    padding: 2px 0px 2px 6px;
+    cursor: pointer;
+    border-radius: 5px;
+    margin: 0 0 0 5px;
+    /*border: 1px solid black;*/
+}
+
+.sort-by > .sort-links > label.sort-link .text {
+    display: inline-block;
+    vertical-align: top;
+    box-sizing: border-box;
+    height: 16px;
+    font-family: Tahoma;
+    font-size: 12px;
+    font-weight: normal;
+    letter-spacing: 0.3px;
+    white-space: nowrap;
+    line-height: 14px;
+    color: #5f7495;
+    text-decoration: underline;
+    /*border: 1px solid black;*/
+}
+
+.sort-by > input[type="radio"].sort-link-1:checked ~ .sort-links > label.sort-link-1,
+.sort-by > input[type="radio"].sort-link-2:checked ~ .sort-links > label.sort-link-2,
+.sort-by > input[type="radio"].sort-link-3:checked ~ .sort-links > label.sort-link-3,
+.sort-by > input[type="radio"].sort-link-4:checked ~ .sort-links > label.sort-link-4 {
+    color: black;
+    text-decoration: none;
+    background-color: #e5d996;
+}
+
+/*
+ * Направление сортировки (по возрастанию/по убыванию) сортировки
+ */
+.sort-by > .sort-links > label.sort-link .asc-desc {
+    display: inline-block;
+    vertical-align: top;
+    position: relative;
+    box-sizing: border-box;
+    width: 17px;
+    height: 16px;
+    transition: transform .8s ease;
+    margin-left: -7px;
+    /*border: 1px solid black;*/
+}
+
+.sort-by > .sort-links > label.sort-link .asc-desc label {
+    box-sizing: border-box;
+    width: 15px;
+    height: 14px;
+    background: url('../svg/vb/arrow_up.svg') no-repeat;
+    background-size: 5px 14px;
+    background-position: center center;
+    cursor: pointer;
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: -1;
+    /*border: 1px solid black;*/
+}
+
+.sort-by > .sort-links > label.sort-link > input[type="radio"].asc:not(:checked) ~ .asc-desc label.asc,
+.sort-by > .sort-links > label.sort-link > input[type="radio"].desc:not(:checked) ~ .asc-desc label.desc {
+    z-index: 1;
+}
+
+.sort-by > .sort-links > label.sort-link > input[type="radio"].desc:checked ~ .asc-desc {
+    transform: rotate(180deg);
+}
+
+/**
+ ** Ценник со значком рубля
+ **/
+.price-sign span {
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.price-sign .value {
+    font-family: Tahoma;
+    font-size: 13px;
+    line-height: 9px;
+    /*border: 1px solid black;*/
+}
+
+/*
+ * Значок - Рубль
+ */
+.price-sign .currency img {
+    width: 9px;
+    height: 9px;
+    /*border: 1px solid black;*/
+}
+
+/**
+ ** Кнопка "В корзину" с ценником
+ **/
+.buy {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    white-space: nowrap;
+}
+
+.buy .item {
+    font-family: Tahoma;
+    font-size: 12px;
+    line-height: 12px;
+    border: 1px solid #c4c4c4;
+    padding: 10px 15px;
+    box-sizing: border-box;
+    height: 34px;
+}
+
+/*
+ * Ценник
+ */
+.buy .price {
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+    border-right: none;
+}
+
+.buy .price > span.value {
+    padding-right: 0;
+}
+
+.buy .price > span.currency {
+    padding-left: 0;
+}
+
+/*
+ * Кнопка "В корзину"
+ */
+.buy .cart-btn {
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+    color: black;
+    text-decoration: none;
+}
+
+.buy .cart-btn:hover {
+    background-color: #cc7937;
+}
+
+.buy .cart-btn:active {
+    box-shadow: inset 0 0 5px 0 #667493;
+}
+
+/**
  ** Надпись-предупреждение
  **/
 .warning {
