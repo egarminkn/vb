@@ -779,26 +779,12 @@ main {
     margin-top: 5px;
 }
 
-/* цена */
-.currency img {
-    width: 9px;
-    height: 9px;
-}
-
 /*
  *  Корзина
  */
 /*
  *  Общее
  */
-/* FIXME убрать */
-.slider-outer {
-    //border: 1px solid black;
-}
-.slider-inner {
-    //border: 1px solid black;
-}
-
 .column-1 div.main-cart .slider-inner {
     display: none;
     //display: flex;

@@ -800,11 +800,11 @@ main .books table.write thead tr th.status {
     padding-left: 15px;
 }
 
-main .books table tbody tr td.price .number {
+main .books table tbody tr td.price .price-sign {
     margin-left: 10%;
 }
 
-main .books table.write tbody tr td.profit .number {
+main .books table.write tbody tr td.profit .price-sign {
     margin-left: 20%;
 }
 
@@ -1731,12 +1731,6 @@ main .books table.write tbody tr td.likes .dislike {
 main .books table.write tbody tr td.profit {
     font-family: Tahoma;
     font-size: 13px;
-}
-
-/* значок - Рубль */
-.currency img {
-    width: 9px;
-    height: 9px;
 }
 
 /*

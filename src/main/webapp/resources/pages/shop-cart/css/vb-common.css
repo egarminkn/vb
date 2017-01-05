@@ -2,6 +2,286 @@
  *** Общее
  ***/
 /**
+ ** Ценник со значком рубля
+ **/
+.price-sign span {
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.price-sign .value {
+    font-family: Tahoma;
+    font-size: 13px;
+    line-height: 9px;
+    /*border: 1px solid black;*/
+}
+
+/*
+ * Значок - Рубль
+ */
+.price-sign .currency img {
+    width: 9px;
+    height: 9px;
+    /*border: 1px solid black;*/
+}
+
+/**
+ ** Кнопка "В корзину" с ценником
+ **/
+.buy {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    white-space: nowrap;
+}
+
+.buy .item {
+    font-family: Tahoma;
+    font-size: 12px;
+    line-height: 12px;
+    border: 1px solid #c4c4c4;
+    padding: 10px 15px;
+    box-sizing: border-box;
+    height: 34px;
+}
+
+/*
+ * Ценник
+ */
+.buy .price {
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+    border-right: none;
+}
+
+.buy .price > span.value {
+    padding-right: 0;
+}
+
+.buy .price > span.currency {
+    padding-left: 0;
+}
+
+/*
+ * Кнопка "В корзину"
+ */
+.buy .cart-btn {
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+    color: black;
+    text-decoration: none;
+}
+
+.buy .cart-btn:hover {
+    background-color: #cc7937;
+}
+
+.buy .cart-btn:active {
+    box-shadow: inset 0 0 5px 0 #667493;
+}
+
+/**
+ ** Надпись-предупреждение
+ **/
+.warning {
+    font-family: Tahoma;
+    font-size: 14px;
+    color: #7f7f7f;
+    line-height: 20px;
+    margin: 25px auto;
+    background: url('../svg/vb/warning.svg') no-repeat;
+    background-size: 18px 16px;
+    background-position: left center;
+    padding-left: 25px;
+}
+
+.warning a {
+    color: #667393;
+}
+
+/**
+ **  Рейтинг книги (5 звезд)
+ **/
+.rating-5-stars {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+/*
+ * Звезды рейтинга книги
+ */
+/* SVG-маска из дырок для звездочек */
+.rating-5-stars .rating-stars {
+    width: 82px;
+    height: 16px;
+    background-image: url('../svg/vb/rating-5-stars.svg');
+    background-repeat: no-repeat;
+    background-size: 100%;
+    position: relative;
+    //border: 1px solid black;
+}
+
+/* сначала все закрашиваем оранжевым */
+.rating-5-stars .rating-stars::before {
+    content: '';
+    display: block;
+    width: 82px;
+    height: 15px;
+    background-color: #e8ba42;
+    position: absolute;
+    z-index: -1;
+    //border: 1px solid black;
+}
+
+/*
+ *  Число рейтинга
+ */
+.rating-5-stars .rating-number {
+    font-family: Tahoma;
+    font-size: 13px;
+    line-height: 16px;
+    color: black;
+    letter-spacing: 0.3px;
+    margin-left: 5px;
+    //border: 1px solid black;
+}
+
+/**
+ ** Рейтинг автора
+ **/
+.rating-3-stars {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    //border: 1px solid black;
+}
+
+/*
+ * Звезды рейтинга автора
+ */
+/* SVG-маска из дырок для звездочек */
+.rating-3-stars .rating-stars {
+    width: 82px;
+    height: 21px;
+    background-image: url(../svg/vb/rating-3-stars.svg);
+    background-repeat: no-repeat;
+    background-size: 100%;
+    position: relative;
+    //border: 1px solid black;
+}
+
+/* сначала все закрашиваем желтым */
+.rating-3-stars .rating-stars::before {
+    content: '';
+    display: block;
+    width: 82px;
+    height: 21px;
+    background-color: yellow;
+    position: absolute;
+    z-index: -1;
+    //border: 1px solid black;
+}
+
+/*
+ *  Число рейтинга
+ */
+.rating-3-stars .rating-number {
+    font-family: Tahoma;
+    font-size: 14px;
+    color: black;
+    letter-spacing: 0.3px;
+    margin-left: 10px;
+    //border: 1px solid black;
+}
+
+/**
+ ** Блок Списка рейтинга
+ **/
+.ratings {
+    font-family: Tahoma;
+    font-size: 12px;
+    background: url('../svg/vb/bar_chart.svg') no-repeat;
+    background-size: 15px 15px;
+    padding-left: 20px;
+    //border: 1px solid black;
+}
+
+/*
+ * Флексирование Списка рейтинга
+ */
+.ratings .list {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+
+.ratings .list .item {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    //border: 1px solid black;
+}
+
+.ratings .list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.ratings .list .item {
+    font-family: Tahoma;
+    font-size: 12px;
+    margin-top: 15px;
+}
+
+/*
+ * Стрелочка, показывающая динамику роста (вверх или вниз по рейтингу)
+ */
+.ratings .list .item .dynamic-up {
+    width: 4px;
+    height: 12px;
+    //border: 1px solid black;
+}
+
+.ratings .list .item .dynamic-up img {
+    width: 4px;
+    height: 12px;
+    //border: 1px solid black;
+}
+
+.ratings .list .item .dynamic-up.invert {
+    transform: scaleY(-1);
+}
+
+/*
+ * Порядковый номер в рейтинге (этот номер является ссылкой)
+ */
+.ratings .list .item a {
+    color: #657392;
+    white-space: nowrap;
+    margin-left: 5px;
+    //border: 1px solid black;
+}
+
+.ratings .list .item a span {
+    display: inline-block;
+    width: 30px;
+    text-decoration: underline;
+    //border: 1px solid black;
+}
+
+/*
+ * Название рейтинга
+ */
+.ratings .list .item .rating-title {
+    //border: 1px solid black;
+}
+
+/**
  **  Баннер специальных предложений
  **/
 .spec {

@@ -2,6 +2,104 @@
  *** Общее
  ***/
 /**
+ ** Ценник со значком рубля
+ **/
+.price-sign span {
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.price-sign .value {
+    font-family: Tahoma;
+    font-size: 13px;
+    line-height: 9px;
+    /*border: 1px solid black;*/
+}
+
+/*
+ * Значок - Рубль
+ */
+.price-sign .currency img {
+    width: 9px;
+    height: 9px;
+    /*border: 1px solid black;*/
+}
+
+/**
+ ** Кнопка "В корзину" с ценником
+ **/
+.buy {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    white-space: nowrap;
+}
+
+.buy .item {
+    font-family: Tahoma;
+    font-size: 12px;
+    line-height: 12px;
+    border: 1px solid #c4c4c4;
+    padding: 10px 15px;
+    box-sizing: border-box;
+    height: 34px;
+}
+
+/*
+ * Ценник
+ */
+.buy .price {
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+    border-right: none;
+}
+
+.buy .price > span.value {
+    padding-right: 0;
+}
+
+.buy .price > span.currency {
+    padding-left: 0;
+}
+
+/*
+ * Кнопка "В корзину"
+ */
+.buy .cart-btn {
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+    color: black;
+    text-decoration: none;
+}
+
+.buy .cart-btn:hover {
+    background-color: #cc7937;
+}
+
+.buy .cart-btn:active {
+    box-shadow: inset 0 0 5px 0 #667493;
+}
+
+/**
+ ** Надпись-предупреждение
+ **/
+.warning {
+    font-family: Tahoma;
+    font-size: 14px;
+    color: #7f7f7f;
+    line-height: 20px;
+    margin: 25px auto;
+    background: url('../svg/vb/warning.svg') no-repeat;
+    background-size: 18px 16px;
+    background-position: left center;
+    padding-left: 25px;
+}
+
+.warning a {
+    color: #667393;
+}
+
+/**
  **  Рейтинг книги (5 звезд)
  **/
 .rating-5-stars {

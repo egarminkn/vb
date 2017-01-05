@@ -34,7 +34,7 @@ body {
     min-width: 700px;
     margin: 25px auto; /* auto выровняет body по горизонтали по центру */
     box-sizing: border-box;
-    //border: 1px solid red;
+    /*border: 1px solid red;*/
 }
 
 /***
@@ -48,7 +48,7 @@ header {
     width: 100%;
     position: relative;
     background-color: white;
-    //border: 1px solid red;
+    /*border: 1px solid red;*/
 }
 
 /**
@@ -118,7 +118,7 @@ header::after {
     margin-left: auto;
     margin-right: auto;
     padding-left: 5px;
-    //border: 1px solid black;
+    /*border: 1px solid black;*/
 }
 
 /**
@@ -138,7 +138,7 @@ header::after {
     margin-top: 35px;
     margin-left: auto;
     margin-right: auto;
-    //border: 1px solid black;
+    /*border: 1px solid black;*/
 }
 
 /**
@@ -146,7 +146,7 @@ header::after {
  **/
 .entrance {
     margin-right: 42px;
-    //border: 1px solid black;
+    /*border: 1px solid black;*/
 }
 
 .entrance a {
@@ -160,7 +160,7 @@ header::after {
     letter-spacing: 0.3px;
     height: 25px;
     text-decoration: none;
-    //border: 1px solid red;
+    /*border: 1px solid red;*/
 }
 
 /*
@@ -173,7 +173,7 @@ header::after {
     background: url('../svg/padlock.svg') no-repeat;
     background-size: 100%;
     margin-top: 1px;
-    //border: 1px solid black;
+    /*border: 1px solid black;*/
 }
 
 /*
@@ -184,7 +184,7 @@ header::after {
     margin-left: 7px;
     margin-right: 3px;
     text-decoration: underline;
-    //border: 1px solid black;
+    /*border: 1px solid black;*/
 }
 
 /*
@@ -199,7 +199,7 @@ header::after {
     border-bottom: 2px solid #ccc;
     transform: translateX(5px) rotate(45deg);
     margin-top: 4px;
-    //border: 1px solid black;
+    /*border: 1px solid black;*/
 }
 
 /*
@@ -228,7 +228,7 @@ header::after {
     justify-content: space-between;
     flex-wrap: nowrap;
     flex-basis: 520px;
-    //border: 1px solid black;
+    /*border: 1px solid black;*/
 }
 
 .menu > div:first-child {
@@ -238,7 +238,7 @@ header::after {
 .menu > div {
     height: 25px;
     margin-left: 7.9%;
-    //border: 1px solid black;
+    /*border: 1px solid black;*/
 }
 
 .menu > div > a {
@@ -246,7 +246,7 @@ header::after {
     font-size: 13px;
     color: #7f90aa;
     letter-spacing: 0.5px;
-    //word-spacing: -3px;
+    /*word-spacing: -3px;*/
 }
 
 /*
@@ -262,7 +262,7 @@ header::after {
 .ask {
     flex-basis: 110px;
     box-sizing: border-box;
-    //border: 1px solid black;
+    /*border: 1px solid black;*/
 }
 
 .ask a {
@@ -270,7 +270,7 @@ header::after {
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
-    //border: 1px solid black;
+    /*border: 1px solid black;*/
 }
 
 .ask a .text {
@@ -279,7 +279,7 @@ header::after {
     color: #888;    
     text-decoration: underline;
     letter-spacing: 0.2px;
-    //border: 1px solid black;
+    /*border: 1px solid black;*/
 }
 
 /*
@@ -291,7 +291,7 @@ header::after {
     height: 16px;
     background: url('../svg/question-mark.svg') no-repeat;
     background-size: 100%;
-    //border: 1px solid black;
+    /*border: 1px solid black;*/
 }
 
 /**
@@ -300,7 +300,7 @@ header::after {
 .cart {
     box-sizing: border-box;
     width: 103px;
-    //border: 1px solid black;
+    /*border: 1px solid black;*/
 }
 
 .cart a {
@@ -309,7 +309,7 @@ header::after {
     justify-content: space-between;
     align-items: center;
     text-decoration: none;    
-    //border: 1px solid black;
+    /*border: 1px solid black;*/
 }
 
 .cart a .text {
@@ -318,7 +318,7 @@ header::after {
     letter-spacing: 0.2px;
     color: #7f90aa;
     text-decoration: underline;
-    //border: 1px solid black;
+    /*border: 1px solid black;*/
 }
 
 /*
@@ -330,7 +330,7 @@ header::after {
     height: 17px;
     background: url('../svg/cart.svg') no-repeat;
     background-size: 100%;
-    //border: 1px solid black;
+    /*border: 1px solid black;*/
 }
 
 /*
@@ -348,7 +348,7 @@ header::after {
     border-radius: 50%;
     background-image: linear-gradient(#fac5c5, #f26464);
     text-align: center;    
-    //border: 1px solid black;
+    /*border: 1px solid black;*/
 }
 
 /**
@@ -387,7 +387,7 @@ header::after {
     outline: none;
     border-style: none;
     transform: skewX(-15deg);
-    //border: 1px solid black;
+    /*border: 1px solid black;*/
 }
 
 /*
@@ -404,7 +404,7 @@ header::after {
     border: 1px solid #ccc;
     outline: none;
     cursor: pointer;
-    //border: 1px solid black;
+    /*border: 1px solid black;*/
 }
 
 .search .search-btn::before {
@@ -417,7 +417,7 @@ header::after {
     background-size: 17px 17px;
     background-position: center center;
     transform: skewX(-15deg);
-    //border: 1px solid black;
+    /*border: 1px solid black;*/
 }
 
 .search .search-btn:active {
@@ -434,7 +434,7 @@ header::after {
     justify-content: flex-start;
     align-items: center;
     text-decoration: none;
-    //border: 1px solid red;
+    /*border: 1px solid red;*/
 }
 
 /*
@@ -443,7 +443,7 @@ header::after {
 .logo-word {
     color: #5f7495;
     line-height: 32px;
-    //border: 1px solid black;
+    /*border: 1px solid black;*/
 }
 
 .logo-line {
@@ -454,7 +454,7 @@ header::after {
     top: 0.1px;
     background-color: #5f7495;
     transform: skewX(15deg);
-    //border: 1px solid black;
+    /*border: 1px solid black;*/
 }
 
 .logo-line1 {
@@ -470,14 +470,14 @@ header::after {
     font-size: 47px;
     text-shadow: -1px 0 0;
     margin-right: 2px;
-    //border: 1px solid black;
+    /*border: 1px solid black;*/
 }
 
 .logo-erybook {
     font-family: 'Etelka Text Pro';
     font-size: 27px;
     letter-spacing: 1px;
-    //border: 1px solid black;
+    /*border: 1px solid black;*/
 }
 
 /***
@@ -489,7 +489,7 @@ main {
     justify-content: flex-start;
     margin-top: 40px;
     margin-bottom: 30px;
-    //border: 1px solid green;
+    /*border: 1px solid green;*/
 }
 
 /**
@@ -504,7 +504,7 @@ main {
     margin-left: auto;
     margin-right: auto;
     width: 83.5%;
-    //border: 1px solid black;
+    /*border: 1px solid black;*/
 }
 
 /*
@@ -607,12 +607,33 @@ main .columns {
 
 
 
-
-
-
 /***
  *** Общее
  ***/
+/**
+ ** Ценник со значком рубля
+ **/
+.price-sign span {
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.price-sign .value {
+    font-family: Tahoma;
+    font-size: 13px;
+    line-height: 9px;
+    /*border: 1px solid black;*/
+}
+
+/*
+ * Значок - Рубль
+ */
+.price-sign .currency img {
+    width: 9px;
+    height: 9px;
+    /*border: 1px solid black;*/
+}
+
 /**
  ** Кнопка "В корзину" с ценником
  **/
@@ -708,7 +729,7 @@ main .columns {
     background-repeat: no-repeat;
     background-size: 100%;
     position: relative;
-    //border: 1px solid black;
+    /*border: 1px solid black;*/
 }
 
 /* сначала все закрашиваем оранжевым */
@@ -720,7 +741,7 @@ main .columns {
     background-color: #e8ba42;
     position: absolute;
     z-index: -1;
-    //border: 1px solid black;
+    /*border: 1px solid black;*/
 }
 
 /*
@@ -733,7 +754,7 @@ main .columns {
     color: black;
     letter-spacing: 0.3px;
     margin-left: 5px;
-    //border: 1px solid black;
+    /*border: 1px solid black;*/
 }
 
 /**
@@ -744,7 +765,7 @@ main .columns {
     flex-direction: row;
     justify-content: flex-start;
     align-items: center;
-    //border: 1px solid black;
+    /*border: 1px solid black;*/
 }
 
 /*
@@ -758,7 +779,7 @@ main .columns {
     background-repeat: no-repeat;
     background-size: 100%;
     position: relative;
-    //border: 1px solid black;
+    /*border: 1px solid black;*/
 }
 
 /* сначала все закрашиваем желтым */
@@ -770,7 +791,7 @@ main .columns {
     background-color: yellow;
     position: absolute;
     z-index: -1;
-    //border: 1px solid black;
+    /*border: 1px solid black;*/
 }
 
 /*
@@ -783,7 +804,7 @@ main .columns {
     color: black;
     letter-spacing: 0.3px;
     margin-left: 10px;
-    //border: 1px solid black;
+    /*border: 1px solid black;*/
 }
 
 /**
@@ -795,7 +816,7 @@ main .columns {
     background: url('../svg/vb/bar_chart.svg') no-repeat;
     background-size: 15px 15px;
     padding-left: 20px;
-    //border: 1px solid black;
+    /*border: 1px solid black;*/
 }
 
 /*
@@ -812,7 +833,7 @@ main .columns {
     flex-direction: row;
     justify-content: flex-start;
     align-items: center;
-    //border: 1px solid black;
+    /*border: 1px solid black;*/
 }
 
 .ratings .list {
@@ -833,13 +854,13 @@ main .columns {
 .ratings .list .item .dynamic-up {
     width: 4px;
     height: 12px;
-    //border: 1px solid black;
+    /*border: 1px solid black;*/
 }
 
 .ratings .list .item .dynamic-up img {
     width: 4px;
     height: 12px;
-    //border: 1px solid black;
+    /*border: 1px solid black;*/
 }
 
 .ratings .list .item .dynamic-up.invert {
@@ -853,21 +874,21 @@ main .columns {
     color: #657392;
     white-space: nowrap;
     margin-left: 5px;
-    //border: 1px solid black;
+    /*border: 1px solid black;*/
 }
 
 .ratings .list .item a span {
     display: inline-block;
     width: 30px;
     text-decoration: underline;
-    //border: 1px solid black;
+    /*border: 1px solid black;*/
 }
 
 /*
  * Название рейтинга
  */
 .ratings .list .item .rating-title {
-    //border: 1px solid black;
+    /*border: 1px solid black;*/
 }
 
 /**
@@ -992,7 +1013,7 @@ main .columns {
     letter-spacing: 0.3px;
     position: relative;
     left: 15px;
-    //border: 1px solid black;
+    /*border: 1px solid black;*/
 }
 
 /* Позиционирование рейтинга электронной книги на баннере специальных предложений */
@@ -1015,7 +1036,7 @@ main .columns {
     top: -3px;
     padding-right: 10px;
     height: 88px;
-    //border: 1px solid black;
+    /*border: 1px solid black;*/
 }
 
 /* Заголовок книжки на баннере специальных предложений */
@@ -1088,7 +1109,7 @@ footer {
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
-    //border: 1px solid blue;
+    /*border: 1px solid blue;*/
 }
 
 /**
@@ -1106,12 +1127,12 @@ footer {
     height: 183px;
     z-index: 1;
     overflow: hidden;
-    //border: 1px solid black;
+    /*border: 1px solid black;*/
 }
 
 .books-on-shelf > img {
     margin-right: -4px;
-    //border: 1px solid black;
+    /*border: 1px solid black;*/
 }
 
 /**
@@ -1123,7 +1144,7 @@ footer {
     box-sizing: border-box;
     width: 100%;
     height: 60px;
-    //border: 1px solid black;    
+    /*border: 1px solid black;    */
 }
 
 /*
@@ -1138,7 +1159,7 @@ footer {
     box-shadow: 0 10px 40px -6px #111;
     margin-left: 30px;
     margin-right: 30px;
-    //border: 1px solid black;
+    /*border: 1px solid black;*/
 }
 
 /* Левая наклонная часть полки */
@@ -1149,7 +1170,7 @@ footer {
     background-image: linear-gradient(#efefef, white);
     transform: skewX(-70deg);
     margin-left: 58px;
-    //border: 1px solid black;
+    /*border: 1px solid black;*/
 }
 
 /* Правая наклонная часть полки */
@@ -1162,7 +1183,7 @@ footer {
     position: absolute;
     top: 0;
     right: 58px;
-    //border: 1px solid black;
+    /*border: 1px solid black;*/
 }
 
 /**
@@ -1181,13 +1202,13 @@ footer {
     padding-top: 5px;
     padding-left: 40px;
     padding-right: 40px;
-    //border: 1px solid black;
+    /*border: 1px solid black;*/
 }
 
 .under-footer-shelf > div {
     font-family: Tahoma;
     letter-spacing: 0.3px;
-    //border: 1px solid black;
+    /*border: 1px solid black;*/
 }
 
 /*
@@ -1256,7 +1277,7 @@ footer {
     color: #5f7495;
     margin-bottom: 0;
     height: 40px;
-    //border: 1px solid black;
+    /*border: 1px solid black;*/
 }
 
 .under-footer-shelf > div:not(.social-sharing) > a:not(:nth-of-type(1)) {
@@ -1283,7 +1304,7 @@ footer {
     width: 25px;
     background-size: 100%;
     text-decoration: none;
-    //border: 1px solid black;
+    /*border: 1px solid black;*/
 }
 
 .under-footer-shelf > .social-sharing > a.share-icon-facebook {
