@@ -739,46 +739,6 @@ main {
     //border: 1px solid black;
 }
 
-/* книги */
-.column-1 .table .tbody .tr .td.product .book {
-    display: flex;
-    flex-direction: row;
-    justify-content: flex-start;
-    max-width: 200px;
-    margin: auto;
-    //border: 1px solid black;
-}
-
-/* обложка */
-.column-1 .table .tbody .tr .td.product .book img {
-    width: 50px;
-    height: 80px;
-}
-
-/* название и автор */
-.column-1 .table .tbody .tr .td.product .book .title-author {
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    align-items: flex-start;
-    margin-left: 5px;
-}
-
-.column-1 .table .tbody .tr .td.product .book .title-author a {
-    color: #667393;
-    text-align: left;
-    //border: 1px solid black;
-}
-
-.column-1 .table .tbody .tr .td.product .book .title-author a.to-book {
-    font-weight: bold;
-}
-
-.column-1 .table .tbody .tr .td.product .book .title-author a.to-author {
-    font-size: 11px;
-    margin-top: 5px;
-}
-
 /*
  *  Корзина
  */

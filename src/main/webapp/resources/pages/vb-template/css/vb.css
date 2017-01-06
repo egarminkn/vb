@@ -611,6 +611,54 @@ main .columns {
  *** Общее
  ***/
 /**
+ ** Триплет ссылок: обложка-название-автор
+ **/
+.book-triplet {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    font-family: Tahoma;
+    max-width: 200px;
+    margin: auto;
+    /*border: 1px solid black;*/
+}
+
+/*
+ * Обложка
+ */
+.book-triplet img {
+    width: 50px;
+    height: 80px;
+}
+
+/*
+ * Название и автор
+ */
+.book-triplet .title-author {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    margin-left: 5px;
+}
+
+.book-triplet .title-author a {
+    color: #667393;
+    text-align: left;
+    /*border: 1px solid black;*/
+}
+
+.book-triplet .title-author a.to-book {
+    font-size: 13px;
+    font-weight: bold;
+}
+
+.book-triplet .title-author a.to-author {
+    font-size: 11px;
+    margin-top: 5px;
+}
+
+/**
  ** Баннер "Похожие авторы"
  **/
 .similar-authors {

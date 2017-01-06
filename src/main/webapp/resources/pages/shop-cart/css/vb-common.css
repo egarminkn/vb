@@ -2,6 +2,137 @@
  *** Общее
  ***/
 /**
+ ** Триплет ссылок: обложка-название-автор
+ **/
+.book-triplet {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    font-family: Tahoma;
+    max-width: 200px;
+    margin: auto;
+    /*border: 1px solid black;*/
+}
+
+/*
+ * Обложка
+ */
+.book-triplet img {
+    width: 50px;
+    height: 80px;
+}
+
+/*
+ * Название и автор
+ */
+.book-triplet .title-author {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    margin-left: 5px;
+}
+
+.book-triplet .title-author a {
+    color: #667393;
+    text-align: left;
+    /*border: 1px solid black;*/
+}
+
+.book-triplet .title-author a.to-book {
+    font-size: 13px;
+    font-weight: bold;
+}
+
+.book-triplet .title-author a.to-author {
+    font-size: 11px;
+    margin-top: 5px;
+}
+
+/**
+ ** Баннер "Похожие авторы"
+ **/
+.similar-authors {
+    font-family: 'Myriad Pro Regular';
+    font-size: 14px;
+    letter-spacing: 0.5px;
+    line-height: 20px;
+    word-spacing: -0.1px;
+}
+
+.similar-authors .title {
+    font-weight: bold;
+}
+
+.similar-authors ul.similar-authors-list {
+    margin-top: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.similar-authors li.similar-author {
+    margin: 2px 0;
+}
+
+.similar-authors li.similar-author > a {
+    color: #667493;
+}
+
+/**
+ ** Баннер "Полезной информации"
+ **/
+/*
+ * Общая настройка
+ */
+ul.useful-info,
+ul.useful-info li.useful-item ul.links {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    /*border: 1px solid red;*/
+}
+
+ul.useful-info {
+    max-width: 190px;
+    /*border: 1px solid red;*/
+}
+
+/*
+ * Заголовки
+ */
+ul.useful-info li.useful-item h2 {
+    font-family: Tahoma;
+    font-size: 16px;
+    color: #ccbd54;
+    font-weight: normal;
+    text-decoration: underline;
+    margin: 0;
+}
+
+ul.useful-info li.useful-item h3 {
+    font-family: Tahoma;
+    font-size: 16px;
+    color: black;
+    font-weight: normal;
+    text-decoration: underline;
+    margin: 0;
+    margin-top: 20px;
+}
+
+/*
+ * Ссылки - пункты меню
+ */
+ul.useful-info li.useful-item ul.links li.link {
+    margin-top: 5px;
+}
+
+ul.useful-info li.useful-item ul.links li.link a {
+    font-family: Tahoma;
+    font-size: 12px;
+    color: #657392;
+}
+
+/**
  ** Кнопка "Показать еще"
  **/
 .show-more {

@@ -1453,48 +1453,6 @@ main .books table.write thead tr th.profit span {
  * Таблица Купленные книги
  */
 /*
- * Книги
- */
-main .books table.read tbody tr td.product .book {
-    display: flex;
-    flex-direction: row;
-    justify-content: flex-start;
-    max-width: 200px;
-    margin: auto;
-    //border: 1px solid black;
-}
-
-/* обложка */
-main .books table.read tbody tr td.product .book img {
-    width: 50px;
-    height: 80px;
-}
-
-/* название и автор */
-main .books table.read tbody tr td.product .book .title-author {
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    align-items: flex-start;
-    margin-left: 5px;
-}
-
-main .books table.read tbody tr td.product .book .title-author a {
-    color: #667393;
-    text-align: left;
-    //border: 1px solid black;
-}
-
-main .books table.read tbody tr td.product .book .title-author a.to-book {
-    font-weight: bold;
-}
-
-main .books table.read tbody tr td.product .book .title-author a.to-author {
-    font-size: 11px;
-    margin-top: 5px;
-}
-
-/*
  * Колонка Скачать
  */
 main .books table.read tbody tr td.download ul.formats {
@@ -1505,7 +1463,7 @@ main .books table.read tbody tr td.download ul.formats {
 
 main .books table.read tbody tr td.download ul.formats li.format {
     margin-top: 5px;
-    //border: 1px solid black;
+    /*border: 1px solid black;*/
 }
 
 main .books table.read tbody tr td.download ul.formats li.format button {
