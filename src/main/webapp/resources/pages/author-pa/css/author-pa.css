@@ -1642,16 +1642,6 @@ main .books table.write tbody tr td.status .actions .action.withdraw::after {
     transform: rotate(45deg);
 }
 
-/* добавление знака вопроса (ссылки) для статуса Отклонено */
-main .books table.write tbody tr td.status .current-status.rejected a.rejected {
-    display: inline-block;
-    vertical-align: middle;
-    width: 12px;
-    height: 12px;
-    background: url('../svg/question-mark.svg') no-repeat;
-    background-size: 100%;
-}
-
 /*
  * Уровень заполненности звезд оранжевым фоном (у каждой книги должен быть свой)
  */
@@ -1721,19 +1711,6 @@ main .books table.write tbody tr td.profit {
 /***
  ***  Общее
  ***/
-/**
- ** Разъяснение (знак вопроса)
- **/
-.explanation {
-    display: inline-block;
-    vertical-align: middle;
-    width: 14px;
-    height: 14px;
-    background: url('../svg/question-mark-blue.svg') no-repeat;
-    background-size: 100%;
-    cursor: pointer;
-}
-
 /**
  ** Наклонные элементы ввода
  **/
@@ -2033,12 +2010,25 @@ input[type="radio"][name="payment-mode"]#webmoney:checked ~ .payment-modes .webm
 /*
  * Раздвижение блока с выбранным способом оплаты
  */
+@keyframes overflow-visible {
+    from {
+        overflow: hidden;
+    }
+    to {
+        overflow: visible;
+    }
+}
+
 input[type="radio"][name="payment-mode"]#yandex-money-card:checked ~ .payment-modes .yandex-money-card-mode .info {
+    animation: 3s overflow-visible;
+    animation-fill-mode: forwards;
     height: 160px;
 }
 
 input[type="radio"][name="payment-mode"]#yandex-money-wallet:checked ~ .payment-modes .yandex-money-wallet-mode .info,
 input[type="radio"][name="payment-mode"]#webmoney:checked ~ .payment-modes .webmoney-mode .info {
+    animation: 3s overflow-visible;
+    animation-fill-mode: forwards;
     height: 50px;
 }
 
@@ -2057,7 +2047,7 @@ input[type="radio"][name="payment-mode"]#webmoney:checked ~ .payment-modes .webm
     transition-property: height;
     transition-duration: 0.8s;
     transition-timing-function: ease-in-out;
-    //border: 1px solid black;
+    /*border: 1px solid black;*/
 }
 
 .payment-modes .payment-mode .info form {
@@ -2066,7 +2056,7 @@ input[type="radio"][name="payment-mode"]#webmoney:checked ~ .payment-modes .webm
     justify-content: flex-end;
     width: 100%;
     height: 100%;
-    //border: 1px solid black;
+    /*border: 1px solid black;*/
 }
 
 .payment-modes .payment-mode .info form .row {
