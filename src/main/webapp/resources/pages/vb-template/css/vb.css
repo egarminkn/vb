@@ -611,6 +611,68 @@ main .columns {
  *** Общее
  ***/
 /**
+ ** Стилизованный checkbox
+ **/
+.text-checkbox {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    cursor: pointer;
+    /*border: 1px solid black;*/
+}
+
+.text-checkbox input[type="checkbox"] {
+    display: none;
+}
+
+/*
+ * Текст
+ */
+.text-checkbox .text {
+    font-family: Tahoma;
+    font-size: 14px;
+    line-height: 13px;
+    box-sizing: border-box;
+    height: 15px;
+    /*border: 1px solid black;*/
+}
+
+.text-checkbox .text a {
+    color: #667393;
+}
+
+/*
+ * Галочка
+ */
+.text-checkbox .checkbox {
+    box-sizing: border-box;
+    width: 15px;
+    height: 15px;
+    position: relative;
+    border: 3px solid #ccc;
+    margin-left: 5px;
+}
+
+.text-checkbox .checkbox::after {
+    content: '';
+    display: none;
+    position: absolute;
+    bottom: 2px;
+    left: 2px;
+    box-sizing: content-box;
+    width: 4px;
+    height: 8px;
+    border-bottom: 3px solid #667393;
+    border-right: 3px solid #667393;
+    transform: rotate(45deg);
+}
+
+.text-checkbox input[type="checkbox"]:checked + .checkbox::after {
+    display: block;
+}
+
+/**
  **  Ценник итоговой стоимости
  **/
 .cost {

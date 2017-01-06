@@ -2,6 +2,157 @@
  *** Общее
  ***/
 /**
+ ** Стилизованный checkbox
+ **/
+.text-checkbox {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    cursor: pointer;
+    /*border: 1px solid black;*/
+}
+
+.text-checkbox input[type="checkbox"] {
+    display: none;
+}
+
+/*
+ * Текст
+ */
+.text-checkbox .text {
+    font-family: Tahoma;
+    font-size: 14px;
+    line-height: 13px;
+    box-sizing: border-box;
+    height: 15px;
+    /*border: 1px solid black;*/
+}
+
+.text-checkbox .text a {
+    color: #667393;
+}
+
+/*
+ * Галочка
+ */
+.text-checkbox .checkbox {
+    box-sizing: border-box;
+    width: 15px;
+    height: 15px;
+    position: relative;
+    border: 3px solid #ccc;
+    margin-left: 5px;
+}
+
+.text-checkbox .checkbox::after {
+    content: '';
+    display: none;
+    position: absolute;
+    bottom: 2px;
+    left: 2px;
+    box-sizing: content-box;
+    width: 4px;
+    height: 8px;
+    border-bottom: 3px solid #667393;
+    border-right: 3px solid #667393;
+    transform: rotate(45deg);
+}
+
+.text-checkbox input[type="checkbox"]:checked + .checkbox::after {
+    display: block;
+}
+
+/**
+ **  Ценник итоговой стоимости
+ **/
+.cost {
+    display: inline-block;
+    font-family: Tahoma;
+    font-size: 14px;
+    padding: 5px;
+    border: 1px dashed #c5c5c5;
+    border-radius: 5px;
+}
+
+/**
+ ** Триплет ссылок: обложка-название-автор
+ **/
+.book-triplet {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    font-family: Tahoma;
+    max-width: 200px;
+    margin: auto;
+    /*border: 1px solid black;*/
+}
+
+/*
+ * Обложка
+ */
+.book-triplet img {
+    width: 50px;
+    height: 80px;
+}
+
+/*
+ * Название и автор
+ */
+.book-triplet .title-author {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    margin-left: 5px;
+}
+
+.book-triplet .title-author a {
+    color: #667393;
+    text-align: left;
+    /*border: 1px solid black;*/
+}
+
+.book-triplet .title-author a.to-book {
+    font-size: 13px;
+    font-weight: bold;
+}
+
+.book-triplet .title-author a.to-author {
+    font-size: 11px;
+    margin-top: 5px;
+}
+
+/**
+ ** Баннер "Похожие авторы"
+ **/
+.similar-authors {
+    font-family: 'Myriad Pro Regular';
+    font-size: 14px;
+    letter-spacing: 0.5px;
+    line-height: 20px;
+    word-spacing: -0.1px;
+}
+
+.similar-authors .title {
+    font-weight: bold;
+}
+
+.similar-authors ul.similar-authors-list {
+    margin-top: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.similar-authors li.similar-author {
+    margin: 2px 0;
+}
+
+.similar-authors li.similar-author > a {
+    color: #667493;
+}
+
+/**
  ** Баннер "Полезной информации"
  **/
 /*
