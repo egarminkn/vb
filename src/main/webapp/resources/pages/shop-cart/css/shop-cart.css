@@ -933,10 +933,6 @@ input[type="radio"][name="payment-mode"]#card:checked ~ .payment-mode .card-mode
  *  Общая стоимость покупки
  */
 .payment-goods .cost {
-    display: block;
-    padding: 5px;
-    border: 1px dashed #c5c5c5;
-    border-radius: 5px;
     margin: auto;
     margin-top: 10px;
     margin-left: calc(20% + 15px);

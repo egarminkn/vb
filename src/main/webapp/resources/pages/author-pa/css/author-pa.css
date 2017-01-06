@@ -2125,10 +2125,6 @@ input[type="radio"][name="payment-mode"]#webmoney:checked ~ .payment-modes .webm
  *  Общая сумма получаемых денег
  */
 .receive-money .cost {
-    display: inline-block;
-    padding: 5px;
-    border: 1px dashed #c5c5c5;
-    border-radius: 5px;
     margin: auto;
     margin-top: 10px;
     margin-left: calc(20% + 15px);

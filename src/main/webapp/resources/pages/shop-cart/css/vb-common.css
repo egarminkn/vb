@@ -2,6 +2,18 @@
  *** Общее
  ***/
 /**
+ **  Ценник итоговой стоимости
+ **/
+.cost {
+    display: inline-block;
+    font-family: Tahoma;
+    font-size: 14px;
+    padding: 5px;
+    border: 1px dashed #c5c5c5;
+    border-radius: 5px;
+}
+
+/**
  ** Триплет ссылок: обложка-название-автор
  **/
 .book-triplet {
