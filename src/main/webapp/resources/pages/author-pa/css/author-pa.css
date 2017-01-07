@@ -542,6 +542,7 @@ main .author {
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
+    margin-top: 10px;
     //border: 1px solid red;
 }
 

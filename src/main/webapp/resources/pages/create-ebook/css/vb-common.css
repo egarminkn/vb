@@ -45,7 +45,7 @@
     z-index: 1000;
 }
 
-.hint .bubble::before {
+.hint .bubble .before {
     content: '';
     display: block;
     position: absolute;

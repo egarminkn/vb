@@ -654,8 +654,7 @@ main .columns {
     z-index: 1000;
 }
 
-.hint .bubble::before {
-    content: '';
+.hint .bubble .before {
     display: block;
     position: absolute;
     top: -6px;
