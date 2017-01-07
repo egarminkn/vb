@@ -611,6 +611,48 @@ main .columns {
  *** Общее
  ***/
 /**
+ ** Фото автора в маске-обрезалке
+ **/
+.author-photo {
+    position: relative;
+    border-radius: 50%;
+    box-sizing: content-box;
+    min-width: 100px;
+    max-width: 100px;
+    min-height: 100px;
+    max-height: 100px;
+    overflow: hidden;
+    border: 1px dashed #ccc;
+}
+
+.author-photo img {
+    box-sizing: border-box;
+    width: 80px;
+    height: 80px;
+    position: absolute;
+    margin: 10px;
+    /*border: 1px solid black;*/
+}
+
+/*
+ * Круглая маска для обрезания фотки автора
+ */
+.author-photo::before {
+    content: '';
+    display: block;
+    box-sizing: border-box;
+    width: 80px;
+    height: 80px;
+    background-image: url('../svg/vb/circle.svg');
+    background-repeat: no-repeat;
+    background-size: 100%;
+    position: absolute;
+    margin: 10px;
+    z-index: 1;
+    /*border: 1px solid black;*/
+}
+
+/**
  ** Значок-вопросика с всплывающей подсказкой
  **/
 .hint {

@@ -519,35 +519,8 @@ main {
 /*
  * Фото автора
  */
-.photo {
-    position: relative;
-    border: 1px dashed #ccc; 
-    border-radius: 50%;
-    width: 100px;
-    height: 100px;
-    overflow: hidden;
+main .left-column .author-photo {
     margin-top: 50px;
-}
-
-.photo img {
-    position: absolute;
-    left: 10px;
-    top: 10px;
-}
-    
-/* круглая маска для обрезания фотки автора */
-.photo::before {
-    content: '';
-    display: block;
-    width: 80px;
-    height: 80px;
-    background-image: url(../svg/circle.svg);
-    background-repeat: no-repeat;
-    background-size: 100%;
-    position: absolute;
-    left: 10px;
-    top: 10px;
-    z-index: 1;
 }
 
 /*
