@@ -928,30 +928,13 @@ div.slogan > a.publish-own {
  *  Блок результатов поиска: Авторы
  */
 /*
- *  Стилизация фотографии автора
+ *  Стилизация - Фото автора в маске-обрезалке
  */
-/* фото автора */
-.search-results .left-column .author .photo {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
-    margin-left: 25px;
-    margin-right: 25px;
-    //border: 1px solid black;
+.search-results .left-column .author .author-photo {
+    margin: auto;
+    border-style: none;
 }
     
-/* круглая маска для обрезания фотки автора */
-.search-results .left-column .author .photo::before {
-    content: '';
-    display: block;
-    width: 80px;
-    height: 80px;
-    background-image: url(../svg/circle.svg);
-    background-repeat: no-repeat;
-    background-size: 100%;
-    position: absolute;
-}
-
 /*
  * Стилизация 1-ой строки блока с автором
  */
@@ -1021,8 +1004,7 @@ div.slogan > a.publish-own {
 .search-results .left-column .author .about .description {
     font-family: Tahoma;
     font-size: 12px;
-    margin-right: 30px;
-    //border: 1px solid black;
+    /*border: 1px solid black;*/
 }
 
 /*
@@ -1033,7 +1015,6 @@ div.slogan > a.publish-own {
     font-family: Tahoma;
     font-size: 12px;
     color: #7b7b7b;
-    margin-right: 20px;
 }
 
 .search-results .left-column .author .about .footer a {

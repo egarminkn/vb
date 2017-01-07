@@ -2,6 +2,310 @@
  *** Общее
  ***/
 /**
+ ** Фото автора в маске-обрезалке
+ **/
+.author-photo {
+    position: relative;
+    border-radius: 50%;
+    box-sizing: content-box;
+    min-width: 100px;
+    max-width: 100px;
+    min-height: 100px;
+    max-height: 100px;
+    overflow: hidden;
+    border: 1px dashed #ccc;
+}
+
+.author-photo img {
+    box-sizing: border-box;
+    width: 80px;
+    height: 80px;
+    position: absolute;
+    margin: 10px;
+    /*border: 1px solid black;*/
+}
+
+/*
+ * Круглая маска для обрезания фотки автора
+ */
+.author-photo::before {
+    content: '';
+    display: block;
+    box-sizing: border-box;
+    width: 80px;
+    height: 80px;
+    background-image: url('../svg/vb/circle.svg');
+    background-repeat: no-repeat;
+    background-size: 100%;
+    position: absolute;
+    margin: 10px;
+    z-index: 1;
+    /*border: 1px solid black;*/
+}
+
+/**
+ ** Значок-вопросика с всплывающей подсказкой
+ **/
+.hint {
+    display: inline-block;
+    vertical-align: middle;
+    position: relative;
+}
+
+.hint .question-mark {
+    display: block;
+    width: 14px;
+    height: 14px;
+    background: url('../svg/vb/question-mark.svg') no-repeat;
+    background-size: 100%;
+    cursor: pointer;
+}
+
+.hint .question-mark.blue {
+    background-image: url('../svg/vb/question-mark-blue.svg');
+}
+
+.hint .question-mark:hover ~ .bubble,
+.hint .bubble:hover {
+    display: block;
+}
+
+.hint .bubble {
+    display: none;
+    position: absolute;
+    top: 20px;
+    left: -15px;
+    font-family: Tahoma;
+    font-size: 12px;
+    white-space: normal;
+    color: white;
+    background-color: black;
+    padding: 5px 7px;
+    border-radius: 5px;
+    width: 350px;
+    cursor: text;
+    z-index: 1000;
+}
+
+.hint .bubble .before {
+    content: '';
+    display: block;
+    position: absolute;
+    top: -6px;
+    left: 15.5px;
+    width: 13px;
+    height: 13px;
+    background-color: black;
+    transform: rotate(45deg);
+    z-index: -1;
+}
+
+/**
+ ** Стилизованный checkbox
+ **/
+.text-checkbox {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    cursor: pointer;
+    /*border: 1px solid black;*/
+}
+
+.text-checkbox input[type="checkbox"] {
+    display: none;
+}
+
+/*
+ * Текст
+ */
+.text-checkbox .text {
+    font-family: Tahoma;
+    font-size: 14px;
+    line-height: 13px;
+    box-sizing: border-box;
+    height: 15px;
+    /*border: 1px solid black;*/
+}
+
+.text-checkbox .text a {
+    color: #667393;
+}
+
+/*
+ * Галочка
+ */
+.text-checkbox .checkbox {
+    box-sizing: border-box;
+    width: 15px;
+    height: 15px;
+    position: relative;
+    border: 3px solid #ccc;
+    margin-left: 5px;
+}
+
+.text-checkbox .checkbox::after {
+    content: '';
+    display: none;
+    position: absolute;
+    bottom: 2px;
+    left: 2px;
+    box-sizing: content-box;
+    width: 4px;
+    height: 8px;
+    border-bottom: 3px solid #667393;
+    border-right: 3px solid #667393;
+    transform: rotate(45deg);
+}
+
+.text-checkbox input[type="checkbox"]:checked + .checkbox::after {
+    display: block;
+}
+
+/**
+ **  Ценник итоговой стоимости
+ **/
+.cost {
+    display: inline-block;
+    font-family: Tahoma;
+    font-size: 14px;
+    padding: 5px;
+    border: 1px dashed #c5c5c5;
+    border-radius: 5px;
+}
+
+/**
+ ** Триплет ссылок: обложка-название-автор
+ **/
+.book-triplet {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    font-family: Tahoma;
+    max-width: 200px;
+    margin: auto;
+    /*border: 1px solid black;*/
+}
+
+/*
+ * Обложка
+ */
+.book-triplet img {
+    width: 50px;
+    height: 80px;
+}
+
+/*
+ * Название и автор
+ */
+.book-triplet .title-author {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    margin-left: 5px;
+}
+
+.book-triplet .title-author a {
+    color: #667393;
+    text-align: left;
+    /*border: 1px solid black;*/
+}
+
+.book-triplet .title-author a.to-book {
+    font-size: 13px;
+    font-weight: bold;
+}
+
+.book-triplet .title-author a.to-author {
+    font-size: 11px;
+    margin-top: 5px;
+}
+
+/**
+ ** Баннер "Похожие авторы"
+ **/
+.similar-authors {
+    font-family: 'Myriad Pro Regular';
+    font-size: 14px;
+    letter-spacing: 0.5px;
+    line-height: 20px;
+    word-spacing: -0.1px;
+}
+
+.similar-authors .title {
+    font-weight: bold;
+}
+
+.similar-authors ul.similar-authors-list {
+    margin-top: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.similar-authors li.similar-author {
+    margin: 2px 0;
+}
+
+.similar-authors li.similar-author > a {
+    color: #667493;
+}
+
+/**
+ ** Баннер "Полезной информации"
+ **/
+/*
+ * Общая настройка
+ */
+ul.useful-info,
+ul.useful-info li.useful-item ul.links {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    /*border: 1px solid red;*/
+}
+
+ul.useful-info {
+    max-width: 190px;
+    /*border: 1px solid red;*/
+}
+
+/*
+ * Заголовки
+ */
+ul.useful-info li.useful-item h2 {
+    font-family: Tahoma;
+    font-size: 16px;
+    color: #ccbd54;
+    font-weight: normal;
+    text-decoration: underline;
+    margin: 0;
+}
+
+ul.useful-info li.useful-item h3 {
+    font-family: Tahoma;
+    font-size: 16px;
+    color: black;
+    font-weight: normal;
+    text-decoration: underline;
+    margin: 0;
+    margin-top: 20px;
+}
+
+/*
+ * Ссылки - пункты меню
+ */
+ul.useful-info li.useful-item ul.links li.link {
+    margin-top: 5px;
+}
+
+ul.useful-info li.useful-item ul.links li.link a {
+    font-family: Tahoma;
+    font-size: 12px;
+    color: #657392;
+}
+
+/**
  ** Кнопка "Показать еще"
  **/
 .show-more {

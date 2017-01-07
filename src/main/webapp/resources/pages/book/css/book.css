@@ -745,21 +745,11 @@ main .book .columns .column-1 .authors .author {
 }
 
 /* фото автора */
-main .book .columns .column-1 .authors .author .photo {
+main .book .columns .column-1 .authors .author .author-photo {
+    margin-left: -10px;
+    border-style: none;
 }
     
-/* круглая маска для обрезания фотки автора */
-main .book .columns .column-1 .authors .author .photo::before {
-    content: '';
-    display: block;
-    width: 80px;
-    height: 80px;
-    background-image: url(../svg/circle.svg);
-    background-repeat: no-repeat;
-    background-size: 100%;
-    position: absolute;
-}
-
 main .book .columns .column-1 .authors .author .about {
     display: flex;
     flex-direction: column;

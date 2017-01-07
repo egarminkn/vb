@@ -1140,24 +1140,10 @@ div.shelf > div.authors-block > .author-summary > div.book-count {
 }
 
 /* фото автора */
-div.shelf > div.authors-block > .author-summary > div.photo {
-    position: relative;
-    left: 1px;
-    top: 12px;
+.shelf > .authors-block > .author-summary > .author-photo {
+    border-style: none;
 }
     
-/* круглая маска для обрезания фотки автора */
-div.shelf > div.authors-block > .author-summary > div.photo::before {
-    content: '';
-    display: block;
-    width: 80px;
-    height: 80px;
-    background-image: url(../svg/circle.svg);
-    background-repeat: no-repeat;
-    background-size: 100%;
-    position: absolute;
-}
-
 /*
  * Закраска звездочек в рейтинге кокретного автора
  */

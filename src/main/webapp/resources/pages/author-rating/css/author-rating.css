@@ -266,7 +266,7 @@ header::after {
     box-sizing: border-box;
     width: 16px;
     height: 16px;
-    background: url('../svg/question-mark.svg') no-repeat;
+    background: url('../svg/vb/question-mark.svg') no-repeat;
     background-size: 100%;
     //border: 1px solid black;
 }
@@ -694,26 +694,11 @@ ul.rating-filter li.rating-filter-group ul.radios input[type="radio"]:checked + 
 }
 
 /*
- * Блок автора - фото
+ * Блок автора - Фото автора в маске-обрезалке
  */
-/* фото автора */
-.author .photo {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
-    //border: 1px solid black;
-}
-    
-/* круглая маска для обрезания фотки автора */
-.author .photo::before {
-    content: '';
-    display: block;
-    width: 80px;
-    height: 80px;
-    background-image: url(../svg/circle.svg);
-    background-repeat: no-repeat;
-    background-size: 100%;
-    position: absolute;
+.author .author-photo {
+    margin: auto;
+    border-style: none;
 }
 
 /*
