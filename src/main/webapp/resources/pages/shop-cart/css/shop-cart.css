@@ -992,33 +992,9 @@ a.to-main-cart {
     vertical-align: middle;
     width: 14px;
     height: 14px;
-    background: url('../svg/question-mark-blue.svg') no-repeat;
+    background: url('../svg/vb/question-mark-blue.svg') no-repeat;
     background-size: 100%;
     cursor: pointer;
-}
-
-/*
- * Наклонные элементы ввода
- */
-.skew-outer {
-    display: inline-block;
-    vertical-align: middle;
-    padding-left: 4px;
-    padding-right: 4px;
-    border: 1px solid #c3c3c3;
-    transform: skewX(15deg);
-}
-
-.skew-inner {
-    outline-style: none;
-    border-style: none;
-    transform: skewX(-15deg);
-    font-family: Tahoma;
-    font-size: 12px;
-    box-sizing: border-box;
-    height: 25px;
-    width: 100%;
-    //border: 1px solid black;
 }
 
 /**

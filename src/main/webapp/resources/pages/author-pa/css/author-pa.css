@@ -810,7 +810,7 @@ main .books table.write tbody tr td.profit .price-sign {
 }
 
 main .books table.read tbody tr td {
-    padding-top: 20px;
+    padding-top: 15px;
     padding-bottom: 20px;
 }
 
@@ -1713,29 +1713,8 @@ main .books table.write tbody tr td.profit {
  ***  Общее
  ***/
 /**
- ** Наклонные элементы ввода
+ ** Наклонные и стилизованные select-ы
  **/
-.skew-outer {
-    padding-left: 4px;
-    padding-right: 4px;
-    border: 1px solid #c3c3c3;
-    transform: skewX(15deg);
-}
-
-.skew-inner {
-    outline-style: none;
-    border-style: none;
-    transform: skewX(-15deg);
-    font-family: Tahoma;
-    font-size: 12px;
-    box-sizing: border-box;
-    height: 25px;
-    width: 100%;
-}
-
-/*
- * Детализация для select-ов
- */
 select {
     font-family: Tahoma;
     font-size: 12px;

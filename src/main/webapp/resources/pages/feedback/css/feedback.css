@@ -259,7 +259,7 @@ header::after {
     box-sizing: border-box;
     width: 16px;
     height: 16px;
-    background: url('../svg/question-mark.svg') no-repeat;
+    background: url('../svg/vb/question-mark.svg') no-repeat;
     background-size: 100%;
     //border: 1px solid black;
 }
@@ -619,7 +619,7 @@ main .columns {
 .row {
     margin-bottom: 5px;
     width: 100%;
-    //border: 1px solid black;
+    /*border: 1px solid black;*/
 }
 
 /* Имя вопрошателя */
@@ -632,7 +632,7 @@ label[for="fullname"] {
 }
 
 .fullname .skew-outer .skew-inner {
-    //border: 1px solid black;
+    /*border: 1px solid black;*/
 }
 
 /* Email вопрошателя */
@@ -645,7 +645,7 @@ label[for="email"] {
 }
 
 .email .skew-outer .skew-inner {
-    //border: 1px solid black;
+    /*border: 1px solid black;*/
 }
 
 /* Тема вопроса */
@@ -658,7 +658,7 @@ label[for="topic"] {
 }
 
 .topic .skew-outer .skew-inner {
-    //border: 1px solid black;
+    /*border: 1px solid black;*/
 }
 
 /* Текст вопроса */
@@ -669,7 +669,7 @@ label[for="topic"] {
     flex-direction: column;
     justify-content: flex-start;
     align-items: flex-start;
-    //border: 1px solid red;
+    /*border: 1px solid red;*/
 }
 
 .content .skew-outer {
@@ -679,7 +679,7 @@ label[for="topic"] {
     padding: 0;
     padding-left: 15px;
     padding-right: 15px;
-    //border: 1px solid black;
+    /*border: 1px solid black;*/
 }
 
 .content textarea {
@@ -799,30 +799,6 @@ li.bottom-level-link a {
     width: 47.6%;
     box-shadow: 0 0 10px 5px #888;
     transform: rotate(-0.5deg);
-}
-
-/**
- ** Наклонные элементы ввода
- **/
-.skew-outer {
-    display: inline-block;
-    vertical-align: middle;
-    padding-left: 4px;
-    padding-right: 4px;
-    border: 1px solid #c3c3c3;
-    transform: skewX(15deg);
-}
-
-.skew-inner {
-    outline-style: none;
-    border-style: none;
-    transform: skewX(-15deg);
-    font-family: Tahoma;
-    font-size: 12px;
-    box-sizing: border-box;
-    height: 25px;
-    width: 100%;
-    //border: 1px solid black;
 }
 
 /**
