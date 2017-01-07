@@ -955,21 +955,23 @@ input[type="radio"][name="payment-mode"]#card:checked ~ .payment-mode .card-mode
     margin: auto;
 }
 
-.enjoy-goods .info .warning {
+.enjoy-goods .info .warn {
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
     align-items: center;
     padding: 20px;
-    //border: 1px solid black;
+    /*border: 1px solid black;*/
 }
 
-.enjoy-goods .info .warning a {
-    color: #667493;
+.enjoy-goods .info .warn .warning {
+    margin-top: 5px;
+    padding-left: 30px;
+    color: black;
 }
 
 /*
- *  Книги, которые могут Вас заинтересовать
+ * Книги, которые могут Вас заинтересовать
  */
 /* кнопочка Переложить в корзину */
 a.to-main-cart {
