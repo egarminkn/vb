@@ -16,8 +16,11 @@ var sliderButton2;
 var sliderButton3;
 var sliderButton4;
 
-/*
- *  Вспомогательные методы
+/**
+ ** Вспомогательные методы
+ **/
+/**
+ *  Метод получения корректного окончания слова
  */
 function getCorrectEnding(number, ending1, ending2, ending3) {
     number = number % 100;
@@ -99,3 +102,62 @@ function checkBodySize(event) {
 
 window.onresize = checkBodySize; // действие по событию изменения размера окна
 // <<<
+
+/**
+ * Коррекция положения баблов-подсказок в зависимости от размера документа
+ */
+function correctHintsPosition() {
+    $('.hint').each(function () {
+        var bubble = $(this).find('.bubble');
+        var bubbleBefore = bubble.find('.before');
+        var bubbleLeft = parseFloat(bubble.css('left'));
+        var bubbleBeforeLeft = parseFloat(bubbleBefore.css('left'));
+        var distanceBetweenBubbleAndRightDocumentEdge = $(document).width() - ($(this).offset().left + bubbleLeft + bubble.outerWidth());
+
+        var bubbleNewLeft = bubbleLeft + distanceBetweenBubbleAndRightDocumentEdge;
+        var bubbleBeforeNewLeft = bubbleBeforeLeft - distanceBetweenBubbleAndRightDocumentEdge;
+
+        var bubbleBeforeLeftMin = 15.5;
+        var bubbleBeforeLeftMax = bubble.outerWidth() - bubbleBeforeLeftMin;
+
+        var correct = 0;
+        if (bubbleBeforeNewLeft < bubbleBeforeLeftMin) {
+            correct = bubbleBeforeLeftMin - bubbleBeforeNewLeft;
+        } else if (bubbleBeforeNewLeft > bubbleBeforeLeftMax) {
+            correct = bubbleBeforeLeftMax - bubbleBeforeNewLeft;
+        }
+        bubbleNewLeft -= correct;
+        bubbleBeforeNewLeft += correct;
+
+        correct = 0;
+        if ($(this).offset().left + bubbleNewLeft < 0) {
+            correct = $(this).offset().left + bubbleNewLeft;
+        } else if ($(document).width() - ($(this).offset().left + bubbleNewLeft + bubble.outerWidth()) < 0) {
+            correct = -($(document).width() - ($(this).offset().left + bubbleNewLeft + bubble.outerWidth()));
+        }
+        bubbleNewLeft -= correct;
+        bubbleBeforeNewLeft += correct;
+
+        bubble.css('left', bubbleNewLeft + "px");
+        bubbleBefore.css('left', bubbleBeforeNewLeft + "px");
+    });
+}
+
+/**
+ * После загрузки страницы
+ */
+$(function () {
+    correctHintsPosition();
+
+    $(window).on("resize", function () {
+        correctHintsPosition();
+    });
+
+    $('.textarea textarea').on('input', function () {
+        var textareaInfo = $(this).closest('.textarea').find('.textarea-info');
+        var textareaLength = $(this).val().length;
+        textareaInfo.find('.size').html(textareaLength);
+        textareaInfo.find('.symbol-ending').html(getCorrectEnding(textareaLength, '', 'а', 'ов'));
+        textareaInfo.find('.using-ending').html(getCorrectEnding(textareaLength, '', 'о', 'о'));
+    });
+});

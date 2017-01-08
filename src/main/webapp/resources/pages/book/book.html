@@ -278,21 +278,28 @@
                     Отзывы
                     <span class="count">(<span>31</span>)</span>
                 </div>
-                <div class="send-review">
+
+                <!-- START (Форма отправки отзыва) -->
+                <form class="send-review textarea" method="post" action="">
                     <!--
                         Открывающий и закрывающий теги textarea должны быть на одной строке, т.к. иначе placeholder не отображается:
                         http://stackoverflow.com/questions/10186913/html5-textarea-placeholder-not-appearing
                     -->
-                    <textarea placeholder="Оставить отзыв" maxlength="4000"></textarea>
-                    <div class="textarea-appender">
-                        <span class="textarea-size-info">
-                            Использован<span class="using-ending">о</span> <span class="size">0</span> символ<span class="symbol-ending">ов</span> из 4000 возможных
-                        </span>
-                        <a class="send" href="#">
+                    <!-- Для использования этого textarea в форме, нужно заполнить поле name -->
+                    <textarea name="review" maxlength="4000" placeholder="Оставить отзыв" required></textarea>
+                    <div class="textarea-info">
+                        <div class="info">
+                            Использован<span class="using-ending">о</span>
+                            <span class="size">0</span> символ<span class="symbol-ending">ов</span>
+                            из 4000 возможных
+                        </div>
+                        <button class="send" type="submit">
                             Добавить
-                        </a>
+                        </button>
                     </div>
-                </div>
+                </form>
+                <!-- END (Форма отправки отзыва) -->
+
                 <ul class="review-list">
                     <li class="review">
                         <div class="title">
@@ -1315,7 +1322,6 @@
     <script type="text/javascript" src="js/jquery-2.2.3.min.js"></script>
     <script type="text/javascript" src="js/vb.js"></script>
     <script type="text/javascript" src="js/shelf.js"></script>
-    <script type="text/javascript" src="js/textarea.js"></script>
     <script type="text/javascript" src="js/page-scroller.js"></script>
 
 </html>
