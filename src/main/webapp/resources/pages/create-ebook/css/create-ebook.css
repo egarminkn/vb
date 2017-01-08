@@ -1173,7 +1173,7 @@ fieldset .shadow-under {
     font-family: Tahoma;
     font-size: 12px;
     margin-top: 20px;
-    //border: 1px solid black;
+    /*border: 1px solid black;*/
 }
 
 .description .annotation label {
@@ -1321,34 +1321,6 @@ fieldset .shadow-under {
     width: 47.6%;
     box-shadow: 0 0 10px 5px #888;
     transform: rotate(-0.5deg);
-}
-
-/*
- * Наклонные и стилизованные select-ы
- */
-select {
-    font-family: Tahoma;
-    font-size: 12px;
-    box-sizing: border-box;
-    height: 25px;
-    padding-right: 30px;
-
-    appearance: none; /* Не знаю для кого */
-    -moz-appearance: none; /* Для Firefox */
-    -webkit-appearance: none; /* Для Chrome и возможно для Safari */
-
-    background-image: url('../svg/dropdown.svg');
-    background-size: 35px 35px;
-    background-repeat: no-repeat;
-    background-position: calc(100% + 7px) center;
-}
-
-.skew-outer.select {
-    background-image: linear-gradient(to top, #d5d5d5, white);
-    background-size: 50% 100%;
-    background-repeat: no-repeat;
-    background-position: right center;
-    padding-right: 3px;
 }
 
 /*

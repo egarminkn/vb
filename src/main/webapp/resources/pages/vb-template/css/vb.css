@@ -611,6 +611,35 @@ main .columns {
  *** Общее
  ***/
 /**
+ ** Наклонные select-ы
+ **/
+select {
+    font-family: Tahoma;
+    font-size: 12px;
+    box-sizing: border-box;
+    height: 25px;
+    padding-right: 30px;
+
+    appearance: none; /* Общее, не знаю браузер, который использует это свойство */
+    -moz-appearance: none; /* Для Firefox */
+    -webkit-appearance: none; /* Для Chrome и возможно для Safari */
+
+    background-image: url('../svg/vb/dropdown.svg');
+    background-size: 35px 35px;
+    background-repeat: no-repeat;
+    background-position: calc(100% + 7px) center;
+    cursor: pointer;
+}
+
+.skew-outer.select {
+    background-image: linear-gradient(to top, #d5d5d5, white);
+    background-size: 50% 100%;
+    background-repeat: no-repeat;
+    background-position: right center;
+    padding-right: 3px;
+}
+
+/**
  ** Наклонные input-ы
  **/
 .skew-outer {
