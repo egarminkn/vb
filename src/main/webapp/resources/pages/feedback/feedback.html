@@ -255,14 +255,24 @@
                                             Текст сообщения
                                         </span>
                                     </label>
-                                    <div class="skew-outer">
-                                        <textarea class="skew-inner" name="content" id="content" maxlength="4000" required></textarea>
+
+                                    <!-- START (Наклонный textarea) -->
+                                    <div class="textarea">
+                                        <div class="skew-outer">
+                                            <!--
+                                                Открывающий и закрывающий теги textarea должны быть на одной строке, т.к. иначе placeholder не отображается:
+                                                http://stackoverflow.com/questions/10186913/html5-textarea-placeholder-not-appearing
+                                            -->
+                                            <!-- Для использования этого textarea в форме, нужно заполнить поле name -->
+                                            <textarea class="skew-inner" name="content" id="content" maxlength="4000" required></textarea>
+                                        </div>
+                                        <div class="textarea-info">
+                                            Использован<span class="using-ending">о</span>
+                                            <span class="size">0</span> символ<span class="symbol-ending">ов</span>
+                                            из 4000 возможных
+                                        </div>
                                     </div>
-                                    <div class="textarea-appender">
-                                        <span class="textarea-size-info">
-                                            Использован<span class="using-ending">о</span> <span class="size">0</span> символ<span class="symbol-ending">ов</span> из 4000 возможных
-                                        </span>
-                                    </div>
+                                    <!-- END (Наклонный textarea) -->
                                 </div>
                             </div>
                             
@@ -516,6 +526,5 @@
     <script src='https://www.google.com/recaptcha/api.js'></script>
     <script type="text/javascript" src="js/jquery-2.2.3.min.js"></script>
     <script type="text/javascript" src="js/vb.js"></script>
-    <script type="text/javascript" src="js/textarea.js"></script>
 
 </html>

@@ -2,6 +2,73 @@
  *** Общее
  ***/
 /**
+ ** Наклонный textarea
+ **/
+.textarea {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-end;
+    /*border: 1px solid black;*/
+}
+
+.textarea .skew-outer {
+    width: 100%;
+}
+
+.textarea textarea.skew-inner {
+    display: block;
+    box-sizing: border-box;
+    width: calc(100% - 20px);
+    height: 100px;
+    margin: auto;
+    resize: none;
+    /*border: 1px solid black;*/
+}
+
+/*
+ * Строка: Использовано 0 символов из 4000 возможных
+ */
+.textarea .textarea-info {
+    font-family: Tahoma;
+    font-size: 12px;
+    color: #666;
+    display: inline-block;
+    vertical-align: middle;
+    margin-right: -15px;
+    margin-top: 5px;
+}
+
+/**
+ ** Наклонные select-ы
+ **/
+select {
+    font-family: Tahoma;
+    font-size: 12px;
+    box-sizing: border-box;
+    height: 25px;
+    padding-right: 30px;
+
+    appearance: none; /* Общее, не знаю браузер, который использует это свойство */
+    -moz-appearance: none; /* Для Firefox */
+    -webkit-appearance: none; /* Для Chrome и возможно для Safari */
+
+    background-image: url('../svg/vb/dropdown.svg');
+    background-size: 35px 35px;
+    background-repeat: no-repeat;
+    background-position: calc(100% + 7px) center;
+    cursor: pointer;
+}
+
+.skew-outer.select {
+    background-image: linear-gradient(to top, #d5d5d5, white);
+    background-size: 50% 100%;
+    background-repeat: no-repeat;
+    background-position: right center;
+    padding-right: 3px;
+}
+
+/**
  ** Наклонные input-ы
  **/
 .skew-outer {

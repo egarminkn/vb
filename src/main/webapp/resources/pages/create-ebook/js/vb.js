@@ -16,8 +16,11 @@ var sliderButton2;
 var sliderButton3;
 var sliderButton4;
 
-/*
- *  Вспомогательные методы
+/**
+ ** Вспомогательные методы
+ **/
+/**
+ *  Метод получения корректного окончания слова
  */
 function getCorrectEnding(number, ending1, ending2, ending3) {
     number = number % 100;
@@ -148,5 +151,13 @@ $(function () {
 
     $(window).on("resize", function () {
         correctHintsPosition();
+    });
+
+    $('.textarea textarea').on('input', function () {
+        var textareaInfo = $(this).closest('.textarea').find('.textarea-info');
+        var textareaLength = $(this).val().length;
+        textareaInfo.find('.size').html(textareaLength);
+        textareaInfo.find('.symbol-ending').html(getCorrectEnding(textareaLength, '', 'а', 'ов'));
+        textareaInfo.find('.using-ending').html(getCorrectEnding(textareaLength, '', 'о', 'о'));
     });
 });

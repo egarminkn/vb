@@ -2,6 +2,44 @@
  *** Общее
  ***/
 /**
+ ** Наклонный textarea
+ **/
+.textarea {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-end;
+    /*border: 1px solid black;*/
+}
+
+.textarea .skew-outer {
+    width: 100%;
+}
+
+.textarea textarea.skew-inner {
+    display: block;
+    box-sizing: border-box;
+    width: calc(100% - 20px);
+    height: 100px;
+    margin: auto;
+    resize: none;
+    /*border: 1px solid black;*/
+}
+
+/*
+ * Строка: Использовано 0 символов из 4000 возможных
+ */
+.textarea .textarea-info {
+    font-family: Tahoma;
+    font-size: 12px;
+    color: #666;
+    display: inline-block;
+    vertical-align: middle;
+    margin-right: -15px;
+    margin-top: 5px;
+}
+
+/**
  ** Наклонные select-ы
  **/
 select {
