@@ -82,7 +82,12 @@
     min-width: 30px;
     text-align: center;
     cursor: pointer;
+    outline: none;
     border: 1px solid #c3c3c3;
+}
+
+.paginate_button:active {
+    box-shadow: inset 0 0 5px 0 #c3c3c3;
 }
 
 .paginate_button.current {

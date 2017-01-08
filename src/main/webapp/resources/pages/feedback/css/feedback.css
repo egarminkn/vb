@@ -767,29 +767,6 @@ li.bottom-level-link a {
     transform: rotate(-0.5deg);
 }
 
-/**
- ** Кнопка
- **/
-.btn {
-    display: inline-block;
-    font-family: Tahoma;
-    font-size: 13px;
-    border-style: none;
-    border-top-left-radius: 10px 5px;
-    border-top-right-radius: 10px 5px;
-    border-bottom-left-radius: 10px 5px;
-    border-bottom-right-radius: 10px 5px;
-    padding: 5px 10px;
-    background-image: linear-gradient(to top, #dbdbdb, #f0f0f0);
-    cursor: pointer;
-    outline: none;
-}
-
-.btn:active {
-    /* При нажатии будет видно нажатие за счет тени */
-    box-shadow: inset 0px 0px 5px 0 #ccc;
-}
-
 /* ---------------------------------------------------------------------------------------------------- */
 
 /***
