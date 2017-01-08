@@ -242,9 +242,23 @@
                                                         <span class="text">
                                                             Имя владельца карты
                                                         </span>
-                                                        <span class="explanation" 
-                                                              title="Имя владельца карты должно быть введено в латинской транскрипции именно так, как оно указано на Вашей карте"></span>
+
+                                                        <!-- START (Значок-вопросика с всплывающей подсказкой) -->
+                                                        <div class="hint">
+                                                            <!-- Если убрать доп.класс blue, то знак вопросмка будет черного цвета -->
+                                                            <div class="question-mark blue"></div>
+                                                            <div class="bubble">
+                                                                <div class="before"></div>
+                                                                <span class="content">
+                                                                    Имя владельца карты должно быть введено в латинской транскрипции именно так, как оно указано на Вашей карте
+                                                                </span>
+                                                            </div>
+                                                        </div>
+                                                        <!-- END (Значок-вопросика с всплывающей подсказкой) -->
                                                     </label>
+
+                                                    <!-- START (Наклонные input-ы) -->
+                                                    <!-- Для использования этого input-а в форме, нужно заполнить поле name -->
                                                     <div class="skew-outer">
                                                         <input class="skew-inner" 
                                                                type="text" 
@@ -255,6 +269,7 @@
                                                                required 
                                                                placeholder="как оно указано на Вашей карте">
                                                     </div>
+                                                    <!-- END (Наклонные input-ы) -->
                                                 </div>
                                             </div>
                                             <div class="row">
@@ -266,6 +281,9 @@
                                                         <span id="card-type">
                                                         </span>
                                                     </label>
+
+                                                    <!-- START (Наклонные input-ы) -->
+                                                    <!-- Для использования этого input-а в форме, нужно заполнить поле name -->
                                                     <div class="skew-outer">
                                                         <input class="skew-inner" 
                                                                type="text" 
@@ -275,6 +293,7 @@
                                                                required 
                                                                placeholder="16 цифр указанных на лицевой стороне">
                                                     </div>
+                                                    <!-- END (Наклонные input-ы) -->
                                                 </div>
                                             </div>
                                             <div class="row">
@@ -283,9 +302,23 @@
                                                         <span class="text">
                                                             CVV
                                                         </span>
-                                                        <span class="explanation"
-                                                              title="Код CVV - это трехзначное число, узнать которое Вы можете посмотрев на обратную сторону банковской карты. Обычно CVV напечатано на полосе для подписи"></span>
+
+                                                        <!-- START (Значок-вопросика с всплывающей подсказкой) -->
+                                                        <div class="hint">
+                                                            <!-- Если убрать доп.класс blue, то знак вопросмка будет черного цвета -->
+                                                            <div class="question-mark blue"></div>
+                                                            <div class="bubble">
+                                                                <div class="before"></div>
+                                                                <span class="content">
+                                                                    Код CVV - это трехзначное число, узнать которое Вы можете посмотрев на обратную сторону банковской карты. Обычно CVV напечатано на полосе для подписи
+                                                                </span>
+                                                            </div>
+                                                        </div>
+                                                        <!-- END (Значок-вопросика с всплывающей подсказкой) -->
                                                     </label>
+
+                                                    <!-- START (Наклонные input-ы) -->
+                                                    <!-- Для использования этого input-а в форме, нужно заполнить поле name -->
                                                     <div class="skew-outer">
                                                         <input class="skew-inner" 
                                                                type="text"
@@ -296,6 +329,7 @@
                                                                required 
                                                                placeholder="xxx">
                                                     </div>
+                                                    <!-- END (Наклонные input-ы) -->
                                                 </div>
                                                 <div class="card-expired">
                                                     <label for="card-expired">
@@ -303,6 +337,9 @@
                                                             Срок действия
                                                         </span>
                                                     </label>
+
+                                                    <!-- START (Наклонные input-ы) -->
+                                                    <!-- Для использования этого input-а в форме, нужно заполнить поле name -->
                                                     <div class="skew-outer">
                                                         <input class="skew-inner" 
                                                                type="text"
@@ -313,6 +350,7 @@
                                                                required 
                                                                placeholder="MM/YY">
                                                     </div>
+                                                    <!-- END (Наклонные input-ы) -->
                                                 </div>
                                             </div>
                                             <button type="submit" style="display: none;">

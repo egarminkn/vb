@@ -858,7 +858,17 @@ input[type="radio"][name="payment-mode"]#card:checked ~ .payment-mode .card-mode
     background-color: #667393;
 }
 
+@keyframes overflow-visible {
+    from {
+        overflow: hidden;
+    }
+    to {
+        overflow: visible;
+    }
+}
 input[type="radio"][name="payment-mode"]#card:checked ~ .payment-mode .card-mode .card-info {
+    animation: 3s overflow-visible;
+    animation-fill-mode: forwards;
     height: 160px;
 }
 
@@ -986,19 +996,6 @@ a.to-main-cart {
 /***
  *** Общее
  ***/
-/*
- * Разъяснение (знак вопроса)
- */
-.explanation {
-    display: inline-block;
-    vertical-align: middle;
-    width: 14px;
-    height: 14px;
-    background: url('../svg/vb/question-mark-blue.svg') no-repeat;
-    background-size: 100%;
-    cursor: pointer;
-}
-
 /**
  ** Тень под элементом
  **/
