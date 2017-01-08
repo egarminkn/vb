@@ -371,10 +371,15 @@ ul.useful-info li.useful-item ul.links li.link a {
     font-size: 20px;
     color: #707d9a;
     text-decoration: none;
-    border: 1px dashed #5f7495;
     margin: auto;
     padding: 10px 35px;
     border-radius: 5px;
+    border: 1px dashed #5f7495;
+    background: white;
+}
+
+.show-more .btn:active {
+    box-shadow: inset 0 0 5px 0 #7f9495;
 }
 
 /**
