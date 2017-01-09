@@ -2,6 +2,208 @@
  *** Общее
  ***/
 /**
+ **  Меню перехода на страницу пооиска книг
+ **/
+ul.top-level {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    border: 1px dashed #e1e1e1;
+    border-radius: 5px;
+    padding: 45px 15px;
+    max-width: 180px;
+
+    /* Для того чтобы Chrome не добавлял лишние отступы */
+    -webkit-margin-before: 0;
+    -webkit-margin-after: 0;
+}
+
+ul.top-level > ul.bottom-level {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    margin-bottom: 20px;
+}
+
+ul.top-level > li.top-level-link {
+    margin-bottom: 7.5px;
+}
+
+ul.top-level > ul.bottom-level > li.bottom-level-link {
+    margin-bottom: 5px;
+}
+
+ul.top-level > li.top-level-link > a {
+    font-family: Tahoma;
+    font-size: 17px;
+    color: black;
+    letter-spacing: 0.3px;
+    text-decoration: none;
+    border-bottom: 1px solid black;
+}
+
+ul.top-level > ul.bottom-level > li.bottom-level-link > a {
+    font-family: Tahoma;
+    font-size: 12px;
+    color: #5f7495;
+    letter-spacing: 0.3px;
+    text-decoration: none;
+    border-bottom: 1px solid #5f7495;
+}
+
+/**
+ ** Оглавление книги
+ **/
+.book-toc {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    height: 100%;
+    /*border: 1px solid red;*/
+}
+
+/*
+ * Заголовок
+ */
+.book-toc > h2 {
+    font-family: Tahoma;
+    font-size: 24px;
+    font-weight: normal;
+    margin: 0;
+    margin-bottom: 20px;
+    /*border: 1px solid green;*/
+}
+
+/*
+ * Оглавление
+ */
+.book-toc > input[type="radio"][name="chapter"] {
+    display: none;
+}
+
+.book-toc > ul.level.level-1 {
+    overflow-y: auto;
+    height: 100%;
+    /*border: 1px solid black;*/
+}
+
+.book-toc > ul.level.level-1 > li:last-child {
+    margin-bottom: 5px;
+}
+
+.book-toc ul.level {
+    display: block;
+    padding: 0;
+    margin: 0;
+    list-style-type: none;
+    counter-reset: cntr;
+}
+
+.book-toc ul.level > li {
+    display: block;
+    /*border: 1px solid red;*/
+}
+
+.book-toc ul.level > li > ul.level > li {
+    padding-left: 20px;
+}
+
+.book-toc .text-dots-page {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: flex-start;
+    font-family: Tahoma;
+    font-size: 16px;
+    text-decoration: none;
+    color: black;
+    border-radius: 5px;
+    cursor: pointer;
+    padding-bottom: 7px;
+    /*background-color: #d3be4a;*/
+    /*border: 1px solid black;*/
+}
+
+.book-toc .text-dots-page::before {
+    content: counters(cntr, ".") ". ";
+    counter-increment: cntr;
+    background-color: #d3be4a;
+    background-image: linear-gradient(#fefdfa, #f7f5e5);
+    position: relative;
+    left: 0;
+    bottom: -4px;
+}
+
+.book-toc .text-dots-page > .chapter {
+    position: relative;
+    white-space: normal;
+    width: 100%;
+    border-bottom: 1px dotted black;
+}
+
+.book-toc .text-dots-page > .chapter > span {
+    background-color: #d3be4a;
+    background-image: linear-gradient(#fefdfa, #f7f5e5);
+    bottom: -4px;
+}
+
+.book-toc .text-dots-page > .chapter > span.text {
+    position: relative;
+    left: 0;
+    padding-right: 5px;
+    white-space: normal;
+    margin-right: 20px;
+}
+
+.book-toc .text-dots-page > .chapter > span.page {
+    position: absolute;
+    right: 0;
+    padding-left: 5px;
+}
+
+/*
+ * Оглавление - Выбор главы
+ */
+.book-toc > input[type="radio"].chapter.chapter-1:checked ~ ul.level.level-1 label.text-dots-page.chapter-1,
+.book-toc > input[type="radio"].chapter.chapter-2:checked ~ ul.level.level-1 label.text-dots-page.chapter-2,
+.book-toc > input[type="radio"].chapter.chapter-3:checked ~ ul.level.level-1 label.text-dots-page.chapter-3,
+.book-toc > input[type="radio"].chapter.chapter-4:checked ~ ul.level.level-1 label.text-dots-page.chapter-4,
+.book-toc > input[type="radio"].chapter.chapter-5:checked ~ ul.level.level-1 label.text-dots-page.chapter-5,
+.book-toc > input[type="radio"].chapter.chapter-6:checked ~ ul.level.level-1 label.text-dots-page.chapter-6,
+.book-toc > input[type="radio"].chapter.chapter-7:checked ~ ul.level.level-1 label.text-dots-page.chapter-7,
+.book-toc > input[type="radio"].chapter.chapter-8:checked ~ ul.level.level-1 label.text-dots-page.chapter-8,
+.book-toc > input[type="radio"].chapter.chapter-9:checked ~ ul.level.level-1 label.text-dots-page.chapter-9,
+.book-toc > input[type="radio"].chapter.chapter-10:checked ~ ul.level.level-1 label.text-dots-page.chapter-10 {
+    background-color: #d3be4a;
+}
+
+.book-toc > input[type="radio"].chapter.chapter-1:checked ~ ul.level.level-1 label.text-dots-page.chapter-1 > .chapter > span,
+.book-toc > input[type="radio"].chapter.chapter-2:checked ~ ul.level.level-1 label.text-dots-page.chapter-2 > .chapter > span,
+.book-toc > input[type="radio"].chapter.chapter-3:checked ~ ul.level.level-1 label.text-dots-page.chapter-3 > .chapter > span,
+.book-toc > input[type="radio"].chapter.chapter-4:checked ~ ul.level.level-1 label.text-dots-page.chapter-4 > .chapter > span,
+.book-toc > input[type="radio"].chapter.chapter-5:checked ~ ul.level.level-1 label.text-dots-page.chapter-5 > .chapter > span,
+.book-toc > input[type="radio"].chapter.chapter-6:checked ~ ul.level.level-1 label.text-dots-page.chapter-6 > .chapter > span,
+.book-toc > input[type="radio"].chapter.chapter-7:checked ~ ul.level.level-1 label.text-dots-page.chapter-7 > .chapter > span,
+.book-toc > input[type="radio"].chapter.chapter-8:checked ~ ul.level.level-1 label.text-dots-page.chapter-8 > .chapter > span,
+.book-toc > input[type="radio"].chapter.chapter-9:checked ~ ul.level.level-1 label.text-dots-page.chapter-9 > .chapter > span,
+.book-toc > input[type="radio"].chapter.chapter-10:checked ~ ul.level.level-1 label.text-dots-page.chapter-10 > .chapter > span {
+    background-image: none;
+}
+
+.book-toc > input[type="radio"].chapter.chapter-1:checked ~ ul.level.level-1 label.text-dots-page.chapter-1::before,
+.book-toc > input[type="radio"].chapter.chapter-2:checked ~ ul.level.level-1 label.text-dots-page.chapter-2::before,
+.book-toc > input[type="radio"].chapter.chapter-3:checked ~ ul.level.level-1 label.text-dots-page.chapter-3::before,
+.book-toc > input[type="radio"].chapter.chapter-4:checked ~ ul.level.level-1 label.text-dots-page.chapter-4::before,
+.book-toc > input[type="radio"].chapter.chapter-5:checked ~ ul.level.level-1 label.text-dots-page.chapter-5::before,
+.book-toc > input[type="radio"].chapter.chapter-6:checked ~ ul.level.level-1 label.text-dots-page.chapter-6::before,
+.book-toc > input[type="radio"].chapter.chapter-7:checked ~ ul.level.level-1 label.text-dots-page.chapter-7::before,
+.book-toc > input[type="radio"].chapter.chapter-8:checked ~ ul.level.level-1 label.text-dots-page.chapter-8::before,
+.book-toc > input[type="radio"].chapter.chapter-9:checked ~ ul.level.level-1 label.text-dots-page.chapter-9::before,
+.book-toc > input[type="radio"].chapter.chapter-10:checked ~ ul.level.level-1 label.text-dots-page.chapter-10::before {
+    background-image: none;
+}
+
+/**
  ** Группа-радиокнопок-аккордион
  **/
 /*

@@ -849,46 +849,8 @@ div.slogan > a.publish-own {
 /*
  *  Меню справа от списка найденных электронных книг
  */
-.search-results .right-column .top-level {
-    border: 1px dashed #e1e1e1;
-    border-radius: 5px;
-    padding: 45px 15px;
-    //margin-top: 45px;
-}
+.search-results .right-column ul.top-level {
 
-.right-column ul.top-level,
-.right-column ul.top-level li.top-level-link,
-.right-column ul.top-level ul.bottom-level,
-.right-column ul.top-level ul.bottom-level li.bottom-level-link {
-    margin: 0;
-    padding: 0;
-    list-style: none;
-}
-
-.right-column ul.top-level li.top-level-link {
-    margin-bottom: 7.5px;
-}
-
-.right-column ul.top-level ul.bottom-level li.bottom-level-link {
-    margin-bottom: 5px;
-}
-
-.right-column ul.top-level ul.bottom-level {
-    margin-bottom: 20px;
-}
-
-.right-column li.top-level-link a {
-    font-family: Tahoma;
-    font-size: 17px;
-    color: black;
-    letter-spacing: 0.3px;
-}
-
-.right-column li.bottom-level-link a {
-    font-family: Tahoma;
-    font-size: 12px;
-    color: #5f7495;
-    letter-spacing: 0.3px;
 }
 
 /*

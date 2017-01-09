@@ -961,61 +961,20 @@ div.book-title-slider-in > .book-summary > div.book-author > div.book-count > sp
 /*
  *  Левое меню
  */
-div.links {
-    //width: 227px;
+.links {
     width: 17.7%;
     position: relative;
     margin-top: 125px;
     margin-left: 1.6%;
     float: left;
     padding: 0;
-    //border: 1px solid black;
+    /*border: 1px solid black;*/
 }
 
-div.links > nav.left-menu,
-div.links > nav.left-menu > ul.top-level,
-div.links > nav.left-menu > ul.top-level > li.top-level-link,
-div.links > nav.left-menu > ul.top-level > ul.bottom-level,
-div.links > nav.left-menu > ul.top-level > ul.bottom-level > li.bottom-level-link {
-    margin: 0;
-    padding: 0;
-    list-style: none;
-}
-
-div.links > nav.left-menu {
-    //width: 210px;
-    width: 92.5%;
-}
-
-div.links > nav.left-menu > ul.top-level > li.top-level-link {
-    margin-bottom: 7.5px;
-}
-
-div.links > nav.left-menu > ul.top-level > ul.bottom-level > li.bottom-level-link {
-    margin-bottom: 5px;
-}
-
-div.links > nav.left-menu > ul.top-level > ul.bottom-level {
-    margin-bottom: 20px;
-}
-
-div.links > nav.left-menu {
-    position: relative;
-    left: 10px;
-}
-
-li.top-level-link > a {
-    font-family: Tahoma;
-    font-size: 17px;
-    color: black;
-    letter-spacing: 0.3px;
-}
-
-li.bottom-level-link > a {
-    font-family: Tahoma;
-    font-size: 12px;
-    color: #5f7495;
-    letter-spacing: 0.3px;
+.links > nav.left-menu .top-level {
+    border-style: none;
+    padding-top: 5px;
+    padding-bottom: 5px;
 }
 
 /*

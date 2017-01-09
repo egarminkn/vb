@@ -611,6 +611,56 @@ main .columns {
  *** Общее
  ***/
 /**
+ **  Меню перехода на страницу пооиска книг
+ **/
+ul.top-level {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    border: 1px dashed #e1e1e1;
+    border-radius: 5px;
+    padding: 45px 15px;
+    max-width: 180px;
+
+    /* Для того чтобы Chrome не добавлял лишние отступы */
+    -webkit-margin-before: 0;
+    -webkit-margin-after: 0;
+}
+
+ul.top-level > ul.bottom-level {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    margin-bottom: 20px;
+}
+
+ul.top-level > li.top-level-link {
+    margin-bottom: 7.5px;
+}
+
+ul.top-level > ul.bottom-level > li.bottom-level-link {
+    margin-bottom: 5px;
+}
+
+ul.top-level > li.top-level-link > a {
+    font-family: Tahoma;
+    font-size: 17px;
+    color: black;
+    letter-spacing: 0.3px;
+    text-decoration: none;
+    border-bottom: 1px solid black;
+}
+
+ul.top-level > ul.bottom-level > li.bottom-level-link > a {
+    font-family: Tahoma;
+    font-size: 12px;
+    color: #5f7495;
+    letter-spacing: 0.3px;
+    text-decoration: none;
+    border-bottom: 1px solid #5f7495;
+}
+
+/**
  ** Оглавление книги
  **/
 .book-toc {
