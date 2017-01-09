@@ -897,161 +897,26 @@
                     <a href="#close" title="Закрыть" class="close"></a>
 
                     <div class="table-of-contents">
-                        <h2>Оглавление</h2>
-
-                        <!-- START (Элемент - Оглавление) -->
-                        <ul class="level level-1">
-                            <li>
-                                <label class="text-dots-page" for="chapter-1">
-                                    <div class="chapter">
-                                        <span class="text">
-                                            Рубрикация
-                                        </span>
-                                        <span class="page">
-                                            1
-                                        </span>
-                                    </div>
-                                </label>
-                            </li>
-                            <li>
-                                <label class="text-dots-page" for="chapter-2">
-                                    <div class="chapter">
-                                        <span class="text">
-                                            Названия (употребление прописных букв, кавычек, слитное, дефисное, раздельное написание)
-                                        </span>
-                                        <span class="page">
-                                            3
-                                        </span>
-                                    </div>
-                                </label>
-                            </li>
-                            <li>
-                                <label class="text-dots-page" for="chapter-3">
-                                    <div class="chapter">
-                                        <span class="text">
-                                            Текст
-                                        </span>
-                                        <span class="page">
-                                            11
-                                        </span>
-                                    </div>
-                                </label>
-                                <ul class="level level-2">
-                                    <li>
-                                        <label class="text-dots-page" for="chapter-4">
-                                            <div class="chapter">
-                                                <span class="text">
-                                                    Рубрикация
-                                                </span>
-                                                <span class="page">
-                                                    11
-                                                </span>
-                                            </div>
-                                        </label>
-                                    </li>
-                                    <li>
-                                        <label class="text-dots-page" for="chapter-5">
-                                            <div class="chapter">
-                                                <span class="text">
-                                                    Названия (употребление прописных букв, кавычек, слитное, дефисное, раздельное написание)
-                                                </span>
-                                                <span class="page">
-                                                    15
-                                                </span>
-                                            </div>
-                                        </label>
-                                    </li>
-                                    <li>
-                                        <label class="text-dots-page" for="chapter-6">
-                                            <div class="chapter">
-                                                <span class="text">
-                                                    Числа и знаки
-                                                </span>
-                                                <span class="page">
-                                                    25
-                                                </span>
-                                            </div>
-                                        </label>
-                                        <ul class="level level-3">
-                                            <li>
-                                                <label class="text-dots-page" for="chapter-7">
-                                                    <div class="chapter">
-                                                        <span class="text">
-                                                            Рубрикация
-                                                        </span>
-                                                        <span class="page">
-                                                            25
-                                                        </span>
-                                                    </div>
-                                                </label>
-                                            </li>
-                                            <li>
-                                                <label class="text-dots-page" for="chapter-8">
-                                                    <div class="chapter">
-                                                        <span class="text">
-                                                            Названия (употребление прописных букв, кавычек, слитное, дефисное, раздельное написание)
-                                                        </span>
-                                                        <span class="page">
-                                                            27
-                                                        </span>
-                                                    </div>
-                                                </label>
-                                            </li>
-                                        </ul>
-                                    </li>
-                                    <li>
-                                        <label class="text-dots-page" for="chapter-9">
-                                            <div class="chapter">
-                                                <span class="text">
-                                                    Числа и знаки
-                                                </span>
-                                                <span class="page">
-                                                    31
-                                                </span>
-                                            </div>
-                                        </label>
-                                    </li>
-                                </ul>
-                            </li>
-                            <li>
-                                <label class="text-dots-page" for="chapter-10">
-                                    <div class="chapter">
-                                        <span class="text">
-                                            Числа и знаки
-                                        </span>
-                                        <span class="page">
-                                            42
-                                        </span>
-                                    </div>
-                                </label>
-                            </li>
-                        </ul>
-                        <!-- END (Элемент - Оглавление) -->
-                    </div>
-                </div>
-            </div>
-            <div class="modal" id="browse-book">
-                <div class="body">
-                    <a href="#close" title="Закрыть" class="close"></a>
-
-                    <div class="browse-book">
-                        <div class="column column-1">
+                        <!-- START (Оглавление книги) -->
+                        <!-- Если на странице несколько таких элементов, то нужно обеспечить уникальность имен групп radio-кнопок (name), уникальность их id-ков и соответствующих for-ов у label-ов -->
+                        <div class="book-toc">
                             <h2 class="row row-1">Оглавление</h2>
 
-                            <!-- START (Элемент - Оглавление) -->
-                            <input type="radio" name="chapter" value="1" id="chapter-1">
-                            <input type="radio" name="chapter" value="2" id="chapter-2">
-                            <input type="radio" name="chapter" value="3" id="chapter-3">
-                            <input type="radio" name="chapter" value="4" id="chapter-4">
-                            <input type="radio" name="chapter" value="5" id="chapter-5">
-                            <input type="radio" name="chapter" value="6" id="chapter-6">
-                            <input type="radio" name="chapter" value="7" id="chapter-7">
-                            <input type="radio" name="chapter" value="8" id="chapter-8">
-                            <input type="radio" name="chapter" value="9" id="chapter-9">
-                            <input type="radio" name="chapter" value="10" id="chapter-10">
+                            <!--
+                            <input type="radio" name="chapter" class="chapter chapter-1" value="1" id="chapter-1">
+                            <input type="radio" name="chapter" class="chapter chapter-2" value="2" id="chapter-2">
+                            <input type="radio" name="chapter" class="chapter chapter-3" value="3" id="chapter-3">
+                            <input type="radio" name="chapter" class="chapter chapter-4" value="4" id="chapter-4">
+                            <input type="radio" name="chapter" class="chapter chapter-5" value="5" id="chapter-5">
+                            <input type="radio" name="chapter" class="chapter chapter-6" value="6" id="chapter-6">
+                            <input type="radio" name="chapter" class="chapter chapter-7" value="7" id="chapter-7">
+                            <input type="radio" name="chapter" class="chapter chapter-8" value="8" id="chapter-8">
+                            <input type="radio" name="chapter" class="chapter chapter-9" value="9" id="chapter-9">
+                            <input type="radio" name="chapter" class="chapter chapter-10" value="10" id="chapter-10">
+                            -->
                             <ul class="row row-2 level level-1">
                                 <li>
-                                    <label class="text-dots-page" for="chapter-1">
+                                    <label class="text-dots-page chapter-1"> <!--for="chapter-1"-->
                                         <div class="chapter">
                                             <span class="text">
                                                 Рубрикация
@@ -1063,7 +928,7 @@
                                     </label>
                                 </li>
                                 <li>
-                                    <label class="text-dots-page" for="chapter-2">
+                                    <label class="text-dots-page chapter-2"> <!--for="chapter-2"-->
                                         <div class="chapter">
                                             <span class="text">
                                                 Названия (употребление прописных букв, кавычек, слитное, дефисное, раздельное написание)
@@ -1075,7 +940,7 @@
                                     </label>
                                 </li>
                                 <li>
-                                    <label class="text-dots-page" for="chapter-3">
+                                    <label class="text-dots-page chapter-3"> <!--for="chapter-3"-->
                                         <div class="chapter">
                                             <span class="text">
                                                 Текст
@@ -1087,7 +952,7 @@
                                     </label>
                                     <ul class="level level-2">
                                         <li>
-                                            <label class="text-dots-page" for="chapter-4">
+                                            <label class="text-dots-page chapter-4"> <!--for="chapter-4"-->
                                                 <div class="chapter">
                                                     <span class="text">
                                                         Рубрикация
@@ -1099,7 +964,7 @@
                                             </label>
                                         </li>
                                         <li>
-                                            <label class="text-dots-page" for="chapter-5">
+                                            <label class="text-dots-page chapter-5"> <!--for="chapter-5"-->
                                                 <div class="chapter">
                                                     <span class="text">
                                                         Названия (употребление прописных букв, кавычек, слитное, дефисное, раздельное написание)
@@ -1111,7 +976,7 @@
                                             </label>
                                         </li>
                                         <li>
-                                            <label class="text-dots-page" for="chapter-6">
+                                            <label class="text-dots-page chapter-6"> <!--for="chapter-6"-->
                                                 <div class="chapter">
                                                     <span class="text">
                                                         Числа и знаки
@@ -1123,7 +988,7 @@
                                             </label>
                                             <ul class="level level-3">
                                                 <li>
-                                                    <label class="text-dots-page" for="chapter-7">
+                                                    <label class="text-dots-page chapter-7"> <!--for="chapter-7"-->
                                                         <div class="chapter">
                                                             <span class="text">
                                                                 Рубрикация
@@ -1135,7 +1000,7 @@
                                                     </label>
                                                 </li>
                                                 <li>
-                                                    <label class="text-dots-page" for="chapter-8">
+                                                    <label class="text-dots-page chapter-8"> <!--for="chapter-8"-->
                                                         <div class="chapter">
                                                             <span class="text">
                                                                 Названия (употребление прописных букв, кавычек, слитное, дефисное, раздельное написание)
@@ -1149,7 +1014,7 @@
                                             </ul>
                                         </li>
                                         <li>
-                                            <label class="text-dots-page" for="chapter-9">
+                                            <label class="text-dots-page chapter-9"> <!--for="chapter-9"-->
                                                 <div class="chapter">
                                                     <span class="text">
                                                         Числа и знаки
@@ -1163,7 +1028,7 @@
                                     </ul>
                                 </li>
                                 <li>
-                                    <label class="text-dots-page" for="chapter-10">
+                                    <label class="text-dots-page chapter-10"> <!--for="chapter-10"-->
                                         <div class="chapter">
                                             <span class="text">
                                                 Числа и знаки
@@ -1175,7 +1040,160 @@
                                     </label>
                                 </li>
                             </ul>
-                            <!-- END (Элемент - Оглавление) -->
+                        </div>
+                        <!-- END (Оглавление книги) -->
+                    </div>
+                </div>
+            </div>
+            <div class="modal" id="browse-book">
+                <div class="body">
+                    <a href="#close" title="Закрыть" class="close"></a>
+
+                    <div class="browse-book">
+                        <div class="column column-1">
+                            <!-- START (Оглавление книги) -->
+                            <!-- Если на странице несколько таких элементов, то нужно обеспечить уникальность имен групп radio-кнопок (name), уникальность их id-ков и соответствующих for-ов у label-ов -->
+                            <div class="book-toc">
+                                <h2 class="row row-1">Оглавление</h2>
+
+                                <input type="radio" name="chapter" class="chapter chapter-1" value="1" id="chapter-1">
+                                <input type="radio" name="chapter" class="chapter chapter-2" value="2" id="chapter-2">
+                                <input type="radio" name="chapter" class="chapter chapter-3" value="3" id="chapter-3">
+                                <input type="radio" name="chapter" class="chapter chapter-4" value="4" id="chapter-4">
+                                <input type="radio" name="chapter" class="chapter chapter-5" value="5" id="chapter-5">
+                                <input type="radio" name="chapter" class="chapter chapter-6" value="6" id="chapter-6">
+                                <input type="radio" name="chapter" class="chapter chapter-7" value="7" id="chapter-7">
+                                <input type="radio" name="chapter" class="chapter chapter-8" value="8" id="chapter-8">
+                                <input type="radio" name="chapter" class="chapter chapter-9" value="9" id="chapter-9">
+                                <input type="radio" name="chapter" class="chapter chapter-10" value="10" id="chapter-10">
+                                <ul class="row row-2 level level-1">
+                                    <li>
+                                        <label class="text-dots-page chapter-1" for="chapter-1">
+                                            <div class="chapter">
+                                                <span class="text">
+                                                    Рубрикация
+                                                </span>
+                                                <span class="page">
+                                                    1
+                                                </span>
+                                            </div>
+                                        </label>
+                                    </li>
+                                    <li>
+                                        <label class="text-dots-page chapter-2" for="chapter-2">
+                                            <div class="chapter">
+                                                <span class="text">
+                                                    Названия (употребление прописных букв, кавычек, слитное, дефисное, раздельное написание)
+                                                </span>
+                                                <span class="page">
+                                                    2
+                                                </span>
+                                            </div>
+                                        </label>
+                                    </li>
+                                    <li>
+                                        <label class="text-dots-page chapter-3" for="chapter-3">
+                                            <div class="chapter">
+                                                <span class="text">
+                                                    Текст
+                                                </span>
+                                                <span class="page">
+                                                    3
+                                                </span>
+                                            </div>
+                                        </label>
+                                        <ul class="level level-2">
+                                            <li>
+                                                <label class="text-dots-page chapter-4" for="chapter-4">
+                                                    <div class="chapter">
+                                                        <span class="text">
+                                                            Рубрикация
+                                                        </span>
+                                                        <span class="page">
+                                                            4
+                                                        </span>
+                                                    </div>
+                                                </label>
+                                            </li>
+                                            <li>
+                                                <label class="text-dots-page chapter-5" for="chapter-5">
+                                                    <div class="chapter">
+                                                        <span class="text">
+                                                            Названия (употребление прописных букв, кавычек, слитное, дефисное, раздельное написание)
+                                                        </span>
+                                                        <span class="page">
+                                                            5
+                                                        </span>
+                                                    </div>
+                                                </label>
+                                            </li>
+                                            <li>
+                                                <label class="text-dots-page chapter-6" for="chapter-6">
+                                                    <div class="chapter">
+                                                        <span class="text">
+                                                            Числа и знаки
+                                                        </span>
+                                                        <span class="page">
+                                                            6
+                                                        </span>
+                                                    </div>
+                                                </label>
+                                                <ul class="level level-3">
+                                                    <li>
+                                                        <label class="text-dots-page chapter-7" for="chapter-7">
+                                                            <div class="chapter">
+                                                                <span class="text">
+                                                                    Рубрикация
+                                                                </span>
+                                                                <span class="page">
+                                                                    7
+                                                                </span>
+                                                            </div>
+                                                        </label>
+                                                    </li>
+                                                    <li>
+                                                        <label class="text-dots-page chapter-8" for="chapter-8">
+                                                            <div class="chapter">
+                                                                <span class="text">
+                                                                    Названия (употребление прописных букв, кавычек, слитное, дефисное, раздельное написание)
+                                                                </span>
+                                                                <span class="page">
+                                                                    8
+                                                                </span>
+                                                            </div>
+                                                        </label>
+                                                    </li>
+                                                </ul>
+                                            </li>
+                                            <li>
+                                                <label class="text-dots-page chapter-9" for="chapter-9">
+                                                    <div class="chapter">
+                                                        <span class="text">
+                                                            Числа и знаки
+                                                        </span>
+                                                        <span class="page">
+                                                            9
+                                                        </span>
+                                                    </div>
+                                                </label>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                    <li>
+                                        <label class="text-dots-page chapter-10" for="chapter-10">
+                                            <div class="chapter">
+                                                <span class="text">
+                                                    Числа и знаки
+                                                </span>
+                                                <span class="page">
+                                                    10
+                                                </span>
+                                            </div>
+                                        </label>
+                                    </li>
+                                </ul>
+                            </div>
+                            <!-- END (Оглавление книги) -->
                         </div>
                         <div class="column column-2">
                             <label class="row row-1 page-number">

@@ -1340,7 +1340,7 @@ main .book-reviews .review-list .review .content {
     width: 550px;
     margin-top: 10%;
     height: 65%;
-    //height: 20%;
+    /*height: 20%;*/
 }
 
 .table-of-contents {
@@ -1348,105 +1348,7 @@ main .book-reviews .review-list .review .content {
     flex-direction: column;
     justify-content: flex-start;
     height: 100%;
-    //border: 1px solid red;
-}
-
-/*
- * Заголовок
- */
-.table-of-contents h2 {
-    font-family: Tahoma;
-    font-size: 24px;
-    font-weight: normal;
-    margin: 0;
-    margin-bottom: 20px;
-    //border: 1px solid green;
-}
-
-/*
- * Оглавление
- */
-input[type="radio"][name="chapter"] {
-    display: none;
-}
-
-ul.level.level-1 {
-    overflow-y: auto;
-    height: 100%;
-    //border: 1px solid black;
-}
-
-ul.level.level-1 > li:last-child {
-    margin-bottom: 5px;
-}
-
-ul.level {
-    display: block;
-    padding: 0;
-    margin: 0;
-    list-style-type: none;
-    counter-reset: cntr;
-}
-
-ul.level > li {
-    display: block;
-    //border: 1px solid red;
-}
-
-ul.level > li > ul.level > li {
-    padding-left: 20px;
-}
-
-.text-dots-page {
-    display: flex;
-    flex-direction: row;
-    justify-content: flex-start;
-    align-items: flex-start;
-    font-family: Tahoma;
-    font-size: 16px;
-    text-decoration: none;
-    color: black;
-    border-radius: 5px;
-    cursor: pointer;
-    padding-bottom: 7px;
-    //background-color: #d3be4a;
-    //border: 1px solid black;
-}
-
-.text-dots-page::before {
-    content: counters(cntr, ".") ". ";
-    counter-increment: cntr;
-    background-color: #d3be4a;
-    background-image: linear-gradient(#fefdfa, #f7f5e5);
-    position: relative;
-    left: 0;
-    bottom: -4px;
-}
-
-.text-dots-page .chapter {
-    position: relative;
-    white-space: normal;
-    width: 100%;
-    border-bottom: 1px dotted black;
-}
-
-.text-dots-page .chapter span {
-    background-color: #d3be4a;
-    background-image: linear-gradient(#fefdfa, #f7f5e5);
-    bottom: -4px;
-}
-
-.text-dots-page .chapter span.text {
-    position: relative;
-    left: 0;
-    padding-right: 5px;
-    white-space: normal;
-}
-
-.text-dots-page .chapter span.page {
-    position: absolute;
-    right: 0;
-    padding-left: 5px;
+    /*border: 1px solid red;*/
 }
 
 /**
@@ -1456,7 +1358,7 @@ ul.level > li > ul.level > li {
     margin-top: 5%;
     width: 90%;
     height: 85%;
-    //height: 20%;
+    /*height: 20%;*/
 }
 
 /*
@@ -1475,7 +1377,7 @@ ul.level > li > ul.level > li {
     flex-direction: column;
     justify-content: space-between;
     height: 100%;
-    //border: 1px solid black;
+    /*border: 1px solid black;*/
 }
 
 .browse-book .column-1 {
@@ -1489,7 +1391,7 @@ ul.level > li > ul.level > li {
 }
 
 .browse-book .column .row {
-    //border: 1px solid black;
+    /*border: 1px solid black;*/
 }
 
 .browse-book .column .row-2 {
@@ -1499,59 +1401,6 @@ ul.level > li > ul.level > li {
 .browse-book .column .row-2.page-content {
     margin-top: 20px;
     margin-bottom: 20px;
-}
-
-/*
- * Заголовок - Колонка 1
- */
-.browse-book h2 {
-    font-family: Tahoma;
-    font-size: 24px;
-    font-weight: normal;
-    margin: 0;
-    margin-bottom: 20px;
-}
-
-/*
- * Оглавление - Колонка 1
- */
-#chapter-1:checked ~ ul.level.level-1 label[for="chapter-1"].text-dots-page,
-#chapter-2:checked ~ ul.level.level-1 label[for="chapter-2"].text-dots-page,
-#chapter-3:checked ~ ul.level.level-1 label[for="chapter-3"].text-dots-page,
-#chapter-4:checked ~ ul.level.level-1 label[for="chapter-4"].text-dots-page,
-#chapter-5:checked ~ ul.level.level-1 label[for="chapter-5"].text-dots-page,
-#chapter-6:checked ~ ul.level.level-1 label[for="chapter-6"].text-dots-page,
-#chapter-7:checked ~ ul.level.level-1 label[for="chapter-7"].text-dots-page,
-#chapter-8:checked ~ ul.level.level-1 label[for="chapter-8"].text-dots-page,
-#chapter-9:checked ~ ul.level.level-1 label[for="chapter-9"].text-dots-page,
-#chapter-10:checked ~ ul.level.level-1 label[for="chapter-10"].text-dots-page {
-    background-color: #d3be4a;
-}
-
-#chapter-1:checked ~ ul.level.level-1 label[for="chapter-1"].text-dots-page .chapter span,
-#chapter-2:checked ~ ul.level.level-1 label[for="chapter-2"].text-dots-page .chapter span,
-#chapter-3:checked ~ ul.level.level-1 label[for="chapter-3"].text-dots-page .chapter span,
-#chapter-4:checked ~ ul.level.level-1 label[for="chapter-4"].text-dots-page .chapter span,
-#chapter-5:checked ~ ul.level.level-1 label[for="chapter-5"].text-dots-page .chapter span,
-#chapter-6:checked ~ ul.level.level-1 label[for="chapter-6"].text-dots-page .chapter span,
-#chapter-7:checked ~ ul.level.level-1 label[for="chapter-7"].text-dots-page .chapter span,
-#chapter-8:checked ~ ul.level.level-1 label[for="chapter-8"].text-dots-page .chapter span,
-#chapter-9:checked ~ ul.level.level-1 label[for="chapter-9"].text-dots-page .chapter span,
-#chapter-10:checked ~ ul.level.level-1 label[for="chapter-10"].text-dots-page .chapter span {
-    background-image: none;
-}
-
-#chapter-1:checked ~ ul.level.level-1 label[for="chapter-1"].text-dots-page::before,
-#chapter-2:checked ~ ul.level.level-1 label[for="chapter-2"].text-dots-page::before,
-#chapter-3:checked ~ ul.level.level-1 label[for="chapter-3"].text-dots-page::before,
-#chapter-4:checked ~ ul.level.level-1 label[for="chapter-4"].text-dots-page::before,
-#chapter-5:checked ~ ul.level.level-1 label[for="chapter-5"].text-dots-page::before,
-#chapter-6:checked ~ ul.level.level-1 label[for="chapter-6"].text-dots-page::before,
-#chapter-7:checked ~ ul.level.level-1 label[for="chapter-7"].text-dots-page::before,
-#chapter-8:checked ~ ul.level.level-1 label[for="chapter-8"].text-dots-page::before,
-#chapter-9:checked ~ ul.level.level-1 label[for="chapter-9"].text-dots-page::before,
-#chapter-10:checked ~ ul.level.level-1 label[for="chapter-10"].text-dots-page::before {
-    background-image: none;
 }
 
 /*
