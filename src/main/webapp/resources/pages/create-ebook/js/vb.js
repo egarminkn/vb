@@ -153,6 +153,13 @@ $(function () {
         correctHintsPosition();
     });
 
+    /* для страницы shop-cart */
+    $('input[type="radio"].buy-process.payment-goods').on("change", function () {
+        if ($(this).is(':checked')) {
+            correctHintsPosition();
+        }
+    });
+
     $('.textarea textarea').on('input', function () {
         var textareaInfo = $(this).closest('.textarea').find('.textarea-info');
         var textareaLength = $(this).val().length;

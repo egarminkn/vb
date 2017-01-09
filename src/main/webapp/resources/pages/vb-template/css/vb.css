@@ -611,6 +611,246 @@ main .columns {
  *** Общее
  ***/
 /**
+ ** Группа-радиокнопок-аккордион
+ **/
+/*
+ * Общая часть
+ */
+.payment-modes {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: stretch;
+    /*border: 1px solid black;*/
+}
+
+/*
+ * radio-кнопки
+ */
+.payment-modes > .payment-modes-accordion {
+    /*border: 1px solid black;*/
+}
+
+.payment-modes > .payment-modes-accordion > input[type="radio"].radio-payment-mode {
+    display: none;
+}
+
+.payment-modes > .payment-modes-accordion > .payment-mode {
+    margin-top: 5px;
+}
+
+.payment-modes > .payment-modes-accordion > .payment-mode > .text {
+    display: inline-block;
+    vertical-align: middle;
+    font-family: Tahoma;
+    font-size: 14px;
+    line-height: 12px;
+    cursor: pointer;
+    /*border: 1px solid black;*/
+}
+
+.payment-modes > .payment-modes-accordion > .payment-mode > .figure {
+    display: inline-block;
+    vertical-align: middle;
+    box-sizing: content-box;
+    width: 10px;
+    height: 10px;
+    border: 3px solid #ccc;
+    border-radius: 50%;
+    position: relative;
+    cursor: pointer;
+}
+
+.payment-modes > .payment-modes-accordion > input[type="radio"].radio-payment-mode.radio-yandex-money-wallet-mode:checked ~ .payment-mode.yandex-money-wallet-mode > .figure::before,
+.payment-modes > .payment-modes-accordion > input[type="radio"].radio-payment-mode.radio-yandex-money-card-mode:checked ~ .payment-mode.yandex-money-card-mode > .figure::before,
+.payment-modes > .payment-modes-accordion > input[type="radio"].radio-payment-mode.radio-webmoney-mode:checked ~ .payment-mode.webmoney-mode > .figure::before,
+.payment-modes > .payment-modes-accordion > input[type="radio"].radio-payment-mode.radio-robokassa-mode:checked ~ .payment-mode.robokassa-mode > .figure::before {
+    content: '';
+    display: block;
+    position: absolute;
+    top: 2px;
+    left: 2px;
+    box-sizing: border-box;
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background-color: #667393;
+}
+
+/*
+ * Раздвижение блока с выбранным способом платежа
+ */
+@keyframes overflow-visible {
+    from {
+        overflow: hidden;
+    }
+    to {
+        overflow: visible;
+    }
+}
+
+.payment-modes > .payment-modes-accordion > input[type="radio"].radio-payment-mode.radio-yandex-money-card-mode:checked ~ .payment-mode.yandex-money-card-mode > .info {
+    animation: 3s overflow-visible;
+    animation-fill-mode: forwards;
+    height: 160px;
+}
+
+.payment-modes > .payment-modes-accordion > input[type="radio"].radio-payment-mode.radio-yandex-money-wallet-mode:checked ~ .payment-mode.yandex-money-wallet-mode > .info,
+.payment-modes > .payment-modes-accordion > input[type="radio"].radio-payment-mode.radio-webmoney-mode:checked ~ .payment-mode.webmoney-mode > .info {
+    animation: 3s overflow-visible;
+    animation-fill-mode: forwards;
+    height: 50px;
+}
+
+/*
+ *  Поля ввода реквизитов
+ */
+.payment-modes > .payment-modes-accordion > .payment-mode > .info {
+    font-size: 12px;
+    width: 300px;
+    margin-top: 5px;
+    margin-left: 10%;
+    padding-left: 5px;
+    padding-right: 5px;
+    overflow: hidden;
+    height: 0px;
+    transition-property: height;
+    transition-duration: 0.8s;
+    transition-timing-function: ease-in-out;
+    /*border: 1px solid black;*/
+}
+
+.payment-modes > .payment-modes-accordion > .payment-mode > .info > form {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    width: 100%;
+    height: 100%;
+    /*border: 1px solid black;*/
+}
+
+.payment-modes > .payment-modes-accordion > .payment-mode > .info > form > .row {
+    width: 100%;
+}
+
+.payment-modes > .payment-modes-accordion > .payment-mode > .info > form > .row:last-of-type {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.payment-modes > .payment-modes-accordion > .payment-mode > .info > form > .row > .cell {
+    width: 100%;
+    /*border: 1px solid black;*/
+}
+
+.payment-modes > .payment-modes-accordion > .payment-mode > .info > form > .row > .cell:not(:first-child) {
+    margin-left: 5px;
+}
+
+.payment-modes > .payment-modes-accordion > .payment-mode > .info > form > .row > .cell > label {
+    display: inline-block;
+    vertical-align: middle;
+    width: 100%;
+    /*border: 1px solid black;*/
+}
+
+.payment-modes > .payment-modes-accordion > .payment-mode > .info > form > .row > .cell > label > .text {
+    font-family: Tahoma;
+    font-size: 12px;
+    line-height: 10px;
+    display: inline-block;
+    vertical-align: middle;
+    /*border: 1px solid black;*/
+}
+
+.payment-modes > .payment-modes-accordion > .payment-mode > .info > form > .row > .cell > label > .hint {
+    margin-left: 5px;
+    display: inline-block;
+    vertical-align: middle;
+    /*border: 1px solid black;*/
+}
+
+.payment-modes > .payment-modes-accordion > .payment-mode > .info > form > .row > .cell > .skew-outer {
+    display: block;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    background-color: white;
+}
+
+/* стилизация банковских реквизитов */
+.payment-modes > .payment-modes-accordion > .payment-mode.yandex-money-card-mode > .info > form > .row > .cell.card-holder input {
+    text-transform: uppercase;
+}
+
+.payment-modes > .payment-modes-accordion > .payment-mode.yandex-money-card-mode > .info > form > .row > .cell.card-num .card-type {
+    display: inline-block;
+    vertical-align: middle;
+    font-family: Tahoma;
+    font-size: 12px;
+    float: right;
+    margin-right: 10px;
+    color: #ccc;
+    /*border: 1px solid black;*/
+}
+
+.payment-modes.get-money > .payment-modes-accordion > .payment-mode.robokassa-mode {
+    display: none;
+}
+
+/*
+ * Группа чекбоксов - "Сохранить реквизиты платежа" и "Разрешить автоплатеж"
+ */
+.payment-modes > .checkbox-group {
+    margin: auto;
+    /*border: 1px solid black;*/
+}
+
+.payment-modes.buy-book > .checkbox-group {
+    display: none;
+}
+
+.payment-modes > .checkbox-group > .allow-auto-payment {
+    pointer-events: none;
+    color: #ddd;
+}
+.payment-modes > .checkbox-group > .allow-auto-payment > .checkbox {
+    border-color: #eee;
+}
+.payment-modes > .checkbox-group > .allow-auto-payment > .checkbox::after {
+    border-color: #ddd;
+}
+
+.payment-modes > .checkbox-group > input.save-payment-details:checked ~ .allow-auto-payment {
+    pointer-events: auto;
+    color: black;
+}
+.payment-modes > .checkbox-group > input.save-payment-details:checked ~ .allow-auto-payment > .checkbox {
+    border-color: #ccc;
+}
+.payment-modes > .checkbox-group > input.save-payment-details:checked ~ .allow-auto-payment > .checkbox::after {
+    border-color: #667393;
+}
+
+.payment-modes > .checkbox-group > input[type="checkbox"] {
+    display: none;
+}
+
+.payment-modes > .checkbox-group > .text-checkbox {
+    margin-top: 5px;
+}
+
+.payment-modes > .checkbox-group > .text-checkbox > .checkbox {
+    margin-right: 5px;
+}
+
+.payment-modes > .checkbox-group > input[type="checkbox"].save-payment-details:checked ~ .text-checkbox.save-payment-details > .checkbox::after,
+.payment-modes > .checkbox-group > input[type="checkbox"].allow-auto-payment:checked ~ .text-checkbox.allow-auto-payment > .checkbox::after {
+    display: block;
+}
+
+/**
  ** Кнопка
  **/
 .btn {

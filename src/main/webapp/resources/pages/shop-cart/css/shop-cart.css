@@ -768,7 +768,7 @@ div.main-cart .slider-inner .buttons {
 /* hidden - доп.класс для того чтобы,
  * если общая сумма покупки равна 0, то показывать кнопку "Скачать",
  * в противном случае показывать кнопку "Перейти к оплате" */
-.main-cart .slider-inner .buttons label.btn.hidden {
+div.main-cart .slider-inner .buttons label.btn.hidden {
     display: none;
 }
 
@@ -797,124 +797,9 @@ a.to-spare-cart {
     font-size: 14px;
 }
 
-.payment-goods input[type="radio"][name="payment-mode"] {
-    display: none;
-}
-
-.payment-goods .payment-mode {
-    margin-top: 20px;
-    margin-left: 20%;
-}
-
-.payment-goods .payment-mode .text {
-    cursor: pointer;
-}
-
-.payment-goods .payment-mode .figure {
-    display: inline-block;
-    vertical-align: middle;
-    box-sizing: content-box;
-    width: 10px;
-    height: 10px;
-    border: 3px solid #ccc;
-    border-radius: 50%;
-    position: relative;
-    cursor: pointer;
-}
-
-input[type="radio"][name="payment-mode"]#paypal:checked ~ .payment-mode .paypal-mode .figure::before,
-input[type="radio"][name="payment-mode"]#card:checked ~ .payment-mode .card-mode .figure::before {
-    content: '';
-    display: block;
-    position: absolute;
-    top: 2px;
-    left: 2px;
-    box-sizing: border-box;
-    width: 6px;
-    height: 6px;
-    border-radius: 50%;
-    background-color: #667393;
-}
-
-@keyframes overflow-visible {
-    from {
-        overflow: hidden;
-    }
-    to {
-        overflow: visible;
-    }
-}
-input[type="radio"][name="payment-mode"]#card:checked ~ .payment-mode .card-mode .card-info {
-    animation: 3s overflow-visible;
-    animation-fill-mode: forwards;
-    height: 160px;
-}
-
-.payment-mode .card-mode {
-    margin-top: 5px;
-}
-
-/*
- *  Поля ввода информации о банковской карте
- */
-.payment-mode .card-mode .card-info {
-    font-size: 12px;
-    width: 300px;
-    margin-top: 5px;
-    margin-left: 10%;
-    padding-left: 5px;
-    padding-right: 5px;
-    overflow: hidden;
-    height: 0px;
-    transition-property: height;
-    transition-duration: 0.8s;
-    transition-timing-function: ease-in-out;
-    //border: 1px solid black;
-}
-
-.payment-mode .card-mode .card-info .row label {
-    display: inline-block;
-    vertical-align: middle;
-    width: 100%;
-    //border: 1px solid black;
-}
-
-.payment-mode .card-mode .card-info .row label .text {
-    display: inline-block;
-    vertical-align: middle;
-}
-
-.payment-mode .card-mode .card-info form {
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-end;
-    height: 100%;
-    //border: 1px solid black;
-}
-
-.payment-mode .card-mode .card-info form .row:last-of-type {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-}
-
-.payment-mode .card-mode .card-info .skew-outer {
-    display: block;
-    margin-top: 5px;
-    margin-bottom: 5px;
-}
-
-#card-holder {
-    text-transform: uppercase;
-}
-
-#card-type {
-    display: inline-block;
-    vertical-align: middle;
-    float: right;
-    margin-right: 10px;
-    color: #ccc;
-    //border: 1px solid black;
+.payment-goods .payment-modes {
+    margin: 20px 0 20px 20%;
+    /*border: 1px solid black;*/
 }
 
 /*
@@ -922,7 +807,6 @@ input[type="radio"][name="payment-mode"]#card:checked ~ .payment-mode .card-mode
  */
 .payment-goods .cost {
     margin: auto;
-    margin-top: 10px;
     margin-left: calc(20% + 15px);
 }
 

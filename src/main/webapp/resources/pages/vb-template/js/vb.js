@@ -125,17 +125,65 @@ function correctHintsPosition() {
  * После загрузки страницы
  */
 $(function () {
+    /*
+     * Позиционирование всплывающих подсказок
+     */
     correctHintsPosition();
 
     $(window).on("resize", function () {
         correctHintsPosition();
     });
 
+    /* для страницы shop-cart */
+    $('input[type="radio"].buy-process.payment-goods').on("change", function () {
+        if ($(this).is(':checked')) {
+            correctHintsPosition();
+        }
+    });
+
+    /*
+     * Учет количества символов введнных в textarea
+     */
     $('.textarea textarea').on('input', function () {
         var textareaInfo = $(this).closest('.textarea').find('.textarea-info');
         var textareaLength = $(this).val().length;
         textareaInfo.find('.size').html(textareaLength);
         textareaInfo.find('.symbol-ending').html(getCorrectEnding(textareaLength, '', 'а', 'ов'));
         textareaInfo.find('.using-ending').html(getCorrectEnding(textareaLength, '', 'о', 'о'));
+    });
+
+    /*
+     * Денежный перевод
+     */
+    $('.payment-modes > .payment-modes-accordion').each(function () {
+        var form = $(this).find('.yandex-money-card-mode > .card-info > form');
+        if ($.creditly === undefined) {
+            $.creditly = {};
+        }
+        $.creditly[$(this).prop('id')] = Creditly.initialize(
+                                            '#' + form.find('.card-expired input').prop('id'),
+                                            '#' + form.find('.card-num input').prop('id'),
+                                            '#' + form.find('.card-cvc input').prop('id'),
+                                            '#' + form.find('.card-num .card-type').prop('id'));
+    });
+
+    $('.payment-mode-btn').click(function(event) {
+        event.preventDefault();
+
+        var accordion = $(this).closest('.buttons').prevAll('.payment-modes').find('.payment-modes-accordion');
+
+        var checked = accordion.find('input[type="radio"].radio-payment-mode:checked').val();
+        if (checked === 'yandex-money-card-mode') {
+            var errors = $.creditly[accordion.prop('id')].validate();
+            if (errors) {
+                // еще ни разу не нашел ошибок, полагаю, что валидация косячит
+                console.log(errors);
+                return;
+            }
+        }
+
+        // Перед тем как сабмитить форму по событию клик кнопки будет идти проверка
+        // required полей и прочая валидация по паттернам, если таковая имеется
+        accordion.find('div.' + checked).find('form').find('[type="submit"]').trigger('click');
     });
 });
