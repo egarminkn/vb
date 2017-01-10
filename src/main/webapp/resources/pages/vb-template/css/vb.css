@@ -153,9 +153,10 @@ header::after {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    align-items: flex-start;    
-    height: 25px;
+    align-items: flex-start;
     text-decoration: none;
+    box-sizing: border-box;
+    height: 31px;
     /*border: 1px solid red;*/
 }
 
@@ -238,8 +239,10 @@ header::after {
 }
 
 .menu > div {
-    height: 25px;
+    box-sizing: border-box;
+    height: 31px;
     margin-left: 7.9%;
+    cursor: pointer;
     /*border: 1px solid black;*/
 }
 
@@ -254,9 +257,20 @@ header::after {
 }
 
 /*
+ * При наведении мышки на пункт Главного меню
+ */
+.menu > div:hover {
+    border-bottom: 6px solid #d3be4a;
+}
+
+.menu > div:hover > a {
+    border-bottom-style: none;
+}
+
+/*
  * Для того, чтобы подчеркнуть страницу, которая выбрана, к div добавляется класс menu-item-selected
  */
-.menu-item-selected {
+.menu > div.menu-item-selected {
     border-bottom: 6px solid #d3be4a;
 }
 
