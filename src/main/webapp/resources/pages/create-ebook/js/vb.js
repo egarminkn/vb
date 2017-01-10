@@ -104,42 +104,65 @@ window.onresize = checkBodySize; // действие по событию изм�
 // <<<
 
 /**
- * Коррекция положения баблов-подсказок в зависимости от размера документа
+ * Коррекция положения баблов-подсказок в зависимости от размера окна
  */
+function getDistanceBetweenBubbleAndRightWindowEdge(hintLeftOffset, bubbleLeft, bubbleWidth) {
+    return $(window).width() - (hintLeftOffset + bubbleLeft + bubbleWidth - $(document).scrollLeft());
+}
+
 function correctHintsPosition() {
     $('.hint').each(function () {
         var bubble = $(this).find('.bubble');
+
+        /* установка номинальной ширины бабла перед тем, как начать его позиционировать */
+        bubble.outerWidth(bubble.css('max-width'));
+
         var bubbleBefore = bubble.find('.before');
         var bubbleLeft = parseFloat(bubble.css('left'));
         var bubbleBeforeLeft = parseFloat(bubbleBefore.css('left'));
-        var distanceBetweenBubbleAndRightDocumentEdge = $(document).width() - ($(this).offset().left + bubbleLeft + bubble.outerWidth());
+        var distanceBetweenBubbleAndRightWindowEdge = getDistanceBetweenBubbleAndRightWindowEdge($(this).offset().left, bubbleLeft, bubble.outerWidth());
 
-        var bubbleNewLeft = bubbleLeft + distanceBetweenBubbleAndRightDocumentEdge;
-        var bubbleBeforeNewLeft = bubbleBeforeLeft - distanceBetweenBubbleAndRightDocumentEdge;
+        var bubbleNewLeft = bubbleLeft + distanceBetweenBubbleAndRightWindowEdge;
+        var bubbleBeforeNewLeft = bubbleBeforeLeft - distanceBetweenBubbleAndRightWindowEdge;
 
         var bubbleBeforeLeftMin = 15.5;
         var bubbleBeforeLeftMax = bubble.outerWidth() - bubbleBeforeLeftMin;
 
         var correct = 0;
+        /* это блок проверки гарантирует, что бабл и его хвостик-ромбик не разлетятся в стороны друг от друга */
         if (bubbleBeforeNewLeft < bubbleBeforeLeftMin) {
+            /* здесь делаем так, чтобы бабл от своего хвостика-ромбика не улетел вправо */
             correct = bubbleBeforeLeftMin - bubbleBeforeNewLeft;
         } else if (bubbleBeforeNewLeft > bubbleBeforeLeftMax) {
+            /* здесь делаем так, чтобы бабл от своего хвостика-ромбика не улетел влево */
             correct = bubbleBeforeLeftMax - bubbleBeforeNewLeft;
         }
         bubbleNewLeft -= correct;
         bubbleBeforeNewLeft += correct;
 
         correct = 0;
-        if ($(this).offset().left + bubbleNewLeft < 0) {
-            correct = $(this).offset().left + bubbleNewLeft;
-        } else if ($(document).width() - ($(this).offset().left + bubbleNewLeft + bubble.outerWidth()) < 0) {
-            correct = -($(document).width() - ($(this).offset().left + bubbleNewLeft + bubble.outerWidth()));
+        /* это блок проверки гарантирует, что бабл не улетит за правый борт окна браузера */
+        if (getDistanceBetweenBubbleAndRightWindowEdge($(this).offset().left, bubbleNewLeft, bubble.outerWidth()) < 0) {
+            correct = -getDistanceBetweenBubbleAndRightWindowEdge($(this).offset().left, bubbleNewLeft, bubble.outerWidth());
+        }
+        bubbleNewLeft -= correct;
+        bubbleBeforeNewLeft += correct;
+
+        correct = 0;
+        /* это блок проверки гарантирует, что бабл не улетит за левый борт окна браузера */
+        if ($(this).offset().left + bubbleNewLeft - $(document).scrollLeft() < 0) {
+            correct = $(this).offset().left + bubbleNewLeft - $(document).scrollLeft();
         }
         bubbleNewLeft -= correct;
         bubbleBeforeNewLeft += correct;
 
         bubble.css('left', bubbleNewLeft + "px");
         bubbleBefore.css('left', bubbleBeforeNewLeft + "px");
+
+        /* коррекция ширины бабла */
+        if (bubble.outerWidth() > $(window).width()) {
+            bubble.outerWidth($(window).width());
+        }
     });
 }
 
@@ -147,9 +170,16 @@ function correctHintsPosition() {
  * После загрузки страницы
  */
 $(function () {
+    /*
+     * Позиционирование всплывающих подсказок
+     */
     correctHintsPosition();
 
     $(window).on("resize", function () {
+        correctHintsPosition();
+    });
+
+    $(window).on("scroll", function () {
         correctHintsPosition();
     });
 
@@ -160,11 +190,60 @@ $(function () {
         }
     });
 
+    /*
+     * Учет количества символов введнных в textarea
+     */
     $('.textarea textarea').on('input', function () {
         var textareaInfo = $(this).closest('.textarea').find('.textarea-info');
         var textareaLength = $(this).val().length;
         textareaInfo.find('.size').html(textareaLength);
         textareaInfo.find('.symbol-ending').html(getCorrectEnding(textareaLength, '', 'а', 'ов'));
         textareaInfo.find('.using-ending').html(getCorrectEnding(textareaLength, '', 'о', 'о'));
+    });
+
+    /*
+     * Денежный перевод
+     */
+    $('.payment-modes > .payment-modes-accordion').each(function () {
+        var form = $(this).find('.yandex-money-card-mode > .card-info > form');
+        if ($.creditly === undefined) {
+            $.creditly = {};
+        }
+        $.creditly[$(this).prop('id')] = Creditly.initialize(
+            '#' + form.find('.card-expired input').prop('id'),
+            '#' + form.find('.card-num input').prop('id'),
+            '#' + form.find('.card-cvc input').prop('id'),
+            '#' + form.find('.card-num .card-type').prop('id'));
+    });
+
+    $('.payment-mode-btn').click(function(event) {
+        event.preventDefault();
+
+        var accordion = $(this).closest('.buttons').prevAll('.payment-modes').find('.payment-modes-accordion');
+
+        var checked = accordion.find('input[type="radio"].radio-payment-mode:checked').val();
+        if (checked === 'yandex-money-card-mode') {
+            var errors = $.creditly[accordion.prop('id')].validate();
+            if (errors) {
+                // еще ни разу не нашел ошибок, полагаю, что валидация косячит
+                console.log(errors);
+                return;
+            }
+        }
+
+        // Перед тем как сабмитить форму по событию клик кнопки будет идти проверка
+        // required полей и прочая валидация по паттернам, если таковая имеется
+        accordion.find('div.' + checked).find('form').find('[type="submit"]').trigger('click');
+    });
+
+    /*
+     * Боковой баннер-фильтр "Выберите категорию"
+     */
+    $('ul.rating-filter > li.rating-filter-group > ul.radios > label > li.radio').on('click', function (event) {
+        var radio = $(this).prev('input[type="radio"]');
+        if (radio.is(':checked')) {
+            radio.prop('checked', false);
+            event.preventDefault();
+        }
     });
 });
