@@ -551,10 +551,9 @@ main .column-2 .header {
     justify-content: flex-start;
 }
 
-main .column-2 .header .nav {
-    display: flex;
-    flex-direction: row;
-    justify-content: flex-start;
+/* навигация */
+main .column-2 .header ul.nav {
+    margin-bottom: 0;
 }
 
 /*
@@ -749,27 +748,7 @@ main .column-1 ul.useful-info {
     font-size: 34px;
     font-weight: normal;
     margin: 0;
-    //border: 1px solid black;
-}
-
-/* навигация */
-.column-2 .header ul.nav {
-    margin: 0;
-    padding: 0;
-    list-style: none;
-    margin-top: 10px;
-    margin-left: 5px;
-    //border: 1px solid black;
-}
-
-.column-2 .header ul.nav li {
-    margin-right: 20px;
-}
-
-.column-2 .header ul.nav a {
-    font-family: Tahoma;
-    font-size: 13px;
-    color: #657392;
+    /*border: 1px solid black;*/
 }
 
 /*
@@ -789,7 +768,7 @@ fieldset:not(:last-child) {
 fieldset:last-child {
     padding-top: 0;
     padding-bottom: 0;
-    //border: 1px solid black;
+    /*border: 1px solid black;*/
 }
 
 fieldset h2 {

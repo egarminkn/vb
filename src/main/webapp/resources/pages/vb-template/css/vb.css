@@ -611,6 +611,32 @@ main .columns {
  *** Общее
  ***/
 /**
+ ** Горизонтальное меню переходов на id-шники той же страницы
+ **/
+ul.nav {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    margin: 10px 0 10px 5px;
+    padding: 0;
+    list-style: none;
+    /*border: 1px solid black;*/
+}
+
+ul.nav > li.nav-item:not(:last-child) {
+    margin-right: 20px;
+}
+
+ul.nav > li.nav-item > a {
+    font-family: Tahoma;
+    font-size: 13px;
+    color: #657392;
+    text-decoration: none;
+    border-bottom: 1px solid #657392;
+}
+
+/**
  ** Боковой баннер-фильтр "Выберите категорию"
  **/
 /*

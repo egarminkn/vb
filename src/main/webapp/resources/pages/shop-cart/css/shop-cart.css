@@ -576,10 +576,8 @@ main {
 }
 
 /* навигация */
-.column-1 .header .nav {
-    display: flex;
-    flex-direction: row;
-    justify-content: flex-start;
+.column-1 .header ul.nav {
+    margin-bottom: 0;
 }
 
 /**
@@ -598,34 +596,14 @@ main {
     font-size: 34px;
     font-weight: normal;
     margin: 0;
-    //border: 1px solid black;
-}
-
-/* навигация */
-.column-1 .header ul.nav {
-    margin: 0;
-    padding: 0;
-    list-style: none;
-    margin-top: 10px;
-    margin-left: 5px;
-    //border: 1px solid black;
-}
-
-.column-1 .header ul.nav li {
-    margin-right: 20px;
-}
-
-.column-1 .header ul.nav a {
-    font-family: Tahoma;
-    font-size: 13px;
-    color: #657392;
+    /*border: 1px solid black;*/
 }
 
 /*
  *  Общая стилизация для Корзина и Книги, которые могут Вас заинтересовать
  */
-.column-1 div.main-cart,
-.column-1 div.spare-cart {
+.column-1 .main-cart,
+.column-1 .spare-cart {
     position: relative; /* связанно с тенями под блоками */
     padding: 25px;
     margin-top: 30px;
@@ -645,8 +623,8 @@ main {
     border-bottom: 1px dashed #c5c5c5;
 }
 
-.column-1 div.main-cart h2,
-.column-1 div.spare-cart h2 {
+.column-1 .main-cart h2,
+.column-1 .spare-cart h2 {
     font-family: Tahoma;
     font-size: 20px;
     font-weight: normal;
@@ -745,21 +723,21 @@ main {
 /*
  *  Общее
  */
-.column-1 div.main-cart .slider-inner {
+.column-1 .main-cart .slider-inner {
     display: none;
-    //display: flex;
+    /*display: flex;*/
     flex-direction: column;
     justify-content: space-between;
 }
 
-.column-1 div.main-cart input[type="radio"][name="buy-process"]#select-goods:checked ~ .select-goods,
-.column-1 div.main-cart input[type="radio"][name="buy-process"]#payment-goods:checked ~ .payment-goods,
-.column-1 div.main-cart input[type="radio"][name="buy-process"]#enjoy-goods:checked ~ .enjoy-goods {
+.column-1 .main-cart input[type="radio"][name="buy-process"]#select-goods:checked ~ .select-goods,
+.column-1 .main-cart input[type="radio"][name="buy-process"]#payment-goods:checked ~ .payment-goods,
+.column-1 .main-cart input[type="radio"][name="buy-process"]#enjoy-goods:checked ~ .enjoy-goods {
     display: flex;
 }
 
 /* кнопки переходы */
-div.main-cart .slider-inner .buttons {
+.main-cart .slider-inner .buttons {
     display: inline-block;
     margin-left: auto;
     margin-top: 5px;
@@ -768,14 +746,14 @@ div.main-cart .slider-inner .buttons {
 /* hidden - доп.класс для того чтобы,
  * если общая сумма покупки равна 0, то показывать кнопку "Скачать",
  * в противном случае показывать кнопку "Перейти к оплате" */
-div.main-cart .slider-inner .buttons label.btn.hidden {
+.main-cart .slider-inner .buttons label.btn.hidden {
     display: none;
 }
 
 /*
  *  Таблица с книгами
  */
-.column-1 div.main-cart input[type="radio"][name="buy-process"] {
+.column-1 .main-cart input[type="radio"][name="buy-process"] {
     display: none;
 }
 

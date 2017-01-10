@@ -2,6 +2,103 @@
  *** Общее
  ***/
 /**
+ ** Горизонтальное меню переходов на id-шники той же страницы
+ **/
+ul.nav {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    margin: 10px 0 10px 5px;
+    padding: 0;
+    list-style: none;
+    /*border: 1px solid black;*/
+}
+
+ul.nav > li.nav-item:not(:last-child) {
+    margin-right: 20px;
+}
+
+ul.nav > li.nav-item > a {
+    font-family: Tahoma;
+    font-size: 13px;
+    color: #657392;
+    text-decoration: none;
+    border-bottom: 1px solid #657392;
+}
+
+/**
+ ** Боковой баннер-фильтр "Выберите категорию"
+ **/
+/*
+ * Общая настройка
+ */
+ul.rating-filter,
+ul.rating-filter > li.rating-filter-group > ul.radios {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    /*border: 1px solid red;*/
+}
+
+ul.rating-filter {
+    border: 1px dashed #e1e1e1;
+    border-radius: 5px;
+    padding: 15px 15px;
+    max-width: 190px;
+    /*border: 1px solid red;*/
+}
+
+ul.rating-filter > li.rating-filter-header,
+ul.rating-filter > li.rating-filter-group:not(:last-child) {
+    margin-bottom: 20px;
+}
+
+/*
+ * Заголовки
+ */
+ul.rating-filter > li.rating-filter-header > h2 {
+    display: inline;
+    font-family: Tahoma;
+    font-size: 16px;
+    color: #ccbd54;
+    font-weight: normal;
+    text-decoration: none;
+    border-bottom: 1px solid #ccbd54;
+}
+
+ul.rating-filter > li.rating-filter-group > h3 {
+    display: inline;
+    font-family: Tahoma;
+    font-size: 16px;
+    color: black;
+    font-weight: normal;
+    text-decoration: none;
+    border-bottom: 1px solid black;
+}
+
+/*
+ * Пункты категорий
+ */
+ul.rating-filter > li.rating-filter-group > ul.radios > label > input[type="radio"] {
+    display: none;
+}
+
+ul.rating-filter > li.rating-filter-group > ul.radios > label > li.radio {
+    font-family: Tahoma;
+    font-size: 12px;
+    color: #657392;
+    cursor: pointer;
+    border-radius: 5px;
+    margin-top: 5px;
+    padding: 5px;
+}
+
+ul.rating-filter > li.rating-filter-group > ul.radios > label > input[type="radio"]:checked + li.radio {
+    background-color: #d3be4a;
+}
+
+/**
  **  Меню перехода на страницу пооиска книг
  **/
 ul.top-level {
