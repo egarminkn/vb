@@ -729,6 +729,8 @@ select {
 
 .text-checkbox .text a {
     color: #667393;
+    text-decoration: none;
+    border-bottom: 1px solid #667393;
 }
 
 /*
@@ -808,7 +810,11 @@ select {
 .book-triplet .title-author a {
     color: #667393;
     text-align: left;
-    /*border: 1px solid black;*/
+    text-decoration: none;
+}
+
+.book-triplet .title-author a span.text {
+    border-bottom: 1px solid #667393;
 }
 
 .book-triplet .title-author a.to-book {
@@ -848,6 +854,8 @@ select {
 
 .similar-authors li.similar-author > a {
     color: #667493;
+    text-decoration: none;
+    border-bottom: 1px solid #667493;
 }
 
 /**
@@ -869,26 +877,29 @@ ul.useful-info {
     /*border: 1px solid red;*/
 }
 
+ul.useful-info li.useful-item:not(:first-child) {
+    margin-top: 20px;
+}
+
 /*
  * Заголовки
  */
 ul.useful-info li.useful-item h2 {
+    display: inline;
     font-family: Tahoma, sans-serif;
     font-size: 16px;
     color: #ccbd54;
     font-weight: normal;
-    text-decoration: underline;
-    margin: 0;
+    border-bottom: 1px solid #ccbd54;
 }
 
 ul.useful-info li.useful-item h3 {
+    display: inline;
     font-family: Tahoma, sans-serif;
     font-size: 16px;
     color: black;
     font-weight: normal;
-    text-decoration: underline;
-    margin: 0;
-    margin-top: 20px;
+    border-bottom: 1px solid black;
 }
 
 /*
@@ -902,6 +913,8 @@ ul.useful-info li.useful-item ul.links li.link a {
     font-family: Tahoma, sans-serif;
     font-size: 12px;
     color: #657392;
+    text-decoration: none;
+    border-bottom: 1px solid #657392;
 }
 
 /**
@@ -1061,7 +1074,7 @@ div.likes .dislike::before {
     font-size: 12px;
     font-weight: bold;
     letter-spacing: 0.3px;
-    line-height: 18px;
+    line-height: 20px;
     color: black;
     margin: 0;
     /*border: 1px solid black;*/
@@ -1103,8 +1116,7 @@ div.likes .dislike::before {
     white-space: nowrap;
     line-height: 14px;
     color: #5f7495;
-    text-decoration: underline;
-    /*border: 1px solid black;*/
+    border-bottom: 1px solid #5f7495;
 }
 
 .sort-by > input[type="radio"].sort-link-1:checked ~ .sort-links > label.sort-link-1,
@@ -1251,6 +1263,8 @@ div.likes .dislike::before {
 
 .warning a {
     color: #667393;
+    text-decoration: none;
+    border-bottom: 1px solid #667393;
 }
 
 /**
@@ -1488,11 +1502,16 @@ div.likes .dislike::before {
     padding: 30px 10px;
 }
 
-.spec > .main .show-all {
+.spec > .main a.show-all {
+    text-align: center;
+    text-decoration: none;
+}
+
+.spec > .main a.show-all > span.text {
     font-family: Tahoma, sans-serif;
     font-size: 12px;
     color: #667493;
-    text-align: center;
+    border-bottom: 1px solid #667493;
 }
 
 /* Книжка на баннере специальных предложений */
@@ -1501,7 +1520,6 @@ div.likes .dislike::before {
     flex-direction: row;
     justify-content: flex-start;
     margin-bottom: 30px;
-    text-decoration: none;
 }
 
 .spec > .main > .spec-book .cover-rating {
@@ -1509,6 +1527,7 @@ div.likes .dislike::before {
     flex-direction: column;
     justify-content: flex-start;
     width: 55px;
+    text-decoration: none;
 }
 
 .spec > .main > .spec-book .cover {
@@ -1517,7 +1536,7 @@ div.likes .dislike::before {
     overflow: hidden;
     float: left;
     box-shadow: 2px 0 3px -2px #888,
-                -2px 0 3px -2px #888;
+    -2px 0 3px -2px #888;
 }
 
 /* Обложка электронной книги на баннере специальных предложений */
@@ -1585,23 +1604,33 @@ div.likes .dislike::before {
 
 /* Заголовок книжки на баннере специальных предложений */
 .spec > .main > .spec-book > .content > .title {
+    display: block;
     font-family: Tahoma, sans-serif;
     font-size: 11px;
     color: #d3be4a;
     letter-spacing: 0.3px;
-    text-decoration: underline;
+    text-decoration: none;
     line-height: 16px;
     margin-bottom: 4px;
 }
 
+.spec > .main > .spec-book > .content > .title > span.text {
+    border-bottom: 1px solid #d3be4a;
+}
+
 /* Имя автора книжки на баннере специальных предложений */
 .spec > .main > .spec-book > .content > .author-name {
+    display: block;
     font-family: Tahoma, sans-serif;
     font-size: 10px;
     color: #6e6e6e;
-    text-decoration: underline;
+    text-decoration: none;
     letter-spacing: 0.3px;
     margin-bottom: 9px;
+}
+
+.spec > .main > .spec-book > .content > .author-name > span.text {
+    border-bottom: 1px solid #6e6e6e;
 }
 
 /* Цена книжки на баннере специальных предложений */

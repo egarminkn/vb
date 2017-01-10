@@ -145,7 +145,7 @@ header::after {
  ** Ссылка Войти/Логин
  **/
 .entrance {
-    margin-right: 42px;
+    margin-right: 40px;
     /*border: 1px solid black;*/
 }
 
@@ -154,10 +154,6 @@ header::after {
     flex-direction: row;
     justify-content: space-between;
     align-items: flex-start;    
-    font-family: Tahoma, sans-serif;
-    font-size: 12px;
-    color: #d3be4a;
-    letter-spacing: 0.3px;
     height: 25px;
     text-decoration: none;
     /*border: 1px solid red;*/
@@ -173,6 +169,7 @@ header::after {
     background: url('../svg/padlock.svg') no-repeat;
     background-size: 100%;
     margin-top: 1px;
+    margin-right: 11px;
     /*border: 1px solid black;*/
 }
 
@@ -180,11 +177,11 @@ header::after {
  * Слово Войти или Логин
  */
 .entrance a .text {
-    height: 25px;
-    margin-left: 7px;
-    margin-right: 3px;
-    text-decoration: underline;
-    /*border: 1px solid black;*/
+    font-family: Tahoma, sans-serif;
+    font-size: 12px;
+    color: #d3be4a;
+    letter-spacing: 0.3px;
+    border-bottom: 1px solid #d3be4a;
 }
 
 /*
@@ -199,15 +196,20 @@ header::after {
     border-bottom: 2px solid #ccc;
     transform: translateX(5px) rotate(45deg);
     margin-top: 4px;
+    margin-left: 3px;
     /*border: 1px solid black;*/
 }
 
 /*
  * Ссылка с Именем вместо ссылки Войти
  */
+.entrance.nick {
+    margin-right: 20px;
+}
+
 .entrance.nick a .text {
     color: black;
-    text-decoration: none;
+    height: 25px;
     border-bottom: 6px solid #d3be4a;
 }
 
@@ -247,6 +249,8 @@ header::after {
     color: #7f90aa;
     letter-spacing: 0.5px;
     /*word-spacing: -3px;*/
+    text-decoration: none;
+    border-bottom: 1px solid #7f90aa;
 }
 
 /*
@@ -254,6 +258,10 @@ header::after {
  */
 .menu-item-selected {
     border-bottom: 6px solid #d3be4a;
+}
+
+.menu > div.menu-item-selected > a {
+    border-bottom-style: none;
 }
 
 /**
@@ -270,16 +278,15 @@ header::after {
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
-    /*border: 1px solid black;*/
+    text-decoration: none;
 }
 
 .ask a .text {
     font-family: Tahoma, sans-serif;
     font-size: 12px;
-    color: #888;    
-    text-decoration: underline;
+    color: #888;
     letter-spacing: 0.2px;
-    /*border: 1px solid black;*/
+    border-bottom: 1px solid #888;
 }
 
 /*
@@ -309,7 +316,6 @@ header::after {
     justify-content: space-between;
     align-items: center;
     text-decoration: none;    
-    /*border: 1px solid black;*/
 }
 
 .cart a .text {
@@ -317,8 +323,7 @@ header::after {
     font-size: 12px;
     letter-spacing: 0.2px;
     color: #7f90aa;
-    text-decoration: underline;
-    /*border: 1px solid black;*/
+    border-bottom: 1px solid #7f90aa;
 }
 
 /*
@@ -1434,6 +1439,8 @@ select {
 
 .text-checkbox .text a {
     color: #667393;
+    text-decoration: none;
+    border-bottom: 1px solid #667393;
 }
 
 /*
@@ -1513,7 +1520,11 @@ select {
 .book-triplet .title-author a {
     color: #667393;
     text-align: left;
-    /*border: 1px solid black;*/
+    text-decoration: none;
+}
+
+.book-triplet .title-author a span.text {
+    border-bottom: 1px solid #667393;
 }
 
 .book-triplet .title-author a.to-book {
@@ -1553,6 +1564,8 @@ select {
 
 .similar-authors li.similar-author > a {
     color: #667493;
+    text-decoration: none;
+    border-bottom: 1px solid #667493;
 }
 
 /**
@@ -1574,26 +1587,29 @@ ul.useful-info {
     /*border: 1px solid red;*/
 }
 
+ul.useful-info li.useful-item:not(:first-child) {
+    margin-top: 20px;
+}
+
 /*
  * Заголовки
  */
 ul.useful-info li.useful-item h2 {
+    display: inline;
     font-family: Tahoma, sans-serif;
     font-size: 16px;
     color: #ccbd54;
     font-weight: normal;
-    text-decoration: underline;
-    margin: 0;
+    border-bottom: 1px solid #ccbd54;
 }
 
 ul.useful-info li.useful-item h3 {
+    display: inline;
     font-family: Tahoma, sans-serif;
     font-size: 16px;
     color: black;
     font-weight: normal;
-    text-decoration: underline;
-    margin: 0;
-    margin-top: 20px;
+    border-bottom: 1px solid black;
 }
 
 /*
@@ -1607,6 +1623,8 @@ ul.useful-info li.useful-item ul.links li.link a {
     font-family: Tahoma, sans-serif;
     font-size: 12px;
     color: #657392;
+    text-decoration: none;
+    border-bottom: 1px solid #657392;
 }
 
 /**
@@ -1766,7 +1784,7 @@ div.likes .dislike::before {
     font-size: 12px;
     font-weight: bold;
     letter-spacing: 0.3px;
-    line-height: 18px;
+    line-height: 20px;
     color: black;
     margin: 0;
     /*border: 1px solid black;*/
@@ -1808,8 +1826,7 @@ div.likes .dislike::before {
     white-space: nowrap;
     line-height: 14px;
     color: #5f7495;
-    text-decoration: underline;
-    /*border: 1px solid black;*/
+    border-bottom: 1px solid #5f7495;
 }
 
 .sort-by > input[type="radio"].sort-link-1:checked ~ .sort-links > label.sort-link-1,
@@ -1956,6 +1973,8 @@ div.likes .dislike::before {
 
 .warning a {
     color: #667393;
+    text-decoration: none;
+    border-bottom: 1px solid #667393;
 }
 
 /**
@@ -2194,11 +2213,16 @@ div.likes .dislike::before {
     padding: 30px 10px;
 }
 
-.spec > .main .show-all {
+.spec > .main a.show-all {
+    text-align: center;
+    text-decoration: none;
+}
+
+.spec > .main a.show-all > span.text {
     font-family: Tahoma, sans-serif;
     font-size: 12px;
     color: #667493;
-    text-align: center;
+    border-bottom: 1px solid #667493;
 }
 
 /* Книжка на баннере специальных предложений */
@@ -2207,7 +2231,6 @@ div.likes .dislike::before {
     flex-direction: row;
     justify-content: flex-start;
     margin-bottom: 30px;
-    text-decoration: none;
 }
 
 .spec > .main > .spec-book .cover-rating {
@@ -2215,6 +2238,7 @@ div.likes .dislike::before {
     flex-direction: column;
     justify-content: flex-start;
     width: 55px;
+    text-decoration: none;
 }
 
 .spec > .main > .spec-book .cover {
@@ -2291,23 +2315,33 @@ div.likes .dislike::before {
 
 /* Заголовок книжки на баннере специальных предложений */
 .spec > .main > .spec-book > .content > .title {
+    display: block;
     font-family: Tahoma, sans-serif;
     font-size: 11px;
     color: #d3be4a;
     letter-spacing: 0.3px;
-    text-decoration: underline;
+    text-decoration: none;
     line-height: 16px;
     margin-bottom: 4px;
 }
 
+.spec > .main > .spec-book > .content > .title > span.text {
+    border-bottom: 1px solid #d3be4a;
+}
+
 /* Имя автора книжки на баннере специальных предложений */
 .spec > .main > .spec-book > .content > .author-name {
+    display: block;
     font-family: Tahoma, sans-serif;
     font-size: 10px;
     color: #6e6e6e;
-    text-decoration: underline;
+    text-decoration: none;
     letter-spacing: 0.3px;
     margin-bottom: 9px;
+}
+
+.spec > .main > .spec-book > .content > .author-name > span.text {
+    border-bottom: 1px solid #6e6e6e;
 }
 
 /* Цена книжки на баннере специальных предложений */
@@ -2472,13 +2506,17 @@ footer {
 }
 
 .under-footer-shelf > div > a > h3 {
+    display: inline;
     font-family: Tahoma, sans-serif;
     font-size: 14px;
+    border-bottom: 1px solid #5f7495;
 }
 
 .under-footer-shelf > div > a > h4 {
+    display: inline;
     font-family: Tahoma, sans-serif;
     font-size: 11px;
+    border-bottom: 1px solid #3b3b3b;
 }
 
 /*
@@ -2525,14 +2563,15 @@ footer {
 .under-footer-shelf > div:not(.social-sharing) > a:nth-of-type(1) {
     font-size: 14px;
     color: #5f7495;
+    text-decoration: none;
     margin-bottom: 0;
     height: 40px;
-    /*border: 1px solid black;*/
 }
 
 .under-footer-shelf > div:not(.social-sharing) > a:not(:nth-of-type(1)) {
     font-size: 11px;
     color: #3b3b3b;
+    text-decoration: none;
     margin-bottom: 9px;
 }
 
