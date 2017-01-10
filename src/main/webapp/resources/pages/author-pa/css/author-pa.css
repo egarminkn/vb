@@ -210,7 +210,7 @@ label.search > input {
     box-sizing: border-box;
     height: 28px;
     width: 100%;
-    font-family: Tahoma;
+    font-family: Tahoma, sans-serif;
     font-size: 12px;
     letter-spacing: 0.3px;
     //border: 1px solid black;
@@ -265,7 +265,7 @@ div.ask {
 
 div.ask > a {
     color: #888;
-    font-family: Tahoma;
+    font-family: Tahoma, sans-serif;
     font-size: 12px;
     letter-spacing: 0.2px;
     //border: 1px solid black;
@@ -309,7 +309,7 @@ div.cart {
 
 div.cart > a {
     color: #7f90aa;
-    font-family: Tahoma;
+    font-family: Tahoma, sans-serif;
     font-size: 12px;
     letter-spacing: 0.2px;
     position: absolute;
@@ -355,7 +355,7 @@ div.cart::after {
     display: inline-block;
     width: 15px;
     height: 9px;
-    font-family: Tahoma;
+    font-family: Tahoma, sans-serif;
     font-size: 9px;
     letter-spacing: 0.3px;
     position: absolute; /* Странно, но этот блок вылезает на передний план не за счет z-index, а за счет position: realtive */
@@ -413,7 +413,7 @@ div.entrance:not(.nick)::before {
 /* ссылка Войти */
 div.entrance > a {
     color: #d3be4a;
-    font-family: Tahoma;
+    font-family: Tahoma, sans-serif;
     font-size: 12px;
     letter-spacing: 0.3px;
     height: 25px;
@@ -466,7 +466,7 @@ div.menu > div {
 
 div.menu > div > a {
     color: #7f90aa;
-    font-family: Tahoma;
+    font-family: Tahoma, sans-serif;
     font-size: 13px;
     letter-spacing: 0.5px;
     //word-spacing: -3px;
@@ -741,7 +741,7 @@ main .books table {
 /* стилизация закруглений и штриховки таблицы с книгами */
 main .books table thead tr th,
 main .books table tbody tr td {
-    font-family: Tahoma;
+    font-family: Tahoma, sans-serif;
     font-size: 13px;
     border-bottom: 1px dashed #b4b4b4;
 }
@@ -818,7 +818,7 @@ main .books table.read tbody tr td {
  * Заголовок Личный кабинет
  */
 main .author > .title {
-    font-family: Tahoma;
+    font-family: Tahoma, sans-serif;
     font-size: 34px;
     width: 285px;
     background: url('../svg/user-icon.svg') no-repeat;
@@ -860,7 +860,7 @@ main .author .about .columns .column-1 .row-1 .edit {
  *  Отметка о профессионализме
  */
 .mark {
-    font-family: Tahoma;
+    font-family: Tahoma, sans-serif;
     font-size: 12px;
     font-weight: bold;
     position: relative;
@@ -947,7 +947,7 @@ main .author .about .columns .column-1 .row-2 .rating-3-stars .rating-stars::bef
  */
 /* заголовок 2-ой колонки */
 main .author .about .columns .column-2 .row-1 .title {
-    font-family: Tahoma;
+    font-family: Tahoma, sans-serif;
     font-size: 15px;
     height: 20px;
     background: url('../svg/red-star.svg') no-repeat;
@@ -965,7 +965,7 @@ main .author .about .columns .column-2 .row-1 .edit {
 
 /* запись о городе проживания автора */
 .about .columns .column-2 .row-2 .city {
-    font-family: Tahoma;
+    font-family: Tahoma, sans-serif;
     font-size: 14px;
     height: 18px;
     transition: height 1s ease;
@@ -980,7 +980,7 @@ main .author .about .columns .column-2 .row-2 .city span {
  * Контактные данные
  */
 main .author .about .columns .column-2 .row-3 {
-    font-family: Tahoma;
+    font-family: Tahoma, sans-serif;
     font-size: 14px;
     //white-space: nowrap;
     word-break: break-all;
@@ -1033,7 +1033,7 @@ main .author .about .columns .column-2 .row-3 .skype {
  */
 /* заголовок 3-ей колонки */
 main .author .about .columns .column-3 .row-1 .title {
-    font-family: Tahoma;
+    font-family: Tahoma, sans-serif;
     font-size: 15px;
     height: 20px;
     margin-top: 4px;
@@ -1047,7 +1047,7 @@ main .author .about .columns .column-3 .row-1 .edit {
 
 /* стилизация информации в блоке Обо мне */
 .about .columns .column-3 .row-2 .description {
-    font-family: Tahoma;
+    font-family: Tahoma, sans-serif;
     font-size: 14px;
     line-height: 20px;
     box-sizing: border-box;
@@ -1076,7 +1076,7 @@ main .author .about .columns .column-3 .row-2 .description::after {
  */
 /* заголовок 4-й колонки */
 main .author .about .columns .column-4 .row-1 .title {
-    font-family: Tahoma;
+    font-family: Tahoma, sans-serif;
     font-size: 15px;
     height: 20px;
     margin-top: 4px;
@@ -1113,12 +1113,12 @@ main .author .about .columns .column-4 .row-2 .wallet-icon {
 }
 
 main .author .about .columns .column-4 .row-2 .wallet .balance {
-    font-family: Tahoma;
+    font-family: Tahoma, sans-serif;
     font-size: 16px;
 }
 
 main .author .about .columns .column-4 .row-2 .wallet .get-money {
-    font-family: Tahoma;
+    font-family: Tahoma, sans-serif;
     font-size: 14px;
     color: #667493;
 }
@@ -1139,7 +1139,7 @@ main .author .about .columns .column-4 .row-2 .wallet .get-money {
 .profile-completeness .text {
     display: inline-block;
     vertical-align: middle;
-    font-family: Tahoma;
+    font-family: Tahoma, sans-serif;
     font-size: 12px;
     color: #667493;
     margin-right: 10px;
@@ -1277,7 +1277,7 @@ input.expand-collapse-block[id="collapsed"]:checked ~ .columns .column-4 .row-1 
  * Блок книг автора (Мои книги)
  */
 main .books .header .title {
-    font-family: Tahoma;
+    font-family: Tahoma, sans-serif;
     font-size: 22px;
 }
 
@@ -1339,7 +1339,7 @@ main .books .table-with-shadow {
  */
 main .books .header label[for="write"] .create-book {
     text-decoration: none;
-    font-family: Tahoma;
+    font-family: Tahoma, sans-serif;
     font-size: 12px;
     margin-left: 50px;
 }
@@ -1394,7 +1394,7 @@ main .books .header label[for="write"] .create-book .plus::after {
  * Строка Заголовка
  */
 main .books table thead tr th {
-    font-family: Tahoma;
+    font-family: Tahoma, sans-serif;
     font-size: 13px;
     font-weight: normal;
     height: 50px;
@@ -1509,7 +1509,7 @@ main .books table.write tbody tr td.title {
 
 main .books table.write tbody tr td.title .book {
     display: inline-block;
-    font-family: Tahoma;
+    font-family: Tahoma, sans-serif;
     font-size: 14px;
     color: black;
     white-space: normal;
@@ -1529,7 +1529,7 @@ main .books table.write tbody tr td.title .edit {
  * Статус книги
  */
 main .books table.write tbody tr td.status .current-status {
-    font-family: Tahoma;
+    font-family: Tahoma, sans-serif;
     font-size: 13px;
     white-space: nowrap;
     //border: 1px solid black;
@@ -1606,7 +1606,7 @@ main .books table.write tbody tr td.status .actions .action {
 }
 
 main .books table.write tbody tr td.status .actions .action a {
-    font-family: Tahoma;
+    font-family: Tahoma, sans-serif;
     font-size: 11px;
 }
 
@@ -1654,7 +1654,7 @@ main .books table.write tbody tr td.rating .rating-5-stars .rating-stars::before
  * Колонка - Скачали
  */
 main .books table.write tbody tr td.download {
-    font-family: Tahoma;
+    font-family: Tahoma, sans-serif;
     font-size: 13px;
 }
 
@@ -1666,7 +1666,7 @@ main .books table.write tbody tr td.download .paid {
  * Колонка - Лайки / дизлайки
  */
 main .books table.write tbody tr td.likes {
-    font-family: Tahoma;
+    font-family: Tahoma, sans-serif;
     font-size: 13px;
 }
 
@@ -1686,7 +1686,7 @@ main .books table.read tbody tr td.likes .dislike {
  * Колонка - Прибыль
  */
 main .books table.write tbody tr td.profit {
-    font-family: Tahoma;
+    font-family: Tahoma, sans-serif;
     font-size: 13px;
 }
 
@@ -1794,7 +1794,7 @@ main .books table.write tbody tr td.profit {
  **  Тело модального окна
  **/
 .modal > .body {
-    font-family: Tahoma;
+    font-family: Tahoma, sans-serif;
     position: relative;
     margin: 10% auto;
     padding: 20px;
@@ -1856,7 +1856,7 @@ main .books table.write tbody tr td.profit {
  * Общая часть - Выбор способа Получить деньги
  */
 .receive-money {
-    font-family: Tahoma;
+    font-family: Tahoma, sans-serif;
     font-size: 14px;
 }
 
@@ -1864,7 +1864,7 @@ main .books table.write tbody tr td.profit {
  * Заголовок - Выбор способа Получить деньги
  */
 .receive-money h2 {
-    font-family: Tahoma;
+    font-family: Tahoma, sans-serif;
     font-size: 24px;
     font-weight: normal;
     text-align: center;
@@ -2026,7 +2026,7 @@ footer > div.under-footer-shelf {
 footer > div.under-footer-shelf > div {
     display: inline-block;
     vertical-align: top;
-    font-family: Tahoma;
+    font-family: Tahoma, sans-serif;
     letter-spacing: 0.3px;
     margin-top: 55px;
     //margin-left: 15px;

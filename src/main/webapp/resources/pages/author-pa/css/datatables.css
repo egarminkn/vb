@@ -11,7 +11,7 @@
 .dataTables_filter,
 .dataTables_info,
 .dataTables_paginate {
-    font-family: Tahoma;
+    font-family: Tahoma, sans-serif;
     font-size: 14px;
     line-height: 28px;
     display: inline-block;
@@ -71,7 +71,7 @@
 }
 
 .paginate_button {
-    font-family: Tahoma;
+    font-family: Tahoma, sans-serif;
     font-size: 16px;
     display: inline-block;
     vertical-align: middle;

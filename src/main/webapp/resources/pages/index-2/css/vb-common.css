@@ -7,7 +7,7 @@
 .btn {
     display: inline-block;
     vertical-align: middle;
-    font-family: Tahoma;
+    font-family: Tahoma, sans-serif;
     font-size: 14px;
     color: black;
     text-decoration: none;
@@ -63,7 +63,7 @@ form.send-review.textarea .textarea-info {
  * Строка: Использовано 0 символов из 4000 возможных
  */
 form.send-review.textarea .textarea-info .info {
-    font-family: Tahoma;
+    font-family: Tahoma, sans-serif;
     font-size: 12px;
     color: #666;
     margin-right: 10px;
@@ -98,7 +98,7 @@ form.send-review.textarea .textarea-info .info {
  * Строка: Использовано 0 символов из 4000 возможных
  */
 .textarea .textarea-info {
-    font-family: Tahoma;
+    font-family: Tahoma, sans-serif;
     font-size: 12px;
     color: #666;
     display: inline-block;
@@ -111,7 +111,7 @@ form.send-review.textarea .textarea-info .info {
  ** Наклонные select-ы
  **/
 select {
-    font-family: Tahoma;
+    font-family: Tahoma, sans-serif;
     font-size: 12px;
     box-sizing: border-box;
     height: 25px;
@@ -151,7 +151,7 @@ select {
     outline-style: none;
     border-style: none;
     transform: skewX(-15deg);
-    font-family: Tahoma;
+    font-family: Tahoma, sans-serif;
     font-size: 12px;
     box-sizing: border-box;
     height: 25px;
@@ -232,7 +232,7 @@ select {
     position: absolute;
     top: 20px;
     left: -15px;
-    font-family: Tahoma;
+    font-family: Tahoma, sans-serif;
     font-size: 12px;
     white-space: normal;
     color: white;
@@ -277,7 +277,7 @@ select {
  * Текст
  */
 .text-checkbox .text {
-    font-family: Tahoma;
+    font-family: Tahoma, sans-serif;
     font-size: 14px;
     line-height: 13px;
     box-sizing: border-box;
@@ -324,7 +324,7 @@ select {
  **/
 .cost {
     display: inline-block;
-    font-family: Tahoma;
+    font-family: Tahoma, sans-serif;
     font-size: 14px;
     padding: 5px;
     border: 1px dashed #c5c5c5;
@@ -338,7 +338,7 @@ select {
     display: flex;
     flex-direction: row;
     justify-content: flex-start;
-    font-family: Tahoma;
+    font-family: Tahoma, sans-serif;
     max-width: 200px;
     margin: auto;
     /*border: 1px solid black;*/
@@ -431,7 +431,7 @@ ul.useful-info {
  * Заголовки
  */
 ul.useful-info li.useful-item h2 {
-    font-family: Tahoma;
+    font-family: Tahoma, sans-serif;
     font-size: 16px;
     color: #ccbd54;
     font-weight: normal;
@@ -440,7 +440,7 @@ ul.useful-info li.useful-item h2 {
 }
 
 ul.useful-info li.useful-item h3 {
-    font-family: Tahoma;
+    font-family: Tahoma, sans-serif;
     font-size: 16px;
     color: black;
     font-weight: normal;
@@ -457,7 +457,7 @@ ul.useful-info li.useful-item ul.links li.link {
 }
 
 ul.useful-info li.useful-item ul.links li.link a {
-    font-family: Tahoma;
+    font-family: Tahoma, sans-serif;
     font-size: 12px;
     color: #657392;
 }
@@ -493,7 +493,7 @@ ul.useful-info li.useful-item ul.links li.link a {
  **/
 .price-under-book {
     display: inline-block;
-    font-family: Tahoma;
+    font-family: Tahoma, sans-serif;
     font-size: 12px;
     letter-spacing: 0.3px;
     line-height: 14px;
@@ -557,7 +557,7 @@ div.likes a {
     flex-direction: row;
     justify-content: flex-start;
     align-items: center;
-    font-family: Tahoma;
+    font-family: Tahoma, sans-serif;
     font-size: 12px;
     color: black;
     text-decoration: none;
@@ -615,7 +615,7 @@ div.likes .dislike::before {
     vertical-align: middle;
     box-sizing: border-box;
     height: 24px;
-    font-family: Tahoma;
+    font-family: Tahoma, sans-serif;
     font-size: 12px;
     font-weight: bold;
     letter-spacing: 0.3px;
@@ -654,7 +654,7 @@ div.likes .dislike::before {
     vertical-align: top;
     box-sizing: border-box;
     height: 16px;
-    font-family: Tahoma;
+    font-family: Tahoma, sans-serif;
     font-size: 12px;
     font-weight: normal;
     letter-spacing: 0.3px;
@@ -722,7 +722,7 @@ div.likes .dislike::before {
 }
 
 .price-sign .value {
-    font-family: Tahoma;
+    font-family: Tahoma, sans-serif;
     font-size: 13px;
     line-height: 9px;
     /*border: 1px solid black;*/
@@ -748,7 +748,7 @@ div.likes .dislike::before {
 }
 
 .buy .item {
-    font-family: Tahoma;
+    font-family: Tahoma, sans-serif;
     font-size: 12px;
     line-height: 12px;
     border: 1px solid #c4c4c4;
@@ -796,7 +796,7 @@ div.likes .dislike::before {
  ** Надпись-предупреждение
  **/
 .warning {
-    font-family: Tahoma;
+    font-family: Tahoma, sans-serif;
     font-size: 14px;
     color: #7f7f7f;
     line-height: 20px;
@@ -851,7 +851,7 @@ div.likes .dislike::before {
  *  Число рейтинга
  */
 .rating-5-stars .rating-number {
-    font-family: Tahoma;
+    font-family: Tahoma, sans-serif;
     font-size: 13px;
     line-height: 16px;
     color: black;
@@ -901,7 +901,7 @@ div.likes .dislike::before {
  *  Число рейтинга
  */
 .rating-3-stars .rating-number {
-    font-family: Tahoma;
+    font-family: Tahoma, sans-serif;
     font-size: 14px;
     color: black;
     letter-spacing: 0.3px;
@@ -913,7 +913,7 @@ div.likes .dislike::before {
  ** Блок Списка рейтинга
  **/
 .ratings {
-    font-family: Tahoma;
+    font-family: Tahoma, sans-serif;
     font-size: 12px;
     background: url('../svg/vb/bar_chart.svg') no-repeat;
     background-size: 15px 15px;
@@ -945,7 +945,7 @@ div.likes .dislike::before {
 }
 
 .ratings .list .item {
-    font-family: Tahoma;
+    font-family: Tahoma, sans-serif;
     font-size: 12px;
     margin-top: 15px;
 }
@@ -1047,7 +1047,7 @@ div.likes .dislike::before {
 }
 
 .spec > .main .show-all {
-    font-family: Tahoma;
+    font-family: Tahoma, sans-serif;
     font-size: 12px;
     color: #667493;
     text-align: center;
@@ -1109,7 +1109,7 @@ div.likes .dislike::before {
 .spec > .main > .spec-book .rating {
     display: inline-block;
     vertical-align: middle;
-    font-family: Tahoma;
+    font-family: Tahoma, sans-serif;
     font-size: 12px;
     color: black;
     letter-spacing: 0.3px;
@@ -1143,7 +1143,7 @@ div.likes .dislike::before {
 
 /* Заголовок книжки на баннере специальных предложений */
 .spec > .main > .spec-book > .content > .title {
-    font-family: Tahoma;
+    font-family: Tahoma, sans-serif;
     font-size: 11px;
     color: #d3be4a;
     letter-spacing: 0.3px;
@@ -1154,7 +1154,7 @@ div.likes .dislike::before {
 
 /* Имя автора книжки на баннере специальных предложений */
 .spec > .main > .spec-book > .content > .author-name {
-    font-family: Tahoma;
+    font-family: Tahoma, sans-serif;
     font-size: 10px;
     color: #6e6e6e;
     text-decoration: underline;
@@ -1165,7 +1165,7 @@ div.likes .dislike::before {
 /* Цена книжки на баннере специальных предложений */
 .spec > .main > .spec-book .price {
     display: inline-block;
-    font-family: Tahoma;
+    font-family: Tahoma, sans-serif;
     font-size: 11.5px;
     color: white;
     height: 18px;

@@ -135,7 +135,7 @@ header::after {
     flex-direction: row;
     justify-content: space-between;
     align-items: flex-start;    
-    font-family: Tahoma;
+    font-family: Tahoma, sans-serif;
     font-size: 12px;
     color: #d3be4a;
     letter-spacing: 0.3px;
@@ -223,7 +223,7 @@ header::after {
 }
 
 .menu > div > a {
-    font-family: Tahoma;
+    font-family: Tahoma, sans-serif;
     font-size: 13px;
     color: #7f90aa;
     letter-spacing: 0.5px;
@@ -253,7 +253,7 @@ header::after {
 }
 
 .ask a .text {
-    font-family: Tahoma;
+    font-family: Tahoma, sans-serif;
     font-size: 12px;
     color: #888;    
     text-decoration: underline;
@@ -290,7 +290,7 @@ header::after {
 }
 
 .cart a .text {
-    font-family: Tahoma;
+    font-family: Tahoma, sans-serif;
     font-size: 12px;
     letter-spacing: 0.2px;
     color: #7f90aa;
@@ -310,7 +310,7 @@ header::after {
 
 /* Количество покупок в красном шарике */
 .cart a .count {
-    font-family: Tahoma;
+    font-family: Tahoma, sans-serif;
     font-size: 9px;
     letter-spacing: 0.3px;
     color: white;
@@ -549,7 +549,7 @@ main .columns {
  * Заголовок
  */
 .column-2 .header h1 {
-    font-family: Tahoma;
+    font-family: Tahoma, sans-serif;
     font-size: 34px;
     font-weight: normal;
     margin: 0;
@@ -560,7 +560,7 @@ main .columns {
  * Выбранные категории фильтрации рейтинга авторов
  */
 .column-2 .header .categories {
-    font-family: Tahoma;
+    font-family: Tahoma, sans-serif;
     font-size: 19px;
     margin-left: 1px;
 }
@@ -569,7 +569,7 @@ main .columns {
  * Сводная информации по результатам фильтрации рейтинга
  */
 .column-2 .header .summary {
-    font-family: Tahoma;
+    font-family: Tahoma, sans-serif;
     font-size: 13px;
     margin-left: 22px;
     margin-top: 10px;
@@ -609,7 +609,7 @@ main .columns {
  * Блок автора - Порядковый номер в рейтинге
  */
 .author .serial-number {
-    font-family: Tahoma;
+    font-family: Tahoma, sans-serif;
     font-size: 33px;
     position: absolute;
     top: -1px;
@@ -663,7 +663,7 @@ main .columns {
 
 /* имя автора */
 .author .about .fullname-rating .fullname a {
-    font-family: Tahoma;
+    font-family: Tahoma, sans-serif;
     font-size: 22px;
     color: #667393;
 }
@@ -672,14 +672,14 @@ main .columns {
  * Блок автора - Жанры
  */
 .author .about .genres {
-    font-family: Tahoma;
+    font-family: Tahoma, sans-serif;
     font-size: 12px;
     color: #7b7b7b;
     margin-top: 10px;
 }
 
 .author .about .genres a {
-    font-family: Tahoma;
+    font-family: Tahoma, sans-serif;
     font-size: 12px;
     color: #667493;
 }
@@ -688,7 +688,7 @@ main .columns {
  * Блок автора - Описание
  */
 .author .about .description {
-    font-family: Tahoma;
+    font-family: Tahoma, sans-serif;
     font-size: 12px;
     line-height: 17px;
     margin-top: 25px;
@@ -702,7 +702,7 @@ main .columns {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    font-family: Tahoma;
+    font-family: Tahoma, sans-serif;
     font-size: 12px;
     color: #7b7b7b;
     margin-top: 20px;
@@ -820,7 +820,7 @@ footer {
 }
 
 .under-footer-shelf > div {
-    font-family: Tahoma;
+    font-family: Tahoma, sans-serif;
     letter-spacing: 0.3px;
     //border: 1px solid black;
 }

@@ -203,7 +203,7 @@ label.search > input {
     box-sizing: border-box;
     height: 28px;
     width: 100%;
-    font-family: Tahoma;
+    font-family: Tahoma, sans-serif;
     font-size: 12px;
     letter-spacing: 0.3px;
     //border: 1px solid black;
@@ -258,7 +258,7 @@ div.ask {
 
 div.ask > a {
     color: #888;
-    font-family: Tahoma;
+    font-family: Tahoma, sans-serif;
     font-size: 12px;
     letter-spacing: 0.2px;
     //border: 1px solid black;
@@ -302,7 +302,7 @@ div.cart {
 
 div.cart > a {
     color: #7f90aa;
-    font-family: Tahoma;
+    font-family: Tahoma, sans-serif;
     font-size: 12px;
     letter-spacing: 0.2px;
     position: absolute;
@@ -348,7 +348,7 @@ div.cart::after {
     display: inline-block;
     width: 15px;
     height: 9px;
-    font-family: Tahoma;
+    font-family: Tahoma, sans-serif;
     font-size: 9px;
     letter-spacing: 0.3px;
     position: absolute; /* Странно, но этот блок вылезает на передний план не за счет z-index, а за счет position: realtive */
@@ -400,7 +400,7 @@ div.entrance:not(.nick)::before {
 /* ссылка Войти */
 div.entrance > a {
     color: #d3be4a;
-    font-family: Tahoma;
+    font-family: Tahoma, sans-serif;
     font-size: 12px;
     letter-spacing: 0.3px;
     height: 25px;
@@ -453,7 +453,7 @@ div.menu > div {
 
 div.menu > div > a {
     color: #7f90aa;
-    font-family: Tahoma;
+    font-family: Tahoma, sans-serif;
     font-size: 13px;
     letter-spacing: 0.5px;
     //word-spacing: -3px;
@@ -727,7 +727,7 @@ main .column-1 ul.useful-info {
 }
 
 .own-cover a {
-    font-family: Tahoma;
+    font-family: Tahoma, sans-serif;
     font-size: 13px;
     color: #ccbd54;
     display: inline-block;
@@ -744,7 +744,7 @@ main .column-1 ul.useful-info {
 
 /* заголовок */
 .column-2 .header h1 {
-    font-family: Tahoma;
+    font-family: Tahoma, sans-serif;
     font-size: 34px;
     font-weight: normal;
     margin: 0;
@@ -772,7 +772,7 @@ fieldset:last-child {
 }
 
 fieldset h2 {
-    font-family: Tahoma;
+    font-family: Tahoma, sans-serif;
     font-size: 20px;
     font-weight: normal;
     margin: 0;
@@ -824,7 +824,7 @@ fieldset .shadow-under {
  * Блок - Загрузка файла
  */
 .upload .content {
-    font-family: Tahoma;
+    font-family: Tahoma, sans-serif;
     box-sizing: border-box;
     height: 120px;
     width: 100%;
@@ -876,7 +876,7 @@ fieldset .shadow-under {
 }
 
 .upload .test-file .file {
-    font-family: Tahoma;
+    font-family: Tahoma, sans-serif;
     white-space: nowrap;
 }
 
@@ -903,7 +903,7 @@ fieldset .shadow-under {
 }
 
 .upload .test-file .test-file-btn {
-    font-family: Tahoma;
+    font-family: Tahoma, sans-serif;
     font-size: 13px;
     border-style: none;
     border-top-left-radius: 10px 5px;
@@ -919,7 +919,7 @@ fieldset .shadow-under {
  */
 /* общее */
 .cover .types {
-    font-family: Tahoma;
+    font-family: Tahoma, sans-serif;
     font-size: 14px;
     padding: 0;
     margin: 0;
@@ -1035,7 +1035,7 @@ fieldset .shadow-under {
 }
 
 .preview .canvas .frame {
-    font-family: Tahoma;
+    font-family: Tahoma, sans-serif;
     position: absolute;
     top: 10px;
     left: 10px;
@@ -1089,7 +1089,7 @@ fieldset .shadow-under {
 
 /* Запрещенный контент */
 .description .forbidden {
-    font-family: Tahoma;
+    font-family: Tahoma, sans-serif;
     margin-top: 20px;
 }
 
@@ -1122,7 +1122,7 @@ fieldset .shadow-under {
 
 /* Ключевые слова */
 .description .tags {
-    font-family: Tahoma;
+    font-family: Tahoma, sans-serif;
     font-size: 12px;
     margin-top: 20px;
 }
@@ -1142,7 +1142,7 @@ fieldset .shadow-under {
 
 /* Аннотация */
 .description .annotation {
-    font-family: Tahoma;
+    font-family: Tahoma, sans-serif;
     font-size: 12px;
     margin-top: 20px;
     /*border: 1px solid black;*/
@@ -1161,7 +1161,7 @@ fieldset .shadow-under {
 .description .comments {
     margin: 0;
     padding: 0;
-    font-family: Tahoma;
+    font-family: Tahoma, sans-serif;
     font-size: 10px;
     margin-top: 5px;
     margin-left: 30px;
@@ -1174,7 +1174,7 @@ fieldset .shadow-under {
 
 /* Количество страниц возможное для предпросмотра читателями */
 .description .preview-pages-count {
-    font-family: Tahoma;
+    font-family: Tahoma, sans-serif;
     font-size: 12px;
     margin-top: 20px;
 }
@@ -1193,7 +1193,7 @@ fieldset .shadow-under {
 
 /* Год издания */
 .description .year {
-    font-family: Tahoma;
+    font-family: Tahoma, sans-serif;
     font-size: 12px;
     margin-top: 20px;
 }
@@ -1208,7 +1208,7 @@ fieldset .shadow-under {
 
 /* Лицензия */
 .description .license {
-    font-family: Tahoma;
+    font-family: Tahoma, sans-serif;
     font-size: 12px;
     margin-top: 20px;
 }
@@ -1422,7 +1422,7 @@ footer > div.under-footer-shelf {
 footer > div.under-footer-shelf > div {
     display: inline-block;
     vertical-align: top;
-    font-family: Tahoma;
+    font-family: Tahoma, sans-serif;
     letter-spacing: 0.3px;
     margin-top: 55px;
     margin-left: 1.2%;

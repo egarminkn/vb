@@ -210,7 +210,7 @@ label.search > input {
     box-sizing: border-box;
     height: 28px;
     width: 100%;
-    font-family: Tahoma;
+    font-family: Tahoma, sans-serif;
     font-size: 12px;
     letter-spacing: 0.3px;
     //border: 1px solid black;
@@ -265,7 +265,7 @@ div.ask {
 
 div.ask > a {
     color: #888;
-    font-family: Tahoma;
+    font-family: Tahoma, sans-serif;
     font-size: 12px;
     letter-spacing: 0.2px;
     //border: 1px solid black;
@@ -309,7 +309,7 @@ div.cart {
 
 div.cart > a {
     color: #7f90aa;
-    font-family: Tahoma;
+    font-family: Tahoma, sans-serif;
     font-size: 12px;
     letter-spacing: 0.2px;
     position: absolute;
@@ -355,7 +355,7 @@ div.cart::after {
     display: inline-block;
     width: 15px;
     height: 9px;
-    font-family: Tahoma;
+    font-family: Tahoma, sans-serif;
     font-size: 9px;
     letter-spacing: 0.3px;
     position: absolute; /* Странно, но этот блок вылезает на передний план не за счет z-index, а за счет position: realtive */
@@ -413,7 +413,7 @@ div.entrance:not(.nick)::before {
 /* ссылка Войти */
 div.entrance > a {
     color: #d3be4a;
-    font-family: Tahoma;
+    font-family: Tahoma, sans-serif;
     font-size: 12px;
     letter-spacing: 0.3px;
     height: 25px;
@@ -466,7 +466,7 @@ div.menu > div {
 
 div.menu > div > a {
     color: #7f90aa;
-    font-family: Tahoma;
+    font-family: Tahoma, sans-serif;
     font-size: 13px;
     letter-spacing: 0.5px;
     //word-spacing: -3px;
@@ -592,7 +592,7 @@ main {
 
 /* заголовок */
 .column-1 .header h1 {
-    font-family: Tahoma;
+    font-family: Tahoma, sans-serif;
     font-size: 34px;
     font-weight: normal;
     margin: 0;
@@ -625,7 +625,7 @@ main {
 
 .column-1 .main-cart h2,
 .column-1 .spare-cart h2 {
-    font-family: Tahoma;
+    font-family: Tahoma, sans-serif;
     font-size: 20px;
     font-weight: normal;
     margin: 0;
@@ -700,7 +700,7 @@ main {
  * Строка Заголовка
  */
 .column-1 .table .thead .tr .th {
-    font-family: Tahoma;
+    font-family: Tahoma, sans-serif;
     font-size: 13px;
     font-weight: normal;
     height: 50px;
@@ -710,7 +710,7 @@ main {
  * Строки с данными
  */
 .column-1 .table .tbody .tr .td {
-    font-family: Tahoma;
+    font-family: Tahoma, sans-serif;
     font-size: 13px;
     padding-top: 5px;
     padding-bottom: 5px;
@@ -771,7 +771,7 @@ a.to-spare-cart {
  *  Выбор способа оплаты
  */
 .payment-goods {
-    font-family: Tahoma;
+    font-family: Tahoma, sans-serif;
     font-size: 14px;
 }
 
@@ -792,7 +792,7 @@ a.to-spare-cart {
  *  Желаем Вам приятного чтения
  */
 .enjoy-goods {
-    font-family: Tahoma;
+    font-family: Tahoma, sans-serif;
     font-size: 14px;
 }
 
@@ -999,7 +999,7 @@ footer > div.under-footer-shelf {
 footer > div.under-footer-shelf > div {
     display: inline-block;
     vertical-align: top;
-    font-family: Tahoma;
+    font-family: Tahoma, sans-serif;
     letter-spacing: 0.3px;
     margin-top: 55px;
     //margin-left: 15px;

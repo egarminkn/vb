@@ -205,7 +205,7 @@ label.search > input {
     box-sizing: border-box;
     height: 28px;
     width: 100%;
-    font-family: Tahoma;
+    font-family: Tahoma, sans-serif;
     font-size: 12px;
     letter-spacing: 0.3px;
     //border: 1px solid black;
@@ -259,7 +259,7 @@ div.ask {
 
 div.ask > a {
     color: #888;
-    font-family: Tahoma;
+    font-family: Tahoma, sans-serif;
     font-size: 12px;
     letter-spacing: 0.2px;
     //border: 1px solid black;
@@ -303,7 +303,7 @@ div.cart {
 
 div.cart > a {
     color: #7f90aa;
-    font-family: Tahoma;
+    font-family: Tahoma, sans-serif;
     font-size: 12px;
     letter-spacing: 0.2px;
     position: absolute;
@@ -349,7 +349,7 @@ div.cart::after {
     display: inline-block;
     width: 15px;
     height: 9px;
-    font-family: Tahoma;
+    font-family: Tahoma, sans-serif;
     font-size: 9px;
     letter-spacing: 0.3px;
     position: absolute; /* Странно, но этот блок вылезает на передний план не за счет z-index, а за счет position: realtive */
@@ -395,7 +395,7 @@ div.entrance:not(.nick)::before {
 /* ссылка Войти */
 div.entrance > a {
     color: #d3be4a;
-    font-family: Tahoma;
+    font-family: Tahoma, sans-serif;
     font-size: 12px;
     letter-spacing: 0.3px;
     height: 25px;
@@ -442,7 +442,7 @@ div.menu > div {
 
 div.menu > div > a {
     color: #7f90aa;
-    font-family: Tahoma;
+    font-family: Tahoma, sans-serif;
     font-size: 13px;
     letter-spacing: 0.5px;
     //word-spacing: -3px;
@@ -585,7 +585,7 @@ main .left-column .rating-3-stars .rating-stars::before {
 }
 
 .author .fullname {
-    font-family: Tahoma;
+    font-family: Tahoma, sans-serif;
     font-size: 34px;
 }
 
@@ -635,7 +635,7 @@ main .left-column .rating-3-stars .rating-stars::before {
  * Блок книг автора
  */
 .books .title {
-    font-family: Tahoma;
+    font-family: Tahoma, sans-serif;
     font-size: 22px;
     margin-top: 30px;
 }
@@ -819,7 +819,7 @@ footer > div.under-footer-shelf {
 footer > div.under-footer-shelf > div {
     display: inline-block;
     vertical-align: top;
-    font-family: Tahoma;
+    font-family: Tahoma, sans-serif;
     letter-spacing: 0.3px;
     margin-top: 55px;
     //margin-left: 15px;

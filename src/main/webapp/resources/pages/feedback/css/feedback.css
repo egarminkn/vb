@@ -128,7 +128,7 @@ header::after {
     flex-direction: row;
     justify-content: space-between;
     align-items: flex-start;    
-    font-family: Tahoma;
+    font-family: Tahoma, sans-serif;
     font-size: 12px;
     color: #d3be4a;
     letter-spacing: 0.3px;
@@ -216,7 +216,7 @@ header::after {
 }
 
 .menu > div > a {
-    font-family: Tahoma;
+    font-family: Tahoma, sans-serif;
     font-size: 13px;
     color: #7f90aa;
     letter-spacing: 0.5px;
@@ -246,7 +246,7 @@ header::after {
 }
 
 .ask a .text {
-    font-family: Tahoma;
+    font-family: Tahoma, sans-serif;
     font-size: 12px;
     color: #888;    
     text-decoration: underline;
@@ -283,7 +283,7 @@ header::after {
 }
 
 .cart a .text {
-    font-family: Tahoma;
+    font-family: Tahoma, sans-serif;
     font-size: 12px;
     letter-spacing: 0.2px;
     color: #7f90aa;
@@ -303,7 +303,7 @@ header::after {
 
 /* Количество покупок в красном шарике */
 .cart a .count {
-    font-family: Tahoma;
+    font-family: Tahoma, sans-serif;
     font-size: 9px;
     letter-spacing: 0.3px;
     color: white;
@@ -553,7 +553,7 @@ main .columns {
  * Заголовок
  */
 .column-2 .header h1 {
-    font-family: Tahoma;
+    font-family: Tahoma, sans-serif;
     font-size: 34px;
     font-weight: normal;
     margin: 0;
@@ -575,7 +575,7 @@ main .columns {
 }
 
 .feedback {
-    font-family: Tahoma;
+    font-family: Tahoma, sans-serif;
     font-size: 12px;
     position: relative; /* связанно с тенями под блоками */
     padding: 25px;
@@ -591,7 +591,7 @@ main .columns {
  * Заголовок
  */
 .feedback h2 {
-    font-family: Tahoma;
+    font-family: Tahoma, sans-serif;
     font-size: 20px;
     font-weight: normal;
     margin: 0;
@@ -820,7 +820,7 @@ footer {
 }
 
 .under-footer-shelf > div {
-    font-family: Tahoma;
+    font-family: Tahoma, sans-serif;
     letter-spacing: 0.3px;
     //border: 1px solid black;
 }

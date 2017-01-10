@@ -198,7 +198,7 @@ label.search > input {
     box-sizing: border-box;
     height: 28px;
     width: 100%;
-    font-family: Tahoma;
+    font-family: Tahoma, sans-serif;
     font-size: 12px;
     letter-spacing: 0.3px;
     //border: 1px solid black;
@@ -252,7 +252,7 @@ div.ask {
 
 div.ask > a {
     color: #888;
-    font-family: Tahoma;
+    font-family: Tahoma, sans-serif;
     font-size: 12px;
     letter-spacing: 0.2px;
     //border: 1px solid black;
@@ -296,7 +296,7 @@ div.cart {
 
 div.cart > a {
     color: #7f90aa;
-    font-family: Tahoma;
+    font-family: Tahoma, sans-serif;
     font-size: 12px;
     letter-spacing: 0.2px;
     position: absolute;
@@ -342,7 +342,7 @@ div.cart::after {
     display: inline-block;
     width: 15px;
     height: 9px;
-    font-family: Tahoma;
+    font-family: Tahoma, sans-serif;
     font-size: 9px;
     letter-spacing: 0.3px;
     position: absolute; /* Странно, но этот блок вылезает на передний план не за счет z-index, а за счет position: realtive */
@@ -388,7 +388,7 @@ div.entrance::before {
 /* ссылка Войти */
 div.entrance > a {
     color: #d3be4a;
-    font-family: Tahoma;
+    font-family: Tahoma, sans-serif;
     font-size: 12px;
     letter-spacing: 0.3px;
 }
@@ -415,7 +415,7 @@ div.menu > div {
 
 div.menu > div > a {
     color: #7f90aa;
-    font-family: Tahoma;
+    font-family: Tahoma, sans-serif;
     font-size: 13px;
     letter-spacing: 0.5px;
     //word-spacing: -3px;
@@ -634,7 +634,7 @@ div.shelves > div.title > div {
 
 /* Заголовок полки (надпись рядом со значком свисающего флажочка) */
 div.shelf-name > a {
-    font-family: Tahoma;
+    font-family: Tahoma, sans-serif;
     font-size: 21px;
     color: black;
     letter-spacing: 0.5px;
@@ -861,7 +861,7 @@ button.right-arrow {
  */
 /* Заголовок книги */
 div.book-title-slider-in > .book-summary > div.book-title {
-    font-family: Tahoma;
+    font-family: Tahoma, sans-serif;
     font-size: 13px;
     color: #5f7495;
     text-decoration: underline;
@@ -886,7 +886,7 @@ div.book-title-slider-in > .book-summary > div.book-author > div {
 
 /* Имя автора */
 div.book-title-slider-in > .book-summary > div.book-author > div.author-name {
-    font-family: Tahoma;
+    font-family: Tahoma, sans-serif;
     font-size: 11px;
     color: black;
     //word-spacing: 1px;
@@ -896,7 +896,7 @@ div.book-title-slider-in > .book-summary > div.book-author > div.author-name {
 
 /* Общее количество книг автора */
 div.book-title-slider-in > .book-summary > div.book-author > div.book-count {
-    font-family: Tahoma;
+    font-family: Tahoma, sans-serif;
     font-size: 10px;
     color: #888;
     word-spacing: 1px;
@@ -1077,7 +1077,7 @@ div.shelf > div.authors-block > .author-summary > div.author-name {
 
 /* внутренний блок */
 div.shelf > div.authors-block > .author-summary > div.author-name > div {
-    font-family: Tahoma;
+    font-family: Tahoma, sans-serif;
     font-size: 11px;
     letter-spacing: 0.6px;
     color: #5f7495;
@@ -1087,7 +1087,7 @@ div.shelf > div.authors-block > .author-summary > div.author-name > div {
 
 /* общее количество книг автора */
 div.shelf > div.authors-block > .author-summary > div.book-count {
-    font-family: Tahoma;
+    font-family: Tahoma, sans-serif;
     font-size: 10px;
     letter-spacing: 0.3px;
     word-spacing: 0.5px;
@@ -1138,14 +1138,14 @@ div.seo {
 }
 
 div.seo > div.title {
-    font-family: Tahoma;
+    font-family: Tahoma, sans-serif;
     font-size: 22px;
     letter-spacing: 1.1px;
     margin-bottom: 30px;
 }
 
 div.seo > div.body > p {
-    font-family: Tahoma;
+    font-family: Tahoma, sans-serif;
     font-size: 16px;
     letter-spacing: 0.3px;
     word-spacing: 0.5px;
@@ -1280,7 +1280,7 @@ footer > div.under-footer-shelf {
 footer > div.under-footer-shelf > div {
     display: inline-block;
     vertical-align: top;
-    font-family: Tahoma;
+    font-family: Tahoma, sans-serif;
     letter-spacing: 0.3px;
     margin-top: 55px;
     //margin-left: 15px;

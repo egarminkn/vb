@@ -198,7 +198,7 @@ label.search > input {
     box-sizing: border-box;
     height: 28px;
     width: 100%;
-    font-family: Tahoma;
+    font-family: Tahoma, sans-serif;
     font-size: 12px;
     letter-spacing: 0.3px;
     //border: 1px solid black;
@@ -252,7 +252,7 @@ div.ask {
 
 div.ask > a {
     color: #888;
-    font-family: Tahoma;
+    font-family: Tahoma, sans-serif;
     font-size: 12px;
     letter-spacing: 0.2px;
     //border: 1px solid black;
@@ -296,7 +296,7 @@ div.cart {
 
 div.cart > a {
     color: #7f90aa;
-    font-family: Tahoma;
+    font-family: Tahoma, sans-serif;
     font-size: 12px;
     letter-spacing: 0.2px;
     position: absolute;
@@ -342,7 +342,7 @@ div.cart::after {
     display: inline-block;
     width: 15px;
     height: 9px;
-    font-family: Tahoma;
+    font-family: Tahoma, sans-serif;
     font-size: 9px;
     letter-spacing: 0.3px;
     position: absolute; /* Странно, но этот блок вылезает на передний план не за счет z-index, а за счет position: realtive */
@@ -388,7 +388,7 @@ div.entrance::before {
 /* ссылка Войти */
 div.entrance > a {
     color: #d3be4a;
-    font-family: Tahoma;
+    font-family: Tahoma, sans-serif;
     font-size: 12px;
     letter-spacing: 0.3px;
 }
@@ -425,7 +425,7 @@ div.menu > div {
 
 div.menu > div > a {
     color: #7f90aa;
-    font-family: Tahoma;
+    font-family: Tahoma, sans-serif;
     font-size: 13px;
     letter-spacing: 0.5px;
     //word-spacing: -3px;
@@ -542,7 +542,7 @@ div.slogan > a.new-books-free {
 }
 
 .quotes .quote {
-    font-family: Tahoma;
+    font-family: Tahoma, sans-serif;
     font-size: 29px;
     letter-spacing: 0.5px;
     word-spacing: 0.3px;
@@ -630,7 +630,7 @@ input[type="radio"][name="help-slide"] {
 }
 
 .help-slide-marks .help-slide-mark > p {
-    font-family: Tahoma;
+    font-family: Tahoma, sans-serif;
     font-size: 21px;
     letter-spacing: 0.3px;
     line-height: 29px;
@@ -809,7 +809,7 @@ div.help-slide-content > div.row-2:nth-of-type(5) {
 
 /* Ссылки помощи */
 div.help-slide-content > div.row > a {
-    font-family: Tahoma;
+    font-family: Tahoma, sans-serif;
     font-size: 14px;
     letter-spacing: 0.1px;
     word-spacing: 0.3px;
@@ -847,7 +847,7 @@ div.help-slide-content > div.row.row-2 > a.verybook-help-you > .verybook-help-yo
 }
 
 div.help-slide-content > div.row.row-2 > a.verybook-help-you > p.verybook-help-you {
-    font-family: Tahoma;
+    font-family: Tahoma, sans-serif;
     font-size: 26px;
     letter-spacing: 0.7px;
     line-height: 32px;
@@ -860,7 +860,7 @@ div.help-slide-content > div.row.row-2 > a.verybook-help-you > p.verybook-help-y
 }
 
 div.help-slide-content > div.row.row-2 > p.verybook-help-you {
-    font-family: Tahoma;
+    font-family: Tahoma, sans-serif;
     font-size: 14px;
     line-height: 20px;
     color: black;
@@ -1008,7 +1008,7 @@ footer > div.under-footer-shelf {
 footer > div.under-footer-shelf > div {
     display: inline-block;
     vertical-align: top;
-    font-family: Tahoma;
+    font-family: Tahoma, sans-serif;
     letter-spacing: 0.3px;
     margin-top: 55px;
     //margin-left: 15px;
