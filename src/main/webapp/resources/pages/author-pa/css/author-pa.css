@@ -40,20 +40,18 @@ body {
     margin-left: auto; /* auto сделает body по центру */
     margin-right: auto; /* auto сделает body по центру */
     box-sizing: border-box;
-    //border: 1px solid black;
+    /*border: 1px solid black;*/
 }
 
 /*
  *  Хедер
  */
 header {
-    height: 90px;
-    background-color: white;
+    box-sizing: border-box;
     width: 100%;
     height: 115px;
-    box-sizing: border-box;
-    //border: 1px solid red;
-    //position: relative;
+    background-color: white;
+    /*border: 1px solid red;*/
 }
 
 /*
@@ -63,10 +61,8 @@ header::before {
     content: '';
     display: block;
     position: relative;
-    //position: absolute;
     left: 1%;
     top: 103px;
-    //top: 153px;
     z-index: -1;
     height: 10px;
     width: 50%;
@@ -78,10 +74,8 @@ header::after {
     content: '';
     display: block;
     position: relative;
-    //position: absolute;
     left: 51%;
     top: 22px;
-    //top: 72px;
     z-index: -1;
     height: 10px;
     width: 48%;
@@ -93,12 +87,12 @@ header::after {
  *  Самая верхняя часть Хедера с логотипом, строкой поиска, задать вопросом и корзиной
  */
 div.header1 {
-    width: 100%;
-    //height: 100px;
     box-sizing: border-box;
+    width: 100%;
+    /*height: 100px;*/
     position: relative;
     top: -9px;
-    //border: 1px solid black;
+    /*border: 1px solid black;*/
 }
 
 div.header1 > div {
@@ -116,14 +110,14 @@ a.logo {
     position: relative;
     margin-top: 17px;
     margin-left: 2.1%;
-    //border: 2px solid red;
+    /*border: 2px solid red;*/
 }
 
 /* Влияет на все части логотипа */
 span.logo-word {
     color: #5f7495;
     line-height: 30px;
-    //border: 1px solid black;
+    /*border: 1px solid black;*/
 }
 
 span.logo-line {
@@ -134,7 +128,7 @@ span.logo-line {
     position: absolute;
     left: -1px;
     top: -1px;
-    //border: 1px solid black;
+    /*border: 1px solid black;*/
 }
 
 span.logo-line::after {
@@ -143,13 +137,13 @@ span.logo-line::after {
     font-family: 'Times New Roman';
     position: relative;
     left: -11px;
-    //border: 1px solid black;
+    /*border: 1px solid black;*/
 }
 
 span.logo-line2 {
     position: absolute;
     left: 13px;
-    //border: 1px solid black;
+    /*border: 1px solid black;*/
 }
 
 span.logo-v {
@@ -160,7 +154,7 @@ span.logo-v {
     position: absolute;
     left: 27px;
     top: 0;
-    //border: 1px solid black;
+    /*border: 1px solid black;*/
 }
 
 span.logo-v.ie { /* селектор ie используется, чтобы вводить корректировки в стили при использовании IE */
@@ -173,8 +167,8 @@ span.logo-erybook {
     letter-spacing: 1px;
     position: absolute;
     left: 60px;
-    //top: 11px;
-    //border: 1px solid black;
+    /*top: 11px;*/
+    /*border: 1px solid black;*/
 }
 
 /*
@@ -185,9 +179,9 @@ div.search {
     top: 15px;
     left: 27%;
     transform: skewX(15deg);
-    //border: 1px solid black;
     width: 40.2%;
     height: 30px;
+    /*border: 1px solid black;*/
 }
 
 label.search {
@@ -199,7 +193,7 @@ label.search {
     padding: 0px 8px;
     position: absolute;
     left: 0;
-    //border: 1px solid black;
+    /*border: 1px solid black;*/
 }
 
 /* Нутро наклоняю в противоположную сторону, чтобы текст при наборе был ровным */
@@ -213,7 +207,7 @@ label.search > input {
     font-family: Tahoma, sans-serif;
     font-size: 12px;
     letter-spacing: 0.3px;
-    //border: 1px solid black;
+    /*border: 1px solid black;*/
 }
 
 /*
@@ -228,7 +222,7 @@ button.search {
     border: 1px solid #ccc;
     position: absolute;
     right: 1px;  
-    //border: 1px solid black;
+    /*border: 1px solid black;*/
 }
 
 button.search::before {
@@ -239,7 +233,7 @@ button.search::before {
     font-size: 19px;    
     transform: skewX(-15deg);
     background-position: 50% 50%;
-    //border: 1px solid black;
+    /*border: 1px solid black;*/
 }
 
 button.search:focus {
@@ -257,10 +251,9 @@ div.ask {
     box-sizing: border-box;
     position: absolute;
     top: 15px;
-    //left: 78.2%;
     right: 13.2%;
     width: 110px;
-    //border: 1px solid black;
+    /*border: 1px solid black;*/
 }
 
 div.ask > a {
@@ -268,7 +261,7 @@ div.ask > a {
     font-family: Tahoma, sans-serif;
     font-size: 12px;
     letter-spacing: 0.2px;
-    //border: 1px solid black;
+    /*border: 1px solid black;*/
 }
 
 /* Знак вопросика после ссылки Задать вопрос */
@@ -286,7 +279,7 @@ div.ask::after {
     position: relative;
     left: 4px;
     top: -1px;
-    //border: 1px solid black;
+    /*border: 1px solid black;*/
 }
 /* Переключение на этот класс будет скрывать Знак вопросика после ссылки Задать вопрос */
 div.ask.hidden::after {
@@ -300,11 +293,10 @@ div.cart {
     box-sizing: border-box;
     position: absolute;
     top: 17px;
-    //left: 89%;
     right: 2.9%;
     height: 23px;
     width: 103px;
-    //border: 1px solid black;
+    /*border: 1px solid black;*/
 }
 
 div.cart > a {
@@ -315,7 +307,7 @@ div.cart > a {
     position: absolute;
     left: 29px;
     top: 1px;
-    //border: 1px solid black;
+    /*border: 1px solid black;*/
 }
 
 /* Символ продуктовой корзинки */
@@ -327,7 +319,7 @@ div.cart::before {
     font-size: 14pt;
     position: absolute;
     left: 1px;
-    //border: 1px solid black;
+    /*border: 1px solid black;*/
 }
 /* Переключение на этот класс будет скрывать символ продуктовой корзинки */
 div.cart.hidden::before {
@@ -344,7 +336,7 @@ div.cart > a::after {
     background-image: linear-gradient(#fac5c5, #f26464);
     position: absolute;
     left: 55px;
-    //border: 1px solid black;
+    /*border: 1px solid black;*/
 }
 
 /* Количество покупок в красном шарике */
@@ -361,7 +353,7 @@ div.cart::after {
     position: absolute; /* Странно, но этот блок вылезает на передний план не за счет z-index, а за счет position: realtive */
     left: 85px;
     top: 4px;
-    //border: 1px solid black;
+    /*border: 1px solid black;*/
 }
 
 /*
@@ -372,7 +364,7 @@ nav.header2 {
     width: 100%;
     height: 20px;
     top: 23px;
-    //border: 1px solid black;
+    /*border: 1px solid black;*/
 }
 
 nav.header2 > div {
@@ -385,21 +377,16 @@ nav.header2 > div {
 div.entrance {
     position: absolute;
     right: 5.9%;
-    //border: 1px solid black;
+    /*border: 1px solid black;*/
 }
 
 /* символ замочка */
 div.entrance:not(.nick)::before {
     content: '';
-/*
-    content: '\f023';
-    font-family: 'Font Awesome';
-*/
-    //color: #888;
+    /*color: #888;*/
     position: relative;
     right: 6px;
-    //top: 3px;
-    
+    /*top: 3px;*/
     background: url('../svg/padlock.svg');
     background-size: 13px;
     background-repeat: no-repeat;
@@ -407,7 +394,7 @@ div.entrance:not(.nick)::before {
     height: 24px;
     display: inline-block;
     vertical-align: bottom;
-    //border: 1px solid black;
+    /*border: 1px solid black;*/
 }
 
 /* ссылка Войти */
@@ -419,7 +406,7 @@ div.entrance > a {
     height: 25px;
     display: inline-block;
     vertical-align: bottom;
-    //border: 1px solid black;
+    /*border: 1px solid black;*/
 }
 
 /* ссылка с Именем вместо ссылки Войти */
@@ -449,9 +436,8 @@ div.entrance.nick::after {
  */
 div.menu {
     position: absolute;
-    //width: 555px;
     width: 560px;
-    //border: 1px solid black;
+    /*border: 1px solid black;*/
 }
 
 div.menu > div.shop {
@@ -461,7 +447,7 @@ div.menu > div.shop {
 div.menu > div {
     display: inline-block;
     margin-left: 7.9%;
-    //border: 1px solid black;
+    /*border: 1px solid black;*/
 }
 
 div.menu > div > a {
@@ -469,7 +455,7 @@ div.menu > div > a {
     font-family: Tahoma, sans-serif;
     font-size: 13px;
     letter-spacing: 0.5px;
-    //word-spacing: -3px;
+    /*word-spacing: -3px;*/
 }
 
 /*
@@ -485,7 +471,7 @@ div.slogan {
     top: 40px;
     left: 8.7%;    
     width: 85%;
-    //border: 1px solid black;
+    /*border: 1px solid black;*/
 }
 
 /* Ссылка Новые книги бесплатно в слогане */
@@ -543,7 +529,7 @@ main .author {
     flex-direction: column;
     justify-content: flex-start;
     margin-top: 10px;
-    //border: 1px solid red;
+    /*border: 1px solid red;*/
 }
 
 main .author .about {
@@ -564,18 +550,18 @@ main .author .about .columns {
     justify-content: space-between;
     height: 270px;
     transition: height .8s ease;
-    //border: 1px solid black;
+    /*border: 1px solid black;*/
 }
 
 main .author .about .columns .column {
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
-    //border: 1px solid black;
+    /*border: 1px solid black;*/
 }
 
 main .author .about .columns .column.column-2 {
-    //align-items: flex-end;
+    /*align-items: flex-end;*/
     flex-basis: 200px;
 }
 
@@ -667,14 +653,13 @@ main .author .about .columns .column-4 .row-2 {
     margin-top: 15px;
     overflow: hidden;
     min-width: 150px;
-    //border: 1px solid black;
+    /*border: 1px solid black;*/
 }
 
 main .author .about .columns .column-4 .row-2 .wallet {
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
-    //margin-left: 25px;
     margin-left: 12%;
 }
 
@@ -693,7 +678,7 @@ main .books {
     justify-content: flex-start;
     margin-top: 50px;
     padding: 0 25px;
-    //border: 1px solid green;
+    /*border: 1px solid green;*/
 }
 
 main .books .header {
@@ -701,7 +686,7 @@ main .books .header {
     flex-direction: row;
     justify-content: space-between;
     align-items: flex-end;
-    //border: 1px solid black;
+    /*border: 1px solid black;*/
 }
 
 main .books .header label {
@@ -710,7 +695,7 @@ main .books .header label {
     align-items: center;
     width: 50%;
     cursor: pointer;
-    //border: 1px solid black;
+    /*border: 1px solid black;*/
 }
 
 main .books .header label[for="write"] {
@@ -825,7 +810,7 @@ main .author > .title {
     background-size: 20px 20px;
     background-position: right top;
     margin: 20px 25px;
-    //border: 1px solid black;
+    /*border: 1px solid black;*/
 }
 
 /*
@@ -838,12 +823,12 @@ main .author > .about .name {
     font-family: 'Myriad Pro Regular';
     margin-top: 15px;
     margin-left: 15px;
-    //border: 1px solid black;
+    /*border: 1px solid black;*/
 }
 
 main .author > .about .name .fullname {
     font-size: 22px;
-    //color: #b4b4b4;
+    /*color: #b4b4b4;*/
 }
 
 main .author > .about .name .login {
@@ -865,7 +850,7 @@ main .author .about .columns .column-1 .row-1 .edit {
     font-weight: bold;
     position: relative;
     margin-left: 30px;
-    //border: 1px solid black;
+    /*border: 1px solid black;*/
 }
 
 /* текст Отметки о профессионализме */
@@ -955,7 +940,7 @@ main .author .about .columns .column-2 .row-1 .title {
     padding-left: 25px;
     margin-top: 4px;
     white-space: nowrap;
-    //border: 1px solid black;
+    /*border: 1px solid black;*/
 }
 
 /* стилизация кнопки редактирования для блока с Личными данными автора */
@@ -982,22 +967,22 @@ main .author .about .columns .column-2 .row-2 .city span {
 main .author .about .columns .column-2 .row-3 {
     font-family: Tahoma, sans-serif;
     font-size: 14px;
-    //white-space: nowrap;
+    /*white-space: nowrap;*/
     word-break: break-all;
     color: black;
     height: 100%;
     transition: height .8s ease;
-    //border: 1px solid black;
+    /*border: 1px solid black;*/
 }
 
 main .author .about .columns .column-2 .row-3 .email > a {
     color: black;
-    //border: 1px solid black;
+    /*border: 1px solid black;*/
 }
 
 main .author .about .columns .column-2 .row-3 .skype > a {
     color: black;
-    //border: 1px solid black;
+    /*border: 1px solid black;*/
 }
 
 main .author .about .columns .column-2 .row-3 > div {
@@ -1009,7 +994,7 @@ main .author .about .columns .column-2 .row-3 .phone {
     background-size: 15px 15px;
     background-position: left;
     padding-left: 20px;
-    //border: 1px solid black;
+    /*border: 1px solid black;*/
 }
 
 main .author .about .columns .column-2 .row-3 .email {
@@ -1017,7 +1002,7 @@ main .author .about .columns .column-2 .row-3 .email {
     background-size: 15px 15px;
     background-position: left;
     padding-left: 20px;
-    //border: 1px solid black;
+    /*border: 1px solid black;*/
 }
 
 main .author .about .columns .column-2 .row-3 .skype {
@@ -1025,7 +1010,7 @@ main .author .about .columns .column-2 .row-3 .skype {
     background-size: 15px 15px;
     background-position: left;
     padding-left: 20px;
-    //border: 1px solid black;
+    /*border: 1px solid black;*/
 }
 
 /*
@@ -1037,7 +1022,7 @@ main .author .about .columns .column-3 .row-1 .title {
     font-size: 15px;
     height: 20px;
     margin-top: 4px;
-    //border: 1px solid black;
+    /*border: 1px solid black;*/
 }
 
 /* стилизация кнопки редактирования для блока Обо мне */
@@ -1067,7 +1052,6 @@ main .author .about .columns .column-3 .row-2 .description::after {
     position: absolute;
     bottom: 0;
     z-index: 1;
-    //background: black;
     background: linear-gradient(to top, white, transparent);
 }
 
@@ -1080,7 +1064,7 @@ main .author .about .columns .column-4 .row-1 .title {
     font-size: 15px;
     height: 20px;
     margin-top: 4px;
-    //border: 1px solid black;
+    /*border: 1px solid black;*/
 }
 
 main .author .about .columns .column-4 .row-1 .title::before {
@@ -1179,11 +1163,11 @@ main .author .about .columns .column-4 .row-2 .wallet .get-money {
 div.expand-collapse-block {
     position: relative;
     top: 20px;
-    //z-index: 1;
+    /*z-index: 1;*/
     margin: auto;
     height: 56px;
     width: 56px;
-    //border: 1px solid black;
+    /*border: 1px solid black;*/
 }
 
 input.expand-collapse-block {
@@ -1514,7 +1498,7 @@ main .books table.write tbody tr td.title .book {
     color: black;
     white-space: normal;
     max-width: 145px;
-    //border: 1px solid black;
+    /*border: 1px solid black;*/
 }
 
 main .books table.write tbody tr td.title .edit {
@@ -1522,7 +1506,7 @@ main .books table.write tbody tr td.title .edit {
     vertical-align: top;
     position: relative;
     top: -4px;
-    //border: 1px solid black;
+    /*border: 1px solid black;*/
 }
 
 /*
@@ -1532,7 +1516,7 @@ main .books table.write tbody tr td.status .current-status {
     font-family: Tahoma, sans-serif;
     font-size: 13px;
     white-space: nowrap;
-    //border: 1px solid black;
+    /*border: 1px solid black;*/
 }
 
 main .books table.write tbody tr td.status .current-status::before {
@@ -1551,7 +1535,7 @@ main .books table.write tbody tr td.status .current-status .text {
     vertical-align: middle;
     margin-left: 5px;
     color: black;
-    //text-decoration: underline;
+    /*text-decoration: underline;*/
 }
 
 /* стилизация статуса книги */
@@ -1595,14 +1579,14 @@ main .books table.write tbody tr td.status .actions {
     padding: 0;
     margin: 0;
     padding-left: 22px;
-    //width: 100%;
+    /*width: 100%;*/
 }
 
 main .books table.write tbody tr td.status .actions .action {
     margin-top: 5px;
     position: relative;
     max-width: 110px;
-    //border: 1px solid black;
+    /*border: 1px solid black;*/
 }
 
 main .books table.write tbody tr td.status .actions .action a {
@@ -1702,7 +1686,7 @@ main .books table.write tbody tr td.profit {
     left: 1%;
     width: 98%;
     border-bottom: 1px dashed #b4b4b4;
-    //border: 1px solid black;
+    /*border: 1px solid black;*/
 }
 
 .table-with-shadow table.write .actions .action {
@@ -1723,7 +1707,7 @@ main .books table.write tbody tr td.profit {
     width: 100%;
     height: 20px;
     background-color: white;
-    //border: 1px solid black;
+    /*border: 1px solid black;*/
 }
 
 .shadow-under::before {
@@ -1763,7 +1747,7 @@ main .books table.write tbody tr td.profit {
     background: url('../svg/pencil.svg') no-repeat;
     background-size: 100%;
     background-position: left top;
-    //border: 1px solid black;
+    /*border: 1px solid black;*/
 }
 
 /***
@@ -1916,7 +1900,7 @@ main .books table.write tbody tr td.profit {
     width: 71%;
     height: 183px;
     overflow: hidden;
-    //border: 1px solid black;
+    /*border: 1px solid black;*/
 }
 
 .books-on-shelf > img {
@@ -1936,12 +1920,10 @@ footer {
  */
 /* Нижняя часть полки */
 div.shelf-bottom-part {
-    //width: 964px;
     width: 97.1%;
     height: 15px;
     background-color: #cacaca;
     position: absolute;
-    //left: 13px;
     left: 1.4%;
     top: 193px;
     box-shadow: 0 10px 40px -6px #111;
@@ -1949,38 +1931,33 @@ div.shelf-bottom-part {
 
 /* Левая наклонная часть полки */
 div.shelf-left-part {
-    //width: 500px;
     width: 50.4%;
     height: 16px;
     background-image: linear-gradient(#efefef, white);
     transform: skewX(-70deg);
     position: absolute;
-    //left: 36px;
     left: 4.1%;
     top: 176px;
-    //border: 1px solid black;
+    /*border: 1px solid black;*/
 }
 
 /* Правая наклонная часть полки */
 div.shelf-right-part {
-    //width: 500px;
     width: 50.4%;
     height: 16px;
     background-image: linear-gradient(#efefef, white);
     transform: skewX(70deg);
     position: absolute;
-    //right: 36px;
     right: 4.1%;
     top: 176px;
-    //border: 1px solid black;
+    /*border: 1px solid black;*/
 }
 
 footer > div.footer-shelf {
     position: relative;
-    //width: 1280px;
     width: 100%;
     height: 95px;
-    //border: 1px solid black;    
+    /*border: 1px solid black;    */
 }
 
 /* левая часть полки */
@@ -1988,10 +1965,9 @@ footer > div.footer-shelf > div.footer-shelf.shelf-part.shelf-left-part {
     position: absolute;
     top: 65px;
     left: 4.8%;
-    //width: 650px;
     width: 50.78%;
     height: 20px;
-    //border: 1px solid black;
+    /*border: 1px solid black;*/
 }
 
 /* правая часть полки */
@@ -1999,10 +1975,9 @@ footer > div.footer-shelf > div.footer-shelf.shelf-part.shelf-right-part {
     position: absolute;
     top: 65px;
     right: 5%;
-    //width: 650px;
     width: 50.78%;
     height: 20px;
-    //border: 1px solid black;
+    /*border: 1px solid black;*/
 }
 
 /* нижняя часть полки */
@@ -2010,7 +1985,6 @@ footer > div.footer-shelf > div.footer-shelf.shelf-part.shelf-bottom-part {
     position: absolute;
     top: 88px;
     left: 2.2%;
-    //width: 1220px;
     width: 95.3%;
     height: 17px;
 }
@@ -2020,7 +1994,7 @@ footer > div.footer-shelf > div.footer-shelf.shelf-part.shelf-bottom-part {
  */
 footer > div.under-footer-shelf {
     width: 100%;
-    //border: 1px solid black;
+    /*border: 1px solid black;*/
 }
 
 footer > div.under-footer-shelf > div {
@@ -2029,9 +2003,8 @@ footer > div.under-footer-shelf > div {
     font-family: Tahoma, sans-serif;
     letter-spacing: 0.3px;
     margin-top: 55px;
-    //margin-left: 15px;
     margin-left: 1.2%;
-    //border: 1px solid black;
+    /*border: 1px solid black;*/
 }
 
 footer > div.under-footer-shelf > div.copyright {
@@ -2098,16 +2071,16 @@ footer > div.under-footer-shelf > div.social-sharing > a {
 }
 
 footer > div.under-footer-shelf > div.social-sharing > a.share-icon-facebook {
-    //background-position: -75px 0;
+    /*background-position: -75px 0;*/
     background-image: url(../svg/F_icon.svg); 
 }
 
 footer > div.under-footer-shelf > div.social-sharing > a.share-icon-vk {
-    //background-position: 0 -25px;
+    /*background-position: 0 -25px;*/
     background-image: url(../svg/VK_icon.svg);
 }
 
 footer > div.under-footer-shelf > div.social-sharing > a.share-icon-livejournal {
-    //background-position: -75px -25px;
+    /*background-position: -75px -25px;*/
     background-image: url(../svg/LJ_icon.svg);
 }

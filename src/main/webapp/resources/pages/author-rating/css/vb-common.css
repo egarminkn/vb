@@ -1345,7 +1345,7 @@ div.likes .dislike::before {
     background-repeat: no-repeat;
     background-size: 100%;
     position: relative;
-    //border: 1px solid black;
+    /*border: 1px solid black;*/
 }
 
 /* сначала все закрашиваем оранжевым */
@@ -1357,7 +1357,7 @@ div.likes .dislike::before {
     background-color: #e8ba42;
     position: absolute;
     z-index: -1;
-    //border: 1px solid black;
+    /*border: 1px solid black;*/
 }
 
 /*
@@ -1370,7 +1370,7 @@ div.likes .dislike::before {
     color: black;
     letter-spacing: 0.3px;
     margin-left: 5px;
-    //border: 1px solid black;
+    /*border: 1px solid black;*/
 }
 
 /**
@@ -1381,7 +1381,7 @@ div.likes .dislike::before {
     flex-direction: row;
     justify-content: flex-start;
     align-items: center;
-    //border: 1px solid black;
+    /*border: 1px solid black;*/
 }
 
 /*
@@ -1395,7 +1395,7 @@ div.likes .dislike::before {
     background-repeat: no-repeat;
     background-size: 100%;
     position: relative;
-    //border: 1px solid black;
+    /*border: 1px solid black;*/
 }
 
 /* сначала все закрашиваем желтым */
@@ -1407,7 +1407,7 @@ div.likes .dislike::before {
     background-color: yellow;
     position: absolute;
     z-index: -1;
-    //border: 1px solid black;
+    /*border: 1px solid black;*/
 }
 
 /*
@@ -1419,7 +1419,7 @@ div.likes .dislike::before {
     color: black;
     letter-spacing: 0.3px;
     margin-left: 10px;
-    //border: 1px solid black;
+    /*border: 1px solid black;*/
 }
 
 /**
@@ -1431,7 +1431,7 @@ div.likes .dislike::before {
     background: url('../svg/vb/bar_chart.svg') no-repeat;
     background-size: 15px 15px;
     padding-left: 20px;
-    //border: 1px solid black;
+    /*border: 1px solid black;*/
 }
 
 /*
@@ -1448,7 +1448,7 @@ div.likes .dislike::before {
     flex-direction: row;
     justify-content: flex-start;
     align-items: center;
-    //border: 1px solid black;
+    /*border: 1px solid black;*/
 }
 
 .ratings .list {
@@ -1469,13 +1469,13 @@ div.likes .dislike::before {
 .ratings .list .item .dynamic-up {
     width: 4px;
     height: 12px;
-    //border: 1px solid black;
+    /*border: 1px solid black;*/
 }
 
 .ratings .list .item .dynamic-up img {
     width: 4px;
     height: 12px;
-    //border: 1px solid black;
+    /*border: 1px solid black;*/
 }
 
 .ratings .list .item .dynamic-up.invert {
@@ -1489,21 +1489,21 @@ div.likes .dislike::before {
     color: #657392;
     white-space: nowrap;
     margin-left: 5px;
-    //border: 1px solid black;
+    /*border: 1px solid black;*/
 }
 
 .ratings .list .item a span {
     display: inline-block;
     width: 30px;
     text-decoration: underline;
-    //border: 1px solid black;
+    /*border: 1px solid black;*/
 }
 
 /*
  * Название рейтинга
  */
 .ratings .list .item .rating-title {
-    //border: 1px solid black;
+    /*border: 1px solid black;*/
 }
 
 /**
@@ -1628,7 +1628,7 @@ div.likes .dislike::before {
     letter-spacing: 0.3px;
     position: relative;
     left: 15px;
-    //border: 1px solid black;
+    /*border: 1px solid black;*/
 }
 
 /* Позиционирование рейтинга электронной книги на баннере специальных предложений */
@@ -1651,7 +1651,7 @@ div.likes .dislike::before {
     top: -3px;
     padding-right: 10px;
     height: 88px;
-    //border: 1px solid black;
+    /*border: 1px solid black;*/
 }
 
 /* Заголовок книжки на баннере специальных предложений */

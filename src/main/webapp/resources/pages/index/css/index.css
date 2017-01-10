@@ -33,7 +33,7 @@ body {
     margin-left: auto; /* auto сделает body по центру */
     margin-right: auto; /* auto сделает body по центру */
     box-sizing: border-box;
-    //border: 1px solid black;
+    /*border: 1px solid black;*/
 }
 
 /*
@@ -45,7 +45,7 @@ header {
     width: 100%;
     height: 115px;
     box-sizing: border-box;
-    //border: 1px solid red;
+    /*border: 1px solid red;*/
 }
 
 /*
@@ -81,12 +81,12 @@ header::after {
  *  Самая верхняя часть Хедера с логотипом, строкой поиска, задать вопросом и корзиной
  */
 div.header1 {
-    width: 100%;
-    //height: 100px;
     box-sizing: border-box;
+    width: 100%;
+    /*height: 100px;*/
     position: relative;
     top: -9px;
-    //border: 1px solid black;
+    /*border: 1px solid black;*/
 }
 
 div.header1 > div {
@@ -104,14 +104,14 @@ a.logo {
     position: relative;
     margin-top: 17px;
     margin-left: 2.1%;
-    //border: 2px solid red;
+    /*border: 2px solid red;*/
 }
 
 /* Влияет на все части логотипа */
 span.logo-word {
     color: #5f7495;
     line-height: 30px;
-    //border: 1px solid black;
+    /*border: 1px solid black;*/
 }
 
 span.logo-line {
@@ -122,7 +122,7 @@ span.logo-line {
     position: absolute;
     left: -1px;
     top: -1px;
-    //border: 1px solid black;
+    /*border: 1px solid black;*/
 }
 
 span.logo-line::after {
@@ -131,13 +131,13 @@ span.logo-line::after {
     font-family: 'Times New Roman';
     position: relative;
     left: -11px;
-    //border: 1px solid black;
+    /*border: 1px solid black;*/
 }
 
 span.logo-line2 {
     position: absolute;
     left: 13px;
-    //border: 1px solid black;
+    /*border: 1px solid black;*/
 }
 
 span.logo-v {
@@ -148,7 +148,7 @@ span.logo-v {
     position: absolute;
     left: 27px;
     top: 0;
-    //border: 1px solid black;
+    /*border: 1px solid black;*/
 }
 
 span.logo-v.ie { /* селектор ie используется, чтобы вводить корректировки в стили при использовании IE */
@@ -161,8 +161,8 @@ span.logo-erybook {
     letter-spacing: 1px;
     position: absolute;
     left: 60px;
-    //top: 11px;
-    //border: 1px solid black;
+    /*top: 11px;*/
+    /*border: 1px solid black;*/
 }
 
 /*
@@ -173,9 +173,9 @@ div.search {
     top: 15px;
     left: 27%;
     transform: skewX(15deg);
-    //border: 1px solid black;
     width: 40.2%;
     height: 30px;
+    /*border: 1px solid black;*/
 }
 
 label.search {
@@ -187,7 +187,7 @@ label.search {
     padding: 0px 8px;
     position: absolute;
     left: 0;
-    //border: 1px solid black;
+    /*border: 1px solid black;*/
 }
 
 /* Нутро наклоняю в противоположную сторону, чтобы текст при наборе был ровным */
@@ -201,7 +201,7 @@ label.search > input {
     font-family: Tahoma, sans-serif;
     font-size: 12px;
     letter-spacing: 0.3px;
-    //border: 1px solid black;
+    /*border: 1px solid black;*/
 }
 
 /*
@@ -216,7 +216,7 @@ button.search {
     border: 1px solid #ccc;
     position: absolute;
     right: 1px;  
-    //border: 1px solid black;
+    /*border: 1px solid black;*/
 }
 
 button.search::before {
@@ -226,7 +226,7 @@ button.search::before {
     font-size: 19px;    
     transform: skewX(-15deg);
     background-position: 50% 50%;
-    //border: 1px solid black;
+    /*border: 1px solid black;*/
 }
 
 button.search:focus {
@@ -244,10 +244,9 @@ div.ask {
     box-sizing: border-box;
     position: absolute;
     top: 15px;
-    //left: 78.2%;
     right: 13.2%;
     width: 110px;
-    //border: 1px solid black;
+    /*border: 1px solid black;*/
 }
 
 div.ask > a {
@@ -255,7 +254,7 @@ div.ask > a {
     font-family: Tahoma, sans-serif;
     font-size: 12px;
     letter-spacing: 0.2px;
-    //border: 1px solid black;
+    /*border: 1px solid black;*/
 }
 
 /* Знак вопросика после ссылки Задать вопрос */
@@ -273,7 +272,7 @@ div.ask::after {
     position: relative;
     left: 4px;
     top: -1px;
-    //border: 1px solid black;
+    /*border: 1px solid black;*/
 }
 /* Переключение на этот класс будет скрывать Знак вопросика после ссылки Задать вопрос */
 div.ask.hidden::after {
@@ -287,11 +286,10 @@ div.cart {
     box-sizing: border-box;
     position: absolute;
     top: 17px;
-    //left: 89%;
     right: 2.9%;
     height: 23px;
     width: 103px;
-    //border: 1px solid black;
+    /*border: 1px solid black;*/
 }
 
 div.cart > a {
@@ -302,7 +300,7 @@ div.cart > a {
     position: absolute;
     left: 29px;
     top: 1px;
-    //border: 1px solid black;
+    /*border: 1px solid black;*/
 }
 
 /* Символ продуктовой корзинки */
@@ -314,7 +312,7 @@ div.cart::before {
     font-size: 14pt;
     position: absolute;
     left: 1px;
-    //border: 1px solid black;
+    /*border: 1px solid black;*/
 }
 /* Переключение на этот класс будет скрывать символ продуктовой корзинки */
 div.cart.hidden::before {
@@ -331,7 +329,7 @@ div.cart > a::after {
     background-image: linear-gradient(#fac5c5, #f26464);
     position: absolute;
     left: 55px;
-    //border: 1px solid black;
+    /*border: 1px solid black;*/
 }
 
 /* Количество покупок в красном шарике */
@@ -348,7 +346,7 @@ div.cart::after {
     position: absolute; /* Странно, но этот блок вылезает на передний план не за счет z-index, а за счет position: realtive */
     left: 85px;
     top: 4px;
-    //border: 1px solid black;
+    /*border: 1px solid black;*/
 }
 
 /*
@@ -359,7 +357,7 @@ nav.header2 {
     width: 100%;
     height: 20px;
     top: 23px;
-    //border: 1px solid black;
+    /*border: 1px solid black;*/
 }
 
 nav.header2 > div {
@@ -372,7 +370,7 @@ nav.header2 > div {
 div.entrance {
     position: absolute;
     right: 5.9%;
-    //border: 1px solid black;
+    /*border: 1px solid black;*/
 }
 
 /* символ замочка */
@@ -398,9 +396,8 @@ div.entrance > a {
  */
 div.menu {
     position: absolute;
-    //width: 555px;
     width: 560px;
-    //border: 1px solid black;
+    /*border: 1px solid black;*/
 }
 
 div.menu > div.shop {
@@ -410,7 +407,7 @@ div.menu > div.shop {
 div.menu > div {
     display: inline-block;
     margin-left: 7.9%;
-    //border: 1px solid black;
+    /*border: 1px solid black;*/
 }
 
 div.menu > div > a {
@@ -418,7 +415,7 @@ div.menu > div > a {
     font-family: Tahoma, sans-serif;
     font-size: 13px;
     letter-spacing: 0.5px;
-    //word-spacing: -3px;
+    /*word-spacing: -3px;*/
 }
 
 /*
@@ -434,7 +431,7 @@ div.slogan {
     top: 40px;
     left: 8.7%;    
     width: 85%;
-    //border: 1px solid black;
+    /*border: 1px solid black;*/
 }
 
 /* Ссылка Новые книги бесплатно в слогане */
@@ -468,7 +465,6 @@ div.slogan > a.publish-own {
  *  Главный баннер
  */
 div.main-banner {
-    //width: 1247px;
     width: 97.55%;
     height: 375px;
     overflow: hidden;
@@ -482,7 +478,7 @@ div.slider > a {
     max-width: calc(4 * 1247px);
     max-height: 340px;
     position: relative;
-    //border: 2px solid red;
+    /*border: 2px solid red;*/
 }
 
 div.slider > a > img {
@@ -499,7 +495,6 @@ div.slider {
  */
 div.slider-buttons {
     position: relative;
-    //left: 46.8%;
     left: 45%;
     top: 18px;
 }
@@ -549,10 +544,9 @@ div.shelves {
     margin-top: 125px;
     left: 8px;
     float: left;
-    //width: 993px;
     width: 77.6%;
     max-width: 993px;
-    //border: 1px solid black;
+    /*border: 1px solid black;*/
 }
 
 /* Блок одной полки (окруженный пунктиром) */
@@ -596,13 +590,11 @@ div.arrow-up::after {
 div.shelves > div.shelf::before {
     content: '';
     display: block;
-    //width: 400px;
     width: 40.3%;
     height: 50px;
     background-color: white;
     box-shadow: 0 0 20px 5px #aaa;
     position: absolute;
-    //left: 90px;
     left: 9.1%;
     bottom: 5px;
     z-index: -1;
@@ -613,13 +605,11 @@ div.shelves > div.shelf::before {
 div.shelves > div.shelf::after {
     content: '';
     display: block;
-    //width: 400px;
     width: 40.3%;
     height: 50px;
     background-color: white;
     box-shadow: 0 0 20px 5px #aaa;
     position: absolute;
-    //right: 90px;
     right: 9.1%;
     bottom: 5px;
     z-index: -1;
@@ -693,12 +683,10 @@ div.bookmark::after {
  */
 /* Нижняя часть полки */
 div.shelf-bottom-part {
-    //width: 964px;
     width: 97.1%;
     height: 15px;
     background-color: #cacaca;
     position: absolute;
-    //left: 13px;
     left: 1.4%;
     top: 193px;
     box-shadow: 0 10px 40px -6px #111;
@@ -706,35 +694,30 @@ div.shelf-bottom-part {
 
 /* Левая наклонная часть полки */
 div.shelf-left-part {
-    //width: 500px;
     width: 50.4%;
     height: 16px;
     background-image: linear-gradient(#efefef, white);
     transform: skewX(-70deg);
     position: absolute;
-    //left: 36px;
     left: 4.1%;
     top: 176px;
-    //border: 1px solid black;
+    /*border: 1px solid black;*/
 }
 
 /* Правая наклонная часть полки */
 div.shelf-right-part {
-    //width: 500px;
     width: 50.4%;
     height: 16px;
     background-image: linear-gradient(#efefef, white);
     transform: skewX(70deg);
     position: absolute;
-    //right: 36px;
     right: 4.1%;
     top: 176px;
-    //border: 1px solid black;
+    /*border: 1px solid black;*/
 }
 
 /* Блок с двигающимися обложками */
 div.book-slider-out {
-    //width: 860px;
     width: 86.6%;
     height: 160px;
     overflow: hidden;
@@ -743,15 +726,14 @@ div.book-slider-out {
     top: 12px;
     z-index: 1;
     padding-left: 5px;
-    //border: 1px solid black;
+    /*border: 1px solid black;*/
 }
 
 div.book-slider-in {
-    //width: 2805px;
     width: 4700px;
-    //transform: translateX(-935px);
+    /*transform: translateX(-935px);*/
     transition: transform .8s ease;
-    //border: 1px solid black;
+    /*border: 1px solid black;*/
 }
 
 /* Обложки книг на полках и отступы между ними */
@@ -768,7 +750,6 @@ div.book-slider-in > a > img {
 
 /* Блок с двигающимися подписями к обложкам книг на полках */
 div.book-title-slider-out {
-    //width: 885px;
     width: 89.1%;
     height: 120px;
     overflow: hidden;
@@ -777,13 +758,12 @@ div.book-title-slider-out {
     top: 50px;
     z-index: 1; /* Без этого ссылки после первого же transform перестают быть кликабельными */
     background-color: transparent;
-    //border: 1px solid black;
+    /*border: 1px solid black;*/
 }
 
 div.book-title-slider-in {
-    //width: 2805px;
-    width: 4700px;    
-    //transform: translateX(-935px);
+    width: 4700px;
+    /*transform: translateX(-935px);*/
     transition: transform .8s ease;
 }
 
@@ -798,8 +778,7 @@ div.book-title-slider-in > .book-summary {
     height: 120px;
     white-space: nowrap;
     overflow: hidden;
-    //border: 1px solid black;
-    //background-color: black;
+    /*border: 1px solid black;*/
 }
 
 div.book-title-slider-in > .book-summary::before {
@@ -807,12 +786,10 @@ div.book-title-slider-in > .book-summary::before {
     display: block;
     position: absolute;
     top: 3px;
-    //width: 150px;
     width: 100%;
     height: 31px;
     background-image: linear-gradient(to right, transparent 70%, white);
-    //border: 1px solid black;
-    //background-color: black;
+    /*border: 1px solid black;*/
 }
 
 /*
@@ -868,9 +845,9 @@ div.book-title-slider-in > .book-summary > div.book-title {
     padding: 0;
     word-spacing: 1px;
     letter-spacing: 0.5px;
-    //overflow: hidden;
-    //white-space: nowrap;
-    //text-overflow: ellipsis;
+    /*overflow: hidden;*/
+    /*white-space: nowrap;*/
+    /*text-overflow: ellipsis;*/
 }
 
 /* Автор книги и общее количество его книг */
@@ -889,7 +866,7 @@ div.book-title-slider-in > .book-summary > div.book-author > div.author-name {
     font-family: Tahoma, sans-serif;
     font-size: 11px;
     color: black;
-    //word-spacing: 1px;
+    /*word-spacing: 1px;*/
     letter-spacing: 0.5px;
     text-decoration: underline;
 }
@@ -990,7 +967,6 @@ div.book-title-slider-in > .book-summary > div.book-author > div.book-count > sp
 div.manual {
     position: relative;
     margin-top: 446px;
-    //left: 42px;
     left: 18.5%;
 }
 
@@ -1004,7 +980,6 @@ div.manual > a > div.title {
     letter-spacing: 0.7px;
     color: #5f7495;
     text-decoration: underline;
-    //width: 120px;
     width: 52.86%;
     line-height: 20px;
     margin-bottom: 14px;
@@ -1015,7 +990,6 @@ div.manual > a > div.body {
     font-size: 10px;
     letter-spacing: 0.3px;
     color: #545454;
-    //width: 145px;
     width: 63.87%;
     line-height: 14px;
 }
@@ -1041,11 +1015,10 @@ div.bookmark-authors {
 div.shelf > div.authors-block {
     position: relative;
     top: 33px;
-    //left: 40px;
     left: 4%;
     width: 980px;
-    //width: 99.1%;
-    //border: 1px solid black;
+    /*width: 99.1%;*/
+    /*border: 1px solid black;*/
 }
 
 /* Каждый автор - это ссылка */
@@ -1053,14 +1026,13 @@ div.shelf > div.authors-block > .author-summary {
     display: inline-block;
     vertical-align: middle;
     padding-top: 1px;
-    //margin-right: 40px;
     margin-right: 4.08%;
     height: 200px;
     width: 120px;
     text-decoration: none;
     position: relative;
     z-index: 1;
-    //border: 1px solid black;
+    /*border: 1px solid black;*/
 }
 
 /*
@@ -1072,7 +1044,7 @@ div.shelf > div.authors-block > .author-summary > div.author-name {
     height: 35px;
     display: table-cell; /* Для выравнивания вложенного div-а по центру этого div-а (имеется в виду, по вертикали) */
     vertical-align: middle;
-    //border: 1px solid black;
+    /*border: 1px solid black;*/
 }
 
 /* внутренний блок */
@@ -1082,7 +1054,7 @@ div.shelf > div.authors-block > .author-summary > div.author-name > div {
     letter-spacing: 0.6px;
     color: #5f7495;
     text-decoration: underline;
-    //border: 1px solid black;
+    /*border: 1px solid black;*/
 }
 
 /* общее количество книг автора */
@@ -1129,11 +1101,9 @@ div.shelf > div.authors-block > .author-summary > div.book-count {
  *  SEO-блок
  */
 div.seo {
-    //width: 850px;
     width: 85.6%;
     position: relative;
     top: 37px;
-    //left: 56px;
     left: 5.6%;
 }
 
@@ -1159,8 +1129,8 @@ div.seo > div.body > p {
  *  Футер
  */
 footer {
-    //height: 500px;
-    //border: 1px solid black;
+    /*height: 500px;*/
+    /*border: 1px solid black;*/
 }
 
 /*
@@ -1168,21 +1138,18 @@ footer {
  */
 footer > div.shadow {
     position: relative;
-    //width: 1280px;
     width: 100%;
     height: 65px;
     background-color: white;
-    //border: 1px solid black;
+    /*border: 1px solid black;*/
 }
 
 footer > div.shadow::before {
     content: '';
     display: block;
     position: absolute;
-    //left: 20px;
     left: 1.56%;
     bottom: 0;
-    //width: 620px;
     width: 48.5%;
     height: 10px;
     box-shadow: 0 0 10px 0 #666;
@@ -1194,10 +1161,8 @@ footer > div.shadow::after {
     content: '';
     display: block;
     position: absolute;
-    //right: 20px;
     right: 1.56%;
     bottom: 0;
-    //width: 620px;
     width: 48.5%;
     height: 10px;
     box-shadow: 0 0 10px 0 #666;
@@ -1213,17 +1178,16 @@ footer > div.partners {
     width: 100%;
     padding-left: 0.5%;
     box-sizing: border-box;
-    //border: 1px solid black;
+    /*border: 1px solid black;*/
 }
 
 footer > div.partners > a {
     display: inline-block;
     vertical-align: middle;
     margin-bottom: 10px;
-    //margin-left: 117px;
     margin-left: 9%;
     text-decoration: none;
-    //border: 1px solid black;
+    /*border: 1px solid black;*/
 }
 
 /*
@@ -1231,10 +1195,9 @@ footer > div.partners > a {
  */
 footer > div.footer-shelf {
     position: relative;
-    //width: 1280px;
     width: 100%;
     height: 95px;
-    //border: 1px solid black;    
+    /*border: 1px solid black;    */
 }
 
 /* левая часть полки */
@@ -1242,10 +1205,9 @@ footer > div.footer-shelf > div.footer-shelf.shelf-part.shelf-left-part {
     position: absolute;
     top: 65px;
     left: 4.8%;
-    //width: 650px;
     width: 50.78%;
     height: 20px;
-    //border: 1px solid black;
+    /*border: 1px solid black;*/
 }
 
 /* правая часть полки */
@@ -1253,10 +1215,9 @@ footer > div.footer-shelf > div.footer-shelf.shelf-part.shelf-right-part {
     position: absolute;
     top: 65px;
     right: 5%;
-    //width: 650px;
     width: 50.78%;
     height: 20px;
-    //border: 1px solid black;
+    /*border: 1px solid black;*/
 }
 
 /* нижняя часть полки */
@@ -1264,7 +1225,6 @@ footer > div.footer-shelf > div.footer-shelf.shelf-part.shelf-bottom-part {
     position: absolute;
     top: 88px;
     left: 2.2%;
-    //width: 1220px;
     width: 95.3%;
     height: 17px;
 }
@@ -1274,7 +1234,7 @@ footer > div.footer-shelf > div.footer-shelf.shelf-part.shelf-bottom-part {
  */
 footer > div.under-footer-shelf {
     width: 100%;
-    //border: 1px solid black;
+    /*border: 1px solid black;*/
 }
 
 footer > div.under-footer-shelf > div {
@@ -1283,9 +1243,8 @@ footer > div.under-footer-shelf > div {
     font-family: Tahoma, sans-serif;
     letter-spacing: 0.3px;
     margin-top: 55px;
-    //margin-left: 15px;
     margin-left: 1.2%;
-    //border: 1px solid black;
+    /*border: 1px solid black;*/
 }
 
 footer > div.under-footer-shelf > div.copyright {

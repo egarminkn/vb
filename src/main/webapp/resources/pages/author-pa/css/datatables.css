@@ -4,7 +4,7 @@
 .dataTables_wrapper.no-footer {
     position: relative;
     margin-top: 20px;
-    //border: 1px solid black;
+    /*border: 1px solid black;*/
 }
 
 .dataTables_length,
@@ -18,7 +18,7 @@
     vertical-align: middle;
     box-sizing: border-box;
     height: 30px;
-    //border: 1px solid black;
+    /*border: 1px solid black;*/
 }
 
 /**
