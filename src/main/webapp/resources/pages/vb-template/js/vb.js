@@ -186,4 +186,15 @@ $(function () {
         // required полей и прочая валидация по паттернам, если таковая имеется
         accordion.find('div.' + checked).find('form').find('[type="submit"]').trigger('click');
     });
+
+    /*
+     * Боковой баннер-фильтр "Выберите категорию"
+     */
+    $('ul.rating-filter > li.rating-filter-group > ul.radios > label > li.radio').on('click', function (event) {
+        var radio = $(this).prev('input[type="radio"]');
+        if (radio.is(':checked')) {
+            radio.prop('checked', false);
+            event.preventDefault();
+        }
+    });
 });
