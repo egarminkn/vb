@@ -106,63 +106,71 @@ window.onresize = checkBodySize; // действие по событию изм�
 /**
  * Коррекция положения баблов-подсказок в зависимости от размера окна
  */
-function getDistanceBetweenBubbleAndRightWindowEdge(hintLeftOffset, bubbleLeft, bubbleWidth) {
-    return $(window).width() - (hintLeftOffset + bubbleLeft + bubbleWidth - $(document).scrollLeft());
+function getDistanceBetweenBubbleAndRightWindowEdge(elementLeftOffset, bubbleLeft, bubbleWidth) {
+    return $(window).width() - (elementLeftOffset + bubbleLeft + bubbleWidth - $(document).scrollLeft());
 }
 
-function correctHintsPosition() {
-    $('.hint').each(function () {
-        var bubble = $(this).find('.bubble');
+function correctBubblePosition(element) {
+    var bubble = element.find('.bubble');
 
-        /* установка номинальной ширины бабла перед тем, как начать его позиционировать */
-        bubble.outerWidth(bubble.css('max-width'));
+    /* установка номинальной ширины бабла перед тем, как начать его позиционировать */
+    bubble.outerWidth(bubble.css('max-width'));
 
-        var bubbleBefore = bubble.find('.before');
-        var bubbleLeft = parseFloat(bubble.css('left'));
-        var bubbleBeforeLeft = parseFloat(bubbleBefore.css('left'));
-        var distanceBetweenBubbleAndRightWindowEdge = getDistanceBetweenBubbleAndRightWindowEdge($(this).offset().left, bubbleLeft, bubble.outerWidth());
+    var bubbleBefore = bubble.find('.before');
+    var bubbleLeft = parseFloat(bubble.css('left'));
+    var bubbleBeforeLeft = parseFloat(bubbleBefore.css('left'));
+    var distanceBetweenBubbleAndRightWindowEdge = getDistanceBetweenBubbleAndRightWindowEdge(element.offset().left, bubbleLeft, bubble.outerWidth());
 
-        var bubbleNewLeft = bubbleLeft + distanceBetweenBubbleAndRightWindowEdge;
-        var bubbleBeforeNewLeft = bubbleBeforeLeft - distanceBetweenBubbleAndRightWindowEdge;
+    var bubbleNewLeft = bubbleLeft + distanceBetweenBubbleAndRightWindowEdge;
+    var bubbleBeforeNewLeft = bubbleBeforeLeft - distanceBetweenBubbleAndRightWindowEdge;
 
-        var bubbleBeforeLeftMin = 15.5;
-        var bubbleBeforeLeftMax = bubble.outerWidth() - bubbleBeforeLeftMin;
+    var bubbleBeforeLeftMin = 15.5;
+    var bubbleBeforeLeftMax = bubble.outerWidth() - bubbleBeforeLeftMin;
 
-        var correct = 0;
-        /* это блок проверки гарантирует, что бабл и его хвостик-ромбик не разлетятся в стороны друг от друга */
-        if (bubbleBeforeNewLeft < bubbleBeforeLeftMin) {
-            /* здесь делаем так, чтобы бабл от своего хвостика-ромбика не улетел вправо */
-            correct = bubbleBeforeLeftMin - bubbleBeforeNewLeft;
-        } else if (bubbleBeforeNewLeft > bubbleBeforeLeftMax) {
-            /* здесь делаем так, чтобы бабл от своего хвостика-ромбика не улетел влево */
-            correct = bubbleBeforeLeftMax - bubbleBeforeNewLeft;
-        }
-        bubbleNewLeft -= correct;
-        bubbleBeforeNewLeft += correct;
+    var correct = 0;
+    /* это блок проверки гарантирует, что бабл и его хвостик-ромбик не разлетятся в стороны друг от друга */
+    if (bubbleBeforeNewLeft < bubbleBeforeLeftMin) {
+        /* здесь делаем так, чтобы бабл от своего хвостика-ромбика не улетел вправо */
+        correct = bubbleBeforeLeftMin - bubbleBeforeNewLeft;
+    } else if (bubbleBeforeNewLeft > bubbleBeforeLeftMax) {
+        /* здесь делаем так, чтобы бабл от своего хвостика-ромбика не улетел влево */
+        correct = bubbleBeforeLeftMax - bubbleBeforeNewLeft;
+    }
+    bubbleNewLeft -= correct;
+    bubbleBeforeNewLeft += correct;
 
-        correct = 0;
-        /* это блок проверки гарантирует, что бабл не улетит за правый борт окна браузера */
-        if (getDistanceBetweenBubbleAndRightWindowEdge($(this).offset().left, bubbleNewLeft, bubble.outerWidth()) < 0) {
-            correct = -getDistanceBetweenBubbleAndRightWindowEdge($(this).offset().left, bubbleNewLeft, bubble.outerWidth());
-        }
-        bubbleNewLeft -= correct;
-        bubbleBeforeNewLeft += correct;
+    correct = 0;
+    /* это блок проверки гарантирует, что бабл не улетит за правый борт окна браузера */
+    if (getDistanceBetweenBubbleAndRightWindowEdge(element.offset().left, bubbleNewLeft, bubble.outerWidth()) < 0) {
+        correct = -getDistanceBetweenBubbleAndRightWindowEdge(element.offset().left, bubbleNewLeft, bubble.outerWidth());
+    }
+    bubbleNewLeft -= correct;
+    bubbleBeforeNewLeft += correct;
 
-        correct = 0;
-        /* это блок проверки гарантирует, что бабл не улетит за левый борт окна браузера */
-        if ($(this).offset().left + bubbleNewLeft - $(document).scrollLeft() < 0) {
-            correct = $(this).offset().left + bubbleNewLeft - $(document).scrollLeft();
-        }
-        bubbleNewLeft -= correct;
-        bubbleBeforeNewLeft += correct;
+    correct = 0;
+    /* это блок проверки гарантирует, что бабл не улетит за левый борт окна браузера */
+    if (element.offset().left + bubbleNewLeft - $(document).scrollLeft() < 0) {
+        correct = element.offset().left + bubbleNewLeft - $(document).scrollLeft();
+    }
+    bubbleNewLeft -= correct;
+    bubbleBeforeNewLeft += correct;
 
-        bubble.css('left', bubbleNewLeft + "px");
-        bubbleBefore.css('left', bubbleBeforeNewLeft + "px");
+    bubble.css('left', bubbleNewLeft + "px");
+    bubbleBefore.css('left', bubbleBeforeNewLeft + "px");
 
-        /* коррекция ширины бабла */
-        if (bubble.outerWidth() > $(window).width()) {
-            bubble.outerWidth($(window).width());
-        }
+    /* коррекция ширины бабла */
+    if (bubble.outerWidth() > $(window).width()) {
+        bubble.outerWidth($(window).width());
+    }
+}
+
+/**
+ * Установка правильных окончаний у слов "книг" в каждом элементе "Обложка и размещенная под ней сводная информация о книге и ее авторе"
+ */
+function correctBookCountEnding() {
+    $('.book-with-cover-and-summary > .book-summary > .book-title-and-author > a.book-author > .book-count > span.text').each(function() {
+        var count = parseInt($(this).find('.count').html());
+        $(this).find('.count-ending').html(getCorrectEnding(count, 'а', 'и', ''));
     });
 }
 
@@ -171,23 +179,16 @@ function correctHintsPosition() {
  */
 $(function () {
     /*
+     * После загрузки страницы:
+     * Установка правильных окончаний у слов "книг" в каждом элементе "Обложка и размещенная под ней сводная информация о книге и ее авторе"
+     */
+    correctBookCountEnding();
+
+    /*
      * Позиционирование всплывающих подсказок
      */
-    correctHintsPosition();
-
-    $(window).on("resize", function () {
-        correctHintsPosition();
-    });
-
-    $(window).on("scroll", function () {
-        correctHintsPosition();
-    });
-
-    /* для страницы shop-cart */
-    $('input[type="radio"].buy-process.payment-goods').on("change", function () {
-        if ($(this).is(':checked')) {
-            correctHintsPosition();
-        }
+    $('.hint').hover(function () { // on('mouseover',
+        correctBubblePosition($(this));
     });
 
     /*
