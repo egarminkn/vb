@@ -2,6 +2,928 @@
  *** Общее
  ***/
 /**
+ ** Обложка и размещенная под ней сводная информация о книги и ее авторе
+ **/
+/*
+ * Общая разметка
+ */
+.book-with-cover-and-summary {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    box-sizing: border-box;
+    width: 150px;
+    /*margin-left: calc(((100% - (15 * 100px)) / (15 * 2)) - 1.9px);*/
+    /*margin-right: calc(((100% - (15 * 100px)) / (15 * 2)) - 1.9px);*/
+    align-items: flex-start; /* либо center, либо flex-start */
+    height: 290px; /* от 280px до 330px */
+    /*border: 1px solid black;*/
+}
+
+/*
+ * Обложка-ссылка
+ */
+.book-with-cover-and-summary > a.book-cover {
+    display: block;
+    box-sizing: border-box;
+    width: 100px;
+    height: 160px;
+    text-decoration: none;
+    /*border: 1px solid black;*/
+}
+
+/* Тень к обложке */
+.book-with-cover-and-summary > a.book-cover > img {
+    box-sizing: border-box;
+    width: 100px;
+    height: 160px;
+    box-shadow: 2px 0 5px -2px #888,
+    -2px 0 5px -2px #888;
+    /*border: 1px solid black;*/
+}
+
+/*
+ * Сводная информация о книге и ее авторе
+ */
+.book-with-cover-and-summary > .book-summary {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-start;
+    box-sizing: border-box;
+    height: 120px;
+    width: 100%;
+    position: relative;
+    /*border: 1px solid black;*/
+}
+
+.book-with-cover-and-summary > .book-summary > .book-title-and-author {
+    box-sizing: border-box;
+    width: 100%;
+    position: relative;
+    /*border: 1px solid black;*/
+}
+
+.book-with-cover-and-summary > .book-summary > .book-title-and-author .main {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-start;
+    box-sizing: border-box;
+    /*height: 35px;*/
+    width: 100%;
+    overflow: hidden;
+    /*text-overflow: ellipsis;*/
+    position: relative;
+    /*border: 1px solid black;*/
+}
+
+/* исчезание букв в тумане */
+.book-with-cover-and-summary > .book-summary > .book-title-and-author > .main::before {
+    content: '';
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    box-sizing: border-box;
+    width: 100%;
+    height: 100%;
+    background-image: linear-gradient(to right, transparent 70%, white);
+    pointer-events: none;
+    /*border: 1px solid black;*/
+}
+
+/* всплывающий бабл-подсказка с полной информацией о книге (полное название, имя автора и общее количество книг этого автора) */
+.book-with-cover-and-summary > .book-summary > .book-title-and-author > .bubble {
+    max-width: 185px;
+    top: calc(100% + 5px);
+    left: 0;
+}
+
+.book-with-cover-and-summary > .book-summary > .book-title-and-author > .main:hover + .bubble {
+    display: block;
+}
+
+.book-with-cover-and-summary > .book-summary > .book-title-and-author > .bubble > .main {
+    padding-bottom: 1px;
+}
+
+.book-with-cover-and-summary > .book-summary > .book-title-and-author > .bubble > .main > a.book-title > span.text {
+    white-space: normal;
+    word-break: break-word; /* это значение недопустимо, но только так Chrome вначале переносит по пробелам, а только потом начинает разрывать слова */
+    hyphens: auto; /* Chrome переносы не ставит */
+
+    color: white;
+    border-bottom: 1px solid white;
+}
+
+.book-with-cover-and-summary > .book-summary > .book-title-and-author > .bubble > .main > a.book-author {
+    flex-wrap: wrap;
+}
+
+.book-with-cover-and-summary > .book-summary > .book-title-and-author > .bubble > .main > a.book-author > .author-name > span.text {
+    white-space: normal;
+    word-break: break-word; /* это значение недопустимо, но только так Chrome вначале переносит по пробелам, а только потом начинает разрывать слова */
+    hyphens: auto; /* Chrome переносы не ставит */
+
+    color: white;
+    border-bottom: 1px solid white;
+}
+
+.book-with-cover-and-summary > .book-summary > .book-title-and-author > .bubble > .main > a.book-author > .book-count {
+    color: white;
+}
+
+.book-with-cover-and-summary > .book-summary > .book-title-and-author > .bubble > .main > a.book-author > .book-count > span.text {
+    white-space: normal;
+    word-break: break-word; /* это значение недопустимо, но только так Chrome вначале переносит по пробелам, а только потом начинает разрывать слова */
+    hyphens: auto; /* Chrome переносы не ставит */
+
+    color: white;
+    border-bottom: 1px solid white;
+}
+
+/* название книги */
+.book-with-cover-and-summary > .book-summary > .book-title-and-author .main > a.book-title {
+    display: block;
+    text-decoration: none;
+    /*border: 1px solid black;*/
+}
+
+.book-with-cover-and-summary > .book-summary > .book-title-and-author .main > a.book-title > span.text {
+    font-family: Tahoma, sans-serif;
+    font-size: 13px;
+    color: #5f7495;
+    word-spacing: 1px;
+    letter-spacing: 0.5px;
+    white-space: nowrap;
+    border-bottom: 1px solid #5f7495;
+}
+
+/* автор книги и общее количество его книг */
+.book-with-cover-and-summary > .book-summary > .book-title-and-author .main > a.book-author {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    flex-wrap: nowrap;
+    text-decoration: none;
+    /*border: 1px solid black;*/
+}
+
+/* Доп.класс hidden-author нужен для страницы "Автора" (author), чтобы скрыть имя автора и общее количество его книг */
+.book-with-cover-and-summary.hidden-author > .book-summary > .book-title-and-author .main > a.book-author {
+    display: none;
+}
+
+/* имя автора */
+.book-with-cover-and-summary > .book-summary > .book-title-and-author .main > a.book-author > .author-name {
+    margin-right: 5px;
+}
+
+.book-with-cover-and-summary > .book-summary > .book-title-and-author .main > a.book-author > .author-name > span.text {
+    font-family: Tahoma, sans-serif;
+    font-size: 11px;
+    color: black;
+    /*word-spacing: 1px;*/
+    letter-spacing: 0.5px;
+    white-space: nowrap;
+    border-bottom: 1px solid black;
+}
+
+/* общее количество книг автора */
+.book-with-cover-and-summary > .book-summary > .book-title-and-author .main > a.book-author > .book-count {
+    font-family: Tahoma, sans-serif;
+    font-size: 10px;
+    color: #888;
+    word-spacing: 1px;
+}
+
+.book-with-cover-and-summary > .book-summary > .book-title-and-author .main > a.book-author > .book-count > span.text {
+    white-space: nowrap;
+    border-bottom: 1px solid #888;
+}
+
+/* дата публикации книги автора */
+.book-with-cover-and-summary > .book-summary > .book-publish-date {
+    font-family: 'Myriad Pro Regular';
+    font-size: 14px;
+    color: black;
+    /*border: 1px solid black;*/
+}
+
+/* 5 звезд рейтинга книги */
+.book-with-cover-and-summary > .book-summary > .rating-5-stars {
+    /*border: 1px solid black;*/
+}
+
+/* пальчики-лайкчики */
+.book-with-cover-and-summary > .book-summary > .likes {
+    /*border: 1px solid black;*/
+}
+
+/* ценник под книгой */
+.book-with-cover-and-summary > .book-summary > .price-under-book {
+    /*border: 1px solid black;*/
+}
+
+/**
+ ** Горизонтальное меню переходов на id-шники той же страницы
+ **/
+ul.nav {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    margin: 10px 0 10px 5px;
+    padding: 0;
+    list-style: none;
+    /*border: 1px solid black;*/
+}
+
+ul.nav > li.nav-item:not(:last-child) {
+    margin-right: 20px;
+}
+
+ul.nav > li.nav-item > a {
+    font-family: Tahoma, sans-serif;
+    font-size: 13px;
+    color: #657392;
+    text-decoration: none;
+    border-bottom: 1px solid #657392;
+}
+
+/**
+ ** Боковой баннер-фильтр "Выберите категорию"
+ **/
+/*
+ * Общая настройка
+ */
+ul.rating-filter,
+ul.rating-filter > li.rating-filter-group > ul.radios {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    /*border: 1px solid red;*/
+}
+
+ul.rating-filter {
+    border: 1px dashed #e1e1e1;
+    border-radius: 5px;
+    padding: 15px 15px;
+    max-width: 190px;
+    /*border: 1px solid red;*/
+}
+
+ul.rating-filter > li.rating-filter-header,
+ul.rating-filter > li.rating-filter-group:not(:last-child) {
+    margin-bottom: 20px;
+}
+
+/*
+ * Заголовки
+ */
+ul.rating-filter > li.rating-filter-header > h2 {
+    display: inline;
+    font-family: Tahoma, sans-serif;
+    font-size: 16px;
+    color: #ccbd54;
+    font-weight: normal;
+    text-decoration: none;
+    border-bottom: 1px solid #ccbd54;
+}
+
+ul.rating-filter > li.rating-filter-group > h3 {
+    display: inline;
+    font-family: Tahoma, sans-serif;
+    font-size: 16px;
+    color: black;
+    font-weight: normal;
+    text-decoration: none;
+    border-bottom: 1px solid black;
+}
+
+/*
+ * Пункты категорий
+ */
+ul.rating-filter > li.rating-filter-group > ul.radios > label > input[type="radio"] {
+    display: none;
+}
+
+ul.rating-filter > li.rating-filter-group > ul.radios > label > li.radio {
+    font-family: Tahoma, sans-serif;
+    font-size: 12px;
+    color: #657392;
+    cursor: pointer;
+    border-radius: 5px;
+    margin-top: 5px;
+    padding: 5px;
+}
+
+ul.rating-filter > li.rating-filter-group > ul.radios > label > input[type="radio"]:checked + li.radio {
+    background-color: #d3be4a;
+}
+
+/**
+ **  Меню перехода на страницу пооиска книг
+ **/
+ul.top-level {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    border: 1px dashed #e1e1e1;
+    border-radius: 5px;
+    padding: 45px 15px;
+    max-width: 180px;
+
+    /* Для того чтобы Chrome не добавлял лишние отступы */
+    -webkit-margin-before: 0;
+    -webkit-margin-after: 0;
+}
+
+ul.top-level > ul.bottom-level {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    margin-bottom: 20px;
+}
+
+ul.top-level > li.top-level-link {
+    margin-bottom: 7.5px;
+}
+
+ul.top-level > ul.bottom-level > li.bottom-level-link {
+    margin-bottom: 5px;
+}
+
+ul.top-level > li.top-level-link > a {
+    font-family: Tahoma, sans-serif;
+    font-size: 17px;
+    color: black;
+    letter-spacing: 0.3px;
+    text-decoration: none;
+    border-bottom: 1px solid black;
+}
+
+ul.top-level > ul.bottom-level > li.bottom-level-link > a {
+    font-family: Tahoma, sans-serif;
+    font-size: 12px;
+    color: #5f7495;
+    letter-spacing: 0.3px;
+    text-decoration: none;
+    border-bottom: 1px solid #5f7495;
+}
+
+/**
+ ** Оглавление книги
+ **/
+.book-toc {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    height: 100%;
+    /*border: 1px solid red;*/
+}
+
+/*
+ * Заголовок
+ */
+.book-toc > h2 {
+    font-family: Tahoma, sans-serif;
+    font-size: 24px;
+    font-weight: normal;
+    margin: 0;
+    margin-bottom: 20px;
+    /*border: 1px solid green;*/
+}
+
+/*
+ * Оглавление
+ */
+.book-toc > input[type="radio"][name="chapter"] {
+    display: none;
+}
+
+.book-toc > ul.level.level-1 {
+    overflow-y: auto;
+    height: 100%;
+    /*border: 1px solid black;*/
+}
+
+.book-toc > ul.level.level-1 > li:last-child {
+    margin-bottom: 5px;
+}
+
+.book-toc ul.level {
+    display: block;
+    padding: 0;
+    margin: 0;
+    list-style-type: none;
+    counter-reset: cntr;
+}
+
+.book-toc ul.level > li {
+    display: block;
+    /*border: 1px solid red;*/
+}
+
+.book-toc ul.level > li > ul.level > li {
+    padding-left: 20px;
+}
+
+.book-toc .text-dots-page {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: flex-start;
+    font-family: Tahoma, sans-serif;
+    font-size: 16px;
+    text-decoration: none;
+    color: black;
+    border-radius: 5px;
+    cursor: pointer;
+    padding-bottom: 7px;
+    /*background-color: #d3be4a;*/
+    /*border: 1px solid black;*/
+}
+
+.book-toc .text-dots-page::before {
+    content: counters(cntr, ".") ". ";
+    counter-increment: cntr;
+    background-color: #d3be4a;
+    background-image: linear-gradient(#fefdfa, #f7f5e5);
+    position: relative;
+    left: 0;
+    bottom: -4px;
+}
+
+.book-toc .text-dots-page > .chapter {
+    position: relative;
+    white-space: normal;
+    width: 100%;
+    border-bottom: 1px dotted black;
+}
+
+.book-toc .text-dots-page > .chapter > span {
+    background-color: #d3be4a;
+    background-image: linear-gradient(#fefdfa, #f7f5e5);
+    bottom: -4px;
+}
+
+.book-toc .text-dots-page > .chapter > span.text {
+    position: relative;
+    left: 0;
+    padding-right: 5px;
+    white-space: normal;
+    margin-right: 20px;
+}
+
+.book-toc .text-dots-page > .chapter > span.page {
+    position: absolute;
+    right: 0;
+    padding-left: 5px;
+}
+
+/*
+ * Оглавление - Выбор главы
+ */
+.book-toc > input[type="radio"].chapter.chapter-1:checked ~ ul.level.level-1 label.text-dots-page.chapter-1,
+.book-toc > input[type="radio"].chapter.chapter-2:checked ~ ul.level.level-1 label.text-dots-page.chapter-2,
+.book-toc > input[type="radio"].chapter.chapter-3:checked ~ ul.level.level-1 label.text-dots-page.chapter-3,
+.book-toc > input[type="radio"].chapter.chapter-4:checked ~ ul.level.level-1 label.text-dots-page.chapter-4,
+.book-toc > input[type="radio"].chapter.chapter-5:checked ~ ul.level.level-1 label.text-dots-page.chapter-5,
+.book-toc > input[type="radio"].chapter.chapter-6:checked ~ ul.level.level-1 label.text-dots-page.chapter-6,
+.book-toc > input[type="radio"].chapter.chapter-7:checked ~ ul.level.level-1 label.text-dots-page.chapter-7,
+.book-toc > input[type="radio"].chapter.chapter-8:checked ~ ul.level.level-1 label.text-dots-page.chapter-8,
+.book-toc > input[type="radio"].chapter.chapter-9:checked ~ ul.level.level-1 label.text-dots-page.chapter-9,
+.book-toc > input[type="radio"].chapter.chapter-10:checked ~ ul.level.level-1 label.text-dots-page.chapter-10 {
+    background-color: #d3be4a;
+}
+
+.book-toc > input[type="radio"].chapter.chapter-1:checked ~ ul.level.level-1 label.text-dots-page.chapter-1 > .chapter > span,
+.book-toc > input[type="radio"].chapter.chapter-2:checked ~ ul.level.level-1 label.text-dots-page.chapter-2 > .chapter > span,
+.book-toc > input[type="radio"].chapter.chapter-3:checked ~ ul.level.level-1 label.text-dots-page.chapter-3 > .chapter > span,
+.book-toc > input[type="radio"].chapter.chapter-4:checked ~ ul.level.level-1 label.text-dots-page.chapter-4 > .chapter > span,
+.book-toc > input[type="radio"].chapter.chapter-5:checked ~ ul.level.level-1 label.text-dots-page.chapter-5 > .chapter > span,
+.book-toc > input[type="radio"].chapter.chapter-6:checked ~ ul.level.level-1 label.text-dots-page.chapter-6 > .chapter > span,
+.book-toc > input[type="radio"].chapter.chapter-7:checked ~ ul.level.level-1 label.text-dots-page.chapter-7 > .chapter > span,
+.book-toc > input[type="radio"].chapter.chapter-8:checked ~ ul.level.level-1 label.text-dots-page.chapter-8 > .chapter > span,
+.book-toc > input[type="radio"].chapter.chapter-9:checked ~ ul.level.level-1 label.text-dots-page.chapter-9 > .chapter > span,
+.book-toc > input[type="radio"].chapter.chapter-10:checked ~ ul.level.level-1 label.text-dots-page.chapter-10 > .chapter > span {
+    background-image: none;
+}
+
+.book-toc > input[type="radio"].chapter.chapter-1:checked ~ ul.level.level-1 label.text-dots-page.chapter-1::before,
+.book-toc > input[type="radio"].chapter.chapter-2:checked ~ ul.level.level-1 label.text-dots-page.chapter-2::before,
+.book-toc > input[type="radio"].chapter.chapter-3:checked ~ ul.level.level-1 label.text-dots-page.chapter-3::before,
+.book-toc > input[type="radio"].chapter.chapter-4:checked ~ ul.level.level-1 label.text-dots-page.chapter-4::before,
+.book-toc > input[type="radio"].chapter.chapter-5:checked ~ ul.level.level-1 label.text-dots-page.chapter-5::before,
+.book-toc > input[type="radio"].chapter.chapter-6:checked ~ ul.level.level-1 label.text-dots-page.chapter-6::before,
+.book-toc > input[type="radio"].chapter.chapter-7:checked ~ ul.level.level-1 label.text-dots-page.chapter-7::before,
+.book-toc > input[type="radio"].chapter.chapter-8:checked ~ ul.level.level-1 label.text-dots-page.chapter-8::before,
+.book-toc > input[type="radio"].chapter.chapter-9:checked ~ ul.level.level-1 label.text-dots-page.chapter-9::before,
+.book-toc > input[type="radio"].chapter.chapter-10:checked ~ ul.level.level-1 label.text-dots-page.chapter-10::before {
+    background-image: none;
+}
+
+/**
+ ** Группа-радиокнопок-аккордион
+ **/
+/*
+ * Общая часть
+ */
+.payment-modes {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: stretch;
+    /*border: 1px solid black;*/
+}
+
+/*
+ * radio-кнопки
+ */
+.payment-modes > .payment-modes-accordion {
+    /*border: 1px solid black;*/
+}
+
+.payment-modes > .payment-modes-accordion > input[type="radio"].radio-payment-mode {
+    display: none;
+}
+
+.payment-modes > .payment-modes-accordion > .payment-mode {
+    margin-top: 5px;
+}
+
+.payment-modes > .payment-modes-accordion > .payment-mode > .text {
+    display: inline-block;
+    vertical-align: middle;
+    font-family: Tahoma, sans-serif;
+    font-size: 14px;
+    line-height: 12px;
+    cursor: pointer;
+    /*border: 1px solid black;*/
+}
+
+.payment-modes > .payment-modes-accordion > .payment-mode > .figure {
+    display: inline-block;
+    vertical-align: middle;
+    box-sizing: content-box;
+    width: 10px;
+    height: 10px;
+    border: 3px solid #ccc;
+    border-radius: 50%;
+    position: relative;
+    cursor: pointer;
+}
+
+.payment-modes > .payment-modes-accordion > input[type="radio"].radio-payment-mode.radio-yandex-money-wallet-mode:checked ~ .payment-mode.yandex-money-wallet-mode > .figure::before,
+.payment-modes > .payment-modes-accordion > input[type="radio"].radio-payment-mode.radio-yandex-money-card-mode:checked ~ .payment-mode.yandex-money-card-mode > .figure::before,
+.payment-modes > .payment-modes-accordion > input[type="radio"].radio-payment-mode.radio-webmoney-mode:checked ~ .payment-mode.webmoney-mode > .figure::before,
+.payment-modes > .payment-modes-accordion > input[type="radio"].radio-payment-mode.radio-robokassa-mode:checked ~ .payment-mode.robokassa-mode > .figure::before {
+    content: '';
+    display: block;
+    position: absolute;
+    top: 2px;
+    left: 2px;
+    box-sizing: border-box;
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background-color: #667393;
+}
+
+/*
+ * Раздвижение блока с выбранным способом платежа
+ */
+@keyframes overflow-visible {
+    from {
+        overflow: hidden;
+    }
+    to {
+        overflow: visible;
+    }
+}
+
+.payment-modes > .payment-modes-accordion > input[type="radio"].radio-payment-mode.radio-yandex-money-card-mode:checked ~ .payment-mode.yandex-money-card-mode > .info {
+    animation: 3s overflow-visible;
+    animation-fill-mode: forwards;
+    height: 160px;
+}
+
+.payment-modes > .payment-modes-accordion > input[type="radio"].radio-payment-mode.radio-yandex-money-wallet-mode:checked ~ .payment-mode.yandex-money-wallet-mode > .info,
+.payment-modes > .payment-modes-accordion > input[type="radio"].radio-payment-mode.radio-webmoney-mode:checked ~ .payment-mode.webmoney-mode > .info {
+    animation: 3s overflow-visible;
+    animation-fill-mode: forwards;
+    height: 50px;
+}
+
+/*
+ *  Поля ввода реквизитов
+ */
+.payment-modes > .payment-modes-accordion > .payment-mode > .info {
+    font-size: 12px;
+    width: 300px;
+    margin-top: 5px;
+    margin-left: 10%;
+    padding-left: 5px;
+    padding-right: 5px;
+    overflow: hidden;
+    height: 0px;
+    transition-property: height;
+    transition-duration: 0.8s;
+    transition-timing-function: ease-in-out;
+    /*border: 1px solid black;*/
+}
+
+.payment-modes > .payment-modes-accordion > .payment-mode > .info > form {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    width: 100%;
+    height: 100%;
+    /*border: 1px solid black;*/
+}
+
+.payment-modes > .payment-modes-accordion > .payment-mode > .info > form > .row {
+    width: 100%;
+}
+
+.payment-modes > .payment-modes-accordion > .payment-mode > .info > form > .row:last-of-type {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.payment-modes > .payment-modes-accordion > .payment-mode > .info > form > .row > .cell {
+    width: 100%;
+    /*border: 1px solid black;*/
+}
+
+.payment-modes > .payment-modes-accordion > .payment-mode > .info > form > .row > .cell:not(:first-child) {
+    margin-left: 5px;
+}
+
+.payment-modes > .payment-modes-accordion > .payment-mode > .info > form > .row > .cell > label {
+    display: inline-block;
+    vertical-align: middle;
+    width: 100%;
+    /*border: 1px solid black;*/
+}
+
+.payment-modes > .payment-modes-accordion > .payment-mode > .info > form > .row > .cell > label > .text {
+    font-family: Tahoma, sans-serif;
+    font-size: 12px;
+    line-height: 10px;
+    display: inline-block;
+    vertical-align: middle;
+    /*border: 1px solid black;*/
+}
+
+.payment-modes > .payment-modes-accordion > .payment-mode > .info > form > .row > .cell > label > .hint {
+    margin-left: 5px;
+    display: inline-block;
+    vertical-align: middle;
+    /*border: 1px solid black;*/
+}
+
+.payment-modes > .payment-modes-accordion > .payment-mode > .info > form > .row > .cell > .skew-outer {
+    display: block;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    background-color: white;
+}
+
+/* стилизация банковских реквизитов */
+.payment-modes > .payment-modes-accordion > .payment-mode.yandex-money-card-mode > .info > form > .row > .cell.card-holder input {
+    text-transform: uppercase;
+}
+
+.payment-modes > .payment-modes-accordion > .payment-mode.yandex-money-card-mode > .info > form > .row > .cell.card-num .card-type {
+    display: inline-block;
+    vertical-align: middle;
+    font-family: Tahoma, sans-serif;
+    font-size: 12px;
+    float: right;
+    margin-right: 10px;
+    color: #ccc;
+    /*border: 1px solid black;*/
+}
+
+.payment-modes.get-money > .payment-modes-accordion > .payment-mode.robokassa-mode {
+    display: none;
+}
+
+/*
+ * Группа чекбоксов - "Сохранить реквизиты платежа" и "Разрешить автоплатеж"
+ */
+.payment-modes > .checkbox-group {
+    margin: auto;
+    /*border: 1px solid black;*/
+}
+
+.payment-modes.buy-book > .checkbox-group {
+    display: none;
+}
+
+.payment-modes > .checkbox-group > .allow-auto-payment {
+    pointer-events: none;
+    color: #ddd;
+}
+.payment-modes > .checkbox-group > .allow-auto-payment > .checkbox {
+    border-color: #eee;
+}
+.payment-modes > .checkbox-group > .allow-auto-payment > .checkbox::after {
+    border-color: #ddd;
+}
+
+.payment-modes > .checkbox-group > input.save-payment-details:checked ~ .allow-auto-payment {
+    pointer-events: auto;
+    color: black;
+}
+.payment-modes > .checkbox-group > input.save-payment-details:checked ~ .allow-auto-payment > .checkbox {
+    border-color: #ccc;
+}
+.payment-modes > .checkbox-group > input.save-payment-details:checked ~ .allow-auto-payment > .checkbox::after {
+    border-color: #667393;
+}
+
+.payment-modes > .checkbox-group > input[type="checkbox"] {
+    display: none;
+}
+
+.payment-modes > .checkbox-group > .text-checkbox {
+    margin-top: 5px;
+}
+
+.payment-modes > .checkbox-group > .text-checkbox > .checkbox {
+    margin-right: 5px;
+}
+
+.payment-modes > .checkbox-group > input[type="checkbox"].save-payment-details:checked ~ .text-checkbox.save-payment-details > .checkbox::after,
+.payment-modes > .checkbox-group > input[type="checkbox"].allow-auto-payment:checked ~ .text-checkbox.allow-auto-payment > .checkbox::after {
+    display: block;
+}
+
+/**
+ ** Кнопка
+ **/
+.btn {
+    display: inline-block;
+    vertical-align: middle;
+    font-family: Tahoma, sans-serif;
+    font-size: 14px;
+    color: black;
+    text-decoration: none;
+    border-style: none;
+    border-top-left-radius: 10px 5px;
+    border-top-right-radius: 10px 5px;
+    border-bottom-left-radius: 10px 5px;
+    border-bottom-right-radius: 10px 5px;
+    padding: 5px 10px;
+    background-image: linear-gradient(to top, #dbdbdb, #f0f0f0);
+    cursor: pointer;
+    outline: none;
+}
+
+.btn:active {
+    box-shadow: inset 0 0 5px 0 #666;
+}
+
+/**
+ ** Форма отправки отзыва
+ **/
+form.send-review.textarea {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-end;
+    /*border: 1px solid black;*/
+}
+
+form.send-review.textarea textarea {
+    font-family: 'Myriad Pro Regular';
+    font-size: 16px;
+    color: #5e5e5e;
+    box-sizing: border-box;
+    width: 100%;
+    height: 100px;
+    padding: 10px 20px;
+    border-radius: 5px;
+    resize: none;
+    outline: none;
+}
+
+form.send-review.textarea .textarea-info {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    align-items: flex-start;
+    margin: 5px 0 0 0;
+    /*border: 1px solid black;*/
+}
+
+/*
+ * Строка: Использовано 0 символов из 4000 возможных
+ */
+form.send-review.textarea .textarea-info .info {
+    font-family: Tahoma, sans-serif;
+    font-size: 12px;
+    color: #666;
+    margin-right: 10px;
+}
+
+/**
+ ** Наклонный textarea
+ **/
+.textarea {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-end;
+    /*border: 1px solid black;*/
+}
+
+.textarea .skew-outer {
+    width: 100%;
+}
+
+.textarea textarea.skew-inner {
+    display: block;
+    box-sizing: border-box;
+    width: calc(100% - 20px);
+    height: 100px;
+    margin: auto;
+    resize: none;
+    /*border: 1px solid black;*/
+}
+
+/*
+ * Строка: Использовано 0 символов из 4000 возможных
+ */
+.textarea .textarea-info {
+    font-family: Tahoma, sans-serif;
+    font-size: 12px;
+    color: #666;
+    display: inline-block;
+    vertical-align: middle;
+    margin-right: -15px;
+    margin-top: 5px;
+}
+
+/**
+ ** Наклонные select-ы
+ **/
+select {
+    font-family: Tahoma, sans-serif;
+    font-size: 12px;
+    box-sizing: border-box;
+    height: 25px;
+    padding-right: 30px;
+
+    appearance: none; /* Общее, не знаю браузер, который использует это свойство */
+    -moz-appearance: none; /* Для Firefox */
+    -webkit-appearance: none; /* Для Chrome и возможно для Safari */
+
+    background-image: url('../svg/vb/dropdown.svg');
+    background-size: 35px 35px;
+    background-repeat: no-repeat;
+    background-position: calc(100% + 7px) center;
+    cursor: pointer;
+}
+
+.skew-outer.select {
+    background-image: linear-gradient(to top, #d5d5d5, white);
+    background-size: 50% 100%;
+    background-repeat: no-repeat;
+    background-position: right center;
+    padding-right: 3px;
+}
+
+/**
+ ** Наклонные input-ы
+ **/
+.skew-outer {
+    display: inline-block;
+    padding-left: 4px;
+    padding-right: 4px;
+    border: 1px solid #c3c3c3;
+    transform: skewX(15deg);
+}
+
+.skew-inner {
+    outline-style: none;
+    border-style: none;
+    transform: skewX(-15deg);
+    font-family: Tahoma, sans-serif;
+    font-size: 12px;
+    box-sizing: border-box;
+    height: 25px;
+    width: 100%;
+}
+
+/**
  ** Фото автора в маске-обрезалке
  **/
 .author-photo {
@@ -52,7 +974,7 @@
     position: relative;
 }
 
-.hint .question-mark {
+.hint > .question-mark {
     display: block;
     width: 14px;
     height: 14px;
@@ -61,20 +983,25 @@
     cursor: pointer;
 }
 
-.hint .question-mark.blue {
+.hint > .question-mark.blue {
     background-image: url('../svg/vb/question-mark-blue.svg');
 }
 
-.hint .question-mark:hover ~ .bubble,
-.hint .bubble:hover {
+.hint > .bubble {
+    top: 20px;
+    left: -15px;
+}
+
+.hint > .question-mark:hover + .bubble {
     display: block;
 }
 
-.hint .bubble {
+/*
+ * Общее для всплывающих баблов
+ */
+.bubble {
     display: none;
     position: absolute;
-    top: 20px;
-    left: -15px;
     font-family: Tahoma, sans-serif;
     font-size: 12px;
     white-space: normal;
@@ -88,8 +1015,11 @@
     z-index: 1000;
 }
 
-.hint .bubble .before {
-    content: '';
+.bubble:hover {
+    display: block;
+}
+
+.bubble > .before {
     display: block;
     position: absolute;
     top: -6px;
@@ -719,7 +1649,7 @@ div.likes .dislike::before {
 }
 
 /**
- ** Рейтинг автора
+ ** Рейтинг автора (3 звезды)
  **/
 .rating-3-stars {
     display: flex;
@@ -761,6 +1691,7 @@ div.likes .dislike::before {
 .rating-3-stars .rating-number {
     font-family: Tahoma, sans-serif;
     font-size: 14px;
+    line-height: 21px;
     color: black;
     letter-spacing: 0.3px;
     margin-left: 10px;

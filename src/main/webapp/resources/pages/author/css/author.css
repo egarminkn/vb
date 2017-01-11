@@ -539,9 +539,9 @@ main .left-column .rating-3-stars .rating-stars::before {
 }
 
 /*
- * Пальчики-лайкчики
+ * Пальчики-лайкчики за автора
  */
-.likes {
+.left-column .likes {
     margin-top: 20px;
 }
 
@@ -655,40 +655,13 @@ main .left-column .rating-3-stars .rating-stars::before {
     align-content: space-between;
 }
 
-.list .book {
+.books .list .book-with-cover-and-summary {
     margin-top: 20px;
-    width: 179px;
+    margin-right: 20px;
 }
 
-.book .cover {
-    margin-bottom: 0px;
-}
-
-.book div {
-    margin-bottom: 10px;
-}
-
-/* Заголовок книги автора */
-.book .title {
-    font-family: 'Myriad Pro Regular';
-    font-size: 14px;
-    color: #667493;
-    text-decoration: underline;
-    margin-top: 5px;
-    width: 150px;
-}
-
-/* Дата публикации книги автора */
-.book .date {
-    font-family: 'Myriad Pro Regular';
-    font-size: 14px;
-    color: black;
-}
-
-/*
- * Звездочки рейтинга книги
- */
-.book .rating-5-stars .rating-stars::before {
+/* Закраска звездочек рейтинга книги (на каждую книгу должна быть своя, т.к. рейтинги у всех книг разные) */
+.books .list .book-with-cover-and-summary .book-summary .rating-5-stars .rating-stars::before {
     width: 56px;
 }
 

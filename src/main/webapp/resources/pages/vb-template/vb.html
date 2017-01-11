@@ -994,30 +994,57 @@
                     <!-- END (Горизонтальное меню переходов на id-шники той же страницы) -->
 
                     <!-- START (Обложка и размещенная под ней сводная информация о книге и ее авторе) -->
-                    <div class="book-with-cover-and-summary">
+                    <!-- Доп.класс hidden-author нужен для страницы "Автора" (author), чтобы скрыть имя автора и общее количество его книг -->
+                    <div class="book-with-cover-and-summary ">
                         <a class="book-cover" href="#">
                             <img src="img/book1.jpg" width="230" height="368">
                         </a>
 
                         <div class="book-summary">
                             <div class="book-title-and-author">
-                                <a class="book-title" href="#">
-                                    <span class="text">
-                                        Древняя Русь в картинках
-                                    </span>
-                                </a>
-                                <a class="book-author" href="#">
-                                    <div class="author-name">
+                                <!-- В бабле ниже блок main повторяется один в один (копи-паст) -->
+                                <div class="main">
+                                    <a class="book-title" href="#">
                                         <span class="text">
-                                            А.А. Иванов
+                                            Древняя Русь в картинках
                                         </span>
+                                    </a>
+                                    <a class="book-author" href="#">
+                                        <div class="author-name">
+                                            <span class="text">
+                                                А.А. Иванов
+                                            </span>
+                                        </div>
+                                        <div class="book-count">
+                                            (<span class="text"><span class="count">21</span>
+                                            книг<span class="count-ending"></span></span>)
+                                        </div>
+                                    </a>
+                                </div>
+                                <div class="bubble">
+                                    <div class="before"></div>
+                                    <!-- Выше блок main повторяется один в один (копи-паст) -->
+                                    <div class="main">
+                                        <a class="book-title" href="#">
+                                            <span class="text">
+                                                Древняя Русь в картинках
+                                            </span>
+                                        </a>
+                                        <a class="book-author" href="#">
+                                            <div class="author-name">
+                                                <span class="text">
+                                                    А.А. Иванов
+                                                </span>
+                                            </div>
+                                            <div class="book-count">
+                                                (<span class="text"><span class="count">21</span>
+                                                книг<span class="count-ending"></span></span>)
+                                            </div>
+                                        </a>
                                     </div>
-                                    <div class="book-count">
-                                        (<span class="text"><span class="count">11</span>
-                                        книг<span class="count-ending"></span></span>)
-                                    </div>
-                                </a>
+                                </div>
                             </div>
+
                             <div class="book-publish-date">
                                 26 Янв 2016
                             </div>

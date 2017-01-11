@@ -117,21 +117,19 @@ function correctBubblePosition(element) {
     bubbleNewLeft -= correct;
     bubbleBeforeNewLeft += correct;
 
-    correct = 0;
     /* это блок проверки гарантирует, что бабл не улетит за правый борт окна браузера */
     if (getDistanceBetweenBubbleAndRightWindowEdge(element.offset().left, bubbleNewLeft, bubble.outerWidth()) < 0) {
-        correct = -getDistanceBetweenBubbleAndRightWindowEdge(element.offset().left, bubbleNewLeft, bubble.outerWidth());
+        var correct = -getDistanceBetweenBubbleAndRightWindowEdge(element.offset().left, bubbleNewLeft, bubble.outerWidth());
+        bubbleNewLeft -= correct;
+        bubbleBeforeNewLeft += correct;
     }
-    bubbleNewLeft -= correct;
-    bubbleBeforeNewLeft += correct;
 
-    correct = 0;
     /* это блок проверки гарантирует, что бабл не улетит за левый борт окна браузера */
     if (element.offset().left + bubbleNewLeft - $(document).scrollLeft() < 0) {
-        correct = element.offset().left + bubbleNewLeft - $(document).scrollLeft();
+        var correct = element.offset().left + bubbleNewLeft - $(document).scrollLeft();
+        bubbleNewLeft -= correct;
+        bubbleBeforeNewLeft += correct;
     }
-    bubbleNewLeft -= correct;
-    bubbleBeforeNewLeft += correct;
 
     bubble.css('left', bubbleNewLeft + "px");
     bubbleBefore.css('left', bubbleBeforeNewLeft + "px");
@@ -146,7 +144,7 @@ function correctBubblePosition(element) {
  * Установка правильных окончаний у слов "книг" в каждом элементе "Обложка и размещенная под ней сводная информация о книге и ее авторе"
  */
 function correctBookCountEnding() {
-    $('.book-with-cover-and-summary > .book-summary > .book-title-and-author > a.book-author > .book-count > span.text').each(function() {
+    $('.book-with-cover-and-summary > .book-summary > .book-title-and-author .main > a.book-author > .book-count > span.text').each(function() {
         var count = parseInt($(this).find('.count').html());
         $(this).find('.count-ending').html(getCorrectEnding(count, 'а', 'и', ''));
     });
@@ -166,6 +164,10 @@ $(function () {
      * Позиционирование всплывающих подсказок
      */
     $('.hint').hover(function () { // on('mouseover',
+        correctBubblePosition($(this));
+    });
+
+    $('.book-with-cover-and-summary > .book-summary > .book-title-and-author').on('mouseover', function () { // hover
         correctBubblePosition($(this));
     });
 
