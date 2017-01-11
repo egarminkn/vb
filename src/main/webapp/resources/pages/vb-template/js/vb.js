@@ -145,9 +145,25 @@ function correctHintsPosition() {
 }
 
 /**
+ * Установка правильных окончаний у слов "книг" в каждом элементе "Обложка и размещенная под ней сводная информация о книге и ее авторе"
+ */
+function correctBookCountEnding() {
+    $('.book-with-cover-and-summary > .book-summary > .book-title-and-author > a.book-author > .book-count > span.text').each(function() {
+        var count = parseInt($(this).find('.count').html());
+        $(this).find('.count-ending').html(getCorrectEnding(count, 'а', 'и', ''));
+    });
+}
+
+/**
  * После загрузки страницы
  */
 $(function () {
+    /*
+     * После загрузки страницы:
+     * Установка правильных окончаний у слов "книг" в каждом элементе "Обложка и размещенная под ней сводная информация о книге и ее авторе"
+     */
+    correctBookCountEnding();
+
     /*
      * Позиционирование всплывающих подсказок
      */

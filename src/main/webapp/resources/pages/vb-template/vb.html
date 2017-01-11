@@ -993,6 +993,68 @@
                     </ul>
                     <!-- END (Горизонтальное меню переходов на id-шники той же страницы) -->
 
+                    <!-- START (Обложка и размещенная под ней сводная информация о книге и ее авторе) -->
+                    <div class="book-with-cover-and-summary">
+                        <a class="book-cover" href="#">
+                            <img src="img/book1.jpg" width="230" height="368">
+                        </a>
+
+                        <div class="book-summary">
+                            <div class="book-title-and-author">
+                                <a class="book-title" href="#">
+                                    <span class="text">
+                                        Древняя Русь в картинках
+                                    </span>
+                                </a>
+                                <a class="book-author" href="#">
+                                    <div class="author-name">
+                                        <span class="text">
+                                            А.А. Иванов
+                                        </span>
+                                    </div>
+                                    <div class="book-count">
+                                        (<span class="text"><span class="count">11</span>
+                                        книг<span class="count-ending"></span></span>)
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="book-publish-date">
+                                26 Янв 2016
+                            </div>
+
+                            <!-- START (5 звезд рейтинга книги) -->
+                            <div class="rating-5-stars">
+                                <div class="rating-stars"></div>
+                                <div class="rating-number">2,3</div>
+                            </div>
+                            <!-- END (5 звезд рейтинга книги) -->
+
+                            <!-- START (Пальчики-лайкчики) -->
+                            <div class="likes">
+                                <a class="like" href="#">
+                                    1022
+                                </a>
+                                <a class="dislike" href="#">
+                                    51
+                                </a>
+                            </div>
+                            <!-- END (Пальчики-лайкчики) -->
+
+                            <!-- START (Ценник под книгой) -->
+                            <div class="price-under-book">
+                                <!-- Если книга отдается за даром, то:
+                                        1) к div добавляется класс free
+                                        2) цена меняется на слово "Бесплатно"
+                                        3) содержимое валюты удаляется
+                                -->
+                                <span class="value">20</span>
+                                <span class="currency">руб</span>
+                            </div>
+                            <!-- END (Ценник под книгой) -->
+                        </div>
+                    </div>
+                    <!-- END (Обложка и размещенная под ней сводная информация о книге и ее авторе) -->
+
                     <!-- START (Оглавление книги) -->
                     <!-- Если на странице несколько таких элементов, то нужно обеспечить уникальность имен групп radio-кнопок (name), уникальность их id-ков и соответствующих for-ов у label-ов -->
                     <div class="book-toc">

@@ -630,6 +630,168 @@ main .columns {
  *** Общее
  ***/
 /**
+ ** Обложка и размещенная под ней сводная информация о книги и ее авторе
+ **/
+/*
+ * Общая разметка
+ */
+.book-with-cover-and-summary {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    box-sizing: border-box;
+    width: 150px;
+    /*margin-left: calc(((100% - (15 * 100px)) / (15 * 2)) - 1.9px);*/
+    /*margin-right: calc(((100% - (15 * 100px)) / (15 * 2)) - 1.9px);*/
+    align-items: flex-start; /* либо center, либо flex-start */
+    height: 290px; /* от 280px до 330px */
+    /*border: 1px solid black;*/
+}
+
+/*
+ * Обложка-ссылка
+ */
+.book-with-cover-and-summary > a.book-cover {
+    display: block;
+    box-sizing: border-box;
+    width: 100px;
+    height: 160px;
+    text-decoration: none;
+    /*border: 1px solid black;*/
+}
+
+/* Тень к обложке */
+.book-with-cover-and-summary > a.book-cover > img {
+    box-sizing: border-box;
+    width: 100px;
+    height: 160px;
+    box-shadow: 2px 0 5px -2px #888,
+                -2px 0 5px -2px #888;
+    /*border: 1px solid black;*/
+}
+
+/*
+ * Сводная информация о книге и ее авторе
+ */
+.book-with-cover-and-summary > .book-summary {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-start;
+    box-sizing: border-box;
+    height: 120px;
+    width: 100%;
+    position: relative;
+    /*border: 1px solid black;*/
+}
+
+.book-with-cover-and-summary > .book-summary > .book-title-and-author {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-start;
+    box-sizing: border-box;
+    height: 35px;
+    width: 100%;
+    overflow: hidden;
+    /*text-overflow: ellipsis;*/
+    position: relative;
+    /*border: 1px solid black;*/
+}
+
+/* исчезание букв в тумане */
+.book-with-cover-and-summary > .book-summary > .book-title-and-author::before {
+    content: '';
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    box-sizing: border-box;
+    width: 100%;
+    height: 100%;
+    background-image: linear-gradient(to right, transparent 70%, white);
+    pointer-events: none;
+    /*border: 1px solid black;*/
+}
+
+/* название книги */
+.book-with-cover-and-summary > .book-summary > .book-title-and-author > a.book-title {
+    display: block;
+    text-decoration: none;
+}
+
+.book-with-cover-and-summary > .book-summary > .book-title-and-author > a.book-title > span.text {
+    font-family: Tahoma, sans-serif;
+    font-size: 13px;
+    color: #5f7495;
+    word-spacing: 1px;
+    letter-spacing: 0.5px;
+    white-space: nowrap;
+    border-bottom: 1px solid #5f7495;
+}
+
+/* автор книги и общее количество его книг */
+.book-with-cover-and-summary > .book-summary > .book-title-and-author > a.book-author {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    flex-wrap: nowrap;
+    text-decoration: none;
+}
+
+/* имя автора */
+.book-with-cover-and-summary > .book-summary > .book-title-and-author > a.book-author > .author-name {
+    margin-right: 5px;
+}
+
+.book-with-cover-and-summary > .book-summary > .book-title-and-author > a.book-author > .author-name > span.text {
+    font-family: Tahoma, sans-serif;
+    font-size: 11px;
+    color: black;
+    /*word-spacing: 1px;*/
+    letter-spacing: 0.5px;
+    white-space: nowrap;
+    border-bottom: 1px solid black;
+}
+
+/* общее количество книг автора */
+.book-with-cover-and-summary > .book-summary > .book-title-and-author > a.book-author > .book-count {
+    font-family: Tahoma, sans-serif;
+    font-size: 10px;
+    color: #888;
+    word-spacing: 1px;
+}
+
+.book-with-cover-and-summary > .book-summary > .book-title-and-author > a.book-author > .book-count > span.text {
+    white-space: nowrap;
+    border-bottom: 1px solid #888;
+}
+
+/* дата публикации книги автора */
+.book-with-cover-and-summary > .book-summary > .book-publish-date {
+    font-family: 'Myriad Pro Regular';
+    font-size: 14px;
+    color: black;
+    /*border: 1px solid black;*/
+}
+
+/* 5 звезд рейтинга книги */
+.book-with-cover-and-summary > .book-summary > .rating-5-stars {
+    /*border: 1px solid black;*/
+}
+
+/* пальчики-лайкчики */
+.book-with-cover-and-summary > .book-summary > .likes {
+    /*border: 1px solid black;*/
+}
+
+/* ценник под книгой */
+.book-with-cover-and-summary > .book-summary > .price-under-book {
+    /*border: 1px solid black;*/
+}
+
+/**
  ** Горизонтальное меню переходов на id-шники той же страницы
  **/
 ul.nav {
