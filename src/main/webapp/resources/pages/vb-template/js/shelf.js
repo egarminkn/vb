@@ -1,47 +1,71 @@
-var coversOut = null;
-var coversIn = null;
-var titlesIn = null;
-var leftArrow = null;
-var rightArrow = null;
+/**
+ * Константы
+ */
+var COUNT_BOOKS_ON_SHELF = 5; // отображаемое количество книг на полке
+var INIT_TOTAL_COUNT_BOOKS = 15; // начальное количество книг, подгруженное на любую полку
 
+/**
+ * Все полки на странице
+ */
+var shelves = [];
+
+/**
+ * После загрузки страницы
+ */
 $(document).ready(function() {
-    coversOut = $('.shelf').find('.book-slider-out');
-    coversIn = coversOut.find('.book-slider-in');
-    titlesIn = $('.shelf').find('.book-title-slider-out').find('.book-title-slider-in');
-    
-    leftArrow = $('.shelf-part.arrow.left-arrow');
-    rightArrow = $('.shelf-part.arrow.right-arrow');
-    
-    leftArrow.click(function() {
-        shelfShift(true);
-    });
-    rightArrow.click(function() {
-        shelfShift(false);
+    $('.shelf').each(function (index) {
+        shelves[index] = $(this);
+        shelves[index].totalCountBooks = INIT_TOTAL_COUNT_BOOKS; // После подгрузки AJAX-ом новых книг это значение будет меняться
+        shelves[index].find('.arrow.left-arrow').click(function () {
+            shelfShift(index, true);
+        });
+        shelves[index].find('.arrow.right-arrow').click(function () {
+            shelfShift(index, false);
+        });
     });
 });
 
 /**
- *  1. Расчет в процентах позволяет не беспокоиться о том, что юзер будет менять размеры окна браузера.
- *  2. Поставил стоперы if (leftPercent >= -100), чтобы нельзя было мотать полку сверх меры.
- *  3. После включения transient, т.е. плавной промотки полки, пришлось поставить проверку if (leftPercent % 100 === 0) на то, что предыдущая промотка завершена и можно снова ниживать на стрелочки.
+ * Обработчик событий сдвигов полки
  */
-function shelfShift(isLeftArrow) {
-    if (coversOut && coversIn && titlesIn) {
-        var shelfWidth = coversOut.width();
-        var leftPx = parseInt(coversIn.css('left'));
-        var leftPercent = 100 * leftPx / shelfWidth;
-        if (leftPercent % 100 === 0) {
-            if (isLeftArrow) {
-                if (leftPercent >= -100) {
-                    coversIn.css('left', (leftPercent - 100) + "%");
-                    titlesIn.css('left', (leftPercent - 100) + "%");
-                }
-            } else {
-                if (leftPercent <= -100) {
-                    coversIn.css('left', (leftPercent + 100) + "%");
-                    titlesIn.css('left', (leftPercent + 100) + "%");
-                }
+function shelfShift(shelfIndex, isLeftArrow) {
+    var booksOuter = shelves[shelfIndex].find('.book-slider-outer');
+    var booksInner = booksOuter.find('.book-slider-inner');
+
+    var shelfWidth = booksOuter.width();
+    var leftPx = parseInt(booksInner.css('left'));
+    var leftPercent = 100 * leftPx / shelfWidth; // Расчет в процентах позволяет не беспокоиться о том, что юзер будет менять размеры окна браузера.
+    if (leftPercent % 100 === 0) { // После включения transient, т.е. плавной промотки полки, пришлось поставить эту проверку на то, что предыдущая промотка завершена и можно снова нажимать на стрелочки.
+        var countScreens = shelves[shelfIndex].totalCountBooks / COUNT_BOOKS_ON_SHELF;
+        var countScreensOnTheLeft = Math.abs(leftPercent / 100);
+        var countScreensOnTheRight = countScreens - countScreensOnTheLeft - 1;
+
+        if (isLeftArrow) {
+            if (countScreensOnTheLeft > 0) { // Стопер, чтобы нельзя было мотать полку сверх меры.
+                booksInner.css('left', (leftPercent + 100) + "%");
+                countScreensOnTheLeft--;
+                countScreensOnTheRight++;
             }
+        } else {
+            if (countScreensOnTheRight > 0) { // Стопер, чтобы нельзя было мотать полку сверх меры.
+                booksInner.css('left', (leftPercent - 100) + "%");
+                countScreensOnTheRight--;
+                countScreensOnTheLeft++;
+            }
+        }
+
+        var rightArrow = shelves[shelfIndex].find('.arrow.right-arrow');
+        if (countScreensOnTheRight == 0) {
+            rightArrow.hide();
+        } else {
+            rightArrow.show()
+        }
+
+        var leftArrow = shelves[shelfIndex].find('.arrow.left-arrow');
+        if (countScreensOnTheLeft == 0) {
+            leftArrow.hide();
+        } else {
+            leftArrow.show();
         }
     }
 }

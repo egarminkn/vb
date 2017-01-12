@@ -623,12 +623,159 @@ main .columns {
 
 
 
-
-
+main .columns .column-2 {
+    max-width: 840px;
+    /*width: 650px;*/
+}
 
 /***
  *** Общее
  ***/
+/**
+ ** Книжная полка-слайдер
+ **/
+.shelf {
+    position: relative;
+    box-sizing: border-box;
+    min-width: 650px;
+    width: 100%;
+    /*border: 1px solid black;*/
+}
+
+/*
+ * Заголовок
+ */
+.shelf > .title {
+    font-family: Tahoma, sans-serif;
+    font-size: 20px;
+    padding: 5px;
+    /*border: 1px solid black;*/
+}
+
+/*
+ * Кнопки (стрелки) перемещения книг на полке
+ */
+.shelf > .arrow {
+    position: absolute;
+    display: block;
+    top: 110px;
+    width: 35px;
+    height: 32px;
+    transform: rotate(-55deg) skewX(-20deg);
+    cursor: pointer;
+    outline: none;
+    background: transparent;
+    z-index: 1;
+}
+
+/* левая */
+.shelf > .arrow.left-arrow {
+    display: none;
+    left: 5px;
+    border-right: none;
+    border-bottom: none;
+    border-left: 2px solid #cad9f1;
+    border-top: 2px solid #cad9f1;
+}
+
+.shelf > .arrow.left-arrow:active {
+    left: 4px;
+}
+
+/* правая */
+.shelf > .arrow.right-arrow {
+    right: 5px;
+    border-right: 2px solid #cad9f1;
+    border-bottom: 2px solid #cad9f1;
+    border-left: none;
+    border-top: none;
+}
+
+.shelf > .arrow.right-arrow:active {
+    right: 4px;
+}
+
+/*
+ * Блок с двигающимися книгами (внешний)
+ */
+.shelf > .book-slider-outer {
+    overflow: hidden;
+    position: relative;
+    box-sizing: border-box;
+    width: auto;
+    height: 330px;
+    min-width: 600px;
+    margin: 10px 25px;
+    padding: 0;
+    /*border: 1px solid red;*/
+}
+
+/*
+ * Составные части полки (в данном случае полка - это рисунок доски, нарисованной по частям)
+ */
+.shelf > .book-slider-outer > .shelf-figure {
+    position: absolute;
+    top: 0;
+    left: 0;
+    box-sizing: border-box;
+    width: 100%;
+    height: 100%;
+    /*border: 1px solid black;*/
+}
+
+.shelf > .book-slider-outer > .shelf-figure > .shelf-part {
+    margin: 147px 0 0 0;
+}
+
+/* Нижняя часть полки */
+.shelf > .book-slider-outer > .shelf-figure > .shelf-part.shelf-bottom-part {
+    margin-top: 0;
+    box-shadow: 0 10px 35px -6px #222;
+    /*border: 1px solid black;*/
+}
+
+/* Левая наклонная часть полки */
+.shelf > .book-slider-outer > .shelf-figure > .shelf-part.shelf-left-part {
+    margin-left: 27px;
+    /*border: 1px solid black;*/
+}
+
+/* Правая наклонная часть полки */
+.shelf > .book-slider-outer > .shelf-figure > .shelf-part.shelf-right-part {
+    margin-right: -31px;
+    /*border: 1px solid black;*/
+}
+
+/*
+ * Блок с двигающимися книгами (внутренний)
+ */
+.shelf > .book-slider-outer > .book-slider-inner {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    flex-wrap: nowrap;
+    box-sizing: border-box;
+    width: calc(100% * 3);
+    height: 100%;
+    padding: 0;
+    margin: 0;
+    position: relative;
+    top: 0;
+    left: 0;
+    transition: left .8s ease;
+    /*border: 2px solid green;*/
+}
+
+/* стилизация книг на полке */
+.shelf > .book-slider-outer > .book-slider-inner > .book-with-cover-and-summary {
+    align-items: center;
+    height: 100%;
+    width: 120px;
+    margin: 0 calc(((100% - (15 * 120px)) / (15 * 2)) - 0px);
+    /*border: 1px solid blue;*/
+}
+
 /**
  ** Обложка и размещенная под ней сводная информация о книги и ее авторе
  **/
@@ -1978,6 +2125,7 @@ div.likes {
     flex-direction: row;
     justify-content: flex-start;
     align-items: center;
+    flex-wrap: wrap;
     /*border: 1px solid black*/
 }
 
@@ -1993,6 +2141,10 @@ div.likes a {
     /*border: 1px solid black;*/
 }
 
+div.likes .like {
+    margin-right: 15px;
+}
+
 div.likes .like::before {
     content: '';
     display: inline-block;
@@ -2002,10 +2154,6 @@ div.likes .like::before {
     background-size: 100%;
     margin-right: 5px;
     /*border: 1px solid black;*/
-}
-
-div.likes .dislike {
-    margin-left: 15px;
 }
 
 div.likes .dislike::before {
