@@ -110,56 +110,44 @@ function getDistanceBetweenBubbleAndRightWindowEdge(elementLeftOffset, bubbleLef
     return $(window).width() - (elementLeftOffset + bubbleLeft + bubbleWidth - $(document).scrollLeft());
 }
 
-function correctBubblePosition(element) {
+function correctBubblePosition(element, event) {
+    /*
+     * Позиционирование ромбика-указателя
+     */
+    var bubbleBefore1 = element.find('.bubble-before.bubble-before-1');
+    var bubbleBefore1NewLeft = event.pageX - element.offset().left - 5;
+    bubbleBefore1.css('left', bubbleBefore1NewLeft + "px");
+
+    /*
+     * Позиционирование прямоугольничка-заглушки под ромбиком-указателем
+     */
+    var bubbleBefore2 = element.find('.bubble-before.bubble-before-2');
+    var bubbleBefore2NewLeft = event.pageX - element.offset().left - 8;
+    bubbleBefore2.css('left', bubbleBefore2NewLeft + "px");
+
+    /*
+     * Позиционирование бабла
+     */
     var bubble = element.find('.bubble');
 
-    /* установка номинальной ширины бабла перед тем, как начать его позиционировать */
+    /* установка ширины бабла перед тем, как начать его позиционировать */
     bubble.outerWidth(bubble.css('max-width'));
-
-    var bubbleBefore = bubble.find('.before');
-    var bubbleLeft = parseFloat(bubble.css('left'));
-    var bubbleBeforeLeft = parseFloat(bubbleBefore.css('left'));
-    var distanceBetweenBubbleAndRightWindowEdge = getDistanceBetweenBubbleAndRightWindowEdge(element.offset().left, bubbleLeft, bubble.outerWidth());
-
-    var bubbleNewLeft = bubbleLeft + distanceBetweenBubbleAndRightWindowEdge;
-    var bubbleBeforeNewLeft = bubbleBeforeLeft - distanceBetweenBubbleAndRightWindowEdge;
-
-    var bubbleBeforeLeftMin = 15.5;
-    var bubbleBeforeLeftMax = bubble.outerWidth() - bubbleBeforeLeftMin;
-
-    var correct = 0;
-    /* это блок проверки гарантирует, что бабл и его хвостик-ромбик не разлетятся в стороны друг от друга */
-    if (bubbleBeforeNewLeft < bubbleBeforeLeftMin) {
-        /* здесь делаем так, чтобы бабл от своего хвостика-ромбика не улетел вправо */
-        correct = bubbleBeforeLeftMin - bubbleBeforeNewLeft;
-    } else if (bubbleBeforeNewLeft > bubbleBeforeLeftMax) {
-        /* здесь делаем так, чтобы бабл от своего хвостика-ромбика не улетел влево */
-        correct = bubbleBeforeLeftMax - bubbleBeforeNewLeft;
+    if (bubble.outerWidth() > $(window).width()) {
+        bubble.outerWidth($(window).width());
     }
-    bubbleNewLeft -= correct;
-    bubbleBeforeNewLeft += correct;
 
+    var bubbleNewLeft = bubbleBefore2NewLeft - 15;
     /* это блок проверки гарантирует, что бабл не улетит за правый борт окна браузера */
     if (getDistanceBetweenBubbleAndRightWindowEdge(element.offset().left, bubbleNewLeft, bubble.outerWidth()) < 0) {
         var correct = -getDistanceBetweenBubbleAndRightWindowEdge(element.offset().left, bubbleNewLeft, bubble.outerWidth());
         bubbleNewLeft -= correct;
-        bubbleBeforeNewLeft += correct;
     }
-
     /* это блок проверки гарантирует, что бабл не улетит за левый борт окна браузера */
     if (element.offset().left + bubbleNewLeft - $(document).scrollLeft() < 0) {
         var correct = element.offset().left + bubbleNewLeft - $(document).scrollLeft();
         bubbleNewLeft -= correct;
-        bubbleBeforeNewLeft += correct;
     }
-
     bubble.css('left', bubbleNewLeft + "px");
-    bubbleBefore.css('left', bubbleBeforeNewLeft + "px");
-
-    /* коррекция ширины бабла */
-    if (bubble.outerWidth() > $(window).width()) {
-        bubble.outerWidth($(window).width());
-    }
 }
 
 /**
@@ -185,12 +173,12 @@ $(function () {
     /*
      * Позиционирование всплывающих подсказок
      */
-    $('.hint').hover(function () { // on('mouseover',
-        correctBubblePosition($(this));
+    $('.hint').hover(function (event) { // on('mouseenter',
+        correctBubblePosition($(this), event);
     });
 
-    $('.book-with-cover-and-summary > .book-summary > .book-title-and-author').on('mouseover', function () { // hover
-        correctBubblePosition($(this));
+    $('.book-with-cover-and-summary > .book-summary > .book-title-and-author').mouseenter(function (event) { // hover
+        correctBubblePosition($(this), event);
     });
 
     /*
