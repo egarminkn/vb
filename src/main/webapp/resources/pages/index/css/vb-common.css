@@ -1400,7 +1400,6 @@ div.likes .dislike::before {
  */
 .sort-by {
     box-sizing: border-box;
-    height: 26px;
     /*border: 1px solid black;*/
 }
 
