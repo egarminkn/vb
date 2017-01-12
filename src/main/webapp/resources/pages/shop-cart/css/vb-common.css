@@ -1350,6 +1350,7 @@ div.likes {
     flex-direction: row;
     justify-content: flex-start;
     align-items: center;
+    flex-wrap: wrap;
     /*border: 1px solid black*/
 }
 
@@ -1365,6 +1366,10 @@ div.likes a {
     /*border: 1px solid black;*/
 }
 
+div.likes .like {
+    margin-right: 15px;
+}
+
 div.likes .like::before {
     content: '';
     display: inline-block;
@@ -1374,10 +1379,6 @@ div.likes .like::before {
     background-size: 100%;
     margin-right: 5px;
     /*border: 1px solid black;*/
-}
-
-div.likes .dislike {
-    margin-left: 15px;
 }
 
 div.likes .dislike::before {
