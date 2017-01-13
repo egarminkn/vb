@@ -788,8 +788,6 @@ main .columns .column-2 {
     justify-content: space-between;
     box-sizing: border-box;
     width: 150px;
-    /*margin-left: calc(((100% - (15 * 100px)) / (15 * 2)) - 1.9px);*/
-    /*margin-right: calc(((100% - (15 * 100px)) / (15 * 2)) - 1.9px);*/
     align-items: flex-start; /* либо center, либо flex-start */
     height: 290px; /* от 280px до 330px */
     /*border: 1px solid black;*/
@@ -869,10 +867,6 @@ main .columns .column-2 {
 }
 
 /* всплывающий бабл-подсказка с полной информацией о книге (полное название, имя автора и общее количество книг этого автора) */
-.book-with-cover-and-summary > .book-summary > .book-title-and-author > .bubble {
-    max-width: 185px;
-}
-
 .book-with-cover-and-summary > .book-summary > .book-title-and-author:hover > .bubble,
 .book-with-cover-and-summary > .book-summary > .book-title-and-author:hover > .bubble-before {
     display: block;
@@ -1759,10 +1753,6 @@ select {
 
 .hint > .question-mark.blue {
     background-image: url('../svg/vb/question-mark-blue.svg');
-}
-
-.hint > .bubble {
-    max-width: 355px;
 }
 
 .hint:hover > .bubble,

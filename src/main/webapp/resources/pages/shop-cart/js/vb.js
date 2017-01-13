@@ -104,13 +104,55 @@ window.onresize = checkBodySize; // действие по событию изм�
 // <<<
 
 /**
- * Коррекция положения баблов-подсказок в зависимости от размера окна
+ ** Коррекция положения баблов-подсказок в зависимости от размера окна и доп.ограничителя вроде книжной полки (для книг на книжной полке).
+ ** Если есть книжная полка, то ограничителями, в рамках которого должна показаться всплывающая подсказка, могут стать не границы окна, а границы книжной полки.
+ ** Также возможна ситуация, когда одной границей является окно, а другой - край книжной полки.
+ **/
+/**
+ * Определение положения границ отображения всплывающей подсказки
+ * @param outer - DOM-книжная полка или, есди объект не на книжной полке, то outer === window
  */
-function getDistanceBetweenBubbleAndRightWindowEdge(elementLeftOffset, bubbleLeft, bubbleWidth) {
-    return $(window).width() - (elementLeftOffset + bubbleLeft + bubbleWidth - $(document).scrollLeft());
+function getOuterWindowStruct(outer) {
+    var outerWindow = {};
+
+    outerWindow.left = $(document).scrollLeft();
+    if (outer != window && $(outer).offset().left > outerWindow.left) {
+        outerWindow.left = $(outer).offset().left;
+    }
+
+    outerWindow.right = $(document).scrollLeft() + $(window).width();
+    if (outer != window && $(outer).offset().left + $(outer).outerWidth() < outerWindow.right) {
+        outerWindow.right = $(outer).offset().left + $(outer).outerWidth();
+    }
+
+    outerWindow.width = outerWindow.right - outerWindow.left;
+    return outerWindow;
 }
 
-function correctBubblePosition(element, event) {
+/**
+ * Определение расстояния от всплывающей подсказки до границы отображения
+ * @param outer - DOM-книжная полка или, есди объект не на книжной полке, то outer === window
+ * @param element - объект jQuery, в котором находится бабл для всплытия
+ * @param isToLeftEdge - до какой границы (левой или правой) нужно определить расстояние
+ */
+function getBubbleDistanceToOuterWindowEdge(outer, element, isToLeftEdge) {
+    var bubble = element.find('.bubble');
+    var outerWindow = getOuterWindowStruct(outer);
+
+    if (isToLeftEdge) {
+        return bubble.offset().left - outerWindow.left;
+    } else {
+        return outerWindow.right - (bubble.offset().left + bubble.outerWidth());
+    }
+}
+
+/**
+ * Коррекция положения баблов-подсказок
+ * @param outer - DOM-книжная полка или, есди объект не на книжной полке, то outer === window
+ * @param element - объект jQuery, в котором находится бабл для всплытия
+ * @param event - объект с координатами курсора мыши
+ */
+function correctBubblePosition(outer, element, event) {
     /*
      * Позиционирование ромбика-указателя
      */
@@ -130,24 +172,45 @@ function correctBubblePosition(element, event) {
      */
     var bubble = element.find('.bubble');
 
-    /* установка ширины бабла перед тем, как начать его позиционировать */
-    bubble.outerWidth(bubble.css('max-width'));
-    if (bubble.outerWidth() > $(window).width()) {
-        bubble.outerWidth($(window).width());
+    /* установка начальной ширины бабла */
+    bubble.outerWidth(bubble.data('initWidth'));
+
+    /* коррекция ширины бабла */
+    var outerWindow = getOuterWindowStruct(outer);
+    if (bubble.outerWidth() > outerWindow.width) {
+        bubble.outerWidth(outerWindow.width);
+    } else {
+        if (outer != window) { // если есть свободное место для расширения бабла
+            var bubbleBottom = bubble.offset().top + bubble.outerHeight();
+            var step = 10; // в px
+            while (bubbleBottom > $(outer).offset().top + $(outer).outerHeight()) { // и только если бабла по высоте не влезает на книжную полку
+                var newBubbleWidth = bubble.outerWidth() + step;
+                if (newBubbleWidth > outerWindow.width) {
+                    break;
+                }
+                bubble.outerWidth(newBubbleWidth);
+                bubbleBottom = bubble.offset().top + bubble.outerHeight();
+            }
+        }
     }
 
+    /* установка начального положения бабла */
     var bubbleNewLeft = bubbleBefore2NewLeft - 15;
-    /* это блок проверки гарантирует, что бабл не улетит за правый борт окна браузера */
-    if (getDistanceBetweenBubbleAndRightWindowEdge(element.offset().left, bubbleNewLeft, bubble.outerWidth()) < 0) {
-        var correct = -getDistanceBetweenBubbleAndRightWindowEdge(element.offset().left, bubbleNewLeft, bubble.outerWidth());
-        bubbleNewLeft -= correct;
-    }
-    /* это блок проверки гарантирует, что бабл не улетит за левый борт окна браузера */
-    if (element.offset().left + bubbleNewLeft - $(document).scrollLeft() < 0) {
-        var correct = element.offset().left + bubbleNewLeft - $(document).scrollLeft();
-        bubbleNewLeft -= correct;
-    }
     bubble.css('left', bubbleNewLeft + "px");
+
+    /* это блок проверки гарантирует, что бабл не улетит за правый борт окна браузера */
+    var bubbleDistanceToRightOuterWindowEdge = getBubbleDistanceToOuterWindowEdge(outer, element, false);
+    if (bubbleDistanceToRightOuterWindowEdge < 0) {
+        bubbleNewLeft += bubbleDistanceToRightOuterWindowEdge;
+        bubble.css('left', bubbleNewLeft + "px");
+    }
+
+    /* это блок проверки гарантирует, что бабл не улетит за левый борт окна браузера */
+    var bubbleDistanceToLeftOuterWindowEdge = getBubbleDistanceToOuterWindowEdge(outer, element, true);
+    if (bubbleDistanceToLeftOuterWindowEdge < 0) {
+        bubbleNewLeft -= bubbleDistanceToLeftOuterWindowEdge;
+        bubble.css('left', bubbleNewLeft + "px");
+    }
 }
 
 /**
@@ -174,11 +237,15 @@ $(function () {
      * Позиционирование всплывающих подсказок
      */
     $('.hint').hover(function (event) { // on('mouseenter',
-        correctBubblePosition($(this), event);
+        correctBubblePosition(window, $(this), event);
     });
 
     $('.book-with-cover-and-summary > .book-summary > .book-title-and-author').mouseenter(function (event) { // hover
-        correctBubblePosition($(this), event);
+        if ($(this).closest('.shelf').length) { // книга на книжной полке (из-за того, что книжная полка - overflow: hidden, важно учитывать не только размеры окна, но и книжную полку)
+            correctBubblePosition($(this).closest('.book-slider-outer').get(), $(this), event);
+        } else { // книга сама по себе
+            correctBubblePosition(window, $(this), event);
+        }
     });
 
     /*
