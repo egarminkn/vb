@@ -550,8 +550,7 @@ div.shelves {
 }
 
 /* Блок одной полки (окруженный пунктиром) */
-div.shelves > div.shelf {
-    height: 358px;
+div.shelves > div.shelf-wrapper {
     box-sizing: border-box;
     border: 1px dashed #aaa;
     border-radius: 5px;
@@ -587,7 +586,7 @@ div.arrow-up::after {
 }
 
 /* Первая часть тени под полкой */
-div.shelves > div.shelf::before {
+div.shelves > div.shelf-wrapper::before {
     content: '';
     display: block;
     width: 40.3%;
@@ -602,7 +601,7 @@ div.shelves > div.shelf::before {
 }
 
 /* Вторая часть тени под полкой */
-div.shelves > div.shelf::after {
+div.shelves > div.shelf-wrapper::after {
     content: '';
     display: block;
     width: 40.3%;
@@ -678,261 +677,100 @@ div.bookmark::after {
     font-weight: normal;
 }
 
+/**
+ ** Полки с книгами
+ **/
+main .shelves .shelf-wrapper .shelf {
+    z-index: 0; /* без этого не было видно закраски звезд-рейтинга у книг, т.к. весь блок полки покрыт белым фоном */
+}
+
 /*
- *  Составные части полки (в данном случае полка - это рисунок доски, нарисованной по частям)
+ * Составные части полки (в данном случае полка - это рисунок доски, нарисованной по частям)
+ * FIXME убрать после того, как будет универсализирован футер
  */
 /* Нижняя часть полки */
-div.shelf-bottom-part {
-    width: 97.1%;
-    height: 15px;
+main .shelves .shelf-wrapper .shelf .book-slider-outer .shelf-figure .shelf-bottom-part {
+    position: static;
+    box-sizing: border-box;
+    width: auto;
+    height: 17px;
     background-color: #cacaca;
-    position: absolute;
-    left: 1.4%;
-    top: 193px;
-    box-shadow: 0 10px 40px -6px #111;
-}
-
-/* Левая наклонная часть полки */
-div.shelf-left-part {
-    width: 50.4%;
-    height: 16px;
-    background-image: linear-gradient(#efefef, white);
-    transform: skewX(-70deg);
-    position: absolute;
-    left: 4.1%;
-    top: 176px;
+    box-shadow: 0 10px 35px -6px #222;
+    margin: 0;
     /*border: 1px solid black;*/
 }
-
+/* Левая наклонная часть полки */
+main .shelves .shelf-wrapper .shelf .book-slider-outer .shelf-figure .shelf-left-part {
+    position: static;
+    box-sizing: border-box;
+    width: 50%;
+    height: 20px;
+    background-image: linear-gradient(#efefef, white);
+    transform: skewX(-70deg);
+    margin: 147px 0 0 27px;
+    /*border: 1px solid black;*/
+}
 /* Правая наклонная часть полки */
-div.shelf-right-part {
-    width: 50.4%;
-    height: 16px;
+main .shelves .shelf-wrapper .shelf .book-slider-outer .shelf-figure .shelf-right-part {
+    box-sizing: border-box;
+    width: 50%;
+    height: 20px;
     background-image: linear-gradient(#efefef, white);
     transform: skewX(70deg);
     position: absolute;
-    right: 4.1%;
-    top: 176px;
-    /*border: 1px solid black;*/
-}
-
-/* Блок с двигающимися обложками */
-div.book-slider-out {
-    width: 86.6%;
-    height: 160px;
-    overflow: hidden;
-    position: relative;
-    left: 67px;
-    top: 12px;
-    z-index: 1;
-    padding-left: 5px;
-    /*border: 1px solid black;*/
-}
-
-div.book-slider-in {
-    width: 4700px;
-    /*transform: translateX(-935px);*/
-    transition: transform .8s ease;
-    /*border: 1px solid black;*/
-}
-
-/* Обложки книг на полках и отступы между ними */
-div.book-slider-in > a {
-    margin-right: 83px;
-    padding: 0;
-    display: inline-block;
-}
-
-/* Тень к обложкам книг на полках */
-div.book-slider-in > a > img {
-    box-shadow: 0 0 5px 2px #888;
-}
-
-/* Блок с двигающимися подписями к обложкам книг на полках */
-div.book-title-slider-out {
-    width: 89.1%;
-    height: 120px;
-    overflow: hidden;
-    position: relative;
-    left: 69px;
-    top: 50px;
-    z-index: 1; /* Без этого ссылки после первого же transform перестают быть кликабельными */
-    background-color: transparent;
-    /*border: 1px solid black;*/
-}
-
-div.book-title-slider-in {
-    width: 4700px;
-    /*transform: translateX(-935px);*/
-    transition: transform .8s ease;
-}
-
-div.book-title-slider-in > .book-summary {
-    text-decoration: none;
-    display: inline-block;
-    position: relative; /* Без этого ссылки изначально не кликабельны */
-    z-index: 1; /* Без этого ссылки изначально не кликабельны */
-    vertical-align: top;
-    margin-right: 33px;
-    width: 150px;
-    height: 120px;
-    white-space: nowrap;
-    overflow: hidden;
-    /*border: 1px solid black;*/
-}
-
-div.book-title-slider-in > .book-summary::before {
-    content: '';
-    display: block;
-    position: absolute;
-    top: 3px;
-    width: 100%;
-    height: 31px;
-    background-image: linear-gradient(to right, transparent 70%, white);
+    top: 0;
+    right: 58px;
+    margin: 147px -31px 0 0;
     /*border: 1px solid black;*/
 }
 
 /*
- *  Кнопки перемещения книг на полках
+ * Уровень заполненности звезд рейтинга книги оранжевым фоном (у каждой книги должен быть свой)
  */
-/* левая */
-button.left-arrow {
-    display: block;
-    position: absolute;
-    top: 94px;
-    left: 16px;
-    width: 35px;
-    height: 32px;
-    outline: none;
-    background-color: transparent;
-    border-right: none;
-    border-bottom: none;
-    border-left: 2px solid #cad9f1;
-    border-top: 2px solid #cad9f1;
-    transform: rotate(-55deg) skewX(-20deg);
-    cursor: pointer;
-    z-index: 1;
-}
-
-/* правая */
-button.right-arrow {
-    display: block;
-    position: absolute;
-    top: 94px;
-    right: 16px;
-    width: 35px;
-    height: 32px;
-    outline: none;
-    background-color: transparent;
-    border-right: 2px solid #cad9f1;
-    border-bottom: 2px solid #cad9f1;
-    border-left: none;
-    border-top: none;
-    transform: rotate(-55deg) skewX(-20deg);
-    cursor: pointer;
-    z-index: 1;
-}
-
-/*
- *  Описание книги под нарисованными полками
- */
-/* Заголовок книги */
-div.book-title-slider-in > .book-summary > div.book-title {
-    font-family: Tahoma, sans-serif;
-    font-size: 13px;
-    color: #5f7495;
-    text-decoration: underline;
-    padding: 0;
-    word-spacing: 1px;
-    letter-spacing: 0.5px;
-    /*overflow: hidden;*/
-    /*white-space: nowrap;*/
-    /*text-overflow: ellipsis;*/
-}
-
-/* Автор книги и общее количество его книг */
-div.book-title-slider-in > .book-summary > div.book-author {
-    position: relative;
-    top: -4px;
-}
-
-div.book-title-slider-in > .book-summary > div.book-author > div {
-    display: inline-block;
-    vertical-align: bottom;
-}
-
-/* Имя автора */
-div.book-title-slider-in > .book-summary > div.book-author > div.author-name {
-    font-family: Tahoma, sans-serif;
-    font-size: 11px;
-    color: black;
-    /*word-spacing: 1px;*/
-    letter-spacing: 0.5px;
-    text-decoration: underline;
-}
-
-/* Общее количество книг автора */
-div.book-title-slider-in > .book-summary > div.book-author > div.book-count {
-    font-family: Tahoma, sans-serif;
-    font-size: 10px;
-    color: #888;
-    word-spacing: 1px;
-    position: relative;
-    z-index: -1;
-}
-
-div.book-title-slider-in > .book-summary > div.book-author > div.book-count > span {
-    text-decoration: underline;
-}
-
-/*
- *  Звезды рейтинга у книги на полке
- */
-/* уровень заполненности звезд оранжевым фоном */
-.book-title-slider-in > .book-summary:nth-of-type(1) > .rating-5-stars > .rating-stars::before {
-    width: 67.5px;
-}
-.book-title-slider-in > .book-summary:nth-of-type(2) > .rating-5-stars > .rating-stars::before {
-    width: 57px;
-}
-.book-title-slider-in > .book-summary:nth-of-type(3) > .rating-5-stars > .rating-stars::before {
-    width: 61.5px;
-}
-.book-title-slider-in > .book-summary:nth-of-type(4) > .rating-5-stars > .rating-stars::before {
-    width: 64.5px;
-}
-.book-title-slider-in > .book-summary:nth-of-type(5) > .rating-5-stars > .rating-stars::before {
+main .shelves .shelf-wrapper .shelf .book-slider-outer .book-slider-inner .book-with-cover-and-summary:nth-of-type(1) .book-summary .rating-5-stars .rating-stars::before {
     width: 72px;
 }
-.book-title-slider-in > .book-summary:nth-of-type(6) > .rating-5-stars > .rating-stars::before {
-    width: 72px;
-}
-.book-title-slider-in > .book-summary:nth-of-type(7) > .rating-5-stars > .rating-stars::before {
+main .shelves .shelf-wrapper .shelf .book-slider-outer .book-slider-inner .book-with-cover-and-summary:nth-of-type(2) .book-summary .rating-5-stars .rating-stars::before {
     width: 64.5px;
 }
-.book-title-slider-in > .book-summary:nth-of-type(8) > .rating-5-stars > .rating-stars::before {
+main .shelves .shelf-wrapper .shelf .book-slider-outer .book-slider-inner .book-with-cover-and-summary:nth-of-type(3) .book-summary .rating-5-stars .rating-stars::before {
     width: 61.5px;
 }
-.book-title-slider-in > .book-summary:nth-of-type(9) > .rating-5-stars > .rating-stars::before {
+main .shelves .shelf-wrapper .shelf .book-slider-outer .book-slider-inner .book-with-cover-and-summary:nth-of-type(4) .book-summary .rating-5-stars .rating-stars::before {
     width: 57px;
 }
-.book-title-slider-in > .book-summary:nth-of-type(10) > .rating-5-stars > .rating-stars::before {
+main .shelves .shelf-wrapper .shelf .book-slider-outer .book-slider-inner .book-with-cover-and-summary:nth-of-type(5) .book-summary .rating-5-stars .rating-stars::before {
     width: 67.5px;
 }
-.book-title-slider-in > .book-summary:nth-of-type(11) > .rating-5-stars > .rating-stars::before {
+main .shelves .shelf-wrapper .shelf .book-slider-outer .book-slider-inner .book-with-cover-and-summary:nth-of-type(6) .book-summary .rating-5-stars .rating-stars::before {
     width: 67.5px;
 }
-.book-title-slider-in > .book-summary:nth-of-type(12) > .rating-5-stars > .rating-stars::before {
+main .shelves .shelf-wrapper .shelf .book-slider-outer .book-slider-inner .book-with-cover-and-summary:nth-of-type(7) .book-summary .rating-5-stars .rating-stars::before {
     width: 57px;
 }
-.book-title-slider-in > .book-summary:nth-of-type(13) > .rating-5-stars > .rating-stars::before {
+main .shelves .shelf-wrapper .shelf .book-slider-outer .book-slider-inner .book-with-cover-and-summary:nth-of-type(8) .book-summary .rating-5-stars .rating-stars::before {
     width: 61.5px;
 }
-.book-title-slider-in > .book-summary:nth-of-type(14) > .rating-5-stars > .rating-stars::before {
+main .shelves .shelf-wrapper .shelf .book-slider-outer .book-slider-inner .book-with-cover-and-summary:nth-of-type(9) .book-summary .rating-5-stars .rating-stars::before {
     width: 64.5px;
 }
-.book-title-slider-in > .book-summary:nth-of-type(15) > .rating-5-stars > .rating-stars::before {
+main .shelves .shelf-wrapper .shelf .book-slider-outer .book-slider-inner .book-with-cover-and-summary:nth-of-type(10) .book-summary .rating-5-stars .rating-stars::before {
     width: 72px;
+}
+main .shelves .shelf-wrapper .shelf .book-slider-outer .book-slider-inner .book-with-cover-and-summary:nth-of-type(11) .book-summary .rating-5-stars .rating-stars::before {
+    width: 72px;
+}
+main .shelves .shelf-wrapper .shelf .book-slider-outer .book-slider-inner .book-with-cover-and-summary:nth-of-type(12) .book-summary .rating-5-stars .rating-stars::before {
+    width: 64.5px;
+}
+main .shelves .shelf-wrapper .shelf .book-slider-outer .book-slider-inner .book-with-cover-and-summary:nth-of-type(13) .book-summary .rating-5-stars .rating-stars::before {
+    width: 61.5px;
+}
+main .shelves .shelf-wrapper .shelf .book-slider-outer .book-slider-inner .book-with-cover-and-summary:nth-of-type(14) .book-summary .rating-5-stars .rating-stars::before {
+    width: 57px;
+}
+main .shelves .shelf-wrapper .shelf .book-slider-outer .book-slider-inner .book-with-cover-and-summary:nth-of-type(15) .book-summary .rating-5-stars .rating-stars::before {
+    width: 67.5px;
 }
 
 /*
@@ -997,7 +835,7 @@ div.manual > a > div.body {
 /*
  *  Блок с рейтингом авторов
  */
-div.shelves > div.shelf.author-shelf {
+div.shelves > div.shelf-wrapper.author-shelf {
     height: 285px;
 }
 
@@ -1012,7 +850,7 @@ div.bookmark-authors {
 }
 
 /* Собственно сам блок внутри последней полки */
-div.shelf > div.authors-block {
+div.shelf-wrapper > div.authors-block {
     position: relative;
     top: 33px;
     left: 4%;
@@ -1022,7 +860,7 @@ div.shelf > div.authors-block {
 }
 
 /* Каждый автор - это ссылка */
-div.shelf > div.authors-block > .author-summary {
+div.shelf-wrapper > div.authors-block > .author-summary {
     display: inline-block;
     vertical-align: middle;
     padding-top: 1px;
@@ -1039,7 +877,7 @@ div.shelf > div.authors-block > .author-summary {
  *  Имя автора
  */
 /* внешний блок */
-div.shelf > div.authors-block > .author-summary > div.author-name {
+div.shelf-wrapper > div.authors-block > .author-summary > div.author-name {
     margin-bottom: 10px;
     height: 35px;
     display: table-cell; /* Для выравнивания вложенного div-а по центру этого div-а (имеется в виду, по вертикали) */
@@ -1048,7 +886,7 @@ div.shelf > div.authors-block > .author-summary > div.author-name {
 }
 
 /* внутренний блок */
-div.shelf > div.authors-block > .author-summary > div.author-name > div {
+div.shelf-wrapper > div.authors-block > .author-summary > div.author-name > div {
     font-family: Tahoma, sans-serif;
     font-size: 11px;
     letter-spacing: 0.6px;
@@ -1058,7 +896,7 @@ div.shelf > div.authors-block > .author-summary > div.author-name > div {
 }
 
 /* общее количество книг автора */
-div.shelf > div.authors-block > .author-summary > div.book-count {
+div.shelf-wrapper > div.authors-block > .author-summary > div.book-count {
     font-family: Tahoma, sans-serif;
     font-size: 10px;
     letter-spacing: 0.3px;
@@ -1071,7 +909,7 @@ div.shelf > div.authors-block > .author-summary > div.book-count {
 }
 
 /* фото автора */
-.shelf > .authors-block > .author-summary > .author-photo {
+.shelf-wrapper > .authors-block > .author-summary > .author-photo {
     border-style: none;
 }
     
@@ -1200,23 +1038,30 @@ footer > div.footer-shelf {
     /*border: 1px solid black;    */
 }
 
-/* левая часть полки */
+/*
+ *  Составные части полки (в данном случае полка - это рисунок доски, нарисованной по частям)
+ */
+/* левая наклонная часть полки */
 footer > div.footer-shelf > div.footer-shelf.shelf-part.shelf-left-part {
     position: absolute;
     top: 65px;
     left: 4.8%;
     width: 50.78%;
     height: 20px;
+    background-image: linear-gradient(#efefef, white);
+    transform: skewX(-70deg);
     /*border: 1px solid black;*/
 }
 
-/* правая часть полки */
+/* правая наклонная часть полки */
 footer > div.footer-shelf > div.footer-shelf.shelf-part.shelf-right-part {
     position: absolute;
     top: 65px;
     right: 5%;
     width: 50.78%;
     height: 20px;
+    background-image: linear-gradient(#efefef, white);
+    transform: skewX(70deg);
     /*border: 1px solid black;*/
 }
 
@@ -1227,6 +1072,8 @@ footer > div.footer-shelf > div.footer-shelf.shelf-part.shelf-bottom-part {
     left: 2.2%;
     width: 95.3%;
     height: 17px;
+    background-color: #cacaca;
+    box-shadow: 0 10px 40px -6px #111;
 }
 
 /*

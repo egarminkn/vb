@@ -652,6 +652,10 @@ main .columns .column-2 {
     /*border: 1px solid black;*/
 }
 
+.shelf.hidden-title > .title {
+    display: none;
+}
+
 /*
  * Кнопки (стрелки) перемещения книг на полке
  */
@@ -666,6 +670,10 @@ main .columns .column-2 {
     outline: none;
     background: transparent;
     z-index: 1;
+}
+
+.shelf.hidden-title > .arrow {
+    top: 65px;
 }
 
 /* левая */
