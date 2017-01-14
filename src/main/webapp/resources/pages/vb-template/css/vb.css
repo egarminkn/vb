@@ -264,6 +264,7 @@ header::after {
 }
 
 .menu > div:hover > a {
+    color: black;
     border-bottom-style: none;
 }
 
@@ -275,6 +276,7 @@ header::after {
 }
 
 .menu > div.menu-item-selected > a {
+    color: black;
     border-bottom-style: none;
 }
 
