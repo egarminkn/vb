@@ -529,10 +529,8 @@ main .book {
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
-    margin-top: 30px;
-    margin-left: 25px;
-    margin-right: 25px;
     position: relative;
+    margin: 30px 25px 60px 25px;
     /*border: 1px solid black;*/
 }
 
@@ -612,8 +610,7 @@ main .book-reviews {
     flex-direction: column;
     justify-content: flex-start;
     position: relative;
-    margin-left: 25px;
-    margin-right: 25px;
+    margin: 0 25px 60px 25px;
     /*border: 1px solid black;*/
 }
 
@@ -642,39 +639,9 @@ main .book .columns .column .summary-1 {
 }
 
 /* Тень-разделитель */
-.shadow {
-    height: 55px;
-    box-sizing: border-box;
-    width: 100%;
-    position: relative;
-    background-color: white;
-    margin-bottom: 30px;
-}
-
-.shadow::before {
-    content: '';
-    display: block;
-    position: absolute;
-    left: 1%;
-    bottom: 1px;
-    z-index: -1;
-    height: 10px;
-    width: 49%;
-    box-shadow: 0 0 10px 0 #888;
-    transform: rotate(0.2deg);
-}
-
-.shadow::after {
-    content: '';
-    display: block;
-    position: absolute;
-    right: 1%;
-    bottom: 1px;
-    z-index: -1;
-    height: 10px;
-    width: 49%;
-    box-shadow: 0 0 10px 0 #888;
-    transform: rotate(-0.2deg);
+main .shadow-under {
+    bottom: -30px;
+    border-bottom-style: none;
 }
 
 /*

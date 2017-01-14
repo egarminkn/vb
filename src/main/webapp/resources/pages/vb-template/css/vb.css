@@ -628,9 +628,63 @@ main .columns .column-2 {
     /*width: 650px;*/
 }
 
+.shadow-test {
+    position: relative;
+    box-sizing: border-box;
+    height: 200px;
+    width: 840px;
+    border-radius: 5px;
+    border: 1px dashed #b4b4b4;
+}
+
+
 /***
  *** Общее
  ***/
+/**
+ ** Тень под блоком
+ **/
+.shadow-under {
+    position: absolute;
+    bottom: -1px;
+    left: 0;
+    box-sizing: border-box;
+    height: 18px;
+    width: 98%;
+    margin-left: 1%;
+    background-color: white;
+    border-bottom: 1px dashed #b4b4b4;
+    /*border: 1px solid black;*/
+}
+
+.shadow-under::before {
+    content: '';
+    display: block;
+    position: absolute;
+    z-index: -1;
+    left: 2%;
+    bottom: 0;
+    box-sizing: border-box;
+    height: 0;
+    width: 47.79%;
+    box-shadow: 0 0 8px 3px black;
+    transform: rotate(1deg);
+}
+
+.shadow-under::after {
+    content: '';
+    display: block;
+    position: absolute;
+    z-index: -1;
+    right: 2%;
+    bottom: 0;
+    box-sizing: border-box;
+    height: 0;
+    width: 47.79%;
+    box-shadow: 0 0 8px 3px black;
+    transform: rotate(-1deg);
+}
+
 /**
  ** Книжная полка-слайдер
  **/

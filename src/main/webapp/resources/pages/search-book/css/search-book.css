@@ -641,39 +641,9 @@ div.slogan > a.publish-own {
 /*
  * Тень под блоками результатов поиска
  */
-.shadow {
-    height: 55px;
-    width: 100%;
-    position: absolute;
-    bottom: -55px;
-    background-color: white;
-    /*border: 1px solid black;*/
-}
-
-.shadow::before {
-    content: '';
-    display: block;
-    position: absolute;
-    left: 1%;
-    bottom: 1px;
-    z-index: -1;
-    height: 10px;
-    width: 49%;
-    box-shadow: 0 0 10px 0 #888;
-    transform: rotate(0.2deg);
-}
-
-.shadow::after {
-    content: '';
-    display: block;
-    position: absolute;
-    right: 1%;
-    bottom: 1px;
-    z-index: -1;
-    height: 10px;
-    width: 49%;
-    box-shadow: 0 0 10px 0 #888;
-    transform: rotate(-0.2deg);
+.search-results .shadow-under {
+    bottom: -40px;
+    border-bottom-style: none;
 }
 
 .search-results .column {

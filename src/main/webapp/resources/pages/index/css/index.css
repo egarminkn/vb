@@ -536,6 +536,11 @@ label.slider-button {
     transform: translateX(-3741px);
 }
 
+main {
+    position: relative; /* нужно для отчерчивающей тени */
+    margin-bottom: 60px;
+}
+
 /*
  *  Блок справа страницы с полками
  */
@@ -558,6 +563,12 @@ div.shelves > div.shelf-wrapper {
     top: 18px;
     background-color: white;
     margin-bottom: 60px;
+    padding-bottom: 10px;
+}
+
+.shelves > .shelf-wrapper .shadow-under {
+    bottom: -1px;
+    border-bottom: 1px dashed #aaa;
 }
 
 /* Стрелочка вверх (полуромбик) у блока одной полки (окруженный пунктиром) */
@@ -582,37 +593,7 @@ div.arrow-up::after {
     transform: rotate(-45deg);
     position: relative;
     top: 3px;
-    left: -4px;    
-}
-
-/* Первая часть тени под полкой */
-div.shelves > div.shelf-wrapper::before {
-    content: '';
-    display: block;
-    width: 40.3%;
-    height: 50px;
-    background-color: white;
-    box-shadow: 0 0 20px 5px #aaa;
-    position: absolute;
-    left: 9.1%;
-    bottom: 5px;
-    z-index: -1;
-    transform: rotate(1deg);
-}
-
-/* Вторая часть тени под полкой */
-div.shelves > div.shelf-wrapper::after {
-    content: '';
-    display: block;
-    width: 40.3%;
-    height: 50px;
-    background-color: white;
-    box-shadow: 0 0 20px 5px #aaa;
-    position: absolute;
-    right: 9.1%;
-    bottom: 5px;
-    z-index: -1;
-    transform: rotate(-1deg);
+    left: -4px;
 }
 
 /* Настройка всех частей шапки каждой полки */
@@ -961,6 +942,14 @@ div.seo > div.body > p {
     margin-bottom: 40px;
 }
 
+/*
+ *  Отчеркивающая тень
+ */
+main .shadow-under {
+    bottom: -30px;
+    border-bottom-style: none;
+}
+
 /* --------------------------------------------------------------------------------------------------------- */
 
 /*
@@ -969,43 +958,6 @@ div.seo > div.body > p {
 footer {
     /*height: 500px;*/
     /*border: 1px solid black;*/
-}
-
-/*
- *  Отчеркивающая тень в футере
- */
-footer > div.shadow {
-    position: relative;
-    width: 100%;
-    height: 65px;
-    background-color: white;
-    /*border: 1px solid black;*/
-}
-
-footer > div.shadow::before {
-    content: '';
-    display: block;
-    position: absolute;
-    left: 1.56%;
-    bottom: 0;
-    width: 48.5%;
-    height: 10px;
-    box-shadow: 0 0 10px 0 #666;
-    transform: rotate(0.09deg);
-    z-index: -1;
-}
-
-footer > div.shadow::after {
-    content: '';
-    display: block;
-    position: absolute;
-    right: 1.56%;
-    bottom: 0;
-    width: 48.5%;
-    height: 10px;
-    box-shadow: 0 0 10px 0 #666;
-    transform: rotate(-0.09deg);
-    z-index: -1;
 }
 
 /*
