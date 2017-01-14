@@ -593,38 +593,108 @@ main .left-column .rating-3-stars .rating-stars::before {
     margin-top: 50px;
 }
 
-.description p {
+.description > .paragraph {
+    margin: 0;
+    padding: 0;
+    position: relative;
+    /*border: 1px solid red;*/
+}
+
+.description > .paragraph.hidden {
+    opacity: 0;
+    pointer-events: none;
+    position: absolute;
+}
+
+.description > .paragraph.visible > .after {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 50px;
+    background: linear-gradient(0deg, #fff, transparent);
+    /*border: 1px solid black;*/
+}
+
+.description > .paragraph > p.text {
     font-family: 'Myriad Pro Regular';
     font-size: 15px;
     letter-spacing: 0.5px;
     line-height: 20px;
     word-spacing: -0.1px;
-    margin: 0;
-    padding: 40px 3%;
+    overflow: hidden;
+    box-sizing: border-box;
+    margin: 40px 20px 0 20px;
+    padding: 0;
+    /*border: 1px solid black;*/
+}
+
+.description > .paragraph.visible > p.text {
+    height: 100px;
+}
+
+.description > .paragraph.hidden > p.text {
+    height: auto;
+}
+
+/*
+ * Тень под описанием автора
+ */
+.description .shadow-under {
+    bottom: -1px;
+    border-bottom: 1px dashed #ccc;
+}
+
+/*
+ * Кнопки сворачивания-разворачивания информации об авторе
+ */
+div.expand-collapse-block {
     position: relative;
+    top: 20px;
+    /*z-index: 1;*/
+    margin: auto;
+    height: 56px;
+    width: 56px;
+    /*border: 1px solid black;*/
 }
 
-.description p::after {
-    content: '';
-    display: block;
-    position: absolute;
-    bottom: 35px;
-    width: 94%;
-    height: 50px;
-    background: linear-gradient(0deg, #fff, transparent);
+input.expand-collapse-block {
+    display: none;
 }
 
-.description .expand {
-    position: absolute;
+label.expand-collapse-block {
     display: block;
+    position: absolute;
+    top: calc(100% - 56px + 12px);
+    left: calc(50% - 35px + 20px);
+    box-sizing: border-box;
     width: 30px;
     height: 31px;
-    border-right: 2px solid black;
-    border-bottom: 2px solid black;
-    border-color: #ccc;
+    border-right: 2px solid #ccc;
+    border-bottom: 2px solid #ccc;
+    transition: transform .8s ease;
+    cursor: pointer;
+}
+
+/* при переключении радиокнопок один элемент показываем, а другой прячем (пытался сделать через display, однако тогда ломается transition)*/
+input.expand-collapse-block[id="expanded"]:checked ~ label.expand-collapse-block[for="expanded"],
+input.expand-collapse-block[id="collapsed"]:checked ~ label.expand-collapse-block[for="collapsed"] {
+    z-index: 0;
+}
+
+input.expand-collapse-block[id="expanded"]:checked ~ label.expand-collapse-block[for="collapsed"],
+input.expand-collapse-block[id="collapsed"]:checked ~ label.expand-collapse-block[for="expanded"] {
+    z-index: 1;
+}
+
+/* вращение при переключении радиокнопок (radio) */
+input.expand-collapse-block[id="collapsed"]:checked ~ label.expand-collapse-block[for="expanded"],
+input.expand-collapse-block[id="collapsed"]:checked ~ label.expand-collapse-block[for="collapsed"] {
     transform: rotate(44deg) skew(-15deg) skewY(-15deg);
-    left: 50%;
-    bottom: 10px;
+}
+
+input.expand-collapse-block[id="expanded"]:checked ~ label.expand-collapse-block[for="expanded"],
+input.expand-collapse-block[id="expanded"]:checked ~ label.expand-collapse-block[for="collapsed"] {
+    transform: rotate(44deg) skew(-15deg) skewY(-15deg) rotate(180deg);
 }
 
 /*
