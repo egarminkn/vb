@@ -42,7 +42,13 @@
 
         <link href="css/vb.css" type="text/css" rel="stylesheet" />
 	</head>
-	<body onload="init()">
+
+	<body class="" onload="init()">
+        <!-- У body доп.класс:
+            1) hidden-partners-on-shelf - скрывает ссылки на партнеров в футере
+            2) hidden-books-on-shelf - скрывает книги на полке в футере
+        -->
+
         <header>
             <div class="header header-1">
                 <a href="#" class="logo">
@@ -2946,16 +2952,34 @@
         </main>
         
 		<footer>
+            <div class="partners-on-shelf">
+                <a href="#">
+                    <img src="img/vb/partner1.jpg" width="115" height="31">
+                </a>
+                <a href="#">
+                    <img src="img/vb/partner2.jpg" width="115" height="28">
+                </a>
+                <a href="#">
+                    <img src="img/vb/partner3.jpg" width="106" height="31">
+                </a>
+                <a href="#">
+                    <img src="img/vb/partner4.jpg" width="117" height="24">
+                </a>
+                <a href="#">
+                    <img src="img/vb/partner5.jpg" width="113" height="24">
+                </a>
+            </div>
+
             <div class="books-on-shelf">
-                <img src="img/bottom-book-1.jpg" width="87" height="103">
-                <img src="img/bottom-book-2.jpg" width="92" height="133">
-                <img src="img/bottom-book-3.jpg" width="115" height="154">
-                <img src="img/bottom-book-4.jpg" width="83" height="121">
-                <img src="img/bottom-book-5.jpg" width="123" height="183">
-                <img src="img/bottom-book-6.jpg" width="122" height="152">
-                <img src="img/bottom-book-7.jpg" width="122" height="165">
-                <img src="img/bottom-book-8.jpg" width="89" height="139">
-                <img src="img/bottom-book-9.jpg" width="75" height="120">
+                <img src="img/vb/bottom-book-1.jpg" width="87" height="103">
+                <img src="img/vb/bottom-book-2.jpg" width="92" height="133">
+                <img src="img/vb/bottom-book-3.jpg" width="115" height="154">
+                <img src="img/vb/bottom-book-4.jpg" width="83" height="121">
+                <img src="img/vb/bottom-book-5.jpg" width="123" height="183">
+                <img src="img/vb/bottom-book-6.jpg" width="122" height="152">
+                <img src="img/vb/bottom-book-7.jpg" width="122" height="165">
+                <img src="img/vb/bottom-book-8.jpg" width="89" height="139">
+                <img src="img/vb/bottom-book-9.jpg" width="75" height="120">
             </div>
             
             <div class="footer-shelf">

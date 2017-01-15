@@ -2862,8 +2862,52 @@ footer {
 }
 
 /**
+ ** Партнеры на полке в футере
+ **/
+body.hidden-partners-on-shelf .partners-on-shelf {
+    display: none;
+}
+
+.partners-on-shelf {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    margin: 50px auto;
+    box-sizing: border-box;
+    width: 75%;
+    height: 37px;
+    z-index: 1;
+    overflow: hidden;
+    /*border: 1px solid black;*/
+}
+
+.partners-on-shelf > a {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    height: 37px;
+    text-decoration: none;
+    /*border: 1px solid black;*/
+}
+
+.partners-on-shelf > a > img {
+    padding: 0;
+    margin: 0;
+    /*border: 1px solid black;*/
+}
+
+/**
  ** Книжки на полке в футере
  **/
+body.hidden-books-on-shelf .books-on-shelf {
+    display: none;
+}
+
 .books-on-shelf {
     display: flex;
     flex-direction: row;
