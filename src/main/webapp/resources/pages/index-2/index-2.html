@@ -48,15 +48,17 @@
                 </div>
             </nav>
         </header>
-		<main>
+		<main class="index-2">
             <div class="slogan">
                 Читай <a href="#" class="new-books-free">новые книги бесплатно</a>, решай их судьбу или <a href="#" class="publish-own">публикуй<div class="arrow-down"></div></a> собственные
             </div>
 
+        <!-- START (Тело страницы) -------------------------------------------------------------------------------------------- -->
+
             <!-- START (Слайдер цитат вверху страницы) -->
-            <input type="radio" name="slide" id="slider-button-1" checked/>
-            <input type="radio" name="slide" id="slider-button-2" />
-            <input type="radio" name="slide" id="slider-button-3" />
+            <input type="radio" name="slide" class="slider-button slider-button-1" id="slider-button-1" checked>
+            <input type="radio" name="slide" class="slider-button slider-button-2" id="slider-button-2" >
+            <input type="radio" name="slide" class="slider-button slider-button-3" id="slider-button-3" >
             <div class="quotes-slider">
                 <a class="arrow-btn left-arrow-btn" href="#">
                     <div class="corner"></div>
@@ -79,351 +81,531 @@
                 </a>
             </div>
             <div class="slider-buttons">
-                <label class="slider-button" for="slider-button-1"></label>
-                <label class="slider-button" for="slider-button-2"></label>
-                <label class="slider-button" for="slider-button-3"></label>
+                <label class="slider-button slider-button-1" for="slider-button-1"></label>
+                <label class="slider-button slider-button-2" for="slider-button-2"></label>
+                <label class="slider-button slider-button-3" for="slider-button-3"></label>
             </div>
             <!-- END (Слайдер цитат вверху страницы) -->
 
             <!-- START (Слайды помощи) -->
-            <input type="radio" name="help-slide" id="help-slide-1" checked/>
-            <input type="radio" name="help-slide" id="help-slide-2" />
-            <input type="radio" name="help-slide" id="help-slide-3" />
+            <input type="radio" name="help-slide" class="help-slide-1" id="help-slide-1" checked>
+            <input type="radio" name="help-slide" class="help-slide-2" id="help-slide-2" >
+            <input type="radio" name="help-slide" class="help-slide-3" id="help-slide-3" >
             <div class="help-slide-marks">
-                <label class="help-slide-mark" for="help-slide-1">
+                <label class="help-slide-mark help-slide-mark-1" for="help-slide-1">
                     <p>
                         Отформатируй и подготовь книгу к публикации
                     </p>
                 </label>
-                <label class="help-slide-mark" for="help-slide-2">
-                    <img src="img/paper-plane.png" />
+                <label class="help-slide-mark help-slide-mark-2" for="help-slide-2">
+                    <img src="img/paper-plane.png" width="109" height="111">
                     <p>
                         Создай проект, загрузи книгу
                     </p>
                 </label>
-                <label class="help-slide-mark" for="help-slide-3">
-                    <img src="img/yandex-money.jpg" />
+                <label class="help-slide-mark help-slide-mark-3" for="help-slide-3">
+                    <img src="img/yandex-money.jpg" width="91" height="77">
                     <p>
                         Опубликуй книгу и начни зарабатывать
                     </p>
                 </label>
             </div>
+
+            <!-- Слайд помощи 1 -->
             <div class="help-slide-content help-slide-1">
                 <div class="row row-1">
-                    <a href="#">
-                        Как отформатировать книгу
-                    </a>
-                    <a href="#">
-                        Сколько стоит моя книга?
-                    </a>
-                    <a href="#">
-                        На какой бумаге печатать книгу и обложку?
-                    </a>
-                    <a href="#">
-                        Переплет и количество страниц
-                    </a>
-                    <a href="#">
-                        Твердый переплет
-                    </a>
-                    <a href="#">
-                        Как определить цену?
-                    </a>
+                    <div class="column column-1">
+                        <a href="#">
+                            <span class="text">
+                                Как отформатировать книгу
+                            </span>
+                        </a>
+                        <a href="#">
+                            <span class="text">
+                                Сколько стоит моя книга?
+                            </span>
+                        </a>
+                        <a href="#">
+                            <span class="text">
+                                На какой бумаге печатать книгу и обложку?
+                            </span>
+                        </a>
+                        <a href="#">
+                            <span class="text">
+                                Переплет и количество страниц
+                            </span>
+                        </a>
+                        <a href="#">
+                            <span class="text">
+                                Твердый переплет
+                            </span>
+                        </a>
+                        <a href="#">
+                            <span class="text">
+                                Как определить цену?
+                            </span>
+                        </a>
+                    </div>
+
+                    <div class="column column-2">
+                        <a href="#">
+                            <span class="text">
+                                Заголовки
+                            </span>
+                        </a>
+                        <a href="#">
+                            <span class="text">
+                                Досуг и творчество
+                            </span>
+                        </a>
+                        <a href="#">
+                            <span class="text">
+                                Книги для родителей
+                            </span>
+                        </a>
+                        <a href="#">
+                            <span class="text">
+                                Познавательная литература
+                            </span>
+                        </a>
+                        <a href="#">
+                            <span class="text">
+                                Художественная литература
+                            </span>
+                        </a>
+                    </div>
+
+                    <div class="column column-3">
+                        <a href="#">
+                            <span class="text">
+                                Форматирование электронных книг
+                            </span>
+                        </a>
+                        <a href="#">
+                            <span class="text">
+                                Досуг и творчество
+                            </span>
+                        </a>
+                        <a href="#">
+                            <span class="text">
+                                Книги для родителей
+                            </span>
+                        </a>
+                        <a href="#">
+                            <span class="text">
+                                Познавательная литература
+                            </span>
+                        </a>
+                        <a href="#">
+                            <span class="text">
+                                Художественная литература
+                            </span>
+                        </a>
+                    </div>
                 </div>
-                
-                <div class="row row-1">
-                    <a href="#">
-                        Заголовки
-                    </a>
-                    <a href="#">
-                        Досуг и творчество
-                    </a>
-                    <a href="#">
-                        Книги для родителей
-                    </a>
-                    <a href="#">
-                        Познавательная литература
-                    </a>
-                    <a href="#">
-                        Художественная литература
-                    </a>
-                </div>
-                
-                <div class="row row-1">
-                    <a href="#">
-                        Форматирование электронных книг
-                    </a>
-                    <a href="#">
-                        Досуг и творчество
-                    </a>
-                    <a href="#">
-                        Книги для родителей
-                    </a>
-                    <a href="#">
-                        Познавательная литература
-                    </a>
-                    <a href="#">
-                        Художественная литература
-                    </a>
-                </div>
-                
+
                 <div class="row row-2">
-                    <a href="#">
-                        Процесс публикации
-                    </a>
-                    <a href="#">
-                        Досуг и творчество
-                    </a>
-                    <a href="#">
-                        Книги для родителей
-                    </a>
-                    <a href="#">
-                        Познавательная литература
-                    </a>
-                    <a href="#">
-                        Художественная литература
-                    </a>
-                </div>
-                
-                <div class="row row-2">
-                    <a href="#">
-                        Текст, страницы, шрифт
-                    </a>
-                    <a href="#">
-                        Дошкольникам
-                    </a>
-                    <a href="#">
-                        Школьникам и абитуриентам
-                    </a>
-                    <a href="#">
-                        Студентам и аспирантам
-                    </a>
-                    <a href="#">
-                        Педагогам
-                    </a>
-                </div>
-                
-                <div class="row row-2">
-                    <a href="#" class="verybook-help-you">
+                    <div class="column column-1">
+                        <a href="#">
+                            <span class="text">
+                                Процесс публикации
+                            </span>
+                        </a>
+                        <a href="#">
+                            <span class="text">
+                                Досуг и творчество
+                            </span>
+                        </a>
+                        <a href="#">
+                            <span class="text">
+                                Книги для родителей
+                            </span>
+                        </a>
+                        <a href="#">
+                            <span class="text">
+                                Познавательная литература
+                            </span>
+                        </a>
+                        <a href="#">
+                            <span class="text">
+                                Художественная литература
+                            </span>
+                        </a>
+                    </div>
+
+                    <div class="column column-2">
+                        <a href="#">
+                            <span class="text">
+                                Текст, страницы, шрифт
+                            </span>
+                        </a>
+                        <a href="#">
+                            <span class="text">
+                                Дошкольникам
+                            </span>
+                        </a>
+                        <a href="#">
+                            <span class="text">
+                                Школьникам и абитуриентам
+                            </span>
+                        </a>
+                        <a href="#">
+                            <span class="text">
+                                Студентам и аспирантам
+                            </span>
+                        </a>
+                        <a href="#">
+                            <span class="text">
+                                Педагогам
+                            </span>
+                        </a>
+                    </div>
+
+                    <div class="column column-3">
+                        <a href="#" class="verybook-help-you">
+                            <div class="wrapper">
+                                <span class="text">
+                                    Verybook<br>поможет 1
+                                </span>
+                            </div>
+                            <img src="svg/vb/question-mark-beauty.svg" width="49" height="49">
+                        </a>
                         <p class="verybook-help-you">
-                            Verybook поможет 1
+                            Ever even heard of Hogwarts when the letters start dropping on the doormat
                         </p>
-                        <img src="svg/vb/question-mark-beauty.svg" class="verybook-help-you" width="49" height="49">
-                    </a>
-                    <p class="verybook-help-you">
-                        Ever even heard of Hogwarts when the letters start dropping on the doormat
-                    </p>
+                    </div>
                 </div>
             </div>
+
+            <!-- Слайд помощи 2 -->
             <div class="help-slide-content help-slide-2">
                 <div class="row row-1">
-                    <a href="#">
-                        Как отформатировать книгу
-                    </a>
-                    <a href="#">
-                        Сколько стоит моя книга?
-                    </a>
-                    <a href="#">
-                        На какой бумаге печатать книгу и обложку?
-                    </a>
-                    <a href="#">
-                        Переплет и количество страниц
-                    </a>
-                    <a href="#">
-                        Твердый переплет
-                    </a>
-                    <a href="#">
-                        Как определить цену?
-                    </a>
-                </div>
+                    <div class="column column-1">
+                        <a href="#">
+                            <span class="text">
+                                Как отформатировать книгу
+                            </span>
+                        </a>
+                        <a href="#">
+                            <span class="text">
+                                Сколько стоит моя книга?
+                            </span>
+                        </a>
+                        <a href="#">
+                            <span class="text">
+                                На какой бумаге печатать книгу и обложку?
+                            </span>
+                        </a>
+                        <a href="#">
+                            <span class="text">
+                                Переплет и количество страниц
+                            </span>
+                        </a>
+                        <a href="#">
+                            <span class="text">
+                                Твердый переплет
+                            </span>
+                        </a>
+                        <a href="#">
+                            <span class="text">
+                                Как определить цену?
+                            </span>
+                        </a>
+                    </div>
 
-                <div class="row row-1">
-                    <a href="#">
-                        Заголовки
-                    </a>
-                    <a href="#">
-                        Досуг и творчество
-                    </a>
-                    <a href="#">
-                        Книги для родителей
-                    </a>
-                    <a href="#">
-                        Познавательная литература
-                    </a>
-                    <a href="#">
-                        Художественная литература
-                    </a>
-                </div>
+                    <div class="column column-2">
+                        <a href="#">
+                            <span class="text">
+                                Заголовки
+                            </span>
+                        </a>
+                        <a href="#">
+                            <span class="text">
+                                Досуг и творчество
+                            </span>
+                        </a>
+                        <a href="#">
+                            <span class="text">
+                                Книги для родителей
+                            </span>
+                        </a>
+                        <a href="#">
+                            <span class="text">
+                                Познавательная литература
+                            </span>
+                        </a>
+                        <a href="#">
+                            <span class="text">
+                                Художественная литература
+                            </span>
+                        </a>
+                    </div>
 
-                <div class="row row-1">
-                    <a href="#">
-                        Форматирование электронных книг
-                    </a>
-                    <a href="#">
-                        Досуг и творчество
-                    </a>
-                    <a href="#">
-                        Книги для родителей
-                    </a>
-                    <a href="#">
-                        Познавательная литература
-                    </a>
-                    <a href="#">
-                        Художественная литература
-                    </a>
+                    <div class="column column-3">
+                        <a href="#">
+                            <span class="text">
+                                Форматирование электронных книг
+                            </span>
+                        </a>
+                        <a href="#">
+                            <span class="text">
+                                Досуг и творчество
+                            </span>
+                        </a>
+                        <a href="#">
+                            <span class="text">
+                                Книги для родителей
+                            </span>
+                        </a>
+                        <a href="#">
+                            <span class="text">
+                                Познавательная литература
+                            </span>
+                        </a>
+                        <a href="#">
+                            <span class="text">
+                                Художественная литература
+                            </span>
+                        </a>
+                    </div>
                 </div>
 
                 <div class="row row-2">
-                    <a href="#">
-                        Процесс публикации
-                    </a>
-                    <a href="#">
-                        Досуг и творчество
-                    </a>
-                    <a href="#">
-                        Книги для родителей
-                    </a>
-                    <a href="#">
-                        Познавательная литература
-                    </a>
-                    <a href="#">
-                        Художественная литература
-                    </a>
-                </div>
+                    <div class="column column-1">
+                        <a href="#">
+                            <span class="text">
+                                Процесс публикации
+                            </span>
+                        </a>
+                        <a href="#">
+                            <span class="text">
+                                Досуг и творчество
+                            </span>
+                        </a>
+                        <a href="#">
+                            <span class="text">
+                                Книги для родителей
+                            </span>
+                        </a>
+                        <a href="#">
+                            <span class="text">
+                                Познавательная литература
+                            </span>
+                        </a>
+                        <a href="#">
+                            <span class="text">
+                                Художественная литература
+                            </span>
+                        </a>
+                    </div>
 
-                <div class="row row-2">
-                    <a href="#">
-                        Текст, страницы, шрифт
-                    </a>
-                    <a href="#">
-                        Дошкольникам
-                    </a>
-                    <a href="#">
-                        Школьникам и абитуриентам
-                    </a>
-                    <a href="#">
-                        Студентам и аспирантам
-                    </a>
-                    <a href="#">
-                        Педагогам
-                    </a>
-                </div>
+                    <div class="column column-2">
+                        <a href="#">
+                            <span class="text">
+                                Текст, страницы, шрифт
+                            </span>
+                        </a>
+                        <a href="#">
+                            <span class="text">
+                                Дошкольникам
+                            </span>
+                        </a>
+                        <a href="#">
+                            <span class="text">
+                                Школьникам и абитуриентам
+                            </span>
+                        </a>
+                        <a href="#">
+                            <span class="text">
+                                Студентам и аспирантам
+                            </span>
+                        </a>
+                        <a href="#">
+                            <span class="text">
+                                Педагогам
+                            </span>
+                        </a>
+                    </div>
 
-                <div class="row row-2">
-                    <a href="#" class="verybook-help-you">
+                    <div class="column column-3">
+                        <a href="#" class="verybook-help-you">
+                            <div class="wrapper">
+                                <span class="text">
+                                    Verybook<br>поможет 2
+                                </span>
+                            </div>
+                            <img src="svg/vb/question-mark-beauty.svg" width="49" height="49">
+                        </a>
                         <p class="verybook-help-you">
-                            Verybook поможет 2
+                            Ever even heard of Hogwarts when the letters start dropping on the doormat
                         </p>
-                        <img src="svg/vb/question-mark-beauty.svg" class="verybook-help-you" width="49" height="49">
-                    </a>
-                    <p class="verybook-help-you">
-                        Ever even heard of Hogwarts when the letters start dropping on the doormat
-                    </p>
+                    </div>
                 </div>
             </div>
+
+            <!-- Слайд помощи 3 -->
             <div class="help-slide-content help-slide-3">
                 <div class="row row-1">
-                    <a href="#">
-                        Как отформатировать книгу
-                    </a>
-                    <a href="#">
-                        Сколько стоит моя книга?
-                    </a>
-                    <a href="#">
-                        На какой бумаге печатать книгу и обложку?
-                    </a>
-                    <a href="#">
-                        Переплет и количество страниц
-                    </a>
-                    <a href="#">
-                        Твердый переплет
-                    </a>
-                    <a href="#">
-                        Как определить цену?
-                    </a>
-                </div>
+                    <div class="column column-1">
+                        <a href="#">
+                            <span class="text">
+                                Как отформатировать книгу
+                            </span>
+                        </a>
+                        <a href="#">
+                            <span class="text">
+                                Сколько стоит моя книга?
+                            </span>
+                        </a>
+                        <a href="#">
+                            <span class="text">
+                                На какой бумаге печатать книгу и обложку?
+                            </span>
+                        </a>
+                        <a href="#">
+                            <span class="text">
+                                Переплет и количество страниц
+                            </span>
+                        </a>
+                        <a href="#">
+                            <span class="text">
+                                Твердый переплет
+                            </span>
+                        </a>
+                        <a href="#">
+                            <span class="text">
+                                Как определить цену?
+                            </span>
+                        </a>
+                    </div>
 
-                <div class="row row-1">
-                    <a href="#">
-                        Заголовки
-                    </a>
-                    <a href="#">
-                        Досуг и творчество
-                    </a>
-                    <a href="#">
-                        Книги для родителей
-                    </a>
-                    <a href="#">
-                        Познавательная литература
-                    </a>
-                    <a href="#">
-                        Художественная литература
-                    </a>
-                </div>
+                    <div class="column column-2">
+                        <a href="#">
+                            <span class="text">
+                                Заголовки
+                            </span>
+                        </a>
+                        <a href="#">
+                            <span class="text">
+                                Досуг и творчество
+                            </span>
+                        </a>
+                        <a href="#">
+                            <span class="text">
+                                Книги для родителей
+                            </span>
+                        </a>
+                        <a href="#">
+                            <span class="text">
+                                Познавательная литература
+                            </span>
+                        </a>
+                        <a href="#">
+                            <span class="text">
+                                Художественная литература
+                            </span>
+                        </a>
+                    </div>
 
-                <div class="row row-1">
-                    <a href="#">
-                        Форматирование электронных книг
-                    </a>
-                    <a href="#">
-                        Досуг и творчество
-                    </a>
-                    <a href="#">
-                        Книги для родителей
-                    </a>
-                    <a href="#">
-                        Познавательная литература
-                    </a>
-                    <a href="#">
-                        Художественная литература
-                    </a>
+                    <div class="column column-3">
+                        <a href="#">
+                            <span class="text">
+                                Форматирование электронных книг
+                            </span>
+                        </a>
+                        <a href="#">
+                            <span class="text">
+                                Досуг и творчество
+                            </span>
+                        </a>
+                        <a href="#">
+                            <span class="text">
+                                Книги для родителей
+                            </span>
+                        </a>
+                        <a href="#">
+                            <span class="text">
+                                Познавательная литература
+                            </span>
+                        </a>
+                        <a href="#">
+                            <span class="text">
+                                Художественная литература
+                            </span>
+                        </a>
+                    </div>
                 </div>
 
                 <div class="row row-2">
-                    <a href="#">
-                        Процесс публикации
-                    </a>
-                    <a href="#">
-                        Досуг и творчество
-                    </a>
-                    <a href="#">
-                        Книги для родителей
-                    </a>
-                    <a href="#">
-                        Познавательная литература
-                    </a>
-                    <a href="#">
-                        Художественная литература
-                    </a>
-                </div>
+                    <div class="column column-1">
+                        <a href="#">
+                            <span class="text">
+                                Процесс публикации
+                            </span>
+                        </a>
+                        <a href="#">
+                            <span class="text">
+                                Досуг и творчество
+                            </span>
+                        </a>
+                        <a href="#">
+                            <span class="text">
+                                Книги для родителей
+                            </span>
+                        </a>
+                        <a href="#">
+                            <span class="text">
+                                Познавательная литература
+                            </span>
+                        </a>
+                        <a href="#">
+                            <span class="text">
+                                Художественная литература
+                            </span>
+                        </a>
+                    </div>
 
-                <div class="row row-2">
-                    <a href="#">
-                        Текст, страницы, шрифт
-                    </a>
-                    <a href="#">
-                        Дошкольникам
-                    </a>
-                    <a href="#">
-                        Школьникам и абитуриентам
-                    </a>
-                    <a href="#">
-                        Студентам и аспирантам
-                    </a>
-                    <a href="#">
-                        Педагогам
-                    </a>
-                </div>
+                    <div class="column column-2">
+                        <a href="#">
+                            <span class="text">
+                                Текст, страницы, шрифт
+                            </span>
+                        </a>
+                        <a href="#">
+                            <span class="text">
+                                Дошкольникам
+                            </span>
+                        </a>
+                        <a href="#">
+                            <span class="text">
+                                Школьникам и абитуриентам
+                            </span>
+                        </a>
+                        <a href="#">
+                            <span class="text">
+                                Студентам и аспирантам
+                            </span>
+                        </a>
+                        <a href="#">
+                            <span class="text">
+                                Педагогам
+                            </span>
+                        </a>
+                    </div>
 
-                <div class="row row-2">
-                    <a href="#" class="verybook-help-you">
+                    <div class="column column-3">
+                        <a href="#" class="verybook-help-you">
+                            <div class="wrapper">
+                                <span class="text">
+                                    Verybook<br>поможет 3
+                                </span>
+                            </div>
+                            <img src="svg/vb/question-mark-beauty.svg" width="49" height="49">
+                        </a>
                         <p class="verybook-help-you">
-                            Verybook поможет 3
+                            Ever even heard of Hogwarts when the letters start dropping on the doormat
                         </p>
-                        <img src="svg/vb/question-mark-beauty.svg" class="verybook-help-you" width="49" height="49">
-                    </a>
-                    <p class="verybook-help-you">
-                        Ever even heard of Hogwarts when the letters start dropping on the doormat
-                    </p>
+                    </div>
                 </div>
             </div>
             <!-- END (Слайды помощи) -->
@@ -433,6 +615,8 @@
                     Хочу создать книгу
                 </a>
             </div>
+
+        <!-- END (Тело страницы) -------------------------------------------------------------------------------------------- -->
             
             <div class="books-on-shelf">
                 <img src="img/bottom-book-1.jpg" />

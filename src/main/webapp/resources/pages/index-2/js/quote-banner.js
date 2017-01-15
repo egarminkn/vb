@@ -5,7 +5,7 @@ var TOTAL_COUNT_QUOTES = null; // Общее количество цитат. О
  * @param currentQuoteIndex - порядковый номер текущей цитаты
  * @param isIncrement - инкремент или декремент порядкового номера
  */
-function getQuoteIndex(currentQuoteIndex, isIncrement) {
+function getNextQuoteIndex(currentQuoteIndex, isIncrement) {
     if (isIncrement) {
         currentQuoteIndex++;
         if (currentQuoteIndex >= TOTAL_COUNT_QUOTES) {
@@ -23,16 +23,17 @@ function getQuoteIndex(currentQuoteIndex, isIncrement) {
 $(function () {
     TOTAL_COUNT_QUOTES = $('.quotes-slider > .quotes > .quote').length;
 
-    var sliderButtons = $('.slider-buttons > .slider-button');
-    var currentQuoteIndex = 0;
+    var sliderButtons = $('input[type="radio"].slider-button');
 
     $('.quotes-slider > .arrow-btn.left-arrow-btn').click(function () {
-        currentQuoteIndex = getQuoteIndex(currentQuoteIndex, false);
-        $(sliderButtons[currentQuoteIndex]).trigger('click');
+        currentQuoteIndex = sliderButtons.index(sliderButtons.filter(':checked'));
+        var nextQuoteIndex = getNextQuoteIndex(currentQuoteIndex, false);
+        $(sliderButtons[nextQuoteIndex]).trigger('click');
     });
 
     $('.quotes-slider > .arrow-btn.right-arrow-btn').click(function () {
-        currentQuoteIndex = getQuoteIndex(currentQuoteIndex, true);
-        $(sliderButtons[currentQuoteIndex]).trigger('click');
+        currentQuoteIndex = sliderButtons.index(sliderButtons.filter(':checked'));
+        var nextQuoteIndex = getNextQuoteIndex(currentQuoteIndex, true);
+        $(sliderButtons[nextQuoteIndex]).trigger('click');
     });
 });

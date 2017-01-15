@@ -483,10 +483,12 @@ div.slogan > a.new-books-free {
     z-index: 1;
 }
 
+/* START (Тело страницы) -------------------------------------------------------------------------------------------- */
+
 /**
  **  Блок цитат вместо главного баннера
  **/
-.quotes-slider {
+main.index-2 .quotes-slider {
     margin: auto;
     margin-top: 15px;
     box-sizing: content-box;
@@ -501,7 +503,7 @@ div.slogan > a.new-books-free {
 /*
  * Кнопки слайдинга цитат
  */
-.arrow-btn {
+main.index-2 .arrow-btn {
     box-sizing: border-box;
     height: 210px;
     max-width: 50px;
@@ -510,7 +512,7 @@ div.slogan > a.new-books-free {
     /*border: 1px solid black;*/
 }
 
-.arrow-btn .corner {
+main.index-2 .arrow-btn .corner {
     box-sizing: border-box;
     height: 105px;
     width: 120px;
@@ -521,24 +523,24 @@ div.slogan > a.new-books-free {
     top: 50px;
 }
 
-.arrow-btn.left-arrow-btn .corner {
+main.index-2 .arrow-btn.left-arrow-btn .corner {
     left: -15px;
     transform: rotate(-60deg) skewX(-31deg);
 }
 
-.arrow-btn.right-arrow-btn .corner {
+main.index-2 .arrow-btn.right-arrow-btn .corner {
     right: -15px;
     transform: rotate(120deg) skewX(-31deg);
 }
 
 /*
- * Цитата вверху страницы и ее переключение
+ * Цитаты вверху страницы и их переключение
  */
-.quotes {
+main.index-2 .quotes {
     /*border: 1px solid red;*/
 }
 
-.quotes .quote {
+main.index-2 .quotes .quote {
     font-family: Tahoma, sans-serif;
     font-size: 29px;
     letter-spacing: 0.5px;
@@ -555,27 +557,29 @@ div.slogan > a.new-books-free {
     /*border: 1px solid black;*/
 }
 
-#slider-button-1:checked ~ .quotes-slider .quotes .quote-1,
-#slider-button-2:checked ~ .quotes-slider .quotes .quote-2,
-#slider-button-3:checked ~ .quotes-slider .quotes .quote-3 {
+main.index-2 input[type="radio"].slider-button-1:checked ~ .quotes-slider .quotes .quote-1,
+main.index-2 input[type="radio"].slider-button-2:checked ~ .quotes-slider .quotes .quote-2,
+main.index-2 input[type="radio"].slider-button-3:checked ~ .quotes-slider .quotes .quote-3 {
     height: 100%;
     opacity: 1;
 }
 
 /*
- *  Кнопочки переключатели текста главного баннера
+ *  Кнопочки переключатели текста баннера цитат
  */
-input[type="radio"][name="slide"] {
+main.index-2 input[type="radio"].slider-button-1,
+main.index-2 input[type="radio"].slider-button-2,
+main.index-2 input[type="radio"].slider-button-3 {
     display: none;
 }
 
-.slider-buttons {
+main.index-2 .slider-buttons {
     margin-top: 5px;
     text-align: center;
     /*border: 1px solid black;*/
 }
 
-.slider-buttons .slider-button {
+main.index-2 .slider-buttons .slider-button {
     display: inline-block;
     width: 11px;
     height: 11px;
@@ -585,20 +589,22 @@ input[type="radio"][name="slide"] {
     cursor: pointer;
 }
 
-#slider-button-1:checked ~ .slider-buttons > label[for="slider-button-1"],
-#slider-button-2:checked ~ .slider-buttons > label[for="slider-button-2"],
-#slider-button-3:checked ~ .slider-buttons > label[for="slider-button-3"] {
+main.index-2 input[type="radio"].slider-button-1:checked ~ .slider-buttons > label.slider-button-1,
+main.index-2 input[type="radio"].slider-button-2:checked ~ .slider-buttons > label.slider-button-2,
+main.index-2 input[type="radio"].slider-button-3:checked ~ .slider-buttons > label.slider-button-3 {
     background-color: #8a8a8a;
 }
 
 /*
  *  Вкладки переключатели текста помощи
  */
-input[type="radio"][name="help-slide"] {
+main.index-2 input[type="radio"].help-slide-1,
+main.index-2 input[type="radio"].help-slide-2,
+main.index-2 input[type="radio"].help-slide-3 {
     display: none;
 }
 
-.help-slide-marks {
+main.index-2 .help-slide-marks {
     margin-left: 1.2%;
     margin-right: 1.2%;
     margin-top: 50px;
@@ -608,7 +614,7 @@ input[type="radio"][name="help-slide"] {
     /*border: 1px solid black;*/
 }
 
-.help-slide-marks .help-slide-mark {
+main.index-2 .help-slide-marks .help-slide-mark {
     display: inline-block;
     height: 155px;
     width: 33.33%;
@@ -622,11 +628,11 @@ input[type="radio"][name="help-slide"] {
     position: relative;
 }
 
-.help-slide-marks .help-slide-mark > img {
+main.index-2 .help-slide-marks .help-slide-mark > img {
     position: absolute;
 }
 
-.help-slide-marks .help-slide-mark > p {
+main.index-2 .help-slide-marks .help-slide-mark > p {
     font-family: Tahoma, sans-serif;
     font-size: 21px;
     letter-spacing: 0.3px;
@@ -636,241 +642,231 @@ input[type="radio"][name="help-slide"] {
     text-decoration: underline;
 }
 
-.help-slide-marks > label[for="help-slide-1"] {
+main.index-2 .help-slide-marks > label.help-slide-mark-1 {
     z-index: 3;    
 }
 
-.help-slide-marks > label[for="help-slide-2"] {
+main.index-2 .help-slide-marks > label.help-slide-mark-2 {
     z-index: 2;
     margin-left: -4px;
 }
 
-.help-slide-marks > label[for="help-slide-3"] {
+main.index-2 .help-slide-marks > label.help-slide-mark-3 {
     z-index: 1;
     margin-left: -4px;
 }
 
-.help-slide-marks > label[for="help-slide-2"] > img {
+main.index-2 .help-slide-marks > label.help-slide-mark-2 > img {
     top: 42px;
     left: 30px;
     /*border: 1px solid black;*/
 }
 
-.help-slide-marks > label[for="help-slide-3"] > img {
+main.index-2 .help-slide-marks > label.help-slide-mark-3 > img {
     top: 37px;
     left: 0;
     /*border: 1px solid black;*/
 }
 
-.help-slide-marks > label[for="help-slide-1"] > p {
+main.index-2 .help-slide-marks > label.help-slide-mark-1 > p {
     right: 16.81%;
     top: 15px;
     width: 170px;
 }
 
-.help-slide-marks > label[for="help-slide-2"] > p {
+main.index-2 .help-slide-marks > label.help-slide-mark-2 > p {
     right: 4.32%;
     top: 15px;
     width: 205px;
     /*border: 1px solid black;*/
 }
 
-.help-slide-marks > label[for="help-slide-3"] > p {
+main.index-2 .help-slide-marks > label.help-slide-mark-3 > p {
     right: 6%;
     top: 15px;
     width: 210px;
     /*border: 1px solid black;*/
 }
 
-#help-slide-1:checked ~ div.help-slide-marks > label[for="help-slide-1"],
-#help-slide-2:checked ~ div.help-slide-marks > label[for="help-slide-2"],
-#help-slide-3:checked ~ div.help-slide-marks > label[for="help-slide-3"] {
+main.index-2 input[type="radio"].help-slide-1:checked ~ .help-slide-marks > label.help-slide-mark-1,
+main.index-2 input[type="radio"].help-slide-2:checked ~ .help-slide-marks > label.help-slide-mark-2,
+main.index-2 input[type="radio"].help-slide-3:checked ~ .help-slide-marks > label.help-slide-mark-3 {
     height: 165px;
     border: 1px solid #b7b7b7;
     border-bottom: 0;
     z-index: 4;
 }
 
-#help-slide-1:checked ~ div.help-slide-marks > label[for="help-slide-2"],
-#help-slide-1:checked ~ div.help-slide-marks > label[for="help-slide-3"] {
+main.index-2 input[type="radio"].help-slide-1:checked ~ .help-slide-marks > label.help-slide-mark-2,
+main.index-2 input[type="radio"].help-slide-1:checked ~ .help-slide-marks > label.help-slide-mark-3 {
     border-left: 0;
     border-top-left-radius: 0;
 }
 
-#help-slide-2:checked ~ div.help-slide-marks > label[for="help-slide-1"] {
+main.index-2 input[type="radio"].help-slide-2:checked ~ .help-slide-marks > label.help-slide-mark-1 {
     border-right: 0;
     border-top-right-radius: 0;
 }
 
-#help-slide-2:checked ~ div.help-slide-marks > label[for="help-slide-3"] {
+main.index-2 input[type="radio"].help-slide-2:checked ~ .help-slide-marks > label.help-slide-mark-3 {
     border-left: 0;
     border-top-left-radius: 0;
 }
 
-#help-slide-3:checked ~ div.help-slide-marks > label[for="help-slide-1"],
-#help-slide-3:checked ~ div.help-slide-marks > label[for="help-slide-2"] {
+main.index-2 input[type="radio"].help-slide-3:checked ~ .help-slide-marks > label.help-slide-mark-1,
+main.index-2 input[type="radio"].help-slide-3:checked ~ .help-slide-marks > label.help-slide-mark-2 {
     border-right: 0;
     border-top-right-radius: 0;
 }
 
-#help-slide-1:checked ~ div.help-slide-marks > label[for="help-slide-1"] > p,
-#help-slide-2:checked ~ div.help-slide-marks > label[for="help-slide-2"] > p,
-#help-slide-3:checked ~ div.help-slide-marks > label[for="help-slide-3"] > p {
+main.index-2 input[type="radio"].help-slide-1:checked ~ .help-slide-marks > label.help-slide-mark-1 > p,
+main.index-2 input[type="radio"].help-slide-2:checked ~ .help-slide-marks > label.help-slide-mark-2 > p,
+main.index-2 input[type="radio"].help-slide-3:checked ~ .help-slide-marks > label.help-slide-mark-3 > p {
     color: black;
     text-decoration: none;
 }
 
-#help-slide-1:not(checked) ~ div.help-slide-marks > label[for="help-slide-1"],
-#help-slide-2:not(checked) ~ div.help-slide-marks > label[for="help-slide-2"],
-#help-slide-3:not(checked) ~ div.help-slide-marks > label[for="help-slide-3"] {
+main.index-2 input[type="radio"].help-slide-1:not(checked) ~ .help-slide-marks > label.help-slide-mark-1,
+main.index-2 input[type="radio"].help-slide-2:not(checked) ~ .help-slide-marks > label.help-slide-mark-2,
+main.index-2 input[type="radio"].help-slide-3:not(checked) ~ .help-slide-marks > label.help-slide-mark-3 {
     border: 1px dashed #b7b7b7;
     border-bottom: 1px solid #b7b7b7;
 }
 
 /* переключение контента вкладок */
-#help-slide-1:checked ~ .help-slide-1,
-#help-slide-2:checked ~ .help-slide-2,
-#help-slide-3:checked ~ .help-slide-3 {
-    display: block;
+main.index-2 input[type="radio"].help-slide-1:checked ~ .help-slide-content.help-slide-1,
+main.index-2 input[type="radio"].help-slide-2:checked ~ .help-slide-content.help-slide-2,
+main.index-2 input[type="radio"].help-slide-3:checked ~ .help-slide-content.help-slide-3 {
+    display: flex;
 }
 
 /*
  *  Содержимое помощи
  */
-div.help-slide-content {
+main.index-2 .help-slide-content {
     display: none;
-    width: 97.6%;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: stretch;
     box-sizing: border-box;
+    width: 97.6%;
     margin-left: 1.2%;
     margin-right: 1.2%;
-    border: 1px solid #b7b7b7;
-    border-top: 0;
-    background-image: linear-gradient(#fefdfa, #f7f5e5);
     border-bottom-left-radius: 5px;
     border-bottom-right-radius: 5px;
+    border: 1px solid #b7b7b7;
+    border-top-style: none;
+    background-image: linear-gradient(#fefdfa, #f7f5e5);
 }
 
 /*
  *  Блоки с помощью на вкладке с шагом
  */
-/* Первая строка блоков помощи */
-div.help-slide-content > div.row {
-    display: inline-block;
-    vertical-align: top;
-    margin-top: 107px;
-    margin-left: 6.8%;
-    margin-right: 10.7%;
+main.index-2 .help-slide-content > .row {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: flex-start;
+    margin: 30px 20px;
     /*border: 1px solid black;*/
 }
 
-div.help-slide-content > div:nth-of-type(1) {
+main.index-2 .help-slide-content > .row > .column {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+}
+
+main.index-2 .help-slide-content > .row > .column-1 {
     width: 20%;
 }
-div.help-slide-content > div:nth-of-type(2) {
-    margin-right: 10.4%;
-    width: 15.1%;
+
+main.index-2 .help-slide-content > .row > .column-2 {
+    width: 20%;
 }
 
-div.help-slide-content > div:nth-of-type(3) {
-    width: 15.1%;
-    margin-right: 0;
-    /*border: 1px solid black;*/
-}
-
-/* Вторая строка блоков помощи */
-div.help-slide-content > div.row-2 {
-    margin-top: 20px;
-    margin-bottom: 100px;
-    margin-right: 15.77%;
-    margin-left: 6.64%;
-}
-
-div.help-slide-content > div:nth-of-type(4) {
-    width: 15.1%;
-    margin-top: 75px;
-    margin-right: 16.17%;
-    /*border: 1px solid black;*/
-}
-
-div.help-slide-content > div.row-2:nth-of-type(5) {
-    margin-right: 14.8%;
-    width: 17.4%;
+main.index-2 .help-slide-content > .row > .column-3 {
+    width: 20%;
 }
 
 /* Ссылки помощи */
-div.help-slide-content > div.row > a {
+main.index-2 .help-slide-content > .row > .column > a {
     font-family: Tahoma, sans-serif;
+    text-decoration: none;
+}
+
+main.index-2 .help-slide-content > .row > .column > a:not(:first-of-type) {
+    margin-top: 12px;
+}
+
+main.index-2 .help-slide-content > .row > .column > a:first-of-type > span.text {
+    font-size: 18px;
+    letter-spacing: 0.5px;
+    line-height: 27px;
+    color: black;
+    border-bottom: 1px solid black;
+}
+
+main.index-2 .help-slide-content > .row > .column > a:not(:first-of-type) > span.text {
     font-size: 14px;
     letter-spacing: 0.1px;
     word-spacing: 0.3px;
     line-height: 20px;
     color: #5f7495;
-    display: block;
-    margin-bottom: 12px;
-    /*border: 1px solid black;*/
-}
-
-div.help-slide-content > div.row > a:first-of-type {
-    font-size: 18px;
-    letter-spacing: 0.5px;
-    line-height: 27px;
-    color: black;
-    text-decoration: none;
-    margin-bottom: 10px;
+    border-bottom: 1px solid #5f7495;
 }
 
 /*
- *  Блочок "Verybook поможет"
+ * Блочок "Verybook поможет"
  */
-div.help-slide-content > div:nth-of-type(6) {
-    position: relative;
-    margin-left: 0;
-    margin-right: 0;
-    margin-top: 18px;
-    width: 16.6%;
-    /*border: 1px solid black;*/
+main.index-2 .help-slide-content > .row-2 > .column-3 > a.verybook-help-you {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    text-decoration: none;
 }
 
-div.help-slide-content > div.row.row-2 > a.verybook-help-you > .verybook-help-you {
-    display: inline-block;
+main.index-2 .help-slide-content > .row.row-2 > .column.column-3 > a.verybook-help-you > .wrapper {
+    margin-right: 20px;
 }
 
-div.help-slide-content > div.row.row-2 > a.verybook-help-you > p.verybook-help-you {
+main.index-2 .help-slide-content > .row.row-2 > .column.column-3 > a.verybook-help-you > .wrapper > span.text {
     font-family: Tahoma, sans-serif;
     font-size: 26px;
     letter-spacing: 0.7px;
     line-height: 32px;
-    width: 115px;
     color: #ccbd54;
-    text-decoration: none;
-    margin-right: 10px;
-    margin-bottom: 7px;
+    /*border-bottom: 1px solid #ccbd54;*/
     /*border: 1px solid black;*/
 }
 
-div.help-slide-content > div.row.row-2 > p.verybook-help-you {
+main.index-2 .help-slide-content > .row-2 > .column-3 > p.verybook-help-you {
     font-family: Tahoma, sans-serif;
     font-size: 14px;
     line-height: 20px;
     color: black;
     letter-spacing: 0.5px;
-    margin-top: 0;
     /*border: 1px solid black;*/
 }
 
 /*
  * Кнопка "Хочу создать книгу"
  */
-.btn-wrapper {
+main.index-2 .btn-wrapper {
     margin-top: 20px;
     text-align: center;
 }
 
-.btn-wrapper .btn {
+main.index-2 .btn-wrapper .btn {
     font-size: 24px;
     line-height: 50px;
     height: 50px;
 }
+
+/* END (Тело страницы) -------------------------------------------------------------------------------------------- */
 
 /*
  *  Основное тело страницы
