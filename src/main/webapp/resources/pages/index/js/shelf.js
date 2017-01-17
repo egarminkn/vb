@@ -34,7 +34,7 @@ function shelfShift(shelfIndex, isLeftArrow) {
 
     var shelfWidth = booksOuter.width();
     var leftPx = parseInt(booksInner.css('left'));
-    var leftPercent = 100 * leftPx / shelfWidth; // Расчет в процентах позволяет не беспокоиться о том, что юзер будет менять размеры окна браузера.
+    var leftPercent = 100 * Math.round(leftPx / shelfWidth); // Расчет в процентах позволяет не беспокоиться о том, что юзер будет менять размеры окна браузера.
     if (leftPercent % 100 === 0) { // После включения transient, т.е. плавной промотки полки, пришлось поставить эту проверку на то, что предыдущая промотка завершена и можно снова нажимать на стрелочки.
         var countScreens = shelves[shelfIndex].totalCountBooks / COUNT_BOOKS_ON_SHELF;
         var countScreensOnTheLeft = Math.abs(leftPercent / 100);
