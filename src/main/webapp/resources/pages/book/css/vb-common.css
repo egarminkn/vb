@@ -519,7 +519,6 @@ ul.rating-filter > li.rating-filter-group > ul.radios > label > input[type="radi
  **/
 ul.top-level {
     margin: 0;
-    padding: 0;
     list-style: none;
     border: 1px dashed #e1e1e1;
     border-radius: 5px;
