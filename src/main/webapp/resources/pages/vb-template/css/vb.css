@@ -2636,7 +2636,7 @@ div.likes .dislike::before {
  * Шапка баннера специальных предложений
  */
 .spec > .header {
-    font-family: Verdana;
+    font-family: Verdana, sans-serif;
     font-size: 15px;
     letter-spacing: 0.8px;
     line-height: 19px;
