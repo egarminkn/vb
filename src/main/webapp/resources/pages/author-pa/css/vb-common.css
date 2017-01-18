@@ -699,6 +699,7 @@ ul.top-level > ul.bottom-level > li.bottom-level-link > a {
 
 .book-toc > ul.level.level-1 {
     overflow-y: auto;
+    overflow-x: hidden;
     height: 100%;
     /*border: 1px solid black;*/
 }
