@@ -507,7 +507,7 @@ main.index > .columns > .column.column-1 {
 main.index > .columns > .column.column-2 {
     box-sizing: border-box;
     width: 82%;
-    /*min-width: 650px;*/
+    min-width: 650px;
 }
 
 /**
@@ -610,9 +610,7 @@ main.index .column.column-1.links > .top-level {
     box-sizing: border-box;
     width: 100%;
     max-width: 200px;
-    padding-top: 5px;
-    padding-bottom: 5px;
-    margin: 0 auto;
+    padding: 5px 0;
     border-style: none;
     /*border: 1px solid red;*/
 }
@@ -625,7 +623,7 @@ main.index .column.column-1.links > .top-level li {
  * Стилизация блока спец.предложений
  */
 main.index .spec {
-    margin: 50px auto 0 auto;
+    margin-top: 50px;
 }
 
 /*
