@@ -1101,7 +1101,7 @@ main .author .about .columns .column-4 .row-2 .wallet .balance {
     font-size: 16px;
 }
 
-main .author .about .columns .column-4 .row-2 .wallet .get-money {
+main .author .about .columns .column-4 .row-2 .wallet .modal-btn {
     font-family: Tahoma, sans-serif;
     font-size: 14px;
     color: #667493;
@@ -1706,104 +1706,34 @@ main .books table.write tbody tr td.profit {
     /*border: 1px solid black;*/
 }
 
-/***
- *** Модальные окна
- ***/
 /**
- **  Общая часть модального окна
- **/
-.modal {
-    position: fixed;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    background: rgba(0, 0, 0, 0.8);
-    z-index: 100;
-    opacity: 0;
-    transition: opacity 400ms ease-in;
-    pointer-events: none;
-}
-
-.modal:target {
-    opacity: 1;
-    pointer-events: auto;
-}
-
-/**
- **  Тело модального окна
- **/
-.modal > .body {
-    font-family: Tahoma, sans-serif;
-    position: relative;
-    margin: 10% auto;
-    padding: 20px;
-    box-sizing: border-box;
-    border-radius: 5px;
-    width: 550px;
-    background-image: linear-gradient(#fefdfa, #f7f5e5);
-}
-
-/**
- **  Кнопка закрытия модального окна
- **/
-.modal .close {
-    display: block;
-    position: absolute;
-    right: -10px;
-    top: -10px;
-    box-sizing: border-box;
-    height: 25px;
-    width: 25px;
-    border-radius: 50%;
-    text-decoration: none;
-    background: #888;
-    transform: rotate(45deg);
-}
-
-.modal .close::before {
-    content: '';
-    display: block;
-    position: absolute;
-    top: 6px;
-    left: 11px;
-    box-sizing: border-box;
-    width: 3px;
-    height: 13px;
-    background: white;
-}
-
-.modal .close::after {
-    content: '';
-    display: block;
-    position: absolute;
-    top: 11px;
-    left: 6px;
-    box-sizing: border-box;
-    width: 13px;
-    height: 3px;
-    background: white;
-}
-
-.modal .close:hover {
-    background: #657392;
-}
-
-/**
- **  Тело модального окна (Выбор способа Получить деньги)
+ ** Модальное окно
  **/
 /*
- * Общая часть - Выбор способа Получить деньги
+ * Тело
  */
-.receive-money {
+.modal.receive-money > .body {
+    margin-top: 10%;
+    width: 550px;
+    height: auto;
+}
+
+.modal.receive-money > .body > .columns > .column-1,
+.modal.receive-money > .body > .columns > .column-3 {
+    display: none;
+}
+
+/*
+ * Стилизация выбора способа "Получить деньги"
+ */
+/* общая часть */
+.modal.receive-money > .body > .columns > .column-2 .receive-money {
     font-family: Tahoma, sans-serif;
     font-size: 14px;
 }
 
-/*
- * Заголовок - Выбор способа Получить деньги
- */
-.receive-money h2 {
+/* заголовок */
+.modal.receive-money > .body > .columns > .column-2 .receive-money h2 {
     font-family: Tahoma, sans-serif;
     font-size: 24px;
     font-weight: normal;
@@ -1811,35 +1741,33 @@ main .books table.write tbody tr td.profit {
     margin: 0;
 }
 
-/*
- * Выбор способа "Получить деньги" (radio-кнопки)
- */
-.receive-money .payment-modes {
+/* radio-кнопки */
+.modal.receive-money > .body > .columns > .column-2 .receive-money .payment-modes {
     width: 80%;
-    margin: 20px auto 20px auto;
+    margin: 20px auto;
     /*border: 1px solid black;*/
 }
 
 /*
- *  Общая сумма получаемых денег
+ * Общая сумма получаемых денег
  */
-.receive-money .cost {
+.modal.receive-money > .body > .columns > .column-2 .receive-money .cost {
     margin: auto;
     margin-top: 10px;
     margin-left: calc(20% + 15px);
 }
 
 /*
- *  Кнопки: Получить деньги и Отменить
+ * Кнопки: Получить деньги и Отменить
  */
-.receive-money .buttons {
+.modal.receive-money > .body > .columns > .column-2 .receive-money .buttons {
     margin-top: 10px;
     display: flex;
     flex-direction: row;
     justify-content: flex-end;
 }
 
-.receive-money .buttons .btn:not(:first-child) {
+.modal.receive-money > .body > .columns > .column-2 .receive-money .buttons .btn:not(:first-child) {
     margin-left: 5px;
 }
 

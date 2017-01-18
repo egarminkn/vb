@@ -6,7 +6,16 @@
 		<link href="css/author-pa.css" type="text/css" rel="stylesheet" />
         <link href="css/vb-common.css" type="text/css" rel="stylesheet" />
         <link href="css/datatables.css" type="text/css" rel="stylesheet" />
+
+        <!--
+            jQuery нужно подключать в теге head, а не после тега body,
+            т.к. иначе в Firefox-е некоторые страницы после загрузки проматываются в конец,
+            а модальные окна изначально видны и только потом плавно исчезают
+        -->
+        <script type="text/javascript" src="js/jquery-2.2.3.min.js"></script>
+        <!--<script type="text/javascript" src="https://code.jquery.com/jquery-2.2.3.min.js"></script>-->
     </head>
+
 	<body onload="init()">
         <header>
             <div class="header header1">
@@ -212,7 +221,13 @@
                                         <span class="number">517</span>
                                         <span class="currency">руб.</span>
                                     </div>
-                                    <a class="get-money" href="#get-money">Получить деньги</a>
+
+                                    <!-- START (Модальное окно) - 1-ая часть из 3-х -->
+                                    <!-- Само модальное окно размещается в конце тега main, а здесь идет ссылка на id-шник (modal-name) этого окна -->
+                                    <a href="#receive-money" class="modal-btn">
+                                        Получить деньги
+                                    </a>
+                                    <!-- END (Модальное окно) - 1-ая часть из 3-х -->
                                 </div>
                             </div>
                             <div class="row row-3">
@@ -1845,300 +1860,314 @@
                 </div>
             </div>
 
-            <!-- Модальные окна -->
-            <div class="modal" id="get-money">
+            <!-- START (Модальное окно) - 2-ая часть из 3-х (размещается в конце тега main) -->
+            <!-- Имя modal-name класса и id поменять на свое -->
+            <div class="modal receive-money" id="receive-money">
                 <div class="body">
-                    <a href="#close" title="Закрыть" class="close"></a>
+                    <a href="#close-modal" title="Закрыть" class="close-btn"></a>
 
-                    <div class="receive-money">
-                        <h2>Укажите, пожалуйста, реквизиты платежа</h2>
+                    <div class="columns">
+                        <div class="column column-1">
 
-                        <!-- START (Группа-радиокнопок-аккордион) -->
-                        <!-- Если на странице несколько таких элементов, то нужно обеспечить уникальность имен групп radio-кнопок (name), уникальность их id-ков и соответствующих for-ов у label-ов -->
-                        <!-- Доп.кдасс:
-                                1) buy-book - уберет checkbox-group
-                                2) get-money - уберет robokassa-mode
-                        -->
-                        <div class="payment-modes get-money">
-                            <div class="payment-modes-accordion" id="pay-1">
-                                <input type="radio" name="payment-mode" class="radio-payment-mode radio-yandex-money-wallet-mode" id="yandex-money-wallet" value="yandex-money-wallet-mode" checked>
-                                <input type="radio" name="payment-mode" class="radio-payment-mode radio-yandex-money-card-mode" id="yandex-money-card" value="yandex-money-card-mode">
-                                <input type="radio" name="payment-mode" class="radio-payment-mode radio-webmoney-mode" id="webmoney" value="webmoney-mode">
-                                <input type="radio" name="payment-mode" class="radio-payment-mode radio-robokassa-mode" id="robokassa" value="robokassa-mode">
+                        </div>
 
-                                <div class="payment-mode yandex-money-wallet-mode">
-                                    <label class="figure" for="yandex-money-wallet"></label>
-                                    <label class="text" for="yandex-money-wallet">
-                                        Яндекс.Деньги Кошелек
-                                    </label>
-                                    <div class="info yandex-money-wallet-info">
-                                        <form method="post" action="#">
-                                            <input type="hidden" name="payment-mode" value="yandex-money-wallet">
-                                            <div class="row">
-                                                <div class="cell yandex-money-wallet-id">
-                                                    <label for="yandex-money-wallet-id">
-                                                        <span class="text">
-                                                            Номер кошелька
-                                                        </span>
-                                                    </label>
+                        <div class="column column-2">
+                            <div class="receive-money">
+                                <h2>Укажите, пожалуйста, реквизиты платежа</h2>
 
-                                                    <!-- START (Наклонные input-ы) -->
-                                                    <!-- Для использования этого input-а в форме, нужно заполнить поле name -->
-                                                    <div class="skew-outer">
-                                                        <input class="skew-inner"
-                                                               type="text"
-                                                               id="yandex-money-wallet-id"
-                                                               name="yandex-money-wallet-id"
-                                                               required>
-                                                    </div>
-                                                    <!-- END (Наклонные input-ы) -->
-                                                </div>
-                                            </div>
-                                            <button type="submit" style="display: none;">
-                                                <!--
-                                                    Перед тем как сабмитить форму по событию клик кнопки будет идти проверка
-                                                    required полей и прочая валидация по паттернам, если таковая имеется
-                                                -->
-                                            </button>
-                                        </form>
-                                    </div>
-                                </div>
+                                <!-- START (Группа-радиокнопок-аккордион) -->
+                                <!-- Если на странице несколько таких элементов, то нужно обеспечить уникальность имен групп radio-кнопок (name), уникальность их id-ков и соответствующих for-ов у label-ов -->
+                                <!-- Доп.кдасс:
+                                        1) buy-book - уберет checkbox-group
+                                        2) get-money - уберет robokassa-mode
+                                -->
+                                <div class="payment-modes get-money">
+                                    <div class="payment-modes-accordion" id="pay-1">
+                                        <input type="radio" name="payment-mode" class="radio-payment-mode radio-yandex-money-wallet-mode" id="yandex-money-wallet" value="yandex-money-wallet-mode" checked>
+                                        <input type="radio" name="payment-mode" class="radio-payment-mode radio-yandex-money-card-mode" id="yandex-money-card" value="yandex-money-card-mode">
+                                        <input type="radio" name="payment-mode" class="radio-payment-mode radio-webmoney-mode" id="webmoney" value="webmoney-mode">
+                                        <input type="radio" name="payment-mode" class="radio-payment-mode radio-robokassa-mode" id="robokassa" value="robokassa-mode">
 
-                                <div class="payment-mode yandex-money-card-mode">
-                                    <label class="figure" for="yandex-money-card"></label>
-                                    <label class="text" for="yandex-money-card">
-                                        Яндекс.Деньги Банковская карта
-                                    </label>
-                                    <div class="info card-info">
-                                        <form method="post" action="#">
-                                            <input type="hidden" name="payment-mode" value="yandex-money-card">
-                                            <div class="row">
-                                                <div class="cell card-holder">
-                                                    <label for="card-holder">
-                                                        <span class="text">
-                                                            Имя владельца карты
-                                                        </span>
-
-                                                        <!-- START (Значок-вопросика с всплывающей подсказкой) -->
-                                                        <div class="hint">
-                                                            <!-- Если убрать доп.класс blue, то знак вопросмка будет черного цвета -->
-                                                            <div class="question-mark blue"></div>
-                                                            <div class="bubble-before bubble-before-1"></div>
-                                                            <div class="bubble-before bubble-before-2"></div>
-                                                            <div class="bubble" data-init-width="355">
-                                                                <span class="content">
-                                                                    Имя владельца карты должно быть введено в латинской транскрипции именно так, как оно указано на Вашей карте
+                                        <div class="payment-mode yandex-money-wallet-mode">
+                                            <label class="figure" for="yandex-money-wallet"></label>
+                                            <label class="text" for="yandex-money-wallet">
+                                                Яндекс.Деньги Кошелек
+                                            </label>
+                                            <div class="info yandex-money-wallet-info">
+                                                <form method="post" action="#">
+                                                    <input type="hidden" name="payment-mode" value="yandex-money-wallet">
+                                                    <div class="row">
+                                                        <div class="cell yandex-money-wallet-id">
+                                                            <label for="yandex-money-wallet-id">
+                                                                <span class="text">
+                                                                    Номер кошелька
                                                                 </span>
+                                                            </label>
+
+                                                            <!-- START (Наклонные input-ы) -->
+                                                            <!-- Для использования этого input-а в форме, нужно заполнить поле name -->
+                                                            <div class="skew-outer">
+                                                                <input class="skew-inner"
+                                                                       type="text"
+                                                                       id="yandex-money-wallet-id"
+                                                                       name="yandex-money-wallet-id"
+                                                                       required>
                                                             </div>
+                                                            <!-- END (Наклонные input-ы) -->
                                                         </div>
-                                                        <!-- END (Значок-вопросика с всплывающей подсказкой) -->
-                                                    </label>
-
-                                                    <!-- START (Наклонные input-ы) -->
-                                                    <!-- Для использования этого input-а в форме, нужно заполнить поле name -->
-                                                    <div class="skew-outer">
-                                                        <input class="skew-inner"
-                                                               type="text"
-                                                               id="card-holder"
-                                                               maxlength="26"
-                                                               name="card-holder"
-                                                               autofocus
-                                                               required
-                                                               placeholder="как оно указано на Вашей карте">
                                                     </div>
-                                                    <!-- END (Наклонные input-ы) -->
-                                                </div>
+                                                    <button type="submit" style="display: none;">
+                                                        <!--
+                                                            Перед тем как сабмитить форму по событию клик кнопки будет идти проверка
+                                                            required полей и прочая валидация по паттернам, если таковая имеется
+                                                        -->
+                                                    </button>
+                                                </form>
                                             </div>
-                                            <div class="row">
-                                                <div class="cell card-num">
-                                                    <label for="card-num">
-                                                        <span class="text">
-                                                            Номер карты
-                                                        </span>
-                                                        <span id="card-type" class="card-type"></span>
-                                                    </label>
+                                        </div>
 
-                                                    <!-- START (Наклонные input-ы) -->
-                                                    <!-- Для использования этого input-а в форме, нужно заполнить поле name -->
-                                                    <div class="skew-outer">
-                                                        <input class="skew-inner"
-                                                               type="text"
-                                                               id="card-num"
-                                                               name="card-cvc"
-                                                               required
-                                                               placeholder="16 цифр указанных на лицевой стороне">
-                                                    </div>
-                                                    <!-- END (Наклонные input-ы) -->
-                                                </div>
-                                            </div>
-                                            <div class="row">
-                                                <div class="cell card-cvc">
-                                                    <label for="card-cvc">
-                                                        <span class="text">
-                                                            CVV
-                                                        </span>
-
-                                                        <!-- START (Значок-вопросика с всплывающей подсказкой) -->
-                                                        <div class="hint">
-                                                            <!-- Если убрать доп.класс blue, то знак вопросмка будет черного цвета -->
-                                                            <div class="question-mark blue"></div>
-                                                            <div class="bubble-before bubble-before-1"></div>
-                                                            <div class="bubble-before bubble-before-2"></div>
-                                                            <div class="bubble" data-init-width="355">
-                                                                <span class="content">
-                                                                    Код CVV - это трехзначное число, узнать которое Вы можете посмотрев на обратную сторону банковской карты. Обычно CVV напечатано на полосе для подписи
+                                        <div class="payment-mode yandex-money-card-mode">
+                                            <label class="figure" for="yandex-money-card"></label>
+                                            <label class="text" for="yandex-money-card">
+                                                Яндекс.Деньги Банковская карта
+                                            </label>
+                                            <div class="info card-info">
+                                                <form method="post" action="#">
+                                                    <input type="hidden" name="payment-mode" value="yandex-money-card">
+                                                    <div class="row">
+                                                        <div class="cell card-holder">
+                                                            <label for="card-holder">
+                                                                <span class="text">
+                                                                    Имя владельца карты
                                                                 </span>
+
+                                                                <!-- START (Значок-вопросика с всплывающей подсказкой) -->
+                                                                <div class="hint">
+                                                                    <!-- Если убрать доп.класс blue, то знак вопросмка будет черного цвета -->
+                                                                    <div class="question-mark blue"></div>
+                                                                    <div class="bubble-before bubble-before-1"></div>
+                                                                    <div class="bubble-before bubble-before-2"></div>
+                                                                    <div class="bubble" data-init-width="355">
+                                                                        <span class="content">
+                                                                            Имя владельца карты должно быть введено в латинской транскрипции именно так, как оно указано на Вашей карте
+                                                                        </span>
+                                                                    </div>
+                                                                </div>
+                                                                <!-- END (Значок-вопросика с всплывающей подсказкой) -->
+                                                            </label>
+
+                                                            <!-- START (Наклонные input-ы) -->
+                                                            <!-- Для использования этого input-а в форме, нужно заполнить поле name -->
+                                                            <div class="skew-outer">
+                                                                <input class="skew-inner"
+                                                                       type="text"
+                                                                       id="card-holder"
+                                                                       maxlength="26"
+                                                                       name="card-holder"
+                                                                       autofocus
+                                                                       required
+                                                                       placeholder="как оно указано на Вашей карте">
                                                             </div>
+                                                            <!-- END (Наклонные input-ы) -->
                                                         </div>
-                                                        <!-- END (Значок-вопросика с всплывающей подсказкой) -->
-                                                    </label>
-
-                                                    <!-- START (Наклонные input-ы) -->
-                                                    <!-- Для использования этого input-а в форме, нужно заполнить поле name -->
-                                                    <div class="skew-outer">
-                                                        <input class="skew-inner"
-                                                               type="text"
-                                                               id="card-cvc"
-                                                               name="card-cvc"
-                                                               pattern="\d*"
-                                                               required
-                                                               placeholder="xxx">
                                                     </div>
-                                                    <!-- END (Наклонные input-ы) -->
-                                                </div>
-                                                <div class="cell card-expired">
-                                                    <label for="card-expired">
-                                                        <span class="text">
-                                                            Срок действия
-                                                        </span>
-                                                    </label>
+                                                    <div class="row">
+                                                        <div class="cell card-num">
+                                                            <label for="card-num">
+                                                                <span class="text">
+                                                                    Номер карты
+                                                                </span>
+                                                                <span id="card-type" class="card-type"></span>
+                                                            </label>
 
-                                                    <!-- START (Наклонные input-ы) -->
-                                                    <!-- Для использования этого input-а в форме, нужно заполнить поле name -->
-                                                    <div class="skew-outer">
-                                                        <input class="skew-inner"
-                                                               type="text"
-                                                               id="card-expired"
-                                                               maxlength="9"
-                                                               name="card-expired"
-                                                               required
-                                                               placeholder="MM / YY">
+                                                            <!-- START (Наклонные input-ы) -->
+                                                            <!-- Для использования этого input-а в форме, нужно заполнить поле name -->
+                                                            <div class="skew-outer">
+                                                                <input class="skew-inner"
+                                                                       type="text"
+                                                                       id="card-num"
+                                                                       name="card-cvc"
+                                                                       required
+                                                                       placeholder="16 цифр указанных на лицевой стороне">
+                                                            </div>
+                                                            <!-- END (Наклонные input-ы) -->
+                                                        </div>
                                                     </div>
-                                                    <!-- END (Наклонные input-ы) -->
-                                                </div>
+                                                    <div class="row">
+                                                        <div class="cell card-cvc">
+                                                            <label for="card-cvc">
+                                                                <span class="text">
+                                                                    CVV
+                                                                </span>
+
+                                                                <!-- START (Значок-вопросика с всплывающей подсказкой) -->
+                                                                <div class="hint">
+                                                                    <!-- Если убрать доп.класс blue, то знак вопросмка будет черного цвета -->
+                                                                    <div class="question-mark blue"></div>
+                                                                    <div class="bubble-before bubble-before-1"></div>
+                                                                    <div class="bubble-before bubble-before-2"></div>
+                                                                    <div class="bubble" data-init-width="355">
+                                                                        <span class="content">
+                                                                            Код CVV - это трехзначное число, узнать которое Вы можете посмотрев на обратную сторону банковской карты. Обычно CVV напечатано на полосе для подписи
+                                                                        </span>
+                                                                    </div>
+                                                                </div>
+                                                                <!-- END (Значок-вопросика с всплывающей подсказкой) -->
+                                                            </label>
+
+                                                            <!-- START (Наклонные input-ы) -->
+                                                            <!-- Для использования этого input-а в форме, нужно заполнить поле name -->
+                                                            <div class="skew-outer">
+                                                                <input class="skew-inner"
+                                                                       type="text"
+                                                                       id="card-cvc"
+                                                                       name="card-cvc"
+                                                                       pattern="\d*"
+                                                                       required
+                                                                       placeholder="xxx">
+                                                            </div>
+                                                            <!-- END (Наклонные input-ы) -->
+                                                        </div>
+                                                        <div class="cell card-expired">
+                                                            <label for="card-expired">
+                                                                <span class="text">
+                                                                    Срок действия
+                                                                </span>
+                                                            </label>
+
+                                                            <!-- START (Наклонные input-ы) -->
+                                                            <!-- Для использования этого input-а в форме, нужно заполнить поле name -->
+                                                            <div class="skew-outer">
+                                                                <input class="skew-inner"
+                                                                       type="text"
+                                                                       id="card-expired"
+                                                                       maxlength="9"
+                                                                       name="card-expired"
+                                                                       required
+                                                                       placeholder="MM / YY">
+                                                            </div>
+                                                            <!-- END (Наклонные input-ы) -->
+                                                        </div>
+                                                    </div>
+                                                    <button type="submit" style="display: none;">
+                                                        <!--
+                                                            Перед тем как сабмитить форму по событию клик кнопки будет идти проверка
+                                                            required полей и прочая валидация по паттернам, если таковая имеется
+                                                        -->
+                                                    </button>
+                                                </form>
                                             </div>
-                                            <button type="submit" style="display: none;">
-                                                <!--
-                                                    Перед тем как сабмитить форму по событию клик кнопки будет идти проверка
-                                                    required полей и прочая валидация по паттернам, если таковая имеется
-                                                -->
-                                            </button>
-                                        </form>
-                                    </div>
-                                </div>
+                                        </div>
 
-                                <div class="payment-mode webmoney-mode">
-                                    <label class="figure" for="webmoney"></label>
-                                    <label class="text" for="webmoney">
-                                        WebMoney
-                                    </label>
-                                    <div class="info webmoney-info">
-                                        <form method="post" action="#">
-                                            <input type="hidden" name="payment-mode" value="webmoney">
-                                            <div class="row">
-                                                <div class="cell webmoney-wallet-id">
-                                                    <label for="webmoney-wallet-id">
-                                                        <span class="text">
-                                                            Номер кошелька
-                                                        </span>
-                                                    </label>
+                                        <div class="payment-mode webmoney-mode">
+                                            <label class="figure" for="webmoney"></label>
+                                            <label class="text" for="webmoney">
+                                                WebMoney
+                                            </label>
+                                            <div class="info webmoney-info">
+                                                <form method="post" action="#">
+                                                    <input type="hidden" name="payment-mode" value="webmoney">
+                                                    <div class="row">
+                                                        <div class="cell webmoney-wallet-id">
+                                                            <label for="webmoney-wallet-id">
+                                                                <span class="text">
+                                                                    Номер кошелька
+                                                                </span>
+                                                            </label>
 
-                                                    <!-- START (Наклонные input-ы) -->
-                                                    <!-- Для использования этого input-а в форме, нужно заполнить поле name -->
-                                                    <div class="skew-outer">
-                                                        <input class="skew-inner"
-                                                               type="text"
-                                                               id="webmoney-wallet-id"
-                                                               name="webmoney-wallet-id"
-                                                               required>
+                                                            <!-- START (Наклонные input-ы) -->
+                                                            <!-- Для использования этого input-а в форме, нужно заполнить поле name -->
+                                                            <div class="skew-outer">
+                                                                <input class="skew-inner"
+                                                                       type="text"
+                                                                       id="webmoney-wallet-id"
+                                                                       name="webmoney-wallet-id"
+                                                                       required>
+                                                            </div>
+                                                            <!-- END (Наклонные input-ы) -->
+                                                        </div>
                                                     </div>
-                                                    <!-- END (Наклонные input-ы) -->
-                                                </div>
+                                                    <button type="submit" style="display: none;">
+                                                        <!--
+                                                            Перед тем как сабмитить форму по событию клик кнопки будет идти проверка
+                                                            required полей и прочая валидация по паттернам, если таковая имеется
+                                                        -->
+                                                    </button>
+                                                </form>
                                             </div>
-                                            <button type="submit" style="display: none;">
-                                                <!--
-                                                    Перед тем как сабмитить форму по событию клик кнопки будет идти проверка
-                                                    required полей и прочая валидация по паттернам, если таковая имеется
-                                                -->
-                                            </button>
-                                        </form>
+                                        </div>
+
+                                        <div class="payment-mode robokassa-mode">
+                                            <label class="figure" for="robokassa"></label>
+                                            <label class="text" for="robokassa">
+                                                RoboKassa
+                                            </label>
+                                            <div class="info robokassa-info">
+                                                <form method="post" action="#">
+                                                    <input type="hidden" name="payment-mode" value="robokassa">
+                                                    <button type="submit" style="display: none;">
+                                                        <!--
+                                                            Перед тем как сабмитить форму по событию клик кнопки будет идти проверка
+                                                            required полей и прочая валидация по паттернам, если таковая имеется
+                                                        -->
+                                                    </button>
+                                                </form>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="checkbox-group">
+                                        <input type="checkbox" class="save-payment-details" name="save-payment-details" id="save-payment-details">
+                                        <input type="checkbox" class="allow-auto-payment" name="allow-auto-payment" id="allow-auto-payment">
+                                        <label class="text-checkbox save-payment-details" for="save-payment-details">
+                                            <span class="item checkbox"></span>
+                                            <span class="item text">
+                                                Сохранить реквизиты платежа
+                                            </span>
+                                        </label>
+                                        <label class="text-checkbox allow-auto-payment" for="allow-auto-payment">
+                                            <span class="item checkbox"></span>
+                                            <span class="item text">
+                                                Разрешить автоплатеж
+                                            </span>
+                                        </label>
                                     </div>
                                 </div>
 
-                                <div class="payment-mode robokassa-mode">
-                                    <label class="figure" for="robokassa"></label>
-                                    <label class="text" for="robokassa">
-                                        RoboKassa
-                                    </label>
-                                    <div class="info robokassa-info">
-                                        <form method="post" action="#">
-                                            <input type="hidden" name="payment-mode" value="robokassa">
-                                            <button type="submit" style="display: none;">
-                                                <!--
-                                                    Перед тем как сабмитить форму по событию клик кнопки будет идти проверка
-                                                    required полей и прочая валидация по паттернам, если таковая имеется
-                                                -->
-                                            </button>
-                                        </form>
-                                    </div>
+                                <!-- START (Ценник итоговой стоимости) -->
+                                <div class="cost">
+                                    <span class="text">Сумма:</span>
+                                    <span class="value">517</span>
+                                    <span class="currency">руб.</span>
                                 </div>
+                                <!-- END (Ценник итоговой стоимости) -->
+
+                                <!-- Все кнопки должны быть завернуты в тег класса buttons -->
+                                <!-- Кнопка, отмеченная классом payment-mode-btn, используется для submit-а одной из форм платежа -->
+                                <div class="buttons">
+                                    <!-- START (Стилизованные кнопки и ссылки, похожие на кнопки) -->
+                                    <button class="btn payment-mode-btn" type="submit" id="submit">
+                                        Получить деньги
+                                    </button>
+                                    <!-- END (Стилизованные кнопки и ссылки, похожие на кнопки) -->
+
+                                    <!-- START (Стилизованные кнопки и ссылки, похожие на кнопки) -->
+                                    <a class="btn close-btn" href="#close-modal">
+                                        Отменить
+                                    </a>
+                                    <!-- END (Стилизованные кнопки и ссылки, похожие на кнопки) -->
+                                </div>
+                                <!-- END (Группа-радиокнопок-аккордион) -->
                             </div>
-
-                            <div class="checkbox-group">
-                                <input type="checkbox" class="save-payment-details" name="save-payment-details" id="save-payment-details">
-                                <input type="checkbox" class="allow-auto-payment" name="allow-auto-payment" id="allow-auto-payment">
-                                <label class="text-checkbox save-payment-details" for="save-payment-details">
-                                    <span class="item checkbox"></span>
-                                    <span class="item text">
-                                        Сохранить реквизиты платежа
-                                    </span>
-                                </label>
-                                <label class="text-checkbox allow-auto-payment" for="allow-auto-payment">
-                                    <span class="item checkbox"></span>
-                                    <span class="item text">
-                                        Разрешить автоплатеж
-                                    </span>
-                                </label>
-                            </div>
                         </div>
 
-                        <!-- START (Ценник итоговой стоимости) -->
-                        <div class="cost">
-                            <span class="text">Сумма:</span>
-                            <span class="value">517</span>
-                            <span class="currency">руб.</span>
-                        </div>
-                        <!-- END (Ценник итоговой стоимости) -->
+                        <div class="column column-3">
 
-                        <!-- Все кнопки должны быть завернуты в тег класса buttons -->
-                        <!-- Кнопка, отмеченная классом payment-mode-btn, используется для submit-а одной из форм платежа -->
-                        <div class="buttons">
-                            <!-- START (Стилизованные кнопки и ссылки, похожие на кнопки) -->
-                            <button class="btn payment-mode-btn" type="submit" id="submit">
-                                Получить деньги
-                            </button>
-                            <!-- END (Стилизованные кнопки и ссылки, похожие на кнопки) -->
-
-                            <!-- START (Стилизованные кнопки и ссылки, похожие на кнопки) -->
-                            <a class="btn" href="#close">
-                                Отменить
-                            </a>
-                            <!-- END (Стилизованные кнопки и ссылки, похожие на кнопки) -->
                         </div>
-                        <!-- END (Группа-радиокнопок-аккордион) -->
                     </div>
                 </div>
             </div>
+            <!-- END (Модальное окно) - 2-ая часть из 3-х (размещается в конце тега main) -->
         </main>
         
         <div class="books-on-shelf">
@@ -2258,15 +2287,12 @@
 		</footer>
 	</body>
 
-    <script type="text/javascript" src="js/jquery-2.2.3.min.js"></script>
-    <!--<script type="text/javascript" src="https://code.jquery.com/jquery-2.2.3.min.js"></script>-->
-
     <script type="text/javascript" src="js/creditly.js"></script>
     <script type="text/javascript" src="js/vb.js"></script>
     <script type="text/javascript" src="js/dataTables.js"></script>
     <script type="text/javascript">
         $(function () {
-            <!-- Плагин dataTables скорректирован, поэтому теперь ему можно передать классы ниже -->
+            // Плагин dataTables скорректирован, поэтому теперь ему можно передать классы ниже
             $.extend($.fn.DataTable.ext.classes, {
                 skewInner: "skew-inner",
                 skewOuter: "skew-outer"
@@ -2289,5 +2315,12 @@
             });
         });
     </script>
+
+    <!-- START (Модальное окно) - 3-я часть из 3-х -->
+    <script type="text/javascript">
+        var modalHashs = [];
+        modalHashs[0] = '#receive-money';
+    </script>
+    <!-- END (Модальное окно) - 3-я часть из 3-х -->
 
 </html>

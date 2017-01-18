@@ -206,6 +206,30 @@ function correctBookCountEnding() {
  */
 $(function () {
     /*
+     * Проверяем, не стартовала ли эта страница с якорем одного из модальных окон
+     */
+    if (typeof modalHashs !== 'undefined') {
+        $(modalHashs).each(function () {
+            if (window.location.hash === this.toString()) { // если да,
+                $('body').css('overflow', 'hidden'); // то скрываем scroll-бары окна браузера
+                return false; // и выходим из цикла
+            }
+        });
+    }
+
+    /*
+     * Обработка открытий/закрытий модальных окон
+     */
+    $('.modal-btn').click(function () {
+        // открытие - убираем scroll-бары окна браузера
+        $('body').css('overflow', 'hidden');
+    });
+    $('.modal > .body .close-btn').click(function () {
+        // закрытие - показываем scroll-бары окна браузера
+        $('body').css('overflow', 'visible');
+    });
+
+    /*
      * После загрузки страницы:
      * Установка правильных окончаний у слов "книг" в каждом элементе "Обложка и размещенная под ней сводная информация о книге и ее авторе"
      */
