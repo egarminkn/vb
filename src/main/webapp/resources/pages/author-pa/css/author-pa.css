@@ -922,7 +922,7 @@ main .author .about .columns .column-1 .row-2 .rating-3-stars .rating-stars::bef
 .column-1 .row-3 .ratings {
     margin-top: 20px;
     margin-left: 10px;
-    height: 103px;
+    height: 108px;
     transition: height .6s ease;
     overflow: hidden;
 }
@@ -1114,7 +1114,7 @@ main .author .about .columns .column-4 .row-2 .wallet .modal-btn {
     position: absolute;
     left: 0;
     bottom: 0;
-    width: 165px;
+    width: 166px;
     transition: left .8s ease,
                 bottom .8s ease,
                 width .8s ease;
