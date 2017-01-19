@@ -1747,6 +1747,7 @@ form.send-review.textarea textarea {
     height: 100px;
     padding: 10px 20px;
     border-radius: 5px;
+    border: 1px solid #c3c3c3;
     resize: none;
     outline: none;
 }
