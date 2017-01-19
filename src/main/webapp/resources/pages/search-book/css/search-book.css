@@ -531,16 +531,18 @@ div.slogan > a.publish-own {
 }
 
 .extended-search a::after {
-    content: '\1f50d';
-    font-family: 'Segoe UI Symbol';
-    font-size: 16px; 
-    color: #949494;
+    content: '';
     display: inline-block;
-    vertical-align: middle;
+    vertical-align: top;
     text-decoration: none;
-    position: relative;
-    left: 5px;
-    bottom: 1px;
+    background: url('../svg/vb/magnifying-glass.svg') no-repeat;
+    background-size: 100%;
+    background-position: center center;
+    box-sizing: border-box;
+    width: 15px;
+    height: 15px;
+    margin-left: 5px;
+    /*border: 1px solid black;*/
 }
 
 /*
@@ -572,7 +574,10 @@ div.slogan > a.publish-own {
  *  Выбор типа отображения результатов поиска
  */
 .search-results-show-type {
-    display: flex;
+    /* FIXME временно убрал со страницы выбор типа отображения результатов поиска: списком/плиткой, т.к. пока будет один единственный вариант - список */
+    display: none;
+    /*display: flex;*/
+
     flex-direction: row;
     justify-content: space-between;
     width: 48px;
