@@ -387,7 +387,7 @@ div.entrance:not(.nick)::before {
     position: relative;
     right: 6px;
     /*top: 3px;*/
-    background: url('../svg/padlock.svg');
+    background: url('../svg/vb/padlock.svg');
     background-size: 13px;
     background-repeat: no-repeat;
     width: 13px;
@@ -806,7 +806,7 @@ main.author-pa .author > .title {
     font-family: Tahoma, sans-serif;
     font-size: 34px;
     width: 285px;
-    background: url('../svg/user-icon.svg') no-repeat;
+    background: url('../svg/author-pa/user-icon.svg') no-repeat;
     background-size: 20px 20px;
     background-position: right top;
     margin: 20px 25px;
@@ -935,7 +935,7 @@ main.author-pa .author .about .columns .column-2 .row-1 .title {
     font-family: Tahoma, sans-serif;
     font-size: 15px;
     height: 20px;
-    background: url('../svg/red-star.svg') no-repeat;
+    background: url('../svg/author-pa/red-star.svg') no-repeat;
     background-size: 21px 20px;
     padding-left: 25px;
     margin-top: 4px;
@@ -990,7 +990,7 @@ main.author-pa .author .about .columns .column-2 .row-3 > div {
 }
 
 main.author-pa .author .about .columns .column-2 .row-3 .phone {
-    background: url('../svg/phone.svg') no-repeat;
+    background: url('../svg/author-pa/phone.svg') no-repeat;
     background-size: 15px 15px;
     background-position: left;
     padding-left: 20px;
@@ -998,7 +998,7 @@ main.author-pa .author .about .columns .column-2 .row-3 .phone {
 }
 
 main.author-pa .author .about .columns .column-2 .row-3 .email {
-    background: url('../svg/email.svg') no-repeat;
+    background: url('../svg/author-pa/email.svg') no-repeat;
     background-size: 15px 15px;
     background-position: left;
     padding-left: 20px;
@@ -1006,7 +1006,7 @@ main.author-pa .author .about .columns .column-2 .row-3 .email {
 }
 
 main.author-pa .author .about .columns .column-2 .row-3 .skype {
-    background: url('../svg/skype.svg') no-repeat;
+    background: url('../svg/author-pa/skype.svg') no-repeat;
     background-size: 15px 15px;
     background-position: left;
     padding-left: 20px;
@@ -1075,7 +1075,7 @@ main.author-pa .author .about .columns .column-4 .row-1 .title::before {
     box-sizing: border-box;
     width: 0;
     height: 20px;
-    background-image: url('../svg/wallet.svg');
+    background-image: url('../svg/author-pa/wallet.svg');
     background-repeat: no-repeat;
     background-size: 100%;
     transition: opacity .8s ease,
@@ -1089,7 +1089,7 @@ main.author-pa .author .about .columns .column-4 .row-2 .wallet-icon {
     width: 70px;
     height: 70px;
     background-color: #ccbd54;
-    background-image: url('../svg/wallet.svg');
+    background-image: url('../svg/author-pa/wallet.svg');
     background-repeat: no-repeat;
     background-size: 60%;
     background-position: center;
@@ -1398,7 +1398,7 @@ main.author-pa .books table.write thead tr th.likes span {
     vertical-align: bottom;
     width: 17px;
     height: 17px;
-    background: url('../svg/thumb-up-blue.svg') no-repeat;
+    background: url('../svg/author-pa/thumb-up-blue.svg') no-repeat;
     background-size: 100%;
 }
 
@@ -1420,7 +1420,7 @@ main.author-pa .books table.write thead tr th.profit::before {
     vertical-align: middle;
     width: 20px;
     height: 20px;
-    background: url('../svg/coin-ruble.svg') no-repeat;
+    background: url('../svg/author-pa/coin-ruble.svg') no-repeat;
     background-size: 100%;
 }
 
@@ -1698,7 +1698,7 @@ main.author-pa .edit {
     min-width: 13px;
     width: 13px;
     height: 13px;
-    background: url('../svg/pencil.svg') no-repeat;
+    background: url('../svg/author-pa/pencil.svg') no-repeat;
     background-size: 100%;
     background-position: left top;
     /*border: 1px solid black;*/
@@ -1950,15 +1950,15 @@ footer > div.under-footer-shelf > div.social-sharing > a {
 
 footer > div.under-footer-shelf > div.social-sharing > a.share-icon-facebook {
     /*background-position: -75px 0;*/
-    background-image: url(../svg/F_icon.svg); 
+    background-image: url(../svg/vb/F_icon.svg);
 }
 
 footer > div.under-footer-shelf > div.social-sharing > a.share-icon-vk {
     /*background-position: 0 -25px;*/
-    background-image: url(../svg/VK_icon.svg);
+    background-image: url(../svg/vb/VK_icon.svg);
 }
 
 footer > div.under-footer-shelf > div.social-sharing > a.share-icon-livejournal {
     /*background-position: -75px -25px;*/
-    background-image: url(../svg/LJ_icon.svg);
+    background-image: url(../svg/vb/LJ_icon.svg);
 }

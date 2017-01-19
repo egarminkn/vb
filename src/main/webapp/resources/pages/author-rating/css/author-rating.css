@@ -151,7 +151,7 @@ header::after {
     box-sizing: border-box;
     width: 13px;
     height: 13px;
-    background: url('../svg/padlock.svg') no-repeat;
+    background: url('../svg/vb/padlock.svg') no-repeat;
     background-size: 100%;
     margin-top: 1px;
     /*border: 1px solid black;*/
@@ -303,7 +303,7 @@ header::after {
     box-sizing: border-box;
     width: 17px;
     height: 17px;
-    background: url('../svg/cart.svg') no-repeat;
+    background: url('../svg/vb/cart.svg') no-repeat;
     background-size: 100%;
     /*border: 1px solid black;*/
 }
@@ -880,13 +880,13 @@ footer {
 }
 
 .under-footer-shelf > .social-sharing > a.share-icon-facebook {
-    background-image: url(../svg/F_icon.svg); 
+    background-image: url(../svg/vb/F_icon.svg);
 }
 
 .under-footer-shelf > .social-sharing > a.share-icon-vk {
-    background-image: url(../svg/VK_icon.svg);
+    background-image: url(../svg/vb/VK_icon.svg);
 }
 
 .under-footer-shelf > .social-sharing > a.share-icon-livejournal {
-    background-image: url(../svg/LJ_icon.svg);
+    background-image: url(../svg/vb/LJ_icon.svg);
 }

@@ -379,7 +379,7 @@ div.entrance:not(.nick)::before {
     position: relative;
     right: 6px;
     /*top: 3px;*/
-    background: url('../svg/padlock.svg');
+    background: url('../svg/vb/padlock.svg');
     background-size: 13px;
     background-repeat: no-repeat;
     width: 13px;
@@ -807,7 +807,7 @@ main.create-ebook .upload .content {
     width: 100%;
     border: 1px dashed #e3e3e3;
     border-radius: 5px;
-    background: url('../svg/cloud-upload.svg') no-repeat;
+    background: url('../svg/create-ebook/cloud-upload.svg') no-repeat;
     background-size: 130px 65px;
     background-position: 32% 25px;
     position: relative;
@@ -911,7 +911,7 @@ main.create-ebook .cover .types .upload-cover a {
 
 /* ссылка - Выбрать готовый фон */
 main.create-ebook .cover .types .select-cover {
-    background: url('../svg/album.svg') no-repeat;
+    background: url('../svg/create-ebook/album.svg') no-repeat;
     background-size: 20px 20px;
     background-position: left top;
 }
@@ -924,7 +924,7 @@ main.create-ebook .cover .types .select-cover a {
 
 /* ссылка - Загрузить свою обложку */
 main.create-ebook .cover .types .upload-cover {
-    background: url('../svg/clip.svg') no-repeat;
+    background: url('../svg/create-ebook/clip.svg') no-repeat;
     background-size: 10px 20px;
     background-position: left top;
 }
@@ -936,7 +936,7 @@ main.create-ebook .cover .types .upload-cover a {
 
 /* блок - Цветная обложка */
 main.create-ebook .cover .types .color-cover {
-    background: url('../svg/palette.svg') no-repeat;
+    background: url('../svg/create-ebook/palette.svg') no-repeat;
     background-size: 20px 20px;
     background-position: left top;
 }
@@ -1049,7 +1049,7 @@ main.create-ebook .preview .magnify {
     display: inline-block;
     width: 15px;
     height: 15px;
-    background: url('../svg/magnifier.svg') no-repeat;
+    background: url('../svg/create-ebook/magnifier.svg') no-repeat;
     background-size: 100%;
     margin-left: 15px;
     margin-top: 15px;
@@ -1424,15 +1424,15 @@ footer > div.under-footer-shelf > div.social-sharing > a {
 
 footer > div.under-footer-shelf > div.social-sharing > a.share-icon-facebook {
     /*background-position: -75px 0;*/
-    background-image: url(../svg/F_icon.svg);
+    background-image: url(../svg/vb/F_icon.svg);
 }
 
 footer > div.under-footer-shelf > div.social-sharing > a.share-icon-vk {
     /*background-position: 0 -25px;*/
-    background-image: url(../svg/VK_icon.svg);
+    background-image: url(../svg/vb/VK_icon.svg);
 }
 
 footer > div.under-footer-shelf > div.social-sharing > a.share-icon-livejournal {
     /*background-position: -75px -25px;*/
-    background-image: url(../svg/LJ_icon.svg);
+    background-image: url(../svg/vb/LJ_icon.svg);
 }
