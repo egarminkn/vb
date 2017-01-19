@@ -277,7 +277,7 @@ $(function () {
     $('.payment-mode-btn').click(function(event) {
         event.preventDefault();
 
-        var accordion = $(this).closest('.buttons').prevAll('.payment-modes').find('.payment-modes-accordion');
+        var accordion = $(this).closest('.buttons').prevAll('.payment-modes:first').find('.payment-modes-accordion');
 
         var checked = accordion.find('input[type="radio"].radio-payment-mode:checked').val();
         if (checked === 'yandex-money-card-mode') {
@@ -292,6 +292,24 @@ $(function () {
         // Перед тем как сабмитить форму по событию клик кнопки будет идти проверка
         // required полей и прочая валидация по паттернам, если таковая имеется
         accordion.find('div.' + checked).find('form').find('[type="submit"]').trigger('click');
+    });
+
+    /* этот обработчик событий должен для "Группы-радиокнопок-аккордион", связанной с выбором платежной системы,
+       исправить проблему с Firefox, который не хожет запускать анимацию "@keyframes overflow-visible" из vb.css */
+    $('input[type="radio"].radio-payment-mode').change(function() {
+        var groupName = $(this).prop('name');
+        $('input[type="radio"][name="' + groupName + '"]').each(function () {
+            var mode = $(this).val();
+            var info = $(this).nextAll('div.' + mode).find('.info');
+            info.css('overflow', 'hidden');
+        });
+
+        var mode = $(this).val();
+        var info = $(this).nextAll('div.' + mode).find('.info');
+        info.delay(800).queue(function (next) {
+            $(this).css('overflow', 'visible');
+            next();
+        });
     });
 
     /*
