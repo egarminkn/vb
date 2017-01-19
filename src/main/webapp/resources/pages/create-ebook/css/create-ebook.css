@@ -701,7 +701,7 @@ main.create-ebook .own-cover {
     margin-top: 50px;
     box-sizing: border-box;
     height: 260px;
-    background: url('../img/create-cover.jpg') no-repeat;
+    background: url('../img/create-ebook/create-cover.jpg') no-repeat;
     background-position: top left;
     padding-top: 225px;
     padding-left: 45px;
@@ -1412,10 +1412,6 @@ footer > div.under-footer-shelf > div.social-sharing {
 
 footer > div.under-footer-shelf > div.social-sharing > a {
     text-decoration: none;
-    /*
-        background-repeat: no-repeat;
-        background-image: url(../img/social-icons.png);
-    */
     background-size: 25px;
     height: 25px;
     width: 25px;

@@ -1938,10 +1938,6 @@ footer > div.under-footer-shelf > div.social-sharing {
 
 footer > div.under-footer-shelf > div.social-sharing > a {
     text-decoration: none;
-/*
-    background-repeat: no-repeat;
-    background-image: url(../img/social-icons.png);
-*/
     background-size: 25px;
     height: 25px;
     width: 25px;
