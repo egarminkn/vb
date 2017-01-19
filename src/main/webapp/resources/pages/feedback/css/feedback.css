@@ -430,18 +430,6 @@ header::after {
     /*border: 1px solid black;*/
 }
 
-/***
- *** Центральная часть страницы
- ***/
-main {
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    margin-top: 40px;
-    margin-bottom: 30px;
-    /*border: 1px solid green;*/
-}
-
 /**
  ** Слоган под хедером
  **/
@@ -484,27 +472,39 @@ main {
     z-index: 1;
 }
 
-main .columns {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-}
-
-/* ---------------------------------------------------------------------------------------------------- */
-
-/***
- *** Для того, чтобы подчеркнуть, что выбран один из следующих пунктов, к div добавляется класс header-item-selected
- ***/
+/*
+ * Для того, чтобы подчеркнуть, что выбран один из пунктов: Корзина/Задать вопрос, к div добавляется класс header-item-selected
+ */
 .header-item-selected {
     border: 3px solid #e5d996;
     border-radius: 5px;
 }
 
+/* START (Тело страницы) -------------------------------------------------------------------------------------------- */
+
+/***
+ *** Центральная часть страницы
+ ***/
+main.feedback {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    margin-top: 40px;
+    margin-bottom: 30px;
+    /*border: 1px solid green;*/
+}
+
+main.feedback .columns {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
 /***
  *** Боковые колонки
  ***/
-.column-1,
-.column-3 {
+main.feedback .column-1,
+main.feedback .column-3 {
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
@@ -513,25 +513,25 @@ main .columns {
     /*border: 1px solid black;*/
 }
 
-.column-3 {
+main.feedback .column-3 {
     min-width: 199px;
     margin-right: 30px;
 }
 
-.column-1 {
+main.feedback .column-1 {
     min-width: 185px;
     margin-left: 30px;
 }
 
-.column-1 > .item:not(:first-child),
-.column-3 > .item:not(:first-child) {
+main.feedback .column-1 > .item:not(:first-child),
+main.feedback .column-3 > .item:not(:first-child) {
     margin-top: 30px;
 }
 
 /***
  *** Центральная колонка
  ***/
-.column-2 {
+main.feedback .column-2 {
     flex-basis: 700px;
     display: flex;
     flex-direction: column;
@@ -542,7 +542,7 @@ main .columns {
 /**
  ** Заголовочная часть колонки
  **/
-.column-2 .header {
+main.feedback .column-2 .header {
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
@@ -552,7 +552,7 @@ main .columns {
 /*
  * Заголовок
  */
-.column-2 .header h1 {
+main.feedback .column-2 .header h1 {
     font-family: Tahoma, sans-serif;
     font-size: 34px;
     font-weight: normal;
@@ -566,12 +566,12 @@ main .columns {
 /*
  * Связанно с тенями под блоками
  */
-.column-2 .shadow-under {
+main.feedback .column-2 .shadow-under {
     bottom: -1px;
     border-bottom: 1px dashed #c5c5c5;
 }
 
-.feedback {
+main.feedback .feedback {
     font-family: Tahoma, sans-serif;
     font-size: 12px;
     position: relative; /* связанно с тенями под блоками */
@@ -587,7 +587,7 @@ main .columns {
 /*
  * Заголовок
  */
-.feedback h2 {
+main.feedback .feedback h2 {
     font-family: Tahoma, sans-serif;
     font-size: 20px;
     font-weight: normal;
@@ -598,7 +598,7 @@ main .columns {
 /*
  * Форма обратной связи
  */
-.feedback form {
+main.feedback .feedback form {
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
@@ -607,41 +607,41 @@ main .columns {
     /*border: 1px solid black;*/
 }
 
-.row {
+main.feedback .row {
     margin-bottom: 5px;
     width: 100%;
     /*border: 1px solid black;*/
 }
 
 /* Имя вопрошателя */
-label[for="fullname"] {
+main.feedback label.fullname {
     margin-right: 10px;
 }
 
-.fullname .skew-outer {
+main.feedback div.fullname .skew-outer {
     width: 250px;
 }
 
 /* Email вопрошателя */
-label[for="email"] {
+main.feedback label.email {
     margin-right: 30px;
 }
 
-.email .skew-outer {
+main.feedback div.email .skew-outer {
     width: 250px;
 }
 
 /* Тема вопроса */
-label[for="topic"] {
+main.feedback label.topic {
     margin-right: 35px;
 }
 
-.topic .skew-outer {
+main.feedback div.topic .skew-outer {
     width: 250px;
 }
 
 /* Текст вопроса */
-.content {
+main.feedback .content {
     box-sizing: border-box;
     width: 100%;
     display: flex;
@@ -651,7 +651,7 @@ label[for="topic"] {
     /*border: 1px solid red;*/
 }
 
-.content .textarea {
+main.feedback .content .textarea {
     margin-left: 85px;
     margin-top: 5px;
     width: 75%;
@@ -659,19 +659,19 @@ label[for="topic"] {
 }
 
 /* Капча */
-.g-recaptcha {
+main.feedback .g-recaptcha {
     margin: auto;
     margin-top: 10px;
     margin-bottom: 5px;
 }
 
 /* Кнопка Задать вопрос */
-.feedback form .btn {
+main.feedback .feedback form .btn {
     margin-left: auto;
     margin-top: 5px;
 }
 
-/* ---------------------------------------------------------------------------------------------------- */
+/* END (Тело страницы) -------------------------------------------------------------------------------------------- */
 
 /***
  ***  Футер

@@ -59,18 +59,19 @@
                 </div>
             </nav>
         </header>
-		
-		<main>
+
+        <!-- START (Тело страницы) -------------------------------------------------------------------------------------------- -->
+		<main class="author-pa">
             <div class="author">
                 <div class="title">
                     Личный кабинет
                 </div>
                 <div class="about">
                     <!-- START (Кнопки сворачивания-разворачивания информации об авторе) - 1-ая часть из 2-х -->
-                    <input class="expand-collapse-block" type="radio" name="expand-collapse-btn" id="expanded" checked>
-                    <input class="expand-collapse-block" type="radio" name="expand-collapse-btn" id="collapsed">
-                    <label class="expand-collapse-block" for="expanded"></label>
-                    <label class="expand-collapse-block" for="collapsed"></label>
+                    <input class="expand-collapse-block expanded" type="radio" name="expand-collapse-btn" id="expanded" checked>
+                    <input class="expand-collapse-block collapsed" type="radio" name="expand-collapse-btn" id="collapsed">
+                    <label class="expand-collapse-block expanded" for="expanded"></label>
+                    <label class="expand-collapse-block collapsed" for="collapsed"></label>
                     <!-- END (Кнопки сворачивания-разворачивания информации об авторе) - 1-ая часть из 2-х -->
                     
                     <div class="columns">
@@ -253,10 +254,10 @@
             </div>
             
             <div class="books">
-                <input type="radio" name="write-read" id="write" checked>
-                <input type="radio" name="write-read" id="read">
+                <input type="radio" name="write-read" class="write" id="write" checked>
+                <input type="radio" name="write-read" class="read" id="read">
                 <div class="header">
-                    <label for="write">
+                    <label class="write" for="write">
                         <div class="title">
                             Мои книги
                         </div>
@@ -267,7 +268,7 @@
                             </span>
                         </a>
                     </label>
-                    <label for="read">
+                    <label class="read" for="read">
                         <div class="title">
                             Купленные книги
                         </div>
@@ -2169,6 +2170,7 @@
             </div>
             <!-- END (Модальное окно) - 2-ая часть из 3-х (размещается в конце тега main) -->
         </main>
+        <!-- END (Тело страницы) -------------------------------------------------------------------------------------------- -->
         
         <div class="books-on-shelf">
             <img src="img/bottom-book-1.jpg" />

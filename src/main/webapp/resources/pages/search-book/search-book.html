@@ -58,8 +58,9 @@
                 </div>
             </nav>
         </header>
-		
-		<main>
+
+        <!-- START (Тело страницы) -------------------------------------------------------------------------------------------- -->
+		<main class="search-book">
             <div class="extended-search">
                 <a href="#">Расширенный поиск</a>
             </div>
@@ -70,16 +71,16 @@
                     <span class="query">книга о войне</span> <!-- Сюда будет динамически вставляться текст строки поиска -->
                 </div>
                 <div class="summary">
-                    Найдено 3 774 совпадений, из них:
-                    <a href="#ebooks">3 765 электронных книг</a>,
-                    <a href="#audiobooks">7 аудиокниг</a>,
-                    <a href="#authors">2 автора</a>
+                    Найдено <span class="total-count">11</span> совпаден<span class="total-count-ending">ий</span>, из них:
+                    <a href="#ebooks"><span class="ebooks-count">12</span> электронн<span class="ebooks-count-ending-1">ых</span> книг<span class="ebooks-count-ending-2"></span></a>,
+                    <a href="#audiobooks"><span class="audiobooks-count">11</span> аудиокниг<span class="audiobooks-count-ending"></span></a>,
+                    <a href="#authors"><span class="authors-count">13</span> автор<span class="authors-count-ending">а</span></a>
                 </div>
 
                 <!-- Выбор типа отображения результатов поиска -->
                 <div class="search-results-show-type">
-                    <input type="radio" name="show-type" id="show-type-list" checked />
-                    <input type="radio" name="show-type" id="show-type-tiles" />
+                    <input type="radio" name="show-type" id="show-type-list" class="show-type-list" checked>
+                    <input type="radio" name="show-type" id="show-type-tiles" class="show-type-tiles" >
                     
                     <label class="list" for="show-type-list" title="Отобразить списком">
                         <div></div>
@@ -99,12 +100,10 @@
                 <div class="column left-column">
                     <div class="item header">
                         <span class="title">Электнонные книги</span>
-                        <span class="summary">показано
-                                                <span class="show-range">1-15</span>
-                                              книг из 
-                                                <span class="total-count">3 765</span>
-                                              найденных по запросу 
-                                                "<span class="query">книга о войне</span>"
+                        <span class="summary">
+                            показано <span class="show-range">1-15</span> книг из
+                            <span class="count ebooks-count">12</span> найденн<span class="count-ending ebooks-count-ending">ых</span>
+                            по запросу "<span class="query">книга о войне</span>"
                         </span>
                     </div>
 
@@ -640,12 +639,10 @@
                 <div class="column left-column">
                     <div class="item header">
                         <span class="title">Аудио-книги</span>
-                        <span class="summary">показано
-                                                <span class="show-range">1-15</span>
-                                              аудиокниг из 
-                                                <span class="total-count">26</span>
-                                              найденных по запросу 
-                                                "<span class="query">книга о войне</span>"
+                        <span class="summary">
+                            показано <span class="show-range">1-15</span> аудиокниг из
+                            <span class="count audiobooks-count">1</span> найденн<span class="count-ending audiobooks-count-ending">ых</span>
+                            по запросу "<span class="query">книга о войне</span>"
                         </span>
                     </div>
 
@@ -942,12 +939,10 @@
                 <div class="column left-column">
                     <div class="item header">
                         <span class="title">Авторы</span>
-                        <span class="summary">показано
-                                                <span class="show-range">1-15</span>
-                                              авторов из 
-                                                <span class="total-count">26</span>
-                                              найденных по запросу 
-                                                "<span class="query">книга о войне</span>"
+                        <span class="summary">
+                            показано <span class="show-range">1-15</span> авторов из
+                            <span class="count authors-count">1</span> найденн<span class="count-ending authors-count-ending">ых</span>
+                            по запросу "<span class="query">книга о войне</span>"
                         </span>
                     </div>
                     
@@ -1107,6 +1102,7 @@
                 </div>
             </div>
         </main>
+        <!-- END (Тело страницы) -------------------------------------------------------------------------------------------- -->
         
         <div class="books-on-shelf">
             <img src="img/bottom-book-1.jpg" />
@@ -1230,5 +1226,6 @@
     </script>
     <script type="text/javascript" src="js/vb.js"></script>
     <script type="text/javascript" src="js/column-banner.js"></script>
+    <script type="text/javascript" src="js/search-book.js"></script>
 
 </html>

@@ -73,11 +73,13 @@
             </nav>
         </header>
 		
-		<main>
+		<main class="author-rating">
             <div class="slogan">
                 Читай <a href="#" class="new-books-free">новые книги бесплатно</a> и решай их судьбу или <a href="#" class="publish-own">публикуй</a> собственные
             </div>
-            
+
+        <!-- START (Тело страницы) -------------------------------------------------------------------------------------------- -->
+
             <div class="columns">
                 <div class="column column-1">
                     <!-- START (Боковой баннер-фильтр "Выберите категорию") -->
@@ -254,8 +256,9 @@
                         </div>
                         
                         <div class="summary">
-                            Данному запросу соответствует <span class="count">3 774</span>
-                            автор<span class="ending">ов</span>
+                            Данному запросу соответству<span class="count-before-ending">ет</span>
+                            <span class="count">3774</span>
+                            автор<span class="count-after-ending">ов</span>
                         </div>
                     </div>
                     
@@ -426,6 +429,7 @@
                 </div>
             </div>            
         </main>
+        <!-- END (Тело страницы) -------------------------------------------------------------------------------------------- -->
         
 		<footer>
             <div class="books-on-shelf">
@@ -545,5 +549,6 @@
 	</body>
     
     <script type="text/javascript" src="js/vb.js"></script>
-    
+    <script type="text/javascript" src="js/author-rating.js"></script>
+
 </html>

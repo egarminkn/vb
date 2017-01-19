@@ -437,18 +437,6 @@ header::after {
     /*border: 1px solid black;*/
 }
 
-/***
- *** Центральная часть страницы
- ***/
-main {
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    margin-top: 40px;
-    margin-bottom: 30px;
-    /*border: 1px solid green;*/
-}
-
 /**
  ** Слоган под хедером
  **/
@@ -491,18 +479,30 @@ main {
     z-index: 1;
 }
 
-main .columns {
+/* START (Тело страницы) -------------------------------------------------------------------------------------------- */
+
+/***
+ *** Центральная часть страницы
+ ***/
+main.author-rating {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    margin-top: 40px;
+    margin-bottom: 30px;
+    /*border: 1px solid green;*/
+}
+
+main.author-rating .columns {
     display: flex;
     flex-direction: row;
     justify-content: space-around;
 }
 
-/* ---------------------------------------------------------------------------------------------------- */
-
 /***
  *** Для того, чтобы подчеркнуть, что выбран один из пунктов: Задать вопрос или Корзина, к div добавляется класс header-item-selected
  ***/
-.header-item-selected {
+main.author-rating .header-item-selected {
     border: 3px solid #e5d996;
     border-radius: 5px;
 }
@@ -511,26 +511,26 @@ main .columns {
  *** Общее
  ***/
 /* убираем лишние элементы разметки */
-.slogan,
-.column-3 {
+main.author-rating .slogan,
+main.author-rating .column-3 {
     display: none !important;
 }
 
 /**
  ** Базовая разметка
  **/
-.column {
+main.author-rating .column {
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
 }
 
-.column-1 {
+main.author-rating .column-1 {
     flex-basis: 200px;
     margin-left: 25px;
 }
 
-.column-2 {
+main.author-rating .column-2 {
     flex-basis: 1000px;
     margin-right: 25px;
 }
@@ -538,7 +538,7 @@ main .columns {
 /**
  ** Заголовочная часть
  **/
-.column-2 .header {
+main.author-rating .column-2 .header {
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
@@ -548,7 +548,7 @@ main .columns {
 /*
  * Заголовок
  */
-.column-2 .header h1 {
+main.author-rating .column-2 .header h1 {
     font-family: Tahoma, sans-serif;
     font-size: 34px;
     font-weight: normal;
@@ -559,7 +559,7 @@ main .columns {
 /*
  * Выбранные категории фильтрации рейтинга авторов
  */
-.column-2 .header .categories {
+main.author-rating .column-2 .header .categories {
     font-family: Tahoma, sans-serif;
     font-size: 19px;
     margin-left: 1px;
@@ -568,7 +568,7 @@ main .columns {
 /*
  * Сводная информации по результатам фильтрации рейтинга
  */
-.column-2 .header .summary {
+main.author-rating .column-2 .header .summary {
     font-family: Tahoma, sans-serif;
     font-size: 13px;
     margin-left: 22px;
@@ -579,22 +579,14 @@ main .columns {
  * Уровень заполненности звезд желтым фоном
  * Такие блоки должны быть для каждого найденного автора в отдельности
  */
-.author .rating-3-stars .rating-stars::before {
+main.author-rating .author .rating-3-stars .rating-stars::before {
     width: 67.5px;
 }
-
-/***
- ***  Общее
- ***/
-/**
- ** Выбор категорий для фильтрации
- **/
-
 
 /**
  ** Блок автора
  **/
-.author {
+main.author-rating .author {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -608,7 +600,7 @@ main .columns {
 /*
  * Блок автора - Порядковый номер в рейтинге
  */
-.author .serial-number {
+main.author-rating .author .serial-number {
     font-family: Tahoma, sans-serif;
     font-size: 33px;
     position: absolute;
@@ -623,7 +615,7 @@ main .columns {
     border-radius: 5px;
 }
 
-.author .serial-number .text {
+main.author-rating .author .serial-number .text {
     vertical-align: middle;
     /*border: 1px solid black;*/
 }
@@ -631,7 +623,7 @@ main .columns {
 /*
  * Блок автора - Фото автора в маске-обрезалке
  */
-.author .author-photo {
+main.author-rating .author .author-photo {
     margin: auto;
     border-style: none;
 }
@@ -639,7 +631,7 @@ main .columns {
 /*
  * Блок автора - Об авторе
  */
-.author .about {
+main.author-rating .author .about {
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
@@ -649,20 +641,20 @@ main .columns {
 /*
  * Блок автора - имя автора и его рейтинг (звездочки)
  */
-.author .about .fullname-rating {
+main.author-rating .author .about .fullname-rating {
     display: flex;
     flex-direction: row;
     justify-content: flex-start;
     align-items: center;
 }
 
-.author .about .fullname-rating > div {
+main.author-rating .author .about .fullname-rating > div {
     margin-right: 30px;
     /*border: 1px solid black;*/
 }
 
 /* имя автора */
-.author .about .fullname-rating .fullname a {
+main.author-rating .author .about .fullname-rating .fullname a {
     font-family: Tahoma, sans-serif;
     font-size: 22px;
     color: #667393;
@@ -671,14 +663,14 @@ main .columns {
 /*
  * Блок автора - Жанры
  */
-.author .about .genres {
+main.author-rating .author .about .genres {
     font-family: Tahoma, sans-serif;
     font-size: 12px;
     color: #7b7b7b;
     margin-top: 10px;
 }
 
-.author .about .genres a {
+main.author-rating .author .about .genres a {
     font-family: Tahoma, sans-serif;
     font-size: 12px;
     color: #667493;
@@ -687,7 +679,7 @@ main .columns {
 /*
  * Блок автора - Описание
  */
-.author .about .description {
+main.author-rating .author .about .description {
     font-family: Tahoma, sans-serif;
     font-size: 12px;
     line-height: 17px;
@@ -698,7 +690,7 @@ main .columns {
 /*
  * Блок автора - Футер
  */
-.author .about .footer {
+main.author-rating .author .about .footer {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -709,15 +701,15 @@ main .columns {
     margin-right: 20px;
 }
 
-.author .about .footer div {
+main.author-rating .author .about .footer div {
     margin-right: 30px;
 }
 
-.author .about .footer a {
+main.author-rating .author .about .footer a {
     color: #667493;
 }
 
-/* ---------------------------------------------------------------------------------------------------- */
+/* END (Тело страницы) -------------------------------------------------------------------------------------------- */
 
 /***
  ***  Футер

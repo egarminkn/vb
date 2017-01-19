@@ -57,7 +57,9 @@
                 </div>
             </nav>
         </header>
-		<main>
+
+        <!-- START (Тело страницы) -------------------------------------------------------------------------------------------- -->
+		<main class="author">
             <div class="left-column">
                 <!-- START (Фото автора в маске-обрезалке) -->
                 <div class="author-photo">
@@ -246,10 +248,10 @@
                 </div>
                 <div class="description">
                     <!-- START (Кнопки сворачивания-разворачивания информации об авторе) - 1-ая часть из 2-х -->
-                    <input class="expand-collapse-block" type="radio" name="expand-collapse-btn" id="expanded" >
-                    <input class="expand-collapse-block" type="radio" name="expand-collapse-btn" id="collapsed" checked>
-                    <label class="expand-collapse-block" for="expanded"></label>
-                    <label class="expand-collapse-block" for="collapsed"></label>
+                    <input class="expand-collapse-block expanded" type="radio" name="expand-collapse-btn" id="expanded" >
+                    <input class="expand-collapse-block collapsed" type="radio" name="expand-collapse-btn" id="collapsed" checked>
+                    <label class="expand-collapse-block expanded" for="expanded"></label>
+                    <label class="expand-collapse-block collapsed" for="collapsed"></label>
                     <!-- END (Кнопки сворачивания-разворачивания информации об авторе) - 1-ая часть из 2-х -->
 
                     <!-- Два одинаковых абзаца. visible - отображается. hidden - нужен для вычисления высоты раскрытого блока описания автора -->
@@ -882,6 +884,7 @@
                 </div>
             </div>
         </main>
+        <!-- END (Тело страницы) -------------------------------------------------------------------------------------------- -->
         
         <div class="books-on-shelf">
             <img src="img/bottom-book-1.jpg" />

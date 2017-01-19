@@ -487,16 +487,18 @@ div.slogan > a.publish-own {
     z-index: 1;
 }
 
+/* START (Тело страницы) -------------------------------------------------------------------------------------------- */
+
 /*
  * Центральная часть страницы
  */
-main {
+main.author {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
 }
 
-.left-column {
+main.author .left-column {
     width: 16%;
     display: flex;
     flex-direction: column;
@@ -504,7 +506,7 @@ main {
     margin-left: 40px;
 }
 
-.right-column {
+main.author .right-column {
     width: 70%;
     margin-right: 40px;
 }
@@ -515,40 +517,40 @@ main {
 /*
  * Фото автора
  */
-main .left-column .author-photo {
+main.author .left-column .author-photo {
     margin-top: 50px;
 }
 
 /*
  * Стилизация звездочек в рейтинге автора
  */
-main .left-column .rating-3-stars {
+main.author .left-column .rating-3-stars {
     margin-top: 10px;
 }
 
 /* закраска звездочек в рейтинге автора */
-main .left-column .rating-3-stars .rating-stars::before {
+main.author .left-column .rating-3-stars .rating-stars::before {
     width: 75px;
 }
 
 /*
  * Стилизация Блока Списка рейтинга под данную страницу
  */
-.ratings {
+main.author .ratings {
     margin-top: 15px;
 }
 
 /*
  * Пальчики-лайкчики за автора
  */
-.left-column .likes {
+main.author .left-column .likes {
     margin-top: 20px;
 }
 
 /*
  * ПРОМО-блок в левой колонке главной части страницы
  */
-.promo {
+main.author .promo {
     font-family: 'Myriad Pro Regular';
     font-size: 14px;
     letter-spacing: 0.5px;
@@ -557,35 +559,35 @@ main .left-column .rating-3-stars .rating-stars::before {
     margin-top: 20px;
 }
 
-.promo .title {
+main.author .promo .title {
     font-weight: bold;
 }
 
 /*
  * Баннер "Похожие авторы"
  */
-.left-column .similar-authors {
+main.author .left-column .similar-authors {
     margin-top: 20px;
 }
 
 /*
  * Правая колонка главной части страницы
  */
-.author {
+main.author .author {
     margin-top: 50px;
 }
 
-.author .nick {
+main.author .author .nick {
     font-family: 'Myriad Pro Regular';
     font-size: 15px;
 }
 
-.author .fullname {
+main.author .author .fullname {
     font-family: Tahoma, sans-serif;
     font-size: 34px;
 }
 
-.description {
+main.author .description {
     border: 1px dashed #ccc;
     border-radius: 5px;
     padding: 0;
@@ -593,20 +595,20 @@ main .left-column .rating-3-stars .rating-stars::before {
     margin-top: 50px;
 }
 
-.description > .paragraph {
+main.author .description > .paragraph {
     margin: 0;
     padding: 0;
     position: relative;
     /*border: 1px solid red;*/
 }
 
-.description > .paragraph.hidden {
+main.author .description > .paragraph.hidden {
     opacity: 0;
     pointer-events: none;
     position: absolute;
 }
 
-.description > .paragraph.visible > .after {
+main.author .description > .paragraph.visible > .after {
     position: absolute;
     bottom: 0;
     width: 100%;
@@ -615,7 +617,7 @@ main .left-column .rating-3-stars .rating-stars::before {
     /*border: 1px solid black;*/
 }
 
-.description > .paragraph > p.text {
+main.author .description > .paragraph > p.text {
     font-family: 'Myriad Pro Regular';
     font-size: 15px;
     letter-spacing: 0.5px;
@@ -628,18 +630,18 @@ main .left-column .rating-3-stars .rating-stars::before {
     /*border: 1px solid black;*/
 }
 
-.description > .paragraph.visible > p.text {
+main.author .description > .paragraph.visible > p.text {
     height: 100px;
 }
 
-.description > .paragraph.hidden > p.text {
+main.author .description > .paragraph.hidden > p.text {
     height: auto;
 }
 
 /*
  * Тень под описанием автора
  */
-.description .shadow-under {
+main.author .description .shadow-under {
     bottom: -1px;
     border-bottom: 1px dashed #ccc;
 }
@@ -647,7 +649,7 @@ main .left-column .rating-3-stars .rating-stars::before {
 /*
  * Кнопки сворачивания-разворачивания информации об авторе
  */
-div.expand-collapse-block {
+main.author div.expand-collapse-block {
     position: relative;
     top: 20px;
     /*z-index: 1;*/
@@ -657,11 +659,11 @@ div.expand-collapse-block {
     /*border: 1px solid black;*/
 }
 
-input.expand-collapse-block {
+main.author input[type="radio"].expand-collapse-block {
     display: none;
 }
 
-label.expand-collapse-block {
+main.author label.expand-collapse-block {
     display: block;
     position: absolute;
     top: calc(100% - 56px + 12px);
@@ -676,31 +678,31 @@ label.expand-collapse-block {
 }
 
 /* при переключении радиокнопок один элемент показываем, а другой прячем (пытался сделать через display, однако тогда ломается transition)*/
-input.expand-collapse-block[id="expanded"]:checked ~ label.expand-collapse-block[for="expanded"],
-input.expand-collapse-block[id="collapsed"]:checked ~ label.expand-collapse-block[for="collapsed"] {
+main.author input[type="radio"].expand-collapse-block.expanded:checked ~ label.expand-collapse-block.expanded,
+main.author input[type="radio"].expand-collapse-block.collapsed:checked ~ label.expand-collapse-block.collapsed {
     z-index: 0;
 }
 
-input.expand-collapse-block[id="expanded"]:checked ~ label.expand-collapse-block[for="collapsed"],
-input.expand-collapse-block[id="collapsed"]:checked ~ label.expand-collapse-block[for="expanded"] {
+main.author input[type="radio"].expand-collapse-block.expanded:checked ~ label.expand-collapse-block.collapsed,
+main.author input[type="radio"].expand-collapse-block.collapsed:checked ~ label.expand-collapse-block.expanded {
     z-index: 1;
 }
 
 /* вращение при переключении радиокнопок (radio) */
-input.expand-collapse-block[id="collapsed"]:checked ~ label.expand-collapse-block[for="expanded"],
-input.expand-collapse-block[id="collapsed"]:checked ~ label.expand-collapse-block[for="collapsed"] {
+main.author input[type="radio"].expand-collapse-block.collapsed:checked ~ label.expand-collapse-block.expanded,
+main.author input[type="radio"].expand-collapse-block.collapsed:checked ~ label.expand-collapse-block.collapsed {
     transform: rotate(44deg) skew(-15deg) skewY(-15deg);
 }
 
-input.expand-collapse-block[id="expanded"]:checked ~ label.expand-collapse-block[for="expanded"],
-input.expand-collapse-block[id="expanded"]:checked ~ label.expand-collapse-block[for="collapsed"] {
+main.author input[type="radio"].expand-collapse-block.expanded:checked ~ label.expand-collapse-block.expanded,
+main.author input[type="radio"].expand-collapse-block.expanded:checked ~ label.expand-collapse-block.collapsed {
     transform: rotate(44deg) skew(-15deg) skewY(-15deg) rotate(180deg);
 }
 
 /*
  * Блок книг автора
  */
-.books .title {
+main.author .books > .title {
     font-family: Tahoma, sans-serif;
     font-size: 22px;
     margin-top: 30px;
@@ -709,7 +711,7 @@ input.expand-collapse-block[id="expanded"]:checked ~ label.expand-collapse-block
 /*
  * Выбор типа сортировки
  */
-.books .sort-by {
+main.author .books .sort-by {
     margin-top: 10px;
     /*border: 1px solid black;*/
 }
@@ -717,7 +719,7 @@ input.expand-collapse-block[id="expanded"]:checked ~ label.expand-collapse-block
 /*
  *  Список книг автора
  */
-.books .list {
+main.author .books .list {
     display: flex;
     flex-direction: row;
     justify-content: flex-start;
@@ -725,17 +727,17 @@ input.expand-collapse-block[id="expanded"]:checked ~ label.expand-collapse-block
     align-content: space-between;
 }
 
-.books .list .book-with-cover-and-summary {
+main.author .books .list .book-with-cover-and-summary {
     margin-top: 20px;
     margin-right: 20px;
 }
 
 /* Закраска звездочек рейтинга книги (на каждую книгу должна быть своя, т.к. рейтинги у всех книг разные) */
-.books .list .book-with-cover-and-summary .book-summary .rating-5-stars .rating-stars::before {
+main.author .books .list .book-with-cover-and-summary .book-summary .rating-5-stars .rating-stars::before {
     width: 56px;
 }
 
-/* ----------------------------------------------------------------------------------------------------------------- */
+/* END (Тело страницы) -------------------------------------------------------------------------------------------- */
 
 /*
  * Книжки на полке в футере

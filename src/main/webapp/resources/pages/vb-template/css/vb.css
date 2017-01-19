@@ -501,18 +501,6 @@ header::after {
     /*border: 1px solid black;*/
 }
 
-/***
- *** Центральная часть страницы
- ***/
-main {
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    margin-top: 40px;
-    margin-bottom: 30px;
-    /*border: 1px solid green;*/
-}
-
 /**
  ** Слоган под хедером
  **/
@@ -609,6 +597,18 @@ main {
     left: 45%;
 }
 
+/***
+ *** Центральная часть страницы
+ ***/
+main {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    margin-top: 40px;
+    margin-bottom: 30px;
+    /*border: 1px solid green;*/
+}
+
 /**
  ** Колонки - в общем случае дизайн 3-хколоночный
  **/
@@ -618,12 +618,7 @@ main .columns {
     justify-content: space-around;
 }
 
-/* ---------------------------------------------------------------------------------------------------- */
-
-
-
-
-
+/* START (Тело страницы) -------------------------------------------------------------------------------------------- */
 
 main .columns .column-2 {
     max-width: 840px;
@@ -638,7 +633,6 @@ main .columns .column-2 {
     border-radius: 5px;
     border: 1px dashed #b4b4b4;
 }
-
 
 /***
  *** Общее
@@ -2954,7 +2948,7 @@ div.likes .dislike::before {
     float: left;
 }
 
-/* ---------------------------------------------------------------------------------------------------- */
+/* END (Тело страницы) -------------------------------------------------------------------------------------------- */
 
 /***
  ***  Футер
