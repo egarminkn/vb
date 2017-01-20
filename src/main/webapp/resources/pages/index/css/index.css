@@ -888,6 +888,7 @@ main.index .column.column-2.shelves > .shelf-title-and-wrapper.authors-rating > 
  * 6 лучших авторов
  */
 main.index .column.column-2.shelves > .shelf-title-and-wrapper.authors-rating > .shelf-wrapper {
+    margin-top: 20px;
     padding: 20px;
 }
 

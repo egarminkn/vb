@@ -668,12 +668,23 @@ main.search-book .search-results .left-column {
 }
 
 main.search-book .search-results .right-column {
-    min-width: 199px;
     width: 16%;
+    /*border: 1px solid black;*/
+}
+
+main.search-book .search-results .right-column > .item {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+main.search-book .search-results .right-column > .top-level {
+    box-sizing: border-box;
+    max-width: 199px;
+    width: 100%;
 }
 
 main.search-book .search-results .right-column .shifter {
-    height: 96px;
+    height: 94px;
     /*border: 1px solid black;*/
 }
 
