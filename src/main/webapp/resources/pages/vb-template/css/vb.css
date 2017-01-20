@@ -597,32 +597,35 @@ header::after {
     left: 45%;
 }
 
+/* START (Тело страницы) -------------------------------------------------------------------------------------------- */
+
 /***
  *** Центральная часть страницы
  ***/
-main {
+/*main {
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
     margin-top: 40px;
     margin-bottom: 30px;
-    /*border: 1px solid green;*/
-}
+    !*border: 1px solid green;*!
+}*/
 
 /**
  ** Колонки - в общем случае дизайн 3-хколоночный
  **/
-main .columns {
+/*main .columns {
     display: flex;
     flex-direction: row;
     justify-content: space-around;
-}
+}*/
 
-/* START (Тело страницы) -------------------------------------------------------------------------------------------- */
-
-main .columns .column-2 {
+/***
+ *** Тестовая часть (только для страницы макета-шаблона)
+ ***/
+/*main .columns .column-2 {
     max-width: 840px;
-    /*width: 650px;*/
+    !*width: 650px;*!
 }
 
 .shadow-test {
@@ -632,7 +635,7 @@ main .columns .column-2 {
     width: 840px;
     border-radius: 5px;
     border: 1px dashed #b4b4b4;
-}
+}*/
 
 /***
  *** Общее
