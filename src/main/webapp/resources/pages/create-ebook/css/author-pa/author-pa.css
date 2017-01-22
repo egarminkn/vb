@@ -1,0 +1,1263 @@
+/* START (Тело страницы) -------------------------------------------------------------------------------------------- */
+
+/**
+ ** Центральная часть страницы
+ **/
+/*
+ * Флексирование центральной части страницы (общая разметка)
+ */
+main.author-pa {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+
+/*
+ * Личные данные автора
+ */
+main.author-pa .author {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    margin-top: 10px;
+    /*border: 1px solid red;*/
+}
+
+main.author-pa .author .about {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    padding: 20px 35px;
+    margin-left: 25px;
+    margin-right: 25px;
+    border: 1px dashed #b4b4b4;
+    border-radius: 5px;
+    min-width: 630px;
+}
+
+main.author-pa .author .about .columns {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    height: 270px;
+    transition: height .8s ease;
+    /*border: 1px solid black;*/
+}
+
+main.author-pa .author .about .columns .column {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    /*border: 1px solid black;*/
+}
+
+main.author-pa .author .about .columns .column.column-2 {
+    /*align-items: flex-end;*/
+    flex-basis: 200px;
+}
+
+main.author-pa .author .about .columns .column.column-3 {
+    flex-basis: 350px;
+}
+
+main.author-pa .author .about .columns .column.column-4 {
+    flex-basis: 250px;
+}
+
+main.author-pa .author .about .columns .column .row {
+    /*border: 1px solid black;*/
+}
+
+main.author-pa .author .about .columns .column-1 .row-1 {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    min-height: 100px;
+}
+
+main.author-pa .author .about .columns .column-1 .row-1 .name {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+
+main.author-pa .author .about .columns .column-1 .row-2 {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    margin-top: 3px;
+    height: 25px;
+    overflow: hidden;
+}
+
+main.author-pa .author .about .columns .column-1 .row-3 {
+    margin-top: 15px;
+}
+
+main.author-pa .author .about .columns .column-2 .row-1 {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    margin-top: 35px;
+    min-height: 25px;
+}
+
+main.author-pa .author .about .columns .column-2 .row-2 {
+    margin-left: 15%;
+    margin-top: 15px;
+}
+
+main.author-pa .author .about .columns .column-2 .row-3 {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    margin-left: 15%;
+    margin-top: 20px;
+    overflow: hidden;
+}
+
+main.author-pa .author .about .columns .column-3 .row-1 {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    margin-top: 35px;
+    min-height: 25px;
+}
+
+main.author-pa .author .about .columns .column-3 .row-2 {
+    margin-left: 2px;
+    margin-top: 15px;
+}
+
+main.author-pa .author .about .columns .column-4 .row-1 {
+    margin-top: 35px;
+    min-height: 25px;
+}
+
+main.author-pa .author .about .columns .column-4 .row-2 {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    flex-wrap: nowrap;
+    align-items: center;
+    margin-top: 15px;
+    overflow: hidden;
+    min-width: 150px;
+    /*border: 1px solid black;*/
+}
+
+main.author-pa .author .about .columns .column-4 .row-2 .wallet {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    margin-left: 12%;
+}
+
+main.author-pa .author .about .columns .column-4 .row-3 {
+    margin-top: auto;
+    margin-left: 10px;
+    position: relative;
+}
+
+/*
+ * Таблица с книгами автора
+ */
+main.author-pa .books {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    margin-top: 50px;
+    padding: 0 25px;
+    /*border: 1px solid green;*/
+}
+
+main.author-pa .books .header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-end;
+    /*border: 1px solid black;*/
+}
+
+main.author-pa .books .header label {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    width: 50%;
+    cursor: pointer;
+    /*border: 1px solid black;*/
+}
+
+main.author-pa .books .header label.write {
+    justify-content: flex-start;
+}
+
+main.author-pa .books .header label.write .title {
+    margin-left: 10px;
+}
+
+main.author-pa .books .header label.read {
+    justify-content: flex-end;
+}
+
+main.author-pa .books .header label.read .title {
+    margin-right: 10px;
+}
+
+main.author-pa .books table {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    min-width: 630px;
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0;
+}
+
+/* стилизация закруглений и штриховки таблицы с книгами */
+main.author-pa .books table thead tr th,
+main.author-pa .books table tbody tr td {
+    font-family: Tahoma, sans-serif;
+    font-size: 13px;
+    border-bottom: 1px dashed #b4b4b4;
+}
+
+main.author-pa .books table thead tr:first-child th {
+    border-top: 1px dashed #b4b4b4;
+}
+
+main.author-pa .books table thead tr th:first-child,
+main.author-pa .books table tbody tr td:first-child {
+    border-left: 1px dashed #b4b4b4;
+}
+
+main.author-pa .books table thead tr th:last-child,
+main.author-pa .books table tbody tr td:last-child {
+    border-right: 1px dashed #b4b4b4;
+}
+
+main.author-pa .books table thead tr:first-child th:first-child {
+    border-top-left-radius: 5px;
+}
+
+main.author-pa .books table thead tr:first-child th:last-child {
+    border-top-right-radius: 5px;
+}
+
+main.author-pa .books table tbody tr:last-child td:first-child {
+    border-bottom-left-radius: 5px;
+}
+
+main.author-pa .books table tbody tr:last-child td:last-child {
+    border-bottom-right-radius: 5px;
+}
+
+/* выравнивание данных в ячейках таблицы с книгами */
+main.author-pa .books table thead tr th {
+    text-align: left;
+}
+main.author-pa .books table.write thead tr th.cover {
+    text-align: center;
+}
+main.author-pa .books table.read thead tr th.product {
+    text-align: center;
+}
+
+main.author-pa .books table tbody tr td {
+    text-align: left;
+}
+main.author-pa .books table.write tbody tr td.cover {
+    text-align: center;
+}
+main.author-pa .books table.read tbody tr td.product {
+    text-align: center;
+}
+
+main.author-pa .books table.write thead tr th.status {
+    padding-left: 15px;
+}
+
+main.author-pa .books table tbody tr td.price .price-sign {
+    margin-left: 10%;
+}
+
+main.author-pa .books table.write tbody tr td.profit .price-sign {
+    margin-left: 20%;
+}
+
+main.author-pa .books table.read tbody tr td {
+    padding-top: 15px;
+    padding-bottom: 20px;
+}
+
+/*
+ * Заголовок Личный кабинет
+ */
+main.author-pa .author > .title {
+    font-family: Tahoma, sans-serif;
+    font-size: 34px;
+    width: 285px;
+    background: url('../../svg/author-pa/user-icon.svg') no-repeat;
+    background-size: 20px 20px;
+    background-position: right top;
+    margin: 20px 25px;
+    /*border: 1px solid black;*/
+}
+
+/*
+ * Блок Информации об авторе - 1-ая колонка
+ */
+/*
+ *  Блок с Именем автора
+ */
+main.author-pa .author > .about .name {
+    font-family: 'Myriad Pro Regular';
+    margin-top: 15px;
+    margin-left: 15px;
+    /*border: 1px solid black;*/
+}
+
+main.author-pa .author > .about .name .fullname {
+    font-size: 22px;
+    /*color: #b4b4b4;*/
+}
+
+main.author-pa .author > .about .name .login {
+    font-size: 15px;
+}
+
+/* стилизация кнопки редактирования для блока с Именем автора */
+main.author-pa .author .about .columns .column-1 .row-1 .edit {
+    margin-top: 15px;
+    margin-left: 2px;
+}
+
+/*
+ *  Отметка о профессионализме
+ */
+main.author-pa .mark {
+    font-family: Tahoma, sans-serif;
+    font-size: 12px;
+    font-weight: bold;
+    position: relative;
+    margin-left: 30px;
+    /*border: 1px solid black;*/
+}
+
+/* текст Отметки о профессионализме */
+main.author-pa .mark span {
+    margin-left: 15px;
+}
+
+/* флажочек Отметки о профессионализме */
+main.author-pa .mark::before {
+    content: '';
+    display: block;
+    box-sizing: border-box;
+    width: 8px;
+    height: 15px;
+    position: absolute;
+}
+main.author-pa .mark::after {
+    content: '';
+    display: block;
+    box-sizing: border-box;
+    width: 6px;
+    height: 6px;
+    background-color: white;
+    transform: rotate(45deg);
+    position: absolute;
+    left: 1px;
+    top: 12px;
+}
+
+/*
+ *  Стилизация Отметки о профессионализме
+ */
+main.author-pa .mark.gold {
+    color: #CFB53B;
+}
+main.author-pa .mark.gold::before {
+    background-color: #CFB53B;
+}
+
+main.author-pa .mark.silver {
+    color: #d2d4e3;
+}
+main.author-pa .mark.silver::before {
+    background-color: #d2d4e3;
+}
+
+main.author-pa .mark.bronze {
+    color: #8C7853;
+}
+main.author-pa .mark.bronze::before {
+    background-color: #8C7853;
+}
+
+/*
+ * Стилизация рейтинговых звезд автора на странице Личного кабинета
+ */
+main.author-pa .author .about .columns .column-1 .row-2 .rating-3-stars {
+    margin: auto;
+}
+
+/* уровень заполненности звезд желтым фоном */
+main.author-pa .author .about .columns .column-1 .row-2 .rating-3-stars .rating-stars::before {
+    width: 67.5px;
+}
+
+/*
+ * Стилизация списка рейтингов, в которые попал автор
+ */
+main.author-pa .column-1 .row-3 .ratings {
+    margin-top: 20px;
+    margin-left: 10px;
+    height: 108px;
+    transition: height .6s ease;
+    overflow: hidden;
+}
+
+/*
+ * Блок Информации об авторе - 2-ая колонка
+ */
+/* заголовок 2-ой колонки */
+main.author-pa .author .about .columns .column-2 .row-1 .title {
+    font-family: Tahoma, sans-serif;
+    font-size: 15px;
+    height: 20px;
+    background: url('../../svg/author-pa/red-star.svg') no-repeat;
+    background-size: 21px 20px;
+    padding-left: 25px;
+    margin-top: 4px;
+    white-space: nowrap;
+    /*border: 1px solid black;*/
+}
+
+/* стилизация кнопки редактирования для блока с Личными данными автора */
+main.author-pa .author .about .columns .column-2 .row-1 .edit {
+    margin-left: 2px;
+}
+
+/* запись о городе проживания автора */
+main.author-pa .about .columns .column-2 .row-2 .city {
+    font-family: Tahoma, sans-serif;
+    font-size: 14px;
+    height: 18px;
+    transition: height 1s ease;
+    overflow: hidden;
+}
+
+main.author-pa .author .about .columns .column-2 .row-2 .city span {
+    border-bottom: 1px dashed #34d2d8;
+}
+
+/*
+ * Контактные данные
+ */
+main.author-pa .author .about .columns .column-2 .row-3 {
+    font-family: Tahoma, sans-serif;
+    font-size: 14px;
+    /*white-space: nowrap;*/
+    word-break: break-all;
+    color: black;
+    height: 100%;
+    transition: height .8s ease;
+    /*border: 1px solid black;*/
+}
+
+main.author-pa .author .about .columns .column-2 .row-3 .email > a {
+    color: black;
+    /*border: 1px solid black;*/
+}
+
+main.author-pa .author .about .columns .column-2 .row-3 .skype > a {
+    color: black;
+    /*border: 1px solid black;*/
+}
+
+main.author-pa .author .about .columns .column-2 .row-3 > div {
+    margin-bottom: 10px;
+}
+
+main.author-pa .author .about .columns .column-2 .row-3 .phone {
+    background: url('../../svg/author-pa/phone.svg') no-repeat;
+    background-size: 15px 15px;
+    background-position: left;
+    padding-left: 20px;
+    /*border: 1px solid black;*/
+}
+
+main.author-pa .author .about .columns .column-2 .row-3 .email {
+    background: url('../../svg/author-pa/email.svg') no-repeat;
+    background-size: 15px 15px;
+    background-position: left;
+    padding-left: 20px;
+    /*border: 1px solid black;*/
+}
+
+main.author-pa .author .about .columns .column-2 .row-3 .skype {
+    background: url('../../svg/author-pa/skype.svg') no-repeat;
+    background-size: 15px 15px;
+    background-position: left;
+    padding-left: 20px;
+    /*border: 1px solid black;*/
+}
+
+/*
+ * Блок Информации об авторе - 3-я колонка
+ */
+/* заголовок 3-ей колонки */
+main.author-pa .author .about .columns .column-3 .row-1 .title {
+    font-family: Tahoma, sans-serif;
+    font-size: 15px;
+    height: 20px;
+    margin-top: 4px;
+    /*border: 1px solid black;*/
+}
+
+/* стилизация кнопки редактирования для блока Обо мне */
+main.author-pa .author .about .columns .column-3 .row-1 .edit {
+    margin-left: 2px;
+}
+
+/* стилизация информации в блоке Обо мне */
+main.author-pa .about .columns .column-3 .row-2 .description {
+    font-family: Tahoma, sans-serif;
+    font-size: 14px;
+    line-height: 20px;
+    box-sizing: border-box;
+    height: 180px;
+    transition: height .8s ease;
+    overflow: hidden;
+    position: relative;
+}
+
+/* осветление конца текста Обо мне */
+main.author-pa .author .about .columns .column-3 .row-2 .description::after {
+    content: '';
+    display: block;
+    box-sizing: border-box;
+    width: 100%;
+    height: 25px;
+    position: absolute;
+    bottom: 0;
+    z-index: 1;
+    background: linear-gradient(to top, white, transparent);
+}
+
+/*
+ * Блок Информации об авторе - 4-я колонка
+ */
+/* заголовок 4-й колонки */
+main.author-pa .author .about .columns .column-4 .row-1 .title {
+    font-family: Tahoma, sans-serif;
+    font-size: 15px;
+    height: 20px;
+    margin-top: 4px;
+    /*border: 1px solid black;*/
+}
+
+main.author-pa .author .about .columns .column-4 .row-1 .title::before {
+    content: '';
+    display: inline-block;
+    vertical-align: middle;
+    opacity: 0;
+    box-sizing: border-box;
+    width: 0;
+    height: 20px;
+    background-image: url('../../svg/author-pa/wallet.svg');
+    background-repeat: no-repeat;
+    background-size: 100%;
+    transition: opacity .8s ease,
+                width .8s ease;
+}
+
+/* стилизация 2-й строки кошелька */
+main.author-pa .author .about .columns .column-4 .row-2 .wallet-icon {
+    box-sizing: border-box;
+    min-width: 70px;
+    width: 70px;
+    height: 70px;
+    background-color: #ccbd54;
+    background-image: url('../../svg/author-pa/wallet.svg');
+    background-repeat: no-repeat;
+    background-size: 60%;
+    background-position: center;
+    border-radius: 50%;
+}
+
+main.author-pa .author .about .columns .column-4 .row-2 .wallet .balance {
+    font-family: Tahoma, sans-serif;
+    font-size: 16px;
+}
+
+main.author-pa .author .about .columns .column-4 .row-2 .wallet .modal-btn {
+    font-family: Tahoma, sans-serif;
+    font-size: 14px;
+    color: #667493;
+}
+
+/*
+ * Стилизация блока заполненности профиля автора
+ */
+main.author-pa .profile-completeness {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 166px;
+    transition: left .8s ease,
+                bottom .8s ease,
+                width .8s ease;
+}
+
+main.author-pa .profile-completeness .text {
+    display: inline-block;
+    vertical-align: middle;
+    font-family: Tahoma, sans-serif;
+    font-size: 12px;
+    color: #667493;
+    margin-right: 10px;
+    margin-bottom: 5px;
+    position: relative;
+    z-index: 1;
+}
+
+main.author-pa .profile-completeness .progress-bar {
+    display: inline-block;
+    vertical-align: middle;
+    box-sizing: border-box;
+    width: 130px;
+    height: 10px;
+    background-image: linear-gradient(to bottom, #bb5212, #d68b33);
+    border: 1px solid #bb5212;
+    border-radius: 5px;
+    position: relative;
+}
+
+main.author-pa .profile-completeness .progress-bar::before {
+    content: '';
+    display: block;
+    position: absolute;
+    z-index: 1;
+    top: -1px;
+    left: -1px;
+    box-sizing: border-box;
+    width: 100px;
+    height: 10px;
+    background-image: repeating-linear-gradient(-45deg, #d9c600 0, #d9c600 5px, #cdb800 5px, #cdb800 10px);
+    border: 1px solid #d4ab12;
+    border-radius: 5px;
+}
+
+/*
+ * Кнопки сворачивания-разворачивания информации об авторе
+ */
+main.author-pa div.expand-collapse-block {
+    position: relative;
+    top: 20px;
+    /*z-index: 1;*/
+    margin: auto;
+    height: 56px;
+    width: 56px;
+    /*border: 1px solid black;*/
+}
+
+main.author-pa input[type="radio"].expand-collapse-block {
+    display: none;
+}
+
+main.author-pa label.expand-collapse-block {
+    display: block;
+    position: absolute;
+    top: calc(100% - 56px + 12px);
+    left: calc(50% - 35px + 20px);
+    box-sizing: border-box;
+    width: 30px;
+    height: 31px;
+    border-right: 2px solid #ccc;
+    border-bottom: 2px solid #ccc;
+    transition: transform .8s ease;
+    cursor: pointer;
+}
+
+/* при переключении радиокнопок один элемент показываем, а другой прячем (пытался сделать через display, однако тогда ломается transition)*/
+main.author-pa input[type="radio"].expand-collapse-block.expanded:checked ~ label.expand-collapse-block.expanded,
+main.author-pa input[type="radio"].expand-collapse-block.collapsed:checked ~ label.expand-collapse-block.collapsed {
+    z-index: 0; 
+}
+
+main.author-pa input[type="radio"].expand-collapse-block.expanded:checked ~ label.expand-collapse-block.collapsed,
+main.author-pa input[type="radio"].expand-collapse-block.collapsed:checked ~ label.expand-collapse-block.expanded {
+    z-index: 1;
+}
+
+/* вращение при переключении радиокнопок (radio) */
+main.author-pa input[type="radio"].expand-collapse-block.collapsed:checked ~ label.expand-collapse-block.expanded,
+main.author-pa input[type="radio"].expand-collapse-block.collapsed:checked ~ label.expand-collapse-block.collapsed {
+    transform: rotate(44deg) skew(-15deg) skewY(-15deg);
+}
+
+main.author-pa input[type="radio"].expand-collapse-block.expanded:checked ~ label.expand-collapse-block.expanded,
+main.author-pa input[type="radio"].expand-collapse-block.expanded:checked ~ label.expand-collapse-block.collapsed {
+    transform: rotate(44deg) skew(-15deg) skewY(-15deg) rotate(180deg);
+}
+
+/* Процесс сворачивания блока информации об авторе */
+main.author-pa input[type="radio"].expand-collapse-block.collapsed:checked ~ .columns {
+    height: 50px;
+}
+
+main.author-pa input[type="radio"].expand-collapse-block.collapsed:checked ~ .columns .ratings {
+    height: 0;
+}
+
+main.author-pa input[type="radio"].expand-collapse-block.collapsed:checked ~ .columns .description {
+    height: 0;
+}
+
+main.author-pa input[type="radio"].expand-collapse-block.collapsed:checked ~ .columns .city {
+    height: 0;
+}
+
+main.author-pa input[type="radio"].expand-collapse-block.collapsed:checked ~ .columns .column-2 .row-3 {
+    height: 0;
+}
+
+main.author-pa input[type="radio"].expand-collapse-block.collapsed:checked ~ .columns .profile-completeness {
+    left: -150%;
+    bottom: -10px;
+    width: 300px;
+}
+
+main.author-pa input[type="radio"].expand-collapse-block.collapsed:checked ~ .columns .column-4 .row-1 .title::before {
+    width: 20px;
+    opacity: 1;
+}
+
+/*
+ * Стилизация тени под блоком информации об авторе
+ */
+main.author-pa .about {
+    position: relative;
+}
+
+main.author-pa .about .shadow-under {
+    bottom: -1px;
+    border-bottom: 1px dashed #b4b4b4;
+}
+
+/*
+ * Блок книг автора (Мои книги)
+ */
+main.author-pa .books .header .title {
+    font-family: Tahoma, sans-serif;
+    font-size: 22px;
+}
+
+/*
+ * Вкладки переключения между написанными и купленными книгами
+ */
+main.author-pa .books input[type="radio"] {
+    display: none;
+}
+
+main.author-pa .books .header label {
+    border: 1px dashed #b7b7b7;
+    border-bottom-style: none;
+    border-radius: 5px;
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+    width: 49%;
+}
+
+main.author-pa .books .table-with-shadow {
+    display: none;
+}
+
+/* не выбрана */
+main.author-pa input[type="radio"].write:not(:checked) ~ .header label.write {
+    border-top-right-radius: 0;
+    border-right-style: none;
+}
+
+main.author-pa input[type="radio"].read:not(:checked) ~ .header label.read {
+    border-top-left-radius: 0;
+    border-left-style: none;
+}
+
+/* выбрана */
+main.author-pa input[type="radio"].write:checked ~ .header label.write {
+    padding-left: 1%;
+}
+
+main.author-pa input[type="radio"].read:checked ~ .header label.read {
+    padding-right: 1%;
+}
+
+main.author-pa input[type="radio"].write:checked ~ .header label.write,
+main.author-pa input[type="radio"].read:checked ~ .header label.read {
+    height: 40px;
+    width: 51%;
+    border-style: solid;
+    border-bottom-style: none;
+}
+
+main.author-pa input[type="radio"].write:checked ~ .table-with-shadow.write,
+main.author-pa input[type="radio"].read:checked ~ .table-with-shadow.read {
+    display: block;
+}
+
+/*
+ * Ссылка создания новой книги
+ */
+main.author-pa .books .header label.write .create-book {
+    text-decoration: none;
+    font-family: Tahoma, sans-serif;
+    font-size: 12px;
+    margin-left: 50px;
+}
+
+main.author-pa .books .header label.write .create-book .text {
+    display: inline-block;
+    vertical-align: middle;
+    text-decoration: underline;
+    color: #d3be4a;
+}
+
+main.author-pa .books .header label.write .create-book .plus {
+    display: inline-block;
+    vertical-align: middle;
+    position: relative;
+    margin-right: 5px;
+    box-sizing: border-box;
+    width: 13px;
+    height: 13px;
+    border: 1px solid #bababa;
+    border-radius: 50%;
+}
+
+main.author-pa .books .header label.write .create-book .plus::before {
+    content: '';
+    display: block;
+    position: absolute;
+    top: 2px;
+    left: 5px;
+    box-sizing: border-box;
+    width: 1px;
+    height: 7px;
+    background: #bababa;
+}
+
+main.author-pa .books .header label.write .create-book .plus::after {
+    content: '';
+    display: block;
+    position: absolute;
+    top: 5px;
+    left: 2px;
+    box-sizing: border-box;
+    width: 7px;
+    height: 1px;
+    background: #bababa;
+}
+
+/*
+ * Таблицы с книгами
+ */
+/*
+ * Строка Заголовка
+ */
+main.author-pa .books table thead tr th {
+    font-family: Tahoma, sans-serif;
+    font-size: 13px;
+    font-weight: normal;
+    height: 50px;
+}
+
+/* колонка Количества скачиваний */
+main.author-pa .books table.write thead tr th.download .th-2 {
+    font-size: 11px;
+}
+
+main.author-pa .books table.write thead tr th.download .th-2 .paid {
+    color: #1f9b02;
+}
+
+/* колонка Лайков */
+main.author-pa .books table.write thead tr th.likes span {
+    display: inline-block;
+    vertical-align: bottom;
+    width: 17px;
+    height: 17px;
+    background: url('../../svg/author-pa/thumb-up-blue.svg') no-repeat;
+    background-size: 100%;
+}
+
+main.author-pa .books table.write thead tr th.likes span.like {
+    margin-right: 7px;
+}
+
+main.author-pa .books table.write thead tr th.likes span.dislike {
+    transform: scale(-1);
+    margin-left: 7px;
+    position: relative;
+    top: 4px;
+}
+
+/* колонка Прибыль */
+main.author-pa .books table.write thead tr th.profit::before {
+    content: '';
+    display: inline-block;
+    vertical-align: middle;
+    width: 20px;
+    height: 20px;
+    background: url('../../svg/author-pa/coin-ruble.svg') no-repeat;
+    background-size: 100%;
+}
+
+main.author-pa .books table.write thead tr th.profit span {
+    display: inline-block;
+    vertical-align: middle;
+    margin-left: 5px;
+}
+
+/*
+ * Строки с данными
+ */
+/*
+ * Таблица Купленные книги
+ */
+/*
+ * Колонка Скачать
+ */
+main.author-pa .books table.read tbody tr td.download ul.formats {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+main.author-pa .books table.read tbody tr td.download ul.formats li.format {
+    margin-top: 5px;
+    /*border: 1px solid black;*/
+}
+
+main.author-pa .books table.read tbody tr td.download ul.formats li.format button {
+    margin-left: 10%;
+    border: 1px solid #afb9ca;
+    border-radius: 5px;
+    padding: 5px;
+    cursor: pointer;
+    outline: none;
+    background-image: linear-gradient(to top, #afb9ca, white);
+}
+
+main.author-pa .books table.read tbody tr td.download ul.formats li.format button:active {
+    box-shadow: inset 0 0 15px 0 #afb9ca;
+}
+
+/*
+ * Таблица Мои книги
+ */
+/* обложка */
+main.author-pa .books table.write tbody tr td.cover {
+    height: 110px;
+    vertical-align: middle;
+}
+
+main.author-pa .books table.write tbody tr td.cover img {
+    width: 50px;
+    height: 80px;
+}
+
+/* не обложка */
+main.author-pa .books table.write tbody tr td:not(.cover) {
+    vertical-align: top;
+    padding-top: 40px;
+}
+
+/* Название книги */
+main.author-pa .books table.write tbody tr td.title {
+    max-width: 110px;
+    white-space: nowrap;
+}
+
+main.author-pa .books table.write tbody tr td.title .book {
+    display: inline-block;
+    font-family: Tahoma, sans-serif;
+    font-size: 14px;
+    color: black;
+    white-space: normal;
+    max-width: 145px;
+    /*border: 1px solid black;*/
+}
+
+main.author-pa .books table.write tbody tr td.title .edit {
+    display: inline-block;
+    vertical-align: top;
+    position: relative;
+    top: -4px;
+    /*border: 1px solid black;*/
+}
+
+/*
+ * Статус книги
+ */
+main.author-pa .books table.write tbody tr td.status .current-status {
+    font-family: Tahoma, sans-serif;
+    font-size: 13px;
+    white-space: nowrap;
+    /*border: 1px solid black;*/
+}
+
+main.author-pa .books table.write tbody tr td.status .current-status::before {
+    content: '';
+    display: inline-block;
+    vertical-align: middle;
+    box-sizing: border-box;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: black;
+}
+
+main.author-pa .books table.write tbody tr td.status .current-status .text {
+    display: inline-block;
+    vertical-align: middle;
+    margin-left: 5px;
+    color: black;
+    /*text-decoration: underline;*/
+}
+
+/* стилизация статуса книги */
+main.author-pa .books table.write tbody tr td.status .current-status.published::before {
+    background: #1f9b02;
+}
+main.author-pa .books table.write tbody tr td.status .current-status.published .text {
+    color: #1f9b02;
+}
+
+main.author-pa .books table.write tbody tr td.status .current-status.rejected::before {
+    background: #b60000;
+}
+main.author-pa .books table.write tbody tr td.status .current-status.rejected .text {
+    color: #b60000;
+}
+
+main.author-pa .books table.write tbody tr td.status .current-status.on-moderation::before {
+    background: #ccbd54;
+}
+main.author-pa .books table.write tbody tr td.status .current-status.on-moderation .text {
+    color: #ccbd54;
+}
+
+main.author-pa .books table.write tbody tr td.status .current-status.not-published::before {
+    background: #3c3c3c;
+}
+main.author-pa .books table.write tbody tr td.status .current-status.not-published .text {
+    color: #3c3c3c;
+}
+
+/*
+ * Список действий
+ */
+main.author-pa .books table.write tbody tr td.status {
+    max-width: 90px;
+}
+
+main.author-pa .books table.write tbody tr td.status .actions {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    padding-left: 22px;
+    /*width: 100%;*/
+}
+
+main.author-pa .books table.write tbody tr td.status .actions .action {
+    margin-top: 5px;
+    position: relative;
+    max-width: 110px;
+    /*border: 1px solid black;*/
+}
+
+main.author-pa .books table.write tbody tr td.status .actions .action a {
+    font-family: Tahoma, sans-serif;
+    font-size: 11px;
+}
+
+/* стилизация списка действий */
+main.author-pa .books table.write tbody tr td.status .actions .action.publish a {
+    color: #667393;
+}
+
+main.author-pa .books table.write tbody tr td.status .actions .action.withdraw a {
+    color: #b60000;
+}
+main.author-pa .books table.write tbody tr td.status .actions .action.withdraw::before {
+    content: '';
+    display: block;
+    position: absolute;
+    top: 7px;
+    left: -9px;
+    box-sizing: border-box;
+    width: 1px;
+    height: 9px;
+    background: #b60000;
+    transform: rotate(45deg);
+}
+main.author-pa .books table.write tbody tr td.status .actions .action.withdraw::after {
+    content: '';
+    display: block;
+    position: absolute;
+    top: 10px;
+    left: -12px;
+    box-sizing: border-box;
+    width: 9px;
+    height: 1px;
+    background: #b60000;
+    transform: rotate(45deg);
+}
+
+/*
+ * Уровень заполненности звезд оранжевым фоном (у каждой книги должен быть свой)
+ */
+main.author-pa .books table.write tbody tr td.rating .rating-5-stars .rating-stars::before {
+    width: 67.5px;
+}
+
+/*
+ * Колонка - Скачали
+ */
+main.author-pa .books table.write tbody tr td.download {
+    font-family: Tahoma, sans-serif;
+    font-size: 13px;
+}
+
+main.author-pa .books table.write tbody tr td.download .paid {
+    color: #1f9b02;
+}
+
+/*
+ * Колонка - Лайки / дизлайки
+ */
+main.author-pa .books table.write tbody tr td.likes {
+    font-family: Tahoma, sans-serif;
+    font-size: 13px;
+}
+
+main.author-pa .books table.write tbody tr td.likes .dislike {
+    color: #cb2d27;
+}
+
+main.author-pa .books table.read tbody tr td.likes .like {
+    color: #1f9b02;
+}
+
+main.author-pa .books table.read tbody tr td.likes .dislike {
+    color: #cb2d27;
+}
+
+/*
+ * Колонка - Прибыль
+ */
+main.author-pa .books table.write tbody tr td.profit {
+    font-family: Tahoma, sans-serif;
+    font-size: 13px;
+}
+
+/*
+ * Стилизация тени под блоком книг автора
+ */
+main.author-pa .table-with-shadow {
+    position: relative;
+}
+
+main.author-pa .table-with-shadow .shadow-under {
+    bottom: 40px;
+    border-bottom: 1px dashed #b4b4b4;
+    /*border: 1px solid black;*/
+}
+
+main.author-pa .table-with-shadow table.write .actions .action {
+    z-index: 1;
+}
+
+/*
+ * Значок-ссылка для редактирования
+ */
+main.author-pa .edit {
+    display: inline-block;
+    min-width: 13px;
+    width: 13px;
+    height: 13px;
+    background: url('../../svg/author-pa/pencil.svg') no-repeat;
+    background-size: 100%;
+    background-position: left top;
+    /*border: 1px solid black;*/
+}
+
+/**
+ ** Модальное окно
+ **/
+/*
+ * Тело
+ */
+main.author-pa .modal.receive-money > .body {
+    margin-top: 10%;
+    width: 550px;
+    height: auto;
+}
+
+main.author-pa .modal.receive-money > .body > .columns > .column-1,
+main.author-pa .modal.receive-money > .body > .columns > .column-3 {
+    display: none;
+}
+
+/*
+ * Стилизация выбора способа "Получить деньги"
+ */
+/* общая часть */
+main.author-pa .modal.receive-money > .body > .columns > .column-2 .receive-money {
+    font-family: Tahoma, sans-serif;
+    font-size: 14px;
+}
+
+/* заголовок */
+main.author-pa .modal.receive-money > .body > .columns > .column-2 .receive-money h2 {
+    font-family: Tahoma, sans-serif;
+    font-size: 24px;
+    font-weight: normal;
+    text-align: center;
+    margin: 0;
+}
+
+/* radio-кнопки */
+main.author-pa .modal.receive-money > .body > .columns > .column-2 .receive-money .payment-modes {
+    width: 80%;
+    margin: 20px auto;
+    /*border: 1px solid black;*/
+}
+
+/*
+ * Общая сумма получаемых денег
+ */
+main.author-pa .modal.receive-money > .body > .columns > .column-2 .receive-money .cost {
+    margin: auto;
+    margin-top: 10px;
+    margin-left: calc(20% + 15px);
+}
+
+/*
+ * Кнопки: Получить деньги и Отменить
+ */
+main.author-pa .modal.receive-money > .body > .columns > .column-2 .receive-money .buttons {
+    margin-top: 10px;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+}
+
+main.author-pa .modal.receive-money > .body > .columns > .column-2 .receive-money .buttons .btn:not(:first-child) {
+    margin-left: 5px;
+}
+
+/* END (Тело страницы) -------------------------------------------------------------------------------------------- */

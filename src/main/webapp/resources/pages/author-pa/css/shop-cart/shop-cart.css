@@ -1,0 +1,305 @@
+/* START (Тело страницы) -------------------------------------------------------------------------------------------- */
+
+/***
+ *** Центральная часть страницы
+ ***/
+/**
+ ** Обшая разметка страницы (флекс)
+ **/
+main.shop-cart {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    margin-top: 30px;
+}
+
+/*
+ * Колонка-2 (правая) со ссылками на страницу поиска книг и со спец.предложениями
+ */
+main.shop-cart .column-2 {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    min-width: 199px;
+    width: 16%;
+    /*border: 1px solid black;*/
+}
+
+main.shop-cart .column-2 > .item:not(:first-child) {
+    margin-top: 30px;
+}
+
+/*
+ * Колонка-1 (левая) с основным контентом страницы
+ */
+main.shop-cart .column-1 {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    flex-basis: 950px;
+}
+
+/* заголовок */
+main.shop-cart .column-1 .header {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+
+/* навигация */
+main.shop-cart .column-1 .header ul.nav {
+    margin-bottom: 0;
+}
+
+/**
+ ** Стилизация колонки-1 (левой) с основным контентом страницы
+ **/
+/*
+ *  Заголовочная часть колонки
+ */
+main.shop-cart .column-1 .header {
+    margin-left: 15px;
+}
+
+/* заголовок */
+main.shop-cart .column-1 .header h1 {
+    font-family: Tahoma, sans-serif;
+    font-size: 34px;
+    font-weight: normal;
+    margin: 0;
+    /*border: 1px solid black;*/
+}
+
+/*
+ *  Общая стилизация для Корзина и Книги, которые могут Вас заинтересовать
+ */
+main.shop-cart .column-1 .main-cart,
+main.shop-cart .column-1 .spare-cart {
+    position: relative; /* связанно с тенями под блоками */
+    padding: 25px;
+    margin-top: 30px;
+    border: 1px dashed #c5c5c5;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+/* связанно с тенями под блоками */
+main.shop-cart .column-1 .shadow-under {
+    bottom: -1px;
+    border-bottom: 1px dashed #c5c5c5;
+}
+
+main.shop-cart .column-1 .main-cart h2,
+main.shop-cart .column-1 .spare-cart h2 {
+    font-family: Tahoma, sans-serif;
+    font-size: 20px;
+    font-weight: normal;
+    margin: 0;
+    padding: 0;
+}
+
+/*
+ * Таблицы с книгами
+ */
+main.shop-cart .column-1 .table {
+    margin-top: 20px;
+    /*min-width: 630px;*/
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0;
+}
+
+/* стилизация закруглений и штриховки таблицы с книгами */
+main.shop-cart .column-1 .table .thead .tr .th,
+main.shop-cart .column-1 .table .tbody .tr .td {
+    border-bottom: 1px dashed #b4b4b4;
+}
+
+main.shop-cart .column-1 .table .thead .tr:first-child .th {
+    border-top: 1px dashed #b4b4b4;
+}
+
+main.shop-cart .column-1 .table .thead .tr .th:first-child,
+main.shop-cart .column-1 .table .tbody .tr .td:first-child {
+    border-left: 1px dashed #b4b4b4;
+}
+
+main.shop-cart .column-1 .table .thead .tr .th:last-child,
+main.shop-cart .column-1 .table .tbody .tr .td:last-child {
+    border-right: 1px dashed #b4b4b4;
+}
+
+main.shop-cart .column-1 .table .thead .tr:first-child .th:first-child {
+    border-top-left-radius: 5px;
+}
+
+main.shop-cart .column-1 .table .thead .tr:first-child .th:last-child {
+    border-top-right-radius: 5px;
+}
+
+main.shop-cart .column-1 .table .tbody .tr:last-child .td:first-child {
+    border-bottom-left-radius: 5px;
+}
+
+main.shop-cart .column-1 .table .tbody .tr:last-child .td:last-child {
+    border-bottom-right-radius: 5px;
+}
+
+/* выравнивание данных в ячейках таблицы с книгами */
+main.shop-cart .column-1 .table .thead .tr .th:first-child,
+main.shop-cart .column-1 .table .thead .tr .th:nth-child(3) {
+    text-align: center;
+}
+main.shop-cart .column-1 .table .thead .tr .th:nth-child(2) {
+    text-align: left;
+}
+
+main.shop-cart .column-1 .table .tbody .tr .td:first-child,
+main.shop-cart .column-1 .table .tbody .tr .td:nth-child(3) {
+    text-align: center;
+}
+main.shop-cart .column-1 .table .tbody .tr .td:nth-child(2) {
+    text-align: left;
+}
+
+/*
+ * Строка Заголовка
+ */
+main.shop-cart .column-1 .table .thead .tr .th {
+    font-family: Tahoma, sans-serif;
+    font-size: 13px;
+    font-weight: normal;
+    height: 50px;
+}
+
+/*
+ * Строки с данными
+ */
+main.shop-cart .column-1 .table .tbody .tr .td {
+    font-family: Tahoma, sans-serif;
+    font-size: 13px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    /*border: 1px solid black;*/
+}
+
+/*
+ *  Корзина
+ */
+/*
+ *  Общее
+ */
+main.shop-cart .column-1 .main-cart .slider-inner {
+    display: none;
+    /*display: flex;*/
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+main.shop-cart .column-1 .main-cart input[type="radio"].buy-process.select-goods:checked ~ .select-goods,
+main.shop-cart .column-1 .main-cart input[type="radio"].buy-process.payment-goods:checked ~ .payment-goods,
+main.shop-cart .column-1 .main-cart input[type="radio"].buy-process.enjoy-goods:checked ~ .enjoy-goods {
+    display: flex;
+}
+
+/* кнопки переходы */
+main.shop-cart .main-cart .slider-inner .buttons {
+    display: inline-block;
+    margin-left: auto;
+    margin-top: 5px;
+}
+
+/* hidden - доп.класс для того чтобы,
+ * если общая сумма покупки равна 0, то показывать кнопку "Скачать",
+ * в противном случае показывать кнопку "Перейти к оплате" */
+main.shop-cart .main-cart .slider-inner .buttons label.btn.hidden {
+    display: none;
+}
+
+/*
+ *  Таблица с книгами
+ */
+main.shop-cart .column-1 .main-cart input[type="radio"].buy-process {
+    display: none;
+}
+
+/* кнопочка Выложить из корзины */
+main.shop-cart a.to-spare-cart {
+    display: inline-block;
+    vertical-align: middle;
+    width: 20px;
+    height: 20px;
+    background: url('../../svg/shop-cart/out-cart.svg') no-repeat;
+    background-position: 100%;
+}
+
+/*
+ *  Выбор способа оплаты
+ */
+main.shop-cart .payment-goods {
+    font-family: Tahoma, sans-serif;
+    font-size: 14px;
+}
+
+main.shop-cart .payment-goods .payment-modes {
+    margin: 20px 0 20px 20%;
+    /*border: 1px solid black;*/
+}
+
+/*
+ *  Общая стоимость покупки
+ */
+main.shop-cart .payment-goods .cost {
+    margin: auto;
+    margin-left: calc(20% + 15px);
+}
+
+/*
+ *  Желаем Вам приятного чтения
+ */
+main.shop-cart .enjoy-goods {
+    font-family: Tahoma, sans-serif;
+    font-size: 14px;
+}
+
+main.shop-cart .enjoy-goods .info {
+    margin-top: 10px;
+}
+
+main.shop-cart .enjoy-goods .info .title {
+    width: 300px;
+    margin: auto;
+}
+
+main.shop-cart .enjoy-goods .info .warn {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 20px;
+    /*border: 1px solid black;*/
+}
+
+main.shop-cart .enjoy-goods .info .warn .warning {
+    margin-top: 5px;
+    padding-left: 30px;
+    color: black;
+}
+
+/*
+ * Книги, которые могут Вас заинтересовать
+ */
+/* кнопочка Переложить в корзину */
+main.shop-cart a.to-main-cart {
+    display: inline-block;
+    vertical-align: middle;
+    width: 20px;
+    height: 20px;
+    background: url('../../svg/shop-cart/in-cart.svg') no-repeat;
+    background-position: 100%;
+}
+
+/* END (Тело страницы) -------------------------------------------------------------------------------------------- */
