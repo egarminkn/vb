@@ -164,7 +164,7 @@ main.book .book .columns .column-1 .pages {
     margin-left: 15px;
     padding: 0;
     list-style: none;
-    background: url('../svg/book/open-book.svg') no-repeat;
+    background: url('../../svg/book/open-book.svg') no-repeat;
 }
 
 main.book .book .columns .column-1 .pages a {
@@ -226,7 +226,7 @@ main.book .book .columns .column-2 .summary-1 > div {
  *  Ссылка на отзывы о книге
  */
 main.book .book .columns .column-2 .summary-1 .reviews {
-    background: url('../svg/book/bubble.svg') no-repeat;
+    background: url('../../svg/book/bubble.svg') no-repeat;
     background-size: 14%;
     background-position: left center;
     margin-top: auto;
@@ -515,7 +515,7 @@ main.book .page-number .item:not(:first-child) {
 
 main.book .page-number .page-btn {
     display: inline-block;
-    background: url('../svg/vb/single-angle-arrow.svg') no-repeat;
+    background: url('../../svg/vb/single-angle-arrow.svg') no-repeat;
     background-size: 100%;
     background-position: center center;
     width: 25px;

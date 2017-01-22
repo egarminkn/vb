@@ -297,7 +297,7 @@ main.author-pa .author > .title {
     font-family: Tahoma, sans-serif;
     font-size: 34px;
     width: 285px;
-    background: url('../svg/author-pa/user-icon.svg') no-repeat;
+    background: url('../../svg/author-pa/user-icon.svg') no-repeat;
     background-size: 20px 20px;
     background-position: right top;
     margin: 20px 25px;
@@ -426,7 +426,7 @@ main.author-pa .author .about .columns .column-2 .row-1 .title {
     font-family: Tahoma, sans-serif;
     font-size: 15px;
     height: 20px;
-    background: url('../svg/author-pa/red-star.svg') no-repeat;
+    background: url('../../svg/author-pa/red-star.svg') no-repeat;
     background-size: 21px 20px;
     padding-left: 25px;
     margin-top: 4px;
@@ -481,7 +481,7 @@ main.author-pa .author .about .columns .column-2 .row-3 > div {
 }
 
 main.author-pa .author .about .columns .column-2 .row-3 .phone {
-    background: url('../svg/author-pa/phone.svg') no-repeat;
+    background: url('../../svg/author-pa/phone.svg') no-repeat;
     background-size: 15px 15px;
     background-position: left;
     padding-left: 20px;
@@ -489,7 +489,7 @@ main.author-pa .author .about .columns .column-2 .row-3 .phone {
 }
 
 main.author-pa .author .about .columns .column-2 .row-3 .email {
-    background: url('../svg/author-pa/email.svg') no-repeat;
+    background: url('../../svg/author-pa/email.svg') no-repeat;
     background-size: 15px 15px;
     background-position: left;
     padding-left: 20px;
@@ -497,7 +497,7 @@ main.author-pa .author .about .columns .column-2 .row-3 .email {
 }
 
 main.author-pa .author .about .columns .column-2 .row-3 .skype {
-    background: url('../svg/author-pa/skype.svg') no-repeat;
+    background: url('../../svg/author-pa/skype.svg') no-repeat;
     background-size: 15px 15px;
     background-position: left;
     padding-left: 20px;
@@ -566,7 +566,7 @@ main.author-pa .author .about .columns .column-4 .row-1 .title::before {
     box-sizing: border-box;
     width: 0;
     height: 20px;
-    background-image: url('../svg/author-pa/wallet.svg');
+    background-image: url('../../svg/author-pa/wallet.svg');
     background-repeat: no-repeat;
     background-size: 100%;
     transition: opacity .8s ease,
@@ -580,7 +580,7 @@ main.author-pa .author .about .columns .column-4 .row-2 .wallet-icon {
     width: 70px;
     height: 70px;
     background-color: #ccbd54;
-    background-image: url('../svg/author-pa/wallet.svg');
+    background-image: url('../../svg/author-pa/wallet.svg');
     background-repeat: no-repeat;
     background-size: 60%;
     background-position: center;
@@ -889,7 +889,7 @@ main.author-pa .books table.write thead tr th.likes span {
     vertical-align: bottom;
     width: 17px;
     height: 17px;
-    background: url('../svg/author-pa/thumb-up-blue.svg') no-repeat;
+    background: url('../../svg/author-pa/thumb-up-blue.svg') no-repeat;
     background-size: 100%;
 }
 
@@ -911,7 +911,7 @@ main.author-pa .books table.write thead tr th.profit::before {
     vertical-align: middle;
     width: 20px;
     height: 20px;
-    background: url('../svg/author-pa/coin-ruble.svg') no-repeat;
+    background: url('../../svg/author-pa/coin-ruble.svg') no-repeat;
     background-size: 100%;
 }
 
@@ -1189,7 +1189,7 @@ main.author-pa .edit {
     min-width: 13px;
     width: 13px;
     height: 13px;
-    background: url('../svg/author-pa/pencil.svg') no-repeat;
+    background: url('../../svg/author-pa/pencil.svg') no-repeat;
     background-size: 100%;
     background-position: left top;
     /*border: 1px solid black;*/

@@ -5,21 +5,21 @@
     font-family: 'Myriad Pro Regular';
     font-style: normal;
     font-weight: normal;
-    src: local('Myriad Pro Regular'), url('fonts/MyriadProRegular.woff') format('woff');
+    src: local('Myriad Pro Regular'), url('../../fonts/MyriadProRegular.woff') format('woff');
 }
 
 @font-face {
     font-family: 'Etelka Text Pro';
     font-style: normal;
     font-weight: normal;
-    src: local('Etelka Text Pro'), url('fonts/Etelka-Text-Pro.woff') format('woff');
+    src: local('Etelka Text Pro'), url('../../fonts/Etelka-Text-Pro.woff') format('woff');
 }
 
 @font-face {
     font-family: 'Core Sans M W01 SC 65 Bold';
     font-style: normal;
     font-weight: normal;
-    src: local('Core Sans M W01 SC 65 Bold'), url('fonts/Core Sans M W01 SC 65 Bold.woff') format('woff');
+    src: local('Core Sans M W01 SC 65 Bold'), url('../../fonts/Core Sans M W01 SC 65 Bold.woff') format('woff');
 }
 
 /***
@@ -167,7 +167,7 @@ header::after {
     box-sizing: border-box;
     width: 13px;
     height: 13px;
-    background: url('../svg/vb/padlock.svg') no-repeat;
+    background: url('../../svg/vb/padlock.svg') no-repeat;
     background-size: 100%;
     margin-top: 1px;
     margin-right: 11px;
@@ -312,7 +312,7 @@ header::after {
     box-sizing: border-box;
     width: 16px;
     height: 16px;
-    background: url('../svg/vb/question-mark.svg') no-repeat;
+    background: url('../../svg/vb/question-mark.svg') no-repeat;
     background-size: 100%;
     /*border: 1px solid black;*/
 }
@@ -349,7 +349,7 @@ header::after {
     box-sizing: border-box;
     width: 17px;
     height: 17px;
-    background: url('../svg/vb/cart.svg') no-repeat;
+    background: url('../../svg/vb/cart.svg') no-repeat;
     background-size: 100%;
     /*border: 1px solid black;*/
 }
@@ -433,7 +433,7 @@ header::after {
     display: block;
     width: 100%;
     height: 100%;
-    background-image: url('../svg/vb/magnifying-glass.svg');
+    background-image: url('../../svg/vb/magnifying-glass.svg');
     background-repeat: no-repeat;
     background-size: 17px 17px;
     background-position: center center;
@@ -1820,7 +1820,7 @@ select {
     -moz-appearance: none; /* Для Firefox */
     -webkit-appearance: none; /* Для Chrome и возможно для Safari */
 
-    background-image: url('../svg/vb/dropdown.svg');
+    background-image: url('../../svg/vb/dropdown.svg');
     background-size: 35px 35px;
     background-repeat: no-repeat;
     background-position: calc(100% + 7px) center;
@@ -1890,7 +1890,7 @@ select {
     box-sizing: border-box;
     width: 80px;
     height: 80px;
-    background-image: url('../svg/vb/circle.svg');
+    background-image: url('../../svg/vb/circle.svg');
     background-repeat: no-repeat;
     background-size: 100%;
     position: absolute;
@@ -1912,13 +1912,13 @@ select {
     display: block;
     width: 14px;
     height: 14px;
-    background: url('../svg/vb/question-mark.svg') no-repeat;
+    background: url('../../svg/vb/question-mark.svg') no-repeat;
     background-size: 100%;
     cursor: pointer;
 }
 
 .hint > .question-mark.blue {
-    background-image: url('../svg/vb/question-mark-blue.svg');
+    background-image: url('../../svg/vb/question-mark-blue.svg');
 }
 
 .hint:hover > .bubble,
@@ -2306,7 +2306,7 @@ div.likes .like::before {
     display: inline-block;
     width: 15px;
     height: 15px;
-    background: url('../svg/vb/thumb-up.svg') no-repeat;
+    background: url('../../svg/vb/thumb-up.svg') no-repeat;
     background-size: 100%;
     margin-right: 5px;
     /*border: 1px solid black;*/
@@ -2317,7 +2317,7 @@ div.likes .dislike::before {
     display: inline-block;
     width: 15px;
     height: 15px;
-    background: url('../svg/vb/thumb-up.svg') no-repeat;
+    background: url('../../svg/vb/thumb-up.svg') no-repeat;
     background-size: 100%;
     transform: scale(-1);
     margin-right: 5px;
@@ -2424,7 +2424,7 @@ div.likes .dislike::before {
     box-sizing: border-box;
     width: 15px;
     height: 14px;
-    background: url('../svg/vb/arrow_up.svg') no-repeat;
+    background: url('../../svg/vb/arrow_up.svg') no-repeat;
     background-size: 5px 14px;
     background-position: center center;
     cursor: pointer;
@@ -2532,7 +2532,7 @@ div.likes .dislike::before {
     color: #7f7f7f;
     line-height: 20px;
     margin: 25px auto;
-    background: url('../svg/vb/warning.svg') no-repeat;
+    background: url('../../svg/vb/warning.svg') no-repeat;
     background-size: 18px 16px;
     background-position: left center;
     padding-left: 25px;
@@ -2561,7 +2561,7 @@ div.likes .dislike::before {
 .rating-5-stars .rating-stars {
     width: 82px;
     height: 16px;
-    background-image: url('../svg/vb/rating-5-stars.svg');
+    background-image: url('../../svg/vb/rating-5-stars.svg');
     background-repeat: no-repeat;
     background-size: 100%;
     position: relative;
@@ -2611,7 +2611,7 @@ div.likes .dislike::before {
 .rating-3-stars .rating-stars {
     width: 82px;
     height: 21px;
-    background-image: url(../svg/vb/rating-3-stars.svg);
+    background-image: url(../../svg/vb/rating-3-stars.svg);
     background-repeat: no-repeat;
     background-size: 100%;
     position: relative;
@@ -2649,7 +2649,7 @@ div.likes .dislike::before {
 .ratings {
     font-family: Tahoma, sans-serif;
     font-size: 12px;
-    background: url('../svg/vb/bar_chart.svg') no-repeat;
+    background: url('../../svg/vb/bar_chart.svg') no-repeat;
     background-size: 15px 15px;
     padding-left: 20px;
     /*border: 1px solid black;*/
@@ -2834,7 +2834,7 @@ div.likes .dislike::before {
     content: '';
     display: inline-block;
     vertical-align: middle;
-    background-image: url(../svg/vb/rating-star.svg);
+    background-image: url(../../svg/vb/rating-star.svg);
     background-color: #e8ba42;
     background-repeat: no-repeat;
     background-size: 15px 15px;
@@ -3208,13 +3208,13 @@ body.hidden-books-on-shelf .books-on-shelf {
 }
 
 .under-footer-shelf > .social-sharing > a.share-icon-facebook {
-    background-image: url(../svg/vb/F_icon.svg);
+    background-image: url(../../svg/vb/F_icon.svg);
 }
 
 .under-footer-shelf > .social-sharing > a.share-icon-vk {
-    background-image: url(../svg/vb/VK_icon.svg);
+    background-image: url(../../svg/vb/VK_icon.svg);
 }
 
 .under-footer-shelf > .social-sharing > a.share-icon-livejournal {
-    background-image: url(../svg/vb/LJ_icon.svg);
+    background-image: url(../../svg/vb/LJ_icon.svg);
 }

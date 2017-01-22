@@ -95,7 +95,7 @@
 }
 
 .paginate_button.first {
-    background: url('../svg/author-pa/double-angle-arrow.svg') no-repeat;
+    background: url('../../svg/author-pa/double-angle-arrow.svg') no-repeat;
     background-size: 50%;
     background-position: center center;
     width: 30px;
@@ -103,7 +103,7 @@
 }
 
 .paginate_button.previous {
-    background: url('../svg/vb/single-angle-arrow.svg') no-repeat;
+    background: url('../../svg/vb/single-angle-arrow.svg') no-repeat;
     background-size: 50%;
     background-position: center center;
     width: 30px;
@@ -111,14 +111,14 @@
 }
 
 .paginate_button.next {
-    background: url('../svg/vb/single-angle-arrow.svg') no-repeat;
+    background: url('../../svg/vb/single-angle-arrow.svg') no-repeat;
     background-size: 50%;
     background-position: center center;
     width: 30px;
 }
 
 .paginate_button.last {
-    background: url('../svg/author-pa/double-angle-arrow.svg') no-repeat;
+    background: url('../../svg/author-pa/double-angle-arrow.svg') no-repeat;
     background-size: 50%;
     background-position: center center;
     width: 30px;
