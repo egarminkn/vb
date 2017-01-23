@@ -12,6 +12,10 @@ main.feedback {
     /*border: 1px solid green;*/
 }
 
+main.feedback > .slogan {
+    display: none;
+}
+
 main.feedback .columns {
     display: flex;
     flex-direction: row;

@@ -11,6 +11,12 @@ main.create-ebook {
     flex-direction: row;
     justify-content: space-around;
     padding-top: 30px;
+    margin-bottom: 30px;
+    /*border: 1px solid black;*/
+}
+
+main.create-ebook > .slogan {
+    display: none;
 }
 
 /*

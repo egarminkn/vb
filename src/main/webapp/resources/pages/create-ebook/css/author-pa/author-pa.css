@@ -10,6 +10,12 @@ main.author-pa {
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
+    margin-bottom: 30px;
+    /*border: 1px solid black;*/
+}
+
+main.author-pa > .slogan {
+    display: none;
 }
 
 /*

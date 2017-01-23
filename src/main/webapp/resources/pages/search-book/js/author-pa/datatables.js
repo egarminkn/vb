@@ -5,7 +5,7 @@ $(function () {
         skewOuter: "skew-outer"
     });
 
-    $('.table').DataTable({
+    $('table.table').DataTable({
         pagingType: "full_numbers",
         language: {
             "url": "json/vb/dataTables.ru.json"

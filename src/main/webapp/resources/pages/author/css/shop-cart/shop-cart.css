@@ -11,6 +11,12 @@ main.shop-cart {
     flex-direction: row;
     justify-content: space-around;
     margin-top: 30px;
+    margin-bottom: 30px;
+    /*border: 1px solid black;*/
+}
+
+main.shop-cart > .slogan {
+    display: none;
 }
 
 /*
@@ -21,9 +27,16 @@ main.shop-cart .column-2 {
     flex-direction: column;
     justify-content: flex-start;
     align-items: flex-start;
-    min-width: 199px;
     width: 16%;
+    /*min-width: 199px;*/
+    margin-right: 25px;
     /*border: 1px solid black;*/
+}
+
+main.shop-cart .column-2 > .top-level {
+    box-sizing: border-box;
+    width: 100%;
+    max-width: 200px;
 }
 
 main.shop-cart .column-2 > .item:not(:first-child) {
@@ -38,6 +51,7 @@ main.shop-cart .column-1 {
     flex-direction: column;
     justify-content: flex-start;
     flex-basis: 950px;
+    margin-left: 25px;
 }
 
 /* заголовок */
@@ -104,7 +118,7 @@ main.shop-cart .column-1 .spare-cart h2 {
 /*
  * Таблицы с книгами
  */
-main.shop-cart .column-1 .table {
+main.shop-cart .column-1 .tbl {
     margin-top: 20px;
     /*min-width: 630px;*/
     width: 100%;
@@ -113,62 +127,62 @@ main.shop-cart .column-1 .table {
 }
 
 /* стилизация закруглений и штриховки таблицы с книгами */
-main.shop-cart .column-1 .table .thead .tr .th,
-main.shop-cart .column-1 .table .tbody .tr .td {
+main.shop-cart .column-1 .tbl .thead .tr .th,
+main.shop-cart .column-1 .tbl .tbody .tr .td {
     border-bottom: 1px dashed #b4b4b4;
 }
 
-main.shop-cart .column-1 .table .thead .tr:first-child .th {
+main.shop-cart .column-1 .tbl .thead .tr:first-child .th {
     border-top: 1px dashed #b4b4b4;
 }
 
-main.shop-cart .column-1 .table .thead .tr .th:first-child,
-main.shop-cart .column-1 .table .tbody .tr .td:first-child {
+main.shop-cart .column-1 .tbl .thead .tr .th:first-child,
+main.shop-cart .column-1 .tbl .tbody .tr .td:first-child {
     border-left: 1px dashed #b4b4b4;
 }
 
-main.shop-cart .column-1 .table .thead .tr .th:last-child,
-main.shop-cart .column-1 .table .tbody .tr .td:last-child {
+main.shop-cart .column-1 .tbl .thead .tr .th:last-child,
+main.shop-cart .column-1 .tbl .tbody .tr .td:last-child {
     border-right: 1px dashed #b4b4b4;
 }
 
-main.shop-cart .column-1 .table .thead .tr:first-child .th:first-child {
+main.shop-cart .column-1 .tbl .thead .tr:first-child .th:first-child {
     border-top-left-radius: 5px;
 }
 
-main.shop-cart .column-1 .table .thead .tr:first-child .th:last-child {
+main.shop-cart .column-1 .tbl .thead .tr:first-child .th:last-child {
     border-top-right-radius: 5px;
 }
 
-main.shop-cart .column-1 .table .tbody .tr:last-child .td:first-child {
+main.shop-cart .column-1 .tbl .tbody .tr:last-child .td:first-child {
     border-bottom-left-radius: 5px;
 }
 
-main.shop-cart .column-1 .table .tbody .tr:last-child .td:last-child {
+main.shop-cart .column-1 .tbl .tbody .tr:last-child .td:last-child {
     border-bottom-right-radius: 5px;
 }
 
 /* выравнивание данных в ячейках таблицы с книгами */
-main.shop-cart .column-1 .table .thead .tr .th:first-child,
-main.shop-cart .column-1 .table .thead .tr .th:nth-child(3) {
+main.shop-cart .column-1 .tbl .thead .tr .th:first-child,
+main.shop-cart .column-1 .tbl .thead .tr .th:nth-child(3) {
     text-align: center;
 }
-main.shop-cart .column-1 .table .thead .tr .th:nth-child(2) {
+main.shop-cart .column-1 .tbl .thead .tr .th:nth-child(2) {
     text-align: left;
 }
 
-main.shop-cart .column-1 .table .tbody .tr .td:first-child,
-main.shop-cart .column-1 .table .tbody .tr .td:nth-child(3) {
+main.shop-cart .column-1 .tbl .tbody .tr .td:first-child,
+main.shop-cart .column-1 .tbl .tbody .tr .td:nth-child(3) {
     text-align: center;
 }
-main.shop-cart .column-1 .table .tbody .tr .td:nth-child(2) {
+main.shop-cart .column-1 .tbl .tbody .tr .td:nth-child(2) {
     text-align: left;
 }
 
 /*
  * Строка Заголовка
  */
-main.shop-cart .column-1 .table .thead .tr .th {
+main.shop-cart .column-1 .tbl .thead .tr .th {
     font-family: Tahoma, sans-serif;
     font-size: 13px;
     font-weight: normal;
@@ -178,7 +192,7 @@ main.shop-cart .column-1 .table .thead .tr .th {
 /*
  * Строки с данными
  */
-main.shop-cart .column-1 .table .tbody .tr .td {
+main.shop-cart .column-1 .tbl .tbody .tr .td {
     font-family: Tahoma, sans-serif;
     font-size: 13px;
     padding-top: 5px;
