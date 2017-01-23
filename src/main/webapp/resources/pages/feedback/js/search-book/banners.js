@@ -1,6 +1,8 @@
 // Массив соответствий того, какой баннер в пределах какой колонки должен находиться
-var bannerColumnCompliance = [];
-bannerColumnCompliance[0] = {
-    banner: $('.spec'),
-    column: $('.right-column')
+if (bannerColumnCompliance === undefined) {
+    var bannerColumnCompliance = [];
+}
+bannerColumnCompliance[bannerColumnCompliance.length] = {
+    bannerSelector: '.spec',
+    columnSelector: '.right-column'
 };

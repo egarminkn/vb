@@ -139,6 +139,8 @@
                 <a href="#" class="publish-own"><h3>публикуй</h3></a>
                 собственные
             </div>
+
+        <!-- START (Тело страницы) -------------------------------------------------------------------------------------------- -->
             
             <div class="columns">
                 <div class="column-1">
@@ -3002,7 +3004,18 @@
             </div>
             <!-- END (Модальное окно) - 2-ая часть из 3-х (размещается в конце тега main) -->
         </main>
-        
+
+        <!-- START (Модальное окно) - 3-я часть из 3-х -->
+        <script type="text/javascript">
+            if (modalHashs === undefined) {
+                var modalHashs = [];
+            }
+            modalHashs[modalHashs.length] = '#modal-name';
+        </script>
+        <!-- END (Модальное окно) - 3-я часть из 3-х -->
+
+        <!-- END (Тело страницы) -------------------------------------------------------------------------------------------- -->
+
 		<footer>
             <div class="partners-on-shelf">
                 <a href="#">
@@ -3137,16 +3150,24 @@
             </div>            
 		</footer>
 	</body>
-    
+
+    <script type="text/javascript" src="js/author/expand-collapse-description.js"></script>
+    <script type="text/javascript" src="js/author-pa/datatables.js"></script>
+    <script type="text/javascript" src="js/author-pa/modals.js"></script>
+    <script type="text/javascript" src="js/author-rating/correct-author-count-word-endings.js"></script>
+    <script type="text/javascript" src="js/book/page-scroller.js"></script>
+    <script type="text/javascript" src="js/book/modals.js"></script>
+    <script type="text/javascript" src="js/create-ebook/color-picker.js"></script>
+    <script type="text/javascript" src="js/create-ebook/uploaded-file-info.js"></script>
+    <script type="text/javascript" src="js/index/banners.js"></script>
+    <script type="text/javascript" src="js/index-2/hide-step-pics.js"></script>
+    <script type="text/javascript" src="js/index-2/quote-banner.js"></script>
+    <script type="text/javascript" src="js/jquery/plugins/vb-dataTables.js"></script>
     <script type="text/javascript" src="js/lib/creditly.js"></script>
+    <script type="text/javascript" src="js/search-book/banners.js"></script>
+    <script type="text/javascript" src="js/search-book/correct-count-word-endings.js"></script>
+    <script type="text/javascript" src="js/vb/banner-column-compliance.js"></script>
     <script type="text/javascript" src="js/vb/vb.js"></script>
     <script type="text/javascript" src="js/vb/shelf.js"></script>
 
-    <!-- START (Модальное окно) - 3-я часть из 3-х -->
-    <script type="text/javascript">
-        var modalHashs = [];
-        modalHashs[0] = '#modal-name';
-    </script>
-    <!-- END (Модальное окно) - 3-я часть из 3-х -->
-    
 </html>

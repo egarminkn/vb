@@ -1,5 +1,7 @@
 // START (Модальное окно) - 3-я часть из 3-х
-var modalHashs = [];
-modalHashs[0] = '#browse-book';
-modalHashs[1] = '#table-of-contents';
+if (modalHashs === undefined) {
+    var modalHashs = [];
+}
+modalHashs[modalHashs.length] = '#browse-book';
+modalHashs[modalHashs.length] = '#table-of-contents';
 // END (Модальное окно) - 3-я часть из 3-х

@@ -25,17 +25,19 @@ var resizer = function () {
     /*
      *  Вкладки шагов
      */
-    var imgStep2Right = getRealSizeOfElement(imgStep2, "left") + imgStep2Width + labelStep2.getBoundingClientRect().left;
-    if (imgStep2Right > pStep2.getBoundingClientRect().left) {
-        imgStep2.style.display = "none";
-    } else {
-        imgStep2.style.display = "block";
-    }
-    var imgStep3Right = getRealSizeOfElement(imgStep3, "left") + imgStep3Width + labelStep3.getBoundingClientRect().left;
-    if (imgStep3Right > pStep3.getBoundingClientRect().left) {
-        imgStep3.style.display = "none";
-    } else {
-        imgStep3.style.display = "block";
+    if (imgStep2 && imgStep3 && labelStep2 && labelStep3 && imgStep2Width && imgStep3Width && pStep2 && pStep3) {
+        var imgStep2Right = getRealSizeOfElement(imgStep2, "left") + imgStep2Width + labelStep2.getBoundingClientRect().left;
+        if (imgStep2Right > pStep2.getBoundingClientRect().left) {
+            imgStep2.style.display = "none";
+        } else {
+            imgStep2.style.display = "block";
+        }
+        var imgStep3Right = getRealSizeOfElement(imgStep3, "left") + imgStep3Width + labelStep3.getBoundingClientRect().left;
+        if (imgStep3Right > pStep3.getBoundingClientRect().left) {
+            imgStep3.style.display = "none";
+        } else {
+            imgStep3.style.display = "block";
+        }
     }
     // <<<
 };
@@ -48,8 +50,12 @@ $(document).ready(function () {
     imgStep3 = document.querySelector("div.help-slide-marks > label[for='help-slide-3'] > img");
     pStep2 = document.querySelector("div.help-slide-marks > label[for='help-slide-2'] > p");
     pStep3 = document.querySelector("div.help-slide-marks > label[for='help-slide-3'] > p");
-    imgStep2Width = getRealSizeOfElement(imgStep2, "width");
-    imgStep3Width = getRealSizeOfElement(imgStep3, "width");
+    if (imgStep2) {
+        imgStep2Width = getRealSizeOfElement(imgStep2, "width");
+    }
+    if (imgStep3) {
+        imgStep3Width = getRealSizeOfElement(imgStep3, "width");
+    }
     labelStep2 = document.querySelector("div.help-slide-marks > label[for='help-slide-2']");
     labelStep3 = document.querySelector("div.help-slide-marks > label[for='help-slide-3']");
     // <<<
