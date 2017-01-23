@@ -1,0 +1,257 @@
+/* START (Тело страницы) -------------------------------------------------------------------------------------------- */
+
+/*
+ * Центральная часть страницы
+ */
+main.author {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-bottom: 30px;
+    /*border: 1px solid black;*/
+}
+
+main.author > .slogan {
+    display: none;
+}
+
+main.author .left-column {
+    width: 16%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    margin-left: 40px;
+}
+
+main.author .right-column {
+    width: 70%;
+    margin-right: 40px;
+}
+
+/**
+ ** Левая колонка
+ **/
+/*
+ * Фото автора
+ */
+main.author .left-column .author-photo {
+    margin-top: 50px;
+}
+
+/*
+ * Стилизация звездочек в рейтинге автора
+ */
+main.author .left-column .rating-3-stars {
+    margin-top: 10px;
+}
+
+/* закраска звездочек в рейтинге автора */
+main.author .left-column .rating-3-stars .rating-stars::before {
+    width: 75px;
+}
+
+/*
+ * Стилизация Блока Списка рейтинга под данную страницу
+ */
+main.author .ratings {
+    margin-top: 15px;
+}
+
+/*
+ * Пальчики-лайкчики за автора
+ */
+main.author .left-column .likes {
+    margin-top: 20px;
+}
+
+/*
+ * ПРОМО-блок в левой колонке главной части страницы
+ */
+main.author .promo {
+    font-family: 'Myriad Pro Regular';
+    font-size: 14px;
+    letter-spacing: 0.5px;
+    line-height: 20px;
+    word-spacing: -0.1px;
+    margin-top: 20px;
+}
+
+main.author .promo .title {
+    font-weight: bold;
+}
+
+/*
+ * Баннер "Похожие авторы"
+ */
+main.author .left-column .similar-authors {
+    margin-top: 20px;
+}
+
+/*
+ * Правая колонка главной части страницы
+ */
+main.author .author {
+    margin-top: 50px;
+}
+
+main.author .author .nick {
+    font-family: 'Myriad Pro Regular';
+    font-size: 15px;
+}
+
+main.author .author .fullname {
+    font-family: Tahoma, sans-serif;
+    font-size: 34px;
+}
+
+main.author .description {
+    border: 1px dashed #ccc;
+    border-radius: 5px;
+    padding: 0;
+    position: relative;
+    margin-top: 50px;
+}
+
+main.author .description > .paragraph {
+    margin: 0;
+    padding: 0;
+    position: relative;
+    /*border: 1px solid red;*/
+}
+
+main.author .description > .paragraph.hidden {
+    opacity: 0;
+    pointer-events: none;
+    position: absolute;
+}
+
+main.author .description > .paragraph.visible > .after {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 50px;
+    background: linear-gradient(0deg, #fff, transparent);
+    /*border: 1px solid black;*/
+}
+
+main.author .description > .paragraph > p.text {
+    font-family: 'Myriad Pro Regular';
+    font-size: 15px;
+    letter-spacing: 0.5px;
+    line-height: 20px;
+    word-spacing: -0.1px;
+    overflow: hidden;
+    box-sizing: border-box;
+    margin: 40px 20px 0 20px;
+    padding: 0;
+    /*border: 1px solid black;*/
+}
+
+main.author .description > .paragraph.visible > p.text {
+    height: 100px;
+}
+
+main.author .description > .paragraph.hidden > p.text {
+    height: auto;
+}
+
+/*
+ * Тень под описанием автора
+ */
+main.author .description .shadow-under {
+    bottom: -1px;
+    border-bottom: 1px dashed #ccc;
+}
+
+/*
+ * Кнопки сворачивания-разворачивания информации об авторе
+ */
+main.author div.expand-collapse-block {
+    position: relative;
+    top: 20px;
+    /*z-index: 1;*/
+    margin: auto;
+    height: 56px;
+    width: 56px;
+    /*border: 1px solid black;*/
+}
+
+main.author input[type="radio"].expand-collapse-block {
+    display: none;
+}
+
+main.author label.expand-collapse-block {
+    display: block;
+    position: absolute;
+    top: calc(100% - 56px + 12px);
+    left: calc(50% - 35px + 20px);
+    box-sizing: border-box;
+    width: 30px;
+    height: 31px;
+    border-right: 2px solid #ccc;
+    border-bottom: 2px solid #ccc;
+    transition: transform .8s ease;
+    cursor: pointer;
+}
+
+/* при переключении радиокнопок один элемент показываем, а другой прячем (пытался сделать через display, однако тогда ломается transition)*/
+main.author input[type="radio"].expand-collapse-block.expanded:checked ~ label.expand-collapse-block.expanded,
+main.author input[type="radio"].expand-collapse-block.collapsed:checked ~ label.expand-collapse-block.collapsed {
+    z-index: 0;
+}
+
+main.author input[type="radio"].expand-collapse-block.expanded:checked ~ label.expand-collapse-block.collapsed,
+main.author input[type="radio"].expand-collapse-block.collapsed:checked ~ label.expand-collapse-block.expanded {
+    z-index: 1;
+}
+
+/* вращение при переключении радиокнопок (radio) */
+main.author input[type="radio"].expand-collapse-block.collapsed:checked ~ label.expand-collapse-block.expanded,
+main.author input[type="radio"].expand-collapse-block.collapsed:checked ~ label.expand-collapse-block.collapsed {
+    transform: rotate(44deg) skew(-15deg) skewY(-15deg);
+}
+
+main.author input[type="radio"].expand-collapse-block.expanded:checked ~ label.expand-collapse-block.expanded,
+main.author input[type="radio"].expand-collapse-block.expanded:checked ~ label.expand-collapse-block.collapsed {
+    transform: rotate(44deg) skew(-15deg) skewY(-15deg) rotate(180deg);
+}
+
+/*
+ * Блок книг автора
+ */
+main.author .books > .title {
+    font-family: Tahoma, sans-serif;
+    font-size: 22px;
+    margin-top: 30px;
+}
+
+/*
+ * Выбор типа сортировки
+ */
+main.author .books .sort-by {
+    margin-top: 10px;
+    /*border: 1px solid black;*/
+}
+
+/*
+ *  Список книг автора
+ */
+main.author .books .list {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    align-content: space-between;
+}
+
+main.author .books .list .book-with-cover-and-summary {
+    margin-top: 20px;
+    margin-right: 20px;
+}
+
+/* Закраска звездочек рейтинга книги (на каждую книгу должна быть своя, т.к. рейтинги у всех книг разные) */
+main.author .books .list .book-with-cover-and-summary .book-summary .rating-5-stars .rating-stars::before {
+    width: 56px;
+}
+
+/* END (Тело страницы) -------------------------------------------------------------------------------------------- */

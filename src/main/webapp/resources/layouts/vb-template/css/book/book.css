@@ -1,0 +1,567 @@
+/* START (Тело страницы) -------------------------------------------------------------------------------------------- */
+
+/*
+ * Центральная часть страницы
+ */
+/*
+ * Общая разметка флексами
+ */
+main.book {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    margin-bottom: 30px;
+    /*border: 1px solid black;*/
+}
+
+main.book > .slogan {
+    display: none;
+}
+
+main.book > div {
+    min-width: 720px;
+}
+
+main.book .book {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    position: relative;
+    margin: 30px 25px 60px 25px;
+    /*border: 1px solid black;*/
+}
+
+main.book .book .columns {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+main.book .book .columns .column-1,
+main.book .book .columns .column-3 {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+
+main.book .book .columns .column-2 {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+main.book .book .columns .column-1 .authors .author {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+}
+
+main.book .book .columns .column-1 .authors .author .about {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+
+main.book .book .columns .column-2 .summary-1 {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+main.book .book .columns .column-2 .summary-2 {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+main.book .book .columns .column-2 .summary-2 .item-tags {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+}
+
+main.book .book .columns .column-2 .summary-2 .tags {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    margin-left: 10px;
+    /*border: 1px solid black;*/
+}
+
+main.book .book .columns .column-3 .formats {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+main.book .book .columns .column-3 .formats .list {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+}
+
+main.book .book-reviews {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    position: relative;
+    margin: 0 25px 60px 25px;
+    /*border: 1px solid black;*/
+}
+
+main.book .book-reviews .review-list {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+
+main.book .book-reviews .review-list .review {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+
+main.book .book-reviews .review-list .review .summary {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+}
+
+/* У блока книги задание равных отступов сверху */
+main.book .book .columns .column .summary-1 {
+    height: 40px;
+    margin-bottom: 10px;
+}
+
+/* Тень-разделитель */
+main.book .shadow-under {
+    bottom: -30px;
+    border-bottom-style: none;
+}
+
+/*
+ * Блок информации о книге
+ */
+main.book .book .title {
+    font-family: Tahoma, sans-serif;
+    font-size: 40px;
+}
+
+/*
+ * 1-ая колонка (с обложкой)
+ */
+main.book .book .columns .column-1 {
+    min-width: 230px;
+}
+
+/* обложка книги */
+main.book .book .columns .column-1 .cover,
+main.book .book .columns .column-1 .cover img {
+    width: 230px;
+    height: 368px;
+}
+
+/* ссылки на просмотр старниц книги */
+main.book .book .columns .column-1 .pages {
+    margin-top: 20px;
+    margin-bottom: 0;
+    margin-left: 15px;
+    padding: 0;
+    list-style: none;
+    background: url('../../svg/book/open-book.svg') no-repeat;
+}
+
+main.book .book .columns .column-1 .pages a {
+    font-family: Tahoma, sans-serif;
+    font-size: 12px;
+    color: #707d9a;
+    margin-left: 50px;
+}
+
+/*
+ * Список авторов
+ */
+main.book .book .columns .column-1 .authors {
+    margin-top: 40px;
+    margin-bottom: 0;
+    margin-left: 15px;
+    padding: 0;
+}
+
+/* фото автора */
+main.book .book .columns .column-1 .authors .author .author-photo {
+    margin-left: -10px;
+    border-style: none;
+}
+
+main.book .book .columns .column-1 .authors .author .about {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    margin-left: 15px;
+}
+
+main.book .book .columns .column-1 .authors .author .about .fullname a {
+    font-family: Tahoma, sans-serif;
+    font-size: 13px;
+    color: #667393;
+    /*border: 1px solid black;*/
+}
+
+/* уровень заполненности звезд желтым фоном */
+main.book .book .columns .column-1 .authors .author .about .rating-3-stars .rating-stars::before {
+    width: 67.5px;
+}
+
+/*
+ * 2-ая колонка (с текстовым описанием)
+ */
+main.book .book .columns .column-2 {
+    width: 41%;
+}
+
+/* 1-ая строка */
+main.book .book .columns .column-2 .summary-1 > div {
+    margin-left: 7px;
+    margin-right: 7px;
+}
+
+/*
+ *  Ссылка на отзывы о книге
+ */
+main.book .book .columns .column-2 .summary-1 .reviews {
+    background: url('../../svg/book/bubble.svg') no-repeat;
+    background-size: 14%;
+    background-position: left center;
+    margin-top: auto;
+    margin-bottom: auto;
+    white-space: nowrap;
+    /*border: 1px solid black;*/
+}
+
+main.book .book .columns .column-2 .summary-1 .reviews a {
+    font-family: Tahoma, sans-serif;
+    font-size: 12px;
+    color: #667493;
+    margin-left: 30px;
+    /*border: 1px solid black;*/
+}
+
+/*
+ * Кол-во скачиваний книги
+ */
+main.book .book .columns .column-2 .summary-1 .downloads {
+    font-family: Tahoma, sans-serif;
+    font-size: 12px;
+    white-space: nowrap;
+    margin-top: auto;
+    margin-bottom: auto;
+}
+
+/* 2-ая строка (текстовое описание) */
+main.book .book .columns .column-2 .description {
+    font-family: Tahoma, sans-serif;
+    font-size: 14px;
+    line-height: 20px;
+}
+
+/* 3-я строка (общая информация) */
+main.book .book .columns .column-2 .summary-2 {
+    font-family: Tahoma, sans-serif;
+    font-size: 13px;
+    list-style: none;
+    padding: 30px 20px;
+    border: 1px dashed #afb9ca;
+    height: 100px;
+    margin-top: 0;
+    margin-bottom: 0;
+    border-radius: 5px;
+}
+
+/* лицензионное соглашение */
+main.book .book .columns .column-2 .summary-2 .license {
+    font-family: Tahoma, sans-serif;
+    font-size: 13px;
+    color: #667493;
+}
+
+/* список тэгов */
+main.book .book .columns .column-2 .summary-2 .tags {
+    list-style: none;
+    padding: 0;
+    /*border: 1px solid black;*/
+}
+
+main.book .book .columns .column-2 .summary-2 .tags a {
+    font-family: Tahoma, sans-serif;
+    font-size: 13px;
+    color: #667493;
+}
+
+main.book .book .columns .column-2 .summary-2 .tags .tag {
+    margin-right: 10px;
+}
+
+/*
+ * 3-я колонка (с кнопкой покупки и лайками)
+ */
+/* Кнопка "В корзину" с ценником */
+main.book .book .columns .column-3 .buy {
+    margin-left: 5px;
+}
+
+/* блок с информацией о доступных форматах книги */
+main.book .book .columns .column-3 .formats {
+    margin-left: 25px;
+    margin-top: 35px;
+}
+
+main.book .book .columns .column-3 .formats .list {
+    font-family: Tahoma, sans-serif;
+    font-size: 13px;
+    list-style: none;
+    color: #657392;
+    padding: 0;
+    margin: 0;
+    /*border: 1px solid black;*/
+}
+
+main.book .book .columns .column-3 .formats .list .format {
+    border: 1px solid #afb9ca;
+    border-radius: 5px;
+    padding: 5px;
+    margin-left: 15px;
+}
+
+/*
+ * Стилизация списка рейтинга книги
+ */
+main.book .ratings {
+    margin-top: 35px;
+    margin-left: 5px;
+}
+
+/*
+ * Пальчики-лайкчики
+ */
+main.book .book .columns .column-3 .likes {
+    margin-top: 40px;
+    margin-left: 10px;
+}
+
+/*
+ * Блок отзывов о книге
+ */
+/* заголовок блока отзывов */
+main.book .book-reviews .header {
+    font-family: Tahoma, sans-serif;
+    font-size: 27px;
+}
+
+main.book .book-reviews .header .count {
+    font-family: Tahoma, sans-serif;
+    font-size: 20px;
+    color: #b7b7b7;
+}
+
+/* форма отправки нового отзыва */
+main.book .book-reviews form.send-review.textarea {
+    margin-top: 15px;
+}
+
+/* Список отзывов */
+main.book .book-reviews .review-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+main.book .book-reviews .review-list .review {
+    padding: 10px;
+    margin-top: 25px;
+    /*border: 1px solid black;*/
+}
+
+/* заголовок отзыва */
+main.book .book-reviews .review-list .review .title {
+    font-family: Tahoma, sans-serif;
+    font-size: 20px;
+}
+
+/* сводная информация по отзыву */
+main.book .book-reviews .review-list .review .summary {
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+main.book .book-reviews .review-list .review .summary .reviewer {
+    font-family: Tahoma, sans-serif;
+    font-size: 14px;
+}
+
+main.book .book-reviews .review-list .review .summary .reviewer a {
+    font-family: Tahoma, sans-serif;
+    font-size: 14px;
+    color: #6d7a98;
+}
+
+main.book .book-reviews .review-list .review .summary .date {
+    font-family: Tahoma, sans-serif;
+    font-size: 14px;
+    color: #616161;
+    margin-left: 20px;
+}
+
+/* содержимое отзыва */
+main.book .book-reviews .review-list .review .content {
+    font-family: 'Myriad Pro Regular';
+    font-size: 16px;
+    line-height: 20px;
+}
+
+/**
+ ** Блок "Рекомендованные также"
+ **/
+/*
+ * Уровень заполненности звезд рейтинга книги оранжевым фоном (у каждой книги должен быть свой)
+ */
+main.book .shelf .book-slider-outer .book-slider-inner .book-with-cover-and-summary .book-summary .rating-5-stars .rating-stars::before {
+    width: 67.5px;
+}
+
+/**
+ ** Модальные окна
+ **/
+/*
+ * Тело модального окна - Оглавление
+ */
+main.book .modal.table-of-contents > .body {
+    margin-top: 10%;
+    width: 550px;
+    height: 65%;
+    /*height: 20%;*/
+}
+
+/* общая разметка */
+main.book .modal.table-of-contents > .body > .columns {
+    height: 100%;
+    /*border: 1px solid red;*/
+}
+
+main.book .modal.table-of-contents > .body > .columns > .column-1,
+main.book .modal.table-of-contents > .body > .columns > .column-3 {
+    display: none;
+}
+
+/*
+ * Тело модального окна - Полистать книгу
+ */
+main.book .modal.browse-book > .body {
+    margin-top: 5%;
+    width: 90%;
+    height: 85%;
+    /*height: 20%;*/
+}
+
+/* общая разметка */
+main.book .modal.browse-book > .body > .columns {
+    width: 100%;
+    height: 100%;
+}
+
+main.book .modal.browse-book > .body > .columns > .column {
+    justify-content: space-between;
+    height: 100%;
+    /*border: 1px solid black;*/
+}
+
+main.book .modal.browse-book > .body > .columns > .column-3 {
+    display: none;
+}
+
+main.book .modal.browse-book > .body > .columns > .column-1 {
+    width: 40%;
+    margin-right: 20px;
+}
+
+main.book .modal.browse-book > .body > .columns > .column-2 {
+    align-items: center;
+    width: 60%;
+}
+
+main.book .modal.browse-book > .body > .columns > .column .row {
+    /*border: 1px solid black;*/
+}
+
+main.book .modal.browse-book > .body > .columns > .column .row-2 {
+    height: 100%;
+}
+
+main.book .modal.browse-book > .body > .columns > .column .row-2.page-content {
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+/* номер текущей страницы - Колонка 2 */
+main.book .page-number {
+    font-family: Tahoma, sans-serif;
+    font-size: 16px;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    height: 30px;
+}
+
+main.book .page-number .item:not(:first-child) {
+    margin-left: 10px;
+}
+
+main.book .page-number .page-btn {
+    display: inline-block;
+    background: url('../../svg/vb/single-angle-arrow.svg') no-repeat;
+    background-size: 100%;
+    background-position: center center;
+    width: 25px;
+    height: 25px;
+    /*border: 1px solid black;*/
+}
+
+main.book .page-number .prev-page-btn {
+    transform: rotate(180deg);
+}
+
+main.book .page-number input.item {
+    font-family: Tahoma, sans-serif;
+    font-size: 16px;
+    line-height: 30px;
+    box-sizing: border-box;
+    width: 48px;
+    height: 30px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    padding: 0;
+    padding-left: 5px;
+    padding-right: 5px;
+    outline: none;
+}
+
+/* статистика по просмотру бесплатных страниц - Колонка 2 */
+main.book .status {
+    font-family: Tahoma, sans-serif;
+    font-size: 16px;
+    line-height: 30px;
+}
+
+/* тело бесплатной страницы - Колонка 2 */
+main.book .page-content {
+    background-color: white;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    width: 100%;
+    overflow-y: auto;
+}
+
+/* END (Тело страницы) -------------------------------------------------------------------------------------------- */

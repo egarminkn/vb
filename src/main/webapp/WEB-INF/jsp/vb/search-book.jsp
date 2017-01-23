@@ -1,151 +1,19 @@
-<!DOCTYPE html>
-<html lang="ru">
-    <head>
-        <meta charset="UTF-8" />
-        <title>Verybook - стань автором уже сейчас</title>
-        <meta name="description" content="Простейший способ опубликовать книгу" />
-        <meta name="keywords" content="читать новые книги, бесплатно, решать судьбу книг, публиковать книги" />
+<%@page contentType="text/html" pageEncoding="UTF-8" %>
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@taglib prefix="spring" uri="http://www.springframework.org/tags" %>
+<%@taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
+<%@taglib prefix="sec" uri="http://www.springframework.org/security/tags" %>
 
-        <!--
-        <meta name="google" content="notranslate" />
-        <meta http-equiv="refresh" content="30" />
-        <meta http-equiv="refresh" content="30;URL='http://website.com'" />
-        <meta name="robots" content="noindex, nofollow" />
-        -->
+<c:set var="bodyClass" value="hidden-partners-on-shelf" scope="request"/>
+<c:set var="mainClass" value="search-book" scope="request"/>
+<c:set var="sloganAdditionalClass" value="" scope="request"/>
 
-        <!-- PNG-иконки -->
-        <link href="img/favicon/favicon-16x16.png" type="image/png" rel="icon" sizes="16x16">
-        <link href="img/favicon/favicon-32x32.png" type="image/png" rel="icon" sizes="32x32">
-        <link href="img/favicon/favicon-48x48.png" type="image/png" rel="icon" sizes="48x48">
-        <link href="img/favicon/favicon-96x96.png" type="image/png" rel="icon" sizes="96x96">
-        <link href="img/favicon/favicon-128x128.png" type="image/png" rel="icon" sizes="128x128">
-        <link href="img/favicon/favicon-160x160.png" type="image/png" rel="icon" sizes="160x160">
-        <link href="img/favicon/favicon-196x196.png" type="image/png" rel="icon" sizes="196x196">
-        <link href="img/favicon/favicon-228x228.png" type="image/png" rel="icon" sizes="228x228">
-
-        <!-- Apple Touch-иконки -->
-        <link href="img/apple-touch-icon/apple-touch-icon-57x57.png" type="image/png" rel="apple-touch-icon" sizes="57x57">
-        <link href="img/apple-touch-icon/apple-touch-icon-60x60.png" type="image/png" rel="apple-touch-icon" sizes="60x60">
-        <link href="img/apple-touch-icon/apple-touch-icon-72x72.png" type="image/png" rel="apple-touch-icon" sizes="72x72">
-        <link href="img/apple-touch-icon/apple-touch-icon-76x76.png" type="image/png" rel="apple-touch-icon" sizes="76x76">
-        <link href="img/apple-touch-icon/apple-touch-icon-114x114.png" type="image/png" rel="apple-touch-icon" sizes="114x114">
-        <link href="img/apple-touch-icon/apple-touch-icon-120x120.png" type="image/png" rel="apple-touch-icon" sizes="120x120">
-        <link href="img/apple-touch-icon/apple-touch-icon-152x152.png" type="image/png" rel="apple-touch-icon" sizes="152x152">
-        <link href="img/apple-touch-icon/apple-touch-icon-180x180.png" type="image/png" rel="apple-touch-icon" sizes="180x180">
-
-        <!-- MS Tile-плитки (Windows 8 и IE 10) -->
-        <meta name="msapplication-TileColor" content="#d3be4a">
-        <meta name="msapplication-TileImage" content="img/mstile/mstile-144x144.png">
-
-        <!-- MS Tile-плитки (Windows 8.1 и IE 11) -->
-        <meta name="msapplication-config" content="xml/vb/browserconfig.xml" />
-
-        <!--
-            Подключение стилей
-        -->
-        <link href="css/vb/vb.css" type="text/css" rel="stylesheet" />
-        <link href="css/author/author.css" type="text/css" rel="stylesheet" />
-        <link href="css/author-pa/author-pa.css" type="text/css" rel="stylesheet" />
-        <link href="css/author-pa/datatables.css" type="text/css" rel="stylesheet" />
-        <link href="css/author-rating/author-rating.css" type="text/css" rel="stylesheet" />
-        <link href="css/book/book.css" type="text/css" rel="stylesheet" />
-        <link href="css/create-ebook/create-ebook.css" type="text/css" rel="stylesheet" />
-        <link href="css/feedback/feedback.css" type="text/css" rel="stylesheet" />
-        <link href="css/index/index.css" type="text/css" rel="stylesheet" />
-        <link href="css/index-2/index-2.css" type="text/css" rel="stylesheet" />
-        <link href="css/search-book/search-book.css" type="text/css" rel="stylesheet" />
-        <link href="css/shop-cart/shop-cart.css" type="text/css" rel="stylesheet" />
-
-        <!--
-            jQuery нужно подключать в теге head, а не после тега body,
-            т.к. иначе в Firefox-е некоторые страницы после загрузки проматываются в конец,
-            а модальные окна изначально видны и только потом плавно исчезают
-        -->
-        <script type="text/javascript" src="js/jquery/jquery-2.2.3.min.js"></script>
-        <!--<script type="text/javascript" src="https://code.jquery.com/jquery-2.2.3.min.js"></script>-->
-    </head>
-
-    <body class="hidden-partners-on-shelf">
-        <!-- У body доп.класс:
-            1) hidden-partners-on-shelf - скрывает ссылки на партнеров в футере
-            2) hidden-books-on-shelf - скрывает книги на полке в футере
-        -->
-
-        <header>
-            <div class="header header-1">
-                <a href="#" class="logo">
-                    <span class="logo-word logo-line logo-line1"></span>
-                    <span class="logo-word logo-line logo-line2"></span>
-                    <span class="logo-word logo-v">V</span>
-                    <span class="logo-word logo-erybook">erybook</span>
-                </a>
-                <div class="search">
-                    <input type="search" name="search" autocomplete>
-                    <button class="search-btn"></button>
-                </div>
-
-                <!-- Для того, чтобы подчеркнуть, что выбран один из следующих пунктов, к div добавляется класс header-item-selected -->
-                <div class="ask ">
-                    <a href="#">
-                        <span class="text"><h3>Задать вопрос</h3></span>
-                        <span class="figure"></span>
-                    </a>
-                </div>
-                <div class="cart ">
-                    <a href="#">
-                        <span class="figure"></span>
-                        <span class="text"><h3>Корзина</h3></span>
-                        <span class="count">222</span>
-                    </a>
-                </div>
-            </div>
-            <nav class="header header-2">
-                <div class="menu">
-                    <!-- Для того, чтобы подчеркнуть страницу, которая выбрана, к div добавляется класс menu-item-selected -->
-                    <div class="shop menu-item-selected">
-                        <a href="#"><h3>Книжный магазин</h3></a>
-                    </div>
-                    <div class="help ">
-                        <a href="#"><h3>Помощь автору</h3></a>
-                    </div>
-                    <div class="authors-rating ">
-                        <a href="#"><h3>Рейтинг авторов</h3></a>
-                    </div>
-                    <div class="about ">
-                        <a href="#"><h3>О проекте</h3></a>
-                    </div>
-                </div>
-                <div class="entrance "> <!-- для залогиненого пользователя нужно добавить класс nick -->
-                    <a href="#">
-                        <span class="figure-1"></span>
-                        <span class="text">
-                            <!-- для залогиненого пользователя нужно поменять Войти на Логин -->
-                            Войти
-                        </span>
-                        <span class="figure-2"></span>
-                    </a>
-                </div>
-            </nav>
-        </header>
-
-        <main class="search-book">
-            <div class="slogan ">
-                <!--
-                    Доп.класс help-page у slogan-а нужен для переключения стиля слогана между Главной страницей и страницей Помощи автору
-                -->
-                Читай
-                <a href="#" class="new-books-free"><h3>новые книги бесплатно</h3></a>,
-                решай их судьбу и
-                <a href="#" class="publish-own"><h3>публикуй</h3></a>
-                собственные
-            </div>
-
-        <!-- START (Тело страницы) -------------------------------------------------------------------------------------------- -->
+<jsp:include page="fragments/header.jsp"/>
 
             <div class="extended-search">
-                <a href="#">Расширенный поиск</a>
+                <a href="${currentURI}#">Расширенный поиск</a>
             </div>
-            
+
             <div class="search-results-summary">
                 <div class="header">
                     <span class="title">Результаты поиска по запросу:</span>
@@ -153,16 +21,16 @@
                 </div>
                 <div class="summary">
                     Найдено <span class="total-count">11</span> совпаден<span class="total-count-ending">ий</span>, из них:
-                    <a href="#ebooks"><span class="ebooks-count">12</span> электронн<span class="ebooks-count-ending-1">ых</span> книг<span class="ebooks-count-ending-2"></span></a>,
-                    <a href="#audiobooks"><span class="audiobooks-count">11</span> аудиокниг<span class="audiobooks-count-ending"></span></a>,
-                    <a href="#authors"><span class="authors-count">13</span> автор<span class="authors-count-ending">а</span></a>
+                    <a href="${currentURI}#ebooks"><span class="ebooks-count">12</span> электронн<span class="ebooks-count-ending-1">ых</span> книг<span class="ebooks-count-ending-2"></span></a>,
+                    <a href="${currentURI}#audiobooks"><span class="audiobooks-count">11</span> аудиокниг<span class="audiobooks-count-ending"></span></a>,
+                    <a href="${currentURI}#authors"><span class="authors-count">13</span> автор<span class="authors-count-ending">а</span></a>
                 </div>
 
                 <!-- Выбор типа отображения результатов поиска -->
                 <div class="search-results-show-type">
                     <input type="radio" name="show-type" id="show-type-list" class="show-type-list" checked>
                     <input type="radio" name="show-type" id="show-type-tiles" class="show-type-tiles" >
-                    
+
                     <label class="list" for="show-type-list" title="Отобразить списком">
                         <div></div>
                         <div></div>
@@ -176,7 +44,7 @@
                     </label>
                 </div>
             </div>
-            
+
             <div class="search-results ebooks" id="ebooks">
                 <div class="column left-column">
                     <div class="item header">
@@ -236,17 +104,17 @@
                         </div>
                     </div>
                     <!-- END (Выбор типа сортировки) -->
-                    
+
                     <div class="item search-result-item ebook">
                         <div class="cover">
-                            <img src="img/tmp/book-1.jpg" width="100" height="160">
+                            <img src="resources/vb/img/tmp/book-1.jpg" width="100" height="160">
                         </div>
                         <div class="about">
                             <div class="title">
-                                <a href="#">The ultimate players guide to minecraft</a>
+                                <a href="${currentURI}#">The ultimate players guide to minecraft</a>
                             </div>
                             <div class="author">
-                                <a href="#">Владимир Иванов</a>
+                                <a href="${currentURI}#">Владимир Иванов</a>
                             </div>
                             <div class="description">
                                 "Инноваторы" - история о разных этапах цифровой революции и людях, без которых не было бы ни компьютеров, ни интернета: от Ады Лавлейс, дочери лорда Байрона, первой нащупавшей принципы компьютерного программирования, до Билла Гейтса, Алана Тьюринга, Стива Джобса, Стива Возняка, Ларри Пейджа. Это книга о том, что такое инновации и как сотрудничество увеличивает творческий потенциал.
@@ -263,7 +131,7 @@
                                     <span class="value">112</span>
                                     <span class="currency">р.</span>
                                 </div>
-                                <a class="item cart-btn" href="#">
+                                <a class="item cart-btn" href="${currentURI}#">
                                     <span class="text">В корзину</span>
                                 </a>
                             </div>
@@ -277,156 +145,21 @@
                             <!-- END (5 звезд рейтинга книги) -->
 
                             <div class="reviews">
-                                <a href="#">Рецензии (<spa>15</spa>)</a>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <div class="item search-result-item ebook">
-                        <div class="cover">
-                            <img src="img/tmp/book-2.jpg" width="100" height="160">
-                        </div>
-                        <div class="about">
-                            <div class="title">
-                                <a href="#">The ultimate players guide to minecraft</a>
-                            </div>
-                            <div class="author">
-                                <a href="#">Владимир Иванов</a>
-                            </div>
-                            <div class="description">
-                                "Инноваторы" - история о разных этапах цифровой революции и людях, без которых не было бы ни компьютеров, ни интернета: от Ады Лавлейс, дочери лорда Байрона, первой нащупавшей принципы компьютерного программирования, до Билла Гейтса, Алана Тьюринга, Стива Джобса, Стива Возняка, Ларри Пейджа. Это книга о том, что такое инновации и как сотрудничество увеличивает творческий потенциал.
-                            </div>
-                            <div class="footer">
-                                <div class="date">Дата выхода: <span>26 сентября 2015 года</span></div>
-                                <div class="formats">Форматы: <span>EPUB, PDF</span></div>
-                            </div>
-                        </div>
-                        <div class="actions">
-                            <!-- START (Кнопка "В корзину" с ценником) -->
-                            <div class="buy">
-                                <div class="item price">
-                                    <span class="value">112</span>
-                                    <span class="currency">р.</span>
-                                </div>
-                                <a class="item cart-btn" href="#">
-                                    <span class="text">В корзину</span>
-                                </a>
-                            </div>
-                            <!-- END (Кнопка "В корзину" с ценником) -->
-
-                            <!-- START (5 звезд рейтинга книги) -->
-                            <div class="rating-5-stars">
-                                <div class="rating-stars"></div>
-                                <div class="rating-number">2,3</div>
-                            </div>
-                            <!-- END (5 звезд рейтинга книги) -->
-
-                            <div class="reviews">
-                                <a href="#">Рецензии (<spa>15</spa>)</a>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <div class="item search-result-item ebook">
-                        <div class="cover">
-                            <img src="img/tmp/book-3.jpg" width="100" height="160">
-                        </div>
-                        <div class="about">
-                            <div class="title">
-                                <a href="#">The ultimate players guide to minecraft</a>
-                            </div>
-                            <div class="author">
-                                <a href="#">Владимир Иванов</a>
-                            </div>
-                            <div class="description">
-                                "Инноваторы" - история о разных этапах цифровой революции и людях, без которых не было бы ни компьютеров, ни интернета: от Ады Лавлейс, дочери лорда Байрона, первой нащупавшей принципы компьютерного программирования, до Билла Гейтса, Алана Тьюринга, Стива Джобса, Стива Возняка, Ларри Пейджа. Это книга о том, что такое инновации и как сотрудничество увеличивает творческий потенциал.
-                            </div>
-                            <div class="footer">
-                                <div class="date">Дата выхода: <span>26 сентября 2015 года</span></div>
-                                <div class="formats">Форматы: <span>EPUB, PDF</span></div>
-                            </div>
-                        </div>
-                        <div class="actions">
-                            <!-- START (Кнопка "В корзину" с ценником) -->
-                            <div class="buy">
-                                <div class="item price">
-                                    <span class="value">112</span>
-                                    <span class="currency">р.</span>
-                                </div>
-                                <a class="item cart-btn" href="#">
-                                    <span class="text">В корзину</span>
-                                </a>
-                            </div>
-                            <!-- END (Кнопка "В корзину" с ценником) -->
-
-                            <!-- START (5 звезд рейтинга книги) -->
-                            <div class="rating-5-stars">
-                                <div class="rating-stars"></div>
-                                <div class="rating-number">2,3</div>
-                            </div>
-                            <!-- END (5 звезд рейтинга книги) -->
-
-                            <div class="reviews">
-                                <a href="#">Рецензии (<spa>15</spa>)</a>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <div class="item search-result-item ebook">
-                        <div class="cover">
-                            <img src="img/tmp/book-4.jpg" width="100" height="160">
-                        </div>
-                        <div class="about">
-                            <div class="title">
-                                <a href="#">The ultimate players guide to minecraft</a>
-                            </div>
-                            <div class="author">
-                                <a href="#">Владимир Иванов</a>
-                            </div>
-                            <div class="description">
-                                "Инноваторы" - история о разных этапах цифровой революции и людях, без которых не было бы ни компьютеров, ни интернета: от Ады Лавлейс, дочери лорда Байрона, первой нащупавшей принципы компьютерного программирования, до Билла Гейтса, Алана Тьюринга, Стива Джобса, Стива Возняка, Ларри Пейджа. Это книга о том, что такое инновации и как сотрудничество увеличивает творческий потенциал.
-                            </div>
-                            <div class="footer">
-                                <div class="date">Дата выхода: <span>26 сентября 2015 года</span></div>
-                                <div class="formats">Форматы: <span>EPUB, PDF</span></div>
-                            </div>
-                        </div>
-                        <div class="actions">
-                            <!-- START (Кнопка "В корзину" с ценником) -->
-                            <div class="buy">
-                                <div class="item price">
-                                    <span class="value">112</span>
-                                    <span class="currency">р.</span>
-                                </div>
-                                <a class="item cart-btn" href="#">
-                                    <span class="text">В корзину</span>
-                                </a>
-                            </div>
-                            <!-- END (Кнопка "В корзину" с ценником) -->
-
-                            <!-- START (5 звезд рейтинга книги) -->
-                            <div class="rating-5-stars">
-                                <div class="rating-stars"></div>
-                                <div class="rating-number">2,3</div>
-                            </div>
-                            <!-- END (5 звезд рейтинга книги) -->
-
-                            <div class="reviews">
-                                <a href="#">Рецензии (<spa>15</spa>)</a>
+                                <a href="${currentURI}#">Рецензии (<span>15</span>)</a>
                             </div>
                         </div>
                     </div>
 
                     <div class="item search-result-item ebook">
                         <div class="cover">
-                            <img src="img/tmp/book-5.jpg" width="100" height="160">
+                            <img src="resources/vb/img/tmp/book-2.jpg" width="100" height="160">
                         </div>
                         <div class="about">
                             <div class="title">
-                                <a href="#">The ultimate players guide to minecraft</a>
+                                <a href="${currentURI}#">The ultimate players guide to minecraft</a>
                             </div>
                             <div class="author">
-                                <a href="#">Владимир Иванов</a>
+                                <a href="${currentURI}#">Владимир Иванов</a>
                             </div>
                             <div class="description">
                                 "Инноваторы" - история о разных этапах цифровой революции и людях, без которых не было бы ни компьютеров, ни интернета: от Ады Лавлейс, дочери лорда Байрона, первой нащупавшей принципы компьютерного программирования, до Билла Гейтса, Алана Тьюринга, Стива Джобса, Стива Возняка, Ларри Пейджа. Это книга о том, что такое инновации и как сотрудничество увеличивает творческий потенциал.
@@ -443,7 +176,7 @@
                                     <span class="value">112</span>
                                     <span class="currency">р.</span>
                                 </div>
-                                <a class="item cart-btn" href="#">
+                                <a class="item cart-btn" href="${currentURI}#">
                                     <span class="text">В корзину</span>
                                 </a>
                             </div>
@@ -457,21 +190,21 @@
                             <!-- END (5 звезд рейтинга книги) -->
 
                             <div class="reviews">
-                                <a href="#">Рецензии (<spa>15</spa>)</a>
+                                <a href="${currentURI}#">Рецензии (<span>15</span>)</a>
                             </div>
                         </div>
                     </div>
 
                     <div class="item search-result-item ebook">
                         <div class="cover">
-                            <img src="img/tmp/book-1.jpg" width="100" height="160">
+                            <img src="resources/vb/img/tmp/book-3.jpg" width="100" height="160">
                         </div>
                         <div class="about">
                             <div class="title">
-                                <a href="#">The ultimate players guide to minecraft</a>
+                                <a href="${currentURI}#">The ultimate players guide to minecraft</a>
                             </div>
                             <div class="author">
-                                <a href="#">Владимир Иванов</a>
+                                <a href="${currentURI}#">Владимир Иванов</a>
                             </div>
                             <div class="description">
                                 "Инноваторы" - история о разных этапах цифровой революции и людях, без которых не было бы ни компьютеров, ни интернета: от Ады Лавлейс, дочери лорда Байрона, первой нащупавшей принципы компьютерного программирования, до Билла Гейтса, Алана Тьюринга, Стива Джобса, Стива Возняка, Ларри Пейджа. Это книга о том, что такое инновации и как сотрудничество увеличивает творческий потенциал.
@@ -488,7 +221,7 @@
                                     <span class="value">112</span>
                                     <span class="currency">р.</span>
                                 </div>
-                                <a class="item cart-btn" href="#">
+                                <a class="item cart-btn" href="${currentURI}#">
                                     <span class="text">В корзину</span>
                                 </a>
                             </div>
@@ -502,20 +235,155 @@
                             <!-- END (5 звезд рейтинга книги) -->
 
                             <div class="reviews">
-                                <a href="#">Рецензии (<spa>15</spa>)</a>
+                                <a href="${currentURI}#">Рецензии (<span>15</span>)</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="item search-result-item ebook">
+                        <div class="cover">
+                            <img src="resources/vb/img/tmp/book-4.jpg" width="100" height="160">
+                        </div>
+                        <div class="about">
+                            <div class="title">
+                                <a href="${currentURI}#">The ultimate players guide to minecraft</a>
+                            </div>
+                            <div class="author">
+                                <a href="${currentURI}#">Владимир Иванов</a>
+                            </div>
+                            <div class="description">
+                                "Инноваторы" - история о разных этапах цифровой революции и людях, без которых не было бы ни компьютеров, ни интернета: от Ады Лавлейс, дочери лорда Байрона, первой нащупавшей принципы компьютерного программирования, до Билла Гейтса, Алана Тьюринга, Стива Джобса, Стива Возняка, Ларри Пейджа. Это книга о том, что такое инновации и как сотрудничество увеличивает творческий потенциал.
+                            </div>
+                            <div class="footer">
+                                <div class="date">Дата выхода: <span>26 сентября 2015 года</span></div>
+                                <div class="formats">Форматы: <span>EPUB, PDF</span></div>
+                            </div>
+                        </div>
+                        <div class="actions">
+                            <!-- START (Кнопка "В корзину" с ценником) -->
+                            <div class="buy">
+                                <div class="item price">
+                                    <span class="value">112</span>
+                                    <span class="currency">р.</span>
+                                </div>
+                                <a class="item cart-btn" href="${currentURI}#">
+                                    <span class="text">В корзину</span>
+                                </a>
+                            </div>
+                            <!-- END (Кнопка "В корзину" с ценником) -->
+
+                            <!-- START (5 звезд рейтинга книги) -->
+                            <div class="rating-5-stars">
+                                <div class="rating-stars"></div>
+                                <div class="rating-number">2,3</div>
+                            </div>
+                            <!-- END (5 звезд рейтинга книги) -->
+
+                            <div class="reviews">
+                                <a href="${currentURI}#">Рецензии (<span>15</span>)</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="item search-result-item ebook">
+                        <div class="cover">
+                            <img src="resources/vb/img/tmp/book-5.jpg" width="100" height="160">
+                        </div>
+                        <div class="about">
+                            <div class="title">
+                                <a href="${currentURI}#">The ultimate players guide to minecraft</a>
+                            </div>
+                            <div class="author">
+                                <a href="${currentURI}#">Владимир Иванов</a>
+                            </div>
+                            <div class="description">
+                                "Инноваторы" - история о разных этапах цифровой революции и людях, без которых не было бы ни компьютеров, ни интернета: от Ады Лавлейс, дочери лорда Байрона, первой нащупавшей принципы компьютерного программирования, до Билла Гейтса, Алана Тьюринга, Стива Джобса, Стива Возняка, Ларри Пейджа. Это книга о том, что такое инновации и как сотрудничество увеличивает творческий потенциал.
+                            </div>
+                            <div class="footer">
+                                <div class="date">Дата выхода: <span>26 сентября 2015 года</span></div>
+                                <div class="formats">Форматы: <span>EPUB, PDF</span></div>
+                            </div>
+                        </div>
+                        <div class="actions">
+                            <!-- START (Кнопка "В корзину" с ценником) -->
+                            <div class="buy">
+                                <div class="item price">
+                                    <span class="value">112</span>
+                                    <span class="currency">р.</span>
+                                </div>
+                                <a class="item cart-btn" href="${currentURI}#">
+                                    <span class="text">В корзину</span>
+                                </a>
+                            </div>
+                            <!-- END (Кнопка "В корзину" с ценником) -->
+
+                            <!-- START (5 звезд рейтинга книги) -->
+                            <div class="rating-5-stars">
+                                <div class="rating-stars"></div>
+                                <div class="rating-number">2,3</div>
+                            </div>
+                            <!-- END (5 звезд рейтинга книги) -->
+
+                            <div class="reviews">
+                                <a href="${currentURI}#">Рецензии (<span>15</span>)</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="item search-result-item ebook">
+                        <div class="cover">
+                            <img src="resources/vb/img/tmp/book-1.jpg" width="100" height="160">
+                        </div>
+                        <div class="about">
+                            <div class="title">
+                                <a href="${currentURI}#">The ultimate players guide to minecraft</a>
+                            </div>
+                            <div class="author">
+                                <a href="${currentURI}#">Владимир Иванов</a>
+                            </div>
+                            <div class="description">
+                                "Инноваторы" - история о разных этапах цифровой революции и людях, без которых не было бы ни компьютеров, ни интернета: от Ады Лавлейс, дочери лорда Байрона, первой нащупавшей принципы компьютерного программирования, до Билла Гейтса, Алана Тьюринга, Стива Джобса, Стива Возняка, Ларри Пейджа. Это книга о том, что такое инновации и как сотрудничество увеличивает творческий потенциал.
+                            </div>
+                            <div class="footer">
+                                <div class="date">Дата выхода: <span>26 сентября 2015 года</span></div>
+                                <div class="formats">Форматы: <span>EPUB, PDF</span></div>
+                            </div>
+                        </div>
+                        <div class="actions">
+                            <!-- START (Кнопка "В корзину" с ценником) -->
+                            <div class="buy">
+                                <div class="item price">
+                                    <span class="value">112</span>
+                                    <span class="currency">р.</span>
+                                </div>
+                                <a class="item cart-btn" href="${currentURI}#">
+                                    <span class="text">В корзину</span>
+                                </a>
+                            </div>
+                            <!-- END (Кнопка "В корзину" с ценником) -->
+
+                            <!-- START (5 звезд рейтинга книги) -->
+                            <div class="rating-5-stars">
+                                <div class="rating-stars"></div>
+                                <div class="rating-number">2,3</div>
+                            </div>
+                            <!-- END (5 звезд рейтинга книги) -->
+
+                            <div class="reviews">
+                                <a href="${currentURI}#">Рецензии (<span>15</span>)</a>
                             </div>
                         </div>
                     </div>
 
                     <!-- START (Кнопка "Показать еще") -->
                     <div class="show-more">
-                        <a class="btn" href="#">
+                        <a class="btn" href="${currentURI}#">
                             Показать еще
                         </a>
                     </div>
                     <!-- END (Кнопка "Показать еще") -->
                 </div>
-                
+
                 <div class="column right-column">
                     <div class="item shifter">
                     </div>
@@ -523,104 +391,104 @@
                     <!-- START (Боковой баннер ссылок на страницу "Поиска книги") -->
                     <ul class="item top-level">
                         <li class="top-level-link">
-                            <a href="#">Бест-селлеры</a>
+                            <a href="${currentURI}#">Бест-селлеры</a>
                         </li>
                         <li class="top-level-link">
-                            <a href="#">Новинки</a>
+                            <a href="${currentURI}#">Новинки</a>
                         </li>
                         <li class="top-level-link">
-                            <a href="#">Акции</a>
+                            <a href="${currentURI}#">Акции</a>
                         </li>
                         <li class="top-level-link">
-                            <a href="#">Детям и родителям</a>
+                            <a href="${currentURI}#">Детям и родителям</a>
                         </li>
                         <ul class="bottom-level">
                             <li class="bottom-level-link">
-                                <a href="#">Досуг и творчество</a>
+                                <a href="${currentURI}#">Досуг и творчество</a>
                             </li>
                             <li class="bottom-level-link">
-                                <a href="#">Книги для родителей</a>
+                                <a href="${currentURI}#">Книги для родителей</a>
                             </li>
                             <li class="bottom-level-link">
-                                <a href="#">Познавательная литература</a>
+                                <a href="${currentURI}#">Познавательная литература</a>
                             </li>
                             <li class="bottom-level-link">
-                                <a href="#">Художественная литература</a>
+                                <a href="${currentURI}#">Художественная литература</a>
                             </li>
                         </ul>
                         <li class="top-level-link">
-                            <a href="#">Учебная литература</a>
+                            <a href="${currentURI}#">Учебная литература</a>
                         </li>
                         <ul class="bottom-level">
                             <li class="bottom-level-link">
-                                <a href="#">Дошкольникам</a>
+                                <a href="${currentURI}#">Дошкольникам</a>
                             </li>
                             <li class="bottom-level-link">
-                                <a href="#">Школьникам и абитуриентам</a>
+                                <a href="${currentURI}#">Школьникам и абитуриентам</a>
                             </li>
                             <li class="bottom-level-link">
-                                <a href="#">Студентам и аспирантам</a>
+                                <a href="${currentURI}#">Студентам и аспирантам</a>
                             </li>
                             <li class="bottom-level-link">
-                                <a href="#">Педагогам</a>
+                                <a href="${currentURI}#">Педагогам</a>
                             </li>
                         </ul>
                         <li class="top-level-link">
-                            <a href="#">Бизнес-литература</a>
+                            <a href="${currentURI}#">Бизнес-литература</a>
                         </li>
                         <ul class="bottom-level">
                             <li class="bottom-level-link">
-                                <a href="#">Деловая литература. Право. Психология</a>
+                                <a href="${currentURI}#">Деловая литература. Право. Психология</a>
                             </li>
                             <li class="bottom-level-link">
-                                <a href="#">Маркетинг. Реклама</a>
+                                <a href="${currentURI}#">Маркетинг. Реклама</a>
                             </li>
                             <li class="bottom-level-link">
-                                <a href="#">Менеджмент</a>
+                                <a href="${currentURI}#">Менеджмент</a>
                             </li>
                             <li class="bottom-level-link">
-                                <a href="#">Финансы. Банковское дело. Инвестиции</a>
+                                <a href="${currentURI}#">Финансы. Банковское дело. Инвестиции</a>
                             </li>
                         </ul>
                         <li class="top-level-link">
-                            <a href="#">Нехудожественная литература</a>
+                            <a href="${currentURI}#">Нехудожественная литература</a>
                         </li>
                         <ul class="bottom-level">
                             <li class="bottom-level-link">
-                                <a href="#">Искусство. Культура</a>
+                                <a href="${currentURI}#">Искусство. Культура</a>
                             </li>
                             <li class="bottom-level-link">
-                                <a href="#">Компьютеры. Интернет</a>
+                                <a href="${currentURI}#">Компьютеры. Интернет</a>
                             </li>
                             <li class="bottom-level-link">
-                                <a href="#">Кулинария. Напитки</a>
+                                <a href="${currentURI}#">Кулинария. Напитки</a>
                             </li>
                             <li class="bottom-level-link">
-                                <a href="#">Медицина</a>
+                                <a href="${currentURI}#">Медицина</a>
                             </li>
                             <li class="bottom-level-link">
-                                <a href="#">Наука.Техника</a>
+                                <a href="${currentURI}#">Наука.Техника</a>
                             </li>
                             <li class="bottom-level-link">
-                                <a href="#">Общественные и гуманитарные науки</a>
+                                <a href="${currentURI}#">Общественные и гуманитарные науки</a>
                             </li>
                             <li class="bottom-level-link">
-                                <a href="#">Психология</a>
+                                <a href="${currentURI}#">Психология</a>
                             </li>
                             <li class="bottom-level-link">
-                                <a href="#">Публицистика</a>
+                                <a href="${currentURI}#">Публицистика</a>
                             </li>
                             <li class="bottom-level-link">
-                                <a href="#">Путешествия. Хобби. Фото. Спорт</a>
+                                <a href="${currentURI}#">Путешествия. Хобби. Фото. Спорт</a>
                             </li>
                             <li class="bottom-level-link">
-                                <a href="#">Религии мира</a>
+                                <a href="${currentURI}#">Религии мира</a>
                             </li>
                             <li class="bottom-level-link">
-                                <a href="#">Рукоделие. Творчество</a>
+                                <a href="${currentURI}#">Рукоделие. Творчество</a>
                             </li>
                             <li class="bottom-level-link">
-                                <a href="#">Эзотерика</a>
+                                <a href="${currentURI}#">Эзотерика</a>
                             </li>
                         </ul>
                     </ul>
@@ -636,17 +504,17 @@
                         </div>
                         <div class="main">
                             <div class="spec-book spec-book-1">
-                                <a class="cover-rating" href="#">
-                                    <img class="cover" src="img/tmp/book-1.jpg" width="230" height="368">
+                                <a class="cover-rating" href="${currentURI}#">
+                                    <img class="cover" src="resources/vb/img/tmp/book-1.jpg" width="230" height="368">
                                     <div class="rating">3,8</div>
                                 </a>
                                 <div class="content">
-                                    <a class="title" href="#">
+                                    <a class="title" href="${currentURI}#">
                                         <span class="text">
                                             Энциклопедия Marvel Heroes
                                         </span>
                                     </a>
-                                    <a class="author-name" href="#">
+                                    <a class="author-name" href="${currentURI}#">
                                         <span class="text">
                                             Дмитрий Глуховский
                                         </span>
@@ -658,17 +526,17 @@
                                 </div>
                             </div>
                             <div class="spec-book spec-book-2">
-                                <a class="cover-rating" href="#">
-                                    <img class="cover" src="img/tmp/book-5.jpg" width="230" height="368">
+                                <a class="cover-rating" href="${currentURI}#">
+                                    <img class="cover" src="resources/vb/img/tmp/book-5.jpg" width="230" height="368">
                                     <div class="rating">3,8</div>
                                 </a>
                                 <div class="content">
-                                    <a class="title" href="#">
+                                    <a class="title" href="${currentURI}#">
                                         <span class="text">
                                             Непобежденные
                                         </span>
                                     </a>
-                                    <a class="author-name" href="#">
+                                    <a class="author-name" href="${currentURI}#">
                                         <span class="text">
                                             А.П. Константинов
                                         </span>
@@ -680,17 +548,17 @@
                                 </div>
                             </div>
                             <div class="spec-book spec-book-3">
-                                <a class="cover-rating" href="#">
-                                    <img class="cover" src="img/tmp/book-4.jpg" width="230" height="368">
+                                <a class="cover-rating" href="${currentURI}#">
+                                    <img class="cover" src="resources/vb/img/tmp/book-4.jpg" width="230" height="368">
                                     <div class="rating">3,8</div>
                                 </a>
                                 <div class="content">
-                                    <a class="title" href="#">
+                                    <a class="title" href="${currentURI}#">
                                         <span class="text">
                                             Энциклопедия Marvel Heroes
                                         </span>
                                     </a>
-                                    <a class="author-name" href="#">
+                                    <a class="author-name" href="${currentURI}#">
                                         <span class="text">
                                             Дмитрий Глуховский
                                         </span>
@@ -701,7 +569,7 @@
                                     </div>
                                 </div>
                             </div>
-                            <a class="show-all" href="#">
+                            <a class="show-all" href="${currentURI}#">
                                 <span class="text">
                                     Показать все предложения
                                 </span>
@@ -715,7 +583,7 @@
                 <div class="shadow-under"></div>
                 <!-- END (Тень под блоком) -->
             </div>
-            
+
             <div class="search-results audiobooks" id="audiobooks">
                 <div class="column left-column">
                     <div class="item header">
@@ -775,18 +643,18 @@
                         </div>
                     </div>
                     <!-- END (Выбор типа сортировки) -->
-                    
+
                     <div class="item search-result-item audiobook">
                         <div class="cover-play">
-                            <img class="cover" src="img/tmp/audiobook-1.jpg" width="137" height="137">
-                            <a class="play" href="#">Прослушать отрывок</a>
+                            <img class="cover" src="resources/vb/img/tmp/audiobook-1.jpg" width="137" height="137">
+                            <a class="play" href="${currentURI}#">Прослушать отрывок</a>
                         </div>
                         <div class="about">
                             <div class="title">
-                                <a href="#">Harry Potter and the Sorcerer's Stone, Book 1</a>
+                                <a href="${currentURI}#">Harry Potter and the Sorcerer's Stone, Book 1</a>
                             </div>
                             <div class="author">
-                                <a href="#">J. K. Rowling</a> (автор), <a href="#">Roger Allam</a> (рассказчик), <a href="#">Emilia Fox</a> (рассказчик)
+                                <a href="${currentURI}#">J. K. Rowling</a> (автор), <a href="${currentURI}#">Roger Allam</a> (рассказчик), <a href="${currentURI}#">Emilia Fox</a> (рассказчик)
                             </div>
                             <div class="description">
                                 Harry Potter has never even heard of Hogwarts when the letters start dropping on the doormat at number four, Privet Drive. Addressed in green ink on yellowish parchment with a purple seal, they are swiftly confiscated by his grisly aunt and uncle. Then, on Harry's eleventh birthday, a great beetle-eyed giant of a man called Rubeus Hagrid bursts in with some astonishing news: Harry Potter
@@ -803,7 +671,7 @@
                                     <span class="value">112</span>
                                     <span class="currency">р.</span>
                                 </div>
-                                <a class="item cart-btn" href="#">
+                                <a class="item cart-btn" href="${currentURI}#">
                                     <span class="text">В корзину</span>
                                 </a>
                             </div>
@@ -817,22 +685,22 @@
                             <!-- END (5 звезд рейтинга книги) -->
 
                             <div class="reviews">
-                                <a href="#">Рецензии (<spa>15</spa>)</a>
+                                <a href="${currentURI}#">Рецензии (<span>15</span>)</a>
                             </div>
                         </div>
                     </div>
-                    
+
                     <div class="item search-result-item audiobook">
                         <div class="cover-play">
-                            <img class="cover" src="img/tmp/audiobook-1.jpg" width="137" height="137">
-                            <a class="play" href="#">Прослушать отрывок</a>
+                            <img class="cover" src="resources/vb/img/tmp/audiobook-1.jpg" width="137" height="137">
+                            <a class="play" href="${currentURI}#">Прослушать отрывок</a>
                         </div>
                         <div class="about">
                             <div class="title">
-                                <a href="#">Harry Potter and the Sorcerer's Stone, Book 1</a>
+                                <a href="${currentURI}#">Harry Potter and the Sorcerer's Stone, Book 1</a>
                             </div>
                             <div class="author">
-                                <a href="#">J. K. Rowling</a> (автор), <a href="#">Roger Allam</a> (рассказчик), <a href="#">Emilia Fox</a> (рассказчик)
+                                <a href="${currentURI}#">J. K. Rowling</a> (автор), <a href="${currentURI}#">Roger Allam</a> (рассказчик), <a href="${currentURI}#">Emilia Fox</a> (рассказчик)
                             </div>
                             <div class="description">
                                 Harry Potter has never even heard of Hogwarts when the letters start dropping on the doormat at number four, Privet Drive. Addressed in green ink on yellowish parchment with a purple seal, they are swiftly confiscated by his grisly aunt and uncle. Then, on Harry's eleventh birthday, a great beetle-eyed giant of a man called Rubeus Hagrid bursts in with some astonishing news: Harry Potter
@@ -849,7 +717,7 @@
                                     <span class="value">112</span>
                                     <span class="currency">р.</span>
                                 </div>
-                                <a class="item cart-btn" href="#">
+                                <a class="item cart-btn" href="${currentURI}#">
                                     <span class="text">В корзину</span>
                                 </a>
                             </div>
@@ -863,22 +731,22 @@
                             <!-- END (5 звезд рейтинга книги) -->
 
                             <div class="reviews">
-                                <a href="#">Рецензии (<spa>15</spa>)</a>
+                                <a href="${currentURI}#">Рецензии (<span>15</span>)</a>
                             </div>
                         </div>
                     </div>
-                    
+
                     <div class="item search-result-item audiobook">
                         <div class="cover-play">
-                            <img class="cover" src="img/tmp/audiobook-1.jpg" width="137" height="137">
-                            <a class="play" href="#">Прослушать отрывок</a>
+                            <img class="cover" src="resources/vb/img/tmp/audiobook-1.jpg" width="137" height="137">
+                            <a class="play" href="${currentURI}#">Прослушать отрывок</a>
                         </div>
                         <div class="about">
                             <div class="title">
-                                <a href="#">Harry Potter and the Sorcerer's Stone, Book 1</a>
+                                <a href="${currentURI}#">Harry Potter and the Sorcerer's Stone, Book 1</a>
                             </div>
                             <div class="author">
-                                <a href="#">J. K. Rowling</a> (автор), <a href="#">Roger Allam</a> (рассказчик), <a href="#">Emilia Fox</a> (рассказчик)
+                                <a href="${currentURI}#">J. K. Rowling</a> (автор), <a href="${currentURI}#">Roger Allam</a> (рассказчик), <a href="${currentURI}#">Emilia Fox</a> (рассказчик)
                             </div>
                             <div class="description">
                                 Harry Potter has never even heard of Hogwarts when the letters start dropping on the doormat at number four, Privet Drive. Addressed in green ink on yellowish parchment with a purple seal, they are swiftly confiscated by his grisly aunt and uncle. Then, on Harry's eleventh birthday, a great beetle-eyed giant of a man called Rubeus Hagrid bursts in with some astonishing news: Harry Potter
@@ -895,7 +763,7 @@
                                     <span class="value">112</span>
                                     <span class="currency">р.</span>
                                 </div>
-                                <a class="item cart-btn" href="#">
+                                <a class="item cart-btn" href="${currentURI}#">
                                     <span class="text">В корзину</span>
                                 </a>
                             </div>
@@ -909,20 +777,20 @@
                             <!-- END (5 звезд рейтинга книги) -->
 
                             <div class="reviews">
-                                <a href="#">Рецензии (<spa>15</spa>)</a>
+                                <a href="${currentURI}#">Рецензии (<span>15</span>)</a>
                             </div>
                         </div>
                     </div>
 
                     <!-- START (Кнопка "Показать еще") -->
                     <div class="show-more">
-                        <a class="btn" href="#">
+                        <a class="btn" href="${currentURI}#">
                             Показать еще
                         </a>
                     </div>
                     <!-- END (Кнопка "Показать еще") -->
                 </div>
-                
+
                 <div class="column right-column">
                     <div class="item shifter">
                     </div>
@@ -937,17 +805,17 @@
                         </div>
                         <div class="main">
                             <div class="spec-book spec-book-1">
-                                <a class="cover-rating" href="#">
-                                    <img class="cover" src="img/tmp/audiobook-1.jpg" width="137" height="137">
+                                <a class="cover-rating" href="${currentURI}#">
+                                    <img class="cover" src="resources/vb/img/tmp/audiobook-1.jpg" width="137" height="137">
                                     <div class="rating">3,8</div>
                                 </a>
                                 <div class="content">
-                                    <a class="title" href="#">
+                                    <a class="title" href="${currentURI}#">
                                         <span class="text">
                                             Энциклопедия Marvel Heroes
                                         </span>
                                     </a>
-                                    <a class="author-name" href="#">
+                                    <a class="author-name" href="${currentURI}#">
                                         <span class="text">
                                             Дмитрий Глуховский
                                         </span>
@@ -959,17 +827,17 @@
                                 </div>
                             </div>
                             <div class="spec-book spec-book-2">
-                                <a class="cover-rating" href="#">
-                                    <img class="cover" src="img/tmp/audiobook-1.jpg" width="137" height="137">
+                                <a class="cover-rating" href="${currentURI}#">
+                                    <img class="cover" src="resources/vb/img/tmp/audiobook-1.jpg" width="137" height="137">
                                     <div class="rating">3,8</div>
                                 </a>
                                 <div class="content">
-                                    <a class="title" href="#">
+                                    <a class="title" href="${currentURI}#">
                                         <span class="text">
                                             Непобежденные
                                         </span>
                                     </a>
-                                    <a class="author-name" href="#">
+                                    <a class="author-name" href="${currentURI}#">
                                         <span class="text">
                                             А.П. Константинов
                                         </span>
@@ -981,17 +849,17 @@
                                 </div>
                             </div>
                             <div class="spec-book spec-book-3">
-                                <a class="cover-rating" href="#">
-                                    <img class="cover" src="img/tmp/audiobook-1.jpg" width="137" height="137">
+                                <a class="cover-rating" href="${currentURI}#">
+                                    <img class="cover" src="resources/vb/img/tmp/audiobook-1.jpg" width="137" height="137">
                                     <div class="rating">3,8</div>
                                 </a>
                                 <div class="content">
-                                    <a class="title" href="#">
+                                    <a class="title" href="${currentURI}#">
                                         <span class="text">
                                             Энциклопедия Marvel Heroes
                                         </span>
                                     </a>
-                                    <a class="author-name" href="#">
+                                    <a class="author-name" href="${currentURI}#">
                                         <span class="text">
                                             Дмитрий Глуховский
                                         </span>
@@ -1002,7 +870,7 @@
                                     </div>
                                 </div>
                             </div>
-                            <a class="show-all" href="#">
+                            <a class="show-all" href="${currentURI}#">
                                 <span class="text">
                                     Показать все предложения
                                 </span>
@@ -1026,18 +894,18 @@
                             по запросу "<span class="query">книга о войне</span>"
                         </span>
                     </div>
-                    
+
                     <div class="item search-result-item author">
                         <!-- START (Фото автора в маске-обрезалке) -->
                         <div class="author-photo">
-                            <img src="img/tmp/photo-1.jpg" width="80" height="80">
+                            <img src="resources/vb/img/tmp/photo-1.jpg" width="80" height="80">
                         </div>
                         <!-- END (Фото автора в маске-обрезалке) -->
 
                         <div class="about">
                             <div class="fullname-rating">
                                 <div class="fullname">
-                                    <a href="#">Александр Константинопольский</a>
+                                    <a href="${currentURI}#">Александр Константинопольский</a>
                                 </div>
 
                                 <!-- START (3 звезды рейтинга автора) -->
@@ -1049,9 +917,9 @@
                             </div>
                             <div class="genres">
                                 Жанры:
-                                <a href="#">военные</a>,
-                                <a href="#">детектив</a>,
-                                <a href="#">приключения</a>
+                                <a href="${currentURI}#">военные</a>,
+                                <a href="${currentURI}#">детектив</a>,
+                                <a href="${currentURI}#">приключения</a>
                             </div>
                             <div class="description">
                                 I draw pictures and I make colouring books! Welcome to my world. Tumble down the rabbit hole and find yourself in my inky black and white Wonderland... I'm an illustrator and ink evangelist who prefers pens and pencils to pixels. I create intricate, hand drawn illustrations predominately, although not exclusively, in black and white. My creativity is cultivated by a curious imagination and a delight in the fantastic. Much of my work has roots in the flora and fauna that surrounded me growing up on my parent's fish farm in rural Scotland.
@@ -1059,13 +927,13 @@
                             <div class="footer">
                                 <div class="published">
                                     Опубликовано:
-                                    <a href="#">
+                                    <a href="${currentURI}#">
                                         <span>18</span>
                                         книг
                                     </a>
                                 </div>
                                 <div class="reviews">
-                                    <a href="#">
+                                    <a href="${currentURI}#">
                                         <span>5</span>
                                         отзывов
                                     </a>
@@ -1073,18 +941,18 @@
                             </div>
                         </div>
                     </div>
-                    
+
                     <div class="item search-result-item author">
                         <!-- START (Фото автора в маске-обрезалке) -->
                         <div class="author-photo">
-                            <img src="img/tmp/photo-1.jpg" width="80" height="80">
+                            <img src="resources/vb/img/tmp/photo-1.jpg" width="80" height="80">
                         </div>
                         <!-- END (Фото автора в маске-обрезалке) -->
 
                         <div class="about">
                             <div class="fullname-rating">
                                 <div class="fullname">
-                                    <a href="#">Александр Константинопольский</a>
+                                    <a href="${currentURI}#">Александр Константинопольский</a>
                                 </div>
 
                                 <!-- START (3 звезды рейтинга автора) -->
@@ -1096,9 +964,9 @@
                             </div>
                             <div class="genres">
                                 Жанры:
-                                <a href="#">военные</a>,
-                                <a href="#">детектив</a>,
-                                <a href="#">приключения</a>
+                                <a href="${currentURI}#">военные</a>,
+                                <a href="${currentURI}#">детектив</a>,
+                                <a href="${currentURI}#">приключения</a>
                             </div>
                             <div class="description">
                                 I draw pictures and I make colouring books! Welcome to my world. Tumble down the rabbit hole and find yourself in my inky black and white Wonderland... I'm an illustrator and ink evangelist who prefers pens and pencils to pixels. I create intricate, hand drawn illustrations predominately, although not exclusively, in black and white. My creativity is cultivated by a curious imagination and a delight in the fantastic. Much of my work has roots in the flora and fauna that surrounded me growing up on my parent's fish farm in rural Scotland.
@@ -1106,13 +974,13 @@
                             <div class="footer">
                                 <div class="published">
                                     Опубликовано:
-                                    <a href="#">
+                                    <a href="${currentURI}#">
                                         <span>18</span>
                                         книг
                                     </a>
                                 </div>
                                 <div class="reviews">
-                                    <a href="#">
+                                    <a href="${currentURI}#">
                                         <span>5</span>
                                         отзывов
                                     </a>
@@ -1120,18 +988,18 @@
                             </div>
                         </div>
                     </div>
-                    
+
                     <div class="item search-result-item author">
                         <!-- START (Фото автора в маске-обрезалке) -->
                         <div class="author-photo">
-                            <img src="img/tmp/photo-1.jpg" width="80" height="80">
+                            <img src="resources/vb/img/tmp/photo-1.jpg" width="80" height="80">
                         </div>
                         <!-- END (Фото автора в маске-обрезалке) -->
 
                         <div class="about">
                             <div class="fullname-rating">
                                 <div class="fullname">
-                                    <a href="#">Александр Константинопольский</a>
+                                    <a href="${currentURI}#">Александр Константинопольский</a>
                                 </div>
 
                                 <!-- START (3 звезды рейтинга автора) -->
@@ -1143,9 +1011,9 @@
                             </div>
                             <div class="genres">
                                 Жанры:
-                                <a href="#">военные</a>,
-                                <a href="#">детектив</a>,
-                                <a href="#">приключения</a>
+                                <a href="${currentURI}#">военные</a>,
+                                <a href="${currentURI}#">детектив</a>,
+                                <a href="${currentURI}#">приключения</a>
                             </div>
                             <div class="description">
                                 I draw pictures and I make colouring books! Welcome to my world. Tumble down the rabbit hole and find yourself in my inky black and white Wonderland... I'm an illustrator and ink evangelist who prefers pens and pencils to pixels. I create intricate, hand drawn illustrations predominately, although not exclusively, in black and white. My creativity is cultivated by a curious imagination and a delight in the fantastic. Much of my work has roots in the flora and fauna that surrounded me growing up on my parent's fish farm in rural Scotland.
@@ -1153,13 +1021,13 @@
                             <div class="footer">
                                 <div class="published">
                                     Опубликовано:
-                                    <a href="#">
+                                    <a href="${currentURI}#">
                                         <span>18</span>
                                         книг
                                     </a>
                                 </div>
                                 <div class="reviews">
-                                    <a href="#">
+                                    <a href="${currentURI}#">
                                         <span>5</span>
                                         отзывов
                                     </a>
@@ -1170,13 +1038,13 @@
 
                     <!-- START (Кнопка "Показать еще") -->
                     <div class="show-more">
-                        <a class="btn" href="#">
+                        <a class="btn" href="${currentURI}#">
                             Показать еще
                         </a>
                     </div>
                     <!-- END (Кнопка "Показать еще") -->
                 </div>
-                
+
                 <div class="column right-column">
                     <div class="item shifter">
                     </div>
@@ -1184,161 +1052,4 @@
             </div>
         </main>
 
-        <!-- END (Тело страницы) -------------------------------------------------------------------------------------------- -->
-
-        <footer>
-            <div class="partners-on-shelf">
-                <a href="#">
-                    <img src="img/vb/partner-1.jpg" width="115" height="31">
-                </a>
-                <a href="#">
-                    <img src="img/vb/partner-2.jpg" width="115" height="28">
-                </a>
-                <a href="#">
-                    <img src="img/vb/partner-3.jpg" width="106" height="31">
-                </a>
-                <a href="#">
-                    <img src="img/vb/partner-4.jpg" width="117" height="24">
-                </a>
-                <a href="#">
-                    <img src="img/vb/partner-5.jpg" width="113" height="24">
-                </a>
-            </div>
-
-            <div class="books-on-shelf">
-                <img src="img/vb/footer-book-1.jpg" width="87" height="103">
-                <img src="img/vb/footer-book-2.jpg" width="92" height="133">
-                <img src="img/vb/footer-book-3.jpg" width="115" height="154">
-                <img src="img/vb/footer-book-4.jpg" width="83" height="121">
-                <img src="img/vb/footer-book-5.jpg" width="123" height="183">
-                <img src="img/vb/footer-book-6.jpg" width="122" height="152">
-                <img src="img/vb/footer-book-7.jpg" width="122" height="165">
-                <img src="img/vb/footer-book-8.jpg" width="89" height="139">
-                <img src="img/vb/footer-book-9.jpg" width="75" height="120">
-            </div>
-
-            <div class="footer-shelf">
-                <div class="shelf-left-part"></div>
-                <div class="shelf-right-part"></div>
-                <div class="shelf-bottom-part"></div>
-            </div>
-
-            <div class="under-footer-shelf">
-                <div class="copyright">
-                    © 1993–2014 <h3>Верибук</h3>.ру
-                </div>
-
-                <div class="about-company">
-                    <a href="#">
-                        <h3>О компании</h3>
-                    </a>
-                    <a href="#">
-                        <h4>Пресс-центр</h4>
-                    </a>
-                    <a href="#">
-                        <h4>Вакансии</h4>
-                    </a>
-                    <a href="#">
-                        <h4>Реквизиты</h4>
-                    </a>
-                    <a href="#">
-                        <h4>О компании</h4>
-                    </a>
-                </div>
-
-                <div class="help">
-                    <a href="#">
-                        <h3>Помощь</h3>
-                    </a>
-                    <a href="#">
-                        <h4>Как сделать заказ</h4>
-                    </a>
-                    <a href="#">
-                        <h4>Доставка</h4>
-                    </a>
-                    <a href="#">
-                        <h4>Оплата</h4>
-                    </a>
-                    <a href="#">
-                        <h4>Помощь</h4>
-                    </a>
-                    <a href="#">
-                        <h4>Обратная связь</h4>
-                    </a>
-                </div>
-
-                <div class="earn-with-us">
-                    <a href="#">
-                        <h3>Зарабатывайте с нами</h3>
-                    </a>
-                    <a href="#">
-                        <h4>Продавайте Ваши товары на Ozon.ru</h4>
-                    </a>
-                    <a href="#">
-                        <h4>Становитесь поставщиками Букинистики</h4>
-                    </a>
-                    <a href="#">
-                        <h4>Партнёрская программа Ozon.ru</h4>
-                    </a>
-                    <a href="#">
-                        <h4>Размещайте рекламу на Ozon.ru</h4>
-                    </a>
-                    <a href="#">
-                        <h4>Открывайте пункты выдачи заказов Ozon.ru</h4>
-                    </a>
-                </div>
-
-                <div class="site-map">
-                    <a href="#">
-                        <h3>Карта сайта</h3>
-                    </a>
-                    <a href="#">
-                        <h4>Покупка товаров (b2b)</h4>
-                    </a>
-                    <a href="#">
-                        <h4>Подарочные сертификаты</h4>
-                    </a>
-                    <a href="#">
-                        <h4>Loyalica</h4>
-                    </a>
-                </div>
-
-                <div class="social-sharing">
-                    <a href="https://www.facebook.com/sharer/sharer.php?u=verybook.ru"
-                       title="Поделиться Verybook на Facebook"
-                       class="share-icon-facebook">
-                    </a>
-                    <a href="#"
-                       title="Поделиться Verybook ВКонтакте"
-                       class="share-icon-vk">
-                    </a>
-                    <a href="#"
-                       title="Поделиться Verybook в ЖЖ"
-                       class="share-icon-livejournal">
-                    </a>
-                </div>
-            </div>
-        </footer>
-    </body>
-
-    <script type="text/javascript" src="js/author/expand-collapse-description.js"></script>
-    <script type="text/javascript" src="js/author-pa/datatables.js"></script>
-    <script type="text/javascript" src="js/author-pa/modals.js"></script>
-    <script type="text/javascript" src="js/author-rating/correct-author-count-word-endings.js"></script>
-    <script type="text/javascript" src="js/book/page-scroller.js"></script>
-    <script type="text/javascript" src="js/book/modals.js"></script>
-    <script type="text/javascript" src="js/create-ebook/color-picker.js"></script>
-    <script type="text/javascript" src="js/create-ebook/uploaded-file-info.js"></script>
-    <script type="text/javascript" src="js/index/banners.js"></script>
-    <script type="text/javascript" src="js/index-2/hide-step-pics.js"></script>
-    <script type="text/javascript" src="js/index-2/quote-banner.js"></script>
-    <script type="text/javascript" src="js/jquery/plugins/vb-dataTables.js"></script>
-    <script type="text/javascript" src="js/lib/creditly.js"></script>
-    <script type="text/javascript" src="js/search-book/banners.js"></script>
-    <script type="text/javascript" src="js/search-book/correct-count-word-endings.js"></script>
-    <script type="text/javascript" src="js/shop-cart/banners.js"></script>
-    <script type="text/javascript" src="js/vb/banner-column-compliance.js"></script>
-    <script type="text/javascript" src="js/vb/vb.js"></script>
-    <script type="text/javascript" src="js/vb/shelf.js"></script>
-
-</html>
+<jsp:include page="fragments/footer.jsp"/>
