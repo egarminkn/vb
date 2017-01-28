@@ -24,61 +24,7 @@
                 </div>
                 <!-- END (3 звезды рейтинга автора) -->
 
-                <!-- START (Рейтинг-список) -->
-                <div class="ratings">
-                    Рейтинг автора
-                    <ul class="list">
-                        <li class="item">
-                            <div class="dynamic-up ">
-                                <!-- У div.dynamic-up можно использовать доп.класс invert для того, чтобы стрелочку направить вниз -->
-                                <img src="resources/vb/svg/vb/arrow_up.svg" width="71" height="213">
-                            </div>
-                            <a class="link" href="${currentURI}#">
-                                №
-                                <span>19</span>
-                            </a>
-                            <div class="rating-title">
-                                в
-                                <span>
-                                    общем рейтинге
-                                </span>
-                            </div>
-                        </li>
-                        <li class="item">
-                            <div class="dynamic-up invert">
-                                <!-- У div.dynamic-up можно использовать доп.класс invert для того, чтобы стрелочку направить вниз -->
-                                <img src="resources/vb/svg/vb/arrow_up.svg" width="71" height="213">
-                            </div>
-                            <a class="link" href="${currentURI}#">
-                                №
-                                <span>1</span>
-                            </a>
-                            <div class="rating-title">
-                                среди
-                                <span>
-                                    Literary
-                                </span>
-                            </div>
-                        </li>
-                        <li class="item">
-                            <div class="dynamic-up ">
-                                <!-- У div.dynamic-up можно использовать доп.класс invert для того, чтобы стрелочку направить вниз -->
-                                <img src="resources/vb/svg/vb/arrow_up.svg" width="71" height="213">
-                            </div>
-                            <a class="link" href="${currentURI}#">
-                                №
-                                <span>4</span>
-                            </a>
-                            <div class="rating-title">
-                                среди
-                                <span>
-                                    Genre Fiction
-                                </span>
-                            </div>
-                        </li>
-                    </ul>
-                </div>
-                <!-- END (Рейтинг-список) -->
+<jsp:include page="components/vb/ratings.jsp"/>
 
                 <!-- START (Пальчики-лайкчики) -->
                 <div class="likes">
