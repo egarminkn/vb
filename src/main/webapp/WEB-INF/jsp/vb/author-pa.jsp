@@ -239,28 +239,12 @@
                                 <span class="like">793</span> / <span class="dislike">111</span>
                             </td>
                             <td class="td price">
-                                <!-- START (Ценник со значком рубля) -->
-                                <div class="price-sign">
-                                    <span class="value">
-                                        51
-                                    </span>
-                                    <span class="currency">
-                                        <img src="resources/vb/svg/vb/ruble-currency-sign.svg" width="511" height="511">
-                                    </span>
-                                </div>
-                                <!-- END (Ценник со значком рубля) -->
+<c:set var="price" value="51" scope="request"/>
+<jsp:include page="components/vb/price-ruble-sign.jsp"/>
                             </td>
                             <td class="td profit">
-                                <!-- START (Ценник со значком рубля) -->
-                                <div class="price-sign">
-                                    <span class="value">
-                                        501
-                                    </span>
-                                    <span class="currency">
-                                        <img src="resources/vb/svg/vb/ruble-currency-sign.svg" width="511" height="511">
-                                    </span>
-                                </div>
-                                <!-- END (Ценник со значком рубля) -->
+<c:set var="price" value="501" scope="request"/>
+<jsp:include page="components/vb/price-ruble-sign.jsp"/>
                             </td>
                         </tr>
                         <tr class="tr">
@@ -317,28 +301,12 @@
                                 <span class="like">11</span> / <span class="dislike">3</span>
                             </td>
                             <td class="td price">
-                                <!-- START (Ценник со значком рубля) -->
-                                <div class="price-sign">
-                                    <span class="value">
-                                        501
-                                    </span>
-                                    <span class="currency">
-                                        <img src="resources/vb/svg/vb/ruble-currency-sign.svg" width="511" height="511">
-                                    </span>
-                                </div>
-                                <!-- END (Ценник со значком рубля) -->
+<c:set var="price" value="501" scope="request"/>
+<jsp:include page="components/vb/price-ruble-sign.jsp"/>
                             </td>
                             <td class="td profit">
-                                <!-- START (Ценник со значком рубля) -->
-                                <div class="price-sign">
-                                    <span class="value">
-                                        0
-                                    </span>
-                                    <span class="currency">
-                                        <img src="resources/vb/svg/vb/ruble-currency-sign.svg" width="511" height="511">
-                                    </span>
-                                </div>
-                                <!-- END (Ценник со значком рубля) -->
+<c:set var="price" value="0" scope="request"/>
+<jsp:include page="components/vb/price-ruble-sign.jsp"/>
                             </td>
                         </tr>
                         <tr class="tr">
@@ -381,28 +349,12 @@
                                 <span class="like">53</span> / <span class="dislike">0</span>
                             </td>
                             <td class="td price">
-                                <!-- START (Ценник со значком рубля) -->
-                                <div class="price-sign">
-                                    <span class="value">
-                                        5111
-                                    </span>
-                                    <span class="currency">
-                                        <img src="resources/vb/svg/vb/ruble-currency-sign.svg" width="511" height="511">
-                                    </span>
-                                </div>
-                                <!-- END (Ценник со значком рубля) -->
+<c:set var="price" value="5111" scope="request"/>
+<jsp:include page="components/vb/price-ruble-sign.jsp"/>
                             </td>
                             <td class="td profit">
-                                <!-- START (Ценник со значком рубля) -->
-                                <div class="price-sign">
-                                    <span class="value">
-                                        150
-                                    </span>
-                                    <span class="currency">
-                                        <img src="resources/vb/svg/vb/ruble-currency-sign.svg" width="511" height="511">
-                                    </span>
-                                </div>
-                                <!-- END (Ценник со значком рубля) -->
+<c:set var="price" value="150" scope="request"/>
+<jsp:include page="components/vb/price-ruble-sign.jsp"/>
                             </td>
                         </tr>
                         <tr class="tr">
@@ -445,28 +397,12 @@
                                 <span class="like">77</span> / <span class="dislike">111</span>
                             </td>
                             <td class="td price">
-                                <!-- START (Ценник со значком рубля) -->
-                                <div class="price-sign">
-                                    <span class="value">
-                                        51
-                                    </span>
-                                    <span class="currency">
-                                        <img src="resources/vb/svg/vb/ruble-currency-sign.svg" width="511" height="511">
-                                    </span>
-                                </div>
-                                <!-- END (Ценник со значком рубля) -->
+<c:set var="price" value="51" scope="request"/>
+<jsp:include page="components/vb/price-ruble-sign.jsp"/>
                             </td>
                             <td class="td profit">
-                                <!-- START (Ценник со значком рубля) -->
-                                <div class="price-sign">
-                                    <span class="value">
-                                        0
-                                    </span>
-                                    <span class="currency">
-                                        <img src="resources/vb/svg/vb/ruble-currency-sign.svg" width="511" height="511">
-                                    </span>
-                                </div>
-                                <!-- END (Ценник со значком рубля) -->
+<c:set var="price" value="0" scope="request"/>
+<jsp:include page="components/vb/price-ruble-sign.jsp"/>
                             </td>
                         </tr>
                         <tr class="tr">
@@ -509,28 +445,12 @@
                                 <span class="like">793</span> / <span class="dislike">111</span>
                             </td>
                             <td class="td price">
-                                <!-- START (Ценник со значком рубля) -->
-                                <div class="price-sign">
-                                    <span class="value">
-                                        48
-                                    </span>
-                                    <span class="currency">
-                                        <img src="resources/vb/svg/vb/ruble-currency-sign.svg" width="511" height="511">
-                                    </span>
-                                </div>
-                                <!-- END (Ценник со значком рубля) -->
+<c:set var="price" value="48" scope="request"/>
+<jsp:include page="components/vb/price-ruble-sign.jsp"/>
                             </td>
                             <td class="td profit">
-                                <!-- START (Ценник со значком рубля) -->
-                                <div class="price-sign">
-                                    <span class="value">
-                                        517
-                                    </span>
-                                    <span class="currency">
-                                        <img src="resources/vb/svg/vb/ruble-currency-sign.svg" width="511" height="511">
-                                    </span>
-                                </div>
-                                <!-- END (Ценник со значком рубля) -->
+<c:set var="price" value="517" scope="request"/>
+<jsp:include page="components/vb/price-ruble-sign.jsp"/>
                             </td>
                         </tr>
                         <tr class="tr">
@@ -587,28 +507,12 @@
                                 <span class="like">11</span> / <span class="dislike">3</span>
                             </td>
                             <td class="td price">
-                                <!-- START (Ценник со значком рубля) -->
-                                <div class="price-sign">
-                                    <span class="value">
-                                        51
-                                    </span>
-                                    <span class="currency">
-                                        <img src="resources/vb/svg/vb/ruble-currency-sign.svg" width="511" height="511">
-                                    </span>
-                                </div>
-                                <!-- END (Ценник со значком рубля) -->
+<c:set var="price" value="51" scope="request"/>
+<jsp:include page="components/vb/price-ruble-sign.jsp"/>
                             </td>
                             <td class="td profit">
-                                <!-- START (Ценник со значком рубля) -->
-                                <div class="price-sign">
-                                    <span class="value">
-                                        0
-                                    </span>
-                                    <span class="currency">
-                                        <img src="resources/vb/svg/vb/ruble-currency-sign.svg" width="511" height="511">
-                                    </span>
-                                </div>
-                                <!-- END (Ценник со значком рубля) -->
+<c:set var="price" value="0" scope="request"/>
+<jsp:include page="components/vb/price-ruble-sign.jsp"/>
                             </td>
                         </tr>
                         <tr class="tr">
@@ -651,28 +555,12 @@
                                 <span class="like">53</span> / <span class="dislike">0</span>
                             </td>
                             <td class="td price">
-                                <!-- START (Ценник со значком рубля) -->
-                                <div class="price-sign">
-                                    <span class="value">
-                                        158
-                                    </span>
-                                    <span class="currency">
-                                        <img src="resources/vb/svg/vb/ruble-currency-sign.svg" width="511" height="511">
-                                    </span>
-                                </div>
-                                <!-- END (Ценник со значком рубля) -->
+<c:set var="price" value="158" scope="request"/>
+<jsp:include page="components/vb/price-ruble-sign.jsp"/>
                             </td>
                             <td class="td profit">
-                                <!-- START (Ценник со значком рубля) -->
-                                <div class="price-sign">
-                                    <span class="value">
-                                        150
-                                    </span>
-                                    <span class="currency">
-                                        <img src="resources/vb/svg/vb/ruble-currency-sign.svg" width="511" height="511">
-                                    </span>
-                                </div>
-                                <!-- END (Ценник со значком рубля) -->
+<c:set var="price" value="150" scope="request"/>
+<jsp:include page="components/vb/price-ruble-sign.jsp"/>
                             </td>
                         </tr>
                         <tr class="tr">
@@ -715,28 +603,12 @@
                                 <span class="like">77</span> / <span class="dislike">111</span>
                             </td>
                             <td class="td price">
-                                <!-- START (Ценник со значком рубля) -->
-                                <div class="price-sign">
-                                    <span class="value">
-                                        51
-                                    </span>
-                                    <span class="currency">
-                                        <img src="resources/vb/svg/vb/ruble-currency-sign.svg" width="511" height="511">
-                                    </span>
-                                </div>
-                                <!-- END (Ценник со значком рубля) -->
+<c:set var="price" value="51" scope="request"/>
+<jsp:include page="components/vb/price-ruble-sign.jsp"/>
                             </td>
                             <td class="td profit">
-                                <!-- START (Ценник со значком рубля) -->
-                                <div class="price-sign">
-                                    <span class="value">
-                                        0
-                                    </span>
-                                    <span class="currency">
-                                        <img src="resources/vb/svg/vb/ruble-currency-sign.svg" width="511" height="511">
-                                    </span>
-                                </div>
-                                <!-- END (Ценник со значком рубля) -->
+<c:set var="price" value="0" scope="request"/>
+<jsp:include page="components/vb/price-ruble-sign.jsp"/>
                             </td>
                         </tr>
                         <tr class="tr">
@@ -779,28 +651,12 @@
                                 <span class="like">793</span> / <span class="dislike">111</span>
                             </td>
                             <td class="td price">
-                                <!-- START (Ценник со значком рубля) -->
-                                <div class="price-sign">
-                                    <span class="value">
-                                        121
-                                    </span>
-                                    <span class="currency">
-                                        <img src="resources/vb/svg/vb/ruble-currency-sign.svg" width="511" height="511">
-                                    </span>
-                                </div>
-                                <!-- END (Ценник со значком рубля) -->
+<c:set var="price" value="121" scope="request"/>
+<jsp:include page="components/vb/price-ruble-sign.jsp"/>
                             </td>
                             <td class="td profit">
-                                <!-- START (Ценник со значком рубля) -->
-                                <div class="price-sign">
-                                    <span class="value">
-                                        517
-                                    </span>
-                                    <span class="currency">
-                                        <img src="resources/vb/svg/vb/ruble-currency-sign.svg" width="511" height="511">
-                                    </span>
-                                </div>
-                                <!-- END (Ценник со значком рубля) -->
+<c:set var="price" value="517" scope="request"/>
+<jsp:include page="components/vb/price-ruble-sign.jsp"/>
                             </td>
                         </tr>
                         <tr class="tr">
@@ -857,28 +713,12 @@
                                 <span class="like">11</span> / <span class="dislike">3</span>
                             </td>
                             <td class="td price">
-                                <!-- START (Ценник со значком рубля) -->
-                                <div class="price-sign">
-                                    <span class="value">
-                                        51
-                                    </span>
-                                    <span class="currency">
-                                        <img src="resources/vb/svg/vb/ruble-currency-sign.svg" width="511" height="511">
-                                    </span>
-                                </div>
-                                <!-- END (Ценник со значком рубля) -->
+<c:set var="price" value="51" scope="request"/>
+<jsp:include page="components/vb/price-ruble-sign.jsp"/>
                             </td>
                             <td class="td profit">
-                                <!-- START (Ценник со значком рубля) -->
-                                <div class="price-sign">
-                                    <span class="value">
-                                        0
-                                    </span>
-                                    <span class="currency">
-                                        <img src="resources/vb/svg/vb/ruble-currency-sign.svg" width="511" height="511">
-                                    </span>
-                                </div>
-                                <!-- END (Ценник со значком рубля) -->
+<c:set var="price" value="0" scope="request"/>
+<jsp:include page="components/vb/price-ruble-sign.jsp"/>
                             </td>
                         </tr>
                         <tr class="tr">
@@ -921,28 +761,12 @@
                                 <span class="like">53</span> / <span class="dislike">0</span>
                             </td>
                             <td class="td price">
-                                <!-- START (Ценник со значком рубля) -->
-                                <div class="price-sign">
-                                    <span class="value">
-                                        175
-                                    </span>
-                                    <span class="currency">
-                                        <img src="resources/vb/svg/vb/ruble-currency-sign.svg" width="511" height="511">
-                                    </span>
-                                </div>
-                                <!-- END (Ценник со значком рубля) -->
+<c:set var="price" value="175" scope="request"/>
+<jsp:include page="components/vb/price-ruble-sign.jsp"/>
                             </td>
                             <td class="td profit">
-                                <!-- START (Ценник со значком рубля) -->
-                                <div class="price-sign">
-                                    <span class="value">
-                                        150
-                                    </span>
-                                    <span class="currency">
-                                        <img src="resources/vb/svg/vb/ruble-currency-sign.svg" width="511" height="511">
-                                    </span>
-                                </div>
-                                <!-- END (Ценник со значком рубля) -->
+<c:set var="price" value="150" scope="request"/>
+<jsp:include page="components/vb/price-ruble-sign.jsp"/>
                             </td>
                         </tr>
                         <tr class="tr">
@@ -985,28 +809,12 @@
                                 <span class="like">77</span> / <span class="dislike">111</span>
                             </td>
                             <td class="td price">
-                                <!-- START (Ценник со значком рубля) -->
-                                <div class="price-sign">
-                                    <span class="value">
-                                        1151
-                                    </span>
-                                    <span class="currency">
-                                        <img src="resources/vb/svg/vb/ruble-currency-sign.svg" width="511" height="511">
-                                    </span>
-                                </div>
-                                <!-- END (Ценник со значком рубля) -->
+<c:set var="price" value="1151" scope="request"/>
+<jsp:include page="components/vb/price-ruble-sign.jsp"/>
                             </td>
                             <td class="td profit">
-                                <!-- START (Ценник со значком рубля) -->
-                                <div class="price-sign">
-                                    <span class="value">
-                                        0
-                                    </span>
-                                    <span class="currency">
-                                        <img src="resources/vb/svg/vb/ruble-currency-sign.svg" width="511" height="511">
-                                    </span>
-                                </div>
-                                <!-- END (Ценник со значком рубля) -->
+<c:set var="price" value="0" scope="request"/>
+<jsp:include page="components/vb/price-ruble-sign.jsp"/>
                             </td>
                         </tr>
                         </tbody>
@@ -1081,16 +889,8 @@
                                 <!-- END (Пальчики-лайкчики) -->
                             </td>
                             <td class="td price">
-                                <!-- START (Ценник со значком рубля) -->
-                                <div class="price-sign">
-                                    <span class="value">
-                                        5140
-                                    </span>
-                                    <span class="currency">
-                                        <img src="resources/vb/svg/vb/ruble-currency-sign.svg" width="511" height="511">
-                                    </span>
-                                </div>
-                                <!-- END (Ценник со значком рубля) -->
+<c:set var="price" value="5140" scope="request"/>
+<jsp:include page="components/vb/price-ruble-sign.jsp"/>
                             </td>
                             <td class="td download">
                                 <span>Форматы:</span>
@@ -1146,16 +946,8 @@
                                 <!-- END (Пальчики-лайкчики) -->
                             </td>
                             <td class="td price">
-                                <!-- START (Ценник со значком рубля) -->
-                                <div class="price-sign">
-                                    <span class="value">
-                                        651
-                                    </span>
-                                    <span class="currency">
-                                        <img src="resources/vb/svg/vb/ruble-currency-sign.svg" width="511" height="511">
-                                    </span>
-                                </div>
-                                <!-- END (Ценник со значком рубля) -->
+<c:set var="price" value="651" scope="request"/>
+<jsp:include page="components/vb/price-ruble-sign.jsp"/>
                             </td>
                             <td class="td download">
                                 <span>Форматы:</span>
@@ -1211,16 +1003,8 @@
                                 <!-- END (Пальчики-лайкчики) -->
                             </td>
                             <td class="td price">
-                                <!-- START (Ценник со значком рубля) -->
-                                <div class="price-sign">
-                                    <span class="value">
-                                        501
-                                    </span>
-                                    <span class="currency">
-                                        <img src="resources/vb/svg/vb/ruble-currency-sign.svg" width="511" height="511">
-                                    </span>
-                                </div>
-                                <!-- END (Ценник со значком рубля) -->
+<c:set var="price" value="501" scope="request"/>
+<jsp:include page="components/vb/price-ruble-sign.jsp"/>
                             </td>
                             <td class="td download">
                                 <span>Форматы:</span>
@@ -1273,16 +1057,8 @@
                                 <!-- END (Пальчики-лайкчики) -->
                             </td>
                             <td class="td price">
-                                <!-- START (Ценник со значком рубля) -->
-                                <div class="price-sign">
-                                    <span class="value">
-                                        5551
-                                    </span>
-                                    <span class="currency">
-                                        <img src="resources/vb/svg/vb/ruble-currency-sign.svg" width="511" height="511">
-                                    </span>
-                                </div>
-                                <!-- END (Ценник со значком рубля) -->
+<c:set var="price" value="5551" scope="request"/>
+<jsp:include page="components/vb/price-ruble-sign.jsp"/>
                             </td>
                             <td class="td download">
                                 <span>Форматы:</span>
@@ -1338,16 +1114,8 @@
                                 <!-- END (Пальчики-лайкчики) -->
                             </td>
                             <td class="td price">
-                                <!-- START (Ценник со значком рубля) -->
-                                <div class="price-sign">
-                                    <span class="value">
-                                        5
-                                    </span>
-                                    <span class="currency">
-                                        <img src="resources/vb/svg/vb/ruble-currency-sign.svg" width="511" height="511">
-                                    </span>
-                                </div>
-                                <!-- END (Ценник со значком рубля) -->
+<c:set var="price" value="5" scope="request"/>
+<jsp:include page="components/vb/price-ruble-sign.jsp"/>
                             </td>
                             <td class="td download">
                                 <span>Форматы:</span>
@@ -1400,16 +1168,8 @@
                                 <!-- END (Пальчики-лайкчики) -->
                             </td>
                             <td class="td price">
-                                <!-- START (Ценник со значком рубля) -->
-                                <div class="price-sign">
-                                    <span class="value">
-                                        501
-                                    </span>
-                                    <span class="currency">
-                                        <img src="resources/vb/svg/vb/ruble-currency-sign.svg" width="511" height="511">
-                                    </span>
-                                </div>
-                                <!-- END (Ценник со значком рубля) -->
+<c:set var="price" value="501" scope="request"/>
+<jsp:include page="components/vb/price-ruble-sign.jsp"/>
                             </td>
                             <td class="td download">
                                 <span>Форматы:</span>
@@ -1465,16 +1225,8 @@
                                 <!-- END (Пальчики-лайкчики) -->
                             </td>
                             <td class="td price">
-                                <!-- START (Ценник со значком рубля) -->
-                                <div class="price-sign">
-                                    <span class="value">
-                                        515
-                                    </span>
-                                    <span class="currency">
-                                        <img src="resources/vb/svg/vb/ruble-currency-sign.svg" width="511" height="511">
-                                    </span>
-                                </div>
-                                <!-- END (Ценник со значком рубля) -->
+<c:set var="price" value="515" scope="request"/>
+<jsp:include page="components/vb/price-ruble-sign.jsp"/>
                             </td>
                             <td class="td download">
                                 <span>Форматы:</span>
@@ -1530,16 +1282,8 @@
                                 <!-- END (Пальчики-лайкчики) -->
                             </td>
                             <td class="td price">
-                                <!-- START (Ценник со значком рубля) -->
-                                <div class="price-sign">
-                                    <span class="value">
-                                        151
-                                    </span>
-                                    <span class="currency">
-                                        <img src="resources/vb/svg/vb/ruble-currency-sign.svg" width="511" height="511">
-                                    </span>
-                                </div>
-                                <!-- END (Ценник со значком рубля) -->
+<c:set var="price" value="151" scope="request"/>
+<jsp:include page="components/vb/price-ruble-sign.jsp"/>
                             </td>
                             <td class="td download">
                                 <span>Форматы:</span>
@@ -1592,16 +1336,8 @@
                                 <!-- END (Пальчики-лайкчики) -->
                             </td>
                             <td class="td price">
-                                <!-- START (Ценник со значком рубля) -->
-                                <div class="price-sign">
-                                    <span class="value">
-                                        2251
-                                    </span>
-                                    <span class="currency">
-                                        <img src="resources/vb/svg/vb/ruble-currency-sign.svg" width="511" height="511">
-                                    </span>
-                                </div>
-                                <!-- END (Ценник со значком рубля) -->
+<c:set var="price" value="2251" scope="request"/>
+<jsp:include page="components/vb/price-ruble-sign.jsp"/>
                             </td>
                             <td class="td download">
                                 <span>Форматы:</span>
@@ -1657,16 +1393,8 @@
                                 <!-- END (Пальчики-лайкчики) -->
                             </td>
                             <td class="td price">
-                                <!-- START (Ценник со значком рубля) -->
-                                <div class="price-sign">
-                                    <span class="value">
-                                        511
-                                    </span>
-                                    <span class="currency">
-                                        <img src="resources/vb/svg/vb/ruble-currency-sign.svg" width="511" height="511">
-                                    </span>
-                                </div>
-                                <!-- END (Ценник со значком рубля) -->
+<c:set var="price" value="511" scope="request"/>
+<jsp:include page="components/vb/price-ruble-sign.jsp"/>
                             </td>
                             <td class="td download">
                                 <span>Форматы:</span>

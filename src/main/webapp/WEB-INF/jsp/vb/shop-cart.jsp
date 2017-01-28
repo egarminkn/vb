@@ -79,16 +79,8 @@
                                         <!-- END (Триплет ссылок: обложка-название-автор) -->
                                     </td>
                                     <td class="td price">
-                                        <!-- START (Ценник со значком рубля) -->
-                                        <div class="price-sign">
-                                            <span class="value">
-                                                415
-                                            </span>
-                                            <span class="currency">
-                                                <img src="resources/vb/svg/vb/ruble-currency-sign.svg" width="511" height="511">
-                                            </span>
-                                        </div>
-                                        <!-- END (Ценник со значком рубля) -->
+<c:set var="price" value="415" scope="request"/>
+<jsp:include page="components/vb/price-ruble-sign.jsp"/>
                                     </td>
                                     <td class="td to-spare-cart">
                                         <a class="to-spare-cart" href="${currentURI}#" title="Отложить на неопределенный срок"></a>
@@ -119,16 +111,8 @@
                                         <!-- END (Триплет ссылок: обложка-название-автор) -->
                                     </td>
                                     <td class="td price">
-                                        <!-- START (Ценник со значком рубля) -->
-                                        <div class="price-sign">
-                                            <span class="value">
-                                                0
-                                            </span>
-                                            <span class="currency">
-                                                <img src="resources/vb/svg/vb/ruble-currency-sign.svg" width="511" height="511">
-                                            </span>
-                                        </div>
-                                        <!-- END (Ценник со значком рубля) -->
+<c:set var="price" value="0" scope="request"/>
+<jsp:include page="components/vb/price-ruble-sign.jsp"/>
                                     </td>
                                     <td class="td to-spare-cart">
                                         <a class="to-spare-cart" href="${currentURI}#" title="Отложить на неопределенный срок"></a>
@@ -159,16 +143,8 @@
                                         <!-- END (Триплет ссылок: обложка-название-автор) -->
                                     </td>
                                     <td class="td price">
-                                        <!-- START (Ценник со значком рубля) -->
-                                        <div class="price-sign">
-                                            <span class="value">
-                                                230
-                                            </span>
-                                            <span class="currency">
-                                                <img src="resources/vb/svg/vb/ruble-currency-sign.svg" width="511" height="511">
-                                            </span>
-                                        </div>
-                                        <!-- END (Ценник со значком рубля) -->
+<c:set var="price" value="230" scope="request"/>
+<jsp:include page="components/vb/price-ruble-sign.jsp"/>
                                     </td>
                                     <td class="td to-spare-cart">
                                         <a class="to-spare-cart" href="${currentURI}#" title="Отложить на неопределенный срок"></a>
@@ -546,16 +522,8 @@
                                 <!-- END (Триплет ссылок: обложка-название-автор) -->
                             </td>
                             <td class="td price">
-                                <!-- START (Ценник со значком рубля) -->
-                                <div class="price-sign">
-                                    <span class="value">
-                                        415
-                                    </span>
-                                    <span class="currency">
-                                        <img src="resources/vb/svg/vb/ruble-currency-sign.svg" width="511" height="511">
-                                    </span>
-                                </div>
-                                <!-- END (Ценник со значком рубля) -->
+<c:set var="price" value="415" scope="request"/>
+<jsp:include page="components/vb/price-ruble-sign.jsp"/>
                             </td>
                             <td class="td to-main-cart">
                                 <a class="to-main-cart" href="${currentURI}#" title="Переложить в корзину"></a>
@@ -586,16 +554,8 @@
                                 <!-- END (Триплет ссылок: обложка-название-автор) -->
                             </td>
                             <td class="td price">
-                                <!-- START (Ценник со значком рубля) -->
-                                <div class="price-sign">
-                                    <span class="value">
-                                        0
-                                    </span>
-                                    <span class="currency">
-                                        <img src="resources/vb/svg/vb/ruble-currency-sign.svg" width="511" height="511">
-                                    </span>
-                                </div>
-                                <!-- END (Ценник со значком рубля) -->
+<c:set var="price" value="0" scope="request"/>
+<jsp:include page="components/vb/price-ruble-sign.jsp"/>
                             </td>
                             <td class="td to-main-cart">
                                 <a class="to-main-cart" href="${currentURI}#" title="Переложить в корзину"></a>
@@ -626,16 +586,8 @@
                                 <!-- END (Триплет ссылок: обложка-название-автор) -->
                             </td>
                             <td class="td price">
-                                <!-- START (Ценник со значком рубля) -->
-                                <div class="price-sign">
-                                    <span class="value">
-                                        230
-                                    </span>
-                                    <span class="currency">
-                                        <img src="resources/vb/svg/vb/ruble-currency-sign.svg" width="511" height="511">
-                                    </span>
-                                </div>
-                                <!-- END (Ценник со значком рубля) -->
+<c:set var="price" value="230" scope="request"/>
+<jsp:include page="components/vb/price-ruble-sign.jsp"/>
                             </td>
                             <td class="td to-main-cart">
                                 <a class="to-main-cart" href="${currentURI}#" title="Переложить в корзину"></a>
