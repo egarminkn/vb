@@ -125,17 +125,7 @@
                             </div>
                         </div>
                         <div class="actions">
-                            <!-- START (Кнопка "В корзину" с ценником) -->
-                            <div class="buy">
-                                <div class="item price">
-                                    <span class="value">112</span>
-                                    <span class="currency">р.</span>
-                                </div>
-                                <a class="item cart-btn" href="${currentURI}#">
-                                    <span class="text">В корзину</span>
-                                </a>
-                            </div>
-                            <!-- END (Кнопка "В корзину" с ценником) -->
+<jsp:include page="components/vb/price-cart-btn.jsp"/>
 
 <jsp:include page="components/vb/rating-5-stars.jsp"/>
 
@@ -165,17 +155,7 @@
                             </div>
                         </div>
                         <div class="actions">
-                            <!-- START (Кнопка "В корзину" с ценником) -->
-                            <div class="buy">
-                                <div class="item price">
-                                    <span class="value">112</span>
-                                    <span class="currency">р.</span>
-                                </div>
-                                <a class="item cart-btn" href="${currentURI}#">
-                                    <span class="text">В корзину</span>
-                                </a>
-                            </div>
-                            <!-- END (Кнопка "В корзину" с ценником) -->
+<jsp:include page="components/vb/price-cart-btn.jsp"/>
 
 <jsp:include page="components/vb/rating-5-stars.jsp"/>
 
@@ -205,17 +185,7 @@
                             </div>
                         </div>
                         <div class="actions">
-                            <!-- START (Кнопка "В корзину" с ценником) -->
-                            <div class="buy">
-                                <div class="item price">
-                                    <span class="value">112</span>
-                                    <span class="currency">р.</span>
-                                </div>
-                                <a class="item cart-btn" href="${currentURI}#">
-                                    <span class="text">В корзину</span>
-                                </a>
-                            </div>
-                            <!-- END (Кнопка "В корзину" с ценником) -->
+<jsp:include page="components/vb/price-cart-btn.jsp"/>
 
 <jsp:include page="components/vb/rating-5-stars.jsp"/>
 
@@ -245,17 +215,7 @@
                             </div>
                         </div>
                         <div class="actions">
-                            <!-- START (Кнопка "В корзину" с ценником) -->
-                            <div class="buy">
-                                <div class="item price">
-                                    <span class="value">112</span>
-                                    <span class="currency">р.</span>
-                                </div>
-                                <a class="item cart-btn" href="${currentURI}#">
-                                    <span class="text">В корзину</span>
-                                </a>
-                            </div>
-                            <!-- END (Кнопка "В корзину" с ценником) -->
+<jsp:include page="components/vb/price-cart-btn.jsp"/>
 
 <jsp:include page="components/vb/rating-5-stars.jsp"/>
 
@@ -285,17 +245,7 @@
                             </div>
                         </div>
                         <div class="actions">
-                            <!-- START (Кнопка "В корзину" с ценником) -->
-                            <div class="buy">
-                                <div class="item price">
-                                    <span class="value">112</span>
-                                    <span class="currency">р.</span>
-                                </div>
-                                <a class="item cart-btn" href="${currentURI}#">
-                                    <span class="text">В корзину</span>
-                                </a>
-                            </div>
-                            <!-- END (Кнопка "В корзину" с ценником) -->
+<jsp:include page="components/vb/price-cart-btn.jsp"/>
 
 <jsp:include page="components/vb/rating-5-stars.jsp"/>
 
@@ -325,17 +275,7 @@
                             </div>
                         </div>
                         <div class="actions">
-                            <!-- START (Кнопка "В корзину" с ценником) -->
-                            <div class="buy">
-                                <div class="item price">
-                                    <span class="value">112</span>
-                                    <span class="currency">р.</span>
-                                </div>
-                                <a class="item cart-btn" href="${currentURI}#">
-                                    <span class="text">В корзину</span>
-                                </a>
-                            </div>
-                            <!-- END (Кнопка "В корзину" с ценником) -->
+<jsp:include page="components/vb/price-cart-btn.jsp"/>
 
 <jsp:include page="components/vb/rating-5-stars.jsp"/>
 
@@ -449,17 +389,7 @@
                             </div>
                         </div>
                         <div class="actions">
-                            <!-- START (Кнопка "В корзину" с ценником) -->
-                            <div class="buy">
-                                <div class="item price">
-                                    <span class="value">112</span>
-                                    <span class="currency">р.</span>
-                                </div>
-                                <a class="item cart-btn" href="${currentURI}#">
-                                    <span class="text">В корзину</span>
-                                </a>
-                            </div>
-                            <!-- END (Кнопка "В корзину" с ценником) -->
+<jsp:include page="components/vb/price-cart-btn.jsp"/>
 
 <jsp:include page="components/vb/rating-5-stars.jsp"/>
 
@@ -490,17 +420,7 @@
                             </div>
                         </div>
                         <div class="actions">
-                            <!-- START (Кнопка "В корзину" с ценником) -->
-                            <div class="buy">
-                                <div class="item price">
-                                    <span class="value">112</span>
-                                    <span class="currency">р.</span>
-                                </div>
-                                <a class="item cart-btn" href="${currentURI}#">
-                                    <span class="text">В корзину</span>
-                                </a>
-                            </div>
-                            <!-- END (Кнопка "В корзину" с ценником) -->
+<jsp:include page="components/vb/price-cart-btn.jsp"/>
 
 <jsp:include page="components/vb/rating-5-stars.jsp"/>
 
@@ -531,17 +451,7 @@
                             </div>
                         </div>
                         <div class="actions">
-                            <!-- START (Кнопка "В корзину" с ценником) -->
-                            <div class="buy">
-                                <div class="item price">
-                                    <span class="value">112</span>
-                                    <span class="currency">р.</span>
-                                </div>
-                                <a class="item cart-btn" href="${currentURI}#">
-                                    <span class="text">В корзину</span>
-                                </a>
-                            </div>
-                            <!-- END (Кнопка "В корзину" с ценником) -->
+<jsp:include page="components/vb/price-cart-btn.jsp"/>
 
 <jsp:include page="components/vb/rating-5-stars.jsp"/>
 
