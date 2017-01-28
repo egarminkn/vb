@@ -54,12 +54,7 @@
                                         </a>
                                     </div>
 
-                                    <!-- START (3 звезды рейтинга автора) -->
-                                    <div class="rating-3-stars">
-                                        <div class="rating-stars"></div>
-                                        <div class="rating-number">2,3</div>
-                                    </div>
-                                    <!-- END (3 звезды рейтинга автора) -->
+<jsp:include page="components/vb/rating-3-stars.jsp"/>
                                 </div>
                             </li>
                         </ul>
