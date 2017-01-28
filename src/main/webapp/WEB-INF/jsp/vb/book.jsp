@@ -62,12 +62,7 @@
                     <div class="column column-2">
                         <div class="summary-1">
 
-                            <!-- START (5 звезд рейтинга книги) -->
-                            <div class="rating-5-stars">
-                                <div class="rating-stars"></div>
-                                <div class="rating-number">2,3</div>
-                            </div>
-                            <!-- END (5 звезд рейтинга книги) -->
+<jsp:include page="components/vb/rating-5-stars.jsp"/>
 
                             <div class="reviews">
                                 <a href="${currentURI}#reviews">
@@ -374,12 +369,7 @@
                                     26 Янв 2016
                                 </div>
 
-                                <!-- START (5 звезд рейтинга книги) -->
-                                <div class="rating-5-stars">
-                                    <div class="rating-stars"></div>
-                                    <div class="rating-number">2,3</div>
-                                </div>
-                                <!-- END (5 звезд рейтинга книги) -->
+<jsp:include page="components/vb/rating-5-stars.jsp"/>
 
                                 <!-- START (Пальчики-лайкчики) -->
                                 <div class="likes">
@@ -464,12 +454,7 @@
                                     26 Янв 2016
                                 </div>
 
-                                <!-- START (5 звезд рейтинга книги) -->
-                                <div class="rating-5-stars">
-                                    <div class="rating-stars"></div>
-                                    <div class="rating-number">2,3</div>
-                                </div>
-                                <!-- END (5 звезд рейтинга книги) -->
+<jsp:include page="components/vb/rating-5-stars.jsp"/>
 
                                 <!-- START (Пальчики-лайкчики) -->
                                 <div class="likes">
@@ -554,12 +539,7 @@
                                     26 Янв 2016
                                 </div>
 
-                                <!-- START (5 звезд рейтинга книги) -->
-                                <div class="rating-5-stars">
-                                    <div class="rating-stars"></div>
-                                    <div class="rating-number">2,3</div>
-                                </div>
-                                <!-- END (5 звезд рейтинга книги) -->
+<jsp:include page="components/vb/rating-5-stars.jsp"/>
 
                                 <!-- START (Пальчики-лайкчики) -->
                                 <div class="likes">
@@ -644,12 +624,7 @@
                                     26 Янв 2016
                                 </div>
 
-                                <!-- START (5 звезд рейтинга книги) -->
-                                <div class="rating-5-stars">
-                                    <div class="rating-stars"></div>
-                                    <div class="rating-number">2,3</div>
-                                </div>
-                                <!-- END (5 звезд рейтинга книги) -->
+<jsp:include page="components/vb/rating-5-stars.jsp"/>
 
                                 <!-- START (Пальчики-лайкчики) -->
                                 <div class="likes">
@@ -734,12 +709,7 @@
                                     26 Янв 2016
                                 </div>
 
-                                <!-- START (5 звезд рейтинга книги) -->
-                                <div class="rating-5-stars">
-                                    <div class="rating-stars"></div>
-                                    <div class="rating-number">2,3</div>
-                                </div>
-                                <!-- END (5 звезд рейтинга книги) -->
+<jsp:include page="components/vb/rating-5-stars.jsp"/>
 
                                 <!-- START (Пальчики-лайкчики) -->
                                 <div class="likes">
@@ -824,12 +794,7 @@
                                     26 Янв 2016
                                 </div>
 
-                                <!-- START (5 звезд рейтинга книги) -->
-                                <div class="rating-5-stars">
-                                    <div class="rating-stars"></div>
-                                    <div class="rating-number">2,3</div>
-                                </div>
-                                <!-- END (5 звезд рейтинга книги) -->
+<jsp:include page="components/vb/rating-5-stars.jsp"/>
 
                                 <!-- START (Пальчики-лайкчики) -->
                                 <div class="likes">
@@ -914,12 +879,7 @@
                                     26 Янв 2016
                                 </div>
 
-                                <!-- START (5 звезд рейтинга книги) -->
-                                <div class="rating-5-stars">
-                                    <div class="rating-stars"></div>
-                                    <div class="rating-number">2,3</div>
-                                </div>
-                                <!-- END (5 звезд рейтинга книги) -->
+<jsp:include page="components/vb/rating-5-stars.jsp"/>
 
                                 <!-- START (Пальчики-лайкчики) -->
                                 <div class="likes">
@@ -1004,12 +964,7 @@
                                     26 Янв 2016
                                 </div>
 
-                                <!-- START (5 звезд рейтинга книги) -->
-                                <div class="rating-5-stars">
-                                    <div class="rating-stars"></div>
-                                    <div class="rating-number">2,3</div>
-                                </div>
-                                <!-- END (5 звезд рейтинга книги) -->
+<jsp:include page="components/vb/rating-5-stars.jsp"/>
 
                                 <!-- START (Пальчики-лайкчики) -->
                                 <div class="likes">
@@ -1094,12 +1049,7 @@
                                     26 Янв 2016
                                 </div>
 
-                                <!-- START (5 звезд рейтинга книги) -->
-                                <div class="rating-5-stars">
-                                    <div class="rating-stars"></div>
-                                    <div class="rating-number">2,3</div>
-                                </div>
-                                <!-- END (5 звезд рейтинга книги) -->
+<jsp:include page="components/vb/rating-5-stars.jsp"/>
 
                                 <!-- START (Пальчики-лайкчики) -->
                                 <div class="likes">
@@ -1184,12 +1134,7 @@
                                     26 Янв 2016
                                 </div>
 
-                                <!-- START (5 звезд рейтинга книги) -->
-                                <div class="rating-5-stars">
-                                    <div class="rating-stars"></div>
-                                    <div class="rating-number">2,3</div>
-                                </div>
-                                <!-- END (5 звезд рейтинга книги) -->
+<jsp:include page="components/vb/rating-5-stars.jsp"/>
 
                                 <!-- START (Пальчики-лайкчики) -->
                                 <div class="likes">
@@ -1274,12 +1219,7 @@
                                     26 Янв 2016
                                 </div>
 
-                                <!-- START (5 звезд рейтинга книги) -->
-                                <div class="rating-5-stars">
-                                    <div class="rating-stars"></div>
-                                    <div class="rating-number">2,3</div>
-                                </div>
-                                <!-- END (5 звезд рейтинга книги) -->
+<jsp:include page="components/vb/rating-5-stars.jsp"/>
 
                                 <!-- START (Пальчики-лайкчики) -->
                                 <div class="likes">
@@ -1364,12 +1304,7 @@
                                     26 Янв 2016
                                 </div>
 
-                                <!-- START (5 звезд рейтинга книги) -->
-                                <div class="rating-5-stars">
-                                    <div class="rating-stars"></div>
-                                    <div class="rating-number">2,3</div>
-                                </div>
-                                <!-- END (5 звезд рейтинга книги) -->
+<jsp:include page="components/vb/rating-5-stars.jsp"/>
 
                                 <!-- START (Пальчики-лайкчики) -->
                                 <div class="likes">
@@ -1454,12 +1389,7 @@
                                     26 Янв 2016
                                 </div>
 
-                                <!-- START (5 звезд рейтинга книги) -->
-                                <div class="rating-5-stars">
-                                    <div class="rating-stars"></div>
-                                    <div class="rating-number">2,3</div>
-                                </div>
-                                <!-- END (5 звезд рейтинга книги) -->
+<jsp:include page="components/vb/rating-5-stars.jsp"/>
 
                                 <!-- START (Пальчики-лайкчики) -->
                                 <div class="likes">
@@ -1544,12 +1474,7 @@
                                     26 Янв 2016
                                 </div>
 
-                                <!-- START (5 звезд рейтинга книги) -->
-                                <div class="rating-5-stars">
-                                    <div class="rating-stars"></div>
-                                    <div class="rating-number">2,3</div>
-                                </div>
-                                <!-- END (5 звезд рейтинга книги) -->
+<jsp:include page="components/vb/rating-5-stars.jsp"/>
 
                                 <!-- START (Пальчики-лайкчики) -->
                                 <div class="likes">
@@ -1634,12 +1559,7 @@
                                     26 Янв 2016
                                 </div>
 
-                                <!-- START (5 звезд рейтинга книги) -->
-                                <div class="rating-5-stars">
-                                    <div class="rating-stars"></div>
-                                    <div class="rating-number">2,3</div>
-                                </div>
-                                <!-- END (5 звезд рейтинга книги) -->
+<jsp:include page="components/vb/rating-5-stars.jsp"/>
 
                                 <!-- START (Пальчики-лайкчики) -->
                                 <div class="likes">

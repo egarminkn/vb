@@ -230,12 +230,7 @@
                                 </ul>
                             </td>
                             <td class="td rating">
-                                <!-- START (5 звезд рейтинга книги) -->
-                                <div class="rating-5-stars">
-                                    <div class="rating-stars"></div>
-                                    <div class="rating-number">2,3</div>
-                                </div>
-                                <!-- END (5 звезд рейтинга книги) -->
+<jsp:include page="components/vb/rating-5-stars.jsp"/>
                             </td>
                             <td class="td download">
                                 <span class="free">1152</span> / <span class="paid">152</span>
@@ -313,12 +308,7 @@
                                 </ul>
                             </td>
                             <td class="td rating">
-                                <!-- START (5 звезд рейтинга книги) -->
-                                <div class="rating-5-stars">
-                                    <div class="rating-stars"></div>
-                                    <div class="rating-number">2,3</div>
-                                </div>
-                                <!-- END (5 звезд рейтинга книги) -->
+<jsp:include page="components/vb/rating-5-stars.jsp"/>
                             </td>
                             <td class="td download">
                                 <span class="free">12</span> / <span class="paid">0</span>
@@ -382,12 +372,7 @@
                                 </ul>
                             </td>
                             <td class="td rating">
-                                <!-- START (5 звезд рейтинга книги) -->
-                                <div class="rating-5-stars">
-                                    <div class="rating-stars"></div>
-                                    <div class="rating-number">2,3</div>
-                                </div>
-                                <!-- END (5 звезд рейтинга книги) -->
+<jsp:include page="components/vb/rating-5-stars.jsp"/>
                             </td>
                             <td class="td download">
                                 <span class="free">86</span> / <span class="paid">0</span>
@@ -451,12 +436,7 @@
                                 </ul>
                             </td>
                             <td class="td rating">
-                                <!-- START (5 звезд рейтинга книги) -->
-                                <div class="rating-5-stars">
-                                    <div class="rating-stars"></div>
-                                    <div class="rating-number">2,3</div>
-                                </div>
-                                <!-- END (5 звезд рейтинга книги) -->
+<jsp:include page="components/vb/rating-5-stars.jsp"/>
                             </td>
                             <td class="td download">
                                 <span class="free">86</span> / <span class="paid">0</span>
@@ -520,12 +500,7 @@
                                 </ul>
                             </td>
                             <td class="td rating">
-                                <!-- START (5 звезд рейтинга книги) -->
-                                <div class="rating-5-stars">
-                                    <div class="rating-stars"></div>
-                                    <div class="rating-number">2,3</div>
-                                </div>
-                                <!-- END (5 звезд рейтинга книги) -->
+<jsp:include page="components/vb/rating-5-stars.jsp"/>
                             </td>
                             <td class="td download">
                                 <span class="free">1152</span> / <span class="paid">152</span>
@@ -603,12 +578,7 @@
                                 </ul>
                             </td>
                             <td class="td rating">
-                                <!-- START (5 звезд рейтинга книги) -->
-                                <div class="rating-5-stars">
-                                    <div class="rating-stars"></div>
-                                    <div class="rating-number">2,3</div>
-                                </div>
-                                <!-- END (5 звезд рейтинга книги) -->
+<jsp:include page="components/vb/rating-5-stars.jsp"/>
                             </td>
                             <td class="td download">
                                 <span class="free">12</span> / <span class="paid">0</span>
@@ -672,12 +642,7 @@
                                 </ul>
                             </td>
                             <td class="td rating">
-                                <!-- START (5 звезд рейтинга книги) -->
-                                <div class="rating-5-stars">
-                                    <div class="rating-stars"></div>
-                                    <div class="rating-number">2,3</div>
-                                </div>
-                                <!-- END (5 звезд рейтинга книги) -->
+<jsp:include page="components/vb/rating-5-stars.jsp"/>
                             </td>
                             <td class="td download">
                                 <span class="free">86</span> / <span class="paid">0</span>
@@ -741,12 +706,7 @@
                                 </ul>
                             </td>
                             <td class="td rating">
-                                <!-- START (5 звезд рейтинга книги) -->
-                                <div class="rating-5-stars">
-                                    <div class="rating-stars"></div>
-                                    <div class="rating-number">2,3</div>
-                                </div>
-                                <!-- END (5 звезд рейтинга книги) -->
+<jsp:include page="components/vb/rating-5-stars.jsp"/>
                             </td>
                             <td class="td download">
                                 <span class="free">86</span> / <span class="paid">0</span>
@@ -810,12 +770,7 @@
                                 </ul>
                             </td>
                             <td class="td rating">
-                                <!-- START (5 звезд рейтинга книги) -->
-                                <div class="rating-5-stars">
-                                    <div class="rating-stars"></div>
-                                    <div class="rating-number">2,3</div>
-                                </div>
-                                <!-- END (5 звезд рейтинга книги) -->
+<jsp:include page="components/vb/rating-5-stars.jsp"/>
                             </td>
                             <td class="td download">
                                 <span class="free">1152</span> / <span class="paid">152</span>
@@ -893,12 +848,7 @@
                                 </ul>
                             </td>
                             <td class="td rating">
-                                <!-- START (5 звезд рейтинга книги) -->
-                                <div class="rating-5-stars">
-                                    <div class="rating-stars"></div>
-                                    <div class="rating-number">2,3</div>
-                                </div>
-                                <!-- END (5 звезд рейтинга книги) -->
+<jsp:include page="components/vb/rating-5-stars.jsp"/>
                             </td>
                             <td class="td download">
                                 <span class="free">12</span> / <span class="paid">0</span>
@@ -962,12 +912,7 @@
                                 </ul>
                             </td>
                             <td class="td rating">
-                                <!-- START (5 звезд рейтинга книги) -->
-                                <div class="rating-5-stars">
-                                    <div class="rating-stars"></div>
-                                    <div class="rating-number">2,3</div>
-                                </div>
-                                <!-- END (5 звезд рейтинга книги) -->
+<jsp:include page="components/vb/rating-5-stars.jsp"/>
                             </td>
                             <td class="td download">
                                 <span class="free">86</span> / <span class="paid">0</span>
@@ -1031,12 +976,7 @@
                                 </ul>
                             </td>
                             <td class="td rating">
-                                <!-- START (5 звезд рейтинга книги) -->
-                                <div class="rating-5-stars">
-                                    <div class="rating-stars"></div>
-                                    <div class="rating-number">2,3</div>
-                                </div>
-                                <!-- END (5 звезд рейтинга книги) -->
+<jsp:include page="components/vb/rating-5-stars.jsp"/>
                             </td>
                             <td class="td download">
                                 <span class="free">86</span> / <span class="paid">0</span>
