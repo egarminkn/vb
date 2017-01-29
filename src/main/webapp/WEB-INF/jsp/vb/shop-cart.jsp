@@ -56,27 +56,10 @@
                                 <tbody class="tbody">
                                 <tr class="tr">
                                     <td class="td product">
-                                        <!-- START (Триплет ссылок: обложка-название-автор) -->
-                                        <div class="book-triplet">
-                                            <div class="cover">
-                                                <a class="to-book" href="${currentURI}#">
-                                                    <img src="resources/vb/img/tmp/book-1.jpg" width="230" height="368">
-                                                </a>
-                                            </div>
-                                            <div class="title-author">
-                                                <a class="to-book" href="${currentURI}#">
-                                                    <span class="text">
-                                                        Полет над гнездом кукушки
-                                                    </span>
-                                                </a>
-                                                <a class="to-author" href="${currentURI}#">
-                                                    <span class="text">
-                                                        Александр Константинопольский
-                                                    </span>
-                                                </a>
-                                            </div>
-                                        </div>
-                                        <!-- END (Триплет ссылок: обложка-название-автор) -->
+<c:set var="bookTripletCoverUrl" value="resources/vb/img/tmp/book-1.jpg" scope="request"/>
+<c:set var="bookTripletTitle" value="Полет над гнездом кукушки" scope="request"/>
+<c:set var="bookTripletAuthor" value="Александр Константинопольский" scope="request"/>
+<jsp:include page="components/vb/book-triplet.jsp"/>
                                     </td>
                                     <td class="td price">
 <c:set var="price" value="415" scope="request"/>
@@ -88,27 +71,10 @@
                                 </tr>
                                 <tr class="tr">
                                     <td class="td product">
-                                        <!-- START (Триплет ссылок: обложка-название-автор) -->
-                                        <div class="book-triplet">
-                                            <div class="cover">
-                                                <a class="to-book" href="${currentURI}#">
-                                                    <img src="resources/vb/img/tmp/book-2.jpg" width="230" height="368">
-                                                </a>
-                                            </div>
-                                            <div class="title-author">
-                                                <a class="to-book" href="${currentURI}#">
-                                                    <span class="text">
-                                                        Как рожать на вершине скалы
-                                                    </span>
-                                                </a>
-                                                <a class="to-author" href="${currentURI}#">
-                                                    <span class="text">
-                                                        Мария Малиновская
-                                                    </span>
-                                                </a>
-                                            </div>
-                                        </div>
-                                        <!-- END (Триплет ссылок: обложка-название-автор) -->
+<c:set var="bookTripletCoverUrl" value="resources/vb/img/tmp/book-2.jpg" scope="request"/>
+<c:set var="bookTripletTitle" value="Как рожать на вершине скалы" scope="request"/>
+<c:set var="bookTripletAuthor" value="Мария Малиновская" scope="request"/>
+<jsp:include page="components/vb/book-triplet.jsp"/>
                                     </td>
                                     <td class="td price">
 <c:set var="price" value="0" scope="request"/>
@@ -120,27 +86,10 @@
                                 </tr>
                                 <tr class="tr">
                                     <td class="td product">
-                                        <!-- START (Триплет ссылок: обложка-название-автор) -->
-                                        <div class="book-triplet">
-                                            <div class="cover">
-                                                <a class="to-book" href="${currentURI}#">
-                                                    <img src="resources/vb/img/tmp/book-3.jpg" width="230" height="368">
-                                                </a>
-                                            </div>
-                                            <div class="title-author">
-                                                <a class="to-book" href="${currentURI}#">
-                                                    <span class="text">
-                                                        Кто подставил кролика роджера?
-                                                    </span>
-                                                </a>
-                                                <a class="to-author" href="${currentURI}#">
-                                                    <span class="text">
-                                                        Владимир Вольфович Константинопольский
-                                                    </span>
-                                                </a>
-                                            </div>
-                                        </div>
-                                        <!-- END (Триплет ссылок: обложка-название-автор) -->
+<c:set var="bookTripletCoverUrl" value="resources/vb/img/tmp/book-3.jpg" scope="request"/>
+<c:set var="bookTripletTitle" value="Кто подставил кролика роджера?" scope="request"/>
+<c:set var="bookTripletAuthor" value="Владимир Вольфович Константинопольский" scope="request"/>
+<jsp:include page="components/vb/book-triplet.jsp"/>
                                     </td>
                                     <td class="td price">
 <c:set var="price" value="230" scope="request"/>
@@ -499,27 +448,10 @@
                         <tbody class="tbody">
                         <tr class="tr">
                             <td class="td product">
-                                <!-- START (Триплет ссылок: обложка-название-автор) -->
-                                <div class="book-triplet">
-                                    <div class="cover">
-                                        <a class="to-book" href="${currentURI}#">
-                                            <img src="resources/vb/img/tmp/book-1.jpg" width="230" height="368">
-                                        </a>
-                                    </div>
-                                    <div class="title-author">
-                                        <a class="to-book" href="${currentURI}#">
-                                            <span class="text">
-                                                Полет над гнездом кукушки
-                                            </span>
-                                        </a>
-                                        <a class="to-author" href="${currentURI}#">
-                                            <span class="text">
-                                                Александр Константинопольский
-                                            </span>
-                                        </a>
-                                    </div>
-                                </div>
-                                <!-- END (Триплет ссылок: обложка-название-автор) -->
+<c:set var="bookTripletCoverUrl" value="resources/vb/img/tmp/book-1.jpg" scope="request"/>
+<c:set var="bookTripletTitle" value="Полет над гнездом кукушки" scope="request"/>
+<c:set var="bookTripletAuthor" value="Александр Константинопольский" scope="request"/>
+<jsp:include page="components/vb/book-triplet.jsp"/>
                             </td>
                             <td class="td price">
 <c:set var="price" value="415" scope="request"/>
@@ -531,27 +463,10 @@
                         </tr>
                         <tr class="tr">
                             <td class="td product">
-                                <!-- START (Триплет ссылок: обложка-название-автор) -->
-                                <div class="book-triplet">
-                                    <div class="cover">
-                                        <a class="to-book" href="${currentURI}#">
-                                            <img src="resources/vb/img/tmp/book-2.jpg" width="230" height="368">
-                                        </a>
-                                    </div>
-                                    <div class="title-author">
-                                        <a class="to-book" href="${currentURI}#">
-                                            <span class="text">
-                                                Как рожать на вершине скалы
-                                            </span>
-                                        </a>
-                                        <a class="to-author" href="${currentURI}#">
-                                            <span class="text">
-                                                Мария Малиновская
-                                            </span>
-                                        </a>
-                                    </div>
-                                </div>
-                                <!-- END (Триплет ссылок: обложка-название-автор) -->
+<c:set var="bookTripletCoverUrl" value="resources/vb/img/tmp/book-2.jpg" scope="request"/>
+<c:set var="bookTripletTitle" value="Как рожать на вершине скалы" scope="request"/>
+<c:set var="bookTripletAuthor" value="Мария Малиновская" scope="request"/>
+<jsp:include page="components/vb/book-triplet.jsp"/>
                             </td>
                             <td class="td price">
 <c:set var="price" value="0" scope="request"/>
@@ -563,27 +478,10 @@
                         </tr>
                         <tr class="tr">
                             <td class="td product">
-                                <!-- START (Триплет ссылок: обложка-название-автор) -->
-                                <div class="book-triplet">
-                                    <div class="cover">
-                                        <a class="to-book" href="${currentURI}#">
-                                            <img src="resources/vb/img/tmp/book-3.jpg" width="230" height="368">
-                                        </a>
-                                    </div>
-                                    <div class="title-author">
-                                        <a class="to-book" href="${currentURI}#">
-                                            <span class="text">
-                                                Кто подставил кролика роджера?
-                                            </span>
-                                        </a>
-                                        <a class="to-author" href="${currentURI}#">
-                                            <span class="text">
-                                                Владимир Вольфович Константинопольский
-                                            </span>
-                                        </a>
-                                    </div>
-                                </div>
-                                <!-- END (Триплет ссылок: обложка-название-автор) -->
+<c:set var="bookTripletCoverUrl" value="resources/vb/img/tmp/book-3.jpg" scope="request"/>
+<c:set var="bookTripletTitle" value="Кто подставил кролика роджера?" scope="request"/>
+<c:set var="bookTripletAuthor" value="Владимир Вольфович Константинопольский" scope="request"/>
+<jsp:include page="components/vb/book-triplet.jsp"/>
                             </td>
                             <td class="td price">
 <c:set var="price" value="230" scope="request"/>

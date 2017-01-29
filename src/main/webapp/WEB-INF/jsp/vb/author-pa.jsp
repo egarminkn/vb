@@ -849,27 +849,10 @@
                         <tbody class="tbody">
                         <tr class="tr">
                             <td class="td product">
-                                <!-- START (Триплет ссылок: обложка-название-автор) -->
-                                <div class="book-triplet">
-                                    <div class="cover">
-                                        <a class="to-book" href="${currentURI}#">
-                                            <img src="resources/vb/img/tmp/book-1.jpg" width="230" height="368">
-                                        </a>
-                                    </div>
-                                    <div class="title-author">
-                                        <a class="to-book" href="${currentURI}#">
-                                            <span class="text">
-                                                Полет над гнездом кукушки
-                                            </span>
-                                        </a>
-                                        <a class="to-author" href="${currentURI}#">
-                                            <span class="text">
-                                                Александр Иванов
-                                            </span>
-                                        </a>
-                                    </div>
-                                </div>
-                                <!-- END (Триплет ссылок: обложка-название-автор) -->
+<c:set var="bookTripletCoverUrl" value="resources/vb/img/tmp/book-1.jpg" scope="request"/>
+<c:set var="bookTripletTitle" value="Полет над гнездом кукушки" scope="request"/>
+<c:set var="bookTripletAuthor" value="Александр Иванов" scope="request"/>
+<jsp:include page="components/vb/book-triplet.jsp"/>
                             </td>
                             <td class="td date">
                                 <span>
@@ -899,27 +882,10 @@
                         </tr>
                         <tr class="tr">
                             <td class="td product">
-                                <!-- START (Триплет ссылок: обложка-название-автор) -->
-                                <div class="book-triplet">
-                                    <div class="cover">
-                                        <a class="to-book" href="${currentURI}#">
-                                            <img src="resources/vb/img/tmp/book-2.jpg" width="230" height="368">
-                                        </a>
-                                    </div>
-                                    <div class="title-author">
-                                        <a class="to-book" href="${currentURI}#">
-                                            <span class="text">
-                                                Как отравили Сталина
-                                            </span>
-                                        </a>
-                                        <a class="to-author" href="${currentURI}#">
-                                            <span class="text">
-                                                Александр Константинопольский
-                                            </span>
-                                        </a>
-                                    </div>
-                                </div>
-                                <!-- END (Триплет ссылок: обложка-название-автор) -->
+<c:set var="bookTripletCoverUrl" value="resources/vb/img/tmp/book-2.jpg" scope="request"/>
+<c:set var="bookTripletTitle" value="Как отравили Сталина" scope="request"/>
+<c:set var="bookTripletAuthor" value="Александр Константинопольский" scope="request"/>
+<jsp:include page="components/vb/book-triplet.jsp"/>
                             </td>
                             <td class="td date">
                                 <span>
@@ -949,27 +915,10 @@
                         </tr>
                         <tr class="tr">
                             <td class="td product">
-                                <!-- START (Триплет ссылок: обложка-название-автор) -->
-                                <div class="book-triplet">
-                                    <div class="cover">
-                                        <a class="to-book" href="${currentURI}#">
-                                            <img src="resources/vb/img/tmp/book-3.jpg" width="230" height="368">
-                                        </a>
-                                    </div>
-                                    <div class="title-author">
-                                        <a class="to-book" href="${currentURI}#">
-                                            <span class="text">
-                                                Полет над гнездом кукушки
-                                            </span>
-                                        </a>
-                                        <a class="to-author" href="${currentURI}#">
-                                            <span class="text">
-                                                Александр Иванов
-                                            </span>
-                                        </a>
-                                    </div>
-                                </div>
-                                <!-- END (Триплет ссылок: обложка-название-автор) -->
+<c:set var="bookTripletCoverUrl" value="resources/vb/img/tmp/book-3.jpg" scope="request"/>
+<c:set var="bookTripletTitle" value="Полет над гнездом кукушки" scope="request"/>
+<c:set var="bookTripletAuthor" value="Александр Иванов" scope="request"/>
+<jsp:include page="components/vb/book-triplet.jsp"/>
                             </td>
                             <td class="td date">
                                 <span>
@@ -996,27 +945,10 @@
                         </tr>
                         <tr class="tr">
                             <td class="td product">
-                                <!-- START (Триплет ссылок: обложка-название-автор) -->
-                                <div class="book-triplet">
-                                    <div class="cover">
-                                        <a class="to-book" href="${currentURI}#">
-                                            <img src="resources/vb/img/tmp/book-4.jpg" width="230" height="368">
-                                        </a>
-                                    </div>
-                                    <div class="title-author">
-                                        <a class="to-book" href="${currentURI}#">
-                                            <span class="text">
-                                                С широко открытыми глазами
-                                            </span>
-                                        </a>
-                                        <a class="to-author" href="${currentURI}#">
-                                            <span class="text">
-                                                Александр Иванов
-                                            </span>
-                                        </a>
-                                    </div>
-                                </div>
-                                <!-- END (Триплет ссылок: обложка-название-автор) -->
+<c:set var="bookTripletCoverUrl" value="resources/vb/img/tmp/book-4.jpg" scope="request"/>
+<c:set var="bookTripletTitle" value="С широко открытыми глазами" scope="request"/>
+<c:set var="bookTripletAuthor" value="Александр Иванов" scope="request"/>
+<jsp:include page="components/vb/book-triplet.jsp"/>
                             </td>
                             <td class="td date">
                                 <span>
@@ -1046,27 +978,10 @@
                         </tr>
                         <tr class="tr">
                             <td class="td product">
-                                <!-- START (Триплет ссылок: обложка-название-автор) -->
-                                <div class="book-triplet">
-                                    <div class="cover">
-                                        <a class="to-book" href="${currentURI}#">
-                                            <img src="resources/vb/img/tmp/book-5.jpg" width="230" height="368">
-                                        </a>
-                                    </div>
-                                    <div class="title-author">
-                                        <a class="to-book" href="${currentURI}#">
-                                            <span class="text">
-                                                Полет над гнездом кукушки
-                                            </span>
-                                        </a>
-                                        <a class="to-author" href="${currentURI}#">
-                                            <span class="text">
-                                                Владимир Рудольфович
-                                            </span>
-                                        </a>
-                                    </div>
-                                </div>
-                                <!-- END (Триплет ссылок: обложка-название-автор) -->
+<c:set var="bookTripletCoverUrl" value="resources/vb/img/tmp/book-5.jpg" scope="request"/>
+<c:set var="bookTripletTitle" value="Полет над гнездом кукушки" scope="request"/>
+<c:set var="bookTripletAuthor" value="Владимир Рудольфович" scope="request"/>
+<jsp:include page="components/vb/book-triplet.jsp"/>
                             </td>
                             <td class="td date">
                                 <span>
@@ -1093,27 +1008,10 @@
                         </tr>
                         <tr class="tr">
                             <td class="td product">
-                                <!-- START (Триплет ссылок: обложка-название-автор) -->
-                                <div class="book-triplet">
-                                    <div class="cover">
-                                        <a class="to-book" href="${currentURI}#">
-                                            <img src="resources/vb/img/tmp/book-1.jpg" width="230" height="368">
-                                        </a>
-                                    </div>
-                                    <div class="title-author">
-                                        <a class="to-book" href="${currentURI}#">
-                                            <span class="text">
-                                                Как отравили Сталина
-                                            </span>
-                                        </a>
-                                        <a class="to-author" href="${currentURI}#">
-                                            <span class="text">
-                                                Александр Константинопольский
-                                            </span>
-                                        </a>
-                                    </div>
-                                </div>
-                                <!-- END (Триплет ссылок: обложка-название-автор) -->
+<c:set var="bookTripletCoverUrl" value="resources/vb/img/tmp/book-1.jpg" scope="request"/>
+<c:set var="bookTripletTitle" value="Как отравили Сталина" scope="request"/>
+<c:set var="bookTripletAuthor" value="Александр Константинопольский" scope="request"/>
+<jsp:include page="components/vb/book-triplet.jsp"/>
                             </td>
                             <td class="td date">
                                 <span>
@@ -1143,27 +1041,10 @@
                         </tr>
                         <tr class="tr">
                             <td class="td product">
-                                <!-- START (Триплет ссылок: обложка-название-автор) -->
-                                <div class="book-triplet">
-                                    <div class="cover">
-                                        <a class="to-book" href="${currentURI}#">
-                                            <img src="resources/vb/img/tmp/book-2.jpg" width="230" height="368">
-                                        </a>
-                                    </div>
-                                    <div class="title-author">
-                                        <a class="to-book" href="${currentURI}#">
-                                            <span class="text">
-                                                Далеко за горизонтом
-                                            </span>
-                                        </a>
-                                        <a class="to-author" href="${currentURI}#">
-                                            <span class="text">
-                                                Владимир Рудольфович
-                                            </span>
-                                        </a>
-                                    </div>
-                                </div>
-                                <!-- END (Триплет ссылок: обложка-название-автор) -->
+<c:set var="bookTripletCoverUrl" value="resources/vb/img/tmp/book-2.jpg" scope="request"/>
+<c:set var="bookTripletTitle" value="Далеко за горизонтом" scope="request"/>
+<c:set var="bookTripletAuthor" value="Владимир Рудольфович" scope="request"/>
+<jsp:include page="components/vb/book-triplet.jsp"/>
                             </td>
                             <td class="td date">
                                 <span>
@@ -1193,27 +1074,10 @@
                         </tr>
                         <tr class="tr">
                             <td class="td product">
-                                <!-- START (Триплет ссылок: обложка-название-автор) -->
-                                <div class="book-triplet">
-                                    <div class="cover">
-                                        <a class="to-book" href="${currentURI}#">
-                                            <img src="resources/vb/img/tmp/book-3.jpg" width="230" height="368">
-                                        </a>
-                                    </div>
-                                    <div class="title-author">
-                                        <a class="to-book" href="${currentURI}#">
-                                            <span class="text">
-                                                С широко открытыми глазами
-                                            </span>
-                                        </a>
-                                        <a class="to-author" href="${currentURI}#">
-                                            <span class="text">
-                                                Александр Иванов
-                                            </span>
-                                        </a>
-                                    </div>
-                                </div>
-                                <!-- END (Триплет ссылок: обложка-название-автор) -->
+<c:set var="bookTripletCoverUrl" value="resources/vb/img/tmp/book-3.jpg" scope="request"/>
+<c:set var="bookTripletTitle" value="С широко открытыми глазами" scope="request"/>
+<c:set var="bookTripletAuthor" value="Александр Иванов" scope="request"/>
+<jsp:include page="components/vb/book-triplet.jsp"/>
                             </td>
                             <td class="td date">
                                 <span>
@@ -1240,27 +1104,10 @@
                         </tr>
                         <tr class="tr">
                             <td class="td product">
-                                <!-- START (Триплет ссылок: обложка-название-автор) -->
-                                <div class="book-triplet">
-                                    <div class="cover">
-                                        <a class="to-book" href="${currentURI}#">
-                                            <img src="resources/vb/img/tmp/book-4.jpg" width="230" height="368">
-                                        </a>
-                                    </div>
-                                    <div class="title-author">
-                                        <a class="to-book" href="${currentURI}#">
-                                            <span class="text">
-                                                Полет над гнездом кукушки
-                                            </span>
-                                        </a>
-                                        <a class="to-author" href="${currentURI}#">
-                                            <span class="text">
-                                                Александр Константинопольский
-                                            </span>
-                                        </a>
-                                    </div>
-                                </div>
-                                <!-- END (Триплет ссылок: обложка-название-автор) -->
+<c:set var="bookTripletCoverUrl" value="resources/vb/img/tmp/book-4.jpg" scope="request"/>
+<c:set var="bookTripletTitle" value="Полет над гнездом кукушки" scope="request"/>
+<c:set var="bookTripletAuthor" value="Александр Константинопольский" scope="request"/>
+<jsp:include page="components/vb/book-triplet.jsp"/>
                             </td>
                             <td class="td date">
                                 <span>
@@ -1290,27 +1137,10 @@
                         </tr>
                         <tr class="tr">
                             <td class="td product">
-                                <!-- START (Триплет ссылок: обложка-название-автор) -->
-                                <div class="book-triplet">
-                                    <div class="cover">
-                                        <a class="to-book" href="${currentURI}#">
-                                            <img src="resources/vb/img/tmp/book-5.jpg" width="230" height="368">
-                                        </a>
-                                    </div>
-                                    <div class="title-author">
-                                        <a class="to-book" href="${currentURI}#">
-                                            <span class="text">
-                                                Летящие в облаках
-                                            </span>
-                                        </a>
-                                        <a class="to-author" href="${currentURI}#">
-                                            <span class="text">
-                                                Владимир Рудольфович
-                                            </span>
-                                        </a>
-                                    </div>
-                                </div>
-                                <!-- END (Триплет ссылок: обложка-название-автор) -->
+<c:set var="bookTripletCoverUrl" value="resources/vb/img/tmp/book-5.jpg" scope="request"/>
+<c:set var="bookTripletTitle" value="Летящие в облаках" scope="request"/>
+<c:set var="bookTripletAuthor" value="Владимир Рудольфович" scope="request"/>
+<jsp:include page="components/vb/book-triplet.jsp"/>
                             </td>
                             <td class="td date">
                                 <span>
