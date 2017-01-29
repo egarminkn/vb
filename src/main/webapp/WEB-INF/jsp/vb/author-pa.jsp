@@ -877,16 +877,9 @@
                                 </span>
                             </td>
                             <td class="td likes">
-                                <!-- START (Пальчики-лайкчики) -->
-                                <div class="likes">
-                                    <a class="like" href="${currentURI}#">
-                                        1022
-                                    </a>
-                                    <a class="dislike" href="${currentURI}#">
-                                        51
-                                    </a>
-                                </div>
-                                <!-- END (Пальчики-лайкчики) -->
+<c:set var="likesCount" value="1022" scope="request"/>
+<c:set var="dislikesCount" value="51" scope="request"/>
+<jsp:include page="components/vb/thumb-likes.jsp"/>
                             </td>
                             <td class="td price">
 <c:set var="price" value="5140" scope="request"/>
@@ -934,16 +927,9 @@
                                 </span>
                             </td>
                             <td class="td likes">
-                                <!-- START (Пальчики-лайкчики) -->
-                                <div class="likes">
-                                    <a class="like" href="${currentURI}#">
-                                        1022
-                                    </a>
-                                    <a class="dislike" href="${currentURI}#">
-                                        51
-                                    </a>
-                                </div>
-                                <!-- END (Пальчики-лайкчики) -->
+<c:set var="likesCount" value="1022" scope="request"/>
+<c:set var="dislikesCount" value="51" scope="request"/>
+<jsp:include page="components/vb/thumb-likes.jsp"/>
                             </td>
                             <td class="td price">
 <c:set var="price" value="651" scope="request"/>
@@ -991,16 +977,9 @@
                                 </span>
                             </td>
                             <td class="td likes">
-                                <!-- START (Пальчики-лайкчики) -->
-                                <div class="likes">
-                                    <a class="like" href="${currentURI}#">
-                                        1022
-                                    </a>
-                                    <a class="dislike" href="${currentURI}#">
-                                        51
-                                    </a>
-                                </div>
-                                <!-- END (Пальчики-лайкчики) -->
+<c:set var="likesCount" value="1022" scope="request"/>
+<c:set var="dislikesCount" value="51" scope="request"/>
+<jsp:include page="components/vb/thumb-likes.jsp"/>
                             </td>
                             <td class="td price">
 <c:set var="price" value="501" scope="request"/>
@@ -1045,16 +1024,9 @@
                                 </span>
                             </td>
                             <td class="td likes">
-                                <!-- START (Пальчики-лайкчики) -->
-                                <div class="likes">
-                                    <a class="like" href="${currentURI}#">
-                                        1022
-                                    </a>
-                                    <a class="dislike" href="${currentURI}#">
-                                        51
-                                    </a>
-                                </div>
-                                <!-- END (Пальчики-лайкчики) -->
+<c:set var="likesCount" value="1022" scope="request"/>
+<c:set var="dislikesCount" value="51" scope="request"/>
+<jsp:include page="components/vb/thumb-likes.jsp"/>
                             </td>
                             <td class="td price">
 <c:set var="price" value="5551" scope="request"/>
@@ -1102,16 +1074,9 @@
                                 </span>
                             </td>
                             <td class="td likes">
-                                <!-- START (Пальчики-лайкчики) -->
-                                <div class="likes">
-                                    <a class="like" href="${currentURI}#">
-                                        1022
-                                    </a>
-                                    <a class="dislike" href="${currentURI}#">
-                                        51
-                                    </a>
-                                </div>
-                                <!-- END (Пальчики-лайкчики) -->
+<c:set var="likesCount" value="1022" scope="request"/>
+<c:set var="dislikesCount" value="51" scope="request"/>
+<jsp:include page="components/vb/thumb-likes.jsp"/>
                             </td>
                             <td class="td price">
 <c:set var="price" value="5" scope="request"/>
@@ -1156,16 +1121,9 @@
                                 </span>
                             </td>
                             <td class="td likes">
-                                <!-- START (Пальчики-лайкчики) -->
-                                <div class="likes">
-                                    <a class="like" href="${currentURI}#">
-                                        1022
-                                    </a>
-                                    <a class="dislike" href="${currentURI}#">
-                                        51
-                                    </a>
-                                </div>
-                                <!-- END (Пальчики-лайкчики) -->
+<c:set var="likesCount" value="1022" scope="request"/>
+<c:set var="dislikesCount" value="51" scope="request"/>
+<jsp:include page="components/vb/thumb-likes.jsp"/>
                             </td>
                             <td class="td price">
 <c:set var="price" value="501" scope="request"/>
@@ -1213,16 +1171,9 @@
                                 </span>
                             </td>
                             <td class="td likes">
-                                <!-- START (Пальчики-лайкчики) -->
-                                <div class="likes">
-                                    <a class="like" href="${currentURI}#">
-                                        1022
-                                    </a>
-                                    <a class="dislike" href="${currentURI}#">
-                                        51
-                                    </a>
-                                </div>
-                                <!-- END (Пальчики-лайкчики) -->
+<c:set var="likesCount" value="1022" scope="request"/>
+<c:set var="dislikesCount" value="51" scope="request"/>
+<jsp:include page="components/vb/thumb-likes.jsp"/>
                             </td>
                             <td class="td price">
 <c:set var="price" value="515" scope="request"/>
@@ -1270,16 +1221,9 @@
                                 </span>
                             </td>
                             <td class="td likes">
-                                <!-- START (Пальчики-лайкчики) -->
-                                <div class="likes">
-                                    <a class="like" href="${currentURI}#">
-                                        1022
-                                    </a>
-                                    <a class="dislike" href="${currentURI}#">
-                                        51
-                                    </a>
-                                </div>
-                                <!-- END (Пальчики-лайкчики) -->
+<c:set var="likesCount" value="1022" scope="request"/>
+<c:set var="dislikesCount" value="51" scope="request"/>
+<jsp:include page="components/vb/thumb-likes.jsp"/>
                             </td>
                             <td class="td price">
 <c:set var="price" value="151" scope="request"/>
@@ -1324,16 +1268,9 @@
                                 </span>
                             </td>
                             <td class="td likes">
-                                <!-- START (Пальчики-лайкчики) -->
-                                <div class="likes">
-                                    <a class="like" href="${currentURI}#">
-                                        1022
-                                    </a>
-                                    <a class="dislike" href="${currentURI}#">
-                                        51
-                                    </a>
-                                </div>
-                                <!-- END (Пальчики-лайкчики) -->
+<c:set var="likesCount" value="1022" scope="request"/>
+<c:set var="dislikesCount" value="51" scope="request"/>
+<jsp:include page="components/vb/thumb-likes.jsp"/>
                             </td>
                             <td class="td price">
 <c:set var="price" value="2251" scope="request"/>
@@ -1381,16 +1318,9 @@
                                 </span>
                             </td>
                             <td class="td likes">
-                                <!-- START (Пальчики-лайкчики) -->
-                                <div class="likes">
-                                    <a class="like" href="${currentURI}#">
-                                        1022
-                                    </a>
-                                    <a class="dislike" href="${currentURI}#">
-                                        51
-                                    </a>
-                                </div>
-                                <!-- END (Пальчики-лайкчики) -->
+<c:set var="likesCount" value="1022" scope="request"/>
+<c:set var="dislikesCount" value="51" scope="request"/>
+<jsp:include page="components/vb/thumb-likes.jsp"/>
                             </td>
                             <td class="td price">
 <c:set var="price" value="511" scope="request"/>

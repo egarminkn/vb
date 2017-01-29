@@ -21,16 +21,9 @@
 
 <jsp:include page="components/vb/ratings.jsp"/>
 
-                <!-- START (Пальчики-лайкчики) -->
-                <div class="likes">
-                    <a class="like" href="${currentURI}#">
-                        1022
-                    </a>
-                    <a class="dislike" href="${currentURI}#">
-                        51
-                    </a>
-                </div>
-                <!-- END (Пальчики-лайкчики) -->
+<c:set var="likesCount" value="1022" scope="request"/>
+<c:set var="dislikesCount" value="51" scope="request"/>
+<jsp:include page="components/vb/thumb-likes.jsp"/>
 
                 <div class="promo">
                     <div class="title">
@@ -237,16 +230,9 @@
 
 <jsp:include page="components/vb/rating-5-stars.jsp"/>
 
-                                <!-- START (Пальчики-лайкчики) -->
-                                <div class="likes">
-                                    <a class="like" href="${currentURI}#">
-                                        1022
-                                    </a>
-                                    <a class="dislike" href="${currentURI}#">
-                                        51
-                                    </a>
-                                </div>
-                                <!-- END (Пальчики-лайкчики) -->
+<c:set var="likesCount" value="1022" scope="request"/>
+<c:set var="dislikesCount" value="51" scope="request"/>
+<jsp:include page="components/vb/thumb-likes.jsp"/>
 
                                 <!-- START (Ценник под книгой) -->
                                 <div class="price-under-book">
@@ -322,16 +308,9 @@
 
 <jsp:include page="components/vb/rating-5-stars.jsp"/>
 
-                                <!-- START (Пальчики-лайкчики) -->
-                                <div class="likes">
-                                    <a class="like" href="${currentURI}#">
-                                        1022
-                                    </a>
-                                    <a class="dislike" href="${currentURI}#">
-                                        51
-                                    </a>
-                                </div>
-                                <!-- END (Пальчики-лайкчики) -->
+<c:set var="likesCount" value="1022" scope="request"/>
+<c:set var="dislikesCount" value="51" scope="request"/>
+<jsp:include page="components/vb/thumb-likes.jsp"/>
 
                                 <!-- START (Ценник под книгой) -->
                                 <div class="price-under-book">
@@ -407,16 +386,9 @@
 
 <jsp:include page="components/vb/rating-5-stars.jsp"/>
 
-                                <!-- START (Пальчики-лайкчики) -->
-                                <div class="likes">
-                                    <a class="like" href="${currentURI}#">
-                                        1022
-                                    </a>
-                                    <a class="dislike" href="${currentURI}#">
-                                        51
-                                    </a>
-                                </div>
-                                <!-- END (Пальчики-лайкчики) -->
+<c:set var="likesCount" value="1022" scope="request"/>
+<c:set var="dislikesCount" value="51" scope="request"/>
+<jsp:include page="components/vb/thumb-likes.jsp"/>
 
                                 <!-- START (Ценник под книгой) -->
                                 <div class="price-under-book free">
@@ -492,16 +464,9 @@
 
 <jsp:include page="components/vb/rating-5-stars.jsp"/>
 
-                                <!-- START (Пальчики-лайкчики) -->
-                                <div class="likes">
-                                    <a class="like" href="${currentURI}#">
-                                        1022
-                                    </a>
-                                    <a class="dislike" href="${currentURI}#">
-                                        51
-                                    </a>
-                                </div>
-                                <!-- END (Пальчики-лайкчики) -->
+<c:set var="likesCount" value="1022" scope="request"/>
+<c:set var="dislikesCount" value="51" scope="request"/>
+<jsp:include page="components/vb/thumb-likes.jsp"/>
 
                                 <!-- START (Ценник под книгой) -->
                                 <div class="price-under-book">
@@ -577,16 +542,9 @@
 
 <jsp:include page="components/vb/rating-5-stars.jsp"/>
 
-                                <!-- START (Пальчики-лайкчики) -->
-                                <div class="likes">
-                                    <a class="like" href="${currentURI}#">
-                                        1022
-                                    </a>
-                                    <a class="dislike" href="${currentURI}#">
-                                        51
-                                    </a>
-                                </div>
-                                <!-- END (Пальчики-лайкчики) -->
+<c:set var="likesCount" value="1022" scope="request"/>
+<c:set var="dislikesCount" value="51" scope="request"/>
+<jsp:include page="components/vb/thumb-likes.jsp"/>
 
                                 <!-- START (Ценник под книгой) -->
                                 <div class="price-under-book">
@@ -662,16 +620,9 @@
 
 <jsp:include page="components/vb/rating-5-stars.jsp"/>
 
-                                <!-- START (Пальчики-лайкчики) -->
-                                <div class="likes">
-                                    <a class="like" href="${currentURI}#">
-                                        1022
-                                    </a>
-                                    <a class="dislike" href="${currentURI}#">
-                                        51
-                                    </a>
-                                </div>
-                                <!-- END (Пальчики-лайкчики) -->
+<c:set var="likesCount" value="1022" scope="request"/>
+<c:set var="dislikesCount" value="51" scope="request"/>
+<jsp:include page="components/vb/thumb-likes.jsp"/>
 
                                 <!-- START (Ценник под книгой) -->
                                 <div class="price-under-book free">
