@@ -166,26 +166,7 @@
                     <span class="count">(<span>31</span>)</span>
                 </div>
 
-                <!-- START (Форма отправки отзыва) -->
-                <form class="send-review textarea" method="post" action="">
-                    <!--
-                        Открывающий и закрывающий теги textarea должны быть на одной строке, т.к. иначе placeholder не отображается:
-                        http://stackoverflow.com/questions/10186913/html5-textarea-placeholder-not-appearing
-                    -->
-                    <!-- Для использования этого textarea в форме, нужно заполнить поле name -->
-                    <textarea name="review" maxlength="4000" placeholder="Оставить отзыв" required></textarea>
-                    <div class="textarea-info">
-                        <div class="info">
-                            Использован<span class="using-ending">о</span>
-                            <span class="size">0</span> символ<span class="symbol-ending">ов</span>
-                            из 4000 возможных
-                        </div>
-                        <button class="btn" type="submit">
-                            Добавить
-                        </button>
-                    </div>
-                </form>
-                <!-- END (Форма отправки отзыва) -->
+<jsp:include page="components/vb/send-review-form.jsp"/>
 
                 <ul class="review-list">
                     <li class="review">
