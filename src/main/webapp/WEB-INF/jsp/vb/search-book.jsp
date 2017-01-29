@@ -56,54 +56,8 @@
                         </span>
                     </div>
 
-                    <!-- START (Выбор типа сортировки) -->
-                    <!-- Если на странице несколько таких элементов, то нужно обеспечить уникальность имен групп radio-кнопок (name), уникальность их id-ков и соответствующих for-ов у label-ов -->
-                    <div class="item sort-by">
-                        <span class="title">Сортировать:</span>
-                        <input type="radio" name="ebooks-sort-link" class="sort-link-1" id="ebooks-sort-link-1" checked />
-                        <input type="radio" name="ebooks-sort-link" class="sort-link-2" id="ebooks-sort-link-2" />
-                        <input type="radio" name="ebooks-sort-link" class="sort-link-3" id="ebooks-sort-link-3" />
-                        <input type="radio" name="ebooks-sort-link" class="sort-link-4" id="ebooks-sort-link-4" />
-                        <div class="sort-links">
-                            <label class="sort-link sort-link-1" for="ebooks-sort-link-1">
-                                <span class="text">по популярности</span>
-                                <input type="radio" name="ebooks-sort-direction-1" class="asc" id="ebooks-asc-sort-direction-1" >
-                                <input type="radio" name="ebooks-sort-direction-1" class="desc" id="ebooks-desc-sort-direction-1" checked>
-                                <div class="asc-desc">
-                                    <label class="asc" for="ebooks-asc-sort-direction-1"></label>
-                                    <label class="desc" for="ebooks-desc-sort-direction-1"></label>
-                                </div>
-                            </label>
-                            <label class="sort-link sort-link-2" for="ebooks-sort-link-2">
-                                <span class="text">по рейтингу</span>
-                                <input type="radio" name="ebooks-sort-direction-2" class="asc" id="ebooks-asc-sort-direction-2" >
-                                <input type="radio" name="ebooks-sort-direction-2" class="desc" id="ebooks-desc-sort-direction-2" checked>
-                                <div class="asc-desc">
-                                    <label class="asc" for="ebooks-asc-sort-direction-2"></label>
-                                    <label class="desc" for="ebooks-desc-sort-direction-2"></label>
-                                </div>
-                            </label>
-                            <label class="sort-link sort-link-3" for="ebooks-sort-link-3">
-                                <span class="text">по дате публикации</span>
-                                <input type="radio" name="ebooks-sort-direction-3" class="asc" id="ebooks-asc-sort-direction-3" >
-                                <input type="radio" name="ebooks-sort-direction-3" class="desc" id="ebooks-desc-sort-direction-3" checked>
-                                <div class="asc-desc">
-                                    <label class="asc" for="ebooks-asc-sort-direction-3"></label>
-                                    <label class="desc" for="ebooks-desc-sort-direction-3"></label>
-                                </div>
-                            </label>
-                            <label class="sort-link sort-link-4" for="ebooks-sort-link-4">
-                                <span class="text">по цене</span>
-                                <input type="radio" name="ebooks-sort-direction-4" class="asc" id="ebooks-asc-sort-direction-4" checked>
-                                <input type="radio" name="ebooks-sort-direction-4" class="desc" id="ebooks-desc-sort-direction-4" >
-                                <div class="asc-desc">
-                                    <label class="asc" for="ebooks-asc-sort-direction-4"></label>
-                                    <label class="desc" for="ebooks-desc-sort-direction-4"></label>
-                                </div>
-                            </label>
-                        </div>
-                    </div>
-                    <!-- END (Выбор типа сортировки) -->
+<c:set var="sortName" value="ebooks" scope="request"/>
+<jsp:include page="components/vb/sort-by.jsp"/>
 
                     <div class="item search-result-item ebook">
                         <div class="cover">
@@ -319,54 +273,8 @@
                         </span>
                     </div>
 
-                    <!-- START (Выбор типа сортировки) -->
-                    <!-- Если на странице несколько таких элементов, то нужно обеспечить уникальность имен групп radio-кнопок (name), уникальность их id-ков и соответствующих for-ов у label-ов -->
-                    <div class="item sort-by">
-                        <span class="title">Сортировать:</span>
-                        <input type="radio" name="audiobooks-sort-link" class="sort-link-1" id="audiobooks-sort-link-1" checked />
-                        <input type="radio" name="audiobooks-sort-link" class="sort-link-2" id="audiobooks-sort-link-2" />
-                        <input type="radio" name="audiobooks-sort-link" class="sort-link-3" id="audiobooks-sort-link-3" />
-                        <input type="radio" name="audiobooks-sort-link" class="sort-link-4" id="audiobooks-sort-link-4" />
-                        <div class="sort-links">
-                            <label class="sort-link sort-link-1" for="audiobooks-sort-link-1">
-                                <span class="text">по популярности</span>
-                                <input type="radio" name="audiobooks-sort-direction-1" class="asc" id="audiobooks-asc-sort-direction-1" >
-                                <input type="radio" name="audiobooks-sort-direction-1" class="desc" id="audiobooks-desc-sort-direction-1" checked>
-                                <div class="asc-desc">
-                                    <label class="asc" for="audiobooks-asc-sort-direction-1"></label>
-                                    <label class="desc" for="audiobooks-desc-sort-direction-1"></label>
-                                </div>
-                            </label>
-                            <label class="sort-link sort-link-2" for="audiobooks-sort-link-2">
-                                <span class="text">по рейтингу</span>
-                                <input type="radio" name="audiobooks-sort-direction-2" class="asc" id="audiobooks-asc-sort-direction-2" >
-                                <input type="radio" name="audiobooks-sort-direction-2" class="desc" id="audiobooks-desc-sort-direction-2" checked>
-                                <div class="asc-desc">
-                                    <label class="asc" for="audiobooks-asc-sort-direction-2"></label>
-                                    <label class="desc" for="audiobooks-desc-sort-direction-2"></label>
-                                </div>
-                            </label>
-                            <label class="sort-link sort-link-3" for="audiobooks-sort-link-3">
-                                <span class="text">по дате публикации</span>
-                                <input type="radio" name="audiobooks-sort-direction-3" class="asc" id="audiobooks-asc-sort-direction-3" >
-                                <input type="radio" name="audiobooks-sort-direction-3" class="desc" id="audiobooks-desc-sort-direction-3" checked>
-                                <div class="asc-desc">
-                                    <label class="asc" for="audiobooks-asc-sort-direction-3"></label>
-                                    <label class="desc" for="audiobooks-desc-sort-direction-3"></label>
-                                </div>
-                            </label>
-                            <label class="sort-link sort-link-4" for="audiobooks-sort-link-4">
-                                <span class="text">по цене</span>
-                                <input type="radio" name="audiobooks-sort-direction-4" class="asc" id="audiobooks-asc-sort-direction-4" checked>
-                                <input type="radio" name="audiobooks-sort-direction-4" class="desc" id="audiobooks-desc-sort-direction-4" >
-                                <div class="asc-desc">
-                                    <label class="asc" for="audiobooks-asc-sort-direction-4"></label>
-                                    <label class="desc" for="audiobooks-desc-sort-direction-4"></label>
-                                </div>
-                            </label>
-                        </div>
-                    </div>
-                    <!-- END (Выбор типа сортировки) -->
+<c:set var="sortName" value="audiobooks" scope="request"/>
+<jsp:include page="components/vb/sort-by.jsp"/>
 
                     <div class="item search-result-item audiobook">
                         <div class="cover-play">

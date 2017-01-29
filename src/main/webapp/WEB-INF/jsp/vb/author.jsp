@@ -174,54 +174,8 @@
                         Книги автора
                     </div>
 
-                    <!-- START (Выбор типа сортировки) -->
-                    <!-- Если на странице несколько таких элементов, то нужно обеспечить уникальность имен групп radio-кнопок (name), уникальность их id-ков и соответствующих for-ов у label-ов -->
-                    <div class="sort-by">
-                        <span class="title">Сортировать:</span>
-                        <input type="radio" name="sort-link" class="sort-link-1" id="sort-link-1" checked />
-                        <input type="radio" name="sort-link" class="sort-link-2" id="sort-link-2" />
-                        <input type="radio" name="sort-link" class="sort-link-3" id="sort-link-3" />
-                        <input type="radio" name="sort-link" class="sort-link-4" id="sort-link-4" />
-                        <div class="sort-links">
-                            <label class="sort-link sort-link-1" for="sort-link-1">
-                                <span class="text">по популярности</span>
-                                <input type="radio" name="sort-direction-1" class="asc" id="asc-sort-direction-1" >
-                                <input type="radio" name="sort-direction-1" class="desc" id="desc-sort-direction-1" checked>
-                                <div class="asc-desc">
-                                    <label class="asc" for="asc-sort-direction-1"></label>
-                                    <label class="desc" for="desc-sort-direction-1"></label>
-                                </div>
-                            </label>
-                            <label class="sort-link sort-link-2" for="sort-link-2">
-                                <span class="text">по рейтингу</span>
-                                <input type="radio" name="sort-direction-2" class="asc" id="asc-sort-direction-2" >
-                                <input type="radio" name="sort-direction-2" class="desc" id="desc-sort-direction-2" checked>
-                                <div class="asc-desc">
-                                    <label class="asc" for="asc-sort-direction-2"></label>
-                                    <label class="desc" for="desc-sort-direction-2"></label>
-                                </div>
-                            </label>
-                            <label class="sort-link sort-link-3" for="sort-link-3">
-                                <span class="text">по дате публикации</span>
-                                <input type="radio" name="sort-direction-3" class="asc" id="asc-sort-direction-3" >
-                                <input type="radio" name="sort-direction-3" class="desc" id="desc-sort-direction-3" checked>
-                                <div class="asc-desc">
-                                    <label class="asc" for="asc-sort-direction-3"></label>
-                                    <label class="desc" for="desc-sort-direction-3"></label>
-                                </div>
-                            </label>
-                            <label class="sort-link sort-link-4" for="sort-link-4">
-                                <span class="text">по цене</span>
-                                <input type="radio" name="sort-direction-4" class="asc" id="asc-sort-direction-4" checked>
-                                <input type="radio" name="sort-direction-4" class="desc" id="desc-sort-direction-4" >
-                                <div class="asc-desc">
-                                    <label class="asc" for="asc-sort-direction-4"></label>
-                                    <label class="desc" for="desc-sort-direction-4"></label>
-                                </div>
-                            </label>
-                        </div>
-                    </div>
-                    <!-- END (Выбор типа сортировки) -->
+<c:set var="sortName" value="books" scope="request"/>
+<jsp:include page="components/vb/sort-by.jsp"/>
 
                     <div class="list">
                         <!-- START (Обложка и размещенная под ней сводная информация о книге и ее авторе) -->

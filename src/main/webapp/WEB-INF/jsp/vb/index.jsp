@@ -67,54 +67,8 @@
                                 <a href="${currentURI}#">Бест-селлеры</a>
                             </div>
 
-                            <!-- START (Выбор типа сортировки) -->
-                            <!-- Если на странице несколько таких элементов, то нужно обеспечить уникальность имен групп radio-кнопок (name), уникальность их id-ков и соответствующих for-ов у label-ов -->
-                            <div class="sort-by">
-                                <span class="title">Сортировать:</span>
-                                <input type="radio" name="best-sellers-sort-link" class="sort-link-1" id="best-sellers-sort-link-1" checked />
-                                <input type="radio" name="best-sellers-sort-link" class="sort-link-2" id="best-sellers-sort-link-2" />
-                                <input type="radio" name="best-sellers-sort-link" class="sort-link-3" id="best-sellers-sort-link-3" />
-                                <input type="radio" name="best-sellers-sort-link" class="sort-link-4" id="best-sellers-sort-link-4" />
-                                <div class="sort-links">
-                                    <label class="sort-link sort-link-1" for="best-sellers-sort-link-1">
-                                        <span class="text">по популярности</span>
-                                        <input type="radio" name="best-sellers-sort-direction-1" class="asc" id="best-sellers-asc-sort-direction-1" >
-                                        <input type="radio" name="best-sellers-sort-direction-1" class="desc" id="best-sellers-desc-sort-direction-1" checked>
-                                        <div class="asc-desc">
-                                            <label class="asc" for="best-sellers-asc-sort-direction-1"></label>
-                                            <label class="desc" for="best-sellers-desc-sort-direction-1"></label>
-                                        </div>
-                                    </label>
-                                    <label class="sort-link sort-link-2" for="best-sellers-sort-link-2">
-                                        <span class="text">по рейтингу</span>
-                                        <input type="radio" name="best-sellers-sort-direction-2" class="asc" id="best-sellers-asc-sort-direction-2" >
-                                        <input type="radio" name="best-sellers-sort-direction-2" class="desc" id="best-sellers-desc-sort-direction-2" checked>
-                                        <div class="asc-desc">
-                                            <label class="asc" for="best-sellers-asc-sort-direction-2"></label>
-                                            <label class="desc" for="best-sellers-desc-sort-direction-2"></label>
-                                        </div>
-                                    </label>
-                                    <label class="sort-link sort-link-3" for="best-sellers-sort-link-3">
-                                        <span class="text">по дате публикации</span>
-                                        <input type="radio" name="best-sellers-sort-direction-3" class="asc" id="best-sellers-asc-sort-direction-3" >
-                                        <input type="radio" name="best-sellers-sort-direction-3" class="desc" id="best-sellers-desc-sort-direction-3" checked>
-                                        <div class="asc-desc">
-                                            <label class="asc" for="best-sellers-asc-sort-direction-3"></label>
-                                            <label class="desc" for="best-sellers-desc-sort-direction-3"></label>
-                                        </div>
-                                    </label>
-                                    <label class="sort-link sort-link-4" for="best-sellers-sort-link-4">
-                                        <span class="text">по цене</span>
-                                        <input type="radio" name="best-sellers-sort-direction-4" class="asc" id="best-sellers-asc-sort-direction-4" checked>
-                                        <input type="radio" name="best-sellers-sort-direction-4" class="desc" id="best-sellers-desc-sort-direction-4" >
-                                        <div class="asc-desc">
-                                            <label class="asc" for="best-sellers-asc-sort-direction-4"></label>
-                                            <label class="desc" for="best-sellers-desc-sort-direction-4"></label>
-                                        </div>
-                                    </label>
-                                </div>
-                            </div>
-                            <!-- END (Выбор типа сортировки) -->
+<c:set var="sortName" value="best-sellers" scope="request"/>
+<jsp:include page="components/vb/sort-by.jsp"/>
                         </div>
                         <div class="shelf-wrapper">
                             <div class="arrow-up"></div>
@@ -1431,54 +1385,8 @@
                                 <a href="${currentURI}#">Новинки</a>
                             </div>
 
-                            <!-- START (Выбор типа сортировки) -->
-                            <!-- Если на странице несколько таких элементов, то нужно обеспечить уникальность имен групп radio-кнопок (name), уникальность их id-ков и соответствующих for-ов у label-ов -->
-                            <div class="sort-by">
-                                <span class="title">Сортировать:</span>
-                                <input type="radio" name="new-books-sort-link" class="sort-link-1" id="new-books-sort-link-1" checked />
-                                <input type="radio" name="new-books-sort-link" class="sort-link-2" id="new-books-sort-link-2" />
-                                <input type="radio" name="new-books-sort-link" class="sort-link-3" id="new-books-sort-link-3" />
-                                <input type="radio" name="new-books-sort-link" class="sort-link-4" id="new-books-sort-link-4" />
-                                <div class="sort-links">
-                                    <label class="sort-link sort-link-1" for="new-books-sort-link-1">
-                                        <span class="text">по популярности</span>
-                                        <input type="radio" name="new-books-sort-direction-1" class="asc" id="new-books-asc-sort-direction-1" >
-                                        <input type="radio" name="new-books-sort-direction-1" class="desc" id="new-books-desc-sort-direction-1" checked>
-                                        <div class="asc-desc">
-                                            <label class="asc" for="new-books-asc-sort-direction-1"></label>
-                                            <label class="desc" for="new-books-desc-sort-direction-1"></label>
-                                        </div>
-                                    </label>
-                                    <label class="sort-link sort-link-2" for="new-books-sort-link-2">
-                                        <span class="text">по рейтингу</span>
-                                        <input type="radio" name="new-books-sort-direction-2" class="asc" id="new-books-asc-sort-direction-2" >
-                                        <input type="radio" name="new-books-sort-direction-2" class="desc" id="new-books-desc-sort-direction-2" checked>
-                                        <div class="asc-desc">
-                                            <label class="asc" for="new-books-asc-sort-direction-2"></label>
-                                            <label class="desc" for="new-books-desc-sort-direction-2"></label>
-                                        </div>
-                                    </label>
-                                    <label class="sort-link sort-link-3" for="new-books-sort-link-3">
-                                        <span class="text">по дате публикации</span>
-                                        <input type="radio" name="new-books-sort-direction-3" class="asc" id="new-books-asc-sort-direction-3" >
-                                        <input type="radio" name="new-books-sort-direction-3" class="desc" id="new-books-desc-sort-direction-3" checked>
-                                        <div class="asc-desc">
-                                            <label class="asc" for="new-books-asc-sort-direction-3"></label>
-                                            <label class="desc" for="new-books-desc-sort-direction-3"></label>
-                                        </div>
-                                    </label>
-                                    <label class="sort-link sort-link-4" for="new-books-sort-link-4">
-                                        <span class="text">по цене</span>
-                                        <input type="radio" name="new-books-sort-direction-4" class="asc" id="new-books-asc-sort-direction-4" checked>
-                                        <input type="radio" name="new-books-sort-direction-4" class="desc" id="new-books-desc-sort-direction-4" >
-                                        <div class="asc-desc">
-                                            <label class="asc" for="new-books-asc-sort-direction-4"></label>
-                                            <label class="desc" for="new-books-desc-sort-direction-4"></label>
-                                        </div>
-                                    </label>
-                                </div>
-                            </div>
-                            <!-- END (Выбор типа сортировки) -->
+<c:set var="sortName" value="new-books" scope="request"/>
+<jsp:include page="components/vb/sort-by.jsp"/>
                         </div>
                         <div class="shelf-wrapper">
                             <div class="arrow-up"></div>
@@ -2795,54 +2703,8 @@
                                 <a href="${currentURI}#">Высший рейтинг</a>
                             </div>
 
-                            <!-- START (Выбор типа сортировки) -->
-                            <!-- Если на странице несколько таких элементов, то нужно обеспечить уникальность имен групп radio-кнопок (name), уникальность их id-ков и соответствующих for-ов у label-ов -->
-                            <div class="sort-by">
-                                <span class="title">Сортировать:</span>
-                                <input type="radio" name="highest-rating-sort-link" class="sort-link-1" id="highest-rating-sort-link-1" checked />
-                                <input type="radio" name="highest-rating-sort-link" class="sort-link-2" id="highest-rating-sort-link-2" />
-                                <input type="radio" name="highest-rating-sort-link" class="sort-link-3" id="highest-rating-sort-link-3" />
-                                <input type="radio" name="highest-rating-sort-link" class="sort-link-4" id="highest-rating-sort-link-4" />
-                                <div class="sort-links">
-                                    <label class="sort-link sort-link-1" for="highest-rating-sort-link-1">
-                                        <span class="text">по популярности</span>
-                                        <input type="radio" name="highest-rating-sort-direction-1" class="asc" id="highest-rating-asc-sort-direction-1" >
-                                        <input type="radio" name="highest-rating-sort-direction-1" class="desc" id="highest-rating-desc-sort-direction-1" checked>
-                                        <div class="asc-desc">
-                                            <label class="asc" for="highest-rating-asc-sort-direction-1"></label>
-                                            <label class="desc" for="highest-rating-desc-sort-direction-1"></label>
-                                        </div>
-                                    </label>
-                                    <label class="sort-link sort-link-2" for="highest-rating-sort-link-2">
-                                        <span class="text">по рейтингу</span>
-                                        <input type="radio" name="highest-rating-sort-direction-2" class="asc" id="highest-rating-asc-sort-direction-2" >
-                                        <input type="radio" name="highest-rating-sort-direction-2" class="desc" id="highest-rating-desc-sort-direction-2" checked>
-                                        <div class="asc-desc">
-                                            <label class="asc" for="highest-rating-asc-sort-direction-2"></label>
-                                            <label class="desc" for="highest-rating-desc-sort-direction-2"></label>
-                                        </div>
-                                    </label>
-                                    <label class="sort-link sort-link-3" for="highest-rating-sort-link-3">
-                                        <span class="text">по дате публикации</span>
-                                        <input type="radio" name="highest-rating-sort-direction-3" class="asc" id="highest-rating-asc-sort-direction-3" >
-                                        <input type="radio" name="highest-rating-sort-direction-3" class="desc" id="highest-rating-desc-sort-direction-3" checked>
-                                        <div class="asc-desc">
-                                            <label class="asc" for="highest-rating-asc-sort-direction-3"></label>
-                                            <label class="desc" for="highest-rating-desc-sort-direction-3"></label>
-                                        </div>
-                                    </label>
-                                    <label class="sort-link sort-link-4" for="highest-rating-sort-link-4">
-                                        <span class="text">по цене</span>
-                                        <input type="radio" name="highest-rating-sort-direction-4" class="asc" id="highest-rating-asc-sort-direction-4" checked>
-                                        <input type="radio" name="highest-rating-sort-direction-4" class="desc" id="highest-rating-desc-sort-direction-4" >
-                                        <div class="asc-desc">
-                                            <label class="asc" for="highest-rating-asc-sort-direction-4"></label>
-                                            <label class="desc" for="highest-rating-desc-sort-direction-4"></label>
-                                        </div>
-                                    </label>
-                                </div>
-                            </div>
-                            <!-- END (Выбор типа сортировки) -->
+<c:set var="sortName" value="highest-rating" scope="request"/>
+<jsp:include page="components/vb/sort-by.jsp"/>
                         </div>
                         <div class="shelf-wrapper">
                             <div class="arrow-up"></div>
