@@ -680,7 +680,7 @@ main.create-ebook .description .year {
     margin-top: 20px;
 }
 
-main.create-ebook .description .year label {
+main.create-ebook .description .year label .text {
     margin-right: 15px;
 }
 
@@ -695,7 +695,7 @@ main.create-ebook .description .license {
     margin-top: 20px;
 }
 
-main.create-ebook .description .license label {
+main.create-ebook .description .license label .text {
     margin-right: 30px;
 }
 

@@ -148,26 +148,20 @@
                                             <!-- END (Наклонные input-ы) -->
                                         </div>
                                         <div class="td">
-                                            <!-- START (Наклонные select-ы) -->
-                                            <!-- Для использования этого select-а в форме, нужно заполнить поле name -->
-                                            <div class="skew-outer select">
-                                                <select class="skew-inner font-name" name="author-font-name">
-                                                    <option value="Courier New">Courier New</option>
-                                                    <option value="Times New Roman" selected>Times New Roman</option>
-                                                </select>
-                                            </div>
-                                            <!-- END (Наклонные select-ы) -->
+<c:set var="selectAddClass" value="font-name" scope="request"/>
+<c:set var="selectName" value="author-font-name" scope="request"/>
+<c:set var="selectOptions" value="${['Courier New', 'Times New Roman']}" scope="request"/>
+<c:set var="selectedOptionIndex" value="1" scope="request"/>
+<c:set var="hiddenOptionIndex" value="-1" scope="request"/>
+<jsp:include page="components/vb/skew-select.jsp"/>
                                         </div>
                                         <div class="td">
-                                            <!-- START (Наклонные select-ы) -->
-                                            <!-- Для использования этого select-а в форме, нужно заполнить поле name -->
-                                            <div class="skew-outer select">
-                                                <select class="skew-inner font-size" name="author-font-size">
-                                                    <option value="12" selected>12</option>
-                                                    <option value="14">14</option>
-                                                </select>
-                                            </div>
-                                            <!-- END (Наклонные select-ы) -->
+<c:set var="selectAddClass" value="font-size" scope="request"/>
+<c:set var="selectName" value="author-font-size" scope="request"/>
+<c:set var="selectOptions" value="${['12', '14']}" scope="request"/>
+<c:set var="selectedOptionIndex" value="0" scope="request"/>
+<c:set var="hiddenOptionIndex" value="-1" scope="request"/>
+<jsp:include page="components/vb/skew-select.jsp"/>
                                         </div>
                                         <div class="td">
                                             <div class="color-picker" data-color="#950019" data-close="true">
@@ -193,26 +187,20 @@
                                             <!-- END (Наклонные input-ы) -->
                                         </div>
                                         <div class="td">
-                                            <!-- START (Наклонные select-ы) -->
-                                            <!-- Для использования этого select-а в форме, нужно заполнить поле name -->
-                                            <div class="skew-outer select">
-                                                <select class="skew-inner font-name" name="title-font-name">
-                                                    <option value="Courier New">Courier New</option>
-                                                    <option value="Times New Roman" selected>Times New Roman</option>
-                                                </select>
-                                            </div>
-                                            <!-- END (Наклонные select-ы) -->
+<c:set var="selectAddClass" value="font-name" scope="request"/>
+<c:set var="selectName" value="title-font-name" scope="request"/>
+<c:set var="selectOptions" value="${['Courier New', 'Times New Roman']}" scope="request"/>
+<c:set var="selectedOptionIndex" value="1" scope="request"/>
+<c:set var="hiddenOptionIndex" value="-1" scope="request"/>
+<jsp:include page="components/vb/skew-select.jsp"/>
                                         </div>
                                         <div class="td">
-                                            <!-- START (Наклонные select-ы) -->
-                                            <!-- Для использования этого select-а в форме, нужно заполнить поле name -->
-                                            <div class="skew-outer select">
-                                                <select class="skew-inner font-size" name="title-font-size">
-                                                    <option value="12" selected>12</option>
-                                                    <option value="14">14</option>
-                                                </select>
-                                            </div>
-                                            <!-- END (Наклонные select-ы) -->
+<c:set var="selectAddClass" value="font-size" scope="request"/>
+<c:set var="selectName" value="title-font-size" scope="request"/>
+<c:set var="selectOptions" value="${['12', '14']}" scope="request"/>
+<c:set var="selectedOptionIndex" value="0" scope="request"/>
+<c:set var="hiddenOptionIndex" value="-1" scope="request"/>
+<jsp:include page="components/vb/skew-select.jsp"/>
                                         </div>
                                         <div class="td">
                                             <div class="color-picker" data-color="#030674" data-close="true">
@@ -238,26 +226,20 @@
                                             <!-- END (Наклонные input-ы) -->
                                         </div>
                                         <div class="td">
-                                            <!-- START (Наклонные select-ы) -->
-                                            <!-- Для использования этого select-а в форме, нужно заполнить поле name -->
-                                            <div class="skew-outer select">
-                                                <select class="skew-inner font-name" name="subtitle-font-name">
-                                                    <option value="Courier New">Courier New</option>
-                                                    <option value="Times New Roman" selected>Times New Roman</option>
-                                                </select>
-                                            </div>
-                                            <!-- END (Наклонные select-ы) -->
+<c:set var="selectAddClass" value="font-name" scope="request"/>
+<c:set var="selectName" value="subtitle-font-name" scope="request"/>
+<c:set var="selectOptions" value="${['Courier New', 'Times New Roman']}" scope="request"/>
+<c:set var="selectedOptionIndex" value="1" scope="request"/>
+<c:set var="hiddenOptionIndex" value="-1" scope="request"/>
+<jsp:include page="components/vb/skew-select.jsp"/>
                                         </div>
                                         <div class="td">
-                                            <!-- START (Наклонные select-ы) -->
-                                            <!-- Для использования этого select-а в форме, нужно заполнить поле name -->
-                                            <div class="skew-outer select">
-                                                <select class="skew-inner font-size" name="subtitle-font-size">
-                                                    <option value="12" selected>12</option>
-                                                    <option value="14">14</option>
-                                                </select>
-                                            </div>
-                                            <!-- END (Наклонные select-ы) -->
+<c:set var="selectAddClass" value="font-size" scope="request"/>
+<c:set var="selectName" value="subtitle-font-size" scope="request"/>
+<c:set var="selectOptions" value="${['12', '14']}" scope="request"/>
+<c:set var="selectedOptionIndex" value="0" scope="request"/>
+<c:set var="hiddenOptionIndex" value="-1" scope="request"/>
+<jsp:include page="components/vb/skew-select.jsp"/>
                                         </div>
                                         <div class="td">
                                             <div class="color-picker" data-color="#393939" data-close="true">
@@ -311,50 +293,26 @@
                             <!-- END (Надпись-предупреждение) -->
 
                             <div class="genres">
-                                <!-- START (Наклонные select-ы) -->
-                                <!-- Для использования этого select-а в форме, нужно заполнить поле name -->
-                                <div class="skew-outer select">
-                                    <select class="skew-inner genre" name="genre-1">
-                                        <option value="" selected hidden>Выберите жанр 1</option>
-                                        <option value=""></option>
+<c:set var="selectAddClass" value="genre" scope="request"/>
+<c:set var="selectName" value="genre-1" scope="request"/>
+<c:set var="selectOptions" value="${['Выберите жанр 1', '', 'Искусство сочинять детективы', 'Детектив', 'Ужасы', 'Триллер']}" scope="request"/>
+<c:set var="selectedOptionIndex" value="0" scope="request"/>
+<c:set var="hiddenOptionIndex" value="0" scope="request"/>
+<jsp:include page="components/vb/skew-select.jsp"/>
 
-                                        <option value="Искусство сочинять детективы">Искусство сочинять детективы</option>
-                                        <option value="Детектив">Детектив</option>
-                                        <option value="Ужасы">Ужасы</option>
-                                        <option value="Триллер">Триллер</option>
-                                    </select>
-                                </div>
-                                <!-- END (Наклонные select-ы) -->
+<c:set var="selectAddClass" value="genre" scope="request"/>
+<c:set var="selectName" value="genre-2" scope="request"/>
+<c:set var="selectOptions" value="${['Выберите жанр 2', '', 'Искусство сочинять детективы', 'Детектив', 'Ужасы', 'Триллер']}" scope="request"/>
+<c:set var="selectedOptionIndex" value="0" scope="request"/>
+<c:set var="hiddenOptionIndex" value="0" scope="request"/>
+<jsp:include page="components/vb/skew-select.jsp"/>
 
-                                <!-- START (Наклонные select-ы) -->
-                                <!-- Для использования этого select-а в форме, нужно заполнить поле name -->
-                                <div class="skew-outer select">
-                                    <select class="skew-inner genre" name="genre-2">
-                                        <option value="" selected hidden>Выберите жанр 2</option>
-                                        <option value=""></option>
-
-                                        <option value="Искусство сочинять детективы">Искусство сочинять детективы</option>
-                                        <option value="Детектив">Детектив</option>
-                                        <option value="Ужасы">Ужасы</option>
-                                        <option value="Триллер">Триллер</option>
-                                    </select>
-                                </div>
-                                <!-- END (Наклонные select-ы) -->
-
-                                <!-- START (Наклонные select-ы) -->
-                                <!-- Для использования этого select-а в форме, нужно заполнить поле name -->
-                                <div class="skew-outer select">
-                                    <select class="skew-inner genre" name="genre-3">
-                                        <option value="" selected hidden>Выберите жанр 3</option>
-                                        <option value=""></option>
-
-                                        <option value="Искусство сочинять детективы">Искусство сочинять детективы</option>
-                                        <option value="Детектив">Детектив</option>
-                                        <option value="Ужасы">Ужасы</option>
-                                        <option value="Триллер">Триллер</option>
-                                    </select>
-                                </div>
-                                <!-- END (Наклонные select-ы) -->
+<c:set var="selectAddClass" value="genre" scope="request"/>
+<c:set var="selectName" value="genre-3" scope="request"/>
+<c:set var="selectOptions" value="${['Выберите жанр 3', '', 'Искусство сочинять детективы', 'Детектив', 'Ужасы', 'Триллер']}" scope="request"/>
+<c:set var="selectedOptionIndex" value="0" scope="request"/>
+<c:set var="hiddenOptionIndex" value="0" scope="request"/>
+<jsp:include page="components/vb/skew-select.jsp"/>
                             </div>
 
                             <div class="forbidden">
@@ -448,41 +406,27 @@
                             </div>
 
                             <div class="year">
-                                <label for="year">
-                                    Год издания
+                                <label>
+                                    <span class="text">Год издания</span>
+<c:set var="selectAddClass" value="" scope="request"/>
+<c:set var="selectName" value="year" scope="request"/>
+<c:set var="selectOptions" value="${['2016', '2015', '2014', '2013', '2012']}" scope="request"/>
+<c:set var="selectedOptionIndex" value="0" scope="request"/>
+<c:set var="hiddenOptionIndex" value="-1" scope="request"/>
+<jsp:include page="components/vb/skew-select.jsp"/>
                                 </label>
-
-                                <!-- START (Наклонные select-ы) -->
-                                <!-- Для использования этого select-а в форме, нужно заполнить поле name -->
-                                <div class="skew-outer select">
-                                    <select class="skew-inner" name="year" id="year">
-                                        <option value="2016" selected>2016</option>
-                                        <option value="2015">2015</option>
-                                        <option value="2014">2014</option>
-                                        <option value="2013">2013</option>
-                                        <option value="2012">2012</option>
-                                    </select>
-                                </div>
-                                <!-- END (Наклонные select-ы) -->
                             </div>
 
                             <div class="license">
-                                <label for="license">
-                                    Лицензия
+                                <label>
+                                    <span class="text">Лицензия</span>
+<c:set var="selectAddClass" value="" scope="request"/>
+<c:set var="selectName" value="license" scope="request"/>
+<c:set var="selectOptions" value="${['Verybook License v.1', 'Verybook License v.2', 'Verybook License v.3', 'Verybook License v.4', 'Verybook License v.5']}" scope="request"/>
+<c:set var="selectedOptionIndex" value="0" scope="request"/>
+<c:set var="hiddenOptionIndex" value="-1" scope="request"/>
+<jsp:include page="components/vb/skew-select.jsp"/>
                                 </label>
-
-                                <!-- START (Наклонные select-ы) -->
-                                <!-- Для использования этого select-а в форме, нужно заполнить поле name -->
-                                <div class="skew-outer select">
-                                    <select class="skew-inner" name="license" id="license" required>
-                                        <option value="verybook-1" selected>Verybook License v.1</option>
-                                        <option value="verybook-2">Verybook License v.2</option>
-                                        <option value="verybook-3">Verybook License v.3</option>
-                                        <option value="verybook-4">Verybook License v.4</option>
-                                        <option value="verybook-5">Verybook License v.5</option>
-                                    </select>
-                                </div>
-                                <!-- END (Наклонные select-ы) -->
 
 <c:set var="isQuestionMarkBlue" value="true" scope="request"/>
 <c:set var="bubbleContent" value="Вы можете раздавать свою книгу даром или принять участие в нашей рейтинговой программе раскрутки Вашей книги." scope="request"/>
