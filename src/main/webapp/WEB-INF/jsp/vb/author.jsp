@@ -234,17 +234,9 @@
 <c:set var="dislikesCount" value="51" scope="request"/>
 <jsp:include page="components/vb/thumb-likes.jsp"/>
 
-                                <!-- START (Ценник под книгой) -->
-                                <div class="price-under-book">
-                                    <!-- Если книга отдается за даром, то:
-                                            1) к div добавляется класс free
-                                            2) цена меняется на слово "Бесплатно"
-                                            3) содержимое валюты удаляется
-                                    -->
-                                    <span class="value">20</span>
-                                    <span class="currency">руб</span>
-                                </div>
-                                <!-- END (Ценник под книгой) -->
+<c:set var="priceUnderBookValue" value="20" scope="request"/>
+<c:set var="priceUnderBookCurrency" value="руб" scope="request"/>
+<jsp:include page="components/vb/price-under-book.jsp"/>
                             </div>
                         </div>
                         <!-- END (Обложка и размещенная под ней сводная информация о книге и ее авторе) -->
@@ -312,17 +304,9 @@
 <c:set var="dislikesCount" value="51" scope="request"/>
 <jsp:include page="components/vb/thumb-likes.jsp"/>
 
-                                <!-- START (Ценник под книгой) -->
-                                <div class="price-under-book">
-                                    <!-- Если книга отдается за даром, то:
-                                            1) к div добавляется класс free
-                                            2) цена меняется на слово "Бесплатно"
-                                            3) содержимое валюты удаляется
-                                    -->
-                                    <span class="value">20</span>
-                                    <span class="currency">руб</span>
-                                </div>
-                                <!-- END (Ценник под книгой) -->
+<c:set var="priceUnderBookValue" value="20" scope="request"/>
+<c:set var="priceUnderBookCurrency" value="руб" scope="request"/>
+<jsp:include page="components/vb/price-under-book.jsp"/>
                             </div>
                         </div>
                         <!-- END (Обложка и размещенная под ней сводная информация о книге и ее авторе) -->
@@ -390,17 +374,9 @@
 <c:set var="dislikesCount" value="51" scope="request"/>
 <jsp:include page="components/vb/thumb-likes.jsp"/>
 
-                                <!-- START (Ценник под книгой) -->
-                                <div class="price-under-book free">
-                                    <!-- Если книга отдается за даром, то:
-                                            1) к div добавляется класс free
-                                            2) цена меняется на слово "Бесплатно"
-                                            3) содержимое валюты удаляется
-                                    -->
-                                    <span class="value">Бесплатно</span>
-                                    <span class="currency"></span>
-                                </div>
-                                <!-- END (Ценник под книгой) -->
+<c:set var="priceUnderBookValue" value="Бесплатно" scope="request"/>
+<c:set var="priceUnderBookCurrency" value="" scope="request"/>
+<jsp:include page="components/vb/price-under-book.jsp"/>
                             </div>
                         </div>
                         <!-- END (Обложка и размещенная под ней сводная информация о книге и ее авторе) -->
@@ -468,17 +444,9 @@
 <c:set var="dislikesCount" value="51" scope="request"/>
 <jsp:include page="components/vb/thumb-likes.jsp"/>
 
-                                <!-- START (Ценник под книгой) -->
-                                <div class="price-under-book">
-                                    <!-- Если книга отдается за даром, то:
-                                            1) к div добавляется класс free
-                                            2) цена меняется на слово "Бесплатно"
-                                            3) содержимое валюты удаляется
-                                    -->
-                                    <span class="value">20</span>
-                                    <span class="currency">руб</span>
-                                </div>
-                                <!-- END (Ценник под книгой) -->
+<c:set var="priceUnderBookValue" value="20" scope="request"/>
+<c:set var="priceUnderBookCurrency" value="руб" scope="request"/>
+<jsp:include page="components/vb/price-under-book.jsp"/>
                             </div>
                         </div>
                         <!-- END (Обложка и размещенная под ней сводная информация о книге и ее авторе) -->
@@ -546,17 +514,9 @@
 <c:set var="dislikesCount" value="51" scope="request"/>
 <jsp:include page="components/vb/thumb-likes.jsp"/>
 
-                                <!-- START (Ценник под книгой) -->
-                                <div class="price-under-book">
-                                    <!-- Если книга отдается за даром, то:
-                                            1) к div добавляется класс free
-                                            2) цена меняется на слово "Бесплатно"
-                                            3) содержимое валюты удаляется
-                                    -->
-                                    <span class="value">20</span>
-                                    <span class="currency">руб</span>
-                                </div>
-                                <!-- END (Ценник под книгой) -->
+<c:set var="priceUnderBookValue" value="20" scope="request"/>
+<c:set var="priceUnderBookCurrency" value="руб" scope="request"/>
+<jsp:include page="components/vb/price-under-book.jsp"/>
                             </div>
                         </div>
                         <!-- END (Обложка и размещенная под ней сводная информация о книге и ее авторе) -->
@@ -624,17 +584,9 @@
 <c:set var="dislikesCount" value="51" scope="request"/>
 <jsp:include page="components/vb/thumb-likes.jsp"/>
 
-                                <!-- START (Ценник под книгой) -->
-                                <div class="price-under-book free">
-                                    <!-- Если книга отдается за даром, то:
-                                            1) к div добавляется класс free
-                                            2) цена меняется на слово "Бесплатно"
-                                            3) содержимое валюты удаляется
-                                    -->
-                                    <span class="value">Бесплатно</span>
-                                    <span class="currency"></span>
-                                </div>
-                                <!-- END (Ценник под книгой) -->
+<c:set var="priceUnderBookValue" value="Бесплатно" scope="request"/>
+<c:set var="priceUnderBookCurrency" value="" scope="request"/>
+<jsp:include page="components/vb/price-under-book.jsp"/>
                             </div>
                         </div>
                         <!-- END (Обложка и размещенная под ней сводная информация о книге и ее авторе) -->
