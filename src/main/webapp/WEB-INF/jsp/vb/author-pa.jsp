@@ -267,19 +267,9 @@
                                     -->
                                     <span class="text">Отклонено</span>
 
-                                    <!-- START (Значок-вопросика с всплывающей подсказкой) -->
-                                    <div class="hint">
-                                        <!-- Если убрать доп.класс blue, то знак вопросмка будет черного цвета -->
-                                        <div class="question-mark "></div>
-                                        <div class="bubble-before bubble-before-1"></div>
-                                        <div class="bubble-before bubble-before-2"></div>
-                                        <div class="bubble" data-init-width="355">
-                                            <span class="content">
-                                                Запрос на публикацию был отклонен из-за массового насилия в тексте вашей рукописи.
-                                            </span>
-                                        </div>
-                                    </div>
-                                    <!-- END (Значок-вопросика с всплывающей подсказкой) -->
+<c:set var="isQuestionMarkBlue" value="false" scope="request"/>
+<c:set var="bubbleContent" value="Запрос на публикацию был отклонен из-за массового насилия в тексте вашей рукописи." scope="request"/>
+<jsp:include page="components/vb/question-mark-bubble.jsp"/>
                                 </div>
                                 <ul class="actions">
                                     <li class="action publish">
@@ -473,19 +463,9 @@
                                     -->
                                     <span class="text">Отклонено</span>
 
-                                    <!-- START (Значок-вопросика с всплывающей подсказкой) -->
-                                    <div class="hint">
-                                        <!-- Если убрать доп.класс blue, то знак вопросмка будет черного цвета -->
-                                        <div class="question-mark "></div>
-                                        <div class="bubble-before bubble-before-1"></div>
-                                        <div class="bubble-before bubble-before-2"></div>
-                                        <div class="bubble" data-init-width="355">
-                                            <span class="content">
-                                                Запрос на публикацию был отклонен из-за порнографии в вашей рукописи.
-                                            </span>
-                                        </div>
-                                    </div>
-                                    <!-- END (Значок-вопросика с всплывающей подсказкой) -->
+<c:set var="isQuestionMarkBlue" value="false" scope="request"/>
+<c:set var="bubbleContent" value="Запрос на публикацию был отклонен из-за порнографии в вашей рукописи." scope="request"/>
+<jsp:include page="components/vb/question-mark-bubble.jsp"/>
                                 </div>
                                 <ul class="actions">
                                     <li class="action publish">
@@ -679,19 +659,9 @@
                                     -->
                                     <span class="text">Отклонено</span>
 
-                                    <!-- START (Значок-вопросика с всплывающей подсказкой) -->
-                                    <div class="hint">
-                                        <!-- Если убрать доп.класс blue, то знак вопросмка будет черного цвета -->
-                                        <div class="question-mark "></div>
-                                        <div class="bubble-before bubble-before-1"></div>
-                                        <div class="bubble-before bubble-before-2"></div>
-                                        <div class="bubble" data-init-width="355">
-                                            <span class="content">
-                                                Запрос на публикацию был отклонен из-за обильной любви ко всему человечеству в тексте вашей книги.
-                                            </span>
-                                        </div>
-                                    </div>
-                                    <!-- END (Значок-вопросика с всплывающей подсказкой) -->
+<c:set var="isQuestionMarkBlue" value="false" scope="request"/>
+<c:set var="bubbleContent" value="Запрос на публикацию был отклонен из-за обильной любви ко всему человечеству в тексте вашей книги." scope="request"/>
+<jsp:include page="components/vb/question-mark-bubble.jsp"/>
                                 </div>
                                 <ul class="actions">
                                     <li class="action publish">
@@ -1258,19 +1228,9 @@
                                                                     Имя владельца карты
                                                                 </span>
 
-                                                                <!-- START (Значок-вопросика с всплывающей подсказкой) -->
-                                                                <div class="hint">
-                                                                    <!-- Если убрать доп.класс blue, то знак вопросмка будет черного цвета -->
-                                                                    <div class="question-mark blue"></div>
-                                                                    <div class="bubble-before bubble-before-1"></div>
-                                                                    <div class="bubble-before bubble-before-2"></div>
-                                                                    <div class="bubble" data-init-width="355">
-                                                                        <span class="content">
-                                                                            Имя владельца карты должно быть введено в латинской транскрипции именно так, как оно указано на Вашей карте
-                                                                        </span>
-                                                                    </div>
-                                                                </div>
-                                                                <!-- END (Значок-вопросика с всплывающей подсказкой) -->
+<c:set var="isQuestionMarkBlue" value="true" scope="request"/>
+<c:set var="bubbleContent" value="Имя владельца карты должно быть введено в латинской транскрипции именно так, как оно указано на Вашей карте" scope="request"/>
+<jsp:include page="components/vb/question-mark-bubble.jsp"/>
                                                             </label>
 
                                                             <!-- START (Наклонные input-ы) -->
@@ -1317,19 +1277,9 @@
                                                                     CVV
                                                                 </span>
 
-                                                                <!-- START (Значок-вопросика с всплывающей подсказкой) -->
-                                                                <div class="hint">
-                                                                    <!-- Если убрать доп.класс blue, то знак вопросмка будет черного цвета -->
-                                                                    <div class="question-mark blue"></div>
-                                                                    <div class="bubble-before bubble-before-1"></div>
-                                                                    <div class="bubble-before bubble-before-2"></div>
-                                                                    <div class="bubble" data-init-width="355">
-                                                                        <span class="content">
-                                                                            Код CVV - это трехзначное число, узнать которое Вы можете посмотрев на обратную сторону банковской карты. Обычно CVV напечатано на полосе для подписи
-                                                                        </span>
-                                                                    </div>
-                                                                </div>
-                                                                <!-- END (Значок-вопросика с всплывающей подсказкой) -->
+<c:set var="isQuestionMarkBlue" value="true" scope="request"/>
+<c:set var="bubbleContent" value="Код CVV - это трехзначное число, узнать которое Вы можете посмотрев на обратную сторону банковской карты. Обычно CVV напечатано на полосе для подписи" scope="request"/>
+<jsp:include page="components/vb/question-mark-bubble.jsp"/>
                                                             </label>
 
                                                             <!-- START (Наклонные input-ы) -->

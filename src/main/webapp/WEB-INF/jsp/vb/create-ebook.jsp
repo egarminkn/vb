@@ -373,19 +373,9 @@
                                     This project contains explicit content of an adult nature. It is intended for a mature audience of readers 18 or older
                                 </span>
 
-                                <!-- START (Значок-вопросика с всплывающей подсказкой) -->
-                                <div class="hint">
-                                    <!-- Если убрать доп.класс blue, то знак вопросмка будет черного цвета -->
-                                    <div class="question-mark blue"></div>
-                                    <div class="bubble-before bubble-before-1"></div>
-                                    <div class="bubble-before bubble-before-2"></div>
-                                    <div class="bubble" data-init-width="355">
-                                        <span class="content">
-                                            Если книга быдет содержать запрещенный контент, а Вы нас не уведомите об этом данной галочкой, то книга не будет допущена к публикации на нашем сервисе.
-                                        </span>
-                                    </div>
-                                </div>
-                                <!-- END (Значок-вопросика с всплывающей подсказкой) -->
+<c:set var="isQuestionMarkBlue" value="true" scope="request"/>
+<c:set var="bubbleContent" value="Если книга быдет содержать запрещенный контент, а Вы нас не уведомите об этом данной галочкой, то книга не будет допущена к публикации на нашем сервисе." scope="request"/>
+<jsp:include page="components/vb/question-mark-bubble.jsp"/>
                             </div>
 
                             <div class="tags">
@@ -400,19 +390,9 @@
                                 </div>
                                 <!-- END (Наклонные input-ы) -->
 
-                                <!-- START (Значок-вопросика с всплывающей подсказкой) -->
-                                <div class="hint">
-                                    <!-- Если убрать доп.класс blue, то знак вопросмка будет черного цвета -->
-                                    <div class="question-mark blue"></div>
-                                    <div class="bubble-before bubble-before-1"></div>
-                                    <div class="bubble-before bubble-before-2"></div>
-                                    <div class="bubble" data-init-width="355">
-                                        <span class="content">
-                                            Продуманно составленный список ключевых слов позволит читателям быстрее найти Вашу книгу.
-                                        </span>
-                                    </div>
-                                </div>
-                                <!-- END (Значок-вопросика с всплывающей подсказкой) -->
+<c:set var="isQuestionMarkBlue" value="true" scope="request"/>
+<c:set var="bubbleContent" value="Продуманно составленный список ключевых слов позволит читателям быстрее найти Вашу книгу." scope="request"/>
+<jsp:include page="components/vb/question-mark-bubble.jsp"/>
                             </div>
 
                             <div class="annotation">
@@ -462,19 +442,9 @@
                                 </div>
                                 <!-- END (Наклонные input-ы) -->
 
-                                <!-- START (Значок-вопросика с всплывающей подсказкой) -->
-                                <div class="hint">
-                                    <!-- Если убрать доп.класс blue, то знак вопросмка будет черного цвета -->
-                                    <div class="question-mark blue"></div>
-                                    <div class="bubble-before bubble-before-1"></div>
-                                    <div class="bubble-before bubble-before-2"></div>
-                                    <div class="bubble" data-init-width="355">
-                                        <span class="content">
-                                            Вы вправе предоставить читателю некоторое количество страниц книги для беспланого просмотра с целью ознаколения и повышения заинтересованности в Вашей работе.
-                                        </span>
-                                    </div>
-                                </div>
-                                <!-- END (Значок-вопросика с всплывающей подсказкой) -->
+<c:set var="isQuestionMarkBlue" value="true" scope="request"/>
+<c:set var="bubbleContent" value="Вы вправе предоставить читателю некоторое количество страниц книги для беспланого просмотра с целью ознаколения и повышения заинтересованности в Вашей работе." scope="request"/>
+<jsp:include page="components/vb/question-mark-bubble.jsp"/>
                             </div>
 
                             <div class="year">
@@ -514,19 +484,9 @@
                                 </div>
                                 <!-- END (Наклонные select-ы) -->
 
-                                <!-- START (Значок-вопросика с всплывающей подсказкой) -->
-                                <div class="hint">
-                                    <!-- Если убрать доп.класс blue, то знак вопросмка будет черного цвета -->
-                                    <div class="question-mark blue"></div>
-                                    <div class="bubble-before bubble-before-1"></div>
-                                    <div class="bubble-before bubble-before-2"></div>
-                                    <div class="bubble" data-init-width="355">
-                                        <span class="content">
-                                            Вы можете раздавать свою книгу даром или принять участие в нашей рейтинговой программе раскрутки Вашей книги.
-                                        </span>
-                                    </div>
-                                </div>
-                                <!-- END (Значок-вопросика с всплывающей подсказкой) -->
+<c:set var="isQuestionMarkBlue" value="true" scope="request"/>
+<c:set var="bubbleContent" value="Вы можете раздавать свою книгу даром или принять участие в нашей рейтинговой программе раскрутки Вашей книги." scope="request"/>
+<jsp:include page="components/vb/question-mark-bubble.jsp"/>
                             </div>
                         </div>
 
