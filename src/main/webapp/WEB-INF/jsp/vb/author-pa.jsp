@@ -1451,13 +1451,9 @@
                                     </div>
                                 </div>
 
-                                <!-- START (Ценник итоговой стоимости) -->
-                                <div class="cost">
-                                    <span class="text">Сумма:</span>
-                                    <span class="value">517</span>
-                                    <span class="currency">руб.</span>
-                                </div>
-                                <!-- END (Ценник итоговой стоимости) -->
+<c:set var="totalCostValue" value="517" scope="request"/>
+<c:set var="totalCostCurrency" value="руб." scope="request"/>
+<jsp:include page="components/vb/total-cost.jsp"/>
 
                                 <!-- Все кнопки должны быть завернуты в тег класса buttons -->
                                 <!-- Кнопка, отмеченная классом payment-mode-btn, используется для submit-а одной из форм платежа -->
