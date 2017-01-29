@@ -3364,11 +3364,9 @@
                                         </span>
                                     </div>
 
-                                    <!-- START (Фото автора в маске-обрезалке) -->
-                                    <a href="${currentURI}#" class="author-photo">
-                                        <img src="resources/vb/img/tmp/photo-1.jpg" width="80" height="80">
-                                    </a>
-                                    <!-- END (Фото автора в маске-обрезалке) -->
+<c:set var="isAuthorPhotoLink" value="true" scope="request"/>
+<c:set var="authorPhotoUrl" value="resources/vb/img/tmp/photo-1.jpg" scope="request"/>
+<jsp:include page="components/vb/author-photo.jsp"/>
 
 <jsp:include page="components/vb/rating-3-stars.jsp"/>
 
@@ -3390,11 +3388,9 @@
                                         </span>
                                     </div>
 
-                                    <!-- START (Фото автора в маске-обрезалке) -->
-                                    <a href="${currentURI}#" class="author-photo">
-                                        <img src="resources/vb/img/tmp/photo-2.jpg" width="80" height="80">
-                                    </a>
-                                    <!-- END (Фото автора в маске-обрезалке) -->
+<c:set var="isAuthorPhotoLink" value="true" scope="request"/>
+<c:set var="authorPhotoUrl" value="resources/vb/img/tmp/photo-2.jpg" scope="request"/>
+<jsp:include page="components/vb/author-photo.jsp"/>
 
 <jsp:include page="components/vb/rating-3-stars.jsp"/>
 
@@ -3416,11 +3412,9 @@
                                         </span>
                                     </div>
 
-                                    <!-- START (Фото автора в маске-обрезалке) -->
-                                    <a href="${currentURI}#" class="author-photo">
-                                        <img src="resources/vb/img/tmp/photo-3.jpg" width="80" height="80">
-                                    </a>
-                                    <!-- END (Фото автора в маске-обрезалке) -->
+<c:set var="isAuthorPhotoLink" value="true" scope="request"/>
+<c:set var="authorPhotoUrl" value="resources/vb/img/tmp/photo-3.jpg" scope="request"/>
+<jsp:include page="components/vb/author-photo.jsp"/>
 
 <jsp:include page="components/vb/rating-3-stars.jsp"/>
 
@@ -3442,11 +3436,9 @@
                                         </span>
                                     </div>
 
-                                    <!-- START (Фото автора в маске-обрезалке) -->
-                                    <a href="${currentURI}#" class="author-photo">
-                                        <img src="resources/vb/img/tmp/photo-4.jpg" width="80" height="80">
-                                    </a>
-                                    <!-- END (Фото автора в маске-обрезалке) -->
+<c:set var="isAuthorPhotoLink" value="true" scope="request"/>
+<c:set var="authorPhotoUrl" value="resources/vb/img/tmp/photo-4.jpg" scope="request"/>
+<jsp:include page="components/vb/author-photo.jsp"/>
 
 <jsp:include page="components/vb/rating-3-stars.jsp"/>
 
@@ -3468,11 +3460,9 @@
                                         </span>
                                     </div>
 
-                                    <!-- START (Фото автора в маске-обрезалке) -->
-                                    <a href="${currentURI}#" class="author-photo">
-                                        <img src="resources/vb/img/tmp/photo-5.jpg" width="80" height="80">
-                                    </a>
-                                    <!-- END (Фото автора в маске-обрезалке) -->
+<c:set var="isAuthorPhotoLink" value="true" scope="request"/>
+<c:set var="authorPhotoUrl" value="resources/vb/img/tmp/photo-5.jpg" scope="request"/>
+<jsp:include page="components/vb/author-photo.jsp"/>
 
 <jsp:include page="components/vb/rating-3-stars.jsp"/>
 
@@ -3494,11 +3484,9 @@
                                         </span>
                                     </div>
 
-                                    <!-- START (Фото автора в маске-обрезалке) -->
-                                    <a href="${currentURI}#" class="author-photo">
-                                        <img src="resources/vb/img/tmp/photo-6.jpg" width="80" height="80">
-                                    </a>
-                                    <!-- END (Фото автора в маске-обрезалке) -->
+<c:set var="isAuthorPhotoLink" value="true" scope="request"/>
+<c:set var="authorPhotoUrl" value="resources/vb/img/tmp/photo-6.jpg" scope="request"/>
+<jsp:include page="components/vb/author-photo.jsp"/>
 
 <jsp:include page="components/vb/rating-3-stars.jsp"/>
 

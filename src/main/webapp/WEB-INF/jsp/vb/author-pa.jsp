@@ -25,11 +25,9 @@
                     <div class="columns">
                         <div class="column column-1">
                             <div class="row row-1">
-                                <!-- START (Фото автора в маске-обрезалке) -->
-                                <div class="author-photo">
-                                    <img src="resources/vb/img/tmp/photo-1.jpg" width="80" height="80">
-                                </div>
-                                <!-- END (Фото автора в маске-обрезалке) -->
+<c:set var="isAuthorPhotoLink" value="false" scope="request"/>
+<c:set var="authorPhotoUrl" value="resources/vb/img/tmp/photo-1.jpg" scope="request"/>
+<jsp:include page="components/vb/author-photo.jsp"/>
 
                                 <div class="name">
                                     <div class="fullname">

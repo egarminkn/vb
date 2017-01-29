@@ -197,11 +197,9 @@
                             <span class="text">1</span>
                         </div>
 
-                        <!-- START (Фото автора в маске-обрезалке) -->
-                        <div class="author-photo">
-                            <img src="resources/vb/img/tmp/photo-1.jpg" width="80" height="80">
-                        </div>
-                        <!-- END (Фото автора в маске-обрезалке) -->
+<c:set var="isAuthorPhotoLink" value="false" scope="request"/>
+<c:set var="authorPhotoUrl" value="resources/vb/img/tmp/photo-1.jpg" scope="request"/>
+<jsp:include page="components/vb/author-photo.jsp"/>
 
                         <div class="about">
                             <div class="fullname-rating">
@@ -243,11 +241,9 @@
                             <span class="text">2</span>
                         </div>
 
-                        <!-- START (Фото автора в маске-обрезалке) -->
-                        <div class="author-photo">
-                            <img src="resources/vb/img/tmp/photo-1.jpg" width="80" height="80">
-                        </div>
-                        <!-- END (Фото автора в маске-обрезалке) -->
+<c:set var="isAuthorPhotoLink" value="false" scope="request"/>
+<c:set var="authorPhotoUrl" value="resources/vb/img/tmp/photo-1.jpg" scope="request"/>
+<jsp:include page="components/vb/author-photo.jsp"/>
 
                         <div class="about">
                             <div class="fullname-rating">
@@ -289,11 +285,9 @@
                             <span class="text">3</span>
                         </div>
 
-                        <!-- START (Фото автора в маске-обрезалке) -->
-                        <div class="author-photo">
-                            <img src="resources/vb/img/tmp/photo-1.jpg" width="80" height="80">
-                        </div>
-                        <!-- END (Фото автора в маске-обрезалке) -->
+<c:set var="isAuthorPhotoLink" value="false" scope="request"/>
+<c:set var="authorPhotoUrl" value="resources/vb/img/tmp/photo-1.jpg" scope="request"/>
+<jsp:include page="components/vb/author-photo.jsp"/>
 
                         <div class="about">
                             <div class="fullname-rating">
