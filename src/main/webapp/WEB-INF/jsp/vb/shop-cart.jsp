@@ -596,13 +596,7 @@
                         </tbody>
                     </table>
 
-                    <!-- START (Кнопка "Показать еще") -->
-                    <div class="show-more">
-                        <a class="btn" href="${currentURI}#">
-                            Показать еще
-                        </a>
-                    </div>
-                    <!-- END (Кнопка "Показать еще") -->
+<jsp:include page="components/vb/show-more-btn.jsp"/>
 
                     <!-- START (Тень под блоком) -->
                     <div class="shadow-under"></div>

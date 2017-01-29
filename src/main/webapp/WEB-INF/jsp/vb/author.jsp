@@ -592,13 +592,7 @@
                         <!-- END (Обложка и размещенная под ней сводная информация о книге и ее авторе) -->
                     </div>
 
-                    <!-- START (Кнопка "Показать еще") -->
-                    <div class="show-more">
-                        <a class="btn" href="${currentURI}#">
-                            Показать еще
-                        </a>
-                    </div>
-                    <!-- END (Кнопка "Показать еще") -->
+<jsp:include page="components/vb/show-more-btn.jsp"/>
                 </div>
             </div>
         </main>
