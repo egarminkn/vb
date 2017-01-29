@@ -4,13 +4,19 @@
         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
         xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-jsptaglibrary_2_1.xsd">
 
-    <tlib-version>1.0</tlib-version>
+    <tlib-version>1.1</tlib-version>
     <short-name>functions</short-name>
-    <uri>http://topjava.javawebinar.ru/functions</uri>
+    <uri>http://verybook.verygroup.org/functions</uri>
 
     <function>
         <name>formatDateTime</name>
         <function-class>ru.javawebinar.topjava.util.TimeUtil</function-class>
         <function-signature>java.lang.String toString(java.time.LocalDateTime)</function-signature>
+    </function>
+
+    <function>
+        <name>formatDate</name>
+        <function-class>ru.javawebinar.topjava.util.TimeUtil</function-class>
+        <function-signature>java.lang.String formatLocalDate(java.time.LocalDate)</function-signature>
     </function>
 </taglib>

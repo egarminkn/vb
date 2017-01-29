@@ -12,7 +12,8 @@ import java.time.format.DateTimeFormatter;
  * 07.01.2015.
  */
 public class TimeUtil {
-    public static final DateTimeFormatter DATE_TIME_FORMATTER = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm");
+    private static final DateTimeFormatter DATE_TIME_FORMATTER = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm");
+    private static final DateTimeFormatter DATE_FORMATTER = DateTimeFormatter.ofPattern("dd MMM yyyy");
 
     public static final LocalDate MIN_DATE = LocalDate.of(1, 1, 1);
     public static final LocalDate MAX_DATE = LocalDate.of(3000, 1, 1);
@@ -40,7 +41,11 @@ public class TimeUtil {
         return parseLocalDateTime(str, DATE_TIME_FORMATTER);
     }
 
-    public static LocalDateTime parseLocalDateTime(String str, DateTimeFormatter formatter) {
+    private static LocalDateTime parseLocalDateTime(String str, DateTimeFormatter formatter) {
         return StringUtils.isEmpty(str) ? LocalDateTime.now() : LocalDateTime.parse(str, formatter);
+    }
+
+    public static String formatLocalDate(LocalDate date) {
+        return date == null ? "" : date.format(DATE_FORMATTER);
     }
 }
