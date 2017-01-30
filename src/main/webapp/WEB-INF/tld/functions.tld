@@ -15,8 +15,14 @@
     </function>
 
     <function>
-        <name>formatDate</name>
+        <name>formatDateToShortStr</name>
         <function-class>ru.javawebinar.topjava.util.TimeUtil</function-class>
-        <function-signature>java.lang.String formatLocalDate(java.time.LocalDate)</function-signature>
+        <function-signature>java.lang.String formatLocalDateToShortString(java.time.LocalDate)</function-signature>
+    </function>
+
+    <function>
+        <name>formatDateToLongStr</name>
+        <function-class>ru.javawebinar.topjava.util.TimeUtil</function-class>
+        <function-signature>java.lang.String formatLocalDateToLongString(java.time.LocalDate)</function-signature>
     </function>
 </taglib>

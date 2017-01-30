@@ -3,6 +3,7 @@
 <%@taglib prefix="spring" uri="http://www.springframework.org/tags" %>
 <%@taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
 <%@taglib prefix="sec" uri="http://www.springframework.org/security/tags" %>
+<%@taglib prefix="fn" uri="http://verybook.verygroup.org/functions" %>
 
 <c:set var="bodyClass" value="hidden-partners-on-shelf" scope="request"/>
 <c:set var="mainClass" value="author-pa" scope="request"/>
@@ -223,346 +224,37 @@
                 <div class="table-with-shadow read">
                     <table class="table read">
                         <thead class="thead">
-                        <tr class="tr">
-                            <th class="th product">
-                                Книга
-                            </th>
-                            <th class="th date">
-                                Дата публикации
-                            </th>
-                            <th class="th likes">
-                                <span>Проголосовать</span>
-                            </th>
-                            <th class="th price">
-                                <span>Цена покупки</span>
-                            </th>
-                            <th class="th download">
-                                <span>Скачать</span>
-                            </th>
-                        </tr>
+                            <tr class="tr">
+                                <th class="th product">
+                                    Книга
+                                </th>
+                                <th class="th date">
+                                    Дата публикации
+                                </th>
+                                <th class="th likes">
+                                    <span>Проголосовать</span>
+                                </th>
+                                <th class="th price">
+                                    <span>Цена покупки</span>
+                                </th>
+                                <th class="th download">
+                                    <span>Скачать</span>
+                                </th>
+                            </tr>
                         </thead>
                         <tbody class="tbody">
-                        <tr class="tr">
-                            <td class="td product">
-<c:set var="bookTripletCoverUrl" value="resources/vb/img/tmp/book-1.jpg" scope="request"/>
-<c:set var="bookTripletTitle" value="Полет над гнездом кукушки" scope="request"/>
-<c:set var="bookTripletAuthor" value="Александр Иванов" scope="request"/>
-<jsp:include page="components/vb/book-triplet.jsp"/>
-                            </td>
-                            <td class="td date">
-                                <span>
-                                    12 сентября 2015 года
-                                </span>
-                            </td>
-                            <td class="td likes">
-<c:set var="likesCount" value="1022" scope="request"/>
-<c:set var="dislikesCount" value="51" scope="request"/>
-<jsp:include page="components/vb/thumb-likes.jsp"/>
-                            </td>
-                            <td class="td price">
-<c:set var="price" value="5140" scope="request"/>
-<jsp:include page="components/vb/price-ruble-sign.jsp"/>
-                            </td>
-                            <td class="td download">
-                                <span>Форматы:</span>
-                                <ul class="formats">
-                                    <li class="format">
-                                        <button>epub</button>
-                                    </li>
-                                    <li class="format">
-                                        <button>pdf</button>
-                                    </li>
-                                </ul>
-                            </td>
-                        </tr>
-                        <tr class="tr">
-                            <td class="td product">
-<c:set var="bookTripletCoverUrl" value="resources/vb/img/tmp/book-2.jpg" scope="request"/>
-<c:set var="bookTripletTitle" value="Как отравили Сталина" scope="request"/>
-<c:set var="bookTripletAuthor" value="Александр Константинопольский" scope="request"/>
-<jsp:include page="components/vb/book-triplet.jsp"/>
-                            </td>
-                            <td class="td date">
-                                <span>
-                                    26 июня 2015 года
-                                </span>
-                            </td>
-                            <td class="td likes">
-<c:set var="likesCount" value="1022" scope="request"/>
-<c:set var="dislikesCount" value="51" scope="request"/>
-<jsp:include page="components/vb/thumb-likes.jsp"/>
-                            </td>
-                            <td class="td price">
-<c:set var="price" value="651" scope="request"/>
-<jsp:include page="components/vb/price-ruble-sign.jsp"/>
-                            </td>
-                            <td class="td download">
-                                <span>Форматы:</span>
-                                <ul class="formats">
-                                    <li class="format">
-                                        <button>pdf</button>
-                                    </li>
-                                    <li class="format">
-                                        <button>fb2</button>
-                                    </li>
-                                </ul>
-                            </td>
-                        </tr>
-                        <tr class="tr">
-                            <td class="td product">
-<c:set var="bookTripletCoverUrl" value="resources/vb/img/tmp/book-3.jpg" scope="request"/>
-<c:set var="bookTripletTitle" value="Полет над гнездом кукушки" scope="request"/>
-<c:set var="bookTripletAuthor" value="Александр Иванов" scope="request"/>
-<jsp:include page="components/vb/book-triplet.jsp"/>
-                            </td>
-                            <td class="td date">
-                                <span>
-                                    16 ноября 2014 года
-                                </span>
-                            </td>
-                            <td class="td likes">
-<c:set var="likesCount" value="1022" scope="request"/>
-<c:set var="dislikesCount" value="51" scope="request"/>
-<jsp:include page="components/vb/thumb-likes.jsp"/>
-                            </td>
-                            <td class="td price">
-<c:set var="price" value="501" scope="request"/>
-<jsp:include page="components/vb/price-ruble-sign.jsp"/>
-                            </td>
-                            <td class="td download">
-                                <span>Форматы:</span>
-                                <ul class="formats">
-                                    <li class="format">
-                                        <button>epub</button>
-                                    </li>
-                                </ul>
-                            </td>
-                        </tr>
-                        <tr class="tr">
-                            <td class="td product">
-<c:set var="bookTripletCoverUrl" value="resources/vb/img/tmp/book-4.jpg" scope="request"/>
-<c:set var="bookTripletTitle" value="С широко открытыми глазами" scope="request"/>
-<c:set var="bookTripletAuthor" value="Александр Иванов" scope="request"/>
-<jsp:include page="components/vb/book-triplet.jsp"/>
-                            </td>
-                            <td class="td date">
-                                <span>
-                                    6 сентября 2013 года
-                                </span>
-                            </td>
-                            <td class="td likes">
-<c:set var="likesCount" value="1022" scope="request"/>
-<c:set var="dislikesCount" value="51" scope="request"/>
-<jsp:include page="components/vb/thumb-likes.jsp"/>
-                            </td>
-                            <td class="td price">
-<c:set var="price" value="5551" scope="request"/>
-<jsp:include page="components/vb/price-ruble-sign.jsp"/>
-                            </td>
-                            <td class="td download">
-                                <span>Форматы:</span>
-                                <ul class="formats">
-                                    <li class="format">
-                                        <button>epub</button>
-                                    </li>
-                                    <li class="format">
-                                        <button>pdf</button>
-                                    </li>
-                                </ul>
-                            </td>
-                        </tr>
-                        <tr class="tr">
-                            <td class="td product">
-<c:set var="bookTripletCoverUrl" value="resources/vb/img/tmp/book-5.jpg" scope="request"/>
-<c:set var="bookTripletTitle" value="Полет над гнездом кукушки" scope="request"/>
-<c:set var="bookTripletAuthor" value="Владимир Рудольфович" scope="request"/>
-<jsp:include page="components/vb/book-triplet.jsp"/>
-                            </td>
-                            <td class="td date">
-                                <span>
-                                    11 марта 2015 года
-                                </span>
-                            </td>
-                            <td class="td likes">
-<c:set var="likesCount" value="1022" scope="request"/>
-<c:set var="dislikesCount" value="51" scope="request"/>
-<jsp:include page="components/vb/thumb-likes.jsp"/>
-                            </td>
-                            <td class="td price">
-<c:set var="price" value="5" scope="request"/>
-<jsp:include page="components/vb/price-ruble-sign.jsp"/>
-                            </td>
-                            <td class="td download">
-                                <span>Форматы:</span>
-                                <ul class="formats">
-                                    <li class="format">
-                                        <button>fb2</button>
-                                    </li>
-                                </ul>
-                            </td>
-                        </tr>
-                        <tr class="tr">
-                            <td class="td product">
-<c:set var="bookTripletCoverUrl" value="resources/vb/img/tmp/book-1.jpg" scope="request"/>
-<c:set var="bookTripletTitle" value="Как отравили Сталина" scope="request"/>
-<c:set var="bookTripletAuthor" value="Александр Константинопольский" scope="request"/>
-<jsp:include page="components/vb/book-triplet.jsp"/>
-                            </td>
-                            <td class="td date">
-                                <span>
-                                    7 октября 2016 года
-                                </span>
-                            </td>
-                            <td class="td likes">
-<c:set var="likesCount" value="1022" scope="request"/>
-<c:set var="dislikesCount" value="51" scope="request"/>
-<jsp:include page="components/vb/thumb-likes.jsp"/>
-                            </td>
-                            <td class="td price">
-<c:set var="price" value="501" scope="request"/>
-<jsp:include page="components/vb/price-ruble-sign.jsp"/>
-                            </td>
-                            <td class="td download">
-                                <span>Форматы:</span>
-                                <ul class="formats">
-                                    <li class="format">
-                                        <button>pdf</button>
-                                    </li>
-                                    <li class="format">
-                                        <button>fb2</button>
-                                    </li>
-                                </ul>
-                            </td>
-                        </tr>
-                        <tr class="tr">
-                            <td class="td product">
-<c:set var="bookTripletCoverUrl" value="resources/vb/img/tmp/book-2.jpg" scope="request"/>
-<c:set var="bookTripletTitle" value="Далеко за горизонтом" scope="request"/>
-<c:set var="bookTripletAuthor" value="Владимир Рудольфович" scope="request"/>
-<jsp:include page="components/vb/book-triplet.jsp"/>
-                            </td>
-                            <td class="td date">
-                                <span>
-                                    1 января 2010 года
-                                </span>
-                            </td>
-                            <td class="td likes">
-<c:set var="likesCount" value="1022" scope="request"/>
-<c:set var="dislikesCount" value="51" scope="request"/>
-<jsp:include page="components/vb/thumb-likes.jsp"/>
-                            </td>
-                            <td class="td price">
-<c:set var="price" value="515" scope="request"/>
-<jsp:include page="components/vb/price-ruble-sign.jsp"/>
-                            </td>
-                            <td class="td download">
-                                <span>Форматы:</span>
-                                <ul class="formats">
-                                    <li class="format">
-                                        <button>epub</button>
-                                    </li>
-                                    <li class="format">
-                                        <button>pdf</button>
-                                    </li>
-                                </ul>
-                            </td>
-                        </tr>
-                        <tr class="tr">
-                            <td class="td product">
-<c:set var="bookTripletCoverUrl" value="resources/vb/img/tmp/book-3.jpg" scope="request"/>
-<c:set var="bookTripletTitle" value="С широко открытыми глазами" scope="request"/>
-<c:set var="bookTripletAuthor" value="Александр Иванов" scope="request"/>
-<jsp:include page="components/vb/book-triplet.jsp"/>
-                            </td>
-                            <td class="td date">
-                                <span>
-                                    14 февраля 2012 года
-                                </span>
-                            </td>
-                            <td class="td likes">
-<c:set var="likesCount" value="1022" scope="request"/>
-<c:set var="dislikesCount" value="51" scope="request"/>
-<jsp:include page="components/vb/thumb-likes.jsp"/>
-                            </td>
-                            <td class="td price">
-<c:set var="price" value="151" scope="request"/>
-<jsp:include page="components/vb/price-ruble-sign.jsp"/>
-                            </td>
-                            <td class="td download">
-                                <span>Форматы:</span>
-                                <ul class="formats">
-                                    <li class="format">
-                                        <button>epub</button>
-                                    </li>
-                                </ul>
-                            </td>
-                        </tr>
-                        <tr class="tr">
-                            <td class="td product">
-<c:set var="bookTripletCoverUrl" value="resources/vb/img/tmp/book-4.jpg" scope="request"/>
-<c:set var="bookTripletTitle" value="Полет над гнездом кукушки" scope="request"/>
-<c:set var="bookTripletAuthor" value="Александр Константинопольский" scope="request"/>
-<jsp:include page="components/vb/book-triplet.jsp"/>
-                            </td>
-                            <td class="td date">
-                                <span>
-                                    6 мая 2009 года
-                                </span>
-                            </td>
-                            <td class="td likes">
-<c:set var="likesCount" value="1022" scope="request"/>
-<c:set var="dislikesCount" value="51" scope="request"/>
-<jsp:include page="components/vb/thumb-likes.jsp"/>
-                            </td>
-                            <td class="td price">
-<c:set var="price" value="2251" scope="request"/>
-<jsp:include page="components/vb/price-ruble-sign.jsp"/>
-                            </td>
-                            <td class="td download">
-                                <span>Форматы:</span>
-                                <ul class="formats">
-                                    <li class="format">
-                                        <button>epub</button>
-                                    </li>
-                                    <li class="format">
-                                        <button>fb2</button>
-                                    </li>
-                                </ul>
-                            </td>
-                        </tr>
-                        <tr class="tr">
-                            <td class="td product">
-<c:set var="bookTripletCoverUrl" value="resources/vb/img/tmp/book-5.jpg" scope="request"/>
-<c:set var="bookTripletTitle" value="Летящие в облаках" scope="request"/>
-<c:set var="bookTripletAuthor" value="Владимир Рудольфович" scope="request"/>
-<jsp:include page="components/vb/book-triplet.jsp"/>
-                            </td>
-                            <td class="td date">
-                                <span>
-                                    26 сентября 2015 года
-                                </span>
-                            </td>
-                            <td class="td likes">
-<c:set var="likesCount" value="1022" scope="request"/>
-<c:set var="dislikesCount" value="51" scope="request"/>
-<jsp:include page="components/vb/thumb-likes.jsp"/>
-                            </td>
-                            <td class="td price">
-<c:set var="price" value="511" scope="request"/>
-<jsp:include page="components/vb/price-ruble-sign.jsp"/>
-                            </td>
-                            <td class="td download">
-                                <span>Форматы:</span>
-                                <ul class="formats">
-                                    <li class="format">
-                                        <button>epub</button>
-                                    </li>
-                                    <li class="format">
-                                        <button>fb2</button>
-                                    </li>
-                                </ul>
-                            </td>
-                        </tr>
+                            <c:forEach var="readBookRow" items="${readBookRows}">
+                                <jsp:useBean id="readBookRow" class="org.verygroup.verybook.dto.authorpa.ReadBookRow"/>
+<c:set var="bookCoverUrl" value="${readBookRow.bookCoverUrl}" scope="request"/>
+<c:set var="bookTitle" value="${readBookRow.bookTitle}" scope="request"/>
+<c:set var="bookAuthor" value="${readBookRow.bookAuthor}" scope="request"/>
+<c:set var="bookPublishDate" value="${fn:formatDateToLongStr(readBookRow.bookPublishDate)}" scope="request"/>
+<c:set var="bookLikesCount" value="${readBookRow.bookLikesCount}" scope="request"/>
+<c:set var="bookDislikesCount" value="${readBookRow.bookDislikesCount}" scope="request"/>
+<c:set var="bookBuyingPriceValue" value="${readBookRow.bookBuyingPriceValue}" scope="request"/>
+<c:set var="bookFormats" value="${readBookRow.bookFormats}" scope="request"/>
+<jsp:include page="components/author-pa/read-book-row.jsp"/>
+                            </c:forEach>
                         </tbody>
                     </table>
 

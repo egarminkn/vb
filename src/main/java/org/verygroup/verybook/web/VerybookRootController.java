@@ -13,6 +13,8 @@ import org.verygroup.verybook.dto.RatingItem;
 import org.verygroup.verybook.dto.authorpa.WrittenBookAction;
 import org.verygroup.verybook.dto.authorpa.WrittenBookActionType;
 import org.verygroup.verybook.dto.authorpa.WrittenBookRow;
+import org.verygroup.verybook.dto.authorpa.ReadBookRow;
+import org.verygroup.verybook.BookFormat;
 
 @Controller
 public class VerybookRootController {
@@ -28,7 +30,7 @@ public class VerybookRootController {
 
         List<BookItem> bookItems = new LinkedList<>();
         bookItems.add(new BookItem(1022,51, "20", "руб", LocalDate.of(2016, 1, 26), 40, "А.А. Иванов", "Древняя Русь в картинках", "resources/vb/img/tmp/book-1.jpg", true));
-        bookItems.add(new BookItem(1022,51, "20", "руб", LocalDate.of(2016, 1, 26), 1, "А.А. Иванов", "Древняя Русь в картинках", "resources/vb/img/tmp/book-2.jpg", true));
+        bookItems.add(new BookItem(1022,51, "20", "руб", LocalDate.of(2016, 1, 2), 1, "А.А. Иванов", "Древняя Русь в картинках", "resources/vb/img/tmp/book-2.jpg", true));
         bookItems.add(new BookItem(1022,51, "Бесплатно", "", LocalDate.of(2016, 1, 26), 4, "А.А. Иванов", "Древняя Русь в картинках", "resources/vb/img/tmp/book-3.jpg", true));
         bookItems.add(new BookItem(1022,51, "20", "руб", LocalDate.of(2016, 1, 26), 9, "А.А. Иванов", "Древняя Русь в картинках", "resources/vb/img/tmp/book-4.jpg", true));
         bookItems.add(new BookItem(1022,51, "20", "руб", LocalDate.of(2016, 1, 26), 21, "А.А. Иванов", "Древняя Русь в картинках", "resources/vb/img/tmp/book-5.jpg", true));
@@ -61,6 +63,19 @@ public class VerybookRootController {
         writtenBookRows.add(new WrittenBookRow("", "resources/vb/img/tmp/book-3.jpg", "Далеко за горизонтом", "on-moderation", 86, 0, 53, 0, "175", "руб", "150", "руб", new WrittenBookAction(WrittenBookActionType.WITHDRAW, "Отозвать")));
         writtenBookRows.add(new WrittenBookRow("", "resources/vb/img/tmp/book-4.jpg", "Как отравили Сталина", "not-published", 86, 0, 77, 111, "1151", "руб", "0", "руб", new WrittenBookAction(WrittenBookActionType.PUBLISH, "Отправить на модерацию")));
         model.addAttribute("writtenBookRows", writtenBookRows);
+
+        List<ReadBookRow> readBookRows = new LinkedList<>();
+        readBookRows.add(new ReadBookRow("resources/vb/img/tmp/book-1.jpg", "Полет над гнездом кукушки", "Александр Иванов", LocalDate.of(2015, 9, 12), 1022, 51, "5140", "руб", BookFormat.EPUB, BookFormat.PDF, BookFormat.EPUB, BookFormat.PDF, BookFormat.EPUB, BookFormat.PDF));
+        readBookRows.add(new ReadBookRow("resources/vb/img/tmp/book-2.jpg", "Как отравили Сталина", "Александр Константинопольский", LocalDate.of(2015, 6, 26), 1022, 51, "651", "руб", BookFormat.EPUB, BookFormat.PDF, BookFormat.EPUB, BookFormat.PDF, BookFormat.EPUB, BookFormat.PDF));
+        readBookRows.add(new ReadBookRow("resources/vb/img/tmp/book-3.jpg", "Полет над гнездом кукушки", "Александр Иванов", LocalDate.of(2014, 11, 16), 1022, 51, "501", "руб", BookFormat.EPUB, BookFormat.EPUB, BookFormat.EPUB));
+        readBookRows.add(new ReadBookRow("resources/vb/img/tmp/book-4.jpg", "С широко открытыми глазами", "Александр Иванов", LocalDate.of(2013, 9, 6), 1022, 51, "5551", "руб", BookFormat.EPUB, BookFormat.PDF, BookFormat.EPUB, BookFormat.PDF, BookFormat.EPUB, BookFormat.PDF));
+        readBookRows.add(new ReadBookRow("resources/vb/img/tmp/book-5.jpg", "Полет над гнездом кукушки", "Владимир Рудольфович", LocalDate.of(2015, 3, 11), 1022, 51, "5", "руб", BookFormat.EPUB, BookFormat.PDF, BookFormat.EPUB, BookFormat.PDF, BookFormat.EPUB, BookFormat.PDF));
+        readBookRows.add(new ReadBookRow("resources/vb/img/tmp/book-1.jpg", "Как отравили Сталина", "Александр Константинопольский", LocalDate.of(2016, 10, 7), 1022, 51, "501", "руб", BookFormat.PDF));
+        readBookRows.add(new ReadBookRow("resources/vb/img/tmp/book-2.jpg", "Далеко за горизонтом", "Владимир Рудольфович", LocalDate.of(2010, 1, 1), 1022, 51, "515", "руб", BookFormat.EPUB, BookFormat.PDF, BookFormat.EPUB, BookFormat.PDF, BookFormat.EPUB, BookFormat.PDF));
+        readBookRows.add(new ReadBookRow("resources/vb/img/tmp/book-3.jpg", "С широко открытыми глазами", "Александр Иванов", LocalDate.of(2012, 2, 14), 1022, 51, "151", "руб", BookFormat.EPUB, BookFormat.PDF, BookFormat.EPUB, BookFormat.PDF, BookFormat.EPUB, BookFormat.PDF));
+        readBookRows.add(new ReadBookRow("resources/vb/img/tmp/book-4.jpg", "Полет над гнездом кукушки", "Александр Константинопольский", LocalDate.of(2009, 5, 6), 1022, 51, "2251", "руб", BookFormat.EPUB, BookFormat.PDF, BookFormat.EPUB, BookFormat.PDF, BookFormat.EPUB, BookFormat.PDF));
+        readBookRows.add(new ReadBookRow("resources/vb/img/tmp/book-5.jpg", "Летящие в облаках", "Владимир Рудольфович", LocalDate.of(2015, 9, 26), 1022, 51, "511", "руб", BookFormat.EPUB));
+        model.addAttribute("readBookRows", readBookRows);
 
         return "vb/author-pa";
     }
