@@ -17,18 +17,10 @@
             <input type="radio" name="slide" class="slider-button slider-button-4" id="slider-button-4" >
             <div class="main-banner">
                 <div class="slider">
-                    <a href="${currentURI}#">
-                        <img class="slide slide1" src="resources/vb/img/index/main-banner-1.jpg" width="1247" height="340">
-                    </a>
-                    <a href="${currentURI}#">
-                        <img class="slide slide2" src="resources/vb/img/index/main-banner-2.jpg" width="1247" height="340">
-                    </a>
-                    <a href="${currentURI}#">
-                        <img class="slide slide3" src="resources/vb/img/index/main-banner-3.jpg" width="1247" height="340">
-                    </a>
-                    <a href="${currentURI}#">
-                        <img class="slide slide4" src="resources/vb/img/index/main-banner-4.jpg" width="1247" height="340">
-                    </a>
+                    <c:forEach var="slideUrl" items="${slideUrls}">
+<c:set var="slideUrl" value="${slideUrl}" scope="request"/>
+<jsp:include page="components/index/main-banner-slide.jsp"/>
+                    </c:forEach>
                 </div>
             </div>
             <div class="slider-buttons">

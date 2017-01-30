@@ -196,6 +196,13 @@ public class VerybookRootController {
         highestRatingBookItems.add(new BookItem(1022,51, "20", "руб", LocalDate.of(2016, 1, 26), 9, "А.А. Иванов", "Древняя Русь в картинках", "resources/vb/img/tmp/book-4.jpg", false));
         model.addAttribute("highestRatingBookItems", highestRatingBookItems);
 
+        List<String> slideUrls = new LinkedList<>();
+        slideUrls.add("resources/vb/img/index/main-banner-1.jpg");
+        slideUrls.add("resources/vb/img/index/main-banner-2.jpg");
+        slideUrls.add("resources/vb/img/index/main-banner-3.jpg");
+        slideUrls.add("resources/vb/img/index/main-banner-4.jpg");
+        model.addAttribute("slideUrls", slideUrls);
+
         return "vb/index";
     }
 
