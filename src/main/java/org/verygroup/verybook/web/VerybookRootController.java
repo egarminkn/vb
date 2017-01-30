@@ -8,6 +8,7 @@ import java.time.LocalDate;
 import java.util.LinkedList;
 import java.util.List;
 
+import org.verygroup.verybook.BookGenre;
 import org.verygroup.verybook.dto.BookItem;
 import org.verygroup.verybook.dto.RatingItem;
 import org.verygroup.verybook.dto.authorpa.WrittenBookAction;
@@ -15,6 +16,7 @@ import org.verygroup.verybook.dto.authorpa.WrittenBookActionType;
 import org.verygroup.verybook.dto.authorpa.WrittenBookRow;
 import org.verygroup.verybook.dto.authorpa.ReadBookRow;
 import org.verygroup.verybook.BookFormat;
+import org.verygroup.verybook.dto.authorrating.AuthorItem;
 
 @Controller
 public class VerybookRootController {
@@ -81,7 +83,12 @@ public class VerybookRootController {
     }
 
     @GetMapping("/author-rating")
-    public String authorRating() {
+    public String authorRating(Model model) {
+        List<AuthorItem> authorItems = new LinkedList<>();
+        authorItems.add(new AuthorItem("resources/vb/img/tmp/photo-1.jpg", "Александр Константинопольский", "I draw pictures and I make colouring books! Welcome to my world. Tumble down the rabbit hole and find yourself in my inky black and white Wonderland... I'm an illustrator and ink evangelist who prefers pens and pencils to pixels. I create intricate, hand drawn illustrations predominately, although not exclusively, in black and white. My creativity is cultivated by a curious imagination and a delight in the fantastic. Much of my work has roots in the flora and fauna that surrounded me growing up on my parent's fish farm in rural Scotland.", 18, 5, BookGenre.MILITARY, BookGenre.DETECTIVE, BookGenre.ADVENTURES));
+        authorItems.add(new AuthorItem("resources/vb/img/tmp/photo-1.jpg", "Александр Константинопольский", "I draw pictures and I make colouring books! Welcome to my world. Tumble down the rabbit hole and find yourself in my inky black and white Wonderland... I'm an illustrator and ink evangelist who prefers pens and pencils to pixels. I create intricate, hand drawn illustrations predominately, although not exclusively, in black and white. My creativity is cultivated by a curious imagination and a delight in the fantastic. Much of my work has roots in the flora and fauna that surrounded me growing up on my parent's fish farm in rural Scotland.", 18, 5, BookGenre.MILITARY, BookGenre.DETECTIVE, BookGenre.ADVENTURES));
+        authorItems.add(new AuthorItem("resources/vb/img/tmp/photo-1.jpg", "Александр Константинопольский", "I draw pictures and I make colouring books! Welcome to my world. Tumble down the rabbit hole and find yourself in my inky black and white Wonderland... I'm an illustrator and ink evangelist who prefers pens and pencils to pixels. I create intricate, hand drawn illustrations predominately, although not exclusively, in black and white. My creativity is cultivated by a curious imagination and a delight in the fantastic. Much of my work has roots in the flora and fauna that surrounded me growing up on my parent's fish farm in rural Scotland.", 18, 5, BookGenre.MILITARY, BookGenre.DETECTIVE, BookGenre.ADVENTURES));
+        model.addAttribute("authorItems", authorItems);
         return "vb/author-rating";
     }
 

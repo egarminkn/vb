@@ -35,137 +35,17 @@
                         </div>
                     </div>
 
-                    <div class="item author">
-                        <div class="serial-number">
-                            <span class="text">1</span>
-                        </div>
-
-<c:set var="isAuthorPhotoLink" value="false" scope="request"/>
-<c:set var="authorPhotoUrl" value="resources/vb/img/tmp/photo-1.jpg" scope="request"/>
-<jsp:include page="components/vb/author-photo.jsp"/>
-
-                        <div class="about">
-                            <div class="fullname-rating">
-                                <div class="fullname">
-                                    <a href="${currentURI}#">Александр Константинопольский</a>
-                                </div>
-
-<jsp:include page="components/vb/rating-3-stars.jsp"/>
-                            </div>
-                            <div class="genres">
-                                Жанры:
-                                <a href="${currentURI}#">военные</a>,
-                                <a href="${currentURI}#">детектив</a>,
-                                <a href="${currentURI}#">приключения</a>
-                            </div>
-                            <div class="description">
-                                I draw pictures and I make colouring books! Welcome to my world. Tumble down the rabbit hole and find yourself in my inky black and white Wonderland... I'm an illustrator and ink evangelist who prefers pens and pencils to pixels. I create intricate, hand drawn illustrations predominately, although not exclusively, in black and white. My creativity is cultivated by a curious imagination and a delight in the fantastic. Much of my work has roots in the flora and fauna that surrounded me growing up on my parent's fish farm in rural Scotland.
-                            </div>
-                            <div class="footer">
-                                <div class="published">
-                                    Опубликовано:
-                                    <a href="${currentURI}#">
-                                        <span>18</span>
-                                        книг
-                                    </a>
-                                </div>
-                                <div class="reviews">
-                                    <a href="${currentURI}#">
-                                        <span>5</span>
-                                        отзывов
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="item author">
-                        <div class="serial-number">
-                            <span class="text">2</span>
-                        </div>
-
-<c:set var="isAuthorPhotoLink" value="false" scope="request"/>
-<c:set var="authorPhotoUrl" value="resources/vb/img/tmp/photo-1.jpg" scope="request"/>
-<jsp:include page="components/vb/author-photo.jsp"/>
-
-                        <div class="about">
-                            <div class="fullname-rating">
-                                <div class="fullname">
-                                    <a href="${currentURI}#">Александр Константинопольский</a>
-                                </div>
-
-<jsp:include page="components/vb/rating-3-stars.jsp"/>
-                            </div>
-                            <div class="genres">
-                                Жанры:
-                                <a href="${currentURI}#">военные</a>,
-                                <a href="${currentURI}#">детектив</a>,
-                                <a href="${currentURI}#">приключения</a>
-                            </div>
-                            <div class="description">
-                                I draw pictures and I make colouring books! Welcome to my world. Tumble down the rabbit hole and find yourself in my inky black and white Wonderland... I'm an illustrator and ink evangelist who prefers pens and pencils to pixels. I create intricate, hand drawn illustrations predominately, although not exclusively, in black and white. My creativity is cultivated by a curious imagination and a delight in the fantastic. Much of my work has roots in the flora and fauna that surrounded me growing up on my parent's fish farm in rural Scotland.
-                            </div>
-                            <div class="footer">
-                                <div class="published">
-                                    Опубликовано:
-                                    <a href="${currentURI}#">
-                                        <span>18</span>
-                                        книг
-                                    </a>
-                                </div>
-                                <div class="reviews">
-                                    <a href="${currentURI}#">
-                                        <span>5</span>
-                                        отзывов
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="item author">
-                        <div class="serial-number">
-                            <span class="text">3</span>
-                        </div>
-
-<c:set var="isAuthorPhotoLink" value="false" scope="request"/>
-<c:set var="authorPhotoUrl" value="resources/vb/img/tmp/photo-1.jpg" scope="request"/>
-<jsp:include page="components/vb/author-photo.jsp"/>
-
-                        <div class="about">
-                            <div class="fullname-rating">
-                                <div class="fullname">
-                                    <a href="${currentURI}#">Александр Константинопольский</a>
-                                </div>
-
-<jsp:include page="components/vb/rating-3-stars.jsp"/>
-                            </div>
-                            <div class="genres">
-                                Жанры:
-                                <a href="${currentURI}#">военные</a>,
-                                <a href="${currentURI}#">детектив</a>,
-                                <a href="${currentURI}#">приключения</a>
-                            </div>
-                            <div class="description">
-                                I draw pictures and I make colouring books! Welcome to my world. Tumble down the rabbit hole and find yourself in my inky black and white Wonderland... I'm an illustrator and ink evangelist who prefers pens and pencils to pixels. I create intricate, hand drawn illustrations predominately, although not exclusively, in black and white. My creativity is cultivated by a curious imagination and a delight in the fantastic. Much of my work has roots in the flora and fauna that surrounded me growing up on my parent's fish farm in rural Scotland.
-                            </div>
-                            <div class="footer">
-                                <div class="published">
-                                    Опубликовано:
-                                    <a href="${currentURI}#">
-                                        <span>18</span>
-                                        книг
-                                    </a>
-                                </div>
-                                <div class="reviews">
-                                    <a href="${currentURI}#">
-                                        <span>5</span>
-                                        отзывов
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                    <c:forEach var="authorItem" items="${authorItems}" varStatus="loop">
+                        <jsp:useBean id="authorItem" class="org.verygroup.verybook.dto.authorrating.AuthorItem"/>
+<c:set var="authorPosition" value="${loop.index + 1}" scope="request"/>
+<c:set var="authorPhotoUrl" value="${authorItem.authorPhotoUrl}" scope="request"/>
+<c:set var="authorName" value="${authorItem.authorName}" scope="request"/>
+<c:set var="authorDescription" value="${authorItem.authorDescription}" scope="request"/>
+<c:set var="authorBooksCount" value="${authorItem.authorBooksCount}" scope="request"/>
+<c:set var="authorBookReviewsCount" value="${authorItem.authorBookReviewsCount}" scope="request"/>
+<c:set var="authorGenres" value="${authorItem.authorGenres}" scope="request"/>
+<jsp:include page="components/author-rating/author.jsp"/>
+                    </c:forEach>
 
 <jsp:include page="components/vb/show-more-btn.jsp"/>
                 </div>
