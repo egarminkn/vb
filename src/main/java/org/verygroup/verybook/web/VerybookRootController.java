@@ -10,6 +10,9 @@ import java.util.List;
 
 import org.verygroup.verybook.dto.BookItem;
 import org.verygroup.verybook.dto.RatingItem;
+import org.verygroup.verybook.dto.authorpa.WrittenBookAction;
+import org.verygroup.verybook.dto.authorpa.WrittenBookActionType;
+import org.verygroup.verybook.dto.authorpa.WrittenBookRow;
 
 @Controller
 public class VerybookRootController {
@@ -43,6 +46,22 @@ public class VerybookRootController {
         ratingItems.add(new RatingItem(true, 4, "среди Genre Fiction"));
         model.addAttribute("ratingsItems", ratingItems);
         model.addAttribute("ratingsTitle", "Рейтинг автора");
+
+        List<WrittenBookRow> writtenBookRows = new LinkedList<>();
+        writtenBookRows.add(new WrittenBookRow("", "resources/vb/img/tmp/book-1.jpg", "Летящие в облаках", "published", 1152, 152, 793, 111, "51", "руб", "501", "руб", new WrittenBookAction(WrittenBookActionType.WITHDRAW, "Снять с публикации")));
+        writtenBookRows.add(new WrittenBookRow("Запрос на публикацию был отклонен из-за массового насилия в тексте вашей рукописи.", "resources/vb/img/tmp/book-2.jpg", "С широко открытыми глазами", "rejected", 12, 0, 11, 3, "501", "руб", "0", "руб", new WrittenBookAction(WrittenBookActionType.PUBLISH, "Отправить на модерацию повторно")));
+        writtenBookRows.add(new WrittenBookRow("", "resources/vb/img/tmp/book-3.jpg", "Далеко за горизонтом", "on-moderation", 86, 0, 53, 0, "5111", "руб", "150", "руб", new WrittenBookAction(WrittenBookActionType.WITHDRAW, "Отозвать")));
+        writtenBookRows.add(new WrittenBookRow("", "resources/vb/img/tmp/book-4.jpg", "Как отравили Сталина", "not-published", 86, 0, 77, 111, "51", "руб", "0", "руб", new WrittenBookAction(WrittenBookActionType.PUBLISH, "Отправить на модерацию")));
+        writtenBookRows.add(new WrittenBookRow("", "resources/vb/img/tmp/book-1.jpg", "Летящие в облаках", "published", 1152, 152, 793, 111, "48", "руб", "517", "руб", new WrittenBookAction(WrittenBookActionType.WITHDRAW, "Снять с публикации")));
+        writtenBookRows.add(new WrittenBookRow("Запрос на публикацию был отклонен из-за порнографии в вашей рукописи.", "resources/vb/img/tmp/book-2.jpg", "С широко открытыми глазами", "rejected", 12, 0, 11, 3, "51", "руб", "0", "руб", new WrittenBookAction(WrittenBookActionType.PUBLISH, "Отправить на модерацию повторно")));
+        writtenBookRows.add(new WrittenBookRow("", "resources/vb/img/tmp/book-3.jpg", "Далеко за горизонтом", "on-moderation", 86, 0, 53, 0, "158", "руб", "150", "руб", new WrittenBookAction(WrittenBookActionType.WITHDRAW, "Отозвать")));
+        writtenBookRows.add(new WrittenBookRow("", "resources/vb/img/tmp/book-4.jpg", "Как отравили Сталина", "not-published", 86, 0, 77, 111, "51", "руб", "0", "руб", new WrittenBookAction(WrittenBookActionType.PUBLISH, "Отправить на модерацию")));
+        writtenBookRows.add(new WrittenBookRow("", "resources/vb/img/tmp/book-1.jpg", "Летящие в облаках", "published", 1152, 152, 793, 111, "121", "руб", "517", "руб", new WrittenBookAction(WrittenBookActionType.WITHDRAW, "Снять с публикации")));
+        writtenBookRows.add(new WrittenBookRow("Запрос на публикацию был отклонен из-за обильной любви ко всему человечеству в тексте вашей книги.", "resources/vb/img/tmp/book-2.jpg", "С широко открытыми глазами", "rejected", 12, 0, 11, 3, "51", "руб", "0", "руб", new WrittenBookAction(WrittenBookActionType.PUBLISH, "Отправить на модерацию повторно")));
+        writtenBookRows.add(new WrittenBookRow("", "resources/vb/img/tmp/book-3.jpg", "Далеко за горизонтом", "on-moderation", 86, 0, 53, 0, "175", "руб", "150", "руб", new WrittenBookAction(WrittenBookActionType.WITHDRAW, "Отозвать")));
+        writtenBookRows.add(new WrittenBookRow("", "resources/vb/img/tmp/book-4.jpg", "Как отравили Сталина", "not-published", 86, 0, 77, 111, "1151", "руб", "0", "руб", new WrittenBookAction(WrittenBookActionType.PUBLISH, "Отправить на модерацию")));
+        model.addAttribute("writtenBookRows", writtenBookRows);
+
         return "vb/author-pa";
     }
 
