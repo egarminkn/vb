@@ -18,6 +18,7 @@ import org.verygroup.verybook.dto.authorpa.ReadBookRow;
 import org.verygroup.verybook.BookFormat;
 import org.verygroup.verybook.dto.authorrating.AuthorItem;
 import org.verygroup.verybook.dto.book.ReviewItem;
+import org.verygroup.verybook.dto.index.AuthorSummaryItem;
 
 @Controller
 public class VerybookRootController {
@@ -202,6 +203,15 @@ public class VerybookRootController {
         slideUrls.add("resources/vb/img/index/main-banner-3.jpg");
         slideUrls.add("resources/vb/img/index/main-banner-4.jpg");
         model.addAttribute("slideUrls", slideUrls);
+
+        List<AuthorSummaryItem> authorSummaries = new LinkedList<>();
+        authorSummaries.add(new AuthorSummaryItem("Константин Константинопольский", 5, "resources/vb/img/tmp/photo-1.jpg", 1022, 51));
+        authorSummaries.add(new AuthorSummaryItem("Иван Бездомный", 8, "resources/vb/img/tmp/photo-2.jpg", 1022, 51));
+        authorSummaries.add(new AuthorSummaryItem("Константин Константинопольский", 8, "resources/vb/img/tmp/photo-3.jpg", 1022, 51));
+        authorSummaries.add(new AuthorSummaryItem("Александр Неизвестный", 8, "resources/vb/img/tmp/photo-4.jpg", 1022, 51));
+        authorSummaries.add(new AuthorSummaryItem("Adam Moran Thompson", 8, "resources/vb/img/tmp/photo-5.jpg", 1022, 51));
+        authorSummaries.add(new AuthorSummaryItem("Сунь Муй Ван", 8, "resources/vb/img/tmp/photo-6.jpg", 1022, 51));
+        model.addAttribute("authorSummaries", authorSummaries);
 
         return "vb/index";
     }

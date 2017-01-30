@@ -238,150 +238,15 @@
                             <div class="arrow-up"></div>
 
                             <div class="authors-block">
-                                <div class="author-summary">
-                                    <div class="author-name">
-                                        <a href="${currentURI}#">
-                                            <span class="text">
-                                                Константин Константинопольский
-                                            </span>
-                                        </a>
-                                    </div>
-                                    <div class="book-count">
-                                        <span class="text">
-                                            5 книг
-                                        </span>
-                                    </div>
-
-<c:set var="isAuthorPhotoLink" value="true" scope="request"/>
-<c:set var="authorPhotoUrl" value="resources/vb/img/tmp/photo-1.jpg" scope="request"/>
-<jsp:include page="components/vb/author-photo.jsp"/>
-
-<jsp:include page="components/vb/rating-3-stars.jsp"/>
-
-<c:set var="likesCount" value="1022" scope="request"/>
-<c:set var="dislikesCount" value="51" scope="request"/>
-<jsp:include page="components/vb/thumb-likes.jsp"/>
-                                </div>
-                                <div class="author-summary">
-                                    <div class="author-name">
-                                        <a href="${currentURI}#">
-                                            <span class="text">
-                                                Иван Бездомный
-                                            </span>
-                                        </a>
-                                    </div>
-                                    <div class="book-count">
-                                        <span class="text">
-                                            8 книг
-                                        </span>
-                                    </div>
-
-<c:set var="isAuthorPhotoLink" value="true" scope="request"/>
-<c:set var="authorPhotoUrl" value="resources/vb/img/tmp/photo-2.jpg" scope="request"/>
-<jsp:include page="components/vb/author-photo.jsp"/>
-
-<jsp:include page="components/vb/rating-3-stars.jsp"/>
-
-<c:set var="likesCount" value="1022" scope="request"/>
-<c:set var="dislikesCount" value="51" scope="request"/>
-<jsp:include page="components/vb/thumb-likes.jsp"/>
-                                </div>
-                                <div class="author-summary">
-                                    <div class="author-name">
-                                        <a href="${currentURI}#">
-                                            <span class="text">
-                                                Константин Константинопольский
-                                            </span>
-                                        </a>
-                                    </div>
-                                    <div class="book-count">
-                                        <span class="text">
-                                            8 книг
-                                        </span>
-                                    </div>
-
-<c:set var="isAuthorPhotoLink" value="true" scope="request"/>
-<c:set var="authorPhotoUrl" value="resources/vb/img/tmp/photo-3.jpg" scope="request"/>
-<jsp:include page="components/vb/author-photo.jsp"/>
-
-<jsp:include page="components/vb/rating-3-stars.jsp"/>
-
-<c:set var="likesCount" value="1022" scope="request"/>
-<c:set var="dislikesCount" value="51" scope="request"/>
-<jsp:include page="components/vb/thumb-likes.jsp"/>
-                                </div>
-                                <div class="author-summary">
-                                    <div class="author-name">
-                                        <a href="${currentURI}#">
-                                            <span class="text">
-                                                Александр Неизвестный
-                                            </span>
-                                        </a>
-                                    </div>
-                                    <div class="book-count">
-                                        <span class="text">
-                                            8 книг
-                                        </span>
-                                    </div>
-
-<c:set var="isAuthorPhotoLink" value="true" scope="request"/>
-<c:set var="authorPhotoUrl" value="resources/vb/img/tmp/photo-4.jpg" scope="request"/>
-<jsp:include page="components/vb/author-photo.jsp"/>
-
-<jsp:include page="components/vb/rating-3-stars.jsp"/>
-
-<c:set var="likesCount" value="1022" scope="request"/>
-<c:set var="dislikesCount" value="51" scope="request"/>
-<jsp:include page="components/vb/thumb-likes.jsp"/>
-                                </div>
-                                <div class="author-summary">
-                                    <div class="author-name">
-                                        <a href="${currentURI}#">
-                                            <span class="text">
-                                                Adam Moran Thompson
-                                            </span>
-                                        </a>
-                                    </div>
-                                    <div class="book-count">
-                                        <span class="text">
-                                            8 книг
-                                        </span>
-                                    </div>
-
-<c:set var="isAuthorPhotoLink" value="true" scope="request"/>
-<c:set var="authorPhotoUrl" value="resources/vb/img/tmp/photo-5.jpg" scope="request"/>
-<jsp:include page="components/vb/author-photo.jsp"/>
-
-<jsp:include page="components/vb/rating-3-stars.jsp"/>
-
-<c:set var="likesCount" value="1022" scope="request"/>
-<c:set var="dislikesCount" value="51" scope="request"/>
-<jsp:include page="components/vb/thumb-likes.jsp"/>
-                                </div>
-                                <div class="author-summary">
-                                    <div class="author-name">
-                                        <a href="${currentURI}#">
-                                            <span class="text">
-                                                Сунь Муй Ван
-                                            </span>
-                                        </a>
-                                    </div>
-                                    <div class="book-count">
-                                        <span class="text">
-                                            8 книг
-                                        </span>
-                                    </div>
-
-<c:set var="isAuthorPhotoLink" value="true" scope="request"/>
-<c:set var="authorPhotoUrl" value="resources/vb/img/tmp/photo-6.jpg" scope="request"/>
-<jsp:include page="components/vb/author-photo.jsp"/>
-
-<jsp:include page="components/vb/rating-3-stars.jsp"/>
-
-<c:set var="likesCount" value="1022" scope="request"/>
-<c:set var="dislikesCount" value="51" scope="request"/>
-<jsp:include page="components/vb/thumb-likes.jsp"/>
-                                </div>
+                                <c:forEach var="authorSummary" items="${authorSummaries}">
+                                    <jsp:useBean id="authorSummary" class="org.verygroup.verybook.dto.index.AuthorSummaryItem"/>
+<c:set var="authorName" value="${authorSummary.authorName}" scope="request"/>
+<c:set var="authorBooksCount" value="${authorSummary.authorBooksCount}" scope="request"/>
+<c:set var="authorPhotoUrl" value="${authorSummary.authorPhotoUrl}" scope="request"/>
+<c:set var="authorLikesCount" value="${authorSummary.authorLikesCount}" scope="request"/>
+<c:set var="authorDislikesCount" value="${authorSummary.authorDislikesCount}" scope="request"/>
+<jsp:include page="components/index/author-summary.jsp"/>
+                                </c:forEach>
                             </div>
 
                             <!-- START (Тень под блоком) -->
