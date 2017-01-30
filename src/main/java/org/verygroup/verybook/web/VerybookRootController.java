@@ -19,6 +19,7 @@ import org.verygroup.verybook.BookFormat;
 import org.verygroup.verybook.dto.authorrating.AuthorItem;
 import org.verygroup.verybook.dto.book.ReviewItem;
 import org.verygroup.verybook.dto.index.AuthorSummaryItem;
+import org.verygroup.verybook.dto.index2.QuoteItem;
 
 @Controller
 public class VerybookRootController {
@@ -217,7 +218,12 @@ public class VerybookRootController {
     }
 
     @GetMapping("/index-2")
-    public String index2() {
+    public String index2(Model model) {
+        List<QuoteItem> quoteItems = new LinkedList<>();
+        quoteItems.add(new QuoteItem("Harry Potter 1 has never even heard of Hogwarts when the letters  start dropping on the doormat at number four, Privet  Drive. Addressed in green ink on yellowish parchment with a purple seal, they are swiftly confiscated by his grisly", "Joan Rolling"));
+        quoteItems.add(new QuoteItem("Harry Potter 2 has never even heard of Hogwarts when the letters  start dropping on the doormat at number four, Privet  Drive. Addressed in green ink on yellowish parchment with a purple seal, they are swiftly confiscated by his grisly", "David Icke"));
+        quoteItems.add(new QuoteItem("Harry Potter 3 has never even heard of Hogwarts when the letters  start dropping on the doormat at number four, Privet  Drive. Addressed in green ink on yellowish parchment with a purple seal, they are swiftly confiscated by his grisly", "Vladimir Pukin"));
+        model.addAttribute("quoteItems", quoteItems);
         return "vb/index-2";
     }
 

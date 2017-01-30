@@ -20,15 +20,13 @@
                 </a>
 
                 <div class="quotes">
-                    <p class="quote quote-1">
-                        Harry Potter 1 has never even heard of Hogwarts when the letters  start dropping on the doormat at number four, Privet  Drive. Addressed in green ink on yellowish parchment with a purple seal, they are swiftly confiscated by his grisly
-                    </p>
-                    <p class="quote quote-2">
-                        Harry Potter 2 Plastics are inexpensive, lightweight and durable materials, which can readily be moulded into a variety of products that find use in a wide range of applications. As a consequence, the production of plastics has increased
-                    </p>
-                    <p class="quote quote-3">
-                        Harry Potter 3 Recycling is one of the most important actions currently available to reduce these impacts and represents one of the most dynamic areas in the plastics industry today. Recycling provides opportunities to reduce oil usage
-                    </p>
+                    <c:forEach var="quoteItem" items="${quoteItems}" varStatus="loop">
+                        <jsp:useBean id="quoteItem" class="org.verygroup.verybook.dto.index2.QuoteItem"/>
+<c:set var="quoteNumber" value="${loop.index + 1}" scope="request"/>
+<c:set var="quoteContent" value="${quoteItem.quoteContent}" scope="request"/>
+<c:set var="quoteAuthor" value="${quoteItem.quoteAuthor}" scope="request"/>
+<jsp:include page="components/index-2/block-quote.jsp"/>
+                    </c:forEach>
                 </div>
 
                 <a class="arrow-btn right-arrow-btn" href="${currentURI}#">

@@ -83,6 +83,16 @@ main.index-2 .quotes .quote {
     /*border: 1px solid black;*/
 }
 
+main.index-2 .quotes .quote > p {
+    /*border: 1px solid black;*/
+}
+
+main.index-2 .quotes .quote > cite {
+    display: block;
+    text-align: right;
+    /*border: 1px solid black;*/
+}
+
 main.index-2 input[type="radio"].slider-button-1:checked ~ .quotes-slider .quotes .quote-1,
 main.index-2 input[type="radio"].slider-button-2:checked ~ .quotes-slider .quotes .quote-2,
 main.index-2 input[type="radio"].slider-button-3:checked ~ .quotes-slider .quotes .quote-3 {
