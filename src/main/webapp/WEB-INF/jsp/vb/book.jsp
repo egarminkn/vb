@@ -170,78 +170,14 @@
 <jsp:include page="components/vb/send-review-form.jsp"/>
 
                 <ul class="review-list">
-                    <li class="review">
-                        <div class="title">
-                            Good book for beginners, but daily or even weekly players look elsewhere
-                        </div>
-                        <div class="summary">
-                            <div class="reviewer">
-                                от
-                                <a href="${currentURI}#">BruceInCola</a>
-                            </div>
-                            <div class="date">
-                                отзыв оставлен
-                                <span>26 декабря 2014</span>
-                            </div>
-                        </div>
-                        <div class="content">
-                            The first edition of this book helped me learn Minecraft well enough to keep up with my grandson for a little while, at least. He moved through his Minecraft phase and on to online First Person Shooters all too fast. So now Minecraft in Creative mode is where I spend my time and that, incidentally is my only criticism of this otherwi excellent guide: it is focused primarily on Surviva mode, which I don’t find to be fun. But kids love the kill-r aspect of Survival mode and kids are who this book is written for Fortunately nearly all the information i s applicable t all Minecraft modes. (By the way, you can set the mayhem to low in Survival mode, but I just don’t care for the competitive aspect. I’d rather spend all my time creating new worl
-                        </div>
-                    </li>
-                    <li class="review">
-                        <div class="title">
-                            Good book for beginners, but daily or even weekly players look elsewhere
-                        </div>
-                        <div class="summary">
-                            <div class="reviewer">
-                                от
-                                <a href="${currentURI}#">BruceInCola</a>
-                            </div>
-                            <div class="date">
-                                отзыв оставлен
-                                <span>26 декабря 2014</span>
-                            </div>
-                        </div>
-                        <div class="content">
-                            The first edition of this book helped me learn Minecraft well enough to keep up with my grandson for a little while, at least. He moved through his Minecraft phase and on to online First Person Shooters all too fast. So now Minecraft in Creative mode is where I spend my time and that, incidentally is my only criticism of this otherwi excellent guide: it is focused primarily on Surviva mode, which I don’t find to be fun. But kids love the kill-r aspect of Survival mode and kids are who this book is written for Fortunately nearly all the information i s applicable t all Minecraft modes. (By the way, you can set the mayhem to low in Survival mode, but I just don’t care for the competitive aspect. I’d rather spend all my time creating new worl
-                        </div>
-                    </li>
-                    <li class="review">
-                        <div class="title">
-                            Good book for beginners, but daily or even weekly players look elsewhere
-                        </div>
-                        <div class="summary">
-                            <div class="reviewer">
-                                от
-                                <a href="${currentURI}#">BruceInCola</a>
-                            </div>
-                            <div class="date">
-                                отзыв оставлен
-                                <span>26 декабря 2014</span>
-                            </div>
-                        </div>
-                        <div class="content">
-                            The first edition of this book helped me learn Minecraft well enough to keep up with my grandson for a little while, at least. He moved through his Minecraft phase and on to online First Person Shooters all too fast. So now Minecraft in Creative mode is where I spend my time and that, incidentally is my only criticism of this otherwi excellent guide: it is focused primarily on Surviva mode, which I don’t find to be fun. But kids love the kill-r aspect of Survival mode and kids are who this book is written for Fortunately nearly all the information i s applicable t all Minecraft modes. (By the way, you can set the mayhem to low in Survival mode, but I just don’t care for the competitive aspect. I’d rather spend all my time creating new worl
-                        </div>
-                    </li>
-                    <li class="review">
-                        <div class="title">
-                            Good book for beginners, but daily or even weekly players look elsewhere
-                        </div>
-                        <div class="summary">
-                            <div class="reviewer">
-                                от
-                                <a href="${currentURI}#">BruceInCola</a>
-                            </div>
-                            <div class="date">
-                                отзыв оставлен
-                                <span>26 декабря 2014</span>
-                            </div>
-                        </div>
-                        <div class="content">
-                            The first edition of this book helped me learn Minecraft well enough to keep up with my grandson for a little while, at least. He moved through his Minecraft phase and on to online First Person Shooters all too fast. So now Minecraft in Creative mode is where I spend my time and that, incidentally is my only criticism of this otherwi excellent guide: it is focused primarily on Surviva mode, which I don’t find to be fun. But kids love the kill-r aspect of Survival mode and kids are who this book is written for Fortunately nearly all the information i s applicable t all Minecraft modes. (By the way, you can set the mayhem to low in Survival mode, but I just don’t care for the competitive aspect. I’d rather spend all my time creating new worl
-                        </div>
-                    </li>
+                    <c:forEach var="reviewItem" items="${reviewItems}">
+                        <jsp:useBean id="reviewItem" class="org.verygroup.verybook.dto.book.ReviewItem"/>
+<c:set var="reviewTitle" value="${reviewItem.reviewTitle}" scope="request"/>
+<c:set var="reviewAuthor" value="${reviewItem.reviewAuthor}" scope="request"/>
+<c:set var="reviewPublishDate" value="${fn:formatDateToLongStr(reviewItem.reviewPublishDate)}" scope="request"/>
+<c:set var="reviewContent" value="${reviewItem.reviewContent}" scope="request"/>
+<jsp:include page="components/book/review.jsp"/>
+                    </c:forEach>
                 </ul>
 
 <jsp:include page="components/vb/show-more-btn.jsp"/>
