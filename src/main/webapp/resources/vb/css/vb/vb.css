@@ -805,7 +805,10 @@ header::after {
 .shelf > .title {
     font-family: Tahoma, sans-serif;
     font-size: 20px;
+    font-weight: normal;
     padding: 5px;
+    margin-top: 0;
+    margin-bottom: 0;
     /*border: 1px solid black;*/
 }
 

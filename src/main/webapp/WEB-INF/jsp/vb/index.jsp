@@ -72,9 +72,9 @@
                             <!-- START (Книжная полка-слайдер) -->
                             <!-- Доп.класс hidden-title для удаления заголовка -->
                             <div class="shelf hidden-title">
-                                <div class="title">
+                                <h2 class="title">
                                     Рекомендованные также
-                                </div>
+                                </h2>
 
                                 <button class="arrow left-arrow"></button>
                                 <button class="arrow right-arrow"></button>
@@ -132,9 +132,9 @@
                             <!-- START (Книжная полка-слайдер) -->
                             <!-- Доп.класс hidden-title для удаления заголовка -->
                             <div class="shelf hidden-title">
-                                <div class="title">
+                                <h2 class="title">
                                     Рекомендованные также
-                                </div>
+                                </h2>
 
                                 <button class="arrow left-arrow"></button>
                                 <button class="arrow right-arrow"></button>
@@ -192,9 +192,9 @@
                             <!-- START (Книжная полка-слайдер) -->
                             <!-- Доп.класс hidden-title для удаления заголовка -->
                             <div class="shelf hidden-title">
-                                <div class="title">
+                                <h2 class="title">
                                     Рекомендованные также
-                                </div>
+                                </h2>
 
                                 <button class="arrow left-arrow"></button>
                                 <button class="arrow right-arrow"></button>

@@ -147,6 +147,9 @@ main.book .shadow-under {
 main.book .book .title {
     font-family: Tahoma, sans-serif;
     font-size: 40px;
+    font-weight: normal;
+    margin-top: 0;
+    margin-bottom: 0;
 }
 
 /*
@@ -358,6 +361,9 @@ main.book .book .columns .column-3 .likes {
 main.book .book-reviews .header {
     font-family: Tahoma, sans-serif;
     font-size: 27px;
+    font-weight: normal;
+    margin-top: 0;
+    margin-bottom: 0;
 }
 
 main.book .book-reviews .header .count {

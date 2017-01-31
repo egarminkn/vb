@@ -12,9 +12,9 @@
 <jsp:include page="fragments/header.jsp"/>
 
             <div class="book">
-                <div class="title">
+                <h1 class="title">
                     The ultimate players guide to minecraft
-                </div>
+                </h1>
                 <div class="columns">
                     <div class="column column-1">
                         <div class="summary-1">
@@ -162,10 +162,10 @@
             </div>
 
             <div class="book-reviews" id="reviews">
-                <div class="header">
+                <h2 class="header">
                     Отзывы
                     <span class="count">(<span>31</span>)</span>
-                </div>
+                </h2>
 
 <jsp:include page="components/vb/send-review-form.jsp"/>
 
@@ -190,9 +190,9 @@
             <!-- START (Книжная полка-слайдер) -->
             <!-- Доп.класс hidden-title для удаления заголовка -->
             <div class="shelf">
-                <div class="title">
+                <h2 class="title">
                     Рекомендованные также
-                </div>
+                </h2>
 
                 <button class="arrow left-arrow"></button>
                 <button class="arrow right-arrow"></button>
