@@ -200,7 +200,10 @@ main.author-pa .books .header label.write {
 }
 
 main.author-pa .books .header label.write .title {
+    font-weight: normal;
     margin-left: 10px;
+    margin-top: 0;
+    margin-bottom: 0;
 }
 
 main.author-pa .books .header label.read {
@@ -208,7 +211,10 @@ main.author-pa .books .header label.read {
 }
 
 main.author-pa .books .header label.read .title {
+    font-weight: normal;
     margin-right: 10px;
+    margin-top: 0;
+    margin-bottom: 0;
 }
 
 main.author-pa .books table {
@@ -302,6 +308,7 @@ main.author-pa .books table.read tbody tr td {
 main.author-pa .author > .title {
     font-family: Tahoma, sans-serif;
     font-size: 34px;
+    font-weight: normal;
     width: 285px;
     background: url('../../svg/author-pa/user-icon.svg') no-repeat;
     background-size: 20px 20px;

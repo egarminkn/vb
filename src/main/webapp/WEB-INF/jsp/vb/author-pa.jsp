@@ -12,9 +12,9 @@
 <jsp:include page="fragments/header.jsp"/>
 
             <div class="author">
-                <div class="title">
+                <h1 class="title">
                     Личный кабинет
-                </div>
+                </h1>
                 <div class="about">
                     <!-- START (Кнопки сворачивания-разворачивания информации об авторе) - 1-ая часть из 2-х -->
                     <input class="expand-collapse-block expanded" type="radio" name="expand-collapse-btn" id="expanded" checked>
@@ -145,9 +145,9 @@
                 <input type="radio" name="write-read" class="read" id="read">
                 <div class="header">
                     <label class="write" for="write">
-                        <div class="title">
+                        <h2 class="title">
                             Мои книги
-                        </div>
+                        </h2>
                         <a class="create-book" href="${currentURI}#">
                             <span class="plus"></span>
                             <span class="text">
@@ -156,9 +156,9 @@
                         </a>
                     </label>
                     <label class="read" for="read">
-                        <div class="title">
+                        <h2 class="title">
                             Купленные книги
-                        </div>
+                        </h2>
                     </label>
                 </div>
 
