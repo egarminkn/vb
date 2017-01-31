@@ -24,10 +24,7 @@ import org.verygroup.verybook.dto.book.ReviewItem;
 import org.verygroup.verybook.dto.index.AuthorSummaryItem;
 import org.verygroup.verybook.dto.index2.HelpSlideItem;
 import org.verygroup.verybook.dto.index2.QuoteItem;
-import org.verygroup.verybook.dto.searchbook.AudiobookAuthor;
-import org.verygroup.verybook.dto.searchbook.AudiobookAuthorType;
-import org.verygroup.verybook.dto.searchbook.AudiobookItem;
-import org.verygroup.verybook.dto.searchbook.EbookItem;
+import org.verygroup.verybook.dto.searchbook.*;
 
 @Controller
 public class VerybookRootController {
@@ -288,6 +285,12 @@ public class VerybookRootController {
                                              Arrays.asList(new AudiobookAuthor("J. K. Rowling", AudiobookAuthorType.AUTHOR), new AudiobookAuthor("Roger Allam", AudiobookAuthorType.STORY_TELLER), new AudiobookAuthor("J. K. Rowling", AudiobookAuthorType.AUTHOR), new AudiobookAuthor("Roger Allam", AudiobookAuthorType.STORY_TELLER), new AudiobookAuthor("Emilia Fox", AudiobookAuthorType.STORY_TELLER)),
                                              Arrays.asList(AudiobookFormat.MP3, AudiobookFormat.WAV, AudiobookFormat.WAV, AudiobookFormat.MP3)));
         model.addAttribute("audiobookItems", audiobookItems);
+
+        List<AuthorBlockItem> authorItems = new LinkedList<>();
+        authorItems.add(new AuthorBlockItem("resources/vb/img/tmp/photo-1.jpg", "Александр Константинопольский", "I draw pictures and I make colouring books! Welcome to my world. Tumble down the rabbit hole and find yourself in my inky black and white Wonderland... I'm an illustrator and ink evangelist who prefers pens and pencils to pixels. I create intricate, hand drawn illustrations predominately, although not exclusively, in black and white. My creativity is cultivated by a curious imagination and a delight in the fantastic. Much of my work has roots in the flora and fauna that surrounded me growing up on my parent's fish farm in rural Scotland.", 18, 5, BookGenre.MILITARY, BookGenre.DETECTIVE, BookGenre.ADVENTURES));
+        authorItems.add(new AuthorBlockItem("resources/vb/img/tmp/photo-1.jpg", "Александр Константинопольский", "I draw pictures and I make colouring books! Welcome to my world. Tumble down the rabbit hole and find yourself in my inky black and white Wonderland... I'm an illustrator and ink evangelist who prefers pens and pencils to pixels. I create intricate, hand drawn illustrations predominately, although not exclusively, in black and white. My creativity is cultivated by a curious imagination and a delight in the fantastic. Much of my work has roots in the flora and fauna that surrounded me growing up on my parent's fish farm in rural Scotland.", 18, 5, BookGenre.MILITARY, BookGenre.DETECTIVE, BookGenre.ADVENTURES, BookGenre.MILITARY, BookGenre.DETECTIVE, BookGenre.ADVENTURES));
+        authorItems.add(new AuthorBlockItem("resources/vb/img/tmp/photo-1.jpg", "Александр Константинопольский", "I draw pictures and I make colouring books! Welcome to my world. Tumble down the rabbit hole and find yourself in my inky black and white Wonderland... I'm an illustrator and ink evangelist who prefers pens and pencils to pixels. I create intricate, hand drawn illustrations predominately, although not exclusively, in black and white. My creativity is cultivated by a curious imagination and a delight in the fantastic. Much of my work has roots in the flora and fauna that surrounded me growing up on my parent's fish farm in rural Scotland.", 18, 5, BookGenre.MILITARY, BookGenre.DETECTIVE, BookGenre.ADVENTURES));
+        model.addAttribute("authorItems", authorItems);
 
         return "vb/search-book";
     }
