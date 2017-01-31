@@ -41,64 +41,28 @@
 
                             <table class="tbl">
                                 <thead class="thead">
-                                <tr class="tr">
-                                    <th class="th product">
-                                        Книга
-                                    </th>
-                                    <th class="th price">
-                                        Цена
-                                    </th>
-                                    <th class="th to-spare-cart">
-                                        Выложить из корзины
-                                    </th>
-                                </tr>
+                                    <tr class="tr">
+                                        <th class="th product">
+                                            Книга
+                                        </th>
+                                        <th class="th price">
+                                            Цена
+                                        </th>
+                                        <th class="th to-spare-cart">
+                                            Выложить из корзины
+                                        </th>
+                                    </tr>
                                 </thead>
                                 <tbody class="tbody">
-                                <tr class="tr">
-                                    <td class="td product">
-<c:set var="bookTripletCoverUrl" value="resources/vb/img/tmp/book-1.jpg" scope="request"/>
-<c:set var="bookTripletTitle" value="Полет над гнездом кукушки" scope="request"/>
-<c:set var="bookTripletAuthor" value="Александр Константинопольский" scope="request"/>
-<jsp:include page="components/vb/book-triplet.jsp"/>
-                                    </td>
-                                    <td class="td price">
-<c:set var="price" value="415" scope="request"/>
-<jsp:include page="components/vb/price-ruble-sign.jsp"/>
-                                    </td>
-                                    <td class="td to-spare-cart">
-                                        <a class="to-spare-cart" href="${currentURI}#" title="Отложить на неопределенный срок"></a>
-                                    </td>
-                                </tr>
-                                <tr class="tr">
-                                    <td class="td product">
-<c:set var="bookTripletCoverUrl" value="resources/vb/img/tmp/book-2.jpg" scope="request"/>
-<c:set var="bookTripletTitle" value="Как рожать на вершине скалы" scope="request"/>
-<c:set var="bookTripletAuthor" value="Мария Малиновская" scope="request"/>
-<jsp:include page="components/vb/book-triplet.jsp"/>
-                                    </td>
-                                    <td class="td price">
-<c:set var="price" value="0" scope="request"/>
-<jsp:include page="components/vb/price-ruble-sign.jsp"/>
-                                    </td>
-                                    <td class="td to-spare-cart">
-                                        <a class="to-spare-cart" href="${currentURI}#" title="Отложить на неопределенный срок"></a>
-                                    </td>
-                                </tr>
-                                <tr class="tr">
-                                    <td class="td product">
-<c:set var="bookTripletCoverUrl" value="resources/vb/img/tmp/book-3.jpg" scope="request"/>
-<c:set var="bookTripletTitle" value="Кто подставил кролика роджера?" scope="request"/>
-<c:set var="bookTripletAuthor" value="Владимир Вольфович Константинопольский" scope="request"/>
-<jsp:include page="components/vb/book-triplet.jsp"/>
-                                    </td>
-                                    <td class="td price">
-<c:set var="price" value="230" scope="request"/>
-<jsp:include page="components/vb/price-ruble-sign.jsp"/>
-                                    </td>
-                                    <td class="td to-spare-cart">
-                                        <a class="to-spare-cart" href="${currentURI}#" title="Отложить на неопределенный срок"></a>
-                                    </td>
-                                </tr>
+<c:set var="isCartMain" value="true" scope="request"/>
+                                    <c:forEach var="mainShopCartRow" items="${mainShopCartRows}">
+                                        <jsp:useBean id="mainShopCartRow" class="org.verygroup.verybook.dto.shopcart.ShopCartRow"/>
+<c:set var="bookTripletCoverUrl" value="${mainShopCartRow.bookCoverUrl}" scope="request"/>
+<c:set var="bookTripletTitle" value="${mainShopCartRow.bookTitle}" scope="request"/>
+<c:set var="bookTripletAuthor" value="${mainShopCartRow.bookAuthor}" scope="request"/>
+<c:set var="price" value="${mainShopCartRow.priceValue}" scope="request"/>
+<jsp:include page="components/shop-cart/shop-cart-row.jsp"/>
+                                    </c:forEach>
                                 </tbody>
                             </table>
 
@@ -167,64 +131,28 @@
 
                     <table class="tbl">
                         <thead class="thead">
-                        <tr class="tr">
-                            <th class="th product">
-                                Книга
-                            </th>
-                            <th class="th price">
-                                Цена
-                            </th>
-                            <th class="th to-main-cart">
-                                Переложить в корзину
-                            </th>
-                        </tr>
+                            <tr class="tr">
+                                <th class="th product">
+                                    Книга
+                                </th>
+                                <th class="th price">
+                                    Цена
+                                </th>
+                                <th class="th to-main-cart">
+                                    Переложить в корзину
+                                </th>
+                            </tr>
                         </thead>
                         <tbody class="tbody">
-                        <tr class="tr">
-                            <td class="td product">
-<c:set var="bookTripletCoverUrl" value="resources/vb/img/tmp/book-1.jpg" scope="request"/>
-<c:set var="bookTripletTitle" value="Полет над гнездом кукушки" scope="request"/>
-<c:set var="bookTripletAuthor" value="Александр Константинопольский" scope="request"/>
-<jsp:include page="components/vb/book-triplet.jsp"/>
-                            </td>
-                            <td class="td price">
-<c:set var="price" value="415" scope="request"/>
-<jsp:include page="components/vb/price-ruble-sign.jsp"/>
-                            </td>
-                            <td class="td to-main-cart">
-                                <a class="to-main-cart" href="${currentURI}#" title="Переложить в корзину"></a>
-                            </td>
-                        </tr>
-                        <tr class="tr">
-                            <td class="td product">
-<c:set var="bookTripletCoverUrl" value="resources/vb/img/tmp/book-2.jpg" scope="request"/>
-<c:set var="bookTripletTitle" value="Как рожать на вершине скалы" scope="request"/>
-<c:set var="bookTripletAuthor" value="Мария Малиновская" scope="request"/>
-<jsp:include page="components/vb/book-triplet.jsp"/>
-                            </td>
-                            <td class="td price">
-<c:set var="price" value="0" scope="request"/>
-<jsp:include page="components/vb/price-ruble-sign.jsp"/>
-                            </td>
-                            <td class="td to-main-cart">
-                                <a class="to-main-cart" href="${currentURI}#" title="Переложить в корзину"></a>
-                            </td>
-                        </tr>
-                        <tr class="tr">
-                            <td class="td product">
-<c:set var="bookTripletCoverUrl" value="resources/vb/img/tmp/book-3.jpg" scope="request"/>
-<c:set var="bookTripletTitle" value="Кто подставил кролика роджера?" scope="request"/>
-<c:set var="bookTripletAuthor" value="Владимир Вольфович Константинопольский" scope="request"/>
-<jsp:include page="components/vb/book-triplet.jsp"/>
-                            </td>
-                            <td class="td price">
-<c:set var="price" value="230" scope="request"/>
-<jsp:include page="components/vb/price-ruble-sign.jsp"/>
-                            </td>
-                            <td class="td to-main-cart">
-                                <a class="to-main-cart" href="${currentURI}#" title="Переложить в корзину"></a>
-                            </td>
-                        </tr>
+<c:set var="isCartMain" value="false" scope="request"/>
+                            <c:forEach var="spareShopCartRow" items="${spareShopCartRows}">
+                                <jsp:useBean id="spareShopCartRow" class="org.verygroup.verybook.dto.shopcart.ShopCartRow"/>
+<c:set var="bookTripletCoverUrl" value="${spareShopCartRow.bookCoverUrl}" scope="request"/>
+<c:set var="bookTripletTitle" value="${spareShopCartRow.bookTitle}" scope="request"/>
+<c:set var="bookTripletAuthor" value="${spareShopCartRow.bookAuthor}" scope="request"/>
+<c:set var="price" value="${spareShopCartRow.priceValue}" scope="request"/>
+<jsp:include page="components/shop-cart/shop-cart-row.jsp"/>
+                            </c:forEach>
                         </tbody>
                     </table>
 

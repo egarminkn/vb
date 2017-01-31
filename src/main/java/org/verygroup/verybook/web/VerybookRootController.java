@@ -25,6 +25,7 @@ import org.verygroup.verybook.dto.index.AuthorSummaryItem;
 import org.verygroup.verybook.dto.index2.HelpSlideItem;
 import org.verygroup.verybook.dto.index2.QuoteItem;
 import org.verygroup.verybook.dto.searchbook.*;
+import org.verygroup.verybook.dto.shopcart.ShopCartRow;
 
 @Controller
 public class VerybookRootController {
@@ -296,7 +297,19 @@ public class VerybookRootController {
     }
 
     @GetMapping("/shop-cart")
-    public String shopCart() {
+    public String shopCart(Model model) {
+        List<ShopCartRow> mainShopCartRows = new LinkedList<>();
+        mainShopCartRows.add(new ShopCartRow("resources/vb/img/tmp/book-1.jpg", "Полет над гнездом кукушки", "Александр Константинопольский", "415", "руб"));
+        mainShopCartRows.add(new ShopCartRow("resources/vb/img/tmp/book-2.jpg", "Как рожать на вершине скалы", "Мария Малиновская", "0", "руб"));
+        mainShopCartRows.add(new ShopCartRow("resources/vb/img/tmp/book-3.jpg", "Кто подставил кролика роджера?", "Владимир Вольфович Константинопольский", "230", "руб"));
+        model.addAttribute("mainShopCartRows", mainShopCartRows);
+
+        List<ShopCartRow> spareShopCartRows = new LinkedList<>();
+        spareShopCartRows.add(new ShopCartRow("resources/vb/img/tmp/book-1.jpg", "Полет над гнездом кукушки", "Александр Константинопольский", "415", "руб"));
+        spareShopCartRows.add(new ShopCartRow("resources/vb/img/tmp/book-2.jpg", "Как рожать на вершине скалы", "Мария Малиновская", "0", "руб"));
+        spareShopCartRows.add(new ShopCartRow("resources/vb/img/tmp/book-3.jpg", "Кто подставил кролика роджера?", "Владимир Вольфович Константинопольский", "230", "руб"));
+        model.addAttribute("spareShopCartRows", spareShopCartRows);
+
         return "vb/shop-cart";
     }
 
