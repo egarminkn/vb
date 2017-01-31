@@ -103,98 +103,17 @@
 <c:set var="sortName" value="audiobooks" scope="request"/>
 <jsp:include page="components/vb/sort-by.jsp"/>
 
-                    <div class="item search-result-item audiobook">
-                        <div class="cover-play">
-                            <img class="cover" src="resources/vb/img/tmp/audiobook-1.jpg" width="137" height="137">
-                            <a class="play" href="${currentURI}#">Прослушать отрывок</a>
-                        </div>
-                        <div class="about">
-                            <div class="title">
-                                <a href="${currentURI}#">Harry Potter and the Sorcerer's Stone, Book 1</a>
-                            </div>
-                            <div class="author">
-                                <a href="${currentURI}#">J. K. Rowling</a> (автор), <a href="${currentURI}#">Roger Allam</a> (рассказчик), <a href="${currentURI}#">Emilia Fox</a> (рассказчик)
-                            </div>
-                            <div class="description">
-                                Harry Potter has never even heard of Hogwarts when the letters start dropping on the doormat at number four, Privet Drive. Addressed in green ink on yellowish parchment with a purple seal, they are swiftly confiscated by his grisly aunt and uncle. Then, on Harry's eleventh birthday, a great beetle-eyed giant of a man called Rubeus Hagrid bursts in with some astonishing news: Harry Potter
-                            </div>
-                            <div class="footer">
-                                <div class="date">Дата выхода: <span>26 сентября 2015 года</span></div>
-                                <div class="formats">Форматы: <span>MP3</span></div>
-                            </div>
-                        </div>
-                        <div class="actions">
-<jsp:include page="components/vb/price-cart-btn.jsp"/>
-
-<jsp:include page="components/vb/rating-5-stars.jsp"/>
-
-                            <div class="reviews">
-                                <a href="${currentURI}#">Рецензии (<span>15</span>)</a>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="item search-result-item audiobook">
-                        <div class="cover-play">
-                            <img class="cover" src="resources/vb/img/tmp/audiobook-1.jpg" width="137" height="137">
-                            <a class="play" href="${currentURI}#">Прослушать отрывок</a>
-                        </div>
-                        <div class="about">
-                            <div class="title">
-                                <a href="${currentURI}#">Harry Potter and the Sorcerer's Stone, Book 1</a>
-                            </div>
-                            <div class="author">
-                                <a href="${currentURI}#">J. K. Rowling</a> (автор), <a href="${currentURI}#">Roger Allam</a> (рассказчик), <a href="${currentURI}#">Emilia Fox</a> (рассказчик)
-                            </div>
-                            <div class="description">
-                                Harry Potter has never even heard of Hogwarts when the letters start dropping on the doormat at number four, Privet Drive. Addressed in green ink on yellowish parchment with a purple seal, they are swiftly confiscated by his grisly aunt and uncle. Then, on Harry's eleventh birthday, a great beetle-eyed giant of a man called Rubeus Hagrid bursts in with some astonishing news: Harry Potter
-                            </div>
-                            <div class="footer">
-                                <div class="date">Дата выхода: <span>26 сентября 2015 года</span></div>
-                                <div class="formats">Форматы: <span>MP3</span></div>
-                            </div>
-                        </div>
-                        <div class="actions">
-<jsp:include page="components/vb/price-cart-btn.jsp"/>
-
-<jsp:include page="components/vb/rating-5-stars.jsp"/>
-
-                            <div class="reviews">
-                                <a href="${currentURI}#">Рецензии (<span>15</span>)</a>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="item search-result-item audiobook">
-                        <div class="cover-play">
-                            <img class="cover" src="resources/vb/img/tmp/audiobook-1.jpg" width="137" height="137">
-                            <a class="play" href="${currentURI}#">Прослушать отрывок</a>
-                        </div>
-                        <div class="about">
-                            <div class="title">
-                                <a href="${currentURI}#">Harry Potter and the Sorcerer's Stone, Book 1</a>
-                            </div>
-                            <div class="author">
-                                <a href="${currentURI}#">J. K. Rowling</a> (автор), <a href="${currentURI}#">Roger Allam</a> (рассказчик), <a href="${currentURI}#">Emilia Fox</a> (рассказчик)
-                            </div>
-                            <div class="description">
-                                Harry Potter has never even heard of Hogwarts when the letters start dropping on the doormat at number four, Privet Drive. Addressed in green ink on yellowish parchment with a purple seal, they are swiftly confiscated by his grisly aunt and uncle. Then, on Harry's eleventh birthday, a great beetle-eyed giant of a man called Rubeus Hagrid bursts in with some astonishing news: Harry Potter
-                            </div>
-                            <div class="footer">
-                                <div class="date">Дата выхода: <span>26 сентября 2015 года</span></div>
-                                <div class="formats">Форматы: <span>MP3</span></div>
-                            </div>
-                        </div>
-                        <div class="actions">
-<jsp:include page="components/vb/price-cart-btn.jsp"/>
-
-<jsp:include page="components/vb/rating-5-stars.jsp"/>
-
-                            <div class="reviews">
-                                <a href="${currentURI}#">Рецензии (<span>15</span>)</a>
-                            </div>
-                        </div>
-                    </div>
+                    <c:forEach var="audiobookItem" items="${audiobookItems}">
+                        <jsp:useBean id="audiobookItem" class="org.verygroup.verybook.dto.searchbook.AudiobookItem"/>
+<c:set var="audiobookCoverUrl" value="${audiobookItem.audiobookCoverUrl}" scope="request"/>
+<c:set var="audiobookTitle" value="${audiobookItem.audiobookTitle}" scope="request"/>
+<c:set var="audiobookDescription" value="${audiobookItem.audiobookDescription}" scope="request"/>
+<c:set var="audiobookPublishDate" value="${fn:formatDateToLongStr(audiobookItem.audiobookPublishDate)}" scope="request"/>
+<c:set var="audiobookReviewsCount" value="${audiobookItem.audiobookReviewsCount}" scope="request"/>
+<c:set var="audiobookAuthors" value="${audiobookItem.audiobookAuthors}" scope="request"/>
+<c:set var="audiobookFormats" value="${audiobookItem.audiobookFormats}" scope="request"/>
+<jsp:include page="components/search-book/audiobook.jsp"/>
+                    </c:forEach>
 
 <jsp:include page="components/vb/show-more-btn.jsp"/>
                 </div>
