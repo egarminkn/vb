@@ -77,7 +77,10 @@ main.author .promo {
 }
 
 main.author .promo .title {
+    font-size: 14px;
     font-weight: bold;
+    margin-top: 0;
+    margin-bottom: 0;
 }
 
 /*
@@ -222,7 +225,9 @@ main.author input[type="radio"].expand-collapse-block.expanded:checked ~ label.e
 main.author .books > .title {
     font-family: Tahoma, sans-serif;
     font-size: 22px;
+    font-weight: normal;
     margin-top: 30px;
+    margin-bottom: 0;
 }
 
 /*

@@ -25,9 +25,9 @@
 <jsp:include page="components/vb/thumb-likes.jsp"/>
 
                 <div class="promo">
-                    <div class="title">
+                    <h2 class="title">
                         Are You an Author
-                    </div>
+                    </h2>
                     <div class="body">
                         Help us improve our Author Pages by updating your bibliography and submitting a new or current image and biography Learn more at Author Central
                     </div>
@@ -77,9 +77,9 @@
                     <!-- END (Тень под блоком) -->
                 </div>
                 <div class="books">
-                    <div class="title">
+                    <h1 class="title">
                         Книги автора
-                    </div>
+                    </h1>
 
 <c:set var="sortName" value="books" scope="request"/>
 <jsp:include page="components/vb/sort-by.jsp"/>

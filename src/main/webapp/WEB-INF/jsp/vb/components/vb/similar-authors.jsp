@@ -7,9 +7,9 @@
 
 <!-- START (Баннер "Похожие авторы") -->
 <div class="similar-authors">
-    <div class="title">
+    <h2 class="title">
         Customers Also Bought Items By
-    </div>
+    </h2>
     <div class="body">
         <ul class="similar-authors-list">
             <li class="similar-author">
