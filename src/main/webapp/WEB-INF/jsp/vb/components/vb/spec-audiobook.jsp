@@ -7,9 +7,9 @@
 <!-- START (Баннер "Специальные предложения" для аудиокниг) -->
 <div class="item spec audiobook">
     <div class="header">
-        <div class="title">
+        <h3 class="title">
             Специальные предложения
-        </div>
+        </h3>
         <div class="arrow-down"></div>
     </div>
     <div class="main">

@@ -16,10 +16,10 @@
             </div>
 
             <div class="search-results-summary">
-                <div class="header">
+                <h1 class="header">
                     <span class="title">Результаты поиска по запросу:</span>
                     <span class="query">книга о войне</span> <!-- Сюда будет динамически вставляться текст строки поиска -->
-                </div>
+                </h1>
                 <div class="summary">
                     Найдено <span class="total-count">11</span> совпаден<span class="total-count-ending">ий</span>, из них:
                     <a href="${currentURI}#ebooks"><span class="ebooks-count">12</span> электронн<span class="ebooks-count-ending-1">ых</span> книг<span class="ebooks-count-ending-2"></span></a>,
@@ -49,7 +49,7 @@
             <div class="search-results ebooks" id="ebooks">
                 <div class="column left-column">
                     <div class="item header">
-                        <span class="title">Электнонные книги</span>
+                        <h2 class="title">Электнонные книги</h2>
                         <span class="summary">
                             показано <span class="show-range">1-15</span> книг из
                             <span class="count ebooks-count">12</span> найденн<span class="count-ending ebooks-count-ending">ых</span>
@@ -92,7 +92,7 @@
             <div class="search-results audiobooks" id="audiobooks">
                 <div class="column left-column">
                     <div class="item header">
-                        <span class="title">Аудио-книги</span>
+                        <h2 class="title">Аудио-книги</h2>
                         <span class="summary">
                             показано <span class="show-range">1-15</span> аудиокниг из
                             <span class="count audiobooks-count">1</span> найденн<span class="count-ending audiobooks-count-ending">ых</span>
@@ -132,7 +132,7 @@
             <div class="search-results authors" id="authors">
                 <div class="column left-column">
                     <div class="item header">
-                        <span class="title">Авторы</span>
+                        <h2 class="title">Авторы</h2>
                         <span class="summary">
                             показано <span class="show-range">1-15</span> авторов из
                             <span class="count authors-count">1</span> найденн<span class="count-ending authors-count-ending">ых</span>

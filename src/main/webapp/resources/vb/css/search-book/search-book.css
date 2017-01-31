@@ -56,6 +56,9 @@ main.search-book .search-results-summary {
 main.search-book .search-results-summary .header {
     font-family: Tahoma, sans-serif;
     font-size: 34px;
+    font-weight: normal;
+    margin-top: 0;
+    margin-bottom: 0;
 }
 
 main.search-book .search-results-summary .summary {
@@ -198,6 +201,7 @@ main.search-book .search-results .left-column .header {
 }
 
 main.search-book .search-results .left-column .header .title {
+    display: inline;
     font-family: Tahoma, sans-serif;
     font-size: 17px;
     font-weight: bold;
