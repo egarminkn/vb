@@ -48,8 +48,8 @@ $(document).ready(function () {
      */
     imgStep2 = document.querySelector("div.help-slide-marks > label[for='help-slide-2'] > img");
     imgStep3 = document.querySelector("div.help-slide-marks > label[for='help-slide-3'] > img");
-    pStep2 = document.querySelector("div.help-slide-marks > label[for='help-slide-2'] > p");
-    pStep3 = document.querySelector("div.help-slide-marks > label[for='help-slide-3'] > p");
+    pStep2 = document.querySelector("div.help-slide-marks > label[for='help-slide-2'] > h2");
+    pStep3 = document.querySelector("div.help-slide-marks > label[for='help-slide-3'] > h2");
     if (imgStep2) {
         imgStep2Width = getRealSizeOfElement(imgStep2, "width");
     }

@@ -46,21 +46,21 @@
             <input type="radio" name="help-slide" class="help-slide-3" id="help-slide-3" >
             <div class="help-slide-marks">
                 <label class="help-slide-mark help-slide-mark-1" for="help-slide-1">
-                    <p>
+                    <h2>
                         Отформатируй и подготовь книгу к публикации
-                    </p>
+                    </h2>
                 </label>
                 <label class="help-slide-mark help-slide-mark-2" for="help-slide-2">
                     <img src="resources/vb/img/index-2/paper-plane.png" width="109" height="111">
-                    <p>
+                    <h2>
                         Создай проект, загрузи книгу
-                    </p>
+                    </h2>
                 </label>
                 <label class="help-slide-mark help-slide-mark-3" for="help-slide-3">
                     <img src="resources/vb/img/index-2/yandex-money.jpg" width="91" height="77">
-                    <p>
+                    <h2>
                         Опубликуй книгу и начни зарабатывать
-                    </p>
+                    </h2>
                 </label>
             </div>
 
