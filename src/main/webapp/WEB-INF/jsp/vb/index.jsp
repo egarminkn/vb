@@ -39,9 +39,9 @@
                     <div class="manual">
                         <a href="${currentURI}#">
                             <div class="title">
-                                <span class="text">
+                                <h3 class="text">
                                     Подробный мануал по EPUB
-                                </span>
+                                </h3>
                             </div>
                             <div class="body">
                                 Для выставления<br>на продажу собственных<br>книг настоятельно<br>рекомендем<br>ознакомиться с нашим<br>мануалом, который<br>упростит и сделает более
@@ -57,7 +57,9 @@
                         <div class="title">
                             <div class="bookmark"></div>
                             <div class="shelf-name">
-                                <a href="${currentURI}#">Бест-селлеры</a>
+                                <a href="${currentURI}#">
+                                    <h2>Бест-селлеры</h2>
+                                </a>
                             </div>
 
 <c:set var="sortName" value="best-sellers" scope="request"/>
@@ -115,7 +117,9 @@
                         <div class="title">
                             <div class="bookmark"></div>
                             <div class="shelf-name">
-                                <a href="${currentURI}#">Новинки</a>
+                                <a href="${currentURI}#">
+                                    <h2>Новинки</h2>
+                                </a>
                             </div>
 
 <c:set var="sortName" value="new-books" scope="request"/>
@@ -173,7 +177,9 @@
                         <div class="title">
                             <div class="bookmark"></div>
                             <div class="shelf-name">
-                                <a href="${currentURI}#">Высший рейтинг</a>
+                                <a href="${currentURI}#">
+                                    <h2>Высший рейтинг</h2>
+                                </a>
                             </div>
 
 <c:set var="sortName" value="highest-rating" scope="request"/>
@@ -231,7 +237,9 @@
                         <div class="title">
                             <div class="bookmark"></div>
                             <div class="shelf-name">
-                                <a href="${currentURI}#">Рейтинг авторов</a>
+                                <a href="${currentURI}#">
+                                    <h2>Рейтинг авторов</h2>
+                                </a>
                             </div>
                         </div>
                         <div class="shelf-wrapper">
@@ -257,9 +265,9 @@
 
                     <!-- SEO блок -->
                     <div class="seo">
-                        <div class="title">
+                        <h2 class="title">
                             Публикация собственных книг
-                        </div>
+                        </h2>
                         <div class="body">
                             <p>После переноса операционной базы онлайн-мегамаркета из Санкт-Петербурга в Москву началось активное
                                 развитие проекта по всем направлениям. К существующим в ассортименте книгам и музыкальным дискам

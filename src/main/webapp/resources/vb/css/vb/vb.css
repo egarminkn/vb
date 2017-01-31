@@ -1273,36 +1273,46 @@ ul.top-level {
     -webkit-margin-after: 0;
 }
 
-ul.top-level > ul.bottom-level {
-    margin: 0;
+ul.top-level > li.top-level-link {
+    margin-bottom: 7.5px;
+}
+
+ul.top-level > li.top-level-link > a {
+    text-decoration: none;
+}
+
+ul.top-level > li.top-level-link > a > h3 {
+    display: inline;
+    font-family: Tahoma, sans-serif;
+    font-size: 17px;
+    font-weight: normal;
+    letter-spacing: 0.3px;
+    color: black;
+    border-bottom: 1px solid black;
+}
+
+ul.top-level > li.top-level-link > ul.bottom-level {
+    margin: 7.5px 0 0 0;
     padding: 0;
     list-style: none;
     margin-bottom: 20px;
 }
 
-ul.top-level > li.top-level-link {
-    margin-bottom: 7.5px;
-}
-
-ul.top-level > ul.bottom-level > li.bottom-level-link {
+ul.top-level > li.top-level-link > ul.bottom-level > li.bottom-level-link {
     margin-bottom: 5px;
 }
 
-ul.top-level > li.top-level-link > a {
-    font-family: Tahoma, sans-serif;
-    font-size: 17px;
-    color: black;
-    letter-spacing: 0.3px;
+ul.top-level > li.top-level-link > ul.bottom-level > li.bottom-level-link > a {
     text-decoration: none;
-    border-bottom: 1px solid black;
 }
 
-ul.top-level > ul.bottom-level > li.bottom-level-link > a {
+ul.top-level > li.top-level-link > ul.bottom-level > li.bottom-level-link > a > h4 {
+    display: inline;
     font-family: Tahoma, sans-serif;
     font-size: 12px;
-    color: #5f7495;
+    font-weight: normal;
     letter-spacing: 0.3px;
-    text-decoration: none;
+    color: #5f7495;
     border-bottom: 1px solid #5f7495;
 }
 
@@ -2738,19 +2748,25 @@ div.likes .dislike::before {
  * Шапка баннера специальных предложений
  */
 .spec > .header {
-    font-family: Verdana, sans-serif;
-    font-size: 15px;
-    letter-spacing: 0.8px;
-    line-height: 19px;
-    font-style: italic;
     padding-left: 17px;
     padding-top: 15px;
-    color: #d3be4a;
     height: 53px;
     border: 1px dashed #888;
     border-top-left-radius: 5px;
     border-top-right-radius: 5px;
     background-color: #f5f5f5;
+}
+
+.spec > .header > .title {
+    font-family: Verdana, sans-serif;
+    font-size: 15px;
+    font-weight: normal;
+    font-style: italic;
+    letter-spacing: 0.8px;
+    line-height: 19px;
+    color: #d3be4a;
+    margin-top: 0;
+    margin-bottom: 0;
 }
 
 .spec > .header > .arrow-down {

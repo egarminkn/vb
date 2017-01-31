@@ -7,9 +7,9 @@
 <!-- START (Баннер "Специальные предложения" для электронных книг) -->
 <div class="item spec ebook">
     <div class="header">
-        <div class="title">
+        <h3 class="title">
             Специальные предложения
-        </div>
+        </h3>
         <div class="arrow-down"></div>
     </div>
     <div class="main">
