@@ -3,6 +3,7 @@
 <%@taglib prefix="spring" uri="http://www.springframework.org/tags" %>
 <%@taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
 <%@taglib prefix="sec" uri="http://www.springframework.org/security/tags" %>
+<%@taglib prefix="fn" uri="http://verybook.verygroup.org/functions" %>
 
 <c:set var="bodyClass" value="hidden-partners-on-shelf" scope="request"/>
 <c:set var="mainClass" value="search-book" scope="request"/>
@@ -59,185 +60,17 @@
 <c:set var="sortName" value="ebooks" scope="request"/>
 <jsp:include page="components/vb/sort-by.jsp"/>
 
-                    <div class="item search-result-item ebook">
-                        <div class="cover">
-                            <img src="resources/vb/img/tmp/book-1.jpg" width="100" height="160">
-                        </div>
-                        <div class="about">
-                            <div class="title">
-                                <a href="${currentURI}#">The ultimate players guide to minecraft</a>
-                            </div>
-                            <div class="author">
-                                <a href="${currentURI}#">Владимир Иванов</a>
-                            </div>
-                            <div class="description">
-                                "Инноваторы" - история о разных этапах цифровой революции и людях, без которых не было бы ни компьютеров, ни интернета: от Ады Лавлейс, дочери лорда Байрона, первой нащупавшей принципы компьютерного программирования, до Билла Гейтса, Алана Тьюринга, Стива Джобса, Стива Возняка, Ларри Пейджа. Это книга о том, что такое инновации и как сотрудничество увеличивает творческий потенциал.
-                            </div>
-                            <div class="footer">
-                                <div class="date">Дата выхода: <span>26 сентября 2015 года</span></div>
-                                <div class="formats">Форматы: <span>EPUB, PDF</span></div>
-                            </div>
-                        </div>
-                        <div class="actions">
-<jsp:include page="components/vb/price-cart-btn.jsp"/>
-
-<jsp:include page="components/vb/rating-5-stars.jsp"/>
-
-                            <div class="reviews">
-                                <a href="${currentURI}#">Рецензии (<span>15</span>)</a>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="item search-result-item ebook">
-                        <div class="cover">
-                            <img src="resources/vb/img/tmp/book-2.jpg" width="100" height="160">
-                        </div>
-                        <div class="about">
-                            <div class="title">
-                                <a href="${currentURI}#">The ultimate players guide to minecraft</a>
-                            </div>
-                            <div class="author">
-                                <a href="${currentURI}#">Владимир Иванов</a>
-                            </div>
-                            <div class="description">
-                                "Инноваторы" - история о разных этапах цифровой революции и людях, без которых не было бы ни компьютеров, ни интернета: от Ады Лавлейс, дочери лорда Байрона, первой нащупавшей принципы компьютерного программирования, до Билла Гейтса, Алана Тьюринга, Стива Джобса, Стива Возняка, Ларри Пейджа. Это книга о том, что такое инновации и как сотрудничество увеличивает творческий потенциал.
-                            </div>
-                            <div class="footer">
-                                <div class="date">Дата выхода: <span>26 сентября 2015 года</span></div>
-                                <div class="formats">Форматы: <span>EPUB, PDF</span></div>
-                            </div>
-                        </div>
-                        <div class="actions">
-<jsp:include page="components/vb/price-cart-btn.jsp"/>
-
-<jsp:include page="components/vb/rating-5-stars.jsp"/>
-
-                            <div class="reviews">
-                                <a href="${currentURI}#">Рецензии (<span>15</span>)</a>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="item search-result-item ebook">
-                        <div class="cover">
-                            <img src="resources/vb/img/tmp/book-3.jpg" width="100" height="160">
-                        </div>
-                        <div class="about">
-                            <div class="title">
-                                <a href="${currentURI}#">The ultimate players guide to minecraft</a>
-                            </div>
-                            <div class="author">
-                                <a href="${currentURI}#">Владимир Иванов</a>
-                            </div>
-                            <div class="description">
-                                "Инноваторы" - история о разных этапах цифровой революции и людях, без которых не было бы ни компьютеров, ни интернета: от Ады Лавлейс, дочери лорда Байрона, первой нащупавшей принципы компьютерного программирования, до Билла Гейтса, Алана Тьюринга, Стива Джобса, Стива Возняка, Ларри Пейджа. Это книга о том, что такое инновации и как сотрудничество увеличивает творческий потенциал.
-                            </div>
-                            <div class="footer">
-                                <div class="date">Дата выхода: <span>26 сентября 2015 года</span></div>
-                                <div class="formats">Форматы: <span>EPUB, PDF</span></div>
-                            </div>
-                        </div>
-                        <div class="actions">
-<jsp:include page="components/vb/price-cart-btn.jsp"/>
-
-<jsp:include page="components/vb/rating-5-stars.jsp"/>
-
-                            <div class="reviews">
-                                <a href="${currentURI}#">Рецензии (<span>15</span>)</a>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="item search-result-item ebook">
-                        <div class="cover">
-                            <img src="resources/vb/img/tmp/book-4.jpg" width="100" height="160">
-                        </div>
-                        <div class="about">
-                            <div class="title">
-                                <a href="${currentURI}#">The ultimate players guide to minecraft</a>
-                            </div>
-                            <div class="author">
-                                <a href="${currentURI}#">Владимир Иванов</a>
-                            </div>
-                            <div class="description">
-                                "Инноваторы" - история о разных этапах цифровой революции и людях, без которых не было бы ни компьютеров, ни интернета: от Ады Лавлейс, дочери лорда Байрона, первой нащупавшей принципы компьютерного программирования, до Билла Гейтса, Алана Тьюринга, Стива Джобса, Стива Возняка, Ларри Пейджа. Это книга о том, что такое инновации и как сотрудничество увеличивает творческий потенциал.
-                            </div>
-                            <div class="footer">
-                                <div class="date">Дата выхода: <span>26 сентября 2015 года</span></div>
-                                <div class="formats">Форматы: <span>EPUB, PDF</span></div>
-                            </div>
-                        </div>
-                        <div class="actions">
-<jsp:include page="components/vb/price-cart-btn.jsp"/>
-
-<jsp:include page="components/vb/rating-5-stars.jsp"/>
-
-                            <div class="reviews">
-                                <a href="${currentURI}#">Рецензии (<span>15</span>)</a>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="item search-result-item ebook">
-                        <div class="cover">
-                            <img src="resources/vb/img/tmp/book-5.jpg" width="100" height="160">
-                        </div>
-                        <div class="about">
-                            <div class="title">
-                                <a href="${currentURI}#">The ultimate players guide to minecraft</a>
-                            </div>
-                            <div class="author">
-                                <a href="${currentURI}#">Владимир Иванов</a>
-                            </div>
-                            <div class="description">
-                                "Инноваторы" - история о разных этапах цифровой революции и людях, без которых не было бы ни компьютеров, ни интернета: от Ады Лавлейс, дочери лорда Байрона, первой нащупавшей принципы компьютерного программирования, до Билла Гейтса, Алана Тьюринга, Стива Джобса, Стива Возняка, Ларри Пейджа. Это книга о том, что такое инновации и как сотрудничество увеличивает творческий потенциал.
-                            </div>
-                            <div class="footer">
-                                <div class="date">Дата выхода: <span>26 сентября 2015 года</span></div>
-                                <div class="formats">Форматы: <span>EPUB, PDF</span></div>
-                            </div>
-                        </div>
-                        <div class="actions">
-<jsp:include page="components/vb/price-cart-btn.jsp"/>
-
-<jsp:include page="components/vb/rating-5-stars.jsp"/>
-
-                            <div class="reviews">
-                                <a href="${currentURI}#">Рецензии (<span>15</span>)</a>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="item search-result-item ebook">
-                        <div class="cover">
-                            <img src="resources/vb/img/tmp/book-1.jpg" width="100" height="160">
-                        </div>
-                        <div class="about">
-                            <div class="title">
-                                <a href="${currentURI}#">The ultimate players guide to minecraft</a>
-                            </div>
-                            <div class="author">
-                                <a href="${currentURI}#">Владимир Иванов</a>
-                            </div>
-                            <div class="description">
-                                "Инноваторы" - история о разных этапах цифровой революции и людях, без которых не было бы ни компьютеров, ни интернета: от Ады Лавлейс, дочери лорда Байрона, первой нащупавшей принципы компьютерного программирования, до Билла Гейтса, Алана Тьюринга, Стива Джобса, Стива Возняка, Ларри Пейджа. Это книга о том, что такое инновации и как сотрудничество увеличивает творческий потенциал.
-                            </div>
-                            <div class="footer">
-                                <div class="date">Дата выхода: <span>26 сентября 2015 года</span></div>
-                                <div class="formats">Форматы: <span>EPUB, PDF</span></div>
-                            </div>
-                        </div>
-                        <div class="actions">
-<jsp:include page="components/vb/price-cart-btn.jsp"/>
-
-<jsp:include page="components/vb/rating-5-stars.jsp"/>
-
-                            <div class="reviews">
-                                <a href="${currentURI}#">Рецензии (<span>15</span>)</a>
-                            </div>
-                        </div>
-                    </div>
+                    <c:forEach var="ebookItem" items="${ebookItems}">
+                        <jsp:useBean id="ebookItem" class="org.verygroup.verybook.dto.searchbook.EbookItem"/>
+<c:set var="ebookCoverUrl" value="${ebookItem.ebookCoverUrl}" scope="request"/>
+<c:set var="ebookTitle" value="${ebookItem.ebookTitle}" scope="request"/>
+<c:set var="ebookAuthor" value="${ebookItem.ebookAuthor}" scope="request"/>
+<c:set var="ebookDescription" value="${ebookItem.ebookDescription}" scope="request"/>
+<c:set var="ebookPublishDate" value="${fn:formatDateToLongStr(ebookItem.ebookPublishDate)}" scope="request"/>
+<c:set var="ebookReviewsCount" value="${ebookItem.ebookReviewsCount}" scope="request"/>
+<c:set var="ebookFormats" value="${ebookItem.ebookFormats}" scope="request"/>
+<jsp:include page="components/search-book/ebook.jsp"/>
+                    </c:forEach>
 
 <jsp:include page="components/vb/show-more-btn.jsp"/>
                 </div>

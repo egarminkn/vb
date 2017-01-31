@@ -21,6 +21,7 @@ import org.verygroup.verybook.dto.book.ReviewItem;
 import org.verygroup.verybook.dto.index.AuthorSummaryItem;
 import org.verygroup.verybook.dto.index2.HelpSlideItem;
 import org.verygroup.verybook.dto.index2.QuoteItem;
+import org.verygroup.verybook.dto.searchbook.EbookItem;
 
 @Controller
 public class VerybookRootController {
@@ -248,7 +249,15 @@ public class VerybookRootController {
     }
 
     @GetMapping("/search-book")
-    public String searchBook() {
+    public String searchBook(Model model) {
+        List<EbookItem> ebookItems = new LinkedList<>();
+        ebookItems.add(new EbookItem("resources/vb/img/tmp/book-1.jpg", "The ultimate players guide to minecraft", "Владимир Иванов", "\"Инноваторы\" - история о разных этапах цифровой революции и людях, без которых не было бы ни компьютеров, ни интернета: от Ады Лавлейс, дочери лорда Байрона, первой нащупавшей принципы компьютерного программирования, до Билла Гейтса, Алана Тьюринга, Стива Джобса, Стива Возняка, Ларри Пейджа. Это книга о том, что такое инновации и как сотрудничество увеличивает творческий потенциал.", LocalDate.of(2015, 9, 26), 15, BookFormat.EPUB, BookFormat.PDF, BookFormat.EPUB));
+        ebookItems.add(new EbookItem("resources/vb/img/tmp/book-2.jpg", "The ultimate players guide to minecraft", "Владимир Иванов", "\"Инноваторы\" - история о разных этапах цифровой революции и людях, без которых не было бы ни компьютеров, ни интернета: от Ады Лавлейс, дочери лорда Байрона, первой нащупавшей принципы компьютерного программирования, до Билла Гейтса, Алана Тьюринга, Стива Джобса, Стива Возняка, Ларри Пейджа. Это книга о том, что такое инновации и как сотрудничество увеличивает творческий потенциал.", LocalDate.of(2015, 9, 26), 15, BookFormat.EPUB, BookFormat.PDF, BookFormat.PDF, BookFormat.EPUB));
+        ebookItems.add(new EbookItem("resources/vb/img/tmp/book-3.jpg", "The ultimate players guide to minecraft", "Владимир Иванов", "\"Инноваторы\" - история о разных этапах цифровой революции и людях, без которых не было бы ни компьютеров, ни интернета: от Ады Лавлейс, дочери лорда Байрона, первой нащупавшей принципы компьютерного программирования, до Билла Гейтса, Алана Тьюринга, Стива Джобса, Стива Возняка, Ларри Пейджа. Это книга о том, что такое инновации и как сотрудничество увеличивает творческий потенциал.", LocalDate.of(2015, 9, 26), 15, BookFormat.EPUB, BookFormat.PDF, BookFormat.EPUB));
+        ebookItems.add(new EbookItem("resources/vb/img/tmp/book-4.jpg", "The ultimate players guide to minecraft", "Владимир Иванов", "\"Инноваторы\" - история о разных этапах цифровой революции и людях, без которых не было бы ни компьютеров, ни интернета: от Ады Лавлейс, дочери лорда Байрона, первой нащупавшей принципы компьютерного программирования, до Билла Гейтса, Алана Тьюринга, Стива Джобса, Стива Возняка, Ларри Пейджа. Это книга о том, что такое инновации и как сотрудничество увеличивает творческий потенциал.", LocalDate.of(2015, 9, 26), 15, BookFormat.EPUB));
+        ebookItems.add(new EbookItem("resources/vb/img/tmp/book-5.jpg", "The ultimate players guide to minecraft", "Владимир Иванов", "\"Инноваторы\" - история о разных этапах цифровой революции и людях, без которых не было бы ни компьютеров, ни интернета: от Ады Лавлейс, дочери лорда Байрона, первой нащупавшей принципы компьютерного программирования, до Билла Гейтса, Алана Тьюринга, Стива Джобса, Стива Возняка, Ларри Пейджа. Это книга о том, что такое инновации и как сотрудничество увеличивает творческий потенциал.", LocalDate.of(2015, 9, 26), 15, BookFormat.PDF, BookFormat.PDF));
+        ebookItems.add(new EbookItem("resources/vb/img/tmp/book-1.jpg", "The ultimate players guide to minecraft", "Владимир Иванов", "\"Инноваторы\" - история о разных этапах цифровой революции и людях, без которых не было бы ни компьютеров, ни интернета: от Ады Лавлейс, дочери лорда Байрона, первой нащупавшей принципы компьютерного программирования, до Билла Гейтса, Алана Тьюринга, Стива Джобса, Стива Возняка, Ларри Пейджа. Это книга о том, что такое инновации и как сотрудничество увеличивает творческий потенциал.", LocalDate.of(2015, 9, 26), 15, BookFormat.EPUB, BookFormat.PDF, BookFormat.EPUB));
+        model.addAttribute("ebookItems", ebookItems);
         return "vb/search-book";
     }
 
