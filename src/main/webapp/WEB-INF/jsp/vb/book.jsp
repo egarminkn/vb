@@ -20,7 +20,7 @@
                         <div class="summary-1">
                         </div>
                         <div class="cover">
-                            <img src="resources/vb/img/tmp/book-1.jpg" width="100" height="160">
+                            <img src="resources/vb/img/tmp/book-1.jpg" width="230" height="368">
                         </div>
                         <ul class="pages">
                             <li class="content">
