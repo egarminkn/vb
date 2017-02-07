@@ -64,6 +64,7 @@
         <link href="resources/vb/css/index-2/index-2.css" type="text/css" rel="stylesheet" />
         <link href="resources/vb/css/search-book/search-book.css" type="text/css" rel="stylesheet" />
         <link href="resources/vb/css/shop-cart/shop-cart.css" type="text/css" rel="stylesheet" />
+        <link href="resources/vb/css/info/info.css" type="text/css" rel="stylesheet" />
 
         <!--
             jQuery нужно подключать в теге head, а не после тега body,
@@ -111,17 +112,17 @@
             <nav class="header header-2">
                 <div class="menu">
                     <!-- Для того, чтобы подчеркнуть страницу, которая выбрана, к div добавляется класс menu-item-selected -->
-                    <div class="shop menu-item-selected">
+                    <div class="shop ${isShop ? 'menu-item-selected' : ''}">
                         <a href="${currentURI}#"><h3>Книжный магазин</h3></a>
                     </div>
-                    <div class="help ">
+                    <div class="help ${isHelp ? 'menu-item-selected' : ''}">
                         <a href="${currentURI}#"><h3>Помощь автору</h3></a>
                     </div>
-                    <div class="authors-rating ">
+                    <div class="authors-rating ${isAuthorsRating ? 'menu-item-selected' : ''}">
                         <a href="${currentURI}#"><h3>Рейтинг авторов</h3></a>
                     </div>
-                    <div class="about ">
-                        <a href="${currentURI}#"><h3>О проекте</h3></a>
+                    <div class="about ${isAbout ? 'menu-item-selected' : ''}">
+                        <a href="info/about"><h3>О проекте</h3></a>
                     </div>
                 </div>
                 <div class="entrance "> <!-- для залогиненого пользователя нужно добавить класс nick -->

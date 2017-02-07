@@ -65,6 +65,9 @@ public class ExceptionInfoHandler {
         return logAndGetErrorInfo(req, e, true);
     }
 
+    /*
+     * Вспомогательные методы
+     */
     private ErrorInfo logAndGetValidationErrorInfo(HttpServletRequest req, BindingResult result) {
         String[] details = result.getFieldErrors().stream()
                 .map(fe -> fe.getField() + ' ' + fe.getDefaultMessage()).toArray(String[]::new);
@@ -73,7 +76,7 @@ public class ExceptionInfoHandler {
         return new ErrorInfo(req.getRequestURL(), "ValidationException", details);
     }
 
-    public ErrorInfo logAndGetErrorInfo(HttpServletRequest req, Exception e, boolean logException) {
+    private ErrorInfo logAndGetErrorInfo(HttpServletRequest req, Exception e, boolean logException) {
         if (logException) {
             LOG.error("Exception at request " + req.getRequestURL(), e);
         } else {
