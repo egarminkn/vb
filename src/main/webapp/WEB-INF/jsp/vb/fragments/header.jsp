@@ -83,7 +83,7 @@
 
         <header>
             <div class="header header-1">
-                <a href="${currentURI}#" class="logo">
+                <a href="index" class="logo">
                     <span class="logo-word logo-line logo-line1"></span>
                     <span class="logo-word logo-line logo-line2"></span>
                     <span class="logo-word logo-v">V</span>
