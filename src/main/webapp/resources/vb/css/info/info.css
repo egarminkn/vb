@@ -78,6 +78,22 @@ main.info .column-2 .info-body h2 {
     margin-bottom: 20px;
 }
 
+main.info .column-2 .info-body h3 {
+    font-family: Tahoma, sans-serif;
+    font-size: 16px;
+    font-weight: bold;
+    letter-spacing: 1.1px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+/*
+ * Ссылки
+ */
+main.info .column-2 .info-body a {
+    color: #657392;
+}
+
 /*
  * Списки
  */
@@ -89,6 +105,28 @@ main.info .column-2 .info-body ul {
 }
 
 main.info .column-2 .info-body ul > li {
+    font-family: Tahoma, sans-serif;
+    font-weight: normal;
+    letter-spacing: 0.3px;
+    word-spacing: 0.5px;
+    line-height: 27px;
+    margin: 10px 0 0 0;
+    padding: 0;
+    /*border: 1px solid black;*/
+}
+
+main.info .column-2 .info-body ol {
+    margin: 0 0 0 30px;
+    padding: 0;
+    /*border: 1px solid black;*/
+}
+
+main.info .column-2 .info-body ol > li {
+    font-family: Tahoma, sans-serif;
+    font-weight: normal;
+    letter-spacing: 0.3px;
+    word-spacing: 0.5px;
+    line-height: 27px;
     margin: 10px 0 0 0;
     padding: 0;
     /*border: 1px solid black;*/
@@ -130,6 +168,31 @@ main.info .column-2 .info-body ul > li.partner > a > .partner-description > .par
 main.info .column-2 .info-body ul > li.partner > a > .partner-description > .partner-link {
     font-size: 16px;
     color: #657392;
+}
+
+/* Страница info/book-requirements */
+main.info .column-2 .info-body .cols {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+main.info .column-2 .info-body .cols .col {
+    flex-basis: 400px;
+    margin: 0 20px 0 20px;
+}
+
+main.info .column-2 .info-body .cols ul > li {
+    font-size: 16px;
+}
+
+main.info .column-2 .info-body .indent {
+    margin-left: 50px;
+}
+
+main.info .column-2 .info-body ol.alpha-list {
+    list-style-type: lower-alpha;
+    margin-left: 60px;
 }
 
 /* END (Тело страницы) -------------------------------------------------------------------------------------------- */
