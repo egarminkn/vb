@@ -144,9 +144,9 @@
                     Доп.класс help-page у slogan-а нужен для переключения стиля слогана между Главной страницей и страницей Помощи автору
                 -->
                 Читай
-                <a href="${currentURI}#" class="new-books-free"><h3>новые книги бесплатно</h3></a>,
+                <a href="index" class="new-books-free"><h3>новые книги бесплатно</h3></a>,
                 решай их судьбу и
-                <a href="${currentURI}#" class="publish-own"><h3>публикуй</h3></a>
+                <a href="index-2" class="publish-own"><h3>публикуй</h3></a>
                 собственные
             </div>
 
