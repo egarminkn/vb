@@ -89,10 +89,10 @@
                     <span class="logo-word logo-v">V</span>
                     <span class="logo-word logo-erybook">erybook</span>
                 </a>
-                <div class="search">
-                    <input type="search" name="search" autocomplete>
-                    <button class="search-btn"></button>
-                </div>
+                <form class="search" method="get" action="search-book">
+                    <input type="search" title="Введите строку запроса" name="search-query" value="${searchQuery}" autocomplete>
+                    <button type="submit" class="search-btn"></button>
+                </form>
 
                 <!-- Для того, чтобы подчеркнуть, что выбран один из следующих пунктов, к div добавляется класс header-item-selected -->
                 <div class="ask ">
