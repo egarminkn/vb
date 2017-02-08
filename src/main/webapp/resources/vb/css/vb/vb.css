@@ -3159,7 +3159,7 @@ body.hidden-books-on-shelf .books-on-shelf {
     font-size: 11.5px;
     letter-spacing: 0.1px;
     word-spacing: 0.1px;
-    flex-basis: 18%;
+    flex-basis: 15%;
 }
 
 /* SEO-оптимизация */
@@ -3174,19 +3174,19 @@ body.hidden-books-on-shelf .books-on-shelf {
 }
 
 .under-footer-shelf > .about-company {
-    flex-basis: 13%;
+    flex-basis: 15%;
 }
 
-.under-footer-shelf > .help {
-    flex-basis: 11%;
+.under-footer-shelf > .about-author {
+    flex-basis: 15%;
 }
 
-.under-footer-shelf > .earn-with-us {
-    flex-basis: 20%;
+.under-footer-shelf > .about-book {
+    flex-basis: 15%;
 }
 
-.under-footer-shelf > .site-map {
-    flex-basis: 13%;
+.under-footer-shelf > .about-money {
+    flex-basis: 15%;
 }
 
 .under-footer-shelf > div > a {

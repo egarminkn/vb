@@ -43,81 +43,72 @@
 
             <div class="under-footer-shelf">
                 <div class="copyright">
-                    © 1993–2014 <h3>Верибук</h3>.ру
+                    © 2015–2017 <h3>Верибук</h3>
                 </div>
 
                 <div class="about-company">
-                    <a href="${currentURI}#">
-                        <h3>О компании</h3>
+                    <a>
+                        <h3>Что такое Verybook?</h3>
                     </a>
-                    <a href="${currentURI}#">
-                        <h4>Пресс-центр</h4>
+                    <a href="info/about">
+                        <h4>Информация о сервисе</h4>
                     </a>
-                    <a href="${currentURI}#">
-                        <h4>Вакансии</h4>
+                    <a href="info/partners">
+                        <h4>Наши партнеры</h4>
                     </a>
-                    <a href="${currentURI}#">
-                        <h4>Реквизиты</h4>
-                    </a>
-                    <a href="${currentURI}#">
-                        <h4>О компании</h4>
-                    </a>
-                </div>
-
-                <div class="help">
-                    <a href="${currentURI}#">
-                        <h3>Помощь</h3>
-                    </a>
-                    <a href="${currentURI}#">
-                        <h4>Как сделать заказ</h4>
-                    </a>
-                    <a href="${currentURI}#">
-                        <h4>Доставка</h4>
-                    </a>
-                    <a href="${currentURI}#">
-                        <h4>Оплата</h4>
-                    </a>
-                    <a href="${currentURI}#">
-                        <h4>Помощь</h4>
-                    </a>
-                    <a href="${currentURI}#">
+                    <a href="feedback">
                         <h4>Обратная связь</h4>
                     </a>
                 </div>
 
-                <div class="earn-with-us">
-                    <a href="${currentURI}#">
-                        <h3>Зарабатывайте с нами</h3>
+                <div class="about-author">
+                    <a>
+                        <h3>Как стать автором?</h3>
                     </a>
-                    <a href="${currentURI}#">
-                        <h4>Продавайте Ваши товары на Ozon.ru</h4>
+                    <a href="info/author-identification">
+                        <h4>Регистрация</h4>
                     </a>
-                    <a href="${currentURI}#">
-                        <h4>Становитесь поставщиками Букинистики</h4>
-                    </a>
-                    <a href="${currentURI}#">
-                        <h4>Партнёрская программа Ozon.ru</h4>
-                    </a>
-                    <a href="${currentURI}#">
-                        <h4>Размещайте рекламу на Ozon.ru</h4>
-                    </a>
-                    <a href="${currentURI}#">
-                        <h4>Открывайте пункты выдачи заказов Ozon.ru</h4>
+                    <a href="info/offer">
+                        <h4>Правила сервиса</h4>
                     </a>
                 </div>
 
-                <div class="site-map">
-                    <a href="${currentURI}#">
-                        <h3>Карта сайта</h3>
+                <div class="about-book">
+                    <a>
+                        <h3>Как опубликовать книгу?</h3>
                     </a>
-                    <a href="${currentURI}#">
-                        <h4>Покупка товаров (b2b)</h4>
+                    <a href="info/book-requirements">
+                        <h4>Подготовка рукописи</h4>
                     </a>
-                    <a href="${currentURI}#">
-                        <h4>Подарочные сертификаты</h4>
+                    <a href="info/book-metadata">
+                        <h4>Аннотация к книге</h4>
                     </a>
-                    <a href="${currentURI}#">
-                        <h4>Loyalica</h4>
+                    <a href="info/book-restrictions">
+                        <h4>Возрастные ограничения</h4>
+                    </a>
+                    <a href="info/book-license">
+                        <h4>Выбор типа лицензии</h4>
+                    </a>
+                    <a href="info/book-upload">
+                        <h4>Загрузка книги</h4>
+                    </a>
+                </div>
+
+                <div class="about-money">
+                    <a>
+                        <h3>Как начать зарабатывать?</h3>
+                    </a>
+                    <a href="info/book-check">
+                        <h4>Проверка рукописи</h4>
+                    </a>
+                    <a href="info/book-price">
+                        <h4>Установка цены</h4>
+                    </a>
+                    <a href="info/book-statistics">
+                        <h4>Слежение за продажами</h4>
+                    </a>
+                    <a href="info/author-payreceive">
+                        <h4>Получение вознаграждения</h4>
                     </a>
                 </div>
 
