@@ -122,17 +122,17 @@
                 </div>
 
                 <div class="social-sharing">
-                    <a href="https://www.facebook.com/sharer/sharer.php?u=verybook.ru"
-                       title="Поделиться Verybook на Facebook"
-                       class="share-icon-facebook">
+                    <a href="https://www.facebook.com/%D0%92%D0%B5%D1%80%D0%B8-%D0%91%D1%83%D0%BA-1709206726037705/" target="_blank"
+                       title="Страница Verybook на Facebook"
+                       class="icon-facebook">
                     </a>
-                    <a href="${currentURI}#"
-                       title="Поделиться Verybook ВКонтакте"
-                       class="share-icon-vk">
+                    <a href="https://vk.com/verybooks" target="_blank"
+                       title="Страница Verybook в VK"
+                       class="icon-vk">
                     </a>
-                    <a href="${currentURI}#"
-                       title="Поделиться Verybook в ЖЖ"
-                       class="share-icon-livejournal">
+                    <a href="http://verybook.livejournal.com/" target="_blank"
+                       title="Страница Verybook в ЖЖ"
+                       class="icon-livejournal">
                     </a>
                 </div>
             </div>

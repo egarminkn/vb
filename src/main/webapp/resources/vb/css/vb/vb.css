@@ -3229,14 +3229,14 @@ body.hidden-books-on-shelf .books-on-shelf {
     /*border: 1px solid black;*/
 }
 
-.under-footer-shelf > .social-sharing > a.share-icon-facebook {
+.under-footer-shelf > .social-sharing > a.icon-facebook {
     background-image: url(../../svg/vb/F_icon.svg);
 }
 
-.under-footer-shelf > .social-sharing > a.share-icon-vk {
+.under-footer-shelf > .social-sharing > a.icon-vk {
     background-image: url(../../svg/vb/VK_icon.svg);
 }
 
-.under-footer-shelf > .social-sharing > a.share-icon-livejournal {
+.under-footer-shelf > .social-sharing > a.icon-livejournal {
     background-image: url(../../svg/vb/LJ_icon.svg);
 }
