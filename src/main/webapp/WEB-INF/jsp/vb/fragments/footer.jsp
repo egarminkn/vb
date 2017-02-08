@@ -6,19 +6,19 @@
 
         <footer>
             <div class="partners-on-shelf">
-                <a href="${currentURI}#">
+                <a href="https://www.books.ru/" target="_blank">
                     <img src="resources/vb/img/vb/partner-1.jpg" width="115" height="31">
                 </a>
-                <a href="${currentURI}#">
+                <a href="http://www.ozon.ru/" target="_blank">
                     <img src="resources/vb/img/vb/partner-2.jpg" width="115" height="28">
                 </a>
-                <a href="${currentURI}#">
+                <a href="https://www.litres.ru/" target="_blank">
                     <img src="resources/vb/img/vb/partner-3.jpg" width="106" height="31">
                 </a>
-                <a href="${currentURI}#">
+                <a href="https://mybook.ru/" target="_blank">
                     <img src="resources/vb/img/vb/partner-4.jpg" width="117" height="24">
                 </a>
-                <a href="${currentURI}#">
+                <a href="http://verybook.org/" target="_blank">
                     <img src="resources/vb/img/vb/partner-5.jpg" width="113" height="24">
                 </a>
             </div>
