@@ -88,6 +88,13 @@ main.info .column-2 .info-body h3 {
 }
 
 /*
+ * Отступы
+ */
+main.info .column-2 .info-body .indent {
+    margin-left: 50px;
+}
+
+/*
  * Ссылки
  */
 main.info .column-2 .info-body a {
@@ -184,10 +191,6 @@ main.info .column-2 .info-body .cols .col {
 
 main.info .column-2 .info-body .cols ul > li {
     font-size: 16px;
-}
-
-main.info .column-2 .info-body .indent {
-    margin-left: 50px;
 }
 
 main.info .column-2 .info-body ol.alpha-list {
