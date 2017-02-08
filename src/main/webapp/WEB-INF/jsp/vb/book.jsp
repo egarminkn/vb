@@ -8,6 +8,7 @@
 <c:set var="bodyClass" value="hidden-partners-on-shelf" scope="request"/>
 <c:set var="mainClass" value="book" scope="request"/>
 <c:set var="sloganAdditionalClass" value="" scope="request"/>
+<c:set var="isShop" value="true" scope="request"/>
 
 <jsp:include page="fragments/header.jsp"/>
 

@@ -95,14 +95,14 @@
                 </form>
 
                 <!-- Для того, чтобы подчеркнуть, что выбран один из следующих пунктов, к div добавляется класс header-item-selected -->
-                <div class="ask ">
-                    <a href="${currentURI}#">
+                <div class="ask ${isFeedback ? 'header-item-selected' : ''}">
+                    <a href="feedback">
                         <span class="text"><h3>Задать вопрос</h3></span>
                         <span class="figure"></span>
                     </a>
                 </div>
-                <div class="cart ">
-                    <a href="${currentURI}#">
+                <div class="cart ${isShopCart ? 'header-item-selected' : ''}">
+                    <a href="shop-cart">
                         <span class="figure"></span>
                         <span class="text"><h3>Корзина</h3></span>
                         <span class="count">222</span>
@@ -113,13 +113,13 @@
                 <div class="menu">
                     <!-- Для того, чтобы подчеркнуть страницу, которая выбрана, к div добавляется класс menu-item-selected -->
                     <div class="shop ${isShop ? 'menu-item-selected' : ''}">
-                        <a href="${currentURI}#"><h3>Книжный магазин</h3></a>
+                        <a href="search-book"><h3>Книжный магазин</h3></a>
                     </div>
                     <div class="help ${isHelp ? 'menu-item-selected' : ''}">
-                        <a href="${currentURI}#"><h3>Помощь автору</h3></a>
+                        <a href="index-2"><h3>Помощь автору</h3></a>
                     </div>
                     <div class="authors-rating ${isAuthorsRating ? 'menu-item-selected' : ''}">
-                        <a href="${currentURI}#"><h3>Рейтинг авторов</h3></a>
+                        <a href="author-rating"><h3>Рейтинг авторов</h3></a>
                     </div>
                     <div class="about ${isAbout ? 'menu-item-selected' : ''}">
                         <a href="info/about"><h3>О проекте</h3></a>
