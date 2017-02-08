@@ -149,5 +149,6 @@
     <script type="text/javascript" src="resources/vb/js/vb/banner-column-compliance.js"></script>
     <script type="text/javascript" src="resources/vb/js/vb/vb.js"></script>
     <script type="text/javascript" src="resources/vb/js/vb/shelf.js"></script>
+    <script type="text/javascript" src="resources/vb/js/vb/modals.js"></script>
 
 </html>

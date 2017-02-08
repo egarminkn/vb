@@ -22,6 +22,13 @@
     src: local('Core Sans M W01 SC 65 Bold'), url('../../fonts/Core Sans M W01 SC 65 Bold.woff') format('woff');
 }
 
+@font-face {
+    font-family: 'FontAwesome';
+    font-weight: normal;
+    font-style: normal;
+    src: local('FontAwesome'), url('../../fonts/fontawesome-webfont.woff') format('woff');
+}
+
 /***
  *** Туловище
  ***/
@@ -499,6 +506,89 @@ header::after {
     font-size: 27px;
     letter-spacing: 1px;
     /*border: 1px solid black;*/
+}
+
+/**
+ ** Вход через соц.сети
+ **/
+.modal.login > .body {
+    min-width: 270px;
+    width: 40%;
+    height: auto;
+    margin-top: 10%;
+}
+
+.modal.login > .body h2 {
+    margin: 20px auto;
+}
+
+.font-awesome {
+    font-family: 'FontAwesome';
+    font-size: 18px;
+    line-height: 45px;
+    color: white;
+}
+
+.font-awesome.vk::before {
+    content: "\f189";
+}
+.font-awesome.twitter::before {
+    content: "\f099";
+}
+.font-awesome.facebook::before {
+    content: "\f09a";
+}
+.font-awesome.google::before {
+    content: "\f0d5";
+}
+.font-awesome.linkedin::before {
+    content: "\f0e1";
+}
+
+.soclink-box {
+    display: block;
+    width: 225px;
+    margin: 40px auto 20px auto;
+}
+
+.soclink-box::after {
+    content: '';
+    display: block;
+    clear: both;
+}
+
+.soclink-box a {
+    display: block;
+    float: left;
+    height: 45px;
+    width: 45px;
+    text-decoration: none;
+    text-align: center;
+    cursor: pointer;
+}
+
+.soclink-box a:hover {
+    opacity: 0.75;
+}
+
+.soclink-box a.vk {
+    background-color: #577ca2;
+}
+
+.soclink-box a.facebook {
+    background-color: #3b5998;
+}
+
+.soclink-box a.twitter {
+    background-color: #4cc2ff;
+}
+
+.soclink-box a.google {
+    background-color: #f44336;
+}
+
+.soclink-box a.linkedin {
+    background-color: #0077b5;
 }
 
 /**

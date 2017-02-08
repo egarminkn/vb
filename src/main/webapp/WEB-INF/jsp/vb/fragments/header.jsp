@@ -126,7 +126,8 @@
                     </div>
                 </div>
                 <div class="entrance "> <!-- для залогиненого пользователя нужно добавить класс nick -->
-                    <a href="${currentURI}#">
+                    <!-- START (Модальное окно) - 1-ая часть из 3-х -->
+                    <a href="${currentURI}#login" class="modal-btn">
                         <span class="figure-1"></span>
                         <span class="text">
                             <!-- для залогиненого пользователя нужно поменять Войти на Логин -->
@@ -134,9 +135,39 @@
                         </span>
                         <span class="figure-2"></span>
                     </a>
+                    <!-- END (Модальное окно) - 1-ая часть из 3-х -->
                 </div>
             </nav>
         </header>
+
+        <!-- START (Модальное окно) - 2-ая часть из 3-х -->
+        <!-- Имя modal-name класса и id поменять на свое -->
+        <div class="modal login" id="login">
+            <div class="body">
+                <a href="${currentURI}#close-modal" title="Закрыть" class="close-btn"></a>
+
+                <div class="columns">
+                    <div class="column column-1"></div>
+
+                    <div class="column column-2">
+                        <div class="login">
+                            <h2>Войдите с помощью одной из социальных сетей</h2>
+
+                            <div class="soclink-box">
+                                <a class="vk font-awesome" title="Вход через VK"></a>
+                                <a class="twitter font-awesome" title="Вход через Twitter"></a>
+                                <a class="facebook font-awesome" title="Вход через Facebook"></a>
+                                <a class="google font-awesome" title="Вход через Gmail"></a>
+                                <a class="linkedin font-awesome" title="Вход через LinkedIn"></a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="column column-3"></div>
+                </div>
+            </div>
+        </div>
+        <!-- END (Модальное окно) - 2-ая часть из 3-х -->
 
         <main class="${mainClass}">
             <div class="slogan ${sloganAdditionalClass}">
