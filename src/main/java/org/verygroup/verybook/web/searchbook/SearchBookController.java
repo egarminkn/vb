@@ -20,6 +20,7 @@ import org.verygroup.verybook.dto.searchbook.*;
 @Controller
 public class SearchBookController {
 
+    // FIXME Перенести в опции БД
     private static final String DEFAULT_SEARCH_QUERY = "promo: бест-селлеры";
 
     @GetMapping("/search-book")
