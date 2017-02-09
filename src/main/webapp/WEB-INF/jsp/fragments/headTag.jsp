@@ -4,6 +4,8 @@
 <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
 
 <head>
+    <meta name="google-site-verification" content="SmxbnzBEIQl6mJqn7eMZ9293Mv-a15NDTvywAM_WB10" />
+
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 
     <meta name="_csrf" content="${_csrf.token}"/>
