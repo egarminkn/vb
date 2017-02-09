@@ -4,7 +4,7 @@
 <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
 
 <head>
-    <meta name="google-site-verification" content="SmxbnzBEIQl6mJqn7eMZ9293Mv-a15NDTvywAM_WB10" />
+    <meta name="google-site-verification" content="6tX18OaIYWbck1B33Lu5GwnejUWab9d9QhSieRTqzk4" />
 
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 
