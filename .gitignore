@@ -3,6 +3,5 @@ out
 target
 *.iml
 log
-*.patch
 hsqldb
 src/main/resources/social/social.properties
