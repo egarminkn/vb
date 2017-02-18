@@ -33,7 +33,7 @@
         Подключение пропертей из файла в бин Environment.
         ignore-unresolvable="true" - говорит, что, кроме этого файла, могут быть еще файлы с пропертями.
     -->
-    <context:property-placeholder location="classpath:social/social.properties" ignore-unresolvable="true"/>
+    <context:property-placeholder location="classpath:social/social.properties" ignore-unresolvable="true" ignore-resource-not-found="true"/>
 
     <bean id="connectionFactoryLocator" class="org.springframework.social.connect.support.ConnectionFactoryRegistry">
         <property name="connectionFactories">
