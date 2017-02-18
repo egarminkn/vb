@@ -1,30 +1,40 @@
 package org.verygroup.verybook.web.searchbook;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.util.StringUtils;
 
+import org.verygroup.verybook.AudiobookFormat;
+import org.verygroup.verybook.BookFormat;
+import org.verygroup.verybook.BookGenre;
+import org.verygroup.verybook.dto.searchbook.*;
+import org.verygroup.verybook.web.util.SocialControllerUtil;
+
+import java.security.Principal;
 import java.time.LocalDate;
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.LinkedList;
 import java.util.List;
-
-import org.verygroup.verybook.AudiobookFormat;
-import org.verygroup.verybook.BookFormat;
-import org.verygroup.verybook.BookGenre;
-import org.verygroup.verybook.dto.searchbook.*;
+import javax.servlet.http.HttpServletRequest;
 
 @Controller
 public class SearchBookController {
+
+    @Autowired
+    private SocialControllerUtil util;
 
     // FIXME Перенести в опции БД
     private static final String DEFAULT_SEARCH_QUERY = "promo: бест-селлеры";
 
     @GetMapping("/search-book")
-    private String searchBook(@RequestParam(value = "search-query", required = false) String searchQuery, Model model) {
+    private String searchBook(@RequestParam(value = "search-query", required = false) String searchQuery,
+                              HttpServletRequest request, Principal currentUser, Model model) {
+        util.setModel(request, currentUser, model);
+
         if (StringUtils.isEmpty(searchQuery)) {
             searchQuery = DEFAULT_SEARCH_QUERY;
         }

@@ -7,6 +7,7 @@ import org.springframework.ui.ModelMap;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.bind.support.SessionStatus;
+
 import ru.javawebinar.topjava.AuthorizedUser;
 import ru.javawebinar.topjava.to.UserTo;
 import ru.javawebinar.topjava.util.UserUtil;
@@ -20,11 +21,6 @@ import javax.validation.Valid;
  */
 @Controller
 public class RootController extends AbstractUserController {
-
-    @GetMapping("/")
-    public String root() {
-        return "redirect:meals";
-    }
 
     //    @Secured("ROLE_ADMIN")
     @PreAuthorize("hasRole('ROLE_ADMIN')")
@@ -89,4 +85,5 @@ public class RootController extends AbstractUserController {
         model.addAttribute("register", true);
         return "profile";
     }
+
 }

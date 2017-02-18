@@ -5,9 +5,16 @@
        http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd">
 
     <import resource="spring-tools.xml"/>
-    <import resource="spring-security.xml"/>
+    <!--<import resource="spring-security.xml"/>-->
+    <import resource="spring-social.xml"/>
 
+    <!-- annotation-config достаточно определить только в parent-контексте -->
     <context:annotation-config/>
 
+    <!-- Сканируем все, кроме controllers -->
+    <context:component-scan base-package="org.verygroup.verybook">
+        <context:exclude-filter type="regex" expression="org\.verygroup\.verybook\.web\..*"/>
+    </context:component-scan>
     <context:component-scan base-package="ru.javawebinar.**.service"/>
+
 </beans>

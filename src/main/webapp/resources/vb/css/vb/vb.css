@@ -149,11 +149,23 @@ header::after {
 }
 
 /**
- ** Ссылка Войти/Логин
+ ** Ссылка "Войти"/"Имя логина"
  **/
 .entrance {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    flex-wrap: nowrap;
     margin-right: 40px;
     /*border: 1px solid black;*/
+}
+
+/*
+ * Ссылка с "Именем логина" вместо ссылки "Войти"
+ */
+.entrance.nick {
+    margin-right: 20px;
 }
 
 .entrance a {
@@ -170,7 +182,7 @@ header::after {
 /*
  * Символ замочка
  */
-.entrance a .figure-1 {
+.entrance a .figure {
     box-sizing: border-box;
     width: 13px;
     height: 13px;
@@ -181,8 +193,12 @@ header::after {
     /*border: 1px solid black;*/
 }
 
+.entrance.nick a .figure {
+    display: none;
+}
+
 /*
- * Слово Войти или Логин
+ * Слово "Войти" или "Имя логина"
  */
 .entrance a .text {
     font-family: Tahoma, sans-serif;
@@ -192,41 +208,47 @@ header::after {
     border-bottom: 1px solid #d3be4a;
 }
 
-/*
- * Стрелочка вниз справа от Имени-Логина
- */
-.entrance a .figure-2 {
-    display: none;
-    box-sizing: border-box;
-    height: 5px;
-    width: 5px;
-    border-right: 2px solid #ccc;
-    border-bottom: 2px solid #ccc;
-    transform: translateX(5px) rotate(45deg);
-    margin-top: 4px;
-    margin-left: 3px;
-    /*border: 1px solid black;*/
-}
-
-/*
- * Ссылка с Именем вместо ссылки Войти
- */
-.entrance.nick {
-    margin-right: 20px;
-}
-
 .entrance.nick a .text {
     color: black;
     height: 25px;
     border-bottom: 6px solid #d3be4a;
 }
 
-.entrance.nick a .figure-2 {
+/*
+ * Крестик "Выйти" справа от "Имени логина"
+ */
+.entrance.nick .logout {
     display: block;
+    position: relative;
+    height: 12px;
+    width: 12px;
+    cursor: pointer;
+    transform: rotate(45deg);
+    margin-top: -15px;
+    margin-left: 5px;
+    /*border: 1px solid black;*/
 }
 
-.entrance.nick a .figure-1 {
-    display: none;
+.entrance.nick .logout::before,
+.entrance.nick .logout::after {
+    content: '';
+    display: block;
+    position: absolute;
+    background-color: #ccc;
+}
+
+.entrance.nick .logout::before {
+    height: 12px;
+    width: 2px;
+    top: 0;
+    left: 5px;
+}
+
+.entrance.nick .logout::after {
+    height: 2px;
+    width: 12px;
+    top: 5px;
+    left: 0;
 }
 
 /**
@@ -512,7 +534,7 @@ header::after {
  ** Вход через соц.сети
  **/
 .modal.login > .body {
-    min-width: 270px;
+    min-width: 410px;
     width: 40%;
     height: auto;
     margin-top: 10%;
@@ -544,31 +566,31 @@ header::after {
 .font-awesome.linkedin::before {
     content: "\f0e1";
 }
+.font-awesome.odnoklassniki::before {
+    content: "\f263";
+}
 
 .soclink-box {
-    display: block;
-    width: 225px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    flex-wrap: nowrap;
+    align-items: center;
+    width: 370px;
     margin: 40px auto 20px auto;
 }
 
-.soclink-box::after {
-    content: '';
-    display: block;
-    clear: both;
-}
-
 .soclink-box a {
-    display: block;
-    float: left;
     height: 45px;
     width: 45px;
     text-decoration: none;
     text-align: center;
     cursor: pointer;
+    border-radius: 5px;
 }
 
 .soclink-box a:hover {
-    opacity: 0.75;
+    box-shadow: inset 0 0 70px 0 #333;
 }
 
 .soclink-box a.vk {
@@ -589,6 +611,23 @@ header::after {
 
 .soclink-box a.linkedin {
     background-color: #0077b5;
+}
+
+.soclink-box a.odnoklassniki {
+    background-color: #ee8208;
+}
+
+/*
+ * Стилизация exception-ов
+ */
+.exception {
+    font-family: Tahoma, sans-serif;
+    font-size: 16px;
+    color: red;
+}
+
+.exception .exception-title {
+    font-weight: bold;
 }
 
 /**

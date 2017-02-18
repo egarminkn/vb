@@ -1,12 +1,14 @@
-<beans xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
        xmlns:context="http://www.springframework.org/schema/context"
        xmlns:p="http://www.springframework.org/schema/p"
-       xmlns:mvc="http://www.springframework.org/schema/mvc" xmlns="http://www.springframework.org/schema/beans"
+       xmlns:mvc="http://www.springframework.org/schema/mvc"
        xmlns:security="http://www.springframework.org/schema/security"
-       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
-       http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd
-       http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc.xsd
-       http://www.springframework.org/schema/security http://www.springframework.org/schema/security/spring-security.xsd">
+       xsi:schemaLocation="
+            http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+            http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd
+            http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc.xsd
+            http://www.springframework.org/schema/security http://www.springframework.org/schema/security/spring-security.xsd">
 
     <bean class="ru.javawebinar.topjava.web.json.JacksonObjectMapper" id="objectMapper" factory-method="getMapper"/>
 
@@ -15,6 +17,12 @@
 
     <security:global-method-security secured-annotations="enabled" pre-post-annotations="enabled"/>
 
+    <!--
+        Аннотация RequestMapping в принципе работает и без mvc:annotation-driven, однако
+        этот бин просто необходим для работы аннотаций PostMapping и GetMapping.
+        Кроме того, здесь бин mvc:annotation-driven расширен при помощи опциональных
+        настроек conversion-service и message-converters.
+    -->
     <mvc:annotation-driven conversion-service="conversionService">
         <mvc:message-converters>
             <bean class="org.springframework.http.converter.json.MappingJackson2HttpMessageConverter">
@@ -40,6 +48,10 @@
         </property>
     </bean>
 
+    <!--
+        Controllers надо сканировать там, где задан бин InternalResourceViewResolver, т.е. в
+        mvc-dispatcher-servlet.xml, который я переименовал в spring-mvc.xml в файле web.xml
+    -->
     <context:component-scan base-package="ru.javawebinar.**.web"/>
     <context:component-scan base-package="org.verygroup.**.web"/>
 
@@ -83,4 +95,5 @@
             <property name="paramName" value="lang"/>
         </bean>
     </mvc:interceptors>
+
 </beans>

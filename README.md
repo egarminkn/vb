@@ -2,26 +2,26 @@
 
 Проект Verybook
 ===============================
-Сайт проекта: http://verybook.org/
-Исходники предоставлены для блога: http://verybook.livejournal.com/
+Сайт проекта: http://verybook.org/<br>
+Исходники предоставлены для блога: http://verybook.livejournal.com/<br>
 
-Приложение verybook в разных соц.сетях
+Приложение verybook в разных соц.сетях<br>
 
 1) facebook:<br>
-    https://developers.facebook.com/apps/313897872341206/dashboard/
+    https://developers.facebook.com/apps/313897872341206/dashboard/<br>
 2) vk:<br>
-    https://vk.com/editapp?id=5865771&section=options
+    https://vk.com/editapp?id=5865771&section=options<br>
 3) twitter:<br>
-    https://apps.twitter.com/app/13404749
+    https://apps.twitter.com/app/13404749<br>
 4) google:<br>
     а) мои домены:<br>
         https://www.google.com/webmasters/verification/home?hl=ru<br>
     б) мой проект (приложение):<br>
-        https://console.developers.google.com/apis/credentials?project=verybook-org
+        https://console.developers.google.com/apis/credentials?project=verybook-org<br>
 5) linkedin:<br>
-    https://www.linkedin.com/developer/apps/5075046/auth
+    https://www.linkedin.com/developer/apps/5075046/auth<br>
 6) ok:<br>
-    https://ok.ru/game/1249777408
+    https://ok.ru/game/1249777408<br>
 
 ####   Разработка полнофункционального Spring/JPA Enterprise приложения c авторизацией и правами доступа на основе ролей с использованием <a href="http://zeroturnaround.com/rebellabs/java-tools-and-technologies-landscape-for-2014/" target="_blank">наиболее популярных инструментов и технологий Java</a>: Maven, Spring MVC, Security, JPA(Hibernate), REST(Jackson), Bootstrap (css, js), jQuery + plugins (datatables и др.), Java 8 Stream and Time API
 -  Основное внимание будет уделяться способам решения многочисленных проблем разработки в Spring/JPA, а также структурному (красивому и надежному) java кодированию и архитектуре приложения.

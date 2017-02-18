@@ -125,17 +125,29 @@
                         <a href="info/about"><h3>О проекте</h3></a>
                     </div>
                 </div>
-                <div class="entrance "> <!-- для залогиненого пользователя нужно добавить класс nick -->
+                <div class="entrance ${currentUserConnection != null ? 'nick' : ''}"> <!-- для залогиненого пользователя нужно добавить класс nick -->
                     <!-- START (Модальное окно) - 1-ая часть из 3-х -->
-                    <a href="${currentURI}#login" class="modal-btn">
-                        <span class="figure-1"></span>
+                    <a href="${currentUserConnection == null ? currentURI.concat('#login') : 'author-pa'}" class="modal-btn">
+                        <span class="figure"></span>
                         <span class="text">
-                            <!-- для залогиненого пользователя нужно поменять Войти на Логин -->
-                            Войти
+                            <c:choose>
+                                <%-- для залогиненого пользователя нужно поменять Войти на Имя логина --%>
+                                <c:when test="${currentUserConnection == null}">
+                                    Войти
+                                </c:when>
+                                <c:otherwise>
+                                    ${currentUserDisplayName}
+                                </c:otherwise>
+                            </c:choose>
                         </span>
-                        <span class="figure-2"></span>
                     </a>
                     <!-- END (Модальное окно) - 1-ая часть из 3-х -->
+
+                    <c:if test="${currentUserConnection != null}">
+                        <form method="post" action="exit" class="logout" title="Выйти" onclick="this.submit()">
+                            <input type="hidden" name="_csrf" value="${_csrf.token}">
+                        </form>
+                    </c:if>
                 </div>
             </nav>
         </header>
@@ -151,15 +163,27 @@
 
                     <div class="column column-2">
                         <div class="login">
-                            <h2>Войдите с помощью одной из социальных сетей</h2>
+                            <h2>Войдите через одну из социальных сетей</h2>
 
                             <div class="soclink-box">
-                                <a class="vk font-awesome" title="Вход через VK"></a>
-                                <a class="twitter font-awesome" title="Вход через Twitter"></a>
-                                <a class="facebook font-awesome" title="Вход через Facebook"></a>
-                                <a class="google font-awesome" title="Вход через Gmail"></a>
-                                <a class="linkedin font-awesome" title="Вход через LinkedIn"></a>
+                                <a href="auth/vkontakte" class="vk font-awesome" title="Вход через ВКонтакте"></a>
+                                <a href="auth/twitter" class="twitter font-awesome" title="Вход через Twitter"></a>
+                                <a href="auth/facebook?scope=public_profile" class="facebook font-awesome" title="Вход через Facebook"></a>
+                                <a href="auth/google?scope=profile" class="google font-awesome" title="Вход через Gmail"></a>
+                                <a href="auth/linkedin?scope=r_basicprofile" class="linkedin font-awesome" title="Вход через LinkedIn"></a>
+                                <a href="auth/odnoklassniki" class="odnoklassniki font-awesome" title="Вход через Одноклассники"></a>
                             </div>
+
+                            <c:if test="${exception != null}">
+                                <div class="exception">
+                                    <span class="exception-title">
+                                        Ошибка:
+                                    </span>
+                                    <span>
+                                        ${exception}
+                                    </span>
+                                </div>
+                            </c:if>
                         </div>
                     </div>
 
