@@ -1,12 +1,14 @@
 package ru.javawebinar.topjava.web.user;
 
 import org.junit.Test;
+
 import org.springframework.core.env.PropertySource;
 import org.springframework.core.io.ClassPathResource;
 import org.springframework.core.io.Resource;
 import org.springframework.core.io.support.ResourcePropertySource;
 import org.springframework.http.MediaType;
 import org.springframework.test.context.ActiveProfiles;
+
 import ru.javawebinar.topjava.web.AbstractControllerTest;
 import ru.javawebinar.topjava.web.json.JsonUtil;
 
@@ -16,12 +18,15 @@ import static org.springframework.test.web.servlet.request.MockMvcRequestBuilder
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.put;
 import static org.springframework.test.web.servlet.result.MockMvcResultHandlers.print;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
+
 import static ru.javawebinar.topjava.Profiles.DB_IMPLEMENTATION;
 import static ru.javawebinar.topjava.Profiles.HEROKU;
+import static ru.javawebinar.topjava.Profiles.APP_MODE;
+
 import static ru.javawebinar.topjava.TestUtil.userHttpBasic;
 import static ru.javawebinar.topjava.UserTestData.*;
 
-@ActiveProfiles({HEROKU, DB_IMPLEMENTATION})
+@ActiveProfiles({HEROKU, DB_IMPLEMENTATION, APP_MODE})
 public class HerokuRestControllerTest extends AbstractControllerTest {
 
     private static final String REST_URL = AdminRestController.REST_URL + '/';
@@ -59,4 +64,5 @@ public class HerokuRestControllerTest extends AbstractControllerTest {
                 .content(JsonUtil.writeValue(USER)))
                 .andExpect(status().is5xxServerError());
     }
+
 }

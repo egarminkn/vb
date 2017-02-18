@@ -89,6 +89,13 @@
                 <version>2.19.1</version>
                 <configuration>
                     <argLine>-Dfile.encoding=UTF-8</argLine>
+                    <excludes>
+                        <exclude>ru.javawebinar.topjava.web.meal.MealRestControllerTest.java</exclude>
+                        <exclude>ru.javawebinar.topjava.web.user.ProfileRestControllerTest.java</exclude>
+                        <exclude>ru.javawebinar.topjava.web.RootControllerTest.java</exclude>
+                        <exclude>ru.javawebinar.topjava.web.user.AdminRestControllerTest.java</exclude>
+                        <exclude>ru.javawebinar.topjava.web.user.HerokuRestControllerTest.java</exclude>
+                    </excludes>
                 </configuration>
             </plugin>
 

@@ -6,8 +6,10 @@ import org.junit.rules.ExpectedException;
 import org.junit.rules.Stopwatch;
 import org.junit.runner.Description;
 import org.junit.runner.RunWith;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+
 import org.springframework.test.context.ActiveProfiles;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.jdbc.Sql;
@@ -17,18 +19,17 @@ import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 import java.util.concurrent.TimeUnit;
 
 import static ru.javawebinar.topjava.Profiles.ACTIVE_DB;
+import static ru.javawebinar.topjava.Profiles.APP_MODE;
 
-/**
- * User: gkislin
- */
 @ContextConfiguration({
         "classpath:spring/spring-app.xml",
         "classpath:spring/spring-db.xml"
 })
 @RunWith(SpringJUnit4ClassRunner.class)
-@ActiveProfiles(ACTIVE_DB)
+@ActiveProfiles({ACTIVE_DB, APP_MODE})
 @Sql(scripts = "classpath:db/populateDB.sql", config = @SqlConfig(encoding = "UTF-8"))
 abstract public class AbstractServiceTest {
+
     private static final Logger LOG = LoggerFactory.getLogger(AbstractServiceTest.class);
 
     private static StringBuilder results = new StringBuilder();
@@ -58,4 +59,5 @@ abstract public class AbstractServiceTest {
         LOG.info(results.toString());
         results.setLength(0);
     }
+
 }

@@ -25,8 +25,21 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
     public void configureGlobal(AuthenticationManagerBuilder auth) throws Exception {
         auth
             .jdbcAuthentication()
-            .dataSource(dataSource)
-            .withDefaultSchema();
+            .dataSource(dataSource);
+
+            /*
+             * Исправление ошибки:
+             * org.h2.jdbc.JdbcSQLException: Таблица "USERS" уже существует
+             * Table "USERS" already exists; SQL statement:
+             * create table users(username varchar_ignorecase(50) not null primary key,password varchar_ignorecase(500) not null,enabled boolean not null)
+             * связанной с созданием служебных таблиц Spring Security, путем удаления вызова скриптов инициализации БД withDefaultSchema() из этого класса
+             * и переноса инициализации БД в контекст спринга spring-social.xml
+             * (
+             * источник:
+             * http://stackoverflow.com/questions/33402489/spring-security-creates-a-table-named-users#33420030
+             * }
+             */
+//            .withDefaultSchema();
     }
 
     @Override

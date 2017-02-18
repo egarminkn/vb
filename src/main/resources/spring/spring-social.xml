@@ -12,6 +12,21 @@
     <jdbc:embedded-database id="dataSourceSocial" type="H2">
         <!--<jdbc:script location="classpath:org/springframework/social/connect/jdbc/JdbcUsersConnectionRepository.sql" />-->
         <jdbc:script location="classpath:db/social.sql" />
+
+        <!--
+            Исправление ошибки:
+                org.h2.jdbc.JdbcSQLException: Таблица "USERS" уже существует
+                Table "USERS" already exists; SQL statement:
+                create table users(username varchar_ignorecase(50) not null primary key,password varchar_ignorecase(500) not null,enabled boolean not null)
+            связанной с созданием служебных таблиц Spring Security, путем удаления вызова скриптов инициализации БД withDefaultSchema() из класса
+            SecurityConfiguration и переноса инициализации БД в данный контекст спринга
+            (
+            источник:
+            http://stackoverflow.com/questions/33402489/spring-security-creates-a-table-named-users#33420030
+            }
+        -->
+        <!--<jdbc:script location="classpath:org/springframework/security/core/userdetails/jdbc/users.ddl" />-->
+        <jdbc:script location="classpath:db/security.sql" />
     </jdbc:embedded-database>
 
     <!--

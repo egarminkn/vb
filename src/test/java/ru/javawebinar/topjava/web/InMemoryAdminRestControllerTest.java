@@ -1,8 +1,10 @@
 package ru.javawebinar.topjava.web;
 
 import org.junit.*;
-import org.springframework.context.ConfigurableApplicationContext;
-import org.springframework.context.support.ClassPathXmlApplicationContext;
+
+import org.springframework.web.context.support.XmlWebApplicationContext;
+import org.springframework.mock.web.MockServletContext;
+
 import ru.javawebinar.topjava.UserTestData;
 import ru.javawebinar.topjava.model.User;
 import ru.javawebinar.topjava.repository.UserRepository;
@@ -15,13 +17,30 @@ import java.util.Collection;
 import static ru.javawebinar.topjava.UserTestData.ADMIN;
 import static ru.javawebinar.topjava.UserTestData.USER;
 
+import static ru.javawebinar.topjava.Profiles.APP_MODE;
+
 public class InMemoryAdminRestControllerTest {
-    private static ConfigurableApplicationContext appCtx;
+
+    private static XmlWebApplicationContext appCtx;
     private static AdminRestController controller;
 
     @BeforeClass
     public static void beforeClass() {
-        appCtx = new ClassPathXmlApplicationContext("spring/spring-app.xml", "spring/spring-mvc.xml", "spring/mock.xml");
+        /*
+         * Исправление ошибки:
+         * java.lang.IllegalStateException: WebApplicationObjectSupport instance [ResourceHttpRequestHandler [locations=[class path resource [resources/]], resolvers=[org.springframework.web.servlet.resource.PathResourceResolver@1d408060]]] does not run in a WebApplicationContext but in: org.springframework.context.support.GenericApplicationContext@65e21ce3: startup date [Sat Feb 18 15:48:13 GMT+03:00 2017]; root of context hierarchy
+         * появившейся после включения профиля APP_MODE, путем изменения типа контекста спринга на вебовский
+         * (
+         * источник:
+         * http://stackoverflow.com/questions/21388482/how-do-i-get-my-spring-junit-test-to-think-its-running-in-a-genericapplicationco#41519808
+         * )
+         */
+        appCtx = new XmlWebApplicationContext();
+        appCtx.setConfigLocations("spring/spring-app.xml", "spring/spring-mvc.xml", "spring/mock.xml");
+        appCtx.getEnvironment().setActiveProfiles(APP_MODE);
+        appCtx.setServletContext(new MockServletContext());
+        appCtx.refresh();
+
         System.out.println("\n" + Arrays.toString(appCtx.getBeanDefinitionNames()) + "\n");
         controller = appCtx.getBean(AdminRestController.class);
     }
@@ -54,4 +73,5 @@ public class InMemoryAdminRestControllerTest {
     public void testDeleteNotFound() throws Exception {
         controller.delete(10);
     }
+
 }
