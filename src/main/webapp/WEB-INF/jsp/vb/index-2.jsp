@@ -78,7 +78,7 @@
             <!-- END (Слайды помощи) -->
 
             <div class="btn-wrapper">
-                <a class="btn" href="${currentURI}#">
+                <a class="btn" href="create-ebook">
                     Хочу создать книгу
                 </a>
             </div>
