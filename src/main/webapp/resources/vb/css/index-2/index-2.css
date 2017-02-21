@@ -84,6 +84,7 @@ main.index-2 .quotes .quote {
 }
 
 main.index-2 .quotes .quote > p {
+    margin: 30px 0 5px 0;
     /*border: 1px solid black;*/
 }
 
@@ -193,6 +194,12 @@ main.index-2 .help-slide-marks > label.help-slide-mark-2 {
 main.index-2 .help-slide-marks > label.help-slide-mark-3 {
     z-index: 1;
     margin-left: -4px;
+}
+
+main.index-2 .help-slide-marks > label.help-slide-mark-1 > img {
+    top: 40px;
+    left: 30px;
+    /*border: 1px solid black;*/
 }
 
 main.index-2 .help-slide-marks > label.help-slide-mark-2 > img {
@@ -305,7 +312,8 @@ main.index-2 .help-slide-content > .row {
     display: flex;
     flex-direction: row;
     justify-content: space-around;
-    align-items: flex-start;
+    align-items: center;
+    height: 300px;
     margin: 30px 20px;
     /*border: 1px solid black;*/
 }
@@ -318,15 +326,15 @@ main.index-2 .help-slide-content > .row > .column {
 }
 
 main.index-2 .help-slide-content > .row > .column-1 {
-    width: 20%;
+    width: 25%;
 }
 
 main.index-2 .help-slide-content > .row > .column-2 {
-    width: 20%;
+    width: 25%;
 }
 
 main.index-2 .help-slide-content > .row > .column-3 {
-    width: 20%;
+    width: 25%;
 }
 
 /* Ссылки помощи */
@@ -363,7 +371,7 @@ main.index-2 .help-slide-content > .row > .column > a:not(:first-of-type) > h3.t
 /*
  * Блочок "Verybook поможет"
  */
-main.index-2 .help-slide-content > .row-2 > .column-3 > a.verybook-help-you {
+main.index-2 .help-slide-content > .row > .column-3 > a.verybook-help-you {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -372,11 +380,11 @@ main.index-2 .help-slide-content > .row-2 > .column-3 > a.verybook-help-you {
     text-decoration: none;
 }
 
-main.index-2 .help-slide-content > .row.row-2 > .column.column-3 > a.verybook-help-you > .wrapper {
+main.index-2 .help-slide-content > .row > .column.column-3 > a.verybook-help-you > .wrapper {
     margin-right: 20px;
 }
 
-main.index-2 .help-slide-content > .row.row-2 > .column.column-3 > a.verybook-help-you > .wrapper > h2.text {
+main.index-2 .help-slide-content > .row > .column.column-3 > a.verybook-help-you > .wrapper > h2.text {
     display: inline;
     font-family: Tahoma, sans-serif;
     font-size: 26px;
@@ -388,7 +396,7 @@ main.index-2 .help-slide-content > .row.row-2 > .column.column-3 > a.verybook-he
     /*border: 1px solid black;*/
 }
 
-main.index-2 .help-slide-content > .row-2 > .column-3 > p.verybook-help-you {
+main.index-2 .help-slide-content > .row > .column-3 > p.verybook-help-you {
     font-family: Tahoma, sans-serif;
     font-size: 14px;
     line-height: 20px;

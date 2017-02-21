@@ -17,7 +17,6 @@ import org.verygroup.verybook.dto.authorpa.ReadBookRow;
 import org.verygroup.verybook.dto.authorrating.AuthorItem;
 import org.verygroup.verybook.dto.book.ReviewItem;
 import org.verygroup.verybook.dto.index.AuthorSummaryItem;
-import org.verygroup.verybook.dto.index2.HelpSlideItem;
 import org.verygroup.verybook.dto.index2.QuoteItem;
 import org.verygroup.verybook.dto.shopcart.ShopCartRow;
 import org.verygroup.verybook.web.util.SessionObject;
@@ -264,24 +263,6 @@ public class VerybookRootController {
         quoteItems.add(new QuoteItem("Harry Potter 2 has never even heard of Hogwarts when the letters  start dropping on the doormat at number four, Privet  Drive. Addressed in green ink on yellowish parchment with a purple seal, they are swiftly confiscated by his grisly", "David Icke"));
         quoteItems.add(new QuoteItem("Harry Potter 3 has never even heard of Hogwarts when the letters  start dropping on the doormat at number four, Privet  Drive. Addressed in green ink on yellowish parchment with a purple seal, they are swiftly confiscated by his grisly", "Vladimir Pukin"));
         model.addAttribute("quoteItems", quoteItems);
-
-        List<HelpSlideItem> helpSlideItems = new LinkedList<>();
-        helpSlideItems.add(new HelpSlideItem(new String[] {"Как отформатировать книгу", "Сколько стоит моя книга?", "На какой бумаге печатать книгу и обложку?", "Переплет и количество страниц", "Твердый переплет", "Как определить цену?"},
-                                             new String[] {"Заголовки", "Досуг и творчество", "Книги для родителей", "Познавательная литература", "Художественная литература"},
-                                             new String[] {"Форматирование электронных книг", "Досуг и творчество", "Книги для родителей", "Познавательная литература", "Художественная литература"},
-                                             new String[] {"Процесс публикации", "Досуг и творчество", "Книги для родителей", "Познавательная литература", "Художественная литература"},
-                                             new String[] {"Текст, страницы, шрифт", "Дошкольникам", "Школьникам и абитуриентам", "Студентам и аспирантам", "Педагогам"}));
-        helpSlideItems.add(new HelpSlideItem(new String[] {"Как отформатировать книгу", "Сколько стоит моя книга?", "На какой бумаге печатать книгу и обложку?", "Переплет и количество страниц", "Твердый переплет", "Как определить цену?"},
-                                             new String[] {"Заголовки", "Досуг и творчество", "Книги для родителей", "Познавательная литература", "Художественная литература"},
-                                             new String[] {"Форматирование электронных книг", "Досуг и творчество", "Книги для родителей", "Познавательная литература", "Художественная литература"},
-                                             new String[] {"Процесс публикации", "Досуг и творчество", "Книги для родителей", "Познавательная литература", "Художественная литература"},
-                                             new String[] {"Текст, страницы, шрифт", "Дошкольникам", "Школьникам и абитуриентам", "Студентам и аспирантам", "Педагогам"}));
-        helpSlideItems.add(new HelpSlideItem(new String[] {"Как отформатировать книгу", "Сколько стоит моя книга?", "На какой бумаге печатать книгу и обложку?", "Переплет и количество страниц", "Твердый переплет", "Как определить цену?"},
-                                             new String[] {"Заголовки", "Досуг и творчество", "Книги для родителей", "Познавательная литература", "Художественная литература"},
-                                             new String[] {"Форматирование электронных книг", "Досуг и творчество", "Книги для родителей", "Познавательная литература", "Художественная литература"},
-                                             new String[] {"Процесс публикации", "Досуг и творчество", "Книги для родителей", "Познавательная литература", "Художественная литература"},
-                                             new String[] {"Текст, страницы, шрифт", "Дошкольникам", "Школьникам и абитуриентам", "Студентам и аспирантам", "Педагогам"}));
-        model.addAttribute("helpSlideItems", helpSlideItems);
 
         return "vb/index-2";
     }

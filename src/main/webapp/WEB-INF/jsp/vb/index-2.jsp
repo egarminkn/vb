@@ -47,34 +47,28 @@
             <input type="radio" name="help-slide" class="help-slide-3" id="help-slide-3" >
             <div class="help-slide-marks">
                 <label class="help-slide-mark help-slide-mark-1" for="help-slide-1">
+                    <img src="resources/vb/img/index-2/handshake.png" width="110" height="110">
                     <h2>
-                        Отформатируй и подготовь книгу к публикации
+                        Стань автором
                     </h2>
                 </label>
                 <label class="help-slide-mark help-slide-mark-2" for="help-slide-2">
                     <img src="resources/vb/img/index-2/paper-plane.png" width="109" height="111">
                     <h2>
-                        Создай проект, загрузи книгу
+                        Опубликуй книгу
                     </h2>
                 </label>
                 <label class="help-slide-mark help-slide-mark-3" for="help-slide-3">
                     <img src="resources/vb/img/index-2/yandex-money.jpg" width="91" height="77">
                     <h2>
-                        Опубликуй книгу и начни зарабатывать
+                        Начни зарабатывать
                     </h2>
                 </label>
             </div>
 
-            <c:forEach var="helpSlideItem" items="${helpSlideItems}" varStatus="loop">
-                <jsp:useBean id="helpSlideItem" class="org.verygroup.verybook.dto.index2.HelpSlideItem"/>
-<c:set var="helpSlideNumber" value="${loop.index + 1}" scope="request"/>
-<c:set var="helpSlideRow1Column1Links" value="${helpSlideItem.helpSlideRow1Column1Links}" scope="request"/>
-<c:set var="helpSlideRow1Column2Links" value="${helpSlideItem.helpSlideRow1Column2Links}" scope="request"/>
-<c:set var="helpSlideRow1Column3Links" value="${helpSlideItem.helpSlideRow1Column3Links}" scope="request"/>
-<c:set var="helpSlideRow2Column1Links" value="${helpSlideItem.helpSlideRow2Column1Links}" scope="request"/>
-<c:set var="helpSlideRow2Column2Links" value="${helpSlideItem.helpSlideRow2Column2Links}" scope="request"/>
-<jsp:include page="components/index-2/help-slide.jsp"/>
-            </c:forEach>
+<jsp:include page="components/index-2/help-slide-1.jsp"/>
+<jsp:include page="components/index-2/help-slide-2.jsp"/>
+<jsp:include page="components/index-2/help-slide-3.jsp"/>
             <!-- END (Слайды помощи) -->
 
             <div class="btn-wrapper">
