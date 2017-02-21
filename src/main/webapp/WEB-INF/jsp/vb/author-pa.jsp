@@ -27,15 +27,15 @@
                         <div class="column column-1">
                             <div class="row row-1">
 <c:set var="isAuthorPhotoLink" value="false" scope="request"/>
-<c:set var="authorPhotoUrl" value="resources/vb/img/tmp/photo-1.jpg" scope="request"/>
+<c:set var="authorPhotoUrl" value="${currentUserConnection.imageUrl}" scope="request"/>
 <jsp:include page="components/vb/author-photo.jsp"/>
 
                                 <div class="name">
                                     <div class="fullname">
-                                        Александр Иванов
+                                        ${currentUserDisplayName}
                                     </div>
                                     <div class="login">
-                                        AIvanov
+                                        ${currentUserDisplayName}
                                     </div>
                                 </div>
                                 <a class="edit" href="${currentURI}#"></a>

@@ -96,6 +96,9 @@
         <!--<property name="applicationUrl" value="${application.url}" />-->
     </bean>
 
+    <!--
+        AuthenticationService-ы нужны, чтобы вход через соц.сети работал по GET-ссылкам вида auth/{providerId}
+    -->
     <bean id="socialAuthenticationServiceLocator" class="org.springframework.social.security.SocialAuthenticationServiceRegistry">
         <property name="authenticationServices">
             <list>
