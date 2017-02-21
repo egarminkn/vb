@@ -19,8 +19,8 @@ import org.verygroup.verybook.dto.book.ReviewItem;
 import org.verygroup.verybook.dto.index.AuthorSummaryItem;
 import org.verygroup.verybook.dto.index2.QuoteItem;
 import org.verygroup.verybook.dto.shopcart.ShopCartRow;
-import org.verygroup.verybook.web.util.SessionObject;
 import org.verygroup.verybook.web.util.SocialControllerUtil;
+import org.verygroup.verybook.web.util.ToSearchBookUtil;
 
 import ru.javawebinar.topjava.util.exception.NotFoundException;
 
@@ -29,29 +29,20 @@ import java.time.LocalDate;
 import java.util.LinkedList;
 import java.util.List;
 import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpSession;
 
 @Controller
 public class VerybookRootController {
 
     @Autowired
-    private SocialControllerUtil util;
+    private SocialControllerUtil socialUtil;
 
-    @GetMapping("/")
-    public String home() {
-        return "redirect:/index";
-    }
-
-    @GetMapping("/current-page")
-    public String currentPage(HttpServletRequest request, Principal currentUser, Model model) {
-        HttpSession session = request.getSession();
-        SessionObject sessionObject = (SessionObject) session.getAttribute(SessionObject.SESSION_OBJECT_NAME);
-        return "redirect:" + sessionObject.getLastPage();
-    }
+    @Autowired
+    private ToSearchBookUtil searchBookUtil;
 
     @GetMapping("/author")
     public String author(HttpServletRequest request, Principal currentUser, Model model) {
-        util.setModel(request, currentUser, model);
+        socialUtil.setModel(request, currentUser, model);
+//        searchBookUtil.setModel(request, currentUser, model);
 
         List<RatingItem> ratingItems = new LinkedList<>();
         ratingItems.add(new RatingItem(true, 19, "в общем рейтинге"));
@@ -74,7 +65,8 @@ public class VerybookRootController {
 
     @GetMapping("/author-pa")
     public String authorPa(HttpServletRequest request, Principal currentUser, Model model) {
-        util.setModel(request, currentUser, model);
+        socialUtil.setModel(request, currentUser, model);
+//        searchBookUtil.setModel(request, currentUser, model);
 
         List<RatingItem> ratingItems = new LinkedList<>();
         ratingItems.add(new RatingItem(true, 19, "в общем рейтинге"));
@@ -116,7 +108,8 @@ public class VerybookRootController {
 
     @GetMapping("/author-rating")
     public String authorRating(HttpServletRequest request, Principal currentUser, Model model) {
-        util.setModel(request, currentUser, model);
+        socialUtil.setModel(request, currentUser, model);
+//        searchBookUtil.setModel(request, currentUser, model);
 
         List<AuthorItem> authorItems = new LinkedList<>();
         authorItems.add(new AuthorItem("resources/vb/img/tmp/photo-1.jpg", "Александр Константинопольский", "I draw pictures and I make colouring books! Welcome to my world. Tumble down the rabbit hole and find yourself in my inky black and white Wonderland... I'm an illustrator and ink evangelist who prefers pens and pencils to pixels. I create intricate, hand drawn illustrations predominately, although not exclusively, in black and white. My creativity is cultivated by a curious imagination and a delight in the fantastic. Much of my work has roots in the flora and fauna that surrounded me growing up on my parent's fish farm in rural Scotland.", 18, 5, BookGenre.MILITARY, BookGenre.DETECTIVE, BookGenre.ADVENTURES));
@@ -128,7 +121,8 @@ public class VerybookRootController {
 
     @GetMapping("/book")
     public String book(HttpServletRequest request, Principal currentUser, Model model) {
-        util.setModel(request, currentUser, model);
+        socialUtil.setModel(request, currentUser, model);
+//        searchBookUtil.setModel(request, currentUser, model);
 
         List<RatingItem> ratingItems = new LinkedList<>();
         ratingItems.add(new RatingItem(true, 19, "в общем рейтинге"));
@@ -167,19 +161,22 @@ public class VerybookRootController {
 
     @GetMapping("/create-ebook")
     public String createEbook(HttpServletRequest request, Principal currentUser, Model model) {
-        util.setModel(request, currentUser, model);
+        socialUtil.setModel(request, currentUser, model);
+//        searchBookUtil.setModel(request, currentUser, model);
         return "vb/create-ebook";
     }
 
     @GetMapping("/feedback")
     public String feedback(HttpServletRequest request, Principal currentUser, Model model) {
-        util.setModel(request, currentUser, model);
+        socialUtil.setModel(request, currentUser, model);
+        searchBookUtil.setModel(request, currentUser, model);
         return "vb/feedback";
     }
 
     @GetMapping("/index")
     public String index(HttpServletRequest request, Principal currentUser, Model model) {
-        util.setModel(request, currentUser, model);
+        socialUtil.setModel(request, currentUser, model);
+        searchBookUtil.setModel(request, currentUser, model);
 
         List<BookItem> bestSellersBookItems = new LinkedList<>();
         bestSellersBookItems.add(new BookItem(12000,12000, "20", "руб", LocalDate.of(2016, 1, 26), 40, "А.А. Иванов", "Волшебный двурог, или Правдивая история небывалых приключений нашего отважного друга Ильи Алексеевича Комова в неведомой стране, где правят: Догадка, Усидчивость, Находчивость, Терпение, Остроумие и Трудолюбие", "resources/vb/img/tmp/book-1.jpg", false));
@@ -256,7 +253,8 @@ public class VerybookRootController {
 
     @GetMapping("/index-2")
     public String index2(HttpServletRequest request, Principal currentUser, Model model) {
-        util.setModel(request, currentUser, model);
+        socialUtil.setModel(request, currentUser, model);
+//        searchBookUtil.setModel(request, currentUser, model);
 
         List<QuoteItem> quoteItems = new LinkedList<>();
         quoteItems.add(new QuoteItem("Harry Potter 1 has never even heard of Hogwarts when the letters  start dropping on the doormat at number four, Privet  Drive. Addressed in green ink on yellowish parchment with a purple seal, they are swiftly confiscated by his grisly", "Joan Rolling"));
@@ -269,7 +267,8 @@ public class VerybookRootController {
 
     @GetMapping("/shop-cart")
     public String shopCart(HttpServletRequest request, Principal currentUser, Model model) {
-        util.setModel(request, currentUser, model);
+        socialUtil.setModel(request, currentUser, model);
+        searchBookUtil.setModel(request, currentUser, model);
 
         List<ShopCartRow> mainShopCartRows = new LinkedList<>();
         mainShopCartRows.add(new ShopCartRow("resources/vb/img/tmp/book-1.jpg", "Полет над гнездом кукушки", "Александр Константинопольский", "415", "руб"));
@@ -289,7 +288,8 @@ public class VerybookRootController {
     @GetMapping("/info/{pageName}")
     public String info(@PathVariable String pageName,
                        HttpServletRequest request, Principal currentUser, Model model) {
-        util.setModel(request, currentUser, model);
+        socialUtil.setModel(request, currentUser, model);
+//        searchBookUtil.setModel(request, currentUser, model);
 
         String infoHeader = null;
         String infoBody = null;

@@ -90,7 +90,7 @@
                     <span class="logo-word logo-erybook">erybook</span>
                 </a>
                 <form class="search" method="get" action="search-book">
-                    <input type="search" title="Введите строку запроса" name="search-query" value="${searchQuery}" autocomplete>
+                    <input type="search" title="Введите строку запроса" name="search-query" value="${searchQuery.replaceAll("\"", "&quot;")}" autocomplete>
                     <button type="submit" class="search-btn"></button>
                 </form>
 

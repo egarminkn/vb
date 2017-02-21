@@ -11,7 +11,9 @@ import org.verygroup.verybook.AudiobookFormat;
 import org.verygroup.verybook.BookFormat;
 import org.verygroup.verybook.BookGenre;
 import org.verygroup.verybook.dto.searchbook.*;
+import org.verygroup.verybook.repository.SearchQueryDictionary;
 import org.verygroup.verybook.web.util.SocialControllerUtil;
+import org.verygroup.verybook.web.util.ToSearchBookUtil;
 
 import java.security.Principal;
 import java.time.LocalDate;
@@ -25,15 +27,19 @@ import javax.servlet.http.HttpServletRequest;
 public class SearchBookController {
 
     @Autowired
-    private SocialControllerUtil util;
+    private SocialControllerUtil socialUtil;
+
+    @Autowired
+    private ToSearchBookUtil searchBookUtil;
 
     // FIXME Перенести в опции БД
-    private static final String DEFAULT_SEARCH_QUERY = "promo: бест-селлеры";
+    private static final String DEFAULT_SEARCH_QUERY = SearchQueryDictionary.CATEGORY + ": \"Бестселлеры\"";
 
     @GetMapping("/search-book")
     private String searchBook(@RequestParam(value = "search-query", required = false) String searchQuery,
                               HttpServletRequest request, Principal currentUser, Model model) {
-        util.setModel(request, currentUser, model);
+        socialUtil.setModel(request, currentUser, model);
+        searchBookUtil.setModel(request, currentUser, model);
 
         if (StringUtils.isEmpty(searchQuery)) {
             searchQuery = DEFAULT_SEARCH_QUERY;
