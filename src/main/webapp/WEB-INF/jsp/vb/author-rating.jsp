@@ -39,6 +39,7 @@
                     <c:forEach var="authorItem" items="${authorItems}" varStatus="loop">
                         <jsp:useBean id="authorItem" class="org.verygroup.verybook.dto.authorrating.AuthorItem"/>
 <c:set var="authorPosition" value="${loop.index + 1}" scope="request"/>
+<c:set var="authorId" value="${authorItem.authorId}" scope="request"/>
 <c:set var="authorPhotoUrl" value="${authorItem.authorPhotoUrl}" scope="request"/>
 <c:set var="authorName" value="${authorItem.authorName}" scope="request"/>
 <c:set var="authorDescription" value="${authorItem.authorDescription}" scope="request"/>

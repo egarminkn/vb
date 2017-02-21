@@ -15,7 +15,7 @@
     <div class="about">
         <div class="fullname-rating">
             <div class="fullname">
-                <a href="${currentURI}#">${authorName}</a>
+                <a href="author/${authorId}">${authorName}</a>
             </div>
 
 <jsp:include page="../vb/rating-3-stars.jsp"/>
@@ -33,13 +33,13 @@
         <div class="footer">
             <div class="published">
                 Опубликовано:
-                <a href="${currentURI}#">
+                <a href="author/${authorId}#books">
                     <span>${authorBooksCount}</span>
                     книг
                 </a>
             </div>
             <div class="reviews">
-                <a href="${currentURI}#">
+                <a href="author/${authorId}#books">
                     <span>${authorBookReviewsCount}</span>
                     отзывов на книги
                 </a>

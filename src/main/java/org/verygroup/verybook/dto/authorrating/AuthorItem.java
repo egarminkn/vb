@@ -9,6 +9,7 @@ public class AuthorItem {
     /*
      * Поля (новые поля добавляем в начало)
      */
+    private String authorId;
     private String authorPhotoUrl;
     private String authorName;
     private String authorDescription;
@@ -23,7 +24,8 @@ public class AuthorItem {
         // нужен исключительно для задания типа этого класса в jsp через jsp:useBean
     }
 
-    public AuthorItem(String authorPhotoUrl, String authorName, String authorDescription, int authorBooksCount, int authorBookReviewsCount, BookGenre authorGenre, BookGenre... authorGenres) {
+    public AuthorItem(String authorId, String authorPhotoUrl, String authorName, String authorDescription, int authorBooksCount, int authorBookReviewsCount, BookGenre authorGenre, BookGenre... authorGenres) {
+        this.authorId = authorId;
         this.authorPhotoUrl = authorPhotoUrl;
         this.authorName = authorName;
         this.authorDescription = authorDescription;
@@ -35,6 +37,10 @@ public class AuthorItem {
     /*
      * Геттеры
      */
+    public String getAuthorId() {
+        return authorId;
+    }
+
     public String getAuthorPhotoUrl() {
         return authorPhotoUrl;
     }
@@ -62,6 +68,10 @@ public class AuthorItem {
     /*
      * Сеттеры
      */
+    public void setAuthorId(String authorId) {
+        this.authorId = authorId;
+    }
+
     public void setAuthorPhotoUrl(String authorPhotoUrl) {
         this.authorPhotoUrl = authorPhotoUrl;
     }

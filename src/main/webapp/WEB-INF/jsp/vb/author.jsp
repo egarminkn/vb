@@ -76,7 +76,7 @@
                     <div class="shadow-under"></div>
                     <!-- END (Тень под блоком) -->
                 </div>
-                <div class="books">
+                <div class="books" id="books">
                     <h1 class="title">
                         Книги автора
                     </h1>

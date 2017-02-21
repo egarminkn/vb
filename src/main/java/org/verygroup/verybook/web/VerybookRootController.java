@@ -7,14 +7,12 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 
 import org.verygroup.verybook.BookFormat;
-import org.verygroup.verybook.BookGenre;
 import org.verygroup.verybook.dto.BookItem;
 import org.verygroup.verybook.dto.RatingItem;
 import org.verygroup.verybook.dto.authorpa.WrittenBookAction;
 import org.verygroup.verybook.dto.authorpa.WrittenBookActionType;
 import org.verygroup.verybook.dto.authorpa.WrittenBookRow;
 import org.verygroup.verybook.dto.authorpa.ReadBookRow;
-import org.verygroup.verybook.dto.authorrating.AuthorItem;
 import org.verygroup.verybook.dto.book.ReviewItem;
 import org.verygroup.verybook.dto.index.AuthorSummaryItem;
 import org.verygroup.verybook.dto.index2.QuoteItem;
@@ -38,30 +36,6 @@ public class VerybookRootController {
 
     @Autowired
     private ToSearchBookUtil searchBookUtil;
-
-    @GetMapping("/author")
-    public String author(HttpServletRequest request, Principal currentUser, Model model) {
-        socialUtil.setModel(request, currentUser, model);
-//        searchBookUtil.setModel(request, currentUser, model);
-
-        List<RatingItem> ratingItems = new LinkedList<>();
-        ratingItems.add(new RatingItem(true, 19, "в общем рейтинге"));
-        ratingItems.add(new RatingItem(false, 1, "среди Literary"));
-        ratingItems.add(new RatingItem(true, 4, "среди Genre Fiction"));
-        model.addAttribute("ratingsItems", ratingItems);
-        model.addAttribute("ratingsTitle", "Рейтинг автора");
-
-        List<BookItem> bookItems = new LinkedList<>();
-        bookItems.add(new BookItem(1022,51, "20", "руб", LocalDate.of(2016, 1, 26), 40, "А.А. Иванов", "Древняя Русь в картинках", "resources/vb/img/tmp/book-1.jpg", true));
-        bookItems.add(new BookItem(1022,51, "20", "руб", LocalDate.of(2016, 1, 2), 1, "А.А. Иванов", "Древняя Русь в картинках", "resources/vb/img/tmp/book-2.jpg", true));
-        bookItems.add(new BookItem(1022,51, "Бесплатно", "", LocalDate.of(2016, 1, 26), 4, "А.А. Иванов", "Древняя Русь в картинках", "resources/vb/img/tmp/book-3.jpg", true));
-        bookItems.add(new BookItem(1022,51, "20", "руб", LocalDate.of(2016, 1, 26), 9, "А.А. Иванов", "Древняя Русь в картинках", "resources/vb/img/tmp/book-4.jpg", true));
-        bookItems.add(new BookItem(1022,51, "20", "руб", LocalDate.of(2016, 1, 26), 21, "А.А. Иванов", "Древняя Русь в картинках", "resources/vb/img/tmp/book-5.jpg", true));
-        bookItems.add(new BookItem(1022,51, "Бесплатно", "", LocalDate.of(2016, 1, 26), 3, "А.А. Иванов", "Древняя Русь в картинках", "resources/vb/img/tmp/book-3.jpg", true));
-        model.addAttribute("bookItems", bookItems);
-
-        return "vb/author";
-    }
 
     @GetMapping("/author-pa")
     public String authorPa(HttpServletRequest request, Principal currentUser, Model model) {
@@ -104,19 +78,6 @@ public class VerybookRootController {
         model.addAttribute("readBookRows", readBookRows);
 
         return "vb/author-pa";
-    }
-
-    @GetMapping("/author-rating")
-    public String authorRating(HttpServletRequest request, Principal currentUser, Model model) {
-        socialUtil.setModel(request, currentUser, model);
-//        searchBookUtil.setModel(request, currentUser, model);
-
-        List<AuthorItem> authorItems = new LinkedList<>();
-        authorItems.add(new AuthorItem("resources/vb/img/tmp/photo-1.jpg", "Александр Константинопольский", "I draw pictures and I make colouring books! Welcome to my world. Tumble down the rabbit hole and find yourself in my inky black and white Wonderland... I'm an illustrator and ink evangelist who prefers pens and pencils to pixels. I create intricate, hand drawn illustrations predominately, although not exclusively, in black and white. My creativity is cultivated by a curious imagination and a delight in the fantastic. Much of my work has roots in the flora and fauna that surrounded me growing up on my parent's fish farm in rural Scotland.", 18, 5, BookGenre.MILITARY, BookGenre.DETECTIVE, BookGenre.ADVENTURES));
-        authorItems.add(new AuthorItem("resources/vb/img/tmp/photo-1.jpg", "Александр Константинопольский", "I draw pictures and I make colouring books! Welcome to my world. Tumble down the rabbit hole and find yourself in my inky black and white Wonderland... I'm an illustrator and ink evangelist who prefers pens and pencils to pixels. I create intricate, hand drawn illustrations predominately, although not exclusively, in black and white. My creativity is cultivated by a curious imagination and a delight in the fantastic. Much of my work has roots in the flora and fauna that surrounded me growing up on my parent's fish farm in rural Scotland.", 18, 5, BookGenre.MILITARY, BookGenre.DETECTIVE, BookGenre.ADVENTURES));
-        authorItems.add(new AuthorItem("resources/vb/img/tmp/photo-1.jpg", "Александр Константинопольский", "I draw pictures and I make colouring books! Welcome to my world. Tumble down the rabbit hole and find yourself in my inky black and white Wonderland... I'm an illustrator and ink evangelist who prefers pens and pencils to pixels. I create intricate, hand drawn illustrations predominately, although not exclusively, in black and white. My creativity is cultivated by a curious imagination and a delight in the fantastic. Much of my work has roots in the flora and fauna that surrounded me growing up on my parent's fish farm in rural Scotland.", 18, 5, BookGenre.MILITARY, BookGenre.DETECTIVE, BookGenre.ADVENTURES));
-        model.addAttribute("authorItems", authorItems);
-        return "vb/author-rating";
     }
 
     @GetMapping("/book")
