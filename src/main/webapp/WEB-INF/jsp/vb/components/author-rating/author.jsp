@@ -4,7 +4,7 @@
 <%@taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
 <%@taglib prefix="sec" uri="http://www.springframework.org/security/tags" %>
 
-<div class="item author">
+<div class="item author" id="${authorId}">
     <div class="serial-number">
         <span class="text">${authorPosition}</span>
     </div>
@@ -32,18 +32,32 @@
         </div>
         <div class="footer">
             <div class="published">
-                Опубликовано:
+                Опубликован<span class="published-ending"></span>:
                 <a href="author/${authorId}#books">
-                    <span>${authorBooksCount}</span>
-                    книг
+                    <span class="books-count">${authorBooksCount}</span>
+                    книг<span class="books-ending"></span>
                 </a>
             </div>
             <div class="reviews">
                 <a href="author/${authorId}#books">
-                    <span>${authorBookReviewsCount}</span>
-                    отзывов на книги
+                    <span class="reviews-count">${authorBookReviewsCount}</span>
+                    отзыв<span class="reviews-ending"></span>
+                    на книги
                 </a>
             </div>
         </div>
     </div>
 </div>
+
+<script type="text/javascript">
+    $(function () {
+        var author = $('#${authorId}');
+
+        var authorBooksCount = parseInt(author.find('.published .books-count').html());
+        author.find('.published .published-ending').html(getCorrectEnding(authorBooksCount, 'а', 'о', 'о'));
+        author.find('.published .books-ending').html(getCorrectEnding(authorBooksCount, 'а', 'и', ''));
+
+        var authorBookReviewsCount = parseInt(author.find('.reviews .reviews-count').html());
+        author.find('.reviews .reviews-ending').html(getCorrectEnding(authorBookReviewsCount, '', 'а', 'ов'));
+    });
+</script>
