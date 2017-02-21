@@ -20,6 +20,7 @@ import org.verygroup.verybook.dto.index.AuthorSummaryItem;
 import org.verygroup.verybook.dto.index2.HelpSlideItem;
 import org.verygroup.verybook.dto.index2.QuoteItem;
 import org.verygroup.verybook.dto.shopcart.ShopCartRow;
+import org.verygroup.verybook.web.util.SessionObject;
 import org.verygroup.verybook.web.util.SocialControllerUtil;
 
 import ru.javawebinar.topjava.util.exception.NotFoundException;
@@ -29,6 +30,7 @@ import java.time.LocalDate;
 import java.util.LinkedList;
 import java.util.List;
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
 
 @Controller
 public class VerybookRootController {
@@ -39,6 +41,13 @@ public class VerybookRootController {
     @GetMapping("/")
     public String home() {
         return "redirect:/index";
+    }
+
+    @GetMapping("/current-page")
+    public String currentPage(HttpServletRequest request, Principal currentUser, Model model) {
+        HttpSession session = request.getSession();
+        SessionObject sessionObject = (SessionObject) session.getAttribute(SessionObject.SESSION_OBJECT_NAME);
+        return "redirect:" + sessionObject.getLastPage();
     }
 
     @GetMapping("/author")

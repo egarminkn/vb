@@ -46,14 +46,14 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
     protected void configure(HttpSecurity http) throws Exception {
         http
             .formLogin()
-                .loginPage("/index#login")
+                .loginPage("/current-page#login")
 //                .loginProcessingUrl("/login/authenticate")
 //                .failureUrl("/login?param.error=bad_credentials")
         .and()
             .logout()
                 .logoutUrl("/exit") // - куда отправлять POST-запрос для выхода
                 .logoutSuccessUrl("/index")
-                .deleteCookies("JSESSIONID")
+                .deleteCookies("JSESSIONID") // - это писать необязательно, т.к. сессия в любом случае будет закрыта
         .and()
             .authorizeRequests()
                 .antMatchers("/author-pa").authenticated()
@@ -62,7 +62,7 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
             .rememberMe()
         .and()
             .apply(new SpringSocialConfigurer()
-                    .postLoginUrl("/author-pa")
+                    .postLoginUrl("/current-page")
                     .alwaysUsePostLoginUrl(true)
             );
     }
