@@ -39,6 +39,7 @@
         <spring-social-vkontakte.version>6b7ce10545</spring-social-vkontakte.version>
         <spring-social-google.version>1.0.0.RELEASE</spring-social-google.version>
         <spring-social-twitter.version>1.1.0.RELEASE</spring-social-twitter.version>
+        <spring-social-mail.ru.version>581880164d</spring-social-mail.ru.version>
 
         <!-- Logging -->
         <logback.version>1.2.1</logback.version>
@@ -398,6 +399,21 @@
             <groupId>org.springframework.social</groupId>
             <artifactId>spring-social-twitter</artifactId>
             <version>${spring-social-twitter.version}</version>
+            <exclusions>
+                <exclusion>
+                    <groupId>org.springframework.social</groupId>
+                    <artifactId>*</artifactId>
+                </exclusion>
+                <exclusion>
+                    <groupId>com.fasterxml.jackson.core</groupId>
+                    <artifactId>*</artifactId>
+                </exclusion>
+            </exclusions>
+        </dependency>
+        <dependency>
+            <groupId>com.github.egarminkn</groupId>
+            <artifactId>spring-social-mail.ru</artifactId>
+            <version>${spring-social-mail.ru.version}</version>
             <exclusions>
                 <exclusion>
                     <groupId>org.springframework.social</groupId>

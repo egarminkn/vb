@@ -63,6 +63,11 @@
                     <constructor-arg value="${spring.social.odnoklassniki.appKeySecret}" />
                     <constructor-arg value="${spring.social.odnoklassniki.appKeyPublic}" />
                 </bean>
+                <bean class="org.springframework.social.mailru.connect.MailruConnectionFactory">
+                    <constructor-arg value="${spring.social.mailru.clientId}" />
+                    <constructor-arg value="${spring.social.mailru.clientSecret}" />
+                    <constructor-arg value="${spring.social.mailru.privateKey}" />
+                </bean>
             </list>
         </property>
     </bean>
@@ -118,6 +123,11 @@
                     <constructor-arg value="${spring.social.odnoklassniki.appId}"/>
                     <constructor-arg value="${spring.social.odnoklassniki.appKeySecret}"/>
                     <constructor-arg value="${spring.social.odnoklassniki.appKeyPublic}"/>
+                </bean>
+                <bean class="org.springframework.social.mailru.security.MailruAuthenticationService">
+                    <constructor-arg value="${spring.social.mailru.clientId}" />
+                    <constructor-arg value="${spring.social.mailru.clientSecret}" />
+                    <constructor-arg value="${spring.social.mailru.privateKey}" />
                 </bean>
             </list>
         </property>

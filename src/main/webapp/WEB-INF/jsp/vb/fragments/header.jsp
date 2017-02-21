@@ -172,6 +172,7 @@
                                 <a href="auth/google?scope=profile" class="google font-awesome" title="Вход через Gmail"></a>
                                 <a href="auth/linkedin?scope=r_basicprofile" class="linkedin font-awesome" title="Вход через LinkedIn"></a>
                                 <a href="auth/odnoklassniki" class="odnoklassniki font-awesome" title="Вход через Одноклассники"></a>
+                                <a href="auth/mailru" class="mailru font-awesome" title="Вход через Mail.ru"></a>
                             </div>
 
                             <c:if test="${exception != null}">

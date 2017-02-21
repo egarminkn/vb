@@ -22,6 +22,11 @@
     https://www.linkedin.com/developer/apps/5075046/auth<br>
 6) ok:<br>
     https://ok.ru/game/1249777408<br>
+7) mail.ru:<br>
+    а) localhost:<br>
+        http://api.mail.ru/sites/my/752205<br>
+    б) verybook.org:<br>
+        http://api.mail.ru/sites/my/752207<br>
 
 ####   Разработка полнофункционального Spring/JPA Enterprise приложения c авторизацией и правами доступа на основе ролей с использованием <a href="http://zeroturnaround.com/rebellabs/java-tools-and-technologies-landscape-for-2014/" target="_blank">наиболее популярных инструментов и технологий Java</a>: Maven, Spring MVC, Security, JPA(Hibernate), REST(Jackson), Bootstrap (css, js), jQuery + plugins (datatables и др.), Java 8 Stream and Time API
 -  Основное внимание будет уделяться способам решения многочисленных проблем разработки в Spring/JPA, а также структурному (красивому и надежному) java кодированию и архитектуре приложения.

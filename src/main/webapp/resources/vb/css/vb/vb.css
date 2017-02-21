@@ -552,22 +552,31 @@ header::after {
 }
 
 .font-awesome.vk::before {
-    content: "\f189";
+    content: '\f189';
 }
 .font-awesome.twitter::before {
-    content: "\f099";
+    content: '\f099';
 }
 .font-awesome.facebook::before {
-    content: "\f09a";
+    content: '\f09a';
 }
 .font-awesome.google::before {
-    content: "\f0d5";
+    content: '\f0d5';
 }
 .font-awesome.linkedin::before {
-    content: "\f0e1";
+    content: '\f0e1';
 }
 .font-awesome.odnoklassniki::before {
-    content: "\f263";
+    content: '\f263';
+}
+.mailru::before {
+    content: '';
+    display: block;
+    height: 45px;
+    width: 45px;
+    background: url('../../svg/vb/mailru.svg') no-repeat;
+    background-size: 50%;
+    background-position: center center;
 }
 
 .soclink-box {
@@ -615,6 +624,10 @@ header::after {
 
 .soclink-box a.odnoklassniki {
     background-color: #ee8208;
+}
+
+.soclink-box a.mailru {
+    background-color: #168DE2;
 }
 
 /*
