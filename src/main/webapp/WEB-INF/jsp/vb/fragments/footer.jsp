@@ -113,7 +113,7 @@
                 </div>
 
                 <div class="social-sharing">
-                    <a href="https://www.facebook.com/%D0%92%D0%B5%D1%80%D0%B8-%D0%91%D1%83%D0%BA-1709206726037705/" target="_blank"
+                    <a href="https://www.facebook.com/verybook.org/" target="_blank"
                        title="Страница Verybook на Facebook"
                        class="icon-facebook">
                     </a>
