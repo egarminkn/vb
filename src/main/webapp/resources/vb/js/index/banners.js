@@ -4,5 +4,5 @@ if (bannerColumnCompliance === undefined) {
 }
 bannerColumnCompliance[bannerColumnCompliance.length] = {
     bannerSelector: '.spec',
-    columnSelector: '.column-1'
+    columnSelector: '.column-1.links'
 };

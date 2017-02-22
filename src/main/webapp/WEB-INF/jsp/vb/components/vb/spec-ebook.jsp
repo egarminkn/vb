@@ -4,6 +4,10 @@
 <%@taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
 <%@taglib prefix="sec" uri="http://www.springframework.org/security/tags" %>
 
+<%@page import="org.verygroup.verybook.repository.SearchQueryDictionary" %>
+<%@page import="org.verygroup.verybook.BookType" %>
+<%@page import="org.verygroup.verybook.BookCategory" %>
+
 <!-- START (Баннер "Специальные предложения" для электронных книг) -->
 <div class="item spec ebook">
     <div class="header">
@@ -79,7 +83,15 @@
                 </div>
             </div>
         </div>
-        <a class="show-all" href="${currentURI}#">
+        <a class="show-all" href='${"search-book?search-query="
+                                        .concat(SearchQueryDictionary.CATEGORY)
+                                        .concat(": \"")
+                                        .concat(BookCategory.PROMO.value)
+                                        .concat("\" ")
+                                        .concat(SearchQueryDictionary.TYPE)
+                                        .concat(": \"")
+                                        .concat(BookType.EBOOK.value)
+                                        .concat("\"")}'>
             <span class="text">
                 Показать все предложения
             </span>
