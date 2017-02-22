@@ -5,15 +5,19 @@
 <%@taglib prefix="sec" uri="http://www.springframework.org/security/tags" %>
 
 <div class="item search-result-item ebook">
-    <div class="cover">
+    <a class="cover" href="ebook/${ebookId}">
         <img src="${ebookCoverUrl}" width="230" height="368">
-    </div>
+    </a>
     <div class="about">
         <div class="title">
-            <a href="${currentURI}#">${ebookTitle}</a>
+            <a href="ebook/${ebookId}">
+                ${ebookTitle}
+            </a>
         </div>
         <div class="author">
-            <a href="${currentURI}#">${ebookAuthor}</a>
+            <a href="author/${ebookAuthorId}">
+                ${ebookAuthor}
+            </a>
         </div>
         <div class="description">
             ${ebookDescription}
@@ -40,7 +44,7 @@
 <jsp:include page="../vb/rating-5-stars.jsp"/>
 
         <div class="reviews">
-            <a href="${currentURI}#">
+            <a href="ebook/${ebookId}#reviews">
                 Рецензии
                 (<span>${ebookReviewsCount}</span>)
             </a>

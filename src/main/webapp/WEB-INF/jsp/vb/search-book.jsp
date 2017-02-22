@@ -63,6 +63,9 @@
 
                     <c:forEach var="ebookItem" items="${ebookItems}">
                         <jsp:useBean id="ebookItem" class="org.verygroup.verybook.dto.searchbook.EbookItem"/>
+<c:set var="ebookId" value="${ebookItem.ebookId}" scope="request"/>
+<c:set var="ebookAuthorId" value="${ebookItem.ebookAuthorId}" scope="request"/>
+<c:set var="bookRatingNumber" value="${ebookItem.ebookRating}" scope="request"/>
 <c:set var="ebookCoverUrl" value="${ebookItem.ebookCoverUrl}" scope="request"/>
 <c:set var="ebookTitle" value="${ebookItem.ebookTitle}" scope="request"/>
 <c:set var="ebookAuthor" value="${ebookItem.ebookAuthor}" scope="request"/>

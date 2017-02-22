@@ -10,6 +10,9 @@ public class EbookItem {
     /*
      * Поля (новые поля добавляем в начало)
      */
+    private String ebookId;
+    private String ebookAuthorId;
+    private double ebookRating;
     private String ebookCoverUrl;
     private String ebookTitle;
     private String ebookAuthor;
@@ -25,7 +28,10 @@ public class EbookItem {
         // нужен исключительно для задания типа этого класса в jsp через jsp:useBean
     }
 
-    public EbookItem(String ebookCoverUrl, String ebookTitle, String ebookAuthor, String ebookDescription, LocalDate ebookPublishDate, int ebookReviewsCount, BookFormat ebookFormat, BookFormat... ebookFormats) {
+    public EbookItem(String ebookId, String ebookAuthorId, double ebookRating, String ebookCoverUrl, String ebookTitle, String ebookAuthor, String ebookDescription, LocalDate ebookPublishDate, int ebookReviewsCount, BookFormat ebookFormat, BookFormat... ebookFormats) {
+        this.ebookId = ebookId;
+        this.ebookAuthorId = ebookAuthorId;
+        this.ebookRating = ebookRating;
         this.ebookCoverUrl = ebookCoverUrl;
         this.ebookTitle = ebookTitle;
         this.ebookAuthor = ebookAuthor;
@@ -38,6 +44,18 @@ public class EbookItem {
     /*
      * Геттеры
      */
+    public String getEbookId() {
+        return ebookId;
+    }
+
+    public String getEbookAuthorId() {
+        return ebookAuthorId;
+    }
+
+    public double getEbookRating() {
+        return ebookRating;
+    }
+
     public String getEbookCoverUrl() {
         return ebookCoverUrl;
     }
@@ -69,6 +87,18 @@ public class EbookItem {
     /*
      * Сеттеры
      */
+    public void setEbookId(String ebookId) {
+        this.ebookId = ebookId;
+    }
+
+    public void setEbookAuthorId(String ebookAuthorId) {
+        this.ebookAuthorId = ebookAuthorId;
+    }
+
+    public void setEbookRating(double ebookRating) {
+        this.ebookRating = ebookRating;
+    }
+
     public void setEbookCoverUrl(String ebookCoverUrl) {
         this.ebookCoverUrl = ebookCoverUrl;
     }
