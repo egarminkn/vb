@@ -15,28 +15,28 @@
             <a href='${"search-book?search-query="
                             .concat(SearchQueryDictionary.CATEGORY)
                             .concat(": \"")
-                            .concat(toSearchBookItem.topLevelTitle)
+                            .concat(toSearchBookItem.category.value)
                             .concat("\"")}'>
                 <h3>
-                    ${toSearchBookItem.topLevelTitle}
+                    ${toSearchBookItem.category.value}
                 </h3>
             </a>
 
-            <c:if test="${not empty toSearchBookItem.bottomLevelTitles}">
+            <c:if test="${not empty toSearchBookItem.subcategories}">
                 <ul class="bottom-level">
-                    <c:forEach var="bottomLevelTitle" items="${toSearchBookItem.bottomLevelTitles}">
+                    <c:forEach var="subcategory" items="${toSearchBookItem.subcategories}">
                         <li class="bottom-level-link">
                             <a href='${"search-book?search-query="
                                             .concat(SearchQueryDictionary.CATEGORY)
                                             .concat(": \"")
-                                            .concat(toSearchBookItem.topLevelTitle)
+                                            .concat(toSearchBookItem.category.value)
                                             .concat("\" ")
                                             .concat(SearchQueryDictionary.SUBCATEGORY)
                                             .concat(": \"")
-                                            .concat(bottomLevelTitle)
+                                            .concat(subcategory.value)
                                             .concat("\"")}'>
                                 <h4>
-                                    ${bottomLevelTitle}
+                                    ${subcategory.value}
                                 </h4>
                             </a>
                         </li>

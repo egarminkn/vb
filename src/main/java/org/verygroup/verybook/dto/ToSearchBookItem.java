@@ -1,12 +1,14 @@
 package org.verygroup.verybook.dto;
 
-import java.util.Arrays;
+import org.verygroup.verybook.BookCategory;
+import org.verygroup.verybook.BookSubcategory;
+
 import java.util.List;
 
 public class ToSearchBookItem {
 
-    private String topLevelTitle;
-    private List<String> bottomLevelTitles;
+    private BookCategory category;
+    private List<BookSubcategory> subcategories;
 
     /*
      * Конструкторы
@@ -15,31 +17,31 @@ public class ToSearchBookItem {
         // нужен исключительно для задания типа этого класса в jsp через jsp:useBean
     }
 
-    public ToSearchBookItem(String topLevelTitle, String... bottomLevelTitles) {
-        this.topLevelTitle = topLevelTitle;
-        this.bottomLevelTitles = Arrays.asList(bottomLevelTitles);
+    public ToSearchBookItem(BookCategory category) {
+        this.category = category;
+        this.subcategories = category.getSubcategories();
     }
 
     /*
      * Геттеры
      */
-    public String getTopLevelTitle() {
-        return topLevelTitle;
+    public BookCategory getCategory() {
+        return category;
     }
 
-    public List<String> getBottomLevelTitles() {
-        return bottomLevelTitles;
+    public List<BookSubcategory> getSubcategories() {
+        return subcategories;
     }
 
     /*
      * Сеттеры
      */
-    public void setTopLevelTitle(String topLevelTitle) {
-        this.topLevelTitle = topLevelTitle;
+    public void setCategory(BookCategory category) {
+        this.category = category;
     }
 
-    public void setBottomLevelTitles(List<String> bottomLevelTitles) {
-        this.bottomLevelTitles = bottomLevelTitles;
+    public void setSubcategories(List<BookSubcategory> subcategories) {
+        this.subcategories = subcategories;
     }
 
 }
