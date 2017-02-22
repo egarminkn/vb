@@ -7,8 +7,12 @@
 <!-- START (Кнопка "В корзину" с ценником) -->
 <div class="buy">
     <div class="item price">
-        <span class="value">112</span>
-        <span class="currency">р.</span>
+        <span class="value">
+            ${cartBtnPriceValue}
+        </span>
+        <span class="currency">
+            ${cartBtnPriceCurrency}
+        </span>
     </div>
     <a class="item cart-btn" href="${currentURI}#">
         <span class="text">В корзину</span>

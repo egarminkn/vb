@@ -45,7 +45,7 @@
 
         <div class="reviews">
             <a href="ebook/${ebookId}#reviews">
-                Рецензии
+                Отзывы
                 (<span>${ebookReviewsCount}</span>)
             </a>
         </div>

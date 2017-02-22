@@ -13,6 +13,8 @@ public class EbookItem {
     private String ebookId;
     private String ebookAuthorId;
     private double ebookRating;
+    private String ebookPriceValue;
+    private String ebookPriceCurrency = "руб";
     private String ebookCoverUrl;
     private String ebookTitle;
     private String ebookAuthor;
@@ -28,10 +30,12 @@ public class EbookItem {
         // нужен исключительно для задания типа этого класса в jsp через jsp:useBean
     }
 
-    public EbookItem(String ebookId, String ebookAuthorId, double ebookRating, String ebookCoverUrl, String ebookTitle, String ebookAuthor, String ebookDescription, LocalDate ebookPublishDate, int ebookReviewsCount, BookFormat ebookFormat, BookFormat... ebookFormats) {
+    public EbookItem(String ebookId, String ebookAuthorId, double ebookRating, String ebookPriceValue, String ebookPriceCurrency, String ebookCoverUrl, String ebookTitle, String ebookAuthor, String ebookDescription, LocalDate ebookPublishDate, int ebookReviewsCount, BookFormat ebookFormat, BookFormat... ebookFormats) {
         this.ebookId = ebookId;
         this.ebookAuthorId = ebookAuthorId;
         this.ebookRating = ebookRating;
+        this.ebookPriceValue = ebookPriceValue;
+        this.ebookPriceCurrency = ebookPriceCurrency;
         this.ebookCoverUrl = ebookCoverUrl;
         this.ebookTitle = ebookTitle;
         this.ebookAuthor = ebookAuthor;
@@ -54,6 +58,14 @@ public class EbookItem {
 
     public double getEbookRating() {
         return ebookRating;
+    }
+
+    public String getEbookPriceValue() {
+        return ebookPriceValue;
+    }
+
+    public String getEbookPriceCurrency() {
+        return ebookPriceCurrency;
     }
 
     public String getEbookCoverUrl() {
@@ -97,6 +109,14 @@ public class EbookItem {
 
     public void setEbookRating(double ebookRating) {
         this.ebookRating = ebookRating;
+    }
+
+    public void setEbookPriceValue(String ebookPriceValue) {
+        this.ebookPriceValue = ebookPriceValue;
+    }
+
+    public void setEbookPriceCurrency(String ebookPriceCurrency) {
+        this.ebookPriceCurrency = ebookPriceCurrency;
     }
 
     public void setEbookCoverUrl(String ebookCoverUrl) {
