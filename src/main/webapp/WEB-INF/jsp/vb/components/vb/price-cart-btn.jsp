@@ -14,8 +14,13 @@
             ${cartBtnPriceCurrency}
         </span>
     </div>
-    <a class="item cart-btn" href="${currentURI}#">
-        <span class="text">В корзину</span>
+    <c:set var="isPurchaseItemInCart" value="${sessionScope.sessionObject.shopCart.containsPurchaseItem(cartBtnPurchaseItemType, cartBtnPurchaseItemId)}"/>
+    <a class="item cart-btn ${isPurchaseItemInCart ? '' : 'clickable'}"
+       data-book-type="${cartBtnPurchaseItemType}"
+       data-book-id="${cartBtnPurchaseItemId}">
+        <span class="text">
+            ${isPurchaseItemInCart ? 'Уже в корзине' : 'В корзину'}
+        </span>
     </a>
 </div>
 <!-- END (Кнопка "В корзину" с ценником) -->

@@ -5,6 +5,8 @@
 <%@taglib prefix="sec" uri="http://www.springframework.org/security/tags" %>
 <%@taglib prefix="fn" uri="http://verybook.verygroup.org/functions" %>
 
+<%@page import="org.verygroup.verybook.BookType" %>
+
 <c:set var="bodyClass" value="hidden-partners-on-shelf" scope="request"/>
 <c:set var="mainClass" value="search-book" scope="request"/>
 <c:set var="sloganAdditionalClass" value="" scope="request"/>
@@ -61,6 +63,7 @@
 <c:set var="sortName" value="ebooks" scope="request"/>
 <jsp:include page="components/vb/sort-by.jsp"/>
 
+<c:set var="cartBtnPurchaseItemType" value="${BookType.EBOOK}" scope="request"/>
                     <c:forEach var="ebookItem" items="${ebookItems}">
                         <jsp:useBean id="ebookItem" class="org.verygroup.verybook.dto.searchbook.EbookItem"/>
 <c:set var="ebookId" value="${ebookItem.ebookId}" scope="request"/>
@@ -75,6 +78,7 @@
 <c:set var="ebookPublishDate" value="${fn:formatDateToLongStr(ebookItem.ebookPublishDate)}" scope="request"/>
 <c:set var="ebookReviewsCount" value="${ebookItem.ebookReviewsCount}" scope="request"/>
 <c:set var="ebookFormats" value="${ebookItem.ebookFormats}" scope="request"/>
+<c:set var="cartBtnPurchaseItemId" value="${ebookId}" scope="request"/>
 <jsp:include page="components/search-book/ebook.jsp"/>
                     </c:forEach>
 

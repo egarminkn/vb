@@ -4,6 +4,7 @@ import org.verygroup.verybook.repository.social.DataDao;
 import org.verygroup.verybook.repository.social.UsersDao;
 import org.verygroup.verybook.model.social.UserConnection;
 import org.verygroup.verybook.model.social.UserProfile;
+import org.verygroup.verybook.session.SessionObject;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;

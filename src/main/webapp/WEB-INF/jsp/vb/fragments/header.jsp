@@ -15,6 +15,9 @@
         <meta name="description" content="Простейший способ опубликовать книгу" />
         <meta name="keywords" content="читать новые книги, бесплатно, решать судьбу книг, публиковать книги" />
 
+        <meta name="_csrf" content="${_csrf.token}"/>
+        <meta name="_csrf_header" content="${_csrf.headerName}"/>
+
         <!--
         <meta name="google" content="notranslate" />
         <meta http-equiv="refresh" content="30" />
@@ -105,7 +108,7 @@
                     <a href="shop-cart">
                         <span class="figure"></span>
                         <span class="text"><h3>Корзина</h3></span>
-                        <span class="count">222</span>
+                        <span class="count">${sessionScope.sessionObject.shopCart.purchaseItems.size()}</span>
                     </a>
                 </div>
             </div>

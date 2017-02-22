@@ -2673,11 +2673,15 @@ div.likes .dislike::before {
     text-decoration: none;
 }
 
-.buy .cart-btn:hover {
+.buy .cart-btn.clickable {
+    cursor: pointer;
+}
+
+.buy .cart-btn.clickable:hover {
     background-color: #cc7937;
 }
 
-.buy .cart-btn:active {
+.buy .cart-btn.clickable:active {
     box-shadow: inset 0 0 5px 0 #667493;
 }
 

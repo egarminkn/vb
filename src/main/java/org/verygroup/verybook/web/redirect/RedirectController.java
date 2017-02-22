@@ -3,7 +3,7 @@ package org.verygroup.verybook.web.redirect;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 
-import org.verygroup.verybook.web.util.SessionObject;
+import org.verygroup.verybook.session.SessionObject;
 
 import javax.servlet.http.HttpSession;
 
