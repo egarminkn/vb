@@ -2727,9 +2727,7 @@ div.likes .dislike::before {
 }
 
 /* сначала все закрашиваем оранжевым */
-.rating-5-stars .rating-stars::before {
-    content: '';
-    display: block;
+.rating-5-stars .rating-stars > .colorant {
     width: 82px;
     height: 15px;
     background-color: #e8ba42;
@@ -2777,9 +2775,7 @@ div.likes .dislike::before {
 }
 
 /* сначала все закрашиваем желтым */
-.rating-3-stars .rating-stars::before {
-    content: '';
-    display: block;
+.rating-3-stars .rating-stars > .colorant {
     width: 82px;
     height: 21px;
     background-color: yellow;

@@ -45,11 +45,6 @@ main.author .left-column .rating-3-stars {
     margin-top: 10px;
 }
 
-/* закраска звездочек в рейтинге автора */
-main.author .left-column .rating-3-stars .rating-stars::before {
-    width: 75px;
-}
-
 /*
  * Стилизация Блока Списка рейтинга под данную страницу
  */
@@ -252,11 +247,6 @@ main.author .books .list {
 main.author .books .list .book-with-cover-and-summary {
     margin-top: 20px;
     margin-right: 20px;
-}
-
-/* Закраска звездочек рейтинга книги (на каждую книгу должна быть своя, т.к. рейтинги у всех книг разные) */
-main.author .books .list .book-with-cover-and-summary .book-summary .rating-5-stars .rating-stars::before {
-    width: 56px;
 }
 
 /* END (Тело страницы) -------------------------------------------------------------------------------------------- */

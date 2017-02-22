@@ -312,11 +312,6 @@ main.search-book .search-results .left-column .actions .rating-5-stars {
     margin-bottom: 10px;
 }
 
-/* закраска звездочек в рейтинге книги или аудиокниги */
-main.search-book .search-results .left-column .actions .rating-5-stars .rating-stars::before {
-    width: 56px;
-}
-
 /*
  *  Ссылка на рецензии (отзывы)
  */
@@ -399,11 +394,6 @@ main.search-book .search-results .left-column .author .about .fullname-rating .f
  */
 main.search-book .search-results .left-column .author .about .fullname-rating .rating {
     margin-left: 10px;
-}
-
-/* закраска звездочек в рейтинге */
-main.search-book .search-results .left-column .author .about .fullname-rating .rating-3-stars .rating-stars::before {
-    width: 56px;
 }
 
 main.search-book .search-results .left-column .author .about .fullname-rating .rating .rating-number {

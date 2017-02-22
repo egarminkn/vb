@@ -415,11 +415,6 @@ main.author-pa .author .about .columns .column-1 .row-2 .rating-3-stars {
     margin: auto;
 }
 
-/* уровень заполненности звезд желтым фоном */
-main.author-pa .author .about .columns .column-1 .row-2 .rating-3-stars .rating-stars::before {
-    width: 67.5px;
-}
-
 /*
  * Стилизация списка рейтингов, в которые попал автор
  */
@@ -1128,13 +1123,6 @@ main.author-pa .books table.write tbody tr td.status .actions .action.withdraw::
     height: 1px;
     background: #b60000;
     transform: rotate(45deg);
-}
-
-/*
- * Уровень заполненности звезд оранжевым фоном (у каждой книги должен быть свой)
- */
-main.author-pa .books table.write tbody tr td.rating .rating-5-stars .rating-stars::before {
-    width: 67.5px;
 }
 
 /*

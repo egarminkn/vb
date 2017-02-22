@@ -94,14 +94,6 @@ main.author-rating .column-2 .header .summary {
     margin-top: 10px;
 }
 
-/*
- * Уровень заполненности звезд желтым фоном
- * Такие блоки должны быть для каждого найденного автора в отдельности
- */
-main.author-rating .author .rating-3-stars .rating-stars::before {
-    width: 67.5px;
-}
-
 /**
  ** Блок автора
  **/

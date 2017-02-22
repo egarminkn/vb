@@ -213,11 +213,6 @@ main.book .book .columns .column-1 .authors .author .about .fullname a {
     /*border: 1px solid black;*/
 }
 
-/* уровень заполненности звезд желтым фоном */
-main.book .book .columns .column-1 .authors .author .about .rating-3-stars .rating-stars::before {
-    width: 67.5px;
-}
-
 /*
  * 2-ая колонка (с текстовым описанием)
  */
@@ -425,16 +420,6 @@ main.book .book-reviews .review-list .review .content {
     font-family: 'Myriad Pro Regular';
     font-size: 16px;
     line-height: 20px;
-}
-
-/**
- ** Блок "Рекомендованные также"
- **/
-/*
- * Уровень заполненности звезд рейтинга книги оранжевым фоном (у каждой книги должен быть свой)
- */
-main.book .shelf .book-slider-outer .book-slider-inner .book-with-cover-and-summary .book-summary .rating-5-stars .rating-stars::before {
-    width: 67.5px;
 }
 
 /**

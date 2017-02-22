@@ -279,4 +279,20 @@ $(function () {
             event.preventDefault();
         }
     });
+
+    /*
+     * Закраска 3 звезд рейтингов авторов (максимальный рейтинг = 5)
+     */
+    $('.rating-3-stars').each(function () {
+        var ratingNumberPercent = parseFloat($(this).find('.rating-number').html().replace(',', '.')) * 100 / 5;
+        $(this).find('.rating-stars > .colorant').outerWidth(ratingNumberPercent + '%');
+    });
+
+    /*
+     * Закраска 5 звезд рейтингов книг (максимальный рейтинг = 10)
+     */
+    $('.rating-5-stars').each(function () {
+        var ratingNumberPercent = parseFloat($(this).find('.rating-number').html().replace(',', '.')) * 100 / 10;
+        $(this).find('.rating-stars > .colorant').outerWidth(ratingNumberPercent + '%');
+    });
 });

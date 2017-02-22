@@ -325,58 +325,6 @@ main.index .column.column-2.shelves > .shelf-title-and-wrapper > .shelf-wrapper 
 }
 
 /**
- ** Сами полки с книгами внутри обертки
- **/
-/*
- * Уровень заполненности звезд рейтинга книги оранжевым фоном (у каждой книги должен быть свой)
- */
-main.index .column.column-2.shelves .shelf-wrapper .shelf .book-slider-outer .book-slider-inner .book-with-cover-and-summary:nth-of-type(1) .book-summary .rating-5-stars .rating-stars::before {
-    width: 72px;
-}
-main.index .column.column-2.shelves .shelf-wrapper .shelf .book-slider-outer .book-slider-inner .book-with-cover-and-summary:nth-of-type(2) .book-summary .rating-5-stars .rating-stars::before {
-    width: 64.5px;
-}
-main.index .column.column-2.shelves .shelf-wrapper .shelf .book-slider-outer .book-slider-inner .book-with-cover-and-summary:nth-of-type(3) .book-summary .rating-5-stars .rating-stars::before {
-    width: 61.5px;
-}
-main.index .column.column-2.shelves .shelf-wrapper .shelf .book-slider-outer .book-slider-inner .book-with-cover-and-summary:nth-of-type(4) .book-summary .rating-5-stars .rating-stars::before {
-    width: 57px;
-}
-main.index .column.column-2.shelves .shelf-wrapper .shelf .book-slider-outer .book-slider-inner .book-with-cover-and-summary:nth-of-type(5) .book-summary .rating-5-stars .rating-stars::before {
-    width: 67.5px;
-}
-main.index .column.column-2.shelves .shelf-wrapper .shelf .book-slider-outer .book-slider-inner .book-with-cover-and-summary:nth-of-type(6) .book-summary .rating-5-stars .rating-stars::before {
-    width: 67.5px;
-}
-main.index .column.column-2.shelves .shelf-wrapper .shelf .book-slider-outer .book-slider-inner .book-with-cover-and-summary:nth-of-type(7) .book-summary .rating-5-stars .rating-stars::before {
-    width: 57px;
-}
-main.index .column.column-2.shelves .shelf-wrapper .shelf .book-slider-outer .book-slider-inner .book-with-cover-and-summary:nth-of-type(8) .book-summary .rating-5-stars .rating-stars::before {
-    width: 61.5px;
-}
-main.index .column.column-2.shelves .shelf-wrapper .shelf .book-slider-outer .book-slider-inner .book-with-cover-and-summary:nth-of-type(9) .book-summary .rating-5-stars .rating-stars::before {
-    width: 64.5px;
-}
-main.index .column.column-2.shelves .shelf-wrapper .shelf .book-slider-outer .book-slider-inner .book-with-cover-and-summary:nth-of-type(10) .book-summary .rating-5-stars .rating-stars::before {
-    width: 72px;
-}
-main.index .column.column-2.shelves .shelf-wrapper .shelf .book-slider-outer .book-slider-inner .book-with-cover-and-summary:nth-of-type(11) .book-summary .rating-5-stars .rating-stars::before {
-    width: 72px;
-}
-main.index .column.column-2.shelves .shelf-wrapper .shelf .book-slider-outer .book-slider-inner .book-with-cover-and-summary:nth-of-type(12) .book-summary .rating-5-stars .rating-stars::before {
-    width: 64.5px;
-}
-main.index .column.column-2.shelves .shelf-wrapper .shelf .book-slider-outer .book-slider-inner .book-with-cover-and-summary:nth-of-type(13) .book-summary .rating-5-stars .rating-stars::before {
-    width: 61.5px;
-}
-main.index .column.column-2.shelves .shelf-wrapper .shelf .book-slider-outer .book-slider-inner .book-with-cover-and-summary:nth-of-type(14) .book-summary .rating-5-stars .rating-stars::before {
-    width: 57px;
-}
-main.index .column.column-2.shelves .shelf-wrapper .shelf .book-slider-outer .book-slider-inner .book-with-cover-and-summary:nth-of-type(15) .book-summary .rating-5-stars .rating-stars::before {
-    width: 67.5px;
-}
-
-/**
  ** Блок с рейтингом авторов
  **/
 main.index .column.column-2.shelves > .shelf-title-and-wrapper.authors-rating {
@@ -477,28 +425,6 @@ main.index .column.column-2.shelves > .shelf-title-and-wrapper.authors-rating > 
 main.index .column.column-2.shelves > .shelf-title-and-wrapper.authors-rating > .shelf-wrapper > .authors-block > .author-summary > .rating-3-stars {
     margin: auto;
     /*border: 1px solid black;*/
-}
-
-/*
- * Закраска звездочек в рейтинге кокретного автора желтым цветом (у каждого автора свой уровень закраски)
- */
-main.index .column.column-2.shelves > .shelf-title-and-wrapper.authors-rating > .shelf-wrapper > .authors-block > .author-summary > .rating-3-stars > .rating-stars::before {
-    width: 63px;
-}
-main.index .column.column-2.shelves > .shelf-title-and-wrapper.authors-rating > .shelf-wrapper > .authors-block > .author-summary > .rating-3-stars > .rating-stars::before {
-    width: 63px;
-}
-main.index .column.column-2.shelves > .shelf-title-and-wrapper.authors-rating > .shelf-wrapper > .authors-block > .author-summary > .rating-3-stars > .rating-stars::before {
-    width: 61.36px;
-}
-main.index .column.column-2.shelves > .shelf-title-and-wrapper.authors-rating > .shelf-wrapper > .authors-block > .author-summary > .rating-3-stars > .rating-stars::before {
-    width: 61.87px;
-}
-main.index .column.column-2.shelves > .shelf-title-and-wrapper.authors-rating > .shelf-wrapper > .authors-block > .author-summary > .rating-3-stars > .rating-stars::before {
-    width: 62.62px;
-}
-main.index .column.column-2.shelves > .shelf-title-and-wrapper.authors-rating > .shelf-wrapper > .authors-block > .author-summary > .rating-3-stars > .rating-stars::before {
-    width: 57.96px;
 }
 
 /* стилизация блока лайков/дизлайков автора */
