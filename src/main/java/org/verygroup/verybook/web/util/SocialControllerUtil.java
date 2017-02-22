@@ -24,7 +24,7 @@ import java.util.Map;
 import java.util.Set;
 
 @Component
-public class SocialControllerUtil {
+public class SocialControllerUtil implements Util {
 
     private static final Logger LOG = LoggerFactory.getLogger(SocialControllerUtil.class);
 
@@ -37,6 +37,7 @@ public class SocialControllerUtil {
     @Autowired
     private UsersDao usersDao;
 
+    @Override
     public void setModel(HttpServletRequest request, Principal currentUser, Model model) {
         HttpSession session = request.getSession();
 

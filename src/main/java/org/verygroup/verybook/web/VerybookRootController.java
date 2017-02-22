@@ -16,8 +16,7 @@ import org.verygroup.verybook.dto.authorpa.ReadBookRow;
 import org.verygroup.verybook.dto.index.AuthorSummaryItem;
 import org.verygroup.verybook.dto.index2.QuoteItem;
 import org.verygroup.verybook.dto.shopcart.ShopCartRow;
-import org.verygroup.verybook.web.util.SocialControllerUtil;
-import org.verygroup.verybook.web.util.ToSearchBookUtil;
+import org.verygroup.verybook.web.util.*;
 
 import ru.javawebinar.topjava.util.exception.NotFoundException;
 
@@ -32,14 +31,19 @@ public class VerybookRootController {
 
     @Autowired
     private SocialControllerUtil socialUtil;
-
     @Autowired
     private ToSearchBookUtil searchBookUtil;
+    @Autowired
+    private SpecEbookUtil specEbookUtil;
+    @Autowired
+    private SpecAudiobookUtil specAudiobookUtil;
 
     @GetMapping("/author-pa")
     public String authorPa(HttpServletRequest request, Principal currentUser, Model model) {
         socialUtil.setModel(request, currentUser, model);
 //        searchBookUtil.setModel(request, currentUser, model);
+//        specEbookUtil.setModel(request, currentUser, model);
+//        specAudiobookUtil.setModel(request, currentUser, model);
 
         List<RatingItem> ratingItems = new LinkedList<>();
         ratingItems.add(new RatingItem(true, 19, "в общем рейтинге"));
@@ -83,6 +87,8 @@ public class VerybookRootController {
     public String createEbook(HttpServletRequest request, Principal currentUser, Model model) {
         socialUtil.setModel(request, currentUser, model);
 //        searchBookUtil.setModel(request, currentUser, model);
+//        specEbookUtil.setModel(request, currentUser, model);
+//        specAudiobookUtil.setModel(request, currentUser, model);
         return "vb/create-ebook";
     }
 
@@ -90,6 +96,8 @@ public class VerybookRootController {
     public String feedback(HttpServletRequest request, Principal currentUser, Model model) {
         socialUtil.setModel(request, currentUser, model);
         searchBookUtil.setModel(request, currentUser, model);
+        specEbookUtil.setModel(request, currentUser, model);
+        specAudiobookUtil.setModel(request, currentUser, model);
         return "vb/feedback";
     }
 
@@ -97,6 +105,8 @@ public class VerybookRootController {
     public String index(HttpServletRequest request, Principal currentUser, Model model) {
         socialUtil.setModel(request, currentUser, model);
         searchBookUtil.setModel(request, currentUser, model);
+        specEbookUtil.setModel(request, currentUser, model);
+//        specAudiobookUtil.setModel(request, currentUser, model);
 
         List<BookItem> bestSellersBookItems = new LinkedList<>();
         bestSellersBookItems.add(new BookItem(12000,12000, "20", "руб", LocalDate.of(2016, 1, 26), 40, "А.А. Иванов", "Волшебный двурог, или Правдивая история небывалых приключений нашего отважного друга Ильи Алексеевича Комова в неведомой стране, где правят: Догадка, Усидчивость, Находчивость, Терпение, Остроумие и Трудолюбие", "resources/vb/img/tmp/book-1.jpg", false));
@@ -175,6 +185,8 @@ public class VerybookRootController {
     public String index2(HttpServletRequest request, Principal currentUser, Model model) {
         socialUtil.setModel(request, currentUser, model);
 //        searchBookUtil.setModel(request, currentUser, model);
+//        specEbookUtil.setModel(request, currentUser, model);
+//        specAudiobookUtil.setModel(request, currentUser, model);
 
         List<QuoteItem> quoteItems = new LinkedList<>();
         quoteItems.add(new QuoteItem("Harry Potter 1 has never even heard of Hogwarts when the letters  start dropping on the doormat at number four, Privet  Drive. Addressed in green ink on yellowish parchment with a purple seal, they are swiftly confiscated by his grisly", "Joan Rolling"));
@@ -189,6 +201,8 @@ public class VerybookRootController {
     public String shopCart(HttpServletRequest request, Principal currentUser, Model model) {
         socialUtil.setModel(request, currentUser, model);
         searchBookUtil.setModel(request, currentUser, model);
+        specEbookUtil.setModel(request, currentUser, model);
+//        specAudiobookUtil.setModel(request, currentUser, model);
 
         List<ShopCartRow> mainShopCartRows = new LinkedList<>();
         mainShopCartRows.add(new ShopCartRow("resources/vb/img/tmp/book-1.jpg", "Полет над гнездом кукушки", "Александр Константинопольский", "415", "руб"));
@@ -210,6 +224,8 @@ public class VerybookRootController {
                        HttpServletRequest request, Principal currentUser, Model model) {
         socialUtil.setModel(request, currentUser, model);
 //        searchBookUtil.setModel(request, currentUser, model);
+//        specEbookUtil.setModel(request, currentUser, model);
+//        specAudiobookUtil.setModel(request, currentUser, model);
 
         String infoHeader = null;
         String infoBody = null;

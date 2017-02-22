@@ -12,8 +12,7 @@ import org.verygroup.verybook.BookFormat;
 import org.verygroup.verybook.BookGenre;
 import org.verygroup.verybook.dto.searchbook.*;
 import org.verygroup.verybook.repository.SearchQueryDictionary;
-import org.verygroup.verybook.web.util.SocialControllerUtil;
-import org.verygroup.verybook.web.util.ToSearchBookUtil;
+import org.verygroup.verybook.web.util.*;
 
 import java.security.Principal;
 import java.time.LocalDate;
@@ -28,9 +27,12 @@ public class SearchBookController {
 
     @Autowired
     private SocialControllerUtil socialUtil;
-
     @Autowired
     private ToSearchBookUtil searchBookUtil;
+    @Autowired
+    private SpecEbookUtil specEbookUtil;
+    @Autowired
+    private SpecAudiobookUtil specAudiobookUtil;
 
     // FIXME Перенести в опции БД
     private static final String DEFAULT_SEARCH_QUERY = SearchQueryDictionary.CATEGORY + ": \"Бестселлеры\"";
@@ -40,6 +42,8 @@ public class SearchBookController {
                               HttpServletRequest request, Principal currentUser, Model model) {
         socialUtil.setModel(request, currentUser, model);
         searchBookUtil.setModel(request, currentUser, model);
+        specEbookUtil.setModel(request, currentUser, model);
+        specAudiobookUtil.setModel(request, currentUser, model);
 
         if (StringUtils.isEmpty(searchQuery)) {
             searchQuery = DEFAULT_SEARCH_QUERY;

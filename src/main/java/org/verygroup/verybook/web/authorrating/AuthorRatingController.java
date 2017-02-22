@@ -7,8 +7,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 
 import org.verygroup.verybook.BookGenre;
 import org.verygroup.verybook.dto.authorrating.AuthorItem;
-import org.verygroup.verybook.web.util.SocialControllerUtil;
-import org.verygroup.verybook.web.util.ToSearchBookUtil;
+import org.verygroup.verybook.web.util.*;
 
 import javax.servlet.http.HttpServletRequest;
 import java.security.Principal;
@@ -21,14 +20,19 @@ public class AuthorRatingController {
 
     @Autowired
     private SocialControllerUtil socialUtil;
-
     @Autowired
     private ToSearchBookUtil searchBookUtil;
+    @Autowired
+    private SpecEbookUtil specEbookUtil;
+    @Autowired
+    private SpecAudiobookUtil specAudiobookUtil;
 
     @GetMapping("/author-rating")
     public String authorRating(HttpServletRequest request, Principal currentUser, Model model) {
         socialUtil.setModel(request, currentUser, model);
 //        searchBookUtil.setModel(request, currentUser, model);
+//        specEbookUtil.setModel(request, currentUser, model);
+//        specAudiobookUtil.setModel(request, currentUser, model);
 
         // >>> FIXME заглушка. Нужно сделать выборку из БД
         List<AuthorItem> authorItems = new LinkedList<>();

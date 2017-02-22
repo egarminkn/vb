@@ -9,8 +9,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.verygroup.verybook.dto.BookItem;
 import org.verygroup.verybook.dto.RatingItem;
 import org.verygroup.verybook.dto.book.ReviewItem;
-import org.verygroup.verybook.web.util.SocialControllerUtil;
-import org.verygroup.verybook.web.util.ToSearchBookUtil;
+import org.verygroup.verybook.web.util.*;
 
 import javax.servlet.http.HttpServletRequest;
 import java.security.Principal;
@@ -23,15 +22,20 @@ public class EbookController {
 
     @Autowired
     private SocialControllerUtil socialUtil;
-
     @Autowired
     private ToSearchBookUtil searchBookUtil;
+    @Autowired
+    private SpecEbookUtil specEbookUtil;
+    @Autowired
+    private SpecAudiobookUtil specAudiobookUtil;
 
     @GetMapping("/ebook/{id}")
     public String ebook(@PathVariable("id") String ebookId,
                         HttpServletRequest request, Principal currentUser, Model model) {
         socialUtil.setModel(request, currentUser, model);
 //        searchBookUtil.setModel(request, currentUser, model);
+//        specEbookUtil.setModel(request, currentUser, model);
+//        specAudiobookUtil.setModel(request, currentUser, model);
 
         // >>> FIXME заглушка. Сделать выборку из БД для ebookId
         List<RatingItem> ratingItems = new LinkedList<>();

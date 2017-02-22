@@ -13,8 +13,9 @@ import java.util.LinkedList;
 import java.util.List;
 
 @Component
-public class ToSearchBookUtil {
+public class ToSearchBookUtil implements Util {
 
+    @Override
     public void setModel(HttpServletRequest request, Principal currentUser, Model model) {
         // >>> FIXME заглушка. Нужно сделать выборку из БД
         List<ToSearchBookItem> toSearchBookItems = new LinkedList<>();
