@@ -7,6 +7,9 @@ import org.verygroup.verybook.AudiobookFormat;
 
 public class AudiobookItem {
     private String audiobookId;
+    private double audiobookRating;
+    private String audiobookPriceValue;
+    private String audiobookPriceCurrency = "руб";
     private String audiobookCoverUrl;
     private String audiobookTitle;
     private String audiobookDescription;
@@ -22,8 +25,11 @@ public class AudiobookItem {
         // нужен исключительно для задания типа этого класса в jsp через jsp:useBean
     }
 
-    public AudiobookItem(String audiobookId, String audiobookCoverUrl, String audiobookTitle, String audiobookDescription, LocalDate audiobookPublishDate, int audiobookReviewsCount, List<AudiobookAuthor> audiobookAuthors, List<AudiobookFormat> audiobookFormats) {
+    public AudiobookItem(String audiobookId, double audiobookRating, String audiobookPriceValue, String audiobookPriceCurrency, String audiobookCoverUrl, String audiobookTitle, String audiobookDescription, LocalDate audiobookPublishDate, int audiobookReviewsCount, List<AudiobookAuthor> audiobookAuthors, List<AudiobookFormat> audiobookFormats) {
         this.audiobookId = audiobookId;
+        this.audiobookRating = audiobookRating;
+        this.audiobookPriceValue = audiobookPriceValue;
+        this.audiobookPriceCurrency = audiobookPriceCurrency;
         this.audiobookCoverUrl = audiobookCoverUrl;
         this.audiobookTitle = audiobookTitle;
         this.audiobookDescription = audiobookDescription;
@@ -38,6 +44,18 @@ public class AudiobookItem {
      */
     public String getAudiobookId() {
         return audiobookId;
+    }
+
+    public double getAudiobookRating() {
+        return audiobookRating;
+    }
+
+    public String getAudiobookPriceValue() {
+        return audiobookPriceValue;
+    }
+
+    public String getAudiobookPriceCurrency() {
+        return audiobookPriceCurrency;
     }
 
     public String getAudiobookCoverUrl() {
@@ -73,6 +91,18 @@ public class AudiobookItem {
      */
     public void setAudiobookId(String audiobookId) {
         this.audiobookId = audiobookId;
+    }
+
+    public void setAudiobookRating(double audiobookRating) {
+        this.audiobookRating = audiobookRating;
+    }
+
+    public void setAudiobookPriceValue(String audiobookPriceValue) {
+        this.audiobookPriceValue = audiobookPriceValue;
+    }
+
+    public void setAudiobookPriceCurrency(String audiobookPriceCurrency) {
+        this.audiobookPriceCurrency = audiobookPriceCurrency;
     }
 
     public void setAudiobookCoverUrl(String audiobookCoverUrl) {

@@ -113,9 +113,13 @@
 <c:set var="sortName" value="audiobooks" scope="request"/>
 <jsp:include page="components/vb/sort-by.jsp"/>
 
+<c:set var="cartBtnPurchaseItemType" value="${BookType.AUDIOBOOK}" scope="request"/>
                     <c:forEach var="audiobookItem" items="${audiobookItems}">
                         <jsp:useBean id="audiobookItem" class="org.verygroup.verybook.dto.searchbook.AudiobookItem"/>
 <c:set var="audiobookId" value="${audiobookItem.audiobookId}" scope="request"/>
+<c:set var="bookRatingNumber" value="${audiobookItem.audiobookRating}" scope="request"/>
+<c:set var="cartBtnPriceValue" value="${audiobookItem.audiobookPriceValue}" scope="request"/>
+<c:set var="cartBtnPriceCurrency" value="${audiobookItem.audiobookPriceCurrency}" scope="request"/>
 <c:set var="audiobookCoverUrl" value="${audiobookItem.audiobookCoverUrl}" scope="request"/>
 <c:set var="audiobookTitle" value="${audiobookItem.audiobookTitle}" scope="request"/>
 <c:set var="audiobookDescription" value="${audiobookItem.audiobookDescription}" scope="request"/>
@@ -123,6 +127,7 @@
 <c:set var="audiobookReviewsCount" value="${audiobookItem.audiobookReviewsCount}" scope="request"/>
 <c:set var="audiobookAuthors" value="${audiobookItem.audiobookAuthors}" scope="request"/>
 <c:set var="audiobookFormats" value="${audiobookItem.audiobookFormats}" scope="request"/>
+<c:set var="cartBtnPurchaseItemId" value="${audiobookId}" scope="request"/>
 <jsp:include page="components/search-book/audiobook.jsp"/>
                     </c:forEach>
 
