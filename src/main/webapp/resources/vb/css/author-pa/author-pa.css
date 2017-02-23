@@ -551,7 +551,7 @@ main.author-pa .author .about .columns .column-3 .row-2 .description::after {
     position: absolute;
     bottom: 0;
     z-index: 1;
-    background: linear-gradient(to top, white, transparent);
+    background: linear-gradient(to top, white, rgba(255, 255, 255, 0));
 }
 
 /*

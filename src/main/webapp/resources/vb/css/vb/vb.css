@@ -1187,7 +1187,7 @@ header::after {
     box-sizing: border-box;
     width: 100%;
     height: 100%;
-    background-image: linear-gradient(to right, transparent 70%, white);
+    background-image: linear-gradient(to right, rgba(255, 255, 255, 0) 70%, white);
     pointer-events: none;
     /*border: 1px solid black;*/
 }

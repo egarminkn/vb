@@ -128,7 +128,7 @@ main.author .description > .paragraph.visible > .after {
     bottom: 0;
     width: 100%;
     height: 50px;
-    background: linear-gradient(0deg, #fff, transparent);
+    background: linear-gradient(0deg, #fff, rgba(255, 255, 255, 0));
     /*border: 1px solid black;*/
 }
 
