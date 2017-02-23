@@ -45,6 +45,22 @@ body {
 }
 
 /***
+ *** Надпись "Сайт в разработке"
+ ***/
+.construction {
+    position: absolute;
+    top: -15px;
+    left: 0;
+    pointer-events: none;
+    /*border: 1px solid black;*/
+}
+
+.construction > img {
+    width: 176px;
+    height: 80px;
+}
+
+/***
  *** Хедер
  ***/
 header {
@@ -113,6 +129,7 @@ header::after {
  **  Самая верхняя часть Хедера с логотипом, строкой поиска, задать вопросом и корзиной
  **/
 .header-1 {
+    position: relative;
     display: flex;
     flex-direction: row;
     justify-content: space-between;

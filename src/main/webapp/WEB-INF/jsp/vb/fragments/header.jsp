@@ -86,6 +86,9 @@
 
         <header>
             <div class="header header-1">
+                <div class="construction">
+                    <img src="resources/vb/img/vb/construction.png" width="322" height="148">
+                </div>
                 <a href="index" class="logo">
                     <span class="logo-word logo-line logo-line1"></span>
                     <span class="logo-word logo-line logo-line2"></span>
