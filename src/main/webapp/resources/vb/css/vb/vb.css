@@ -406,7 +406,6 @@ header::after {
 .cart a .count {
     font-family: Tahoma, sans-serif;
     font-size: 9px;
-    letter-spacing: 0.3px;
     color: white;
     line-height: 17px;
     box-sizing: border-box;
