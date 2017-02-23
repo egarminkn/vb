@@ -115,6 +115,7 @@
 
                     <c:forEach var="audiobookItem" items="${audiobookItems}">
                         <jsp:useBean id="audiobookItem" class="org.verygroup.verybook.dto.searchbook.AudiobookItem"/>
+<c:set var="audiobookId" value="${audiobookItem.audiobookId}" scope="request"/>
 <c:set var="audiobookCoverUrl" value="${audiobookItem.audiobookCoverUrl}" scope="request"/>
 <c:set var="audiobookTitle" value="${audiobookItem.audiobookTitle}" scope="request"/>
 <c:set var="audiobookDescription" value="${audiobookItem.audiobookDescription}" scope="request"/>

@@ -6,18 +6,25 @@
 
 <div class="item search-result-item audiobook">
     <div class="cover-play">
-        <img class="cover" src="${audiobookCoverUrl}" width="137" height="137">
+        <a href="audiobook/${audiobookId}">
+            <img class="cover" src="${audiobookCoverUrl}" width="137" height="137">
+        </a>
         <a class="play" href="${currentURI}#">Прослушать отрывок</a>
     </div>
     <div class="about">
         <div class="title">
-            <a href="${currentURI}#">${audiobookTitle}</a>
+            <a href="audiobook/${audiobookId}">
+                ${audiobookTitle}
+            </a>
         </div>
         <div class="author">
             <c:set var="audiobookAuthorsLastIndex" value="${audiobookAuthors.size() - 1}"/>
             <c:forEach var="audiobookAuthor" items="${audiobookAuthors}" varStatus="loop">
                 <jsp:useBean id="audiobookAuthor" class="org.verygroup.verybook.dto.searchbook.AudiobookAuthor"/>
-                <a href="${currentURI}#">${audiobookAuthor.name}</a> (${audiobookAuthor.type.getName()})${loop.index != audiobookAuthorsLastIndex ? ',' : ''}
+                <a href="author/${audiobookAuthor.id}">
+                    ${audiobookAuthor.name}
+                </a>
+                (${audiobookAuthor.type.getName()})${loop.index != audiobookAuthorsLastIndex ? ',' : ''}
             </c:forEach>
         </div>
         <div class="description">
@@ -45,8 +52,8 @@
 <jsp:include page="../vb/rating-5-stars.jsp"/>
 
         <div class="reviews">
-            <a href="${currentURI}#">
-                Рецензии
+            <a href="audiobook/${audiobookId}#reviews">
+                Отзывы
                 (<span>${audiobookReviewsCount}</span>)
             </a>
         </div>

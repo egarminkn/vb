@@ -61,27 +61,41 @@ public class SearchBookController {
         model.addAttribute("ebookItems", ebookItems);
 
         List<AudiobookItem> audiobookItems = new LinkedList<>();
-        audiobookItems.add(new AudiobookItem("resources/vb/img/tmp/audiobook-1.jpg",
-                "Harry Potter and the Sorcerer's Stone, Book 1",
-                "Harry Potter has never even heard of Hogwarts when the letters start dropping on the doormat at number four, Privet Drive. Addressed in green ink on yellowish parchment with a purple seal, they are swiftly confiscated by his grisly aunt and uncle. Then, on Harry's eleventh birthday, a great beetle-eyed giant of a man called Rubeus Hagrid bursts in with some astonishing news: Harry Potter",
-                LocalDate.of(2015, 9, 26),
-                15,
-                Arrays.asList(new AudiobookAuthor("J. K. Rowling", AudiobookAuthorType.AUTHOR), new AudiobookAuthor("Roger Allam", AudiobookAuthorType.STORY_TELLER), new AudiobookAuthor("Emilia Fox", AudiobookAuthorType.STORY_TELLER)),
-                Collections.singletonList(AudiobookFormat.MP3)));
-        audiobookItems.add(new AudiobookItem("resources/vb/img/tmp/audiobook-1.jpg",
-                "Harry Potter and the Sorcerer's Stone, Book 1",
-                "Harry Potter has never even heard of Hogwarts when the letters start dropping on the doormat at number four, Privet Drive. Addressed in green ink on yellowish parchment with a purple seal, they are swiftly confiscated by his grisly aunt and uncle. Then, on Harry's eleventh birthday, a great beetle-eyed giant of a man called Rubeus Hagrid bursts in with some astonishing news: Harry Potter",
-                LocalDate.of(2015, 9, 26),
-                15,
-                Arrays.asList(new AudiobookAuthor("J. K. Rowling", AudiobookAuthorType.AUTHOR), new AudiobookAuthor("Roger Allam", AudiobookAuthorType.STORY_TELLER), new AudiobookAuthor("Emilia Fox", AudiobookAuthorType.STORY_TELLER)),
-                Collections.singletonList(AudiobookFormat.WAV)));
-        audiobookItems.add(new AudiobookItem("resources/vb/img/tmp/audiobook-1.jpg",
-                "Harry Potter and the Sorcerer's Stone, Book 1",
-                "Harry Potter has never even heard of Hogwarts when the letters start dropping on the doormat at number four, Privet Drive. Addressed in green ink on yellowish parchment with a purple seal, they are swiftly confiscated by his grisly aunt and uncle. Then, on Harry's eleventh birthday, a great beetle-eyed giant of a man called Rubeus Hagrid bursts in with some astonishing news: Harry Potter",
-                LocalDate.of(2015, 9, 26),
-                15,
-                Arrays.asList(new AudiobookAuthor("J. K. Rowling", AudiobookAuthorType.AUTHOR), new AudiobookAuthor("Roger Allam", AudiobookAuthorType.STORY_TELLER), new AudiobookAuthor("J. K. Rowling", AudiobookAuthorType.AUTHOR), new AudiobookAuthor("Roger Allam", AudiobookAuthorType.STORY_TELLER), new AudiobookAuthor("Emilia Fox", AudiobookAuthorType.STORY_TELLER)),
-                Arrays.asList(AudiobookFormat.MP3, AudiobookFormat.WAV, AudiobookFormat.WAV, AudiobookFormat.MP3)));
+        audiobookItems.add(new AudiobookItem("id1",
+                                             "resources/vb/img/tmp/audiobook-1.jpg",
+                                             "Harry Potter and the Sorcerer's Stone, Book 1",
+                                             "Harry Potter has never even heard of Hogwarts when the letters start dropping on the doormat at number four, Privet Drive. Addressed in green ink on yellowish parchment with a purple seal, they are swiftly confiscated by his grisly aunt and uncle. Then, on Harry's eleventh birthday, a great beetle-eyed giant of a man called Rubeus Hagrid bursts in with some astonishing news: Harry Potter",
+                                             LocalDate.of(2015, 9, 26),
+                                             1,
+                                             Arrays.asList(
+                                                     new AudiobookAuthor("id1", "J. K. Rowling", AudiobookAuthorType.AUTHOR),
+                                                     new AudiobookAuthor("id2", "Roger Allam", AudiobookAuthorType.STORY_TELLER),
+                                                     new AudiobookAuthor("id3", "Emilia Fox", AudiobookAuthorType.STORY_TELLER)),
+                                             Collections.singletonList(AudiobookFormat.MP3)));
+        audiobookItems.add(new AudiobookItem("id2",
+                                             "resources/vb/img/tmp/audiobook-1.jpg",
+                                             "Harry Potter and the Sorcerer's Stone, Book 1",
+                                             "Harry Potter has never even heard of Hogwarts when the letters start dropping on the doormat at number four, Privet Drive. Addressed in green ink on yellowish parchment with a purple seal, they are swiftly confiscated by his grisly aunt and uncle. Then, on Harry's eleventh birthday, a great beetle-eyed giant of a man called Rubeus Hagrid bursts in with some astonishing news: Harry Potter",
+                                             LocalDate.of(2015, 9, 26),
+                                             1500,
+                                             Arrays.asList(
+                                                     new AudiobookAuthor("id1", "J. K. Rowling", AudiobookAuthorType.AUTHOR),
+                                                     new AudiobookAuthor("id2", "Roger Allam", AudiobookAuthorType.STORY_TELLER),
+                                                     new AudiobookAuthor("id3", "Emilia Fox", AudiobookAuthorType.STORY_TELLER)),
+                                             Collections.singletonList(AudiobookFormat.WAV)));
+        audiobookItems.add(new AudiobookItem("id3",
+                                             "resources/vb/img/tmp/audiobook-1.jpg",
+                                             "Harry Potter and the Sorcerer's Stone, Book 1",
+                                             "Harry Potter has never even heard of Hogwarts when the letters start dropping on the doormat at number four, Privet Drive. Addressed in green ink on yellowish parchment with a purple seal, they are swiftly confiscated by his grisly aunt and uncle. Then, on Harry's eleventh birthday, a great beetle-eyed giant of a man called Rubeus Hagrid bursts in with some astonishing news: Harry Potter",
+                                             LocalDate.of(2015, 9, 26),
+                                             50,
+                                             Arrays.asList(
+                                                     new AudiobookAuthor("id1", "J. K. Rowling", AudiobookAuthorType.AUTHOR),
+                                                     new AudiobookAuthor("id2", "Roger Allam", AudiobookAuthorType.STORY_TELLER),
+                                                     new AudiobookAuthor("id1", "J. K. Rowling", AudiobookAuthorType.AUTHOR),
+                                                     new AudiobookAuthor("id2", "Roger Allam", AudiobookAuthorType.STORY_TELLER),
+                                                     new AudiobookAuthor("id3", "Emilia Fox", AudiobookAuthorType.STORY_TELLER)),
+                                             Arrays.asList(AudiobookFormat.MP3, AudiobookFormat.WAV, AudiobookFormat.WAV, AudiobookFormat.MP3)));
         model.addAttribute("audiobookItems", audiobookItems);
 
         List<AuthorBlockItem> authorItems = new LinkedList<>();

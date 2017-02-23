@@ -6,6 +6,7 @@ import java.util.*;
 import org.verygroup.verybook.AudiobookFormat;
 
 public class AudiobookItem {
+    private String audiobookId;
     private String audiobookCoverUrl;
     private String audiobookTitle;
     private String audiobookDescription;
@@ -21,7 +22,8 @@ public class AudiobookItem {
         // нужен исключительно для задания типа этого класса в jsp через jsp:useBean
     }
 
-    public AudiobookItem(String audiobookCoverUrl, String audiobookTitle, String audiobookDescription, LocalDate audiobookPublishDate, int audiobookReviewsCount, List<AudiobookAuthor> audiobookAuthors, List<AudiobookFormat> audiobookFormats) {
+    public AudiobookItem(String audiobookId, String audiobookCoverUrl, String audiobookTitle, String audiobookDescription, LocalDate audiobookPublishDate, int audiobookReviewsCount, List<AudiobookAuthor> audiobookAuthors, List<AudiobookFormat> audiobookFormats) {
+        this.audiobookId = audiobookId;
         this.audiobookCoverUrl = audiobookCoverUrl;
         this.audiobookTitle = audiobookTitle;
         this.audiobookDescription = audiobookDescription;
@@ -34,6 +36,10 @@ public class AudiobookItem {
     /*
      * Геттеры
      */
+    public String getAudiobookId() {
+        return audiobookId;
+    }
+
     public String getAudiobookCoverUrl() {
         return audiobookCoverUrl;
     }
@@ -65,6 +71,10 @@ public class AudiobookItem {
     /*
      * Сеттеры
      */
+    public void setAudiobookId(String audiobookId) {
+        this.audiobookId = audiobookId;
+    }
+
     public void setAudiobookCoverUrl(String audiobookCoverUrl) {
         this.audiobookCoverUrl = audiobookCoverUrl;
     }
