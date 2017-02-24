@@ -5,7 +5,7 @@
 <%@taglib prefix="sec" uri="http://www.springframework.org/security/tags" %>
 
 <!-- START (Фото автора в маске-обрезалке) -->
-<a ${isAuthorPhotoLink ? 'href="'.concat(currentURI).concat('#"') : ''} class="author-photo">
+<a ${isAuthorPhotoLink ? 'href="author/'.concat(authorId).concat('"') : ''} class="author-photo">
     <img src="${authorPhotoUrl}" width="80" height="80">
 </a>
 <!-- END (Фото автора в маске-обрезалке) -->

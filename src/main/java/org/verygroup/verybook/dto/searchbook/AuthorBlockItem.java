@@ -9,6 +9,8 @@ public class AuthorBlockItem {
     /*
      * Поля (новые поля добавляем в начало)
      */
+    private String authorId;
+    private double authorRatingNumber;
     private String authorPhotoUrl;
     private String authorName;
     private String authorDescription;
@@ -23,7 +25,9 @@ public class AuthorBlockItem {
         // нужен исключительно для задания типа этого класса в jsp через jsp:useBean
     }
 
-    public AuthorBlockItem(String authorPhotoUrl, String authorName, String authorDescription, int authorBooksCount, int authorBookReviewsCount, BookGenre authorGenre, BookGenre... authorGenres) {
+    public AuthorBlockItem(String authorId, double authorRatingNumber, String authorPhotoUrl, String authorName, String authorDescription, int authorBooksCount, int authorBookReviewsCount, BookGenre authorGenre, BookGenre... authorGenres) {
+        this.authorId = authorId;
+        this.authorRatingNumber = authorRatingNumber;
         this.authorPhotoUrl = authorPhotoUrl;
         this.authorName = authorName;
         this.authorDescription = authorDescription;
@@ -35,6 +39,14 @@ public class AuthorBlockItem {
     /*
      * Геттеры
      */
+    public String getAuthorId() {
+        return authorId;
+    }
+
+    public double getAuthorRatingNumber() {
+        return authorRatingNumber;
+    }
+
     public String getAuthorPhotoUrl() {
         return authorPhotoUrl;
     }
@@ -62,6 +74,14 @@ public class AuthorBlockItem {
     /*
      * Сеттеры
      */
+    public void setAuthorId(String authorId) {
+        this.authorId = authorId;
+    }
+
+    public void setAuthorRatingNumber(double authorRatingNumber) {
+        this.authorRatingNumber = authorRatingNumber;
+    }
+
     public void setAuthorPhotoUrl(String authorPhotoUrl) {
         this.authorPhotoUrl = authorPhotoUrl;
     }

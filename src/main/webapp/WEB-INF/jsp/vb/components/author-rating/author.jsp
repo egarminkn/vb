@@ -11,13 +11,15 @@
         <span class="text">${authorPosition}</span>
     </div>
 
-<c:set var="isAuthorPhotoLink" value="false" scope="request"/>
+<c:set var="isAuthorPhotoLink" value="true" scope="request"/>
 <jsp:include page="../vb/author-photo.jsp"/>
 
     <div class="about">
         <div class="fullname-rating">
             <div class="fullname">
-                <a href="author/${authorId}">${authorName}</a>
+                <a href="author/${authorId}">
+                    ${authorName}
+                </a>
             </div>
 
 <jsp:include page="../vb/rating-3-stars.jsp"/>
