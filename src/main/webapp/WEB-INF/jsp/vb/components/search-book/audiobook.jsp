@@ -9,7 +9,48 @@
         <a href="audiobook/${audiobookId}">
             <img class="cover" src="${audiobookCoverUrl}" width="137" height="137">
         </a>
-        <a class="play" href="${currentURI}#">Прослушать отрывок</a>
+
+        <!-- Сам jPlayer -->
+        <div id="jquery-jplayer-${audiobookId}" class="cp-jplayer"></div>
+        <!-- Интерфейс jPlayer-а -->
+        <div id="cp-container-${audiobookId}" class="cp-container">
+            <div class="cp-buffer-holder"> <!-- .cp-gt50 only needed when buffer is > than 50% -->
+                <div class="cp-buffer-1"></div>
+                <div class="cp-buffer-2"></div>
+            </div>
+            <div class="cp-progress-holder"> <!-- .cp-gt50 only needed when progress is > than 50% -->
+                <div class="cp-progress-1"></div>
+                <div class="cp-progress-2"></div>
+            </div>
+            <div class="cp-circle-control"></div>
+            <ul class="cp-controls">
+                <li>
+                    <a class="cp-play">
+                        <span class="text">Прослушать отрывок</span>
+                    </a>
+                </li>
+                <li>
+                    <a class="cp-pause">
+                        <span class="text">Поставить на паузу</span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+        <!-- Подключение jPlayer-а -->
+        <script type="text/javascript">
+            $(function(){
+                var myCirclePlayer = new CirclePlayer("#jquery-jplayer-${audiobookId}",
+                    {
+                        m4a: "http://www.jplayer.org/audio/m4a/Miaow-07-Bubble.m4a",
+                        oga: "http://www.jplayer.org/audio/ogg/Miaow-07-Bubble.ogg"
+                    },
+                    {
+                        cssSelectorAncestor: "#cp-container-${audiobookId}",
+                        wmode: "window",
+                        keyEnabled: true
+                    });
+            });
+        </script>
     </div>
     <div class="about">
         <div class="title">

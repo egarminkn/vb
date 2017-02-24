@@ -69,6 +69,9 @@
         <link href="resources/vb/css/shop-cart/shop-cart.css" type="text/css" rel="stylesheet" />
         <link href="resources/vb/css/info/info.css" type="text/css" rel="stylesheet" />
 
+        <!-- jPlayer -->
+        <link href="resources/vb/css/vb/jplayer/circle.player.css" type="text/css" rel="stylesheet" />
+
         <!--
             jQuery нужно подключать в теге head, а не после тега body,
             т.к. иначе в Firefox-е некоторые страницы после загрузки проматываются в конец,

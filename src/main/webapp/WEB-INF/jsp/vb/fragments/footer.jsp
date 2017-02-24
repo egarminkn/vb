@@ -152,6 +152,12 @@
     <script type="text/javascript" src="resources/vb/js/vb/modals.js"></script>
     <script type="text/javascript" src="resources/vb/js/vb/ajax.js"></script>
 
+    <!-- jPlayer -->
+    <script type="text/javascript" src="resources/vb/js/jquery/plugins/jplayer/circle.player.js"></script>
+    <script type="text/javascript" src="resources/vb/js/jquery/plugins/jplayer/jquery.grab.js"></script>
+    <script type="text/javascript" src="resources/vb/js/jquery/plugins/jplayer/jquery.jplayer.min.js"></script>
+    <script type="text/javascript" src="resources/vb/js/jquery/plugins/jplayer/mod.csstransforms.min.js"></script>
+
     <script type="text/javascript">
         (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
             (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
