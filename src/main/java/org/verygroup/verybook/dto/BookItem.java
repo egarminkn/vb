@@ -3,6 +3,8 @@ package org.verygroup.verybook.dto;
 import java.time.LocalDate;
 
 public class BookItem {
+    private String bookId;
+    private String authorId;
     private int likesCount;
     private int dislikesCount;
     private String priceUnderBookValue;
@@ -21,7 +23,9 @@ public class BookItem {
         // нужен исключительно для задания типа этого класса в jsp через jsp:useBean
     }
 
-    public BookItem(int likesCount, int dislikesCount, String priceUnderBookValue, String priceUnderBookCurrency, LocalDate bookPublishDate, int bookCount, String authorName, String bookTitle, String bookCoverUrl, boolean isAuthorHidden) {
+    public BookItem(String bookId, String authorId, int likesCount, int dislikesCount, String priceUnderBookValue, String priceUnderBookCurrency, LocalDate bookPublishDate, int bookCount, String authorName, String bookTitle, String bookCoverUrl, boolean isAuthorHidden) {
+        this.bookId = bookId;
+        this.authorId = authorId;
         this.likesCount = likesCount;
         this.dislikesCount = dislikesCount;
         this.priceUnderBookValue = priceUnderBookValue;
@@ -37,6 +41,14 @@ public class BookItem {
     /*
      * Геттеры
      */
+    public String getBookId() {
+        return bookId;
+    }
+
+    public String getAuthorId() {
+        return authorId;
+    }
+
     public int getLikesCount() {
         return likesCount;
     }
@@ -80,6 +92,14 @@ public class BookItem {
     /*
      * Сеттеры
      */
+    public void setBookId(String bookId) {
+        this.bookId = bookId;
+    }
+
+    public void setAuthorId(String authorId) {
+        this.authorId = authorId;
+    }
+
     public void setLikesCount(int likesCount) {
         this.likesCount = likesCount;
     }

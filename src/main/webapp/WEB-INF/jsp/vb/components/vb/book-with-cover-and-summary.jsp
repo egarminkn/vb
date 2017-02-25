@@ -7,7 +7,7 @@
 <!-- START (Обложка и размещенная под ней сводная информация о книге и ее авторе) -->
 <!-- Доп.класс hidden-author нужен для страницы "Автора" (author), чтобы скрыть имя автора и общее количество его книг -->
 <div class="book-with-cover-and-summary ${isAuthorHidden ? 'hidden-author' : ''}">
-    <a class="book-cover" href="${currentURI}#">
+    <a class="book-cover" href="ebook/${bookId}">
         <img src="${bookCoverUrl}" width="230" height="368">
     </a>
 
@@ -15,12 +15,12 @@
         <div class="book-title-and-author">
             <!-- В бабле ниже блок main повторяется один в один (копи-паст) -->
             <div class="main">
-                <a class="book-title" href="${currentURI}#">
+                <a class="book-title" href="ebook/${bookId}">
                     <span class="text">
                         ${bookTitle}
                     </span>
                 </a>
-                <a class="book-author" href="${currentURI}#">
+                <a class="book-author" href="author/${authorId}">
                     <div class="author-name">
                         <span class="text">
                             ${authorName}
@@ -37,12 +37,12 @@
             <div class="bubble" data-init-width="185">
                 <!-- Выше блок main повторяется один в один (копи-паст) -->
                 <div class="main">
-                    <a class="book-title" href="${currentURI}#">
+                    <a class="book-title" href="ebook/${bookId}">
                         <span class="text">
                             ${bookTitle}
                         </span>
                     </a>
-                    <a class="book-author" href="${currentURI}#">
+                    <a class="book-author" href="author/${authorId}">
                         <div class="author-name">
                             <span class="text">
                                 ${authorName}

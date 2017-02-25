@@ -208,6 +208,8 @@
                     <div class="book-slider-inner">
                         <c:forEach var="bookItem" items="${bookItems}">
                             <jsp:useBean id="bookItem" class="org.verygroup.verybook.dto.BookItem"/>
+<c:set var="bookId" value="${bookItem.bookId}" scope="request"/>
+<c:set var="authorId" value="${bookItem.authorId}" scope="request"/>
 <c:set var="likesCount" value="${bookItem.likesCount}" scope="request"/>
 <c:set var="dislikesCount" value="${bookItem.dislikesCount}" scope="request"/>
 <c:set var="priceUnderBookValue" value="${bookItem.priceUnderBookValue}" scope="request"/>

@@ -89,6 +89,8 @@
                                     <div class="book-slider-inner">
                                         <c:forEach var="bestSellersBookItem" items="${bestSellersBookItems}">
                                             <jsp:useBean id="bestSellersBookItem" class="org.verygroup.verybook.dto.BookItem"/>
+<c:set var="bookId" value="${bestSellersBookItem.bookId}" scope="request"/>
+<c:set var="authorId" value="${bestSellersBookItem.authorId}" scope="request"/>
 <c:set var="likesCount" value="${bestSellersBookItem.likesCount}" scope="request"/>
 <c:set var="dislikesCount" value="${bestSellersBookItem.dislikesCount}" scope="request"/>
 <c:set var="priceUnderBookValue" value="${bestSellersBookItem.priceUnderBookValue}" scope="request"/>
@@ -149,6 +151,8 @@
                                     <div class="book-slider-inner">
                                         <c:forEach var="newBooksBookItem" items="${newBooksBookItems}">
                                             <jsp:useBean id="newBooksBookItem" class="org.verygroup.verybook.dto.BookItem"/>
+<c:set var="bookId" value="${newBooksBookItem.bookId}" scope="request"/>
+<c:set var="authorId" value="${newBooksBookItem.authorId}" scope="request"/>
 <c:set var="likesCount" value="${newBooksBookItem.likesCount}" scope="request"/>
 <c:set var="dislikesCount" value="${newBooksBookItem.dislikesCount}" scope="request"/>
 <c:set var="priceUnderBookValue" value="${newBooksBookItem.priceUnderBookValue}" scope="request"/>
@@ -209,6 +213,8 @@
                                     <div class="book-slider-inner">
                                         <c:forEach var="highestRatingBookItem" items="${highestRatingBookItems}">
                                             <jsp:useBean id="highestRatingBookItem" class="org.verygroup.verybook.dto.BookItem"/>
+<c:set var="bookId" value="${highestRatingBookItem.bookId}" scope="request"/>
+<c:set var="authorId" value="${highestRatingBookItem.authorId}" scope="request"/>
 <c:set var="likesCount" value="${highestRatingBookItem.likesCount}" scope="request"/>
 <c:set var="dislikesCount" value="${highestRatingBookItem.dislikesCount}" scope="request"/>
 <c:set var="priceUnderBookValue" value="${highestRatingBookItem.priceUnderBookValue}" scope="request"/>
