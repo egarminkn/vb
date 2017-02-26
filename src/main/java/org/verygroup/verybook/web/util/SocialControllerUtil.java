@@ -29,8 +29,10 @@ public class SocialControllerUtil implements Util {
 
     private static final Logger LOG = LoggerFactory.getLogger(SocialControllerUtil.class);
 
-    private static final String USER_CONNECTION = "MY_USER_CONNECTION";
+    public static final String USER_CONNECTION = "MY_USER_CONNECTION";
     private static final String USER_PROFILE = "MY_USER_PROFILE";
+
+    public static final String CURRENT_USER_CONNECTION = "currentUserConnection";
 
     @Autowired
     private DataDao dataDao;
@@ -72,7 +74,7 @@ public class SocialControllerUtil implements Util {
 
             // Update the model with the information we collected
             model.addAttribute("currentUserId", userId);
-            model.addAttribute("currentUserConnection", connection);
+            model.addAttribute(CURRENT_USER_CONNECTION, connection);
             model.addAttribute("currentUserProfile", profile);
             model.addAttribute("currentUserDisplayName", displayName);
             model.addAttribute("currentData", data);
@@ -137,8 +139,7 @@ public class SocialControllerUtil implements Util {
      * @return
      */
     private UserConnection getUserConnection(HttpSession session, String userId) {
-        UserConnection connection;
-        connection = (UserConnection) session.getAttribute(USER_CONNECTION);
+        UserConnection connection = (UserConnection) session.getAttribute(USER_CONNECTION);
 
         // Reload from persistence storage if not set or invalid (i.e. no valid userId)
         if (connection == null || !userId.equals(connection.getUserId())) {

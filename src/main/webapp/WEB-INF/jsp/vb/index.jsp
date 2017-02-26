@@ -5,6 +5,8 @@
 <%@taglib prefix="sec" uri="http://www.springframework.org/security/tags" %>
 <%@taglib prefix="fn" uri="http://verybook.verygroup.org/functions" %>
 
+<%@page import="org.verygroup.verybook.BookType" %>
+
 <c:set var="bodyClass" value="hidden-books-on-shelf" scope="request"/>
 <c:set var="mainClass" value="index" scope="request"/>
 <c:set var="sloganAdditionalClass" value="" scope="request"/>
@@ -87,10 +89,15 @@
                                     </div>
 
                                     <div class="book-slider-inner">
+<c:set var="likesBookType" value="${BookType.EBOOK}" scope="request"/>
                                         <c:forEach var="bestSellersBookItem" items="${bestSellersBookItems}">
                                             <jsp:useBean id="bestSellersBookItem" class="org.verygroup.verybook.dto.BookItem"/>
 <c:set var="bookId" value="${bestSellersBookItem.bookId}" scope="request"/>
 <c:set var="authorId" value="${bestSellersBookItem.authorId}" scope="request"/>
+<c:set var="bookRatingNumber" value="${bestSellersBookItem.bookRatingNumber}" scope="request"/>
+<c:set var="likesDislikesGrade" value="${bestSellersBookItem.likesDislikesGrade}" scope="request"/>
+<c:set var="likesLink" value="${bestSellersBookItem.likesLink}" scope="request"/>
+<c:set var="dislikesLink" value="${bestSellersBookItem.dislikesLink}" scope="request"/>
 <c:set var="likesCount" value="${bestSellersBookItem.likesCount}" scope="request"/>
 <c:set var="dislikesCount" value="${bestSellersBookItem.dislikesCount}" scope="request"/>
 <c:set var="priceUnderBookValue" value="${bestSellersBookItem.priceUnderBookValue}" scope="request"/>
@@ -101,6 +108,7 @@
 <c:set var="bookTitle" value="${bestSellersBookItem.bookTitle}" scope="request"/>
 <c:set var="bookCoverUrl" value="${bestSellersBookItem.bookCoverUrl}" scope="request"/>
 <c:set var="isAuthorHidden" value="${bestSellersBookItem.authorHidden}" scope="request"/>
+<c:set var="likesBookId" value="${bookId}" scope="request"/>
 <jsp:include page="components/vb/book-with-cover-and-summary.jsp"/>
                                         </c:forEach>
                                     </div>
@@ -149,10 +157,15 @@
                                     </div>
 
                                     <div class="book-slider-inner">
+<c:set var="likesBookType" value="${BookType.EBOOK}" scope="request"/>
                                         <c:forEach var="newBooksBookItem" items="${newBooksBookItems}">
                                             <jsp:useBean id="newBooksBookItem" class="org.verygroup.verybook.dto.BookItem"/>
 <c:set var="bookId" value="${newBooksBookItem.bookId}" scope="request"/>
 <c:set var="authorId" value="${newBooksBookItem.authorId}" scope="request"/>
+<c:set var="bookRatingNumber" value="${newBooksBookItem.bookRatingNumber}" scope="request"/>
+<c:set var="likesDislikesGrade" value="${newBooksBookItem.likesDislikesGrade}" scope="request"/>
+<c:set var="likesLink" value="${newBooksBookItem.likesLink}" scope="request"/>
+<c:set var="dislikesLink" value="${newBooksBookItem.dislikesLink}" scope="request"/>
 <c:set var="likesCount" value="${newBooksBookItem.likesCount}" scope="request"/>
 <c:set var="dislikesCount" value="${newBooksBookItem.dislikesCount}" scope="request"/>
 <c:set var="priceUnderBookValue" value="${newBooksBookItem.priceUnderBookValue}" scope="request"/>
@@ -163,6 +176,7 @@
 <c:set var="bookTitle" value="${newBooksBookItem.bookTitle}" scope="request"/>
 <c:set var="bookCoverUrl" value="${newBooksBookItem.bookCoverUrl}" scope="request"/>
 <c:set var="isAuthorHidden" value="${newBooksBookItem.authorHidden}" scope="request"/>
+<c:set var="likesBookId" value="${bookId}" scope="request"/>
 <jsp:include page="components/vb/book-with-cover-and-summary.jsp"/>
                                         </c:forEach>
                                     </div>
@@ -211,10 +225,15 @@
                                     </div>
 
                                     <div class="book-slider-inner">
+<c:set var="likesBookType" value="${BookType.EBOOK}" scope="request"/>
                                         <c:forEach var="highestRatingBookItem" items="${highestRatingBookItems}">
                                             <jsp:useBean id="highestRatingBookItem" class="org.verygroup.verybook.dto.BookItem"/>
 <c:set var="bookId" value="${highestRatingBookItem.bookId}" scope="request"/>
 <c:set var="authorId" value="${highestRatingBookItem.authorId}" scope="request"/>
+<c:set var="bookRatingNumber" value="${highestRatingBookItem.bookRatingNumber}" scope="request"/>
+<c:set var="likesDislikesGrade" value="${highestRatingBookItem.likesDislikesGrade}" scope="request"/>
+<c:set var="likesLink" value="${highestRatingBookItem.likesLink}" scope="request"/>
+<c:set var="dislikesLink" value="${highestRatingBookItem.dislikesLink}" scope="request"/>
 <c:set var="likesCount" value="${highestRatingBookItem.likesCount}" scope="request"/>
 <c:set var="dislikesCount" value="${highestRatingBookItem.dislikesCount}" scope="request"/>
 <c:set var="priceUnderBookValue" value="${highestRatingBookItem.priceUnderBookValue}" scope="request"/>
@@ -225,6 +244,7 @@
 <c:set var="bookTitle" value="${highestRatingBookItem.bookTitle}" scope="request"/>
 <c:set var="bookCoverUrl" value="${highestRatingBookItem.bookCoverUrl}" scope="request"/>
 <c:set var="isAuthorHidden" value="${highestRatingBookItem.authorHidden}" scope="request"/>
+<c:set var="likesBookId" value="${bookId}" scope="request"/>
 <jsp:include page="components/vb/book-with-cover-and-summary.jsp"/>
                                         </c:forEach>
                                     </div>

@@ -7,6 +7,8 @@
 <%@taglib prefix="sec" uri="http://www.springframework.org/security/tags" %>
 <%@taglib prefix="fn" uri="http://verybook.verygroup.org/functions" %>
 
+<%@page import="org.verygroup.verybook.BookType" %>
+
 <c:set var="bodyClass" value="hidden-partners-on-shelf" scope="request"/>
 <c:set var="mainClass" value="book" scope="request"/>
 <c:set var="sloganAdditionalClass" value="" scope="request"/>
@@ -208,10 +210,15 @@
                     </div>
 
                     <div class="book-slider-inner">
+<c:set var="likesBookType" value="${BookType.EBOOK}" scope="request"/>
                         <c:forEach var="bookItem" items="${bookItems}">
                             <jsp:useBean id="bookItem" class="org.verygroup.verybook.dto.BookItem"/>
 <c:set var="bookId" value="${bookItem.bookId}" scope="request"/>
 <c:set var="authorId" value="${bookItem.authorId}" scope="request"/>
+<c:set var="bookRatingNumber" value="${bookItem.bookRatingNumber}" scope="request"/>
+<c:set var="likesDislikesGrade" value="${bookItem.likesDislikesGrade}" scope="request"/>
+<c:set var="likesLink" value="${bookItem.likesLink}" scope="request"/>
+<c:set var="dislikesLink" value="${bookItem.dislikesLink}" scope="request"/>
 <c:set var="likesCount" value="${bookItem.likesCount}" scope="request"/>
 <c:set var="dislikesCount" value="${bookItem.dislikesCount}" scope="request"/>
 <c:set var="priceUnderBookValue" value="${bookItem.priceUnderBookValue}" scope="request"/>
@@ -222,6 +229,7 @@
 <c:set var="bookTitle" value="${bookItem.bookTitle}" scope="request"/>
 <c:set var="bookCoverUrl" value="${bookItem.bookCoverUrl}" scope="request"/>
 <c:set var="isAuthorHidden" value="${bookItem.authorHidden}" scope="request"/>
+<c:set var="likesBookId" value="${bookId}" scope="request"/>
 <jsp:include page="components/vb/book-with-cover-and-summary.jsp"/>
                         </c:forEach>
                     </div>

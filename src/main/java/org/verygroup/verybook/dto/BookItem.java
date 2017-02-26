@@ -5,6 +5,17 @@ import java.time.LocalDate;
 public class BookItem {
     private String bookId;
     private String authorId;
+    private double bookRatingNumber;
+
+    /**
+     * Если grade == null - значит не поставлен ни лайк, ни дизлайк
+     * Если grade == true - значит поставлен лайк
+     * Если grade == false - значит поставлен дизлайк
+     */
+    private Boolean likesDislikesGrade;
+
+    private boolean likesLink;
+    private boolean dislikesLink;
     private int likesCount;
     private int dislikesCount;
     private String priceUnderBookValue;
@@ -23,9 +34,13 @@ public class BookItem {
         // нужен исключительно для задания типа этого класса в jsp через jsp:useBean
     }
 
-    public BookItem(String bookId, String authorId, int likesCount, int dislikesCount, String priceUnderBookValue, String priceUnderBookCurrency, LocalDate bookPublishDate, int bookCount, String authorName, String bookTitle, String bookCoverUrl, boolean isAuthorHidden) {
+    public BookItem(String bookId, String authorId, double bookRatingNumber, Boolean likesDislikesGrade, boolean likesLink, boolean dislikesLink, int likesCount, int dislikesCount, String priceUnderBookValue, String priceUnderBookCurrency, LocalDate bookPublishDate, int bookCount, String authorName, String bookTitle, String bookCoverUrl, boolean isAuthorHidden) {
         this.bookId = bookId;
         this.authorId = authorId;
+        this.bookRatingNumber = bookRatingNumber;
+        this.likesDislikesGrade = likesDislikesGrade;
+        this.likesLink = likesLink;
+        this.dislikesLink = dislikesLink;
         this.likesCount = likesCount;
         this.dislikesCount = dislikesCount;
         this.priceUnderBookValue = priceUnderBookValue;
@@ -47,6 +62,22 @@ public class BookItem {
 
     public String getAuthorId() {
         return authorId;
+    }
+
+    public double getBookRatingNumber() {
+        return bookRatingNumber;
+    }
+
+    public Boolean getLikesDislikesGrade() {
+        return likesDislikesGrade;
+    }
+
+    public boolean isLikesLink() {
+        return likesLink;
+    }
+
+    public boolean isDislikesLink() {
+        return dislikesLink;
     }
 
     public int getLikesCount() {
@@ -98,6 +129,22 @@ public class BookItem {
 
     public void setAuthorId(String authorId) {
         this.authorId = authorId;
+    }
+
+    public void setBookRatingNumber(double bookRatingNumber) {
+        this.bookRatingNumber = bookRatingNumber;
+    }
+
+    public void setLikesDislikesGrade(Boolean likesDislikesGrade) {
+        this.likesDislikesGrade = likesDislikesGrade;
+    }
+
+    public void setLikesLink(boolean likesLink) {
+        this.likesLink = likesLink;
+    }
+
+    public void setDislikesLink(boolean dislikesLink) {
+        this.dislikesLink = dislikesLink;
     }
 
     public void setLikesCount(int likesCount) {

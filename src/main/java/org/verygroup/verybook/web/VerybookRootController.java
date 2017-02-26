@@ -7,6 +7,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 
 import org.verygroup.verybook.BookFormat;
+import org.verygroup.verybook.BookType;
 import org.verygroup.verybook.dto.BookItem;
 import org.verygroup.verybook.dto.RatingItem;
 import org.verygroup.verybook.dto.authorpa.WrittenBookAction;
@@ -16,6 +17,9 @@ import org.verygroup.verybook.dto.authorpa.ReadBookRow;
 import org.verygroup.verybook.dto.index.AuthorSummaryItem;
 import org.verygroup.verybook.dto.index2.QuoteItem;
 import org.verygroup.verybook.dto.shopcart.ShopCartRow;
+import org.verygroup.verybook.model.LikesDislikesInfo;
+import org.verygroup.verybook.model.social.UserConnection;
+import org.verygroup.verybook.service.UserBooksService;
 import org.verygroup.verybook.web.util.*;
 
 import ru.javawebinar.topjava.util.exception.NotFoundException;
@@ -28,6 +32,9 @@ import javax.servlet.http.HttpServletRequest;
 
 @Controller
 public class VerybookRootController {
+
+    @Autowired
+    private UserBooksService userBooksService;
 
     @Autowired
     private SocialControllerUtil socialUtil;
@@ -108,58 +115,788 @@ public class VerybookRootController {
         specEbookUtil.setModel(request, currentUser, model);
 //        specAudiobookUtil.setModel(request, currentUser, model);
 
+        String login = null;
+        if (model.containsAttribute(SocialControllerUtil.CURRENT_USER_CONNECTION)) { // если юзер залогинился (через одну из соц.сетей)
+            UserConnection userConnection = (UserConnection) model.asMap().get(SocialControllerUtil.CURRENT_USER_CONNECTION);
+
+            // FIXME временно сделал логин по имени соц.сети
+            //login = userConnection.getProviderId() + "-" + userConnection.getProviderUserId();
+            login = userConnection.getProviderId();
+        }
+
+        // >>> FIXME заглушка. Сделать выборку из БД
+        LikesDislikesInfo likesDislikesInfo = null;
         List<BookItem> bestSellersBookItems = new LinkedList<>();
-        bestSellersBookItems.add(new BookItem("id1", "id1", 12000,12000, "20", "руб", LocalDate.of(2016, 1, 26), 40, "А.А. Иванов", "Волшебный двурог, или Правдивая история небывалых приключений нашего отважного друга Ильи Алексеевича Комова в неведомой стране, где правят: Догадка, Усидчивость, Находчивость, Терпение, Остроумие и Трудолюбие", "resources/vb/img/tmp/book-1.jpg", false));
-        bestSellersBookItems.add(new BookItem("id2", "id2", 1022,51, "20", "руб", LocalDate.of(2016, 1, 26), 1, "А.А. Иванов", "Волшебный двурог, или Правдивая история небывалых приключений нашего отважного друга Ильи Алексеевича Комова в неведомой стране, где правят: Догадка, Усидчивость, Находчивость, Терпение, Остроумие и Трудолюбие", "resources/vb/img/tmp/book-2.jpg", false));
-        bestSellersBookItems.add(new BookItem("id3", "id3", 1022,51, "Бесплатно", "", LocalDate.of(2016, 1, 26), 4, "А.А. Иванов", "Волшебный двурог, или Правдивая история небывалых приключений нашего отважного друга Ильи Алексеевича Комова в неведомой стране, где правят: Догадка, Усидчивость, Находчивость, Терпение, Остроумие и Трудолюбие", "resources/vb/img/tmp/book-3.jpg", false));
-        bestSellersBookItems.add(new BookItem("id4", "id4", 1022,51, "20", "руб", LocalDate.of(2016, 1, 26), 9, "А.А. Иванов", "Волшебный двурог, или Правдивая история небывалых приключений нашего отважного друга Ильи Алексеевича Комова в неведомой стране, где правят: Догадка, Усидчивость, Находчивость, Терпение, Остроумие и Трудолюбие", "resources/vb/img/tmp/book-4.jpg", false));
-        bestSellersBookItems.add(new BookItem("id5", "id5", 1022,51, "20", "руб", LocalDate.of(2016, 1, 26), 110999, "Константин Галактионович Константинопольский", "Волшебный двурог, или Правдивая история небывалых приключений нашего отважного друга Ильи Алексеевича Комова в неведомой стране, где правят: Догадка, Усидчивость, Находчивость, Терпение, Остроумие и Трудолюбие", "resources/vb/img/tmp/book-5.jpg", false));
-        bestSellersBookItems.add(new BookItem("id6", "id6", 1022,51, "Бесплатно", "", LocalDate.of(2016, 1, 26), 3, "А.А. Иванов", "Древняя Русь в картинках", "resources/vb/img/tmp/book-3.jpg", false));
-        bestSellersBookItems.add(new BookItem("id7", "id7", 1022,51, "20", "руб", LocalDate.of(2016, 1, 26), 40, "А.А. Иванов", "Древняя Русь в картинках", "resources/vb/img/tmp/book-1.jpg", false));
-        bestSellersBookItems.add(new BookItem("id8", "id8", 1022,51, "20", "руб", LocalDate.of(2016, 1, 26), 1, "А.А. Иванов", "Древняя Русь в картинках", "resources/vb/img/tmp/book-2.jpg", false));
-        bestSellersBookItems.add(new BookItem("id9", "id9", 1022,51, "Бесплатно", "", LocalDate.of(2016, 1, 26), 4, "А.А. Иванов", "Древняя Русь в картинках", "resources/vb/img/tmp/book-3.jpg", false));
-        bestSellersBookItems.add(new BookItem("id10", "id10", 1022,51, "20", "руб", LocalDate.of(2016, 1, 26), 9, "А.А. Иванов", "Древняя Русь в картинках", "resources/vb/img/tmp/book-4.jpg", false));
-        bestSellersBookItems.add(new BookItem("id11", "id11", 1022,51, "20", "руб", LocalDate.of(2016, 1, 26), 21, "А.А. Иванов", "Древняя Русь в картинках", "resources/vb/img/tmp/book-5.jpg", false));
-        bestSellersBookItems.add(new BookItem("id12", "id12", 1022,51, "Бесплатно", "", LocalDate.of(2016, 1, 26), 3, "А.А. Иванов", "Древняя Русь в картинках", "resources/vb/img/tmp/book-3.jpg", false));
-        bestSellersBookItems.add(new BookItem("id13", "id13", 1022,51, "20", "руб", LocalDate.of(2016, 1, 26), 1, "А.А. Иванов", "Древняя Русь в картинках", "resources/vb/img/tmp/book-2.jpg", false));
-        bestSellersBookItems.add(new BookItem("id14", "id14", 1022,51, "Бесплатно", "", LocalDate.of(2016, 1, 26), 4, "А.А. Иванов", "Древняя Русь в картинках", "resources/vb/img/tmp/book-3.jpg", false));
-        bestSellersBookItems.add(new BookItem("id15", "id15", 1022,51, "20", "руб", LocalDate.of(2016, 1, 26), 9, "А.А. Иванов", "Древняя Русь в картинках", "resources/vb/img/tmp/book-4.jpg", false));
+        likesDislikesInfo = userBooksService.getLikesDislikesInfoBy(login, BookType.EBOOK, "id1");
+        bestSellersBookItems.add(new BookItem("id1",
+                                              "id1",
+                                              0.2,
+                                              likesDislikesInfo.getGrade(),
+                                              likesDislikesInfo.isLikesLink(),
+                                              likesDislikesInfo.isDislikesLink(),
+                                              12000,
+                                              12000,
+                                              "20",
+                                              "руб",
+                                              LocalDate.of(2016, 1, 26),
+                                              40,
+                                              "А.А. Иванов",
+                                              "Волшебный двурог, или Правдивая история небывалых приключений нашего отважного друга Ильи Алексеевича Комова в неведомой стране, где правят: Догадка, Усидчивость, Находчивость, Терпение, Остроумие и Трудолюбие",
+                                              "resources/vb/img/tmp/book-1.jpg",
+                                              false));
+        likesDislikesInfo = userBooksService.getLikesDislikesInfoBy(login, BookType.EBOOK, "id2");
+        bestSellersBookItems.add(new BookItem("id2",
+                                              "id2",
+                                              0.9,
+                                              likesDislikesInfo.getGrade(),
+                                              likesDislikesInfo.isLikesLink(),
+                                              likesDislikesInfo.isDislikesLink(),
+                                              1022,
+                                              51,
+                                              "20",
+                                              "руб",
+                                              LocalDate.of(2016, 1, 26),
+                                              1,
+                                              "А.А. Иванов",
+                                              "Волшебный двурог, или Правдивая история небывалых приключений нашего отважного друга Ильи Алексеевича Комова в неведомой стране, где правят: Догадка, Усидчивость, Находчивость, Терпение, Остроумие и Трудолюбие",
+                                              "resources/vb/img/tmp/book-2.jpg",
+                                              false));
+        likesDislikesInfo = userBooksService.getLikesDislikesInfoBy(login, BookType.EBOOK, "id3");
+        bestSellersBookItems.add(new BookItem("id3",
+                                              "id3",
+                                              1.2,
+                                              likesDislikesInfo.getGrade(),
+                                              likesDislikesInfo.isLikesLink(),
+                                              likesDislikesInfo.isDislikesLink(),
+                                              1022,
+                                              51,
+                                              "Бесплатно",
+                                              "",
+                                              LocalDate.of(2016, 1, 26),
+                                              4,
+                                              "А.А. Иванов",
+                                              "Волшебный двурог, или Правдивая история небывалых приключений нашего отважного друга Ильи Алексеевича Комова в неведомой стране, где правят: Догадка, Усидчивость, Находчивость, Терпение, Остроумие и Трудолюбие",
+                                              "resources/vb/img/tmp/book-3.jpg",
+                                              false));
+        likesDislikesInfo = userBooksService.getLikesDislikesInfoBy(login, BookType.EBOOK, "id4");
+        bestSellersBookItems.add(new BookItem("id4",
+                                              "id4",
+                                              1.5,
+                                              likesDislikesInfo.getGrade(),
+                                              likesDislikesInfo.isLikesLink(),
+                                              likesDislikesInfo.isDislikesLink(),
+                                              1022,
+                                              51,
+                                              "20",
+                                              "руб",
+                                              LocalDate.of(2016, 1, 26),
+                                              9,
+                                              "А.А. Иванов",
+                                              "Волшебный двурог, или Правдивая история небывалых приключений нашего отважного друга Ильи Алексеевича Комова в неведомой стране, где правят: Догадка, Усидчивость, Находчивость, Терпение, Остроумие и Трудолюбие",
+                                              "resources/vb/img/tmp/book-4.jpg",
+                                              false));
+        likesDislikesInfo = userBooksService.getLikesDislikesInfoBy(login, BookType.EBOOK, "id5");
+        bestSellersBookItems.add(new BookItem("id5",
+                                              "id5",
+                                              2.3,
+                                              likesDislikesInfo.getGrade(),
+                                              likesDislikesInfo.isLikesLink(),
+                                              likesDislikesInfo.isDislikesLink(),
+                                              1022,
+                                              51,
+                                              "20",
+                                              "руб",
+                                              LocalDate.of(2016, 1, 26),
+                                              110999,
+                                              "Константин Галактионович Константинопольский",
+                                              "Волшебный двурог, или Правдивая история небывалых приключений нашего отважного друга Ильи Алексеевича Комова в неведомой стране, где правят: Догадка, Усидчивость, Находчивость, Терпение, Остроумие и Трудолюбие",
+                                              "resources/vb/img/tmp/book-5.jpg",
+                                              false));
+        likesDislikesInfo = userBooksService.getLikesDislikesInfoBy(login, BookType.EBOOK, "id6");
+        bestSellersBookItems.add(new BookItem("id6",
+                                              "id6",
+                                              3.5,
+                                              likesDislikesInfo.getGrade(),
+                                              likesDislikesInfo.isLikesLink(),
+                                              likesDislikesInfo.isDislikesLink(),
+                                              1022,
+                                              51,
+                                              "Бесплатно",
+                                              "",
+                                              LocalDate.of(2016, 1, 26),
+                                              3,
+                                              "А.А. Иванов",
+                                              "Древняя Русь в картинках",
+                                              "resources/vb/img/tmp/book-3.jpg",
+                                              false));
+        likesDislikesInfo = userBooksService.getLikesDislikesInfoBy(login, BookType.EBOOK, "id7");
+        bestSellersBookItems.add(new BookItem("id7",
+                                              "id7",
+                                              3.9,
+                                              likesDislikesInfo.getGrade(),
+                                              likesDislikesInfo.isLikesLink(),
+                                              likesDislikesInfo.isDislikesLink(),
+                                              1022,
+                                              51,
+                                              "20",
+                                              "руб",
+                                              LocalDate.of(2016, 1, 26),
+                                              40,
+                                              "А.А. Иванов",
+                                              "Древняя Русь в картинках",
+                                              "resources/vb/img/tmp/book-1.jpg",
+                                              false));
+        likesDislikesInfo = userBooksService.getLikesDislikesInfoBy(login, BookType.EBOOK, "id8");
+        bestSellersBookItems.add(new BookItem("id8",
+                                              "id8",
+                                              4.2,
+                                              likesDislikesInfo.getGrade(),
+                                              likesDislikesInfo.isLikesLink(),
+                                              likesDislikesInfo.isDislikesLink(),
+                                              1022,
+                                              51,
+                                              "20",
+                                              "руб",
+                                              LocalDate.of(2016, 1, 26),
+                                              1,
+                                              "А.А. Иванов",
+                                              "Древняя Русь в картинках",
+                                              "resources/vb/img/tmp/book-2.jpg",
+                                              false));
+        likesDislikesInfo = userBooksService.getLikesDislikesInfoBy(login, BookType.EBOOK, "id9");
+        bestSellersBookItems.add(new BookItem("id9",
+                                              "id9",
+                                              4.9,
+                                              likesDislikesInfo.getGrade(),
+                                              likesDislikesInfo.isLikesLink(),
+                                              likesDislikesInfo.isDislikesLink(),
+                                              1022,
+                                              51,
+                                              "Бесплатно",
+                                              "",
+                                              LocalDate.of(2016, 1, 26),
+                                              4,
+                                              "А.А. Иванов",
+                                              "Древняя Русь в картинках",
+                                              "resources/vb/img/tmp/book-3.jpg",
+                                              false));
+        likesDislikesInfo = userBooksService.getLikesDislikesInfoBy(login, BookType.EBOOK, "id10");
+        bestSellersBookItems.add(new BookItem("id10",
+                                              "id10",
+                                              5.2,
+                                              likesDislikesInfo.getGrade(),
+                                              likesDislikesInfo.isLikesLink(),
+                                              likesDislikesInfo.isDislikesLink(),
+                                              1022,
+                                              51,
+                                              "20",
+                                              "руб",
+                                              LocalDate.of(2016, 1, 26),
+                                              9,
+                                              "А.А. Иванов",
+                                              "Древняя Русь в картинках",
+                                              "resources/vb/img/tmp/book-4.jpg",
+                                              false));
+        likesDislikesInfo = userBooksService.getLikesDislikesInfoBy(login, BookType.EBOOK, "id11");
+        bestSellersBookItems.add(new BookItem("id11",
+                                              "id11",
+                                              5.4,
+                                              likesDislikesInfo.getGrade(),
+                                              likesDislikesInfo.isLikesLink(),
+                                              likesDislikesInfo.isDislikesLink(),
+                                              1022,
+                                              51,
+                                              "20",
+                                              "руб",
+                                              LocalDate.of(2016, 1, 26),
+                                              21,
+                                              "А.А. Иванов",
+                                              "Древняя Русь в картинках",
+                                              "resources/vb/img/tmp/book-5.jpg",
+                                              false));
+        likesDislikesInfo = userBooksService.getLikesDislikesInfoBy(login, BookType.EBOOK, "id12");
+        bestSellersBookItems.add(new BookItem("id12",
+                                              "id12",
+                                              7.8,
+                                              likesDislikesInfo.getGrade(),
+                                              likesDislikesInfo.isLikesLink(),
+                                              likesDislikesInfo.isDislikesLink(),
+                                              1022,
+                                              51,
+                                              "Бесплатно",
+                                              "",
+                                              LocalDate.of(2016, 1, 26),
+                                              3,
+                                              "А.А. Иванов",
+                                              "Древняя Русь в картинках",
+                                              "resources/vb/img/tmp/book-3.jpg",
+                                              false));
+        likesDislikesInfo = userBooksService.getLikesDislikesInfoBy(login, BookType.EBOOK, "id13");
+        bestSellersBookItems.add(new BookItem("id13",
+                                              "id13",
+                                              6.2,
+                                              likesDislikesInfo.getGrade(),
+                                              likesDislikesInfo.isLikesLink(),
+                                              likesDislikesInfo.isDislikesLink(),
+                                              1022,
+                                              51,
+                                              "20",
+                                              "руб",
+                                              LocalDate.of(2016, 1, 26),
+                                              1,
+                                              "А.А. Иванов",
+                                              "Древняя Русь в картинках",
+                                              "resources/vb/img/tmp/book-2.jpg",
+                                              false));
+        likesDislikesInfo = userBooksService.getLikesDislikesInfoBy(login, BookType.EBOOK, "id14");
+        bestSellersBookItems.add(new BookItem("id14",
+                                              "id14",
+                                              9.6,
+                                              likesDislikesInfo.getGrade(),
+                                              likesDislikesInfo.isLikesLink(),
+                                              likesDislikesInfo.isDislikesLink(),
+                                              1022,
+                                              51,
+                                              "Бесплатно",
+                                              "",
+                                              LocalDate.of(2016, 1, 26),
+                                              4,
+                                              "А.А. Иванов",
+                                              "Древняя Русь в картинках",
+                                              "resources/vb/img/tmp/book-3.jpg",
+                                              false));
+        likesDislikesInfo = userBooksService.getLikesDislikesInfoBy(login, BookType.EBOOK, "id15");
+        bestSellersBookItems.add(new BookItem("id15",
+                                              "id15",
+                                              8.3,
+                                              likesDislikesInfo.getGrade(),
+                                              likesDislikesInfo.isLikesLink(),
+                                              likesDislikesInfo.isDislikesLink(),
+                                              1022,
+                                              51,
+                                              "20",
+                                              "руб",
+                                              LocalDate.of(2016, 1, 26),
+                                              9,
+                                              "А.А. Иванов",
+                                              "Древняя Русь в картинках",
+                                              "resources/vb/img/tmp/book-4.jpg",
+                                              false));
         model.addAttribute("bestSellersBookItems", bestSellersBookItems);
 
         List<BookItem> newBooksBookItems = new LinkedList<>();
-        newBooksBookItems.add(new BookItem("id1", "id1", 12000,12000, "20", "руб", LocalDate.of(2016, 1, 26), 40, "А.А. Иванов", "Волшебный двурог, или Правдивая история небывалых приключений нашего отважного друга Ильи Алексеевича Комова в неведомой стране, где правят: Догадка, Усидчивость, Находчивость, Терпение, Остроумие и Трудолюбие", "resources/vb/img/tmp/book-1.jpg", false));
-        newBooksBookItems.add(new BookItem("id2", "id2", 1022,51, "20", "руб", LocalDate.of(2016, 1, 26), 1, "А.А. Иванов", "Волшебный двурог, или Правдивая история небывалых приключений нашего отважного друга Ильи Алексеевича Комова в неведомой стране, где правят: Догадка, Усидчивость, Находчивость, Терпение, Остроумие и Трудолюбие", "resources/vb/img/tmp/book-2.jpg", false));
-        newBooksBookItems.add(new BookItem("id3", "id3", 1022,51, "Бесплатно", "", LocalDate.of(2016, 1, 26), 4, "А.А. Иванов", "Волшебный двурог, или Правдивая история небывалых приключений нашего отважного друга Ильи Алексеевича Комова в неведомой стране, где правят: Догадка, Усидчивость, Находчивость, Терпение, Остроумие и Трудолюбие", "resources/vb/img/tmp/book-3.jpg", false));
-        newBooksBookItems.add(new BookItem("id4", "id4", 1022,51, "20", "руб", LocalDate.of(2016, 1, 26), 9, "А.А. Иванов", "Волшебный двурог, или Правдивая история небывалых приключений нашего отважного друга Ильи Алексеевича Комова в неведомой стране, где правят: Догадка, Усидчивость, Находчивость, Терпение, Остроумие и Трудолюбие", "resources/vb/img/tmp/book-4.jpg", false));
-        newBooksBookItems.add(new BookItem("id5", "id5", 1022,51, "20", "руб", LocalDate.of(2016, 1, 26), 110999, "Константин Галактионович Константинопольский", "Волшебный двурог, или Правдивая история небывалых приключений нашего отважного друга Ильи Алексеевича Комова в неведомой стране, где правят: Догадка, Усидчивость, Находчивость, Терпение, Остроумие и Трудолюбие", "resources/vb/img/tmp/book-5.jpg", false));
-        newBooksBookItems.add(new BookItem("id6", "id6", 1022,51, "Бесплатно", "", LocalDate.of(2016, 1, 26), 3, "А.А. Иванов", "Древняя Русь в картинках", "resources/vb/img/tmp/book-3.jpg", false));
-        newBooksBookItems.add(new BookItem("id7", "id7", 1022,51, "20", "руб", LocalDate.of(2016, 1, 26), 40, "А.А. Иванов", "Древняя Русь в картинках", "resources/vb/img/tmp/book-1.jpg", false));
-        newBooksBookItems.add(new BookItem("id8", "id8", 1022,51, "20", "руб", LocalDate.of(2016, 1, 26), 1, "А.А. Иванов", "Древняя Русь в картинках", "resources/vb/img/tmp/book-2.jpg", false));
-        newBooksBookItems.add(new BookItem("id9", "id9", 1022,51, "Бесплатно", "", LocalDate.of(2016, 1, 26), 4, "А.А. Иванов", "Древняя Русь в картинках", "resources/vb/img/tmp/book-3.jpg", false));
-        newBooksBookItems.add(new BookItem("id10", "id10", 1022,51, "20", "руб", LocalDate.of(2016, 1, 26), 9, "А.А. Иванов", "Древняя Русь в картинках", "resources/vb/img/tmp/book-4.jpg", false));
-        newBooksBookItems.add(new BookItem("id11", "id11", 1022,51, "20", "руб", LocalDate.of(2016, 1, 26), 21, "А.А. Иванов", "Древняя Русь в картинках", "resources/vb/img/tmp/book-5.jpg", false));
-        newBooksBookItems.add(new BookItem("id12", "id12", 1022,51, "Бесплатно", "", LocalDate.of(2016, 1, 26), 3, "А.А. Иванов", "Древняя Русь в картинках", "resources/vb/img/tmp/book-3.jpg", false));
-        newBooksBookItems.add(new BookItem("id13", "id13", 1022,51, "20", "руб", LocalDate.of(2016, 1, 26), 1, "А.А. Иванов", "Древняя Русь в картинках", "resources/vb/img/tmp/book-2.jpg", false));
-        newBooksBookItems.add(new BookItem("id14", "id14", 1022,51, "Бесплатно", "", LocalDate.of(2016, 1, 26), 4, "А.А. Иванов", "Древняя Русь в картинках", "resources/vb/img/tmp/book-3.jpg", false));
-        newBooksBookItems.add(new BookItem("id15", "id15", 1022,51, "20", "руб", LocalDate.of(2016, 1, 26), 9, "А.А. Иванов", "Древняя Русь в картинках", "resources/vb/img/tmp/book-4.jpg", false));
+        likesDislikesInfo = userBooksService.getLikesDislikesInfoBy(login, BookType.EBOOK, "id1");
+        newBooksBookItems.add(new BookItem("id1",
+                                           "id1",
+                                           9.8,
+                                           likesDislikesInfo.getGrade(),
+                                           likesDislikesInfo.isLikesLink(),
+                                           likesDislikesInfo.isDislikesLink(),
+                                           12000,
+                                           12000,
+                                           "20",
+                                           "руб",
+                                           LocalDate.of(2016, 1, 26),
+                                           40,
+                                           "А.А. Иванов",
+                                           "Волшебный двурог, или Правдивая история небывалых приключений нашего отважного друга Ильи Алексеевича Комова в неведомой стране, где правят: Догадка, Усидчивость, Находчивость, Терпение, Остроумие и Трудолюбие",
+                                           "resources/vb/img/tmp/book-1.jpg",
+                                           false));
+        likesDislikesInfo = userBooksService.getLikesDislikesInfoBy(login, BookType.EBOOK, "id2");
+        newBooksBookItems.add(new BookItem("id2",
+                                           "id2",
+                                           8.7,
+                                           likesDislikesInfo.getGrade(),
+                                           likesDislikesInfo.isLikesLink(),
+                                           likesDislikesInfo.isDislikesLink(),
+                                           1022,
+                                           51,
+                                           "20",
+                                           "руб",
+                                           LocalDate.of(2016, 1, 26),
+                                           1,
+                                           "А.А. Иванов",
+                                           "Волшебный двурог, или Правдивая история небывалых приключений нашего отважного друга Ильи Алексеевича Комова в неведомой стране, где правят: Догадка, Усидчивость, Находчивость, Терпение, Остроумие и Трудолюбие",
+                                           "resources/vb/img/tmp/book-2.jpg",
+                                           false));
+        likesDislikesInfo = userBooksService.getLikesDislikesInfoBy(login, BookType.EBOOK, "id3");
+        newBooksBookItems.add(new BookItem("id3",
+                                           "id3",
+                                           7.8,
+                                           likesDislikesInfo.getGrade(),
+                                           likesDislikesInfo.isLikesLink(),
+                                           likesDislikesInfo.isDislikesLink(),
+                                           1022,
+                                           51,
+                                           "Бесплатно",
+                                           "",
+                                           LocalDate.of(2016, 1, 26),
+                                           4,
+                                           "А.А. Иванов",
+                                           "Волшебный двурог, или Правдивая история небывалых приключений нашего отважного друга Ильи Алексеевича Комова в неведомой стране, где правят: Догадка, Усидчивость, Находчивость, Терпение, Остроумие и Трудолюбие",
+                                           "resources/vb/img/tmp/book-3.jpg",
+                                           false));
+        likesDislikesInfo = userBooksService.getLikesDislikesInfoBy(login, BookType.EBOOK, "id4");
+        newBooksBookItems.add(new BookItem("id4",
+                                           "id4",
+                                           6.9,
+                                           likesDislikesInfo.getGrade(),
+                                           likesDislikesInfo.isLikesLink(),
+                                           likesDislikesInfo.isDislikesLink(),
+                                           1022,
+                                           51,
+                                           "20",
+                                           "руб",
+                                           LocalDate.of(2016, 1, 26),
+                                           9,
+                                           "А.А. Иванов",
+                                           "Волшебный двурог, или Правдивая история небывалых приключений нашего отважного друга Ильи Алексеевича Комова в неведомой стране, где правят: Догадка, Усидчивость, Находчивость, Терпение, Остроумие и Трудолюбие",
+                                           "resources/vb/img/tmp/book-4.jpg",
+                                           false));
+        likesDislikesInfo = userBooksService.getLikesDislikesInfoBy(login, BookType.EBOOK, "id5");
+        newBooksBookItems.add(new BookItem("id5",
+                                           "id5",
+                                           5.5,
+                                           likesDislikesInfo.getGrade(),
+                                           likesDislikesInfo.isLikesLink(),
+                                           likesDislikesInfo.isDislikesLink(),
+                                           1022,
+                                           51,
+                                           "20",
+                                           "руб",
+                                           LocalDate.of(2016, 1, 26),
+                                           110999,
+                                           "Константин Галактионович Константинопольский",
+                                           "Волшебный двурог, или Правдивая история небывалых приключений нашего отважного друга Ильи Алексеевича Комова в неведомой стране, где правят: Догадка, Усидчивость, Находчивость, Терпение, Остроумие и Трудолюбие",
+                                           "resources/vb/img/tmp/book-5.jpg",
+                                           false));
+        likesDislikesInfo = userBooksService.getLikesDislikesInfoBy(login, BookType.EBOOK, "id6");
+        newBooksBookItems.add(new BookItem("id6",
+                                           "id6",
+                                           6.7,
+                                           likesDislikesInfo.getGrade(),
+                                           likesDislikesInfo.isLikesLink(),
+                                           likesDislikesInfo.isDislikesLink(),
+                                           1022,
+                                           51,
+                                           "Бесплатно",
+                                           "",
+                                           LocalDate.of(2016, 1, 26),
+                                           3,
+                                           "А.А. Иванов",
+                                           "Древняя Русь в картинках",
+                                           "resources/vb/img/tmp/book-3.jpg",
+                                           false));
+        likesDislikesInfo = userBooksService.getLikesDislikesInfoBy(login, BookType.EBOOK, "id7");
+        newBooksBookItems.add(new BookItem("id7",
+                                           "id7",
+                                           8.4,
+                                           likesDislikesInfo.getGrade(),
+                                           likesDislikesInfo.isLikesLink(),
+                                           likesDislikesInfo.isDislikesLink(),
+                                           1022,
+                                           51,
+                                           "20",
+                                           "руб",
+                                           LocalDate.of(2016, 1, 26),
+                                           40,
+                                           "А.А. Иванов",
+                                           "Древняя Русь в картинках",
+                                           "resources/vb/img/tmp/book-1.jpg",
+                                           false));
+        likesDislikesInfo = userBooksService.getLikesDislikesInfoBy(login, BookType.EBOOK, "id8");
+        newBooksBookItems.add(new BookItem("id8",
+                                           "id8",
+                                           5.0,
+                                           likesDislikesInfo.getGrade(),
+                                           likesDislikesInfo.isLikesLink(),
+                                           likesDislikesInfo.isDislikesLink(),
+                                           1022,
+                                           51,
+                                           "20",
+                                           "руб",
+                                           LocalDate.of(2016, 1, 26),
+                                           1,
+                                           "А.А. Иванов",
+                                           "Древняя Русь в картинках",
+                                           "resources/vb/img/tmp/book-2.jpg",
+                                           false));
+        likesDislikesInfo = userBooksService.getLikesDislikesInfoBy(login, BookType.EBOOK, "id9");
+        newBooksBookItems.add(new BookItem("id9",
+                                           "id9",
+                                           3.5,
+                                           likesDislikesInfo.getGrade(),
+                                           likesDislikesInfo.isLikesLink(),
+                                           likesDislikesInfo.isDislikesLink(),
+                                           1022,
+                                           51,
+                                           "Бесплатно",
+                                           "",
+                                           LocalDate.of(2016, 1, 26),
+                                           4,
+                                           "А.А. Иванов",
+                                           "Древняя Русь в картинках",
+                                           "resources/vb/img/tmp/book-3.jpg",
+                                           false));
+        likesDislikesInfo = userBooksService.getLikesDislikesInfoBy(login, BookType.EBOOK, "id10");
+        newBooksBookItems.add(new BookItem("id10",
+                                           "id10",
+                                           4.5,
+                                           likesDislikesInfo.getGrade(),
+                                           likesDislikesInfo.isLikesLink(),
+                                           likesDislikesInfo.isDislikesLink(),
+                                           1022,
+                                           51,
+                                           "20",
+                                           "руб",
+                                           LocalDate.of(2016, 1, 26),
+                                           9,
+                                           "А.А. Иванов",
+                                           "Древняя Русь в картинках",
+                                           "resources/vb/img/tmp/book-4.jpg",
+                                           false));
+        likesDislikesInfo = userBooksService.getLikesDislikesInfoBy(login, BookType.EBOOK, "id11");
+        newBooksBookItems.add(new BookItem("id11",
+                                           "id11",
+                                           3.1,
+                                           likesDislikesInfo.getGrade(),
+                                           likesDislikesInfo.isLikesLink(),
+                                           likesDislikesInfo.isDislikesLink(),
+                                           1022,
+                                           51,
+                                           "20",
+                                           "руб",
+                                           LocalDate.of(2016, 1, 26),
+                                           21,
+                                           "А.А. Иванов",
+                                           "Древняя Русь в картинках",
+                                           "resources/vb/img/tmp/book-5.jpg",
+                                           false));
+        likesDislikesInfo = userBooksService.getLikesDislikesInfoBy(login, BookType.EBOOK, "id12");
+        newBooksBookItems.add(new BookItem("id12",
+                                           "id12",
+                                           2.9,
+                                           likesDislikesInfo.getGrade(),
+                                           likesDislikesInfo.isLikesLink(),
+                                           likesDislikesInfo.isDislikesLink(),
+                                           1022,
+                                           51,
+                                           "Бесплатно",
+                                           "",
+                                           LocalDate.of(2016, 1, 26),
+                                           3,
+                                           "А.А. Иванов",
+                                           "Древняя Русь в картинках",
+                                           "resources/vb/img/tmp/book-3.jpg",
+                                           false));
+        likesDislikesInfo = userBooksService.getLikesDislikesInfoBy(login, BookType.EBOOK, "id13");
+        newBooksBookItems.add(new BookItem("id13",
+                                           "id13",
+                                           2.4,
+                                           likesDislikesInfo.getGrade(),
+                                           likesDislikesInfo.isLikesLink(),
+                                           likesDislikesInfo.isDislikesLink(),
+                                           1022,
+                                           51,
+                                           "20",
+                                           "руб",
+                                           LocalDate.of(2016, 1, 26),
+                                           1,
+                                           "А.А. Иванов",
+                                           "Древняя Русь в картинках",
+                                           "resources/vb/img/tmp/book-2.jpg",
+                                           false));
+        likesDislikesInfo = userBooksService.getLikesDislikesInfoBy(login, BookType.EBOOK, "id14");
+        newBooksBookItems.add(new BookItem("id14",
+                                           "id14",
+                                           2.1,
+                                           likesDislikesInfo.getGrade(),
+                                           likesDislikesInfo.isLikesLink(),
+                                           likesDislikesInfo.isDislikesLink(),
+                                           1022,
+                                           51,
+                                           "Бесплатно",
+                                           "",
+                                           LocalDate.of(2016, 1, 26),
+                                           4,
+                                           "А.А. Иванов",
+                                           "Древняя Русь в картинках",
+                                           "resources/vb/img/tmp/book-3.jpg",
+                                           false));
+        likesDislikesInfo = userBooksService.getLikesDislikesInfoBy(login, BookType.EBOOK, "id15");
+        newBooksBookItems.add(new BookItem("id15",
+                                           "id15",
+                                           1.1,
+                                           likesDislikesInfo.getGrade(),
+                                           likesDislikesInfo.isLikesLink(),
+                                           likesDislikesInfo.isDislikesLink(),
+                                           1022,
+                                           51,
+                                           "20",
+                                           "руб",
+                                           LocalDate.of(2016, 1, 26),
+                                           9,
+                                           "А.А. Иванов",
+                                           "Древняя Русь в картинках",
+                                           "resources/vb/img/tmp/book-4.jpg",
+                                           false));
         model.addAttribute("newBooksBookItems", newBooksBookItems);
 
         List<BookItem> highestRatingBookItems = new LinkedList<>();
-        highestRatingBookItems.add(new BookItem("id1", "id1", 12000,12000, "20", "руб", LocalDate.of(2016, 1, 26), 40, "А.А. Иванов", "Волшебный двурог, или Правдивая история небывалых приключений нашего отважного друга Ильи Алексеевича Комова в неведомой стране, где правят: Догадка, Усидчивость, Находчивость, Терпение, Остроумие и Трудолюбие", "resources/vb/img/tmp/book-1.jpg", false));
-        highestRatingBookItems.add(new BookItem("id2", "id2", 1022,51, "20", "руб", LocalDate.of(2016, 1, 26), 1, "А.А. Иванов", "Волшебный двурог, или Правдивая история небывалых приключений нашего отважного друга Ильи Алексеевича Комова в неведомой стране, где правят: Догадка, Усидчивость, Находчивость, Терпение, Остроумие и Трудолюбие", "resources/vb/img/tmp/book-2.jpg", false));
-        highestRatingBookItems.add(new BookItem("id3", "id3", 1022,51, "Бесплатно", "", LocalDate.of(2016, 1, 26), 4, "А.А. Иванов", "Волшебный двурог, или Правдивая история небывалых приключений нашего отважного друга Ильи Алексеевича Комова в неведомой стране, где правят: Догадка, Усидчивость, Находчивость, Терпение, Остроумие и Трудолюбие", "resources/vb/img/tmp/book-3.jpg", false));
-        highestRatingBookItems.add(new BookItem("id4", "id4", 1022,51, "20", "руб", LocalDate.of(2016, 1, 26), 9, "А.А. Иванов", "Волшебный двурог, или Правдивая история небывалых приключений нашего отважного друга Ильи Алексеевича Комова в неведомой стране, где правят: Догадка, Усидчивость, Находчивость, Терпение, Остроумие и Трудолюбие", "resources/vb/img/tmp/book-4.jpg", false));
-        highestRatingBookItems.add(new BookItem("id5", "id5", 1022,51, "20", "руб", LocalDate.of(2016, 1, 26), 110999, "Константин Галактионович Константинопольский", "Волшебный двурог, или Правдивая история небывалых приключений нашего отважного друга Ильи Алексеевича Комова в неведомой стране, где правят: Догадка, Усидчивость, Находчивость, Терпение, Остроумие и Трудолюбие", "resources/vb/img/tmp/book-5.jpg", false));
-        highestRatingBookItems.add(new BookItem("id6", "id6", 1022,51, "Бесплатно", "", LocalDate.of(2016, 1, 26), 3, "А.А. Иванов", "Древняя Русь в картинках", "resources/vb/img/tmp/book-3.jpg", false));
-        highestRatingBookItems.add(new BookItem("id7", "id7", 1022,51, "20", "руб", LocalDate.of(2016, 1, 26), 40, "А.А. Иванов", "Древняя Русь в картинках", "resources/vb/img/tmp/book-1.jpg", false));
-        highestRatingBookItems.add(new BookItem("id8", "id8", 1022,51, "20", "руб", LocalDate.of(2016, 1, 26), 1, "А.А. Иванов", "Древняя Русь в картинках", "resources/vb/img/tmp/book-2.jpg", false));
-        highestRatingBookItems.add(new BookItem("id9", "id9", 1022,51, "Бесплатно", "", LocalDate.of(2016, 1, 26), 4, "А.А. Иванов", "Древняя Русь в картинках", "resources/vb/img/tmp/book-3.jpg", false));
-        highestRatingBookItems.add(new BookItem("id10", "id10", 1022,51, "20", "руб", LocalDate.of(2016, 1, 26), 9, "А.А. Иванов", "Древняя Русь в картинках", "resources/vb/img/tmp/book-4.jpg", false));
-        highestRatingBookItems.add(new BookItem("id11", "id11", 1022,51, "20", "руб", LocalDate.of(2016, 1, 26), 21, "А.А. Иванов", "Древняя Русь в картинках", "resources/vb/img/tmp/book-5.jpg", false));
-        highestRatingBookItems.add(new BookItem("id12", "id12", 1022,51, "Бесплатно", "", LocalDate.of(2016, 1, 26), 3, "А.А. Иванов", "Древняя Русь в картинках", "resources/vb/img/tmp/book-3.jpg", false));
-        highestRatingBookItems.add(new BookItem("id13", "id13", 1022,51, "20", "руб", LocalDate.of(2016, 1, 26), 1, "А.А. Иванов", "Древняя Русь в картинках", "resources/vb/img/tmp/book-2.jpg", false));
-        highestRatingBookItems.add(new BookItem("id14", "id14", 1022,51, "Бесплатно", "", LocalDate.of(2016, 1, 26), 4, "А.А. Иванов", "Древняя Русь в картинках", "resources/vb/img/tmp/book-3.jpg", false));
-        highestRatingBookItems.add(new BookItem("id15", "id15", 1022,51, "20", "руб", LocalDate.of(2016, 1, 26), 9, "А.А. Иванов", "Древняя Русь в картинках", "resources/vb/img/tmp/book-4.jpg", false));
+        likesDislikesInfo = userBooksService.getLikesDislikesInfoBy(login, BookType.EBOOK, "id1");
+        highestRatingBookItems.add(new BookItem("id1",
+                                                "id1",
+                                                8.9,
+                                                likesDislikesInfo.getGrade(),
+                                                likesDislikesInfo.isLikesLink(),
+                                                likesDislikesInfo.isDislikesLink(),
+                                                12000,
+                                                12000,
+                                                "20",
+                                                "руб",
+                                                LocalDate.of(2016, 1, 26),
+                                                40,
+                                                "А.А. Иванов",
+                                                "Волшебный двурог, или Правдивая история небывалых приключений нашего отважного друга Ильи Алексеевича Комова в неведомой стране, где правят: Догадка, Усидчивость, Находчивость, Терпение, Остроумие и Трудолюбие",
+                                                "resources/vb/img/tmp/book-1.jpg",
+                                                false));
+        likesDislikesInfo = userBooksService.getLikesDislikesInfoBy(login, BookType.EBOOK, "id2");
+        highestRatingBookItems.add(new BookItem("id2",
+                                                "id2",
+                                                8.5,
+                                                likesDislikesInfo.getGrade(),
+                                                likesDislikesInfo.isLikesLink(),
+                                                likesDislikesInfo.isDislikesLink(),
+                                                1022,
+                                                51,
+                                                "20",
+                                                "руб",
+                                                LocalDate.of(2016, 1, 26),
+                                                1,
+                                                "А.А. Иванов",
+                                                "Волшебный двурог, или Правдивая история небывалых приключений нашего отважного друга Ильи Алексеевича Комова в неведомой стране, где правят: Догадка, Усидчивость, Находчивость, Терпение, Остроумие и Трудолюбие",
+                                                "resources/vb/img/tmp/book-2.jpg",
+                                                false));
+        likesDislikesInfo = userBooksService.getLikesDislikesInfoBy(login, BookType.EBOOK, "id3");
+        highestRatingBookItems.add(new BookItem("id3",
+                                                "id3",
+                                                10,
+                                                likesDislikesInfo.getGrade(),
+                                                likesDislikesInfo.isLikesLink(),
+                                                likesDislikesInfo.isDislikesLink(),
+                                                1022,
+                                                51,
+                                                "Бесплатно",
+                                                "",
+                                                LocalDate.of(2016, 1, 26),
+                                                4,
+                                                "А.А. Иванов",
+                                                "Волшебный двурог, или Правдивая история небывалых приключений нашего отважного друга Ильи Алексеевича Комова в неведомой стране, где правят: Догадка, Усидчивость, Находчивость, Терпение, Остроумие и Трудолюбие",
+                                                "resources/vb/img/tmp/book-3.jpg",
+                                                false));
+        likesDislikesInfo = userBooksService.getLikesDislikesInfoBy(login, BookType.EBOOK, "id4");
+        highestRatingBookItems.add(new BookItem("id4",
+                                                "id4",
+                                                9.4,
+                                                likesDislikesInfo.getGrade(),
+                                                likesDislikesInfo.isLikesLink(),
+                                                likesDislikesInfo.isDislikesLink(),
+                                                1022,
+                                                51,
+                                                "20",
+                                                "руб",
+                                                LocalDate.of(2016, 1, 26),
+                                                9,
+                                                "А.А. Иванов", "Волшебный двурог, или Правдивая история небывалых приключений нашего отважного друга Ильи Алексеевича Комова в неведомой стране, где правят: Догадка, Усидчивость, Находчивость, Терпение, Остроумие и Трудолюбие",
+                                                "resources/vb/img/tmp/book-4.jpg",
+                                                false));
+        likesDislikesInfo = userBooksService.getLikesDislikesInfoBy(login, BookType.EBOOK, "id5");
+        highestRatingBookItems.add(new BookItem("id5",
+                                                "id5",
+                                                6.7,
+                                                likesDislikesInfo.getGrade(),
+                                                likesDislikesInfo.isLikesLink(),
+                                                likesDislikesInfo.isDislikesLink(),
+                                                1022,
+                                                51,
+                                                "20",
+                                                "руб",
+                                                LocalDate.of(2016, 1, 26),
+                                                110999,
+                                                "Константин Галактионович Константинопольский",
+                                                "Волшебный двурог, или Правдивая история небывалых приключений нашего отважного друга Ильи Алексеевича Комова в неведомой стране, где правят: Догадка, Усидчивость, Находчивость, Терпение, Остроумие и Трудолюбие",
+                                                "resources/vb/img/tmp/book-5.jpg",
+                                                false));
+        likesDislikesInfo = userBooksService.getLikesDislikesInfoBy(login, BookType.EBOOK, "id6");
+        highestRatingBookItems.add(new BookItem("id6",
+                                                "id6",
+                                                7.8,
+                                                likesDislikesInfo.getGrade(),
+                                                likesDislikesInfo.isLikesLink(),
+                                                likesDislikesInfo.isDislikesLink(),
+                                                1022,
+                                                51,
+                                                "Бесплатно",
+                                                "",
+                                                LocalDate.of(2016, 1, 26),
+                                                3,
+                                                "А.А. Иванов",
+                                                "Древняя Русь в картинках",
+                                                "resources/vb/img/tmp/book-3.jpg",
+                                                false));
+        likesDislikesInfo = userBooksService.getLikesDislikesInfoBy(login, BookType.EBOOK, "id7");
+        highestRatingBookItems.add(new BookItem("id7",
+                                                "id7",
+                                                5.6,
+                                                likesDislikesInfo.getGrade(),
+                                                likesDislikesInfo.isLikesLink(),
+                                                likesDislikesInfo.isDislikesLink(),
+                                                1022,
+                                                51,
+                                                "20",
+                                                "руб",
+                                                LocalDate.of(2016, 1, 26),
+                                                40,
+                                                "А.А. Иванов",
+                                                "Древняя Русь в картинках",
+                                                "resources/vb/img/tmp/book-1.jpg",
+                                                false));
+        likesDislikesInfo = userBooksService.getLikesDislikesInfoBy(login, BookType.EBOOK, "id8");
+        highestRatingBookItems.add(new BookItem("id8",
+                                                "id8",
+                                                5.9,
+                                                likesDislikesInfo.getGrade(),
+                                                likesDislikesInfo.isLikesLink(),
+                                                likesDislikesInfo.isDislikesLink(),
+                                                1022,
+                                                51,
+                                                "20",
+                                                "руб",
+                                                LocalDate.of(2016, 1, 26),
+                                                1,
+                                                "А.А. Иванов",
+                                                "Древняя Русь в картинках",
+                                                "resources/vb/img/tmp/book-2.jpg",
+                                                false));
+        likesDislikesInfo = userBooksService.getLikesDislikesInfoBy(login, BookType.EBOOK, "id9");
+        highestRatingBookItems.add(new BookItem("id9",
+                                                "id9",
+                                                4.4,
+                                                likesDislikesInfo.getGrade(),
+                                                likesDislikesInfo.isLikesLink(),
+                                                likesDislikesInfo.isDislikesLink(),
+                                                1022,
+                                                51,
+                                                "Бесплатно",
+                                                "",
+                                                LocalDate.of(2016, 1, 26),
+                                                4,
+                                                "А.А. Иванов",
+                                                "Древняя Русь в картинках",
+                                                "resources/vb/img/tmp/book-3.jpg",
+                                                false));
+        likesDislikesInfo = userBooksService.getLikesDislikesInfoBy(login, BookType.EBOOK, "id10");
+        highestRatingBookItems.add(new BookItem("id10",
+                                                "id10",
+                                                3.1,
+                                                likesDislikesInfo.getGrade(),
+                                                likesDislikesInfo.isLikesLink(),
+                                                likesDislikesInfo.isDislikesLink(),
+                                                1022,
+                                                51,
+                                                "20",
+                                                "руб",
+                                                LocalDate.of(2016, 1, 26),
+                                                9,
+                                                "А.А. Иванов",
+                                                "Древняя Русь в картинках",
+                                                "resources/vb/img/tmp/book-4.jpg",
+                                                false));
+        likesDislikesInfo = userBooksService.getLikesDislikesInfoBy(login, BookType.EBOOK, "id11");
+        highestRatingBookItems.add(new BookItem("id11",
+                                                "id11",
+                                                3.8,
+                                                likesDislikesInfo.getGrade(),
+                                                likesDislikesInfo.isLikesLink(),
+                                                likesDislikesInfo.isDislikesLink(),
+                                                1022,
+                                                51,
+                                                "20",
+                                                "руб",
+                                                LocalDate.of(2016, 1, 26),
+                                                21,
+                                                "А.А. Иванов",
+                                                "Древняя Русь в картинках",
+                                                "resources/vb/img/tmp/book-5.jpg",
+                                                false));
+        likesDislikesInfo = userBooksService.getLikesDislikesInfoBy(login, BookType.EBOOK, "id12");
+        highestRatingBookItems.add(new BookItem("id12",
+                                                "id12",
+                                                2.9,
+                                                likesDislikesInfo.getGrade(),
+                                                likesDislikesInfo.isLikesLink(),
+                                                likesDislikesInfo.isDislikesLink(),
+                                                1022,
+                                                51,
+                                                "Бесплатно",
+                                                "",
+                                                LocalDate.of(2016, 1, 26),
+                                                3,
+                                                "А.А. Иванов",
+                                                "Древняя Русь в картинках",
+                                                "resources/vb/img/tmp/book-3.jpg",
+                                                false));
+        likesDislikesInfo = userBooksService.getLikesDislikesInfoBy(login, BookType.EBOOK, "id13");
+        highestRatingBookItems.add(new BookItem("id13",
+                                                "id13",
+                                                2.7,
+                                                likesDislikesInfo.getGrade(),
+                                                likesDislikesInfo.isLikesLink(),
+                                                likesDislikesInfo.isDislikesLink(),
+                                                1022,
+                                                51,
+                                                "20",
+                                                "руб",
+                                                LocalDate.of(2016, 1, 26),
+                                                1,
+                                                "А.А. Иванов",
+                                                "Древняя Русь в картинках",
+                                                "resources/vb/img/tmp/book-2.jpg",
+                                                false));
+        likesDislikesInfo = userBooksService.getLikesDislikesInfoBy(login, BookType.EBOOK, "id14");
+        highestRatingBookItems.add(new BookItem("id14",
+                                                "id14",
+                                                1.9,
+                                                likesDislikesInfo.getGrade(),
+                                                likesDislikesInfo.isLikesLink(),
+                                                likesDislikesInfo.isDislikesLink(),
+                                                1022,
+                                                51,
+                                                "Бесплатно",
+                                                "",
+                                                LocalDate.of(2016, 1, 26),
+                                                4,
+                                                "А.А. Иванов",
+                                                "Древняя Русь в картинках",
+                                                "resources/vb/img/tmp/book-3.jpg",
+                                                false));
+        likesDislikesInfo = userBooksService.getLikesDislikesInfoBy(login, BookType.EBOOK, "id15");
+        highestRatingBookItems.add(new BookItem("id15",
+                                                "id15",
+                                                0.3,
+                                                likesDislikesInfo.getGrade(),
+                                                likesDislikesInfo.isLikesLink(),
+                                                likesDislikesInfo.isDislikesLink(),
+                                                1022,
+                                                51,
+                                                "20",
+                                                "руб",
+                                                LocalDate.of(2016, 1, 26),
+                                                9,
+                                                "А.А. Иванов",
+                                                "Древняя Русь в картинках",
+                                                "resources/vb/img/tmp/book-4.jpg",
+                                                false));
         model.addAttribute("highestRatingBookItems", highestRatingBookItems);
 
         List<String> slideUrls = new LinkedList<>();
@@ -177,6 +914,7 @@ public class VerybookRootController {
         authorSummaries.add(new AuthorSummaryItem("Adam Moran Thompson", 8, "resources/vb/img/tmp/photo-5.jpg", 1022, 51));
         authorSummaries.add(new AuthorSummaryItem("Сунь Муй Ван", 8, "resources/vb/img/tmp/photo-6.jpg", 1022, 51));
         model.addAttribute("authorSummaries", authorSummaries);
+        // <<<
 
         return "vb/index";
     }

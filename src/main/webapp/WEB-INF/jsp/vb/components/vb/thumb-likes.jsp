@@ -6,10 +6,14 @@
 
 <!-- START (Пальчики-лайкчики) -->
 <div class="likes">
-    <a class="like" href="${currentURI}#">
+    <a class="like ${likesLink ? 'clickable' : ''} ${likesDislikesGrade == true ? 'clicked' : ''}"
+       data-book-type="${likesBookType}"
+       data-book-id="${likesBookId}">
         ${likesCount}
     </a>
-    <a class="dislike" href="${currentURI}#">
+    <a class="dislike ${dislikesLink ? 'clickable' : ''} ${likesDislikesGrade == false ? 'clicked' : ''}"
+       data-book-type="${likesBookType}"
+       data-book-id="${likesBookId}">
         ${dislikesCount}
     </a>
 </div>

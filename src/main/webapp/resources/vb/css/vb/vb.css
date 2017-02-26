@@ -2471,6 +2471,14 @@ div.likes a {
     /*border: 1px solid black;*/
 }
 
+div.likes a.clicked {
+    font-weight: bold;
+}
+
+div.likes a.clickable {
+    cursor: pointer;
+}
+
 div.likes .like {
     margin-right: 15px;
 }
