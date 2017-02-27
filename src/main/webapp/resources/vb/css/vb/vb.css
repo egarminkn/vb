@@ -1354,7 +1354,7 @@ ul.nav > li.nav-item > a {
  * Общая настройка
  */
 ul.rating-filter,
-ul.rating-filter > li.rating-filter-group > ul.radios {
+ul.rating-filter > li.rating-filter-group ul.checkboxes {
     margin: 0;
     padding: 0;
     list-style: none;
@@ -1387,7 +1387,7 @@ ul.rating-filter > li.rating-filter-header > h2 {
     border-bottom: 1px solid #ccbd54;
 }
 
-ul.rating-filter > li.rating-filter-group > h3 {
+ul.rating-filter > li.rating-filter-group h3 {
     display: inline;
     font-family: Tahoma, sans-serif;
     font-size: 16px;
@@ -1400,11 +1400,12 @@ ul.rating-filter > li.rating-filter-group > h3 {
 /*
  * Пункты категорий
  */
-ul.rating-filter > li.rating-filter-group > ul.radios > label > input[type="radio"] {
+ul.rating-filter > li.rating-filter-group ul.checkboxes input[type="checkbox"] {
     display: none;
 }
 
-ul.rating-filter > li.rating-filter-group > ul.radios > label > li.radio {
+ul.rating-filter > li.rating-filter-group ul.checkboxes > li.checkbox > label > span {
+    display: block;
     font-family: Tahoma, sans-serif;
     font-size: 12px;
     color: #657392;
@@ -1414,8 +1415,59 @@ ul.rating-filter > li.rating-filter-group > ul.radios > label > li.radio {
     padding: 5px;
 }
 
-ul.rating-filter > li.rating-filter-group > ul.radios > label > input[type="radio"]:checked + li.radio {
+ul.rating-filter > li.rating-filter-group ul.checkboxes input[type="checkbox"]:checked + span {
     background-color: #d3be4a;
+}
+
+/*
+ * Крестик сброса субфильтра
+ */
+.rating-filter-subform-reset-btn {
+    display: none;
+    /*display: inline-block;*/
+    position: relative;
+    height: 12px;
+    width: 12px;
+    cursor: pointer;
+    transform: rotate(45deg);
+    background-color: transparent;
+    outline: none;
+    border-style: none;
+    /*border: 1px solid black;*/
+}
+
+.rating-filter-subform-reset-btn::before,
+.rating-filter-subform-reset-btn::after {
+    content: '';
+    display: block;
+    position: absolute;
+    background-color: #ccc;
+}
+
+.rating-filter-subform-reset-btn::before {
+    height: 12px;
+    width: 2px;
+    top: 0;
+    left: 5px;
+}
+
+.rating-filter-subform-reset-btn::after {
+    height: 2px;
+    width: 12px;
+    top: 5px;
+    left: 0;
+}
+
+/*
+ * Кнопки "Показать" и "Сбросить фильтр"
+ */
+.rating-filter-form-btn {
+    margin-top: 5px;
+}
+
+.rating-filter-form-btn.rating-filter-form-reset-btn {
+    display: none;
+    /*display: inline-block;*/
 }
 
 /**

@@ -15,7 +15,7 @@ main.author-rating {
 main.author-rating .columns {
     display: flex;
     flex-direction: row;
-    justify-content: space-around;
+    justify-content: space-between;
 }
 
 /***
@@ -45,13 +45,14 @@ main.author-rating .column {
 }
 
 main.author-rating .column-1 {
-    flex-basis: 200px;
-    margin-left: 25px;
+    flex-basis: 215px;
+    margin-left: 2%;
 }
 
 main.author-rating .column-2 {
-    flex-basis: 1000px;
-    margin-right: 25px;
+    flex-basis: 950px;
+    margin-left: 5px;
+    margin-right: 2%;
 }
 
 /**
@@ -103,7 +104,7 @@ main.author-rating .author {
     justify-content: space-between;
     border: 1px solid #bdbdbd;
     border-radius: 5px;
-    padding: 30px;
+    padding: 30px 3%;
     margin-top: 25px;
     position: relative;
 }
@@ -147,7 +148,7 @@ main.author-rating .author .about {
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
-    margin-left: 30px;
+    margin-left: 3%;
 }
 
 /*
@@ -161,7 +162,7 @@ main.author-rating .author .about .fullname-rating {
 }
 
 main.author-rating .author .about .fullname-rating > div {
-    margin-right: 30px;
+    margin-right: 4%;
     /*border: 1px solid black;*/
 }
 

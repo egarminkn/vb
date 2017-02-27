@@ -6,10 +6,7 @@
  */
 function isIE() {
     var browserDetect = navigator.userAgent.toLowerCase();
-    if (browserDetect.indexOf("trident") > -1) {
-        return true;
-    }
-    return false;
+    return browserDetect.indexOf("trident") > -1;
 }
 
 /**
@@ -272,12 +269,47 @@ $(function () {
     /*
      * Боковой баннер-фильтр "Выберите категорию"
      */
-    $('ul.rating-filter > li.rating-filter-group > ul.radios > label > li.radio').on('click', function (event) {
-        var radio = $(this).prev('input[type="radio"]');
-        if (radio.is(':checked')) {
-            radio.prop('checked', false);
-            event.preventDefault();
+    $('.rating-filter-form .rating-filter-subform input[type="checkbox"]').on('click', function () {
+        var subform = $(this).closest('.rating-filter-subform');
+        var subformResetBtn = subform.find('[type="reset"]');
+        subformResetBtn.css('display', 'none');
+        subform.find('input[type="checkbox"]').each(function () {
+            if ($(this).is(':checked')) {
+                subformResetBtn.css('display', 'inline-block');
+                return false; // т.е. break
+            }
+        });
+
+        var form = $(this).closest('.rating-filter-form');
+        var formResetBtn = form.find('.rating-filter-form-reset-btn');
+        formResetBtn.css('display', 'none');
+        form.find('.rating-filter-subform-reset-btn').each(function () {
+            if ($(this).css('display') === 'inline-block') {
+                formResetBtn.css('display', 'inline-block');
+                return false; // т.е. break
+            }
+        });
+    });
+    $('.rating-filter-form .rating-filter-subform').on('reset', function () {
+        $(this).find('[type="reset"]').css('display', 'none');
+
+        var form = $(this).closest('.rating-filter-form');
+        var formResetBtn = form.find('.rating-filter-form-reset-btn');
+        if (formResetBtn.css('display') === 'inline-block') {
+            formResetBtn.css('display', 'none');
+            form.find('.rating-filter-subform-reset-btn').each(function () {
+                if ($(this).css('display') === 'inline-block') {
+                    formResetBtn.css('display', 'inline-block');
+                    return false; // т.е. break
+                }
+            });
         }
+    });
+    $('.rating-filter-form .rating-filter-form-reset-btn').on('click', function () {
+        var form = $(this).closest('.rating-filter-form');
+        form.find('.rating-filter-subform').each(function () {
+            $(this).trigger('reset');
+        });
     });
 
     /*
