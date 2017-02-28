@@ -6,7 +6,7 @@
 
 <!-- START (Кнопка "Показать еще") -->
 <div class="show-more">
-    <a class="btn" href="${currentURI}#">
+    <a class="btn">
         Показать еще
     </a>
 </div>

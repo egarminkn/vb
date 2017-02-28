@@ -20,7 +20,8 @@
                 <fmt:setLocale value="ru_RU" scope="session" />
             где scope="session" - обязательное условие.
         --%>
-        <fmt:formatNumber pattern="#,#0.0" value="${authorRatingNumber}"/>
+        <%--<fmt:formatNumber pattern="#,#0.0" value="${authorRatingNumber}"/>--%>
+        ${authorRatingNumber}
     </div>
 </div>
 <!-- END (3 звезды рейтинга автора) -->

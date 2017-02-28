@@ -2,6 +2,22 @@
  ** Вспомогательные методы
  **/
 /**
+ * Коррекция отображения звезд рейтинга автора
+ * @param stars
+ */
+function correctRating3Stars(stars) {
+    var authorRatingNumber = parseFloat(stars.find('.rating-number').html().replace(',', '.'));
+
+    stars.find('.rating-number').html(authorRatingNumber.toLocaleString({
+        minimumFractionDigits: 1,
+        maximumFractionDigits: 1
+    }));
+
+    var ratingNumberPercent = authorRatingNumber * 100 / 5;
+    stars.find('.rating-stars > .colorant').outerWidth(ratingNumberPercent + '%');
+}
+
+/**
  * Идентификация браузера - не IE ли это?
  */
 function isIE() {
@@ -316,8 +332,7 @@ $(function () {
      * Закраска 3 звезд рейтингов авторов (максимальный рейтинг = 5)
      */
     $('.rating-3-stars').each(function () {
-        var ratingNumberPercent = parseFloat($(this).find('.rating-number').html().replace(',', '.')) * 100 / 5;
-        $(this).find('.rating-stars > .colorant').outerWidth(ratingNumberPercent + '%');
+        correctRating3Stars($(this));
     });
 
     /*

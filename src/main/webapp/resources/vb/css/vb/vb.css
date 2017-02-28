@@ -799,6 +799,38 @@ header::after {
  *** Общее
  ***/
 /**
+ ** Плагин jQuery - noty
+ **/
+.noty-message {
+    font-family: Tahoma, sans-serif;
+    text-align: left;
+    padding: 10px;
+}
+
+.noty-header {
+    text-align: center;
+    font-weight: normal;
+    font-size: 20px;
+    margin: 0 0 10px 0;
+    padding: 0;
+    border-bottom: 1px solid white;
+}
+
+.noty-cause {
+    font-weight: normal;
+    font-size: 18px;
+    margin: 0 0 10px 0;
+    padding: 0;
+}
+
+.noty-content {
+    font-weight: normal;
+    font-size: 16px;
+    margin: 0;
+    padding: 0;
+}
+
+/**
  ** Модальное окно
  **/
 /*

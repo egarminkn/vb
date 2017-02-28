@@ -5,9 +5,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 
-import org.verygroup.verybook.BookGenre;
 import org.verygroup.verybook.RatingCategory;
-import org.verygroup.verybook.dto.authorrating.AuthorItem;
 import org.verygroup.verybook.dto.authorrating.RatingItem;
 import org.verygroup.verybook.web.util.*;
 
@@ -37,12 +35,6 @@ public class AuthorRatingController {
 //        specAudiobookUtil.setModel(request, currentUser, model);
 
         // >>> FIXME заглушка. Нужно сделать выборку из БД
-        List<AuthorItem> authorItems = new LinkedList<>();
-        authorItems.add(new AuthorItem("id1", 1.3, "resources/vb/img/tmp/photo-1.jpg", "Александр Константинопольский", "I draw pictures and I make colouring books! Welcome to my world. Tumble down the rabbit hole and find yourself in my inky black and white Wonderland... I'm an illustrator and ink evangelist who prefers pens and pencils to pixels. I create intricate, hand drawn illustrations predominately, although not exclusively, in black and white. My creativity is cultivated by a curious imagination and a delight in the fantastic. Much of my work has roots in the flora and fauna that surrounded me growing up on my parent's fish farm in rural Scotland.", 1, 17, BookGenre.MILITARY, BookGenre.DETECTIVE, BookGenre.ADVENTURES));
-        authorItems.add(new AuthorItem("id2", 2.4, "resources/vb/img/tmp/photo-1.jpg", "Александр Константинопольский", "I draw pictures and I make colouring books! Welcome to my world. Tumble down the rabbit hole and find yourself in my inky black and white Wonderland... I'm an illustrator and ink evangelist who prefers pens and pencils to pixels. I create intricate, hand drawn illustrations predominately, although not exclusively, in black and white. My creativity is cultivated by a curious imagination and a delight in the fantastic. Much of my work has roots in the flora and fauna that surrounded me growing up on my parent's fish farm in rural Scotland.", 4, 21, BookGenre.MILITARY, BookGenre.DETECTIVE, BookGenre.ADVENTURES));
-        authorItems.add(new AuthorItem("id3", 4.5, "resources/vb/img/tmp/photo-1.jpg", "Александр Константинопольский", "I draw pictures and I make colouring books! Welcome to my world. Tumble down the rabbit hole and find yourself in my inky black and white Wonderland... I'm an illustrator and ink evangelist who prefers pens and pencils to pixels. I create intricate, hand drawn illustrations predominately, although not exclusively, in black and white. My creativity is cultivated by a curious imagination and a delight in the fantastic. Much of my work has roots in the flora and fauna that surrounded me growing up on my parent's fish farm in rural Scotland.", 7, 43, BookGenre.MILITARY, BookGenre.DETECTIVE, BookGenre.ADVENTURES));
-        model.addAttribute("authorItems", authorItems);
-
         List<RatingItem> ratingItems = new LinkedList<>();
         ratingItems.add(new RatingItem(RatingCategory.EDUCATIONAL));
         ratingItems.add(new RatingItem(RatingCategory.CHILDREN));

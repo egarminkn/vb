@@ -19,6 +19,7 @@
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
 
         <tomcat.version>8.5.9</tomcat.version>
+        <jsp.version>2.0</jsp.version>
         <jstl.version>1.2</jstl.version>
         <el-api.version>2.2.5</el-api.version>
 
@@ -30,6 +31,9 @@
 
         <!-- Apache HttpClient -->
         <httpclient.version>4.5.3</httpclient.version>
+
+        <!-- Apache Commons Lang -->
+        <apache-commons.version>3.5</apache-commons.version>
 
         <!-- Spring Social -->
         <spring-social.version>1.1.4.RELEASE</spring-social.version>
@@ -75,6 +79,32 @@
         <finalName>verybook</finalName>
         <defaultGoal>package</defaultGoal>
         <plugins>
+            <plugin>
+                <!-- Download sources -->
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-dependency-plugin</artifactId>
+                <version>3.0.0</version>
+                <executions>
+                    <execution>
+                        <goals>
+                            <goal>sources</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+            <plugin>
+                <!-- Download javadocs -->
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-javadoc-plugin</artifactId>
+                <version>2.10.4</version>
+                <executions>
+                    <execution>
+                        <goals>
+                            <goal>javadoc</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>
@@ -167,6 +197,13 @@
     </build>
 
     <dependencies>
+        <!-- Apache Commons Lang -->
+        <dependency>
+            <groupId>org.apache.commons</groupId>
+            <artifactId>commons-lang3</artifactId>
+            <version>${apache-commons.version}</version>
+        </dependency>
+
         <!-- Logging with SLF4J & LogBack -->
         <dependency>
             <groupId>org.slf4j</groupId>
@@ -473,6 +510,12 @@
             <groupId>org.apache.tomcat</groupId>
             <artifactId>tomcat-servlet-api</artifactId>
             <version>${tomcat.version}</version>
+            <scope>provided</scope>
+        </dependency>
+        <dependency>
+            <groupId>javax.servlet</groupId>
+            <artifactId>jsp-api</artifactId>
+            <version>${jsp.version}</version>
             <scope>provided</scope>
         </dependency>
         <dependency>

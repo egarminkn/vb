@@ -1,5 +1,6 @@
 package org.verygroup.verybook.dto.authorrating;
 
+import java.util.HashSet;
 import java.util.EnumSet;
 import java.util.Set;
 
@@ -16,15 +17,11 @@ public class AuthorItem {
     private String authorDescription;
     private int authorBooksCount;
     private int authorBookReviewsCount;
-    private Set<BookGenre> authorGenres;
+    private Set<String> authorGenres;
 
     /*
      * Конструкторы
      */
-    public AuthorItem() {
-        // нужен исключительно для задания типа этого класса в jsp через jsp:useBean
-    }
-
     public AuthorItem(String authorId, double authorRatingNumber, String authorPhotoUrl, String authorName, String authorDescription, int authorBooksCount, int authorBookReviewsCount, BookGenre authorGenre, BookGenre... authorGenres) {
         this.authorId = authorId;
         this.authorRatingNumber = authorRatingNumber;
@@ -33,7 +30,10 @@ public class AuthorItem {
         this.authorDescription = authorDescription;
         this.authorBooksCount = authorBooksCount;
         this.authorBookReviewsCount = authorBookReviewsCount;
-        this.authorGenres = EnumSet.of(authorGenre, authorGenres);
+        this.authorGenres = new HashSet<>();
+        for (BookGenre genre : EnumSet.of(authorGenre, authorGenres)) {
+            this.authorGenres.add(genre.getGenreName());
+        }
     }
 
     /*
@@ -67,7 +67,7 @@ public class AuthorItem {
         return authorBookReviewsCount;
     }
 
-    public Set<BookGenre> getAuthorGenres() {
+    public Set<String> getAuthorGenres() {
         return authorGenres;
     }
 
@@ -102,7 +102,7 @@ public class AuthorItem {
         this.authorBookReviewsCount = authorBookReviewsCount;
     }
 
-    public void setAuthorGenres(Set<BookGenre> authorGenres) {
+    public void setAuthorGenres(Set<String> authorGenres) {
         this.authorGenres = authorGenres;
     }
 }

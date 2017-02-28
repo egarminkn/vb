@@ -4,8 +4,6 @@
 <%@taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
 <%@taglib prefix="sec" uri="http://www.springframework.org/security/tags" %>
 
-<%@page import="org.verygroup.verybook.repository.SearchQueryDictionary" %>
-
 <div class="item author" id="${authorId}">
     <div class="serial-number">
         <span class="text">${authorPosition}</span>
@@ -26,15 +24,7 @@
         </div>
         <div class="genres">
             Жанры:
-            <c:set var="authorGenresLastIndex" value="${authorGenres.size() - 1}"/>
-            <c:forEach var="authorGenre" items="${authorGenres}" varStatus="loop">
-                <a href='${"search-book?search-query="
-                                .concat(SearchQueryDictionary.GENRE)
-                                .concat(": \"")
-                                .concat(authorGenre.getGenreName())
-                                .concat("\"")}'>
-                    ${authorGenre.getGenreName()}</a>${loop.index != authorGenresLastIndex ? ',' : ''}
-            </c:forEach>
+            ${authorGenres}
         </div>
         <div class="description">
             ${authorDescription}
@@ -61,6 +51,8 @@
 <script type="text/javascript">
     $(function () {
         var author = $('#${authorId}');
+
+        correctRating3Stars(author.find('.rating-3-stars'));
 
         var authorBooksCount = parseInt(author.find('.published .books-count').html());
         author.find('.published .published-ending').html(getCorrectEnding(authorBooksCount, 'а', 'о', 'о'));

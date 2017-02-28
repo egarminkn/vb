@@ -17,12 +17,13 @@
             <li class="rating-filter-group">
                 <form class="rating-filter-subform">
                     <h3>${ratingItem.category.value}</h3>
+                    <input type="hidden" name="category" value="${ratingItem.category}">
                     <button type="reset" class="rating-filter-subform-reset-btn" title="Сбросить фильтр"></button>
                     <ul class="checkboxes">
                         <c:forEach var="subcategory" items="${ratingItem.subcategories}" varStatus="loopSubcategory">
                             <li class="checkbox">
                                 <label>
-                                    <input type="checkbox" name="rating-category-${loopCategory.index + 1}-subcategory-${loopSubcategory.index + 1}">
+                                    <input type="checkbox" name="subcategories" value="${subcategory}">
                                     <span>
                                         ${subcategory.value}
                                     </span>
