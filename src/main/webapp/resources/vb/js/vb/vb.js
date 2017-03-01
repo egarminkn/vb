@@ -306,7 +306,13 @@ $(function () {
             }
         });
     });
-    $('.rating-filter-form .rating-filter-subform').on('reset', function () {
+    $('.rating-filter-form .rating-filter-subform').on('reset', function (event) {
+        event.preventDefault();
+
+        $(this).find('input[type="checkbox"]').each(function () {
+            $(this).removeAttr('checked');
+        });
+
         $(this).find('[type="reset"]').css('display', 'none');
 
         var form = $(this).closest('.rating-filter-form');

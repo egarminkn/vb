@@ -7,6 +7,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 
 import org.verygroup.verybook.BookType;
+import org.verygroup.verybook.RatingSubcategory;
 import org.verygroup.verybook.dto.BookItem;
 import org.verygroup.verybook.dto.RatingItem;
 import org.verygroup.verybook.model.LikesDislikesInfo;
@@ -54,9 +55,9 @@ public class AuthorController {
 
         // >>> FIXME заглушка. Нужно сделать выборку из БД по authorId
         List<RatingItem> ratingItems = new LinkedList<>();
-        ratingItems.add(new RatingItem(true, 19, "в общем рейтинге"));
-        ratingItems.add(new RatingItem(false, 1, "среди Literary"));
-        ratingItems.add(new RatingItem(true, 4, "среди Genre Fiction"));
+        ratingItems.add(new RatingItem(true, 19, null));
+        ratingItems.add(new RatingItem(false, 1, RatingSubcategory.POETRY));
+        ratingItems.add(new RatingItem(true, 4, RatingSubcategory.SCIENCE_TECHNIQUE));
         model.addAttribute("ratingsItems", ratingItems);
         model.addAttribute("ratingsTitle", "Рейтинг автора");
 

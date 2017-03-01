@@ -7,26 +7,40 @@
 <!-- START (Рейтинг-список) -->
 <div class="ratings">
     ${ratingsTitle}
-    <ul class="list">
+    <div class="table">
         <c:forEach var="ratingsItem" items="${ratingsItems}" >
-
             <%-- задаем тип для ratingsItem, чтобы IDEA давала подсказки --%>
             <jsp:useBean id="ratingsItem" class="org.verygroup.verybook.dto.RatingItem"/>
 
-            <li class="item">
-                <div class="dynamic-up ${ratingsItem.grown ? '' : 'invert'}">
-                    <!-- У div.dynamic-up можно использовать доп.класс invert для того, чтобы стрелочку направить вниз -->
-                    <img src="resources/vb/svg/vb/arrow_up.svg" width="71" height="213">
+            <div class="row">
+                <div class="cell dynamic-up">
+                    <!-- Можно использовать доп.класс invert для того, чтобы стрелочку направить вниз -->
+                    <img class="${ratingsItem.grown ? '' : 'invert'}" src="resources/vb/svg/vb/arrow_up.svg" width="71" height="213">
                 </div>
-                <a class="link" href="${currentURI}#">
-                    №
-                    <span>${ratingsItem.number}</span>
-                </a>
-                <div class="rating-title">
-                    ${ratingsItem.name}
+                <div class="cell rating-number">
+                    №${ratingsItem.number}
                 </div>
-            </li>
+                <div class="cell">
+                    <div class="rating-category">
+                        <span>
+                            ${ratingsItem.ratingSubcategory != null ? 'в категории' : 'в'}
+                        </span>
+                        <a href='
+                            <c:choose>
+                                <c:when test="${ratingsItem.ratingSubcategory != null}">
+                                    ${"author-rating?subcategory=".concat(ratingsItem.ratingSubcategory)}
+                                </c:when>
+                                <c:when test="${ratingsItem.ratingSubcategory == null}">
+                                    ${"author-rating"}
+                                </c:when>
+                            </c:choose>
+                        '>
+                            ${ratingsItem.ratingSubcategory != null ? ratingsItem.ratingSubcategory.value : 'общем рейтинге'}
+                        </a>
+                    </div>
+                </div>
+            </div>
         </c:forEach>
-    </ul>
+    </div>
 </div>
 <!-- END (Рейтинг-список) -->

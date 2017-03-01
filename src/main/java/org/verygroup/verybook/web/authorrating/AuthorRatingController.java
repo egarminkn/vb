@@ -4,8 +4,10 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import org.verygroup.verybook.RatingCategory;
+import org.verygroup.verybook.RatingSubcategory;
 import org.verygroup.verybook.dto.authorrating.RatingItem;
 import org.verygroup.verybook.web.util.*;
 
@@ -28,11 +30,16 @@ public class AuthorRatingController {
     private SpecAudiobookUtil specAudiobookUtil;
 
     @GetMapping("/author-rating")
-    public String authorRating(HttpServletRequest request, Principal currentUser, Model model) {
+    public String authorRating(@RequestParam(required = false) RatingSubcategory subcategory,
+                               HttpServletRequest request,
+                               Principal currentUser,
+                               Model model) {
         socialUtil.setModel(request, currentUser, model);
 //        searchBookUtil.setModel(request, currentUser, model);
 //        specEbookUtil.setModel(request, currentUser, model);
 //        specAudiobookUtil.setModel(request, currentUser, model);
+
+        model.addAttribute("requestSubcategory", subcategory);
 
         // >>> FIXME заглушка. Нужно сделать выборку из БД
         List<RatingItem> ratingItems = new LinkedList<>();

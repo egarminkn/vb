@@ -7,6 +7,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 
 import org.verygroup.verybook.BookType;
+import org.verygroup.verybook.RatingSubcategory;
 import org.verygroup.verybook.dto.BookItem;
 import org.verygroup.verybook.dto.RatingItem;
 import org.verygroup.verybook.dto.book.ReviewItem;
@@ -55,9 +56,9 @@ public class AudiobookController {
 
         // >>> FIXME заглушка. Сделать выборку из БД для audiobookId
         List<RatingItem> ratingItems = new LinkedList<>();
-        ratingItems.add(new RatingItem(true, 19, "в общем рейтинге"));
-        ratingItems.add(new RatingItem(false, 1, "среди Общественные и гуманитарные науки"));
-        ratingItems.add(new RatingItem(true, 4, "среди Деловая литература, право, психология"));
+        ratingItems.add(new RatingItem(true, 19, null));
+        ratingItems.add(new RatingItem(false, 1, RatingSubcategory.SOCIAL));
+        ratingItems.add(new RatingItem(true, 4, RatingSubcategory.BUSINESS_RIGHT_PSYCHOLOGY));
         model.addAttribute("ratingsItems", ratingItems);
 
         List<BookItem> bookItems = new LinkedList<>();

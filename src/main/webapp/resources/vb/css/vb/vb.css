@@ -2922,75 +2922,66 @@ div.likes .dislike::before {
 }
 
 /*
- * Флексирование Списка рейтинга
+ * Таблица Списка рейтинга
  */
-.ratings .list {
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
+.ratings .table {
+    display: table;
+    border-collapse: collapse;
 }
 
-.ratings .list .item {
-    display: flex;
-    flex-direction: row;
-    justify-content: flex-start;
-    align-items: center;
-    /*border: 1px solid black;*/
+.ratings .table .row {
+    display: table-row;
 }
 
-.ratings .list {
-    list-style: none;
-    margin: 0;
-    padding: 0;
-}
-
-.ratings .list .item {
+.ratings .table .cell {
+    display: table-cell;
+    padding: 15px 0 0 0;
+    vertical-align: top;
     font-family: Tahoma, sans-serif;
     font-size: 12px;
-    margin-top: 15px;
+    /*border: 1px solid black;*/
 }
 
 /*
  * Стрелочка, показывающая динамику роста (вверх или вниз по рейтингу)
  */
-.ratings .list .item .dynamic-up {
-    width: 4px;
-    height: 12px;
-    /*border: 1px solid black;*/
+.ratings .table .cell.dynamic-up img {
+    width: 5px;
+    height: 13px;
 }
 
-.ratings .list .item .dynamic-up img {
-    width: 4px;
-    height: 12px;
-    /*border: 1px solid black;*/
-}
-
-.ratings .list .item .dynamic-up.invert {
+.ratings .table .cell.dynamic-up img.invert {
     transform: scaleY(-1);
 }
 
 /*
- * Порядковый номер в рейтинге (этот номер является ссылкой)
+ * Порядковый номер в рейтинге
  */
-.ratings .list .item a {
+.ratings .table .cell.rating-number {
     color: #657392;
     white-space: nowrap;
-    margin-left: 5px;
-    /*border: 1px solid black;*/
-}
-
-.ratings .list .item a span {
-    display: inline-block;
-    width: 30px;
-    text-decoration: underline;
-    /*border: 1px solid black;*/
+    padding-left: 2px;
+    padding-right: 2px;
 }
 
 /*
- * Название рейтинга
+ * Категория рейтинга
  */
-.ratings .list .item .rating-title {
-    /*border: 1px solid black;*/
+.ratings .table .cell .rating-category {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: flex-start;
+    flex-wrap: nowrap;
+}
+
+.ratings .table .cell .rating-category span {
+    white-space: nowrap;
+    margin-right: 2px;
+}
+
+.ratings .table .cell .rating-category a {
+    color: #657392;
 }
 
 /**
