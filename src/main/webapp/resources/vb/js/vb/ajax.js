@@ -142,11 +142,17 @@ var ratingItems = [];
 function prepareRatingItems(submitBtn, container) {
     var form = submitBtn.closest('.rating-filter-form');
     ratingItems = [];
+    var ratingTitle = "";
     form.find('.rating-filter-subform').each(function () {
         var subcategories = [];
         $(this).find('[name="subcategories"]').each(function () {
             if ($(this).is(':checked')) {
                 subcategories.push($(this).val());
+
+                if (ratingTitle.length > 0) {
+                    ratingTitle += ', ';
+                }
+                ratingTitle += $(this).next('span').html().trim();
             }
         });
         if (subcategories.length > 0) {
@@ -156,6 +162,11 @@ function prepareRatingItems(submitBtn, container) {
             });
         }
     });
+    if (ratingTitle === "") {
+        $('.categories .query').html(RATING_TITLE_DEFAULT);
+    } else {
+        $('.categories .query').html(ratingTitle);
+    }
     container.next('.show-more').show();
 }
 
@@ -166,6 +177,16 @@ function filterAuthors(offset, container) {
         type: 'POST',
         data: JSON.stringify(ratingItems),
         success: function (ratingCategoryFilterItem) {
+            var summary = container.prev().find('.summary');
+            var totalAuthorsCount = ratingCategoryFilterItem.totalAuthorsCount;
+            if (totalAuthorsCount === 0) {
+                summary.html(SUMMARY_NOTHING_FOUND_TEMPLATE);
+            } else {
+                summary.html(SUMMARY_AUTHORS_FOUND_TEMPLATE);
+                summary.find('.count').html(ratingCategoryFilterItem.totalAuthorsCount);
+                correctAuthorCountEnding();
+            }
+
             var html = "";
             if (offset > 0) {
                 html += container.html();

@@ -133,7 +133,6 @@
     <script type="text/javascript" src="resources/vb/js/author/expand-collapse-description.js"></script>
     <script type="text/javascript" src="resources/vb/js/author-pa/datatables.js"></script>
     <script type="text/javascript" src="resources/vb/js/author-pa/modals.js"></script>
-    <script type="text/javascript" src="resources/vb/js/author-rating/correct-author-count-word-endings.js"></script>
     <script type="text/javascript" src="resources/vb/js/book/page-scroller.js"></script>
     <script type="text/javascript" src="resources/vb/js/book/modals.js"></script>
     <script type="text/javascript" src="resources/vb/js/create-ebook/color-picker.js"></script>

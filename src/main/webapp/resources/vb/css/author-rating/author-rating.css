@@ -80,9 +80,25 @@ main.author-rating .column-2 .header h1 {
  * Выбранные категории фильтрации рейтинга авторов
  */
 main.author-rating .column-2 .header .categories {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: flex-start;
+    flex-wrap: nowrap;
+
     font-family: Tahoma, sans-serif;
     font-size: 19px;
+    margin-top: 5px;
     margin-left: 1px;
+}
+
+main.author-rating .column-2 .header .categories span {
+    /*border: 1px solid black;*/
+}
+
+main.author-rating .column-2 .header .categories .title {
+    white-space: nowrap;
+    margin-right: 5px;
 }
 
 /*

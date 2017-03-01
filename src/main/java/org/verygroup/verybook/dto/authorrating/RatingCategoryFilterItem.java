@@ -6,13 +6,15 @@ public class RatingCategoryFilterItem {
 
     private List<AuthorItem> authorItems;
     private boolean hasMore;
+    private int totalAuthorsCount;
 
     /*
      * Конструкторы
      */
-    public RatingCategoryFilterItem(List<AuthorItem> authorItems, boolean hasMore) {
+    public RatingCategoryFilterItem(List<AuthorItem> authorItems, boolean hasMore, int totalAuthorsCount) {
         this.authorItems = authorItems;
         this.hasMore = hasMore;
+        this.totalAuthorsCount = totalAuthorsCount;
     }
 
     /*
@@ -26,6 +28,10 @@ public class RatingCategoryFilterItem {
         return hasMore;
     }
 
+    public int getTotalAuthorsCount() {
+        return totalAuthorsCount;
+    }
+
     /*
      * Сеттеры
      */
@@ -35,6 +41,10 @@ public class RatingCategoryFilterItem {
 
     public void setHasMore(boolean hasMore) {
         this.hasMore = hasMore;
+    }
+
+    public void setTotalAuthorsCount(int totalAuthorsCount) {
+        this.totalAuthorsCount = totalAuthorsCount;
     }
 
 }

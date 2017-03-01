@@ -28,15 +28,13 @@
                             <span class="title">
                                 в категории:
                             </span>
-                            <span class="query"> <!-- Сюда будет динамически вставляться текст -->
-                                военные, приключения
+                            <span class="query">
+                                <!-- Сюда будет динамически вставляться текст -->
                             </span>
                         </div>
 
                         <div class="summary">
-                            Данному запросу соответству<span class="count-before-ending">ет</span>
-                            <span class="count">3774</span>
-                            автор<span class="count-after-ending">ов</span>
+                            <!-- Сюда будет динамически вставляться текст -->
                         </div>
                     </div>
 
@@ -59,7 +57,6 @@
         JspWriter outTmp = out;
         out = new JspWriterImpl();
     %>
-
     <c:set var="authorPosition" value=":authorPosition" scope="request"/>
     <c:set var="authorId" value=":authorId" scope="request"/>
     <c:set var="authorRatingNumber" value=":authorRatingNumber" scope="request"/>
@@ -70,14 +67,24 @@
     <c:set var="authorBookReviewsCount" value=":authorBookReviewsCount" scope="request"/>
     <c:set var="authorGenres" value=":authorGenres" scope="request"/>
     <jsp:include page="components/author-rating/author.jsp"/>
-
     <%
         String outString = out.toString();
         out = outTmp;
     %>
-
     var authorBlockTemplate = "<%=outString%>";
     var genreLink = "&lt;a href='${"search-book?search-query=".concat(SearchQueryDictionary.GENRE).concat(": \\\"").concat(":authorGenre").concat("\\\"")}'&gt;:authorGenre&lt;/a&gt;";
+
+    var RATING_TITLE_DEFAULT = 'Общий рейтинг';
+
+    var SUMMARY_NOTHING_FOUND_TEMPLATE = 'По вашему запросу ничего не найдено. Попробуйте изменить условия поиска';
+    var SUMMARY_AUTHORS_FOUND_TEMPLATE = 'Данному запросу соответству<span class="count-before-ending"></span> <span class="count"></span> автор<span class="count-after-ending"></span>';
+
+    function correctAuthorCountEnding() {
+        var summary = $('.summary');
+        var count = parseInt(summary.find('.count').html());
+        summary.find('.count-before-ending').html(getCorrectEnding(count, 'ет', 'ют', 'ют'));
+        summary.find('.count-after-ending').html(getCorrectEnding(count, '', 'а', 'ов'));
+    }
 
     $(function () {
         $('.rating-filter-form .rating-filter-form-submit-btn').trigger('click');
