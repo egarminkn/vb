@@ -11,7 +11,7 @@
     <div class="summary">
         <div class="reviewer">
             от
-            <a href="${currentURI}#">${reviewAuthor}</a>
+            <a href="${currentURL}#">${reviewAuthor}</a>
         </div>
         <div class="date">
             отзыв оставлен

@@ -15,7 +15,7 @@
 <jsp:include page="components/vb/useful-info.jsp"/>
 
                 <div class="own-cover">
-                    <a href="${currentURI}#">Как создать свою обложку</a>
+                    <a href="${currentURL}#">Как создать свою обложку</a>
                 </div>
             </div>
 
@@ -26,17 +26,17 @@
                     <!-- START (Горизонтальное меню переходов на id-шники той же страницы) -->
                     <ul class="nav">
                         <li class="nav-item">
-                            <a href="${currentURI}#upload">
+                            <a href="${currentURL}#upload">
                                 Загрузить файл
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="${currentURI}#cover">
+                            <a href="${currentURL}#cover">
                                 Создать обложку
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="${currentURI}#description">
+                            <a href="${currentURL}#description">
                                 Описать книгу
                             </a>
                         </li>
@@ -51,7 +51,7 @@
 
                             <!-- START (Надпись-предупреждение) -->
                             <div class="warning">
-                                Перед загрузкой и конвертацией файлов не забудьте ознакомиться с <a class="rules" href="${currentURI}#">правилами оформления</a> документов
+                                Перед загрузкой и конвертацией файлов не забудьте ознакомиться с <a class="rules" href="${currentURL}#">правилами оформления</a> документов
                             </div>
                             <!-- END (Надпись-предупреждение) -->
 
@@ -74,7 +74,7 @@
                                         <span class="size">52 мб</span>
                                         <span class="parenthesis right-parenthesis">)</span>
                                     </span>
-                                    <a class="remove-file" href="${currentURI}#" title="Удалить файл из списка загруженных">+</a>
+                                    <a class="remove-file" href="${currentURL}#" title="Удалить файл из списка загруженных">+</a>
                                 </div>
                                 <button class="test-file-btn btn">Проверить загруженный файл</button>
                             </div>
@@ -130,10 +130,10 @@
                                     </div>
                                 </li>
                                 <li class="type select-cover">
-                                    <a href="${currentURI}#">Выбрать готовый фон</a>
+                                    <a href="${currentURL}#">Выбрать готовый фон</a>
                                 </li>
                                 <li class="type upload-cover">
-                                    <a href="${currentURI}#">Загрузить свою обложку</a>
+                                    <a href="${currentURL}#">Загрузить свою обложку</a>
                                 </li>
                             </ul>
 
@@ -273,7 +273,7 @@
                                         </div>
                                     </div>
 
-                                    <a class="magnify" href="${currentURI}#"></a>
+                                    <a class="magnify" href="${currentURL}#"></a>
                                 </div>
                             </div>
                         </div>
@@ -446,7 +446,7 @@
                             <!-- Для использования этого чекбокса в форме, нужно заполнить поле name -->
                             <label class="text-checkbox">
                                 <span class="item text">
-                                    С <a href="${currentURI}#">правилами сервиса</a> Verybook ознакомлен(а) и согласен(а)
+                                    С <a href="${currentURL}#">правилами сервиса</a> Verybook ознакомлен(а) и согласен(а)
                                 </span>
                                 <input class="item" type="checkbox" name="is-consent">
                                 <span class="item checkbox"></span>

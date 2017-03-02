@@ -7,17 +7,17 @@
 <!-- START (Триплет ссылок: обложка-название-автор) -->
 <div class="book-triplet">
     <div class="cover">
-        <a class="to-book" href="${currentURI}#">
+        <a class="to-book" href="${currentURL}#">
             <img src="${bookTripletCoverUrl}" width="230" height="368">
         </a>
     </div>
     <div class="title-author">
-        <a class="to-book" href="${currentURI}#">
+        <a class="to-book" href="${currentURL}#">
             <span class="text">
                 ${bookTripletTitle}
             </span>
         </a>
-        <a class="to-author" href="${currentURI}#">
+        <a class="to-author" href="${currentURL}#">
             <span class="text">
                 ${bookTripletAuthor}
             </span>

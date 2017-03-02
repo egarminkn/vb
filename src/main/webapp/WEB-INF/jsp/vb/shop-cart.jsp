@@ -18,12 +18,12 @@
                     <!-- START (Горизонтальное меню переходов на id-шники той же страницы) -->
                     <ul class="nav">
                         <li class="nav-item">
-                            <a href="${currentURI}#main-cart">
+                            <a href="${currentURL}#main-cart">
                                 Корзина
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="${currentURI}#spare-cart">
+                            <a href="${currentURL}#spare-cart">
                                 Запасная тележка
                             </a>
                         </li>
@@ -113,7 +113,7 @@
                                     <span class="row-2">
                                         <!-- START (Надпись-предупреждение) -->
                                         <div class="warning">
-                                            Просто перейдите в <a class="pa" href="${currentURI}#">личный кабинет</a> и Вы увидите эти книги в списке купленных, где их можно многократно скачивать без каких-либо ограничений.
+                                            Просто перейдите в <a class="pa" href="${currentURL}#">личный кабинет</a> и Вы увидите эти книги в списке купленных, где их можно многократно скачивать без каких-либо ограничений.
                                         </div>
                                         <!-- END (Надпись-предупреждение) -->
                                     </span>

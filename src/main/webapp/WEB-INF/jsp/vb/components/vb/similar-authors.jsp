@@ -13,77 +13,77 @@
     <div class="body">
         <ul class="similar-authors-list">
             <li class="similar-author">
-                <a href="${currentURI}#">
+                <a href="${currentURL}#">
                     James Rollins
                 </a>
             </li>
             <li class="similar-author">
-                <a href="${currentURI}#">
+                <a href="${currentURL}#">
                     Jeremy Robinson
                 </a>
             </li>
             <li class="similar-author">
-                <a href="${currentURI}#">
+                <a href="${currentURL}#">
                     Steve Berry
                 </a>
             </li>
             <li class="similar-author">
-                <a href="${currentURI}#">
+                <a href="${currentURL}#">
                     Sean Ellis
                 </a>
             </li>
             <li class="similar-author">
-                <a href="${currentURI}#">
+                <a href="${currentURL}#">
                     David Wood
                 </a>
             </li>
             <li class="similar-author">
-                <a href="${currentURI}#">
+                <a href="${currentURL}#">
                     Lincoln Child
                 </a>
             </li>
             <li class="similar-author">
-                <a href="${currentURI}#">
+                <a href="${currentURL}#">
                     Ben Hammott
                 </a>
             </li>
             <li class="similar-author">
-                <a href="${currentURI}#">
+                <a href="${currentURL}#">
                     Clive Cussler
                 </a>
             </li>
             <li class="similar-author">
-                <a href="${currentURI}#">
+                <a href="${currentURL}#">
                     Rebecca Cantrell
                 </a>
             </li>
             <li class="similar-author">
-                <a href="${currentURI}#">
+                <a href="${currentURL}#">
                     David Baldacci
                 </a>
             </li>
             <li class="similar-author">
-                <a href="${currentURI}#">
+                <a href="${currentURL}#">
                     Scott Mariani
                 </a>
             </li>
             <li class="similar-author">
-                <a href="${currentURI}#">
+                <a href="${currentURL}#">
                     Allison Maruska
                 </a>
             </li>
             <li class="similar-author">
-                <a href="${currentURI}#">
+                <a href="${currentURL}#">
                     Douglas Preston
                 </a>
             </li>
             <li class="similar-author">
-                <a href="${currentURI}#">
+                <a href="${currentURL}#">
                     Fernando Gamboa
                 </a>
             </li>
             <li class="similar-author">
-                <a href="${currentURI}#">
+                <a href="${currentURL}#">
                     Glenn Meade
                 </a>
             </li>

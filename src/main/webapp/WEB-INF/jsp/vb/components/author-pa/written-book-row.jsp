@@ -9,10 +9,10 @@
         <img src="${bookCoverUrl}" width="230" height="368">
     </td>
     <td class="td title">
-        <a class="book" href="${currentURI}#">
+        <a class="book" href="${currentURL}#">
             ${bookTitle}
         </a>
-        <a class="edit" href="${currentURI}#"></a>
+        <a class="edit" href="${currentURL}#"></a>
     </td>
     <td class="td status">
         <div class="current-status ${bookStatusAddClass}">
@@ -54,7 +54,7 @@
                         withdraw - действия, связанные с отзывом или снятием с публикации
                         publish  - действия, связанные с отправкой на модерацию
                     -->
-                    <a href="${currentURI}#">${bookAction.name}</a>
+                    <a href="${currentURL}#">${bookAction.name}</a>
                 </li>
             </c:forEach>
         </ul>

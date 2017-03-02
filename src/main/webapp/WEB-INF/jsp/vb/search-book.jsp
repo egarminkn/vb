@@ -15,7 +15,7 @@
 <jsp:include page="fragments/header.jsp"/>
 
             <div class="extended-search">
-                <a href="${currentURI}#">Расширенный поиск</a>
+                <a href="${currentURL}#">Расширенный поиск</a>
             </div>
 
             <div class="search-results-summary">
@@ -25,9 +25,9 @@
                 </h1>
                 <div class="summary">
                     Найдено <span class="total-count">11</span> совпаден<span class="total-count-ending">ий</span>, из них:
-                    <a href="${currentURI}#ebooks"><span class="ebooks-count">12</span> электронн<span class="ebooks-count-ending-1">ых</span> книг<span class="ebooks-count-ending-2"></span></a>,
-                    <a href="${currentURI}#audiobooks"><span class="audiobooks-count">11</span> аудиокниг<span class="audiobooks-count-ending"></span></a>,
-                    <a href="${currentURI}#authors"><span class="authors-count">13</span> автор<span class="authors-count-ending">а</span></a>
+                    <a href="${currentURL}#ebooks"><span class="ebooks-count">12</span> электронн<span class="ebooks-count-ending-1">ых</span> книг<span class="ebooks-count-ending-2"></span></a>,
+                    <a href="${currentURL}#audiobooks"><span class="audiobooks-count">11</span> аудиокниг<span class="audiobooks-count-ending"></span></a>,
+                    <a href="${currentURL}#authors"><span class="authors-count">13</span> автор<span class="authors-count-ending">а</span></a>
                 </div>
 
                 <!-- Выбор типа отображения результатов поиска -->

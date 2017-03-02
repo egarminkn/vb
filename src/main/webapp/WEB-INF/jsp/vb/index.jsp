@@ -39,7 +39,7 @@
 <jsp:include page="components/vb/spec-ebook.jsp"/>
 
                     <div class="manual">
-                        <a href="${currentURI}#">
+                        <a href="${currentURL}#">
                             <div class="title">
                                 <h3 class="text">
                                     Подробный мануал по EPUB
@@ -59,7 +59,7 @@
                         <div class="title">
                             <div class="bookmark"></div>
                             <div class="shelf-name">
-                                <a href="${currentURI}#">
+                                <a href="${currentURL}#">
                                     <h2>Бест-селлеры</h2>
                                 </a>
                             </div>
@@ -127,7 +127,7 @@
                         <div class="title">
                             <div class="bookmark"></div>
                             <div class="shelf-name">
-                                <a href="${currentURI}#">
+                                <a href="${currentURL}#">
                                     <h2>Новинки</h2>
                                 </a>
                             </div>
@@ -195,7 +195,7 @@
                         <div class="title">
                             <div class="bookmark"></div>
                             <div class="shelf-name">
-                                <a href="${currentURI}#">
+                                <a href="${currentURL}#">
                                     <h2>Высший рейтинг</h2>
                                 </a>
                             </div>
@@ -263,7 +263,7 @@
                         <div class="title">
                             <div class="bookmark"></div>
                             <div class="shelf-name">
-                                <a href="${currentURI}#">
+                                <a href="${currentURL}#">
                                     <h2>Рейтинг авторов</h2>
                                 </a>
                             </div>

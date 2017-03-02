@@ -16,7 +16,7 @@
             <input type="radio" name="slide" class="slider-button slider-button-2" id="slider-button-2" >
             <input type="radio" name="slide" class="slider-button slider-button-3" id="slider-button-3" >
             <div class="quotes-slider">
-                <a class="arrow-btn left-arrow-btn" href="${currentURI}#">
+                <a class="arrow-btn left-arrow-btn" href="${currentURL}#">
                     <div class="corner"></div>
                 </a>
 
@@ -30,7 +30,7 @@
                     </c:forEach>
                 </div>
 
-                <a class="arrow-btn right-arrow-btn" href="${currentURI}#">
+                <a class="arrow-btn right-arrow-btn" href="${currentURL}#">
                     <div class="corner"></div>
                 </a>
             </div>

@@ -7,7 +7,7 @@
 
 <div class="author-summary">
     <div class="author-name">
-        <a href="${currentURI}#">
+        <a href="${currentURL}#">
             <span class="text">
                 ${authorName}
             </span>

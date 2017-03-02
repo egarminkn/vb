@@ -23,7 +23,7 @@
                 Яндекс.Деньги Кошелек
             </label>
             <div class="info yandex-money-wallet-info">
-                <form method="post" action="${currentURI}#">
+                <form method="post" action="${currentURL}#">
                     <input type="hidden" name="payment-mode" value="yandex-money-wallet">
                     <div class="row">
                         <div class="cell yandex-money-wallet-id">
@@ -61,7 +61,7 @@
                 Яндекс.Деньги Банковская карта
             </label>
             <div class="info card-info">
-                <form method="post" action="${currentURI}#">
+                <form method="post" action="${currentURL}#">
                     <input type="hidden" name="payment-mode" value="yandex-money-card">
                     <div class="row">
                         <div class="cell card-holder">
@@ -174,7 +174,7 @@
                 WebMoney
             </label>
             <div class="info webmoney-info">
-                <form method="post" action="${currentURI}#">
+                <form method="post" action="${currentURL}#">
                     <input type="hidden" name="payment-mode" value="webmoney">
                     <div class="row">
                         <div class="cell webmoney-wallet-id">
@@ -212,7 +212,7 @@
                 RoboKassa
             </label>
             <div class="info robokassa-info">
-                <form method="post" action="${currentURI}#">
+                <form method="post" action="${currentURL}#">
                     <input type="hidden" name="payment-mode" value="robokassa">
                     <button type="submit" style="display: none;">
                         <!--

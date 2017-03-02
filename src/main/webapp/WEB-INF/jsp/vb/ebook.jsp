@@ -30,7 +30,7 @@
                             <li class="content">
                                 <!-- START (Модальное окно) - 1-ая часть из 3-х -->
                                 <!-- Само модальное окно размещается в конце тега main, а здесь идет ссылка на id-шник (modal-name) этого окна -->
-                                <a href="${currentURI}#browse-book" class="modal-btn">
+                                <a href="${currentURL}#browse-book" class="modal-btn">
                                     Полистать книгу
                                 </a>
                                 <!-- END (Модальное окно) - 1-ая часть из 3-х -->
@@ -38,7 +38,7 @@
                             <li class="content-table">
                                 <!-- START (Модальное окно) - 1-ая часть из 3-х -->
                                 <!-- Само модальное окно размещается в конце тега main, а здесь идет ссылка на id-шник (modal-name) этого окна -->
-                                <a href="${currentURI}#table-of-contents" class="modal-btn">
+                                <a href="${currentURL}#table-of-contents" class="modal-btn">
                                     Оглавление
                                 </a>
                                 <!-- END (Модальное окно) - 1-ая часть из 3-х -->
@@ -52,7 +52,7 @@
 
                                 <div class="about">
                                     <div class="fullname">
-                                        <a href="${currentURI}#">
+                                        <a href="${currentURL}#">
                                             Константин Константинопольский
                                         </a>
                                     </div>
@@ -68,7 +68,7 @@
 <jsp:include page="components/vb/rating-5-stars.jsp"/>
 
                             <div class="reviews">
-                                <a href="${currentURI}#reviews">
+                                <a href="${currentURL}#reviews">
                                     Отзывов о книге
                                     <span>31</span>
                                 </a>
@@ -108,7 +108,7 @@
                             </li>
                             <li class="item">
                                 Лицензия:
-                                <a class="license" href="${currentURI}#">
+                                <a class="license" href="${currentURL}#">
                                     verybook
                                 </a>
                             </li>
@@ -116,19 +116,19 @@
                                 <span>Теги:</span>
                                 <ul class="tags">
                                     <li class="tag">
-                                        <a href="${currentURI}#">сочинения</a>
+                                        <a href="${currentURL}#">сочинения</a>
                                     </li>
                                     <li class="tag">
-                                        <a href="${currentURI}#">иванов</a>
+                                        <a href="${currentURL}#">иванов</a>
                                     </li>
                                     <li class="tag">
-                                        <a href="${currentURI}#">александр</a>
+                                        <a href="${currentURL}#">александр</a>
                                     </li>
                                     <li class="tag">
-                                        <a href="${currentURI}#">летящие в облаках</a>
+                                        <a href="${currentURL}#">летящие в облаках</a>
                                     </li>
                                     <li class="tag">
-                                        <a href="${currentURI}#">классика</a>
+                                        <a href="${currentURL}#">классика</a>
                                     </li>
                                 </ul>
                             </li>
@@ -245,7 +245,7 @@
             <!-- Имя modal-name класса и id поменять на свое -->
             <div class="modal table-of-contents" id="table-of-contents">
                 <div class="body">
-                    <a href="${currentURI}#close-modal" title="Закрыть" class="close-btn"></a>
+                    <a href="${currentURL}#close-modal" title="Закрыть" class="close-btn"></a>
 
                     <div class="columns">
                         <div class="column column-1">
@@ -269,7 +269,7 @@
             <!-- Имя modal-name класса и id поменять на свое -->
             <div class="modal browse-book" id="browse-book">
                 <div class="body">
-                    <a href="${currentURI}#close-modal" title="Закрыть" class="close-btn"></a>
+                    <a href="${currentURL}#close-modal" title="Закрыть" class="close-btn"></a>
 
                     <div class="columns">
                         <div class="column column-1">
@@ -280,9 +280,9 @@
                         <div class="column column-2">
                             <label class="row row-1 page-number">
                                 <span class="item text">Страница</span>
-                                <a class="item page-btn prev-page-btn" href="${currentURI}#browse-book"></a>
+                                <a class="item page-btn prev-page-btn" href="${currentURL}#browse-book"></a>
                                 <input class="item" type="text" name="page-number" value="1" maxlength="4">
-                                <a class="item page-btn next-page-btn" href="${currentURI}#browse-book"></a>
+                                <a class="item page-btn next-page-btn" href="${currentURL}#browse-book"></a>
                                 <span class="item">из</span>
                                 <span class="item book-size">10</span>
                             </label>

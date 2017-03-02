@@ -12,6 +12,6 @@
 <jsp:include page="../vb/price-ruble-sign.jsp"/>
     </td>
     <td class="td ${isCartMain ? 'to-spare-cart' : 'to-main-cart'}">
-        <a class="${isCartMain ? 'to-spare-cart' : 'to-main-cart'}" href="${currentURI}#" title="${isCartMain ? 'Отложить на неопределенный срок' : 'Переложить в корзину'}"></a>
+        <a class="${isCartMain ? 'to-spare-cart' : 'to-main-cart'}" href="${currentURL}#" title="${isCartMain ? 'Отложить на неопределенный срок' : 'Переложить в корзину'}"></a>
     </td>
 </tr>

@@ -40,7 +40,7 @@
                                         ${currentUserDisplayName}
                                     </div>
                                 </div>
-                                <a class="edit" href="${currentURI}#"></a>
+                                <a class="edit" href="${currentURL}#"></a>
                             </div>
                             <div class="row row-2">
                                 <div class="mark gold">
@@ -65,7 +65,7 @@
                                 <div class="title">
                                     Личные данные
                                 </div>
-                                <a class="edit" href="${currentURI}#"></a>
+                                <a class="edit" href="${currentURL}#"></a>
                             </div>
                             <div class="row row-2">
                                 <div class="city">
@@ -90,7 +90,7 @@
                                 <div class="title">
                                     Обо мне
                                 </div>
-                                <a class="edit" href="${currentURI}#"></a>
+                                <a class="edit" href="${currentURL}#"></a>
                             </div>
                             <div class="row row-2">
                                 <div class="description">
@@ -116,7 +116,7 @@
 
                                     <!-- START (Модальное окно) - 1-ая часть из 3-х -->
                                     <!-- Само модальное окно размещается в конце тега main, а здесь идет ссылка на id-шник (modal-name) этого окна -->
-                                    <a href="${currentURI}#receive-money" class="modal-btn">
+                                    <a href="${currentURL}#receive-money" class="modal-btn">
                                         Получить деньги
                                     </a>
                                     <!-- END (Модальное окно) - 1-ая часть из 3-х -->
@@ -124,7 +124,7 @@
                             </div>
                             <div class="row row-3">
                                 <div class="profile-completeness">
-                                    <a class="text" href="${currentURI}#">
+                                    <a class="text" href="${currentURL}#">
                                         Профиль заполнен на <span>73</span>%
                                     </a>
                                     <div class="progress-bar"></div>
@@ -151,7 +151,7 @@
                         <h2 class="title">
                             Мои книги
                         </h2>
-                        <a class="create-book" href="${currentURI}#">
+                        <a class="create-book" href="${currentURL}#">
                             <span class="plus"></span>
                             <span class="text">
                                 Создать новую книгу
@@ -271,7 +271,7 @@
             <!-- Имя modal-name класса и id поменять на свое -->
             <div class="modal receive-money" id="receive-money">
                 <div class="body">
-                    <a href="${currentURI}#close-modal" title="Закрыть" class="close-btn"></a>
+                    <a href="${currentURL}#close-modal" title="Закрыть" class="close-btn"></a>
 
                     <div class="columns">
                         <div class="column column-1">
@@ -293,7 +293,7 @@
     <!-- END (Стилизованные кнопки и ссылки, похожие на кнопки) -->
 
     <!-- START (Стилизованные кнопки и ссылки, похожие на кнопки) -->
-    <a class="btn close-btn" href="${currentURI}#close-modal">
+    <a class="btn close-btn" href="${currentURL}#close-modal">
         Отменить
     </a>
     <!-- END (Стилизованные кнопки и ссылки, похожие на кнопки) -->

@@ -6,6 +6,9 @@
 
 <c:set var="currentURI" value="${requestScope['javax.servlet.forward.request_uri']}" scope="request"/>
 
+<c:set var="queryString" value="${pageContext.request.queryString}" />
+<c:set var="currentURL" value='${queryString == null ? currentURI : currentURI.concat("?").concat(queryString)}' scope="request"/>
+
 <!DOCTYPE html>
 <html lang="ru">
     <head>
@@ -136,7 +139,7 @@
                 </div>
                 <div class="entrance ${currentUserConnection != null ? 'nick' : ''}"> <!-- для залогиненого пользователя нужно добавить класс nick -->
                     <!-- START (Модальное окно) - 1-ая часть из 3-х -->
-                    <a href="${currentUserConnection == null ? currentURI.concat('#login') : 'author-pa'}" class="modal-btn">
+                    <a href="${currentUserConnection == null ? currentURL.concat('#login') : 'author-pa'}" class="modal-btn">
                         <span class="figure"></span>
                         <span class="text">
                             <c:choose>
@@ -165,7 +168,7 @@
         <!-- Имя modal-name класса и id поменять на свое -->
         <div class="modal login" id="login">
             <div class="body">
-                <a href="${currentURI}#close-modal" title="Закрыть" class="close-btn"></a>
+                <a href="${currentURL}#close-modal" title="Закрыть" class="close-btn"></a>
 
                 <div class="columns">
                     <div class="column column-1"></div>

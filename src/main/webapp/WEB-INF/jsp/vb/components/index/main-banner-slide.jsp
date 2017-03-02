@@ -5,6 +5,6 @@
 <%@taglib prefix="sec" uri="http://www.springframework.org/security/tags" %>
 <%@taglib prefix="fn" uri="http://verybook.verygroup.org/functions" %>
 
-<a href="${currentURI}#">
+<a href="${currentURL}#">
     <img class="slide" src="${slideUrl}" width="1247" height="340">
 </a>

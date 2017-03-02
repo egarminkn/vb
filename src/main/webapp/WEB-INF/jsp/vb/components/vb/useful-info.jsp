@@ -13,19 +13,19 @@
         <h3>О продукте и ценах</h3>
         <ul class="links">
             <li class="link">
-                <a href="${currentURI}#">Сколько стоит моя книга?</a>
+                <a href="${currentURL}#">Сколько стоит моя книга?</a>
             </li>
             <li class="link">
-                <a href="${currentURI}#">На какой бумаге печатать книгу и обложку?</a>
+                <a href="${currentURL}#">На какой бумаге печатать книгу и обложку?</a>
             </li>
             <li class="link">
-                <a href="${currentURI}#">Переплет и количество страниц</a>
+                <a href="${currentURL}#">Переплет и количество страниц</a>
             </li>
             <li class="link">
-                <a href="${currentURI}#">Твердый переплет</a>
+                <a href="${currentURL}#">Твердый переплет</a>
             </li>
             <li class="link">
-                <a href="${currentURI}#">Как определить цену?</a>
+                <a href="${currentURL}#">Как определить цену?</a>
             </li>
         </ul>
     </li>
@@ -33,16 +33,16 @@
         <h3>Процесс публикации</h3>
         <ul class="links">
             <li class="link">
-                <a href="${currentURI}#">Досуг и творчество</a>
+                <a href="${currentURL}#">Досуг и творчество</a>
             </li>
             <li class="link">
-                <a href="${currentURI}#">Книги для родителей</a>
+                <a href="${currentURL}#">Книги для родителей</a>
             </li>
             <li class="link">
-                <a href="${currentURI}#">Познавательная литература</a>
+                <a href="${currentURL}#">Познавательная литература</a>
             </li>
             <li class="link">
-                <a href="${currentURI}#">Художественная литература</a>
+                <a href="${currentURL}#">Художественная литература</a>
             </li>
         </ul>
     </li>
@@ -50,16 +50,16 @@
         <h3>Форматирование электронных книг</h3>
         <ul class="links">
             <li class="link">
-                <a href="${currentURI}#">Досуг и творчество</a>
+                <a href="${currentURL}#">Досуг и творчество</a>
             </li>
             <li class="link">
-                <a href="${currentURI}#">Книги для родителей</a>
+                <a href="${currentURL}#">Книги для родителей</a>
             </li>
             <li class="link">
-                <a href="${currentURI}#">Познавательная литература</a>
+                <a href="${currentURL}#">Познавательная литература</a>
             </li>
             <li class="link">
-                <a href="${currentURI}#">Художественная литература</a>
+                <a href="${currentURL}#">Художественная литература</a>
             </li>
         </ul>
     </li>
@@ -67,16 +67,16 @@
         <h3>Copyright</h3>
         <ul class="links">
             <li class="link">
-                <a href="${currentURI}#">Дошкольникам</a>
+                <a href="${currentURL}#">Дошкольникам</a>
             </li>
             <li class="link">
-                <a href="${currentURI}#">Школьникам и абитуриентам</a>
+                <a href="${currentURL}#">Школьникам и абитуриентам</a>
             </li>
             <li class="link">
-                <a href="${currentURI}#">Студентам и аспирантам</a>
+                <a href="${currentURL}#">Студентам и аспирантам</a>
             </li>
             <li class="link">
-                <a href="${currentURI}#">Педагогам</a>
+                <a href="${currentURL}#">Педагогам</a>
             </li>
         </ul>
     </li>
@@ -84,16 +84,16 @@
         <h3>Процесс публикации</h3>
         <ul class="links">
             <li class="link">
-                <a href="${currentURI}#">Досуг и творчество</a>
+                <a href="${currentURL}#">Досуг и творчество</a>
             </li>
             <li class="link">
-                <a href="${currentURI}#">Книги для родителей</a>
+                <a href="${currentURL}#">Книги для родителей</a>
             </li>
             <li class="link">
-                <a href="${currentURI}#">Познавательная литература</a>
+                <a href="${currentURL}#">Познавательная литература</a>
             </li>
             <li class="link">
-                <a href="${currentURI}#">Художественная литература</a>
+                <a href="${currentURL}#">Художественная литература</a>
             </li>
         </ul>
     </li>
