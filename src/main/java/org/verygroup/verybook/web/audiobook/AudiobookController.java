@@ -58,7 +58,7 @@ public class AudiobookController {
         List<RatingItem> ratingItems = new LinkedList<>();
         ratingItems.add(new RatingItem(true, 19, null));
         ratingItems.add(new RatingItem(false, 1, RatingSubcategory.SOCIAL));
-        ratingItems.add(new RatingItem(true, 4, RatingSubcategory.BUSINESS_RIGHT_PSYCHOLOGY));
+        ratingItems.add(new RatingItem(true, 4, RatingSubcategory.PARODY));
         model.addAttribute("ratingsItems", ratingItems);
 
         List<BookItem> bookItems = new LinkedList<>();

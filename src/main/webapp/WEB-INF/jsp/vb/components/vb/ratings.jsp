@@ -4,6 +4,13 @@
 <%@taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
 <%@taglib prefix="sec" uri="http://www.springframework.org/security/tags" %>
 
+<%@page import="org.verygroup.verybook.BookType" %>
+<%@page import="org.verygroup.verybook.RatingsType" %>
+<%@page import="org.verygroup.verybook.repository.SearchQueryDictionary" %>
+<%@page import="org.verygroup.verybook.RatingCategoryType" %>
+<%@page import="org.verygroup.verybook.SortBy" %>
+<%@page import="org.verygroup.verybook.SortDirection" %>
+
 <!-- START (Рейтинг-список) -->
 <div class="ratings">
     ${ratingsTitle}
@@ -27,12 +34,65 @@
                         </span>
                         <a href='
                             <c:choose>
-                                <c:when test="${ratingsItem.ratingSubcategory != null}">
-                                    ${"author-rating?subcategory=".concat(ratingsItem.ratingSubcategory)}
+                                <c:when test="${ratingsType == RatingsType.AUTHOR}">
+                                    <c:choose>
+                                        <c:when test="${ratingsItem.ratingSubcategory != null}">
+                                            ${"author-rating?subcategory=".concat(ratingsItem.ratingSubcategory)}
+                                        </c:when>
+                                        <c:when test="${ratingsItem.ratingSubcategory == null}">
+                                            ${"author-rating"}
+                                        </c:when>
+                                    </c:choose>
                                 </c:when>
-                                <c:when test="${ratingsItem.ratingSubcategory == null}">
-                                    ${"author-rating"}
-                                </c:when>
+                                <c:otherwise>
+                                    <c:choose>
+                                        <c:when test="${ratingsItem.ratingSubcategory == null}">
+                                            <c:set var="lookFor" value=''/>
+                                        </c:when>
+                                        <c:when test="${ratingsItem.ratingSubcategory.category.type == RatingCategoryType.BOOK_CATEGORY}">
+                                            <c:set var="lookFor" value='${SearchQueryDictionary.CATEGORY
+                                                                            .concat(": \\\"")
+                                                                            .concat(ratingsItem.ratingSubcategory.category.value)
+                                                                            .concat("\\\" ")
+                                                                            .concat(SearchQueryDictionary.SUBCATEGORY)
+                                                                            .concat(": \\\"")
+                                                                            .concat(ratingsItem.ratingSubcategory.value)
+                                                                            .concat("\\\" ")}'/>
+                                        </c:when>
+                                        <c:when test="${ratingsItem.ratingSubcategory.category.type == RatingCategoryType.BOOK_GENRE}">
+                                            <c:set var="lookFor" value='${SearchQueryDictionary.GENRE
+                                                                            .concat(": \\\"")
+                                                                            .concat(ratingsItem.ratingSubcategory.value)
+                                                                            .concat("\\\" ")}'/>
+                                        </c:when>
+                                    </c:choose>
+
+                                    <c:choose>
+                                        <c:when test="${ratingsType == RatingsType.EBOOK}">
+                                            <c:set var="lookForType" value='${SearchQueryDictionary.TYPE
+                                                                                .concat(": \\\"")
+                                                                                .concat(BookType.EBOOK.value)
+                                                                                .concat("\\\" ")}'/>
+                                        </c:when>
+                                        <c:when test="${ratingsType == RatingsType.AUDIOBOOK}">
+                                            <c:set var="lookForType" value='${SearchQueryDictionary.TYPE
+                                                                                .concat(": \\\"")
+                                                                                .concat(BookType.AUDIOBOOK.value)
+                                                                                .concat("\\\" ")}'/>
+                                        </c:when>
+                                    </c:choose>
+
+                                    <c:set var="sort" value='${SearchQueryDictionary.SORT_BY
+                                                                .concat(": \\\"")
+                                                                .concat(SortBy.RATING.value)
+                                                                .concat("\\\" ")
+                                                                .concat(SearchQueryDictionary.SORT_DIRECTION)
+                                                                .concat(": \\\"")
+                                                                .concat(SortDirection.DESC.value)
+                                                                .concat("\\\"")}'/>
+
+                                    ${"search-book?search-query=".concat(lookFor).concat(lookForType).concat(sort)}
+                                </c:otherwise>
                             </c:choose>
                         '>
                             ${ratingsItem.ratingSubcategory != null ? ratingsItem.ratingSubcategory.value : 'общем рейтинге'}

@@ -5,17 +5,23 @@ import java.util.List;
 
 public enum RatingCategory {
 
-    EDUCATIONAL("Учебная литература"),
-    CHILDREN("Детям и родителям"),
-    BUSINESS("Бизнес-литература"),
-    FICTION("Художественная литература"),
-    NON_FICTION("Нехудожественная литература"),
-    GENRES("Жанры");
+    EDUCATIONAL(RatingCategoryType.BOOK_CATEGORY, "Учебная литература"),
+    CHILDREN(RatingCategoryType.BOOK_CATEGORY, "Детям и родителям"),
+    BUSINESS(RatingCategoryType.BOOK_CATEGORY, "Бизнес-литература"),
+    FICTION(RatingCategoryType.BOOK_CATEGORY, "Художественная литература"),
+    NON_FICTION(RatingCategoryType.BOOK_CATEGORY, "Нехудожественная литература"),
+    GENRES(RatingCategoryType.BOOK_GENRE, "Жанры");
 
+    private RatingCategoryType type;
     private String value;
 
-    RatingCategory(String value) {
+    RatingCategory(RatingCategoryType type, String value) {
+        this.type = type;
         this.value = value;
+    }
+
+    public RatingCategoryType getType() {
+        return type;
     }
 
     public String getValue() {

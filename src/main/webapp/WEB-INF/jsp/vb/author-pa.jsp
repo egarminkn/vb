@@ -5,6 +5,8 @@
 <%@taglib prefix="sec" uri="http://www.springframework.org/security/tags" %>
 <%@taglib prefix="fn" uri="http://verybook.verygroup.org/functions" %>
 
+<%@page import="org.verygroup.verybook.RatingsType" %>
+
 <c:set var="bodyClass" value="hidden-partners-on-shelf" scope="request"/>
 <c:set var="mainClass" value="author-pa" scope="request"/>
 <c:set var="sloganAdditionalClass" value="" scope="request"/>
@@ -54,6 +56,7 @@
 <jsp:include page="components/vb/rating-3-stars.jsp"/>
                             </div>
                             <div class="row row-3">
+<c:set var="ratingsType" value="${RatingsType.AUTHOR}" scope="request"/>
 <jsp:include page="components/vb/ratings.jsp"/>
                             </div>
                         </div>

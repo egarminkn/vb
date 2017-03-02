@@ -6,6 +6,7 @@
 <%@taglib prefix="fn" uri="http://verybook.verygroup.org/functions" %>
 
 <%@page import="org.verygroup.verybook.BookType" %>
+<%@page import="org.verygroup.verybook.RatingsType" %>
 
 <c:set var="bodyClass" value="hidden-partners-on-shelf" scope="request"/>
 <c:set var="mainClass" value="author" scope="request"/>
@@ -20,6 +21,7 @@
 
 <jsp:include page="components/vb/rating-3-stars.jsp"/>
 
+<c:set var="ratingsType" value="${RatingsType.AUTHOR}" scope="request"/>
 <jsp:include page="components/vb/ratings.jsp"/>
 
 <c:set var="likesCount" value="1022" scope="request"/>

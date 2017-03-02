@@ -8,6 +8,7 @@
 <%@taglib prefix="fn" uri="http://verybook.verygroup.org/functions" %>
 
 <%@page import="org.verygroup.verybook.BookType" %>
+<%@page import="org.verygroup.verybook.RatingsType" %>
 
 <c:set var="bodyClass" value="hidden-partners-on-shelf" scope="request"/>
 <c:set var="mainClass" value="book" scope="request"/>
@@ -153,6 +154,7 @@
                             </ul>
                         </div>
 
+<c:set var="ratingsType" value="${RatingsType.AUDIOBOOK}" scope="request"/>
 <jsp:include page="components/vb/ratings.jsp"/>
 
 <c:set var="likesCount" value="1022" scope="request"/>
