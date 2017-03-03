@@ -17,7 +17,6 @@ import org.verygroup.verybook.dto.authorpa.WrittenBookRow;
 import org.verygroup.verybook.dto.authorpa.ReadBookRow;
 import org.verygroup.verybook.dto.index.AuthorSummaryItem;
 import org.verygroup.verybook.dto.index2.QuoteItem;
-import org.verygroup.verybook.dto.shopcart.ShopCartRow;
 import org.verygroup.verybook.model.LikesDislikesInfo;
 import org.verygroup.verybook.model.social.UserConnection;
 import org.verygroup.verybook.service.UserBooksService;
@@ -934,28 +933,6 @@ public class VerybookRootController {
         model.addAttribute("quoteItems", quoteItems);
 
         return "vb/index-2";
-    }
-
-    @GetMapping("/shop-cart")
-    public String shopCart(HttpServletRequest request, Principal currentUser, Model model) {
-        socialUtil.setModel(request, currentUser, model);
-        searchBookUtil.setModel(request, currentUser, model);
-        specEbookUtil.setModel(request, currentUser, model);
-//        specAudiobookUtil.setModel(request, currentUser, model);
-
-        List<ShopCartRow> mainShopCartRows = new LinkedList<>();
-        mainShopCartRows.add(new ShopCartRow("resources/vb/img/tmp/book-1.jpg", "Полет над гнездом кукушки", "Александр Константинопольский", "415", "руб"));
-        mainShopCartRows.add(new ShopCartRow("resources/vb/img/tmp/book-2.jpg", "Как рожать на вершине скалы", "Мария Малиновская", "0", "руб"));
-        mainShopCartRows.add(new ShopCartRow("resources/vb/img/tmp/book-3.jpg", "Кто подставил кролика роджера?", "Владимир Вольфович Константинопольский", "230", "руб"));
-        model.addAttribute("mainShopCartRows", mainShopCartRows);
-
-        List<ShopCartRow> spareShopCartRows = new LinkedList<>();
-        spareShopCartRows.add(new ShopCartRow("resources/vb/img/tmp/book-1.jpg", "Полет над гнездом кукушки", "Александр Константинопольский", "415", "руб"));
-        spareShopCartRows.add(new ShopCartRow("resources/vb/img/tmp/book-2.jpg", "Как рожать на вершине скалы", "Мария Малиновская", "0", "руб"));
-        spareShopCartRows.add(new ShopCartRow("resources/vb/img/tmp/book-3.jpg", "Кто подставил кролика роджера?", "Владимир Вольфович Константинопольский", "230", "руб"));
-        model.addAttribute("spareShopCartRows", spareShopCartRows);
-
-        return "vb/shop-cart";
     }
 
     @GetMapping("/info/{pageName}")

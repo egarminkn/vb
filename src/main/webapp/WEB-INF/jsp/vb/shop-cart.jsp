@@ -56,30 +56,43 @@
                                 </thead>
                                 <tbody class="tbody">
 <c:set var="isCartMain" value="true" scope="request"/>
-                                    <c:forEach var="mainShopCartRow" items="${mainShopCartRows}">
-                                        <jsp:useBean id="mainShopCartRow" class="org.verygroup.verybook.dto.shopcart.ShopCartRow"/>
+                                    <c:choose>
+                                        <c:when test="${empty mainShopCartRows}">
+<c:set var="isCartEmpty" value="true" scope="request"/>
+<c:set var="isMainCartEmpty" value="true"/>
+<jsp:include page="components/shop-cart/shop-cart-row.jsp"/>
+                                        </c:when>
+                                        <c:otherwise>
+<c:set var="isCartEmpty" value="false" scope="request"/>
+<c:set var="isMainCartEmpty" value="false"/>
+                                            <c:forEach var="mainShopCartRow" items="${mainShopCartRows}">
+                                                <jsp:useBean id="mainShopCartRow" class="org.verygroup.verybook.dto.shopcart.ShopCartRow"/>
 <c:set var="bookTripletCoverUrl" value="${mainShopCartRow.bookCoverUrl}" scope="request"/>
 <c:set var="bookTripletTitle" value="${mainShopCartRow.bookTitle}" scope="request"/>
 <c:set var="bookTripletAuthor" value="${mainShopCartRow.bookAuthor}" scope="request"/>
 <c:set var="price" value="${mainShopCartRow.priceValue}" scope="request"/>
 <jsp:include page="components/shop-cart/shop-cart-row.jsp"/>
-                                    </c:forEach>
+                                            </c:forEach>
+                                        </c:otherwise>
+                                    </c:choose>
                                 </tbody>
                             </table>
 
-                            <div class="buttons">
-                                <!--
-                                    hidden - это доп.класс для того чтобы,
-                                             если общая сумма покупки равно 0, то показывать кнопку "Скачать",
-                                             в противном случае показывать кнопку "Перейти к оплате"
-                                -->
-                                <label class="btn " for="payment-goods">
-                                    Перейти к оплате
-                                </label>
-                                <label class="btn " for="enjoy-goods">
-                                    Скачать
-                                </label>
-                            </div>
+                            <c:if test="${!isMainCartEmpty}">
+                                <div class="buttons">
+                                    <!--
+                                        hidden - это доп.класс для того чтобы,
+                                                 если общая сумма покупки равно 0, то показывать кнопку "Скачать",
+                                                 в противном случае показывать кнопку "Перейти к оплате"
+                                    -->
+                                    <label class="btn " for="payment-goods">
+                                        Перейти к оплате
+                                    </label>
+                                    <label class="btn " for="enjoy-goods">
+                                        Скачать
+                                    </label>
+                                </div>
+                            </c:if>
                         </div>
 
                         <div class="slider-inner payment-goods">
@@ -146,18 +159,31 @@
                         </thead>
                         <tbody class="tbody">
 <c:set var="isCartMain" value="false" scope="request"/>
-                            <c:forEach var="spareShopCartRow" items="${spareShopCartRows}">
-                                <jsp:useBean id="spareShopCartRow" class="org.verygroup.verybook.dto.shopcart.ShopCartRow"/>
+                            <c:choose>
+                                <c:when test="${empty spareShopCartRows}">
+<c:set var="isCartEmpty" value="true" scope="request"/>
+<c:set var="isSpareCartEmpty" value="true"/>
+<jsp:include page="components/shop-cart/shop-cart-row.jsp"/>
+                                </c:when>
+                                <c:otherwise>
+<c:set var="isCartEmpty" value="false" scope="request"/>
+<c:set var="isSpareCartEmpty" value="false"/>
+                                    <c:forEach var="spareShopCartRow" items="${spareShopCartRows}">
+                                        <jsp:useBean id="spareShopCartRow" class="org.verygroup.verybook.dto.shopcart.ShopCartRow"/>
 <c:set var="bookTripletCoverUrl" value="${spareShopCartRow.bookCoverUrl}" scope="request"/>
 <c:set var="bookTripletTitle" value="${spareShopCartRow.bookTitle}" scope="request"/>
 <c:set var="bookTripletAuthor" value="${spareShopCartRow.bookAuthor}" scope="request"/>
 <c:set var="price" value="${spareShopCartRow.priceValue}" scope="request"/>
 <jsp:include page="components/shop-cart/shop-cart-row.jsp"/>
-                            </c:forEach>
+                                    </c:forEach>
+                                </c:otherwise>
+                            </c:choose>
                         </tbody>
                     </table>
 
+                    <c:if test="${!isSpareCartEmpty}">
 <jsp:include page="components/vb/show-more-btn.jsp"/>
+                    </c:if>
 
                     <!-- START (Тень под блоком) -->
                     <div class="shadow-under"></div>

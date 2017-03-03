@@ -201,6 +201,19 @@ main.shop-cart .column-1 .tbl .tbody .tr .td {
 }
 
 /*
+ * Строки с данными, если Корзина пуста
+ */
+main.shop-cart .column-1 .tbl .tbody .tr .td.empty {
+    font-size: 14px;
+}
+
+main.shop-cart .column-1 .tbl .tbody .tr .td.empty a {
+    color: #5f7495;
+    text-decoration: none;
+    border-bottom: 1px solid #5f7495;
+}
+
+/*
  *  Корзина
  */
 /*
