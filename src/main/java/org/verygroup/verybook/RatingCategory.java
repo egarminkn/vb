@@ -5,6 +5,12 @@ import java.util.List;
 
 public enum RatingCategory {
 
+    /**
+     * Всегда нужно помнить о корреляции этого enum-а с enum-ами
+     * BookGenre, BookCategory и BookSubcategory.
+     * Они - первичны, а RatingCategory и RatingSubcategory - вторичны
+     */
+
     EDUCATIONAL(RatingCategoryType.BOOK_CATEGORY, "Учебная литература"),
     CHILDREN(RatingCategoryType.BOOK_CATEGORY, "Детям и родителям"),
     BUSINESS(RatingCategoryType.BOOK_CATEGORY, "Бизнес-литература"),

@@ -2,6 +2,12 @@ package org.verygroup.verybook;
 
 public enum RatingSubcategory {
 
+    /**
+     * Всегда нужно помнить о корреляции этого enum-а с enum-ами
+     * BookGenre, BookCategory и BookSubcategory.
+     * Они - первичны, а RatingCategory и RatingSubcategory - вторичны
+     */
+
     PRESCHOOLERS(RatingCategory.EDUCATIONAL, "Дошкольникам"),
     PUPILS(RatingCategory.EDUCATIONAL, "Школьникам и абитуриентам"),
     STUDENTS(RatingCategory.EDUCATIONAL, "Студентам и аспирантам"),
