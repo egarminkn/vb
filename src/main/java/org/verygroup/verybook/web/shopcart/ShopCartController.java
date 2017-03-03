@@ -5,6 +5,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 
+import org.verygroup.verybook.BookType;
 import org.verygroup.verybook.dto.PurchaseItem;
 import org.verygroup.verybook.dto.shopcart.ShopCartRow;
 import org.verygroup.verybook.session.SessionObject;
@@ -49,12 +50,13 @@ public class ShopCartController {
         ShopCart shopCart = sessionObject.getShopCart();
         for (PurchaseItem purchaseItem : shopCart.getPurchaseItems()) {
             // >>> FIXME заглушка. Сделать выборку книги из БД по ее purchaseItem.getId() и purchaseItem.getType()
-            mainShopCartRows.add(new ShopCartRow("resources/vb/img/tmp/book-1.jpg", "Полет над гнездом кукушки", "Александр Константинопольский", "415", "руб"));
+            mainShopCartRows.add(new ShopCartRow("id1", BookType.EBOOK, "id1", "resources/vb/img/tmp/book-1.jpg", "Полет над гнездом кукушки", "Александр Константинопольский", "415", "руб"));
             // <<<
 
             // >>> FIXME заглушка. Сделать выборку из БД книг, связанных с книгой purchaseItem.getId() и purchaseItem.getType()
-            spareShopCartRows.add(new ShopCartRow("resources/vb/img/tmp/book-2.jpg", "Как рожать на вершине скалы", "Мария Малиновская", "0", "руб"));
-            spareShopCartRows.add(new ShopCartRow("resources/vb/img/tmp/book-3.jpg", "Кто подставил кролика роджера?", "Владимир Вольфович Константинопольский", "230", "руб"));
+            spareShopCartRows.add(new ShopCartRow("id2", BookType.AUDIOBOOK, "id2", "resources/vb/img/tmp/book-2.jpg", "Как рожать на вершине скалы", "Мария Малиновская", "0", "руб"));
+            spareShopCartRows.add(new ShopCartRow("id3", BookType.EBOOK, "id3", "resources/vb/img/tmp/book-3.jpg", "Кто подставил кролика роджера?", "Владимир Вольфович Константинопольский", "230", "руб"));
+            // <<<
         }
 
         model.addAttribute("mainShopCartRows", mainShopCartRows);

@@ -67,6 +67,9 @@
 <c:set var="isMainCartEmpty" value="false"/>
                                             <c:forEach var="mainShopCartRow" items="${mainShopCartRows}">
                                                 <jsp:useBean id="mainShopCartRow" class="org.verygroup.verybook.dto.shopcart.ShopCartRow"/>
+<c:set var="bookId" value="${mainShopCartRow.bookId}" scope="request"/>
+<c:set var="bookType" value="${mainShopCartRow.bookType}" scope="request"/>
+<c:set var="authorId" value="${mainShopCartRow.bookAuthorId}" scope="request"/>
 <c:set var="bookTripletCoverUrl" value="${mainShopCartRow.bookCoverUrl}" scope="request"/>
 <c:set var="bookTripletTitle" value="${mainShopCartRow.bookTitle}" scope="request"/>
 <c:set var="bookTripletAuthor" value="${mainShopCartRow.bookAuthor}" scope="request"/>
@@ -170,6 +173,9 @@
 <c:set var="isSpareCartEmpty" value="false"/>
                                     <c:forEach var="spareShopCartRow" items="${spareShopCartRows}">
                                         <jsp:useBean id="spareShopCartRow" class="org.verygroup.verybook.dto.shopcart.ShopCartRow"/>
+<c:set var="bookId" value="${spareShopCartRow.bookId}" scope="request"/>
+<c:set var="bookType" value="${spareShopCartRow.bookType}" scope="request"/>
+<c:set var="authorId" value="${spareShopCartRow.bookAuthorId}" scope="request"/>
 <c:set var="bookTripletCoverUrl" value="${spareShopCartRow.bookCoverUrl}" scope="request"/>
 <c:set var="bookTripletTitle" value="${spareShopCartRow.bookTitle}" scope="request"/>
 <c:set var="bookTripletAuthor" value="${spareShopCartRow.bookAuthor}" scope="request"/>
